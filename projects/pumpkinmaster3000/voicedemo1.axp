@@ -1,0 +1,131 @@
+<patch-1.0 appVersion="1.0.11">
+   <obj type="disp/bool" uuid="a0ee71d48208b71752cbb8c05e55145106ef3946" name="bool_1" x="434" y="70">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="osc/saw" uuid="739ecc36017ef3249479b8f01716b8bbfba9abc1" name="saw_1" x="532" y="98">
+      <params>
+         <frac32.s.map name="pitch" value="0.0"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="pumpkinsequencer64out" uuid="9123a463-38ba-4e4d-8e7a-02dfeda550e1" name="pumpkininside" x="154" y="112">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="osc/phasor compl" uuid="11940ece0e29f3fae0d3c8e1fdabd63cacac5b48" name="phasor_1" x="672" y="112">
+      <params>
+         <frac32.s.map name="pitch" value="18.0"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="gain/vca" uuid="a9f2dcd18043e2f47364e45cb8814f63c2a37c0d" name="vca_1" x="840" y="126">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="filter/hp m" uuid="fdba806c3cfd2b7aca3256c733379a06e5811e66" name="hp_1" x="938" y="140">
+      <params>
+         <frac32.s.map name="pitch" value="0.0"/>
+         <frac32.u.map name="reso" value="11.0"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="math/*c" uuid="7a66f52a9594e7e9eb31328ea725cb3641a80b55" name="*c_1" x="1092" y="140">
+      <params>
+         <frac32.u.map name="amp" value="33.5"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="audio/out stereo" uuid="a1ca7a567f535acc21055669829101d3ee7f0189" name="out_1" x="1204" y="182">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="disp/scope 128 b trig" uuid="11747dcd1dc9afe4919f537c861fb18b80b4e4e" name="scope_1" x="1092" y="308">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="env/adsr m" uuid="98bd39fb828c392b28126d259cb5175e6f6ea34b" name="adsr_1" x="476" y="350">
+      <params>
+         <frac32.s.map name="a" value="48.0"/>
+         <frac32.s.map name="d" value="37.0"/>
+         <frac32.u.map name="s" value="16.0"/>
+         <frac32.s.map name="r" value="34.0"/>
+      </params>
+      <attribs/>
+   </obj>
+   <nets>
+      <net>
+         <source obj="pumpkininside" outlet="play1"/>
+         <dest obj="bool_1" inlet="in"/>
+         <dest obj="adsr_1" inlet="gate"/>
+      </net>
+      <net>
+         <source obj="hp_1" outlet="out"/>
+         <dest obj="*c_1" inlet="in"/>
+         <dest obj="scope_1" inlet="in"/>
+      </net>
+      <net>
+         <source obj="*c_1" outlet="out"/>
+         <dest obj="out_1" inlet="left"/>
+         <dest obj="out_1" inlet="right"/>
+      </net>
+      <net>
+         <source obj="pumpkininside" outlet="outlet_1"/>
+         <dest obj="adsr_1" inlet="a"/>
+      </net>
+      <net>
+         <source obj="pumpkininside" outlet="outlet_2"/>
+         <dest obj="adsr_1" inlet="d"/>
+      </net>
+      <net>
+         <source obj="pumpkininside" outlet="outlet_3"/>
+         <dest obj="adsr_1" inlet="s"/>
+      </net>
+      <net>
+         <source obj="pumpkininside" outlet="outlet_4"/>
+         <dest obj="adsr_1" inlet="r"/>
+      </net>
+      <net>
+         <source obj="pumpkininside" outlet="outlet_5"/>
+         <dest obj="hp_1" inlet="pitch"/>
+      </net>
+      <net>
+         <source obj="pumpkininside" outlet="outlet_6"/>
+         <dest obj="hp_1" inlet="reso"/>
+      </net>
+      <net>
+         <source obj="adsr_1" outlet="env"/>
+         <dest obj="vca_1" inlet="v"/>
+      </net>
+      <net>
+         <source obj="phasor_1" outlet="phasor0"/>
+         <dest obj="vca_1" inlet="a"/>
+      </net>
+      <net>
+         <source obj="vca_1" outlet="o"/>
+         <dest obj="hp_1" inlet="in"/>
+      </net>
+      <net>
+         <source obj="pumpkininside" outlet="outlet_7"/>
+         <dest obj="phasor_1" inlet="pitch"/>
+      </net>
+      <net>
+         <source obj="saw_1" outlet="wave"/>
+         <dest obj="phasor_1" inlet="freq"/>
+      </net>
+      <net>
+         <source obj="pumpkininside" outlet="outlet_8"/>
+         <dest obj="saw_1" inlet="pitch"/>
+      </net>
+   </nets>
+   <settings>
+      <subpatchmode>no</subpatchmode>
+   </settings>
+   <notes><![CDATA[]]></notes>
+   <windowPos>
+      <x>0</x>
+      <y>23</y>
+      <width>1440</width>
+      <height>873</height>
+   </windowPos>
+</patch-1.0>

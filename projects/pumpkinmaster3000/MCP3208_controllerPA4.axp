@@ -1,0 +1,210 @@
+<patch-1.0>
+   <obj type="midi/out/cc thin" sha="5bd627809063958f8d7ec5c3c522e066c1166bd7" uuid="5255b30d60e50223ed41179d8ce935ba9464de75" name="cc_1" x="434" y="210">
+      <params/>
+      <attribs>
+         <combo attributeName="device" selection="usb device port 1"/>
+         <spinner attributeName="channel" value="2"/>
+         <spinner attributeName="cc" value="1"/>
+      </attribs>
+   </obj>
+   <obj type="midi/out/cc thin" sha="5bd627809063958f8d7ec5c3c522e066c1166bd7" uuid="5255b30d60e50223ed41179d8ce935ba9464de75" name="cc_2" x="560" y="210">
+      <params/>
+      <attribs>
+         <combo attributeName="device" selection="usb device port 1"/>
+         <spinner attributeName="channel" value="2"/>
+         <spinner attributeName="cc" value="2"/>
+      </attribs>
+   </obj>
+   <obj type="midi/out/cc thin" sha="5bd627809063958f8d7ec5c3c522e066c1166bd7" uuid="5255b30d60e50223ed41179d8ce935ba9464de75" name="cc_3" x="686" y="210">
+      <params/>
+      <attribs>
+         <combo attributeName="device" selection="usb device port 1"/>
+         <spinner attributeName="channel" value="2"/>
+         <spinner attributeName="cc" value="3"/>
+      </attribs>
+   </obj>
+   <obj type="midi/out/cc thin" sha="5bd627809063958f8d7ec5c3c522e066c1166bd7" uuid="5255b30d60e50223ed41179d8ce935ba9464de75" name="cc_4" x="812" y="210">
+      <params/>
+      <attribs>
+         <combo attributeName="device" selection="usb device port 1"/>
+         <spinner attributeName="channel" value="2"/>
+         <spinner attributeName="cc" value="4"/>
+      </attribs>
+   </obj>
+   <obj type="pumpkinmaster3000_controllerPA4PA1" uuid="df1d9550f3b26d102c3340b21a9cc3f5ed73c3ac" name="obj_1" x="154" y="238">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="midi/out/cc thin" sha="5bd627809063958f8d7ec5c3c522e066c1166bd7" uuid="5255b30d60e50223ed41179d8ce935ba9464de75" name="cc_5" x="434" y="308">
+      <params/>
+      <attribs>
+         <combo attributeName="device" selection="usb device port 1"/>
+         <spinner attributeName="channel" value="2"/>
+         <spinner attributeName="cc" value="5"/>
+      </attribs>
+   </obj>
+   <obj type="midi/out/cc thin" sha="5bd627809063958f8d7ec5c3c522e066c1166bd7" uuid="5255b30d60e50223ed41179d8ce935ba9464de75" name="cc_6" x="560" y="308">
+      <params/>
+      <attribs>
+         <combo attributeName="device" selection="usb device port 1"/>
+         <spinner attributeName="channel" value="2"/>
+         <spinner attributeName="cc" value="6"/>
+      </attribs>
+   </obj>
+   <obj type="midi/out/cc thin" sha="5bd627809063958f8d7ec5c3c522e066c1166bd7" uuid="5255b30d60e50223ed41179d8ce935ba9464de75" name="cc_7" x="686" y="308">
+      <params/>
+      <attribs>
+         <combo attributeName="device" selection="usb device port 1"/>
+         <spinner attributeName="channel" value="2"/>
+         <spinner attributeName="cc" value="7"/>
+      </attribs>
+   </obj>
+   <obj type="midi/out/cc thin" sha="5bd627809063958f8d7ec5c3c522e066c1166bd7" uuid="5255b30d60e50223ed41179d8ce935ba9464de75" name="cc_8" x="812" y="308">
+      <params/>
+      <attribs>
+         <combo attributeName="device" selection="usb device port 1"/>
+         <spinner attributeName="channel" value="2"/>
+         <spinner attributeName="cc" value="8"/>
+      </attribs>
+   </obj>
+   <obj type="midi/out/cc thin" sha="5bd627809063958f8d7ec5c3c522e066c1166bd7" uuid="5255b30d60e50223ed41179d8ce935ba9464de75" name="cc_9" x="434" y="406">
+      <params/>
+      <attribs>
+         <combo attributeName="device" selection="usb device port 1"/>
+         <spinner attributeName="channel" value="2"/>
+         <spinner attributeName="cc" value="9"/>
+      </attribs>
+   </obj>
+   <obj type="midi/out/cc thin" sha="5bd627809063958f8d7ec5c3c522e066c1166bd7" uuid="5255b30d60e50223ed41179d8ce935ba9464de75" name="cc_10" x="560" y="406">
+      <params/>
+      <attribs>
+         <combo attributeName="device" selection="usb device port 1"/>
+         <spinner attributeName="channel" value="2"/>
+         <spinner attributeName="cc" value="10"/>
+      </attribs>
+   </obj>
+   <obj type="midi/out/cc thin" sha="5bd627809063958f8d7ec5c3c522e066c1166bd7" uuid="5255b30d60e50223ed41179d8ce935ba9464de75" name="cc_11" x="686" y="406">
+      <params/>
+      <attribs>
+         <combo attributeName="device" selection="usb device port 1"/>
+         <spinner attributeName="channel" value="2"/>
+         <spinner attributeName="cc" value="11"/>
+      </attribs>
+   </obj>
+   <obj type="midi/out/cc thin" sha="5bd627809063958f8d7ec5c3c522e066c1166bd7" uuid="5255b30d60e50223ed41179d8ce935ba9464de75" name="cc_12" x="812" y="406">
+      <params/>
+      <attribs>
+         <combo attributeName="device" selection="usb device port 1"/>
+         <spinner attributeName="channel" value="2"/>
+         <spinner attributeName="cc" value="12"/>
+      </attribs>
+   </obj>
+   <obj type="midi/out/cc thin" sha="5bd627809063958f8d7ec5c3c522e066c1166bd7" uuid="5255b30d60e50223ed41179d8ce935ba9464de75" name="cc_13" x="434" y="504">
+      <params/>
+      <attribs>
+         <combo attributeName="device" selection="usb device port 1"/>
+         <spinner attributeName="channel" value="2"/>
+         <spinner attributeName="cc" value="13"/>
+      </attribs>
+   </obj>
+   <obj type="midi/out/cc thin" sha="5bd627809063958f8d7ec5c3c522e066c1166bd7" uuid="5255b30d60e50223ed41179d8ce935ba9464de75" name="cc_14" x="560" y="504">
+      <params/>
+      <attribs>
+         <combo attributeName="device" selection="usb device port 1"/>
+         <spinner attributeName="channel" value="2"/>
+         <spinner attributeName="cc" value="14"/>
+      </attribs>
+   </obj>
+   <obj type="midi/out/cc thin" sha="5bd627809063958f8d7ec5c3c522e066c1166bd7" uuid="5255b30d60e50223ed41179d8ce935ba9464de75" name="cc_15" x="686" y="504">
+      <params/>
+      <attribs>
+         <combo attributeName="device" selection="usb device port 1"/>
+         <spinner attributeName="channel" value="2"/>
+         <spinner attributeName="cc" value="15"/>
+      </attribs>
+   </obj>
+   <obj type="midi/out/cc thin" sha="5bd627809063958f8d7ec5c3c522e066c1166bd7" uuid="5255b30d60e50223ed41179d8ce935ba9464de75" name="cc_16" x="812" y="504">
+      <params/>
+      <attribs>
+         <combo attributeName="device" selection="usb device port 1"/>
+         <spinner attributeName="channel" value="2"/>
+         <spinner attributeName="cc" value="16"/>
+      </attribs>
+   </obj>
+   <nets>
+      <net>
+         <source obj="obj_1" outlet="C0"/>
+         <dest obj="cc_1" inlet="v"/>
+      </net>
+      <net>
+         <source obj="obj_1" outlet="C1"/>
+         <dest obj="cc_2" inlet="v"/>
+      </net>
+      <net>
+         <source obj="obj_1" outlet="C2"/>
+         <dest obj="cc_3" inlet="v"/>
+      </net>
+      <net>
+         <source obj="obj_1" outlet="C3"/>
+         <dest obj="cc_4" inlet="v"/>
+      </net>
+      <net>
+         <source obj="obj_1" outlet="C4"/>
+         <dest obj="cc_5" inlet="v"/>
+      </net>
+      <net>
+         <source obj="obj_1" outlet="C5"/>
+         <dest obj="cc_6" inlet="v"/>
+      </net>
+      <net>
+         <source obj="obj_1" outlet="C6"/>
+         <dest obj="cc_7" inlet="v"/>
+      </net>
+      <net>
+         <source obj="obj_1" outlet="C7"/>
+         <dest obj="cc_8" inlet="v"/>
+      </net>
+      <net>
+         <source obj="obj_1" outlet="D0"/>
+         <dest obj="cc_9" inlet="v"/>
+      </net>
+      <net>
+         <source obj="obj_1" outlet="D1"/>
+         <dest obj="cc_10" inlet="v"/>
+      </net>
+      <net>
+         <source obj="obj_1" outlet="D2"/>
+         <dest obj="cc_11" inlet="v"/>
+      </net>
+      <net>
+         <source obj="obj_1" outlet="D3"/>
+         <dest obj="cc_12" inlet="v"/>
+      </net>
+      <net>
+         <source obj="obj_1" outlet="D4"/>
+         <dest obj="cc_13" inlet="v"/>
+      </net>
+      <net>
+         <source obj="obj_1" outlet="D5"/>
+         <dest obj="cc_14" inlet="v"/>
+      </net>
+      <net>
+         <source obj="obj_1" outlet="D6"/>
+         <dest obj="cc_15" inlet="v"/>
+      </net>
+      <net>
+         <source obj="obj_1" outlet="D7"/>
+         <dest obj="cc_16" inlet="v"/>
+      </net>
+   </nets>
+   <settings>
+      <subpatchmode>no</subpatchmode>
+   </settings>
+   <notes><![CDATA[]]></notes>
+   <windowPos>
+      <x>1562</x>
+      <y>88</y>
+      <width>1422</width>
+      <height>1055</height>
+   </windowPos>
+</patch-1.0>

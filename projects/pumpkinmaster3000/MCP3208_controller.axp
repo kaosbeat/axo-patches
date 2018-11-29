@@ -1,0 +1,399 @@
+<patch-1.0>
+   <obj type="midi/out/cc thin" sha="5bd627809063958f8d7ec5c3c522e066c1166bd7" uuid="5255b30d60e50223ed41179d8ce935ba9464de75" name="cc_1" x="504" y="84">
+      <params/>
+      <attribs>
+         <combo attributeName="device" selection="usb device port 1"/>
+         <spinner attributeName="channel" value="1"/>
+         <spinner attributeName="cc" value="0"/>
+      </attribs>
+   </obj>
+   <obj type="audio/in stereo" sha="1acaaf87659f6c9d0833a6def4dbd5d0c3edca4d" uuid="99848ad6d90a8e615e83b2e619cfc806f28e7281" name="in_3" x="154" y="140">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="midi/out/cc thin" sha="5bd627809063958f8d7ec5c3c522e066c1166bd7" uuid="5255b30d60e50223ed41179d8ce935ba9464de75" name="cc_2" x="504" y="196">
+      <params/>
+      <attribs>
+         <combo attributeName="device" selection="usb device port 1"/>
+         <spinner attributeName="channel" value="1"/>
+         <spinner attributeName="cc" value="0"/>
+      </attribs>
+   </obj>
+   <obj type="pumpkinmaster3000_controller" uuid="87254cca218bc4cb30d1198e38faa471f2fa260d" name="obj_1" x="168" y="308">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="ctrl/dial b" sha="b26f881dfa1451f0269e068eb6b3d824b43b41d3" uuid="862e7d7f29093cb1ce4aed72244d118ad4d46692" name="dial_1" x="378" y="308">
+      <params>
+         <frac32.s.map name="value" value="0.0"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="midi/out/note" sha="30f60759a7391e48e5c23608906d46ce3c44df8c" uuid="a76ae870da278cbbce5501a57ce7bd0e0ea4215c" name="note_1" x="448" y="308">
+      <params/>
+      <attribs>
+         <combo attributeName="device" selection="usb device port 1"/>
+         <spinner attributeName="channel" value="2"/>
+      </attribs>
+   </obj>
+   <obj type="ctrl/dial b" sha="b26f881dfa1451f0269e068eb6b3d824b43b41d3" uuid="862e7d7f29093cb1ce4aed72244d118ad4d46692" name="dial_2" x="574" y="308">
+      <params>
+         <frac32.s.map name="value" value="1.0"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="midi/out/note" sha="30f60759a7391e48e5c23608906d46ce3c44df8c" uuid="a76ae870da278cbbce5501a57ce7bd0e0ea4215c" name="note_2" x="630" y="308">
+      <params/>
+      <attribs>
+         <combo attributeName="device" selection="usb device port 1"/>
+         <spinner attributeName="channel" value="2"/>
+      </attribs>
+   </obj>
+   <obj type="ctrl/dial b" sha="b26f881dfa1451f0269e068eb6b3d824b43b41d3" uuid="862e7d7f29093cb1ce4aed72244d118ad4d46692" name="dial_3" x="756" y="308">
+      <params>
+         <frac32.s.map name="value" value="2.0"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="midi/out/note" sha="30f60759a7391e48e5c23608906d46ce3c44df8c" uuid="a76ae870da278cbbce5501a57ce7bd0e0ea4215c" name="note_3" x="812" y="308">
+      <params/>
+      <attribs>
+         <combo attributeName="device" selection="usb device port 1"/>
+         <spinner attributeName="channel" value="2"/>
+      </attribs>
+   </obj>
+   <obj type="ctrl/dial b" sha="b26f881dfa1451f0269e068eb6b3d824b43b41d3" uuid="862e7d7f29093cb1ce4aed72244d118ad4d46692" name="dial_4" x="938" y="308">
+      <params>
+         <frac32.s.map name="value" value="3.0"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="midi/out/note" sha="30f60759a7391e48e5c23608906d46ce3c44df8c" uuid="a76ae870da278cbbce5501a57ce7bd0e0ea4215c" name="note_4" x="994" y="308">
+      <params/>
+      <attribs>
+         <combo attributeName="device" selection="usb device port 1"/>
+         <spinner attributeName="channel" value="2"/>
+      </attribs>
+   </obj>
+   <obj type="lfo/square" sha="b4420b58ca2ae5ece53d53540bc91bc9ed7a4b83" uuid="de6909eb64db13af5b43f979a4c130024b3a4793" name="square_1" x="56" y="378">
+      <params>
+         <frac32.s.map name="pitch" value="12.0"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="ctrl/dial b" sha="b26f881dfa1451f0269e068eb6b3d824b43b41d3" uuid="862e7d7f29093cb1ce4aed72244d118ad4d46692" name="dial_5" x="392" y="406">
+      <params>
+         <frac32.s.map name="value" value="4.0"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="midi/out/note" sha="30f60759a7391e48e5c23608906d46ce3c44df8c" uuid="a76ae870da278cbbce5501a57ce7bd0e0ea4215c" name="note_5" x="448" y="406">
+      <params/>
+      <attribs>
+         <combo attributeName="device" selection="usb device port 1"/>
+         <spinner attributeName="channel" value="2"/>
+      </attribs>
+   </obj>
+   <obj type="ctrl/dial b" sha="b26f881dfa1451f0269e068eb6b3d824b43b41d3" uuid="862e7d7f29093cb1ce4aed72244d118ad4d46692" name="dial_6" x="574" y="406">
+      <params>
+         <frac32.s.map name="value" value="5.0"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="midi/out/note" sha="30f60759a7391e48e5c23608906d46ce3c44df8c" uuid="a76ae870da278cbbce5501a57ce7bd0e0ea4215c" name="note_6" x="630" y="406">
+      <params/>
+      <attribs>
+         <combo attributeName="device" selection="usb device port 1"/>
+         <spinner attributeName="channel" value="2"/>
+      </attribs>
+   </obj>
+   <obj type="ctrl/dial b" sha="b26f881dfa1451f0269e068eb6b3d824b43b41d3" uuid="862e7d7f29093cb1ce4aed72244d118ad4d46692" name="dial_7" x="756" y="406">
+      <params>
+         <frac32.s.map name="value" value="6.0"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="midi/out/note" sha="30f60759a7391e48e5c23608906d46ce3c44df8c" uuid="a76ae870da278cbbce5501a57ce7bd0e0ea4215c" name="note_7" x="812" y="406">
+      <params/>
+      <attribs>
+         <combo attributeName="device" selection="usb device port 1"/>
+         <spinner attributeName="channel" value="2"/>
+      </attribs>
+   </obj>
+   <obj type="ctrl/dial b" sha="b26f881dfa1451f0269e068eb6b3d824b43b41d3" uuid="862e7d7f29093cb1ce4aed72244d118ad4d46692" name="dial_8" x="938" y="406">
+      <params>
+         <frac32.s.map name="value" value="7.0"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="midi/out/note" sha="30f60759a7391e48e5c23608906d46ce3c44df8c" uuid="a76ae870da278cbbce5501a57ce7bd0e0ea4215c" name="note_8" x="994" y="406">
+      <params/>
+      <attribs>
+         <combo attributeName="device" selection="usb device port 1"/>
+         <spinner attributeName="channel" value="2"/>
+      </attribs>
+   </obj>
+   <obj type="ctrl/dial b" sha="b26f881dfa1451f0269e068eb6b3d824b43b41d3" uuid="862e7d7f29093cb1ce4aed72244d118ad4d46692" name="dial_9" x="378" y="504">
+      <params>
+         <frac32.s.map name="value" value="8.0"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="midi/out/note" sha="30f60759a7391e48e5c23608906d46ce3c44df8c" uuid="a76ae870da278cbbce5501a57ce7bd0e0ea4215c" name="note_9" x="448" y="504">
+      <params/>
+      <attribs>
+         <combo attributeName="device" selection="usb device port 1"/>
+         <spinner attributeName="channel" value="2"/>
+      </attribs>
+   </obj>
+   <obj type="ctrl/dial b" sha="b26f881dfa1451f0269e068eb6b3d824b43b41d3" uuid="862e7d7f29093cb1ce4aed72244d118ad4d46692" name="dial_10" x="574" y="504">
+      <params>
+         <frac32.s.map name="value" value="9.0"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="midi/out/note" sha="30f60759a7391e48e5c23608906d46ce3c44df8c" uuid="a76ae870da278cbbce5501a57ce7bd0e0ea4215c" name="note_10" x="630" y="504">
+      <params/>
+      <attribs>
+         <combo attributeName="device" selection="usb device port 1"/>
+         <spinner attributeName="channel" value="2"/>
+      </attribs>
+   </obj>
+   <obj type="ctrl/dial b" sha="b26f881dfa1451f0269e068eb6b3d824b43b41d3" uuid="862e7d7f29093cb1ce4aed72244d118ad4d46692" name="dial_11" x="756" y="504">
+      <params>
+         <frac32.s.map name="value" value="2.0"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="midi/out/note" sha="30f60759a7391e48e5c23608906d46ce3c44df8c" uuid="a76ae870da278cbbce5501a57ce7bd0e0ea4215c" name="note_11" x="812" y="504">
+      <params/>
+      <attribs>
+         <combo attributeName="device" selection="usb device port 1"/>
+         <spinner attributeName="channel" value="2"/>
+      </attribs>
+   </obj>
+   <obj type="ctrl/dial b" sha="b26f881dfa1451f0269e068eb6b3d824b43b41d3" uuid="862e7d7f29093cb1ce4aed72244d118ad4d46692" name="dial_12" x="938" y="504">
+      <params>
+         <frac32.s.map name="value" value="11.0"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="midi/out/note" sha="30f60759a7391e48e5c23608906d46ce3c44df8c" uuid="a76ae870da278cbbce5501a57ce7bd0e0ea4215c" name="note_12" x="994" y="504">
+      <params/>
+      <attribs>
+         <combo attributeName="device" selection="usb device port 1"/>
+         <spinner attributeName="channel" value="2"/>
+      </attribs>
+   </obj>
+   <obj type="ctrl/dial b" sha="b26f881dfa1451f0269e068eb6b3d824b43b41d3" uuid="862e7d7f29093cb1ce4aed72244d118ad4d46692" name="dial_13" x="392" y="602">
+      <params>
+         <frac32.s.map name="value" value="12.0"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="midi/out/note" sha="30f60759a7391e48e5c23608906d46ce3c44df8c" uuid="a76ae870da278cbbce5501a57ce7bd0e0ea4215c" name="note_13" x="448" y="602">
+      <params/>
+      <attribs>
+         <combo attributeName="device" selection="usb device port 1"/>
+         <spinner attributeName="channel" value="2"/>
+      </attribs>
+   </obj>
+   <obj type="ctrl/dial b" sha="b26f881dfa1451f0269e068eb6b3d824b43b41d3" uuid="862e7d7f29093cb1ce4aed72244d118ad4d46692" name="dial_14" x="574" y="602">
+      <params>
+         <frac32.s.map name="value" value="13.0"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="midi/out/note" sha="30f60759a7391e48e5c23608906d46ce3c44df8c" uuid="a76ae870da278cbbce5501a57ce7bd0e0ea4215c" name="note_14" x="630" y="602">
+      <params/>
+      <attribs>
+         <combo attributeName="device" selection="usb device port 1"/>
+         <spinner attributeName="channel" value="2"/>
+      </attribs>
+   </obj>
+   <obj type="ctrl/dial b" sha="b26f881dfa1451f0269e068eb6b3d824b43b41d3" uuid="862e7d7f29093cb1ce4aed72244d118ad4d46692" name="dial_15" x="756" y="602">
+      <params>
+         <frac32.s.map name="value" value="14.0"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="midi/out/note" sha="30f60759a7391e48e5c23608906d46ce3c44df8c" uuid="a76ae870da278cbbce5501a57ce7bd0e0ea4215c" name="note_15" x="812" y="602">
+      <params/>
+      <attribs>
+         <combo attributeName="device" selection="usb device port 1"/>
+         <spinner attributeName="channel" value="2"/>
+      </attribs>
+   </obj>
+   <obj type="ctrl/dial b" sha="b26f881dfa1451f0269e068eb6b3d824b43b41d3" uuid="862e7d7f29093cb1ce4aed72244d118ad4d46692" name="dial_16" x="938" y="602">
+      <params>
+         <frac32.s.map name="value" value="15.0"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="midi/out/note" sha="30f60759a7391e48e5c23608906d46ce3c44df8c" uuid="a76ae870da278cbbce5501a57ce7bd0e0ea4215c" name="note_16" x="994" y="602">
+      <params/>
+      <attribs>
+         <combo attributeName="device" selection="usb device port 1"/>
+         <spinner attributeName="channel" value="2"/>
+      </attribs>
+   </obj>
+   <nets>
+      <net>
+         <source obj="obj_1" outlet="C0"/>
+         <dest obj="note_1" inlet="velo"/>
+      </net>
+      <net>
+         <source obj="obj_1" outlet="C1"/>
+         <dest obj="note_2" inlet="velo"/>
+      </net>
+      <net>
+         <source obj="square_1" outlet="wave"/>
+         <dest obj="note_1" inlet="trig"/>
+         <dest obj="note_2" inlet="trig"/>
+         <dest obj="note_3" inlet="trig"/>
+         <dest obj="note_4" inlet="trig"/>
+         <dest obj="note_5" inlet="trig"/>
+         <dest obj="note_6" inlet="trig"/>
+         <dest obj="note_7" inlet="trig"/>
+         <dest obj="note_8" inlet="trig"/>
+         <dest obj="note_9" inlet="trig"/>
+         <dest obj="note_16" inlet="trig"/>
+         <dest obj="note_10" inlet="trig"/>
+         <dest obj="note_11" inlet="trig"/>
+         <dest obj="note_12" inlet="trig"/>
+         <dest obj="note_13" inlet="trig"/>
+         <dest obj="note_14" inlet="trig"/>
+         <dest obj="note_15" inlet="trig"/>
+      </net>
+      <net>
+         <source obj="dial_1" outlet="out"/>
+         <dest obj="note_1" inlet="note"/>
+      </net>
+      <net>
+         <source obj="dial_2" outlet="out"/>
+         <dest obj="note_2" inlet="note"/>
+      </net>
+      <net>
+         <source obj="dial_3" outlet="out"/>
+         <dest obj="note_3" inlet="note"/>
+      </net>
+      <net>
+         <source obj="dial_4" outlet="out"/>
+         <dest obj="note_4" inlet="note"/>
+      </net>
+      <net>
+         <source obj="obj_1" outlet="C2"/>
+         <dest obj="note_3" inlet="velo"/>
+      </net>
+      <net>
+         <source obj="obj_1" outlet="C3"/>
+         <dest obj="note_4" inlet="velo"/>
+      </net>
+      <net>
+         <source obj="dial_5" outlet="out"/>
+         <dest obj="note_5" inlet="note"/>
+      </net>
+      <net>
+         <source obj="dial_6" outlet="out"/>
+         <dest obj="note_6" inlet="note"/>
+      </net>
+      <net>
+         <source obj="dial_7" outlet="out"/>
+         <dest obj="note_7" inlet="note"/>
+      </net>
+      <net>
+         <source obj="dial_8" outlet="out"/>
+         <dest obj="note_8" inlet="note"/>
+      </net>
+      <net>
+         <source obj="obj_1" outlet="C4"/>
+         <dest obj="note_5" inlet="velo"/>
+      </net>
+      <net>
+         <source obj="obj_1" outlet="C5"/>
+         <dest obj="note_6" inlet="velo"/>
+      </net>
+      <net>
+         <source obj="obj_1" outlet="C6"/>
+         <dest obj="note_7" inlet="velo"/>
+      </net>
+      <net>
+         <source obj="obj_1" outlet="C7"/>
+         <dest obj="note_8" inlet="velo"/>
+      </net>
+      <net>
+         <source obj="dial_9" outlet="out"/>
+         <dest obj="note_9" inlet="note"/>
+      </net>
+      <net>
+         <source obj="dial_10" outlet="out"/>
+         <dest obj="note_10" inlet="note"/>
+      </net>
+      <net>
+         <source obj="dial_11" outlet="out"/>
+         <dest obj="note_11" inlet="note"/>
+      </net>
+      <net>
+         <source obj="dial_12" outlet="out"/>
+         <dest obj="note_12" inlet="note"/>
+      </net>
+      <net>
+         <source obj="dial_13" outlet="out"/>
+         <dest obj="note_13" inlet="note"/>
+      </net>
+      <net>
+         <source obj="dial_14" outlet="out"/>
+         <dest obj="note_14" inlet="note"/>
+      </net>
+      <net>
+         <source obj="dial_15" outlet="out"/>
+         <dest obj="note_15" inlet="note"/>
+      </net>
+      <net>
+         <source obj="dial_16" outlet="out"/>
+         <dest obj="note_16" inlet="note"/>
+      </net>
+      <net>
+         <source obj="obj_1" outlet="D0"/>
+         <dest obj="note_9" inlet="velo"/>
+      </net>
+      <net>
+         <source obj="obj_1" outlet="D1"/>
+         <dest obj="note_10" inlet="velo"/>
+      </net>
+      <net>
+         <source obj="obj_1" outlet="D2"/>
+         <dest obj="note_11" inlet="velo"/>
+      </net>
+      <net>
+         <source obj="obj_1" outlet="D3"/>
+         <dest obj="note_12" inlet="velo"/>
+      </net>
+      <net>
+         <source obj="obj_1" outlet="D4"/>
+         <dest obj="note_13" inlet="velo"/>
+      </net>
+      <net>
+         <source obj="obj_1" outlet="D5"/>
+         <dest obj="note_14" inlet="velo"/>
+      </net>
+      <net>
+         <source obj="obj_1" outlet="D6"/>
+         <dest obj="note_15" inlet="velo"/>
+      </net>
+      <net>
+         <source obj="obj_1" outlet="D7"/>
+         <dest obj="note_16" inlet="velo"/>
+      </net>
+   </nets>
+   <settings>
+      <subpatchmode>no</subpatchmode>
+   </settings>
+   <notes><![CDATA[]]></notes>
+   <windowPos>
+      <x>257</x>
+      <y>121</y>
+      <width>1142</width>
+      <height>694</height>
+   </windowPos>
+</patch-1.0>

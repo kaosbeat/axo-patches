@@ -1,0 +1,56 @@
+
+<patch>
+   <obj type="c" sha="1f21216639bb798a4ea7902940999a5bcfd0de90" name="c_1" x="20" y="20">
+      <params>
+         <frac32.u.map name="value" value="25.5"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="script" sha="ba13a90be49d2157146d885c2cdf29e2c36cf457" name="script_1" x="100" y="20">
+      <params/>
+      <attribs>
+         <text attributeName="script">
+            <sText><![CDATA[// demo serial transmitter using SD2 (USART2)
+
+// setup the pins
+// PA2 : TX
+// PA3 : RX
+
+  palSetPadMode(GPIOA, 3, PAL_MODE_ALTERNATE(7)|PAL_MODE_INPUT);// RX
+  palSetPadMode(GPIOA, 2, PAL_MODE_OUTPUT_PUSHPULL);// TX
+  palSetPadMode(GPIOA, 2, PAL_MODE_ALTERNATE(7));// TX
+// 9600 baud
+static const SerialConfig sd2Cfg = {9600, // baud
+    0, 0, 0};
+sdStart(&SD2, &sd2Cfg);
+
+// send a character every 300 ms
+while(!chThdShouldTerminate()){
+    // send byte, value from in1
+    sdPut(&SD2, in1>>21); 
+
+    // read all pending bytes, value to out1
+    while(!sdGetWouldBlock(&SD2)){
+        out1 = sdGet(&SD2)<<21;
+    }
+    chThdSleepMilliseconds(3);
+}]]></sText>
+         </text>
+      </attribs>
+   </obj>
+   <obj type="displayU" sha="5ff4edecce7038619b91d1d056c33eecbc4eaf30" name="displayU_1" x="240" y="20">
+      <params/>
+      <attribs/>
+   </obj>
+   <nets>
+      <net>
+         <source name="c_1 out"/>
+         <dest name="script_1 in1_"/>
+      </net>
+      <net>
+         <source name="script_1 out1_"/>
+         <dest name="displayU_1 in"/>
+      </net>
+   </nets>
+   <notes><![CDATA[]]></notes>
+</patch>
