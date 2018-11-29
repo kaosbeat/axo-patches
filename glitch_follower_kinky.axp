@@ -1,0 +1,302 @@
+<patch-1.0 appVersion="1.0.12">
+   <obj type="audio/inconfig" uuid="9a80ef3c19f2a8f81da3a3b7c1c44d18126b97d9" name="adcconfig1" x="14" y="0">
+      <params/>
+      <attribs>
+         <combo attributeName="gain" selection="30dB"/>
+         <combo attributeName="boost" selection="20dB"/>
+         <combo attributeName="mode" selection="Mono(L)"/>
+      </attribs>
+   </obj>
+   <obj type="audio/outconfig" uuid="eace67e3304afaa1bb695b444e9345f2d8adaf00" name="outconfig_1" x="112" y="0">
+      <params/>
+      <attribs>
+         <combo attributeName="headphones" selection="-6dB"/>
+         <combo attributeName="mode" selection="Stereo"/>
+      </attribs>
+   </obj>
+   <obj type="disp/bool" uuid="a0ee71d48208b71752cbb8c05e55145106ef3946" name="bool_1" x="644" y="56">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="sptnk/effect/noise gate" uuid="d49f2e43-3acd-4f41-9d78-40beab399c69" name="obj_2" x="140" y="70">
+      <params>
+         <frac32.u.map name="Treshold" MidiCC="124" value="7.5"/>
+         <frac32.s.map name="envelope:a" MidiCC="125" value="-57.0"/>
+         <frac32.s.map name="envelope:d" value="-64.0"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="env/follower" uuid="356ce1d18ac6b51704833f94dac5dea823fb8223" name="env_1" x="322" y="70">
+      <params/>
+      <attribs>
+         <combo attributeName="time" selection="1.3ms"/>
+      </attribs>
+   </obj>
+   <obj type="gain/vca" uuid="a9f2dcd18043e2f47364e45cb8814f63c2a37c0d" name="vca_2" x="896" y="70">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="logic/change speedlim" uuid="9239a1be592182b71673521e7d7461e6951e8d3b" name="change_1" x="434" y="84">
+      <params>
+         <frac32.u.map name="d" value="7.5"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="mix/mix 1 g" uuid="e6982841c1bf323ee2062a4b6cc2737adafbd668" name="mix_2" x="980" y="98">
+      <params>
+         <frac32.u.map name="gain1" MidiCC="127" value="63.99999952316284"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="drj/audio/out_stereo_vol" uuid="awca1a567f535acc21055669829101d3ee7f0189" name="out_stereo_vol_1" x="1120" y="126">
+      <params>
+         <frac32.u.map name="volume" MidiCC="126" value="0.0"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="audio/in stereo" uuid="99848ad6d90a8e615e83b2e619cfc806f28e7281" name="adc_1" x="14" y="154">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="math/div 8" uuid="4a6007f5cb2024c50e8449b3bb6bcaef6ac42edb" name="div_2" x="574" y="238">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="conv/to i" uuid="305966430ee86b5c3b8e18cde0c721657c558a87" name="to_1" x="658" y="238">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="hc/osc/beatmachine" uuid="da8bb99a-f490-4ca9-a1ed-e3dba009f1d9" name="beatmachine_1" x="742" y="238">
+      <params/>
+      <attribs>
+         <table attributeName="beat" table="((t&amp;32*z)?((t*(t^t%y*2)|(t&gt;&gt;4))&gt;&gt;1):(t&gt;&gt;3)|((t&amp;8192)?t&lt;&lt;x:t))"/>
+      </attribs>
+   </obj>
+   <obj type="disp/scope 128 b trig" uuid="11747dcd1dc9afe4919f537c861fb18b80b4e4e" name="scope_2" x="1036" y="280">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="disp/scope 128 b trig" uuid="11747dcd1dc9afe4919f537c861fb18b80b4e4e" name="scope_3" x="1190" y="280">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="ctrl/button" uuid="ef3d13774349df85aa9bfecf30dbc91ab8488b3f" name="button_1" x="574" y="294">
+      <params>
+         <bool32.mom name="b" value="0"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="pumkinrevamp" uuid="294490e3-a01b-41c1-9734-034f19789bac" name="pumkinrevamp_1" x="168" y="350">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="midi/intern/cc thin" uuid="fd6026be5e7a856b804776c5d7d4df1a4480795e" name="cc_4" x="322" y="406">
+      <params/>
+      <attribs>
+         <spinner attributeName="channel" value="1"/>
+         <spinner attributeName="cc" value="124"/>
+      </attribs>
+   </obj>
+   <obj type="midi/intern/cc thin" uuid="fd6026be5e7a856b804776c5d7d4df1a4480795e" name="cc_6" x="448" y="420">
+      <params/>
+      <attribs>
+         <spinner attributeName="channel" value="1"/>
+         <spinner attributeName="cc" value="121"/>
+      </attribs>
+   </obj>
+   <obj type="disp/scope 128 b trig" uuid="11747dcd1dc9afe4919f537c861fb18b80b4e4e" name="scope_1" x="1036" y="476">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="midi/intern/cc thin" uuid="fd6026be5e7a856b804776c5d7d4df1a4480795e" name="cc_5" x="322" y="490">
+      <params/>
+      <attribs>
+         <spinner attributeName="channel" value="1"/>
+         <spinner attributeName="cc" value="125"/>
+      </attribs>
+   </obj>
+   <obj type="midi/intern/cc thin" uuid="fd6026be5e7a856b804776c5d7d4df1a4480795e" name="cc_7" x="448" y="504">
+      <params/>
+      <attribs>
+         <spinner attributeName="channel" value="1"/>
+         <spinner attributeName="cc" value="122"/>
+      </attribs>
+   </obj>
+   <obj type="midi/intern/cc thin" uuid="fd6026be5e7a856b804776c5d7d4df1a4480795e" name="cc_1" x="588" y="504">
+      <params/>
+      <attribs>
+         <spinner attributeName="channel" value="1"/>
+         <spinner attributeName="cc" value="119"/>
+      </attribs>
+   </obj>
+   <obj type="midi/intern/cc thin" uuid="fd6026be5e7a856b804776c5d7d4df1a4480795e" name="cc_2" x="322" y="574">
+      <params/>
+      <attribs>
+         <spinner attributeName="channel" value="1"/>
+         <spinner attributeName="cc" value="126"/>
+      </attribs>
+   </obj>
+   <obj type="midi/intern/cc thin" uuid="fd6026be5e7a856b804776c5d7d4df1a4480795e" name="cc_8" x="448" y="588">
+      <params/>
+      <attribs>
+         <spinner attributeName="channel" value="1"/>
+         <spinner attributeName="cc" value="122"/>
+      </attribs>
+   </obj>
+   <obj type="midi/intern/cc thin" uuid="fd6026be5e7a856b804776c5d7d4df1a4480795e" name="cc_10" x="588" y="588">
+      <params/>
+      <attribs>
+         <spinner attributeName="channel" value="1"/>
+         <spinner attributeName="cc" value="120"/>
+      </attribs>
+   </obj>
+   <obj type="midi/intern/cc thin" uuid="fd6026be5e7a856b804776c5d7d4df1a4480795e" name="cc_3" x="322" y="644">
+      <params/>
+      <attribs>
+         <spinner attributeName="channel" value="1"/>
+         <spinner attributeName="cc" value="127"/>
+      </attribs>
+   </obj>
+   <obj type="midi/intern/cc thin" uuid="fd6026be5e7a856b804776c5d7d4df1a4480795e" name="cc_9" x="448" y="658">
+      <params/>
+      <attribs>
+         <spinner attributeName="channel" value="1"/>
+         <spinner attributeName="cc" value="123"/>
+      </attribs>
+   </obj>
+   <nets>
+      <net>
+         <source obj="obj_2" outlet="out"/>
+         <dest obj="env_1" inlet="in"/>
+      </net>
+      <net>
+         <source obj="env_1" outlet="amp"/>
+         <dest obj="vca_2" inlet="v"/>
+         <dest obj="change_1" inlet="in"/>
+      </net>
+      <net>
+         <source obj="beatmachine_1" outlet="out"/>
+         <dest obj="scope_1" inlet="in"/>
+         <dest obj="vca_2" inlet="a"/>
+         <dest obj="mix_2" inlet="in1"/>
+      </net>
+      <net>
+         <source obj="change_1" outlet="trig"/>
+         <dest obj="bool_1" inlet="in"/>
+      </net>
+      <net>
+         <source obj="vca_2" outlet="o"/>
+         <dest obj="mix_2" inlet="bus_in"/>
+         <dest obj="scope_3" inlet="in"/>
+      </net>
+      <net>
+         <source obj="button_1" outlet="o"/>
+         <dest obj="beatmachine_1" inlet="rst"/>
+      </net>
+      <net>
+         <source obj="pumkinrevamp_1" outlet="C0"/>
+         <dest obj="beatmachine_1" inlet="x"/>
+      </net>
+      <net>
+         <source obj="pumkinrevamp_1" outlet="C1"/>
+         <dest obj="beatmachine_1" inlet="y"/>
+      </net>
+      <net>
+         <source obj="pumkinrevamp_1" outlet="C2"/>
+         <dest obj="beatmachine_1" inlet="z"/>
+      </net>
+      <net>
+         <source obj="pumkinrevamp_1" outlet="C3"/>
+         <dest obj="div_2" inlet="in"/>
+      </net>
+      <net>
+         <source obj="div_2" outlet="out"/>
+         <dest obj="to_1" inlet="i"/>
+      </net>
+      <net>
+         <source obj="to_1" outlet="o"/>
+         <dest obj="beatmachine_1" inlet="divider"/>
+      </net>
+      <net>
+         <source obj="pumkinrevamp_1" outlet="C4"/>
+         <dest obj="beatmachine_1" inlet="rate"/>
+      </net>
+      <net>
+         <source obj="pumkinrevamp_1" outlet="C5"/>
+         <dest obj="beatmachine_1" inlet="startpos"/>
+      </net>
+      <net>
+         <source obj="mix_2" outlet="out"/>
+         <dest obj="out_stereo_vol_1" inlet="left"/>
+         <dest obj="out_stereo_vol_1" inlet="right"/>
+         <dest obj="scope_2" inlet="in"/>
+      </net>
+      <net>
+         <source obj="pumkinrevamp_1" outlet="C6"/>
+         <dest obj="cc_1" inlet="v"/>
+      </net>
+      <net>
+         <source obj="adc_1" outlet="left"/>
+         <dest obj="obj_2" inlet="in"/>
+      </net>
+      <net>
+         <source obj="pumkinrevamp_1" outlet="D6"/>
+         <dest obj="cc_2" inlet="v"/>
+      </net>
+      <net>
+         <source obj="pumkinrevamp_1" outlet="D7"/>
+         <dest obj="cc_3" inlet="v"/>
+      </net>
+      <net>
+         <source obj="pumkinrevamp_1" outlet="D5"/>
+         <dest obj="cc_5" inlet="v"/>
+      </net>
+      <net>
+         <source obj="pumkinrevamp_1" outlet="D4"/>
+         <dest obj="cc_4" inlet="v"/>
+      </net>
+      <net>
+         <source obj="pumkinrevamp_1" outlet="D0"/>
+         <dest obj="cc_6" inlet="v"/>
+      </net>
+      <net>
+         <source obj="pumkinrevamp_1" outlet="D1"/>
+         <dest obj="cc_7" inlet="v"/>
+      </net>
+      <net>
+         <source obj="pumkinrevamp_1" outlet="D2"/>
+         <dest obj="cc_8" inlet="v"/>
+      </net>
+      <net>
+         <source obj="pumkinrevamp_1" outlet="D3"/>
+         <dest obj="cc_9" inlet="v"/>
+      </net>
+      <net>
+         <source obj="pumkinrevamp_1" outlet="C7"/>
+         <dest obj="cc_10" inlet="v"/>
+      </net>
+   </nets>
+   <settings>
+      <subpatchmode>no</subpatchmode>
+   </settings>
+   <notes><![CDATA[(t*(t>>8+t>>9)*100)+(t)
+t/(t%(t>>8|t>>12))
+((x<<1)^((t<<1)+(t>>7)&t>>12))|t>>(4-(1^7&(t>>y)))|t>>7 
+t * ((t>>12|t>>8)&63&t>>4)
+t/(x%(t>>8|t>>12))
+(t*(t>>5|t>>8))>>(t>>16)
+(t*(t>>x|t>>y))>>(t>>z)
+
+t*((t>>9|t>>13)&25&t>>6)
+
+
+
+//good one
+t*((t>>x|t>>y)&25&t>>z)]]></notes>
+   <windowPos>
+      <x>16</x>
+      <y>25</y>
+      <width>1424</width>
+      <height>820</height>
+   </windowPos>
+</patch-1.0>
