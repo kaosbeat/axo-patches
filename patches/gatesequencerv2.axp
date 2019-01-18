@@ -1,0 +1,469 @@
+<patch-1.0 appVersion="1.0.12">
+   <comment type="patch/comment" x="2100" y="0" text="stepmixer faders"/>
+   <obj type="drj/seq/stepseq_8_b" uuid="ae8548ea713123fd356ff0c14bff9cff999947ac" name="stepseq_8_b_4" x="2100" y="14">
+      <params>
+         <frac32.s.map name="v1" MidiCC="77" value="-18.0"/>
+         <frac32.s.map name="v2" MidiCC="78" value="-16.0"/>
+         <frac32.s.map name="v3" MidiCC="79" value="-64.0"/>
+         <frac32.s.map name="v4" MidiCC="80" value="-64.0"/>
+         <frac32.s.map name="v5" MidiCC="81" value="63.99999952316284"/>
+         <frac32.s.map name="v6" MidiCC="82" value="63.99999952316284"/>
+         <frac32.s.map name="v7" MidiCC="83" value="63.99999952316284"/>
+         <frac32.s.map name="v8" MidiCC="84" value="63.99999952316284"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="midi/in/keyb note" uuid="ac0cd98e6c0373b7be73d25900342a62ebcf5f" name="keyb_2" x="364" y="28">
+      <params/>
+      <attribs>
+         <spinner attributeName="note" value="73"/>
+      </attribs>
+   </obj>
+   <obj type="midi/in/keyb note" uuid="ac0cd98e6c0373b7be73d25900342a62ebcf5f" name="keyb_3" x="462" y="28">
+      <params/>
+      <attribs>
+         <spinner attributeName="note" value="74"/>
+      </attribs>
+   </obj>
+   <obj type="midi/in/keyb note" uuid="ac0cd98e6c0373b7be73d25900342a62ebcf5f" name="keyb_4" x="560" y="28">
+      <params/>
+      <attribs>
+         <spinner attributeName="note" value="75"/>
+      </attribs>
+   </obj>
+   <obj type="midi/in/keyb note" uuid="ac0cd98e6c0373b7be73d25900342a62ebcf5f" name="keyb_5" x="658" y="28">
+      <params/>
+      <attribs>
+         <spinner attributeName="note" value="76"/>
+      </attribs>
+   </obj>
+   <obj type="midi/in/keyb note" uuid="ac0cd98e6c0373b7be73d25900342a62ebcf5f" name="keyb_6" x="756" y="28">
+      <params/>
+      <attribs>
+         <spinner attributeName="note" value="77"/>
+      </attribs>
+   </obj>
+   <obj type="midi/in/keyb note" uuid="ac0cd98e6c0373b7be73d25900342a62ebcf5f" name="keyb_7" x="854" y="28">
+      <params/>
+      <attribs>
+         <spinner attributeName="note" value="78"/>
+      </attribs>
+   </obj>
+   <obj type="midi/in/keyb note" uuid="ac0cd98e6c0373b7be73d25900342a62ebcf5f" name="keyb_8" x="952" y="28">
+      <params/>
+      <attribs>
+         <spinner attributeName="note" value="79"/>
+      </attribs>
+   </obj>
+   <obj type="midi/in/keyb note" uuid="ac0cd98e6c0373b7be73d25900342a62ebcf5f" name="keyb_9" x="1050" y="28">
+      <params/>
+      <attribs>
+         <spinner attributeName="note" value="80"/>
+      </attribs>
+   </obj>
+   <obj type="disp/dial b" uuid="9ffed04e6a3052d9001eda83bae7024cb6d17037" name="dial_6" x="2422" y="28">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="math/inv" uuid="565521d3699b36d8095aa1c79b9ad0046fb133ce" name="inv_1" x="2226" y="56">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="conv/bipolar2unipolar" uuid="f6f63d71053d572d3c795f83c7ec11dfbbce82dd" name="bipolar2unipolar_1" x="2282" y="56">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="gain/vca" uuid="a9f2dcd18043e2f47364e45cb8814f63c2a37c0d" name="vca_2" x="2506" y="84">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="conv/bipolar2unipolar" uuid="f6f63d71053d572d3c795f83c7ec11dfbbce82dd" name="bipolar2unipolar_2" x="2268" y="112">
+      <params/>
+      <attribs/>
+   </obj>
+   <comment type="patch/comment" x="546" y="126" text="midi note offset"/>
+   <obj type="disp/dial b" uuid="9ffed04e6a3052d9001eda83bae7024cb6d17037" name="dial_7" x="2422" y="126">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="lokki/math/triggerindex 8" uuid="44bbeb7f-52f4-4ec8-92ce-5bbce61d7a41" name="triggerindex_1" x="364" y="140">
+      <params>
+         <bool32.tgl name="indexlatch" value="1"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="drj/seq/stepseq_8_b" uuid="ae8548ea713123fd356ff0c14bff9cff999947ac" name="stepseq_8_b_5" x="546" y="140">
+      <params>
+         <frac32.s.map name="v1" value="-12.0"/>
+         <frac32.s.map name="v2" value="-8.0"/>
+         <frac32.s.map name="v3" value="-4.0"/>
+         <frac32.s.map name="v4" value="0.0"/>
+         <frac32.s.map name="v5" value="4.0"/>
+         <frac32.s.map name="v6" value="8.0"/>
+         <frac32.s.map name="v7" value="12.0"/>
+         <frac32.s.map name="v8" value="16.0"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="gain/vca" uuid="a9f2dcd18043e2f47364e45cb8814f63c2a37c0d" name="vca_3" x="2506" y="154">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="drj/delay/delay_st_pp" uuid="a5a91366-fb17-46f4-a033-a8b5a206e87c" name="delay_st_pp_2" x="2366" y="224">
+      <params>
+         <bool32.tgl name="pre_filter" value="0"/>
+         <frac32.u.map name="lp" value="36.5"/>
+         <frac32.u.map name="hp" value="46.5"/>
+         <bool32.tgl name="hp_enable" value="0"/>
+         <frac32.u.map name="ping" value="32.5"/>
+         <frac32.u.map name="feedback" MidiCC="49" value="32.0"/>
+         <frac32.u.map name="time" value="29.5"/>
+         <frac32.s.map name="time_diff" value="-5.0"/>
+         <frac32.u.map name="dry wet" value="32.0"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="gain/vca" uuid="a9f2dcd18043e2f47364e45cb8814f63c2a37c0d" name="vca_1" x="2506" y="224">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="audio/in stereo" uuid="99848ad6d90a8e615e83b2e619cfc806f28e7281" name="in_1" x="2002" y="266">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="audio/inconfig" uuid="9a80ef3c19f2a8f81da3a3b7c1c44d18126b97d9" name="inconfig_1" x="2002" y="378">
+      <params/>
+      <attribs>
+         <combo attributeName="gain" selection="12dB"/>
+         <combo attributeName="boost" selection="0dB"/>
+         <combo attributeName="mode" selection="Mono(L)"/>
+      </attribs>
+   </obj>
+   <obj type="conv/to b" uuid="91ff898f0f2bf6e4dc0165515e0be7c2281da18b" name="to_2" x="840" y="490">
+      <params/>
+      <attribs/>
+   </obj>
+   <comment type="patch/comment" x="42" y="518" text="midiclock"/>
+   <comment type="patch/comment" x="546" y="518" text="midi note offset"/>
+   <comment type="patch/comment" x="672" y="518" text="sustain length"/>
+   <obj type="sss/midi/clock" uuid="660f62c5-2850-483b-b57b-bec2e5c5ce4d" name="clock_2" x="42" y="532">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="math/divremc" uuid="fd7d945542e16344358136d7e22cffd5be704260" name="divremc_2" x="126" y="532">
+      <params/>
+      <attribs>
+         <spinner attributeName="denominator" value="12"/>
+      </attribs>
+   </obj>
+   <obj type="math/divremc" uuid="fd7d945542e16344358136d7e22cffd5be704260" name="divremc_1" x="182" y="532">
+      <params/>
+      <attribs>
+         <spinner attributeName="denominator" value="8"/>
+      </attribs>
+   </obj>
+   <obj type="disp/i" uuid="5e35fd0c62d81e70017289250cf28edd26e19e4a" name="i_1" x="336" y="532">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="drj/seq/stepseq_8_b" uuid="ae8548ea713123fd356ff0c14bff9cff999947ac" name="stepseq_8_b_1" x="546" y="532">
+      <params>
+         <frac32.s.map name="v1" MidiCC="13" value="-39.0"/>
+         <frac32.s.map name="v2" MidiCC="14" value="0.0"/>
+         <frac32.s.map name="v3" MidiCC="15" value="6.0"/>
+         <frac32.s.map name="v4" MidiCC="16" value="-1.0"/>
+         <frac32.s.map name="v5" MidiCC="17" value="6.0"/>
+         <frac32.s.map name="v6" MidiCC="18" value="0.0"/>
+         <frac32.s.map name="v7" MidiCC="19" value="-64.0"/>
+         <frac32.s.map name="v8" MidiCC="20" value="47.0"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="drj/seq/stepseq_8_u" uuid="948523ea71e103abc56ff0c14bff9c17972947ac" name="stepseq_8_u_1" x="672" y="532">
+      <params>
+         <frac32.u.map name="v1" MidiCC="29" value="0.0"/>
+         <frac32.u.map name="v2" MidiCC="30" value="0.0"/>
+         <frac32.u.map name="v3" MidiCC="31" value="63.99999952316284"/>
+         <frac32.u.map name="v4" MidiCC="32" value="63.99999952316284"/>
+         <frac32.u.map name="v5" MidiCC="33" value="0.0"/>
+         <frac32.u.map name="v6" MidiCC="34" value="0.0"/>
+         <frac32.u.map name="v7" MidiCC="35" value="2.5"/>
+         <frac32.u.map name="v8" MidiCC="36" value="11.0"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="env/adsr m" uuid="98bd39fb828c392b28126d259cb5175e6f6ea34b" name="adsr_1" x="840" y="532">
+      <params>
+         <frac32.s.map name="a" value="4.0"/>
+         <frac32.s.map name="d" value="-64.0"/>
+         <frac32.u.map name="s" value="0.0"/>
+         <frac32.s.map name="r" value="-14.0"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="math/==" uuid="deaf0d36642c57876c4101e86f8a0b6a06021ab2" name="==_1" x="336" y="588">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="gain/vca" uuid="a9f2dcd18043e2f47364e45cb8814f63c2a37c0d" name="vca_4" x="2212" y="588">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="ctrl/dial p" uuid="cc5d2846c3d50e425f450c4b9851371b54f4d674" name="dial_1" x="210" y="602">
+      <params>
+         <frac32.u.map name="value" value="7.0"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="conv/to i" uuid="305966430ee86b5c3b8e18cde0c721657c558a87" name="to_1" x="280" y="602">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="./../subpatches/DX7controlled" uuid="eb7e6a1e-13da-4f0a-8cf9-15258084f0fe" name="DX7controlled_1" x="1974" y="616">
+      <params>
+         <frac32.s.map name="DX7_1:pitch" value="-26.0"/>
+         <int32 name="DX7_1:algo" value="1"/>
+         <int32 name="DX7_1:OS" value="2"/>
+      </params>
+      <attribs>
+         <combo attributeName="poly" selection="2"/>
+         <combo attributeName="midichannel" selection="2"/>
+         <combo attributeName="mididevice" selection="usb host"/>
+         <combo attributeName="midiport" selection="omni"/>
+      </attribs>
+   </obj>
+   <obj type="mix/mix 2 sq" uuid="9b03da12a01f39ecd48d16285e7d10acb8e1267c" name="mix_1" x="2380" y="644">
+      <params>
+         <frac32.u.map name="gain1" value="64.0"/>
+         <frac32.u.map name="gain2" value="0.0"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="audio/out stereo" uuid="a1ca7a567f535acc21055669829101d3ee7f0189" name="out_1" x="2590" y="672">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="./../subpatches/braidslfo" uuid="40a71bbe-0f78-484f-aec5-cb42ec437ba2" name="braidslfo_1" x="1960" y="812">
+      <params>
+         <frac32.s.map name="saw_2" MidiCC="13" value="17.0"/>
+      </params>
+      <attribs>
+         <combo attributeName="midichannel" selection="3"/>
+         <combo attributeName="mididevice" selection="usb host"/>
+         <combo attributeName="midiport" selection="1"/>
+      </attribs>
+   </obj>
+   <obj type="conv/to b" uuid="91ff898f0f2bf6e4dc0165515e0be7c2281da18b" name="to_3" x="252" y="924">
+      <params/>
+      <attribs/>
+   </obj>
+   <comment type="patch/comment" x="560" y="952" text="note to midi-out"/>
+   <obj type="math/+" uuid="44553fdc8628c67ab535845ed1be304ad6c9553b" name="+_1" x="560" y="966">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="midi/out/note" uuid="a76ae870da278cbbce5501a57ce7bd0e0ea4215c" name="note_4" x="630" y="966">
+      <params/>
+      <attribs>
+         <combo attributeName="device" selection="din"/>
+         <spinner attributeName="channel" value="1"/>
+      </attribs>
+   </obj>
+   <obj type="midi/in/monitor" uuid="b51863ca-6afa-4d29-acfd-c8c2fe06cb16" name="monitor_1" x="1876" y="980">
+      <params>
+         <bool32.tgl name="ControlChange" value="0"/>
+         <bool32.tgl name="Note" value="0"/>
+         <bool32.tgl name="ProgramChange" value="0"/>
+         <bool32.tgl name="Bend" value="0"/>
+         <bool32.tgl name="PolyPressure" value="0"/>
+      </params>
+      <attribs/>
+   </obj>
+   <comment type="patch/comment" x="560" y="1134" text="launchpad step display"/>
+   <obj type="drj/seq/stepseq_8_b" uuid="ae8548ea713123fd356ff0c14bff9cff999947ac" name="stepseq_8_b_6" x="560" y="1148">
+      <params>
+         <frac32.s.map name="v1" value="-20.0"/>
+         <frac32.s.map name="v2" value="-18.0"/>
+         <frac32.s.map name="v3" value="-15.0"/>
+         <frac32.s.map name="v4" value="-13.0"/>
+         <frac32.s.map name="v5" value="-10.0"/>
+         <frac32.s.map name="v6" value="-8.0"/>
+         <frac32.s.map name="v7" value="-6.0"/>
+         <frac32.s.map name="v8" value="-3.0"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="midi/out/note" uuid="a76ae870da278cbbce5501a57ce7bd0e0ea4215c" name="note_5" x="672" y="1148">
+      <params/>
+      <attribs>
+         <combo attributeName="device" selection="usb host port 1"/>
+         <spinner attributeName="channel" value="1"/>
+      </attribs>
+   </obj>
+   <obj type="ctrl/dial p" uuid="cc5d2846c3d50e425f450c4b9851371b54f4d674" name="dial_2" x="672" y="1316">
+      <params>
+         <frac32.u.map name="value" value="17.5"/>
+      </params>
+      <attribs/>
+   </obj>
+   <nets>
+      <net>
+         <source obj="keyb_4" outlet="gate"/>
+         <dest obj="triggerindex_1" inlet="b3"/>
+      </net>
+      <net>
+         <source obj="keyb_3" outlet="gate"/>
+         <dest obj="triggerindex_1" inlet="b2"/>
+      </net>
+      <net>
+         <source obj="keyb_2" outlet="gate"/>
+         <dest obj="triggerindex_1" inlet="b1"/>
+      </net>
+      <net>
+         <source obj="triggerindex_1" outlet="out"/>
+         <dest obj="stepseq_8_b_5" inlet="step"/>
+      </net>
+      <net>
+         <source obj="keyb_5" outlet="gate"/>
+         <dest obj="triggerindex_1" inlet="b4"/>
+      </net>
+      <net>
+         <source obj="keyb_6" outlet="gate"/>
+         <dest obj="triggerindex_1" inlet="b5"/>
+      </net>
+      <net>
+         <source obj="keyb_7" outlet="gate"/>
+         <dest obj="triggerindex_1" inlet="b6"/>
+      </net>
+      <net>
+         <source obj="keyb_8" outlet="gate"/>
+         <dest obj="triggerindex_1" inlet="b7"/>
+      </net>
+      <net>
+         <source obj="keyb_9" outlet="gate"/>
+         <dest obj="triggerindex_1" inlet="b8"/>
+      </net>
+      <net>
+         <source obj="divremc_1" outlet="rem"/>
+         <dest obj="i_1" inlet="in"/>
+         <dest obj="stepseq_8_b_1" inlet="step"/>
+         <dest obj="stepseq_8_u_1" inlet="step"/>
+         <dest obj="stepseq_8_b_6" inlet="step"/>
+         <dest obj="stepseq_8_b_4" inlet="step"/>
+         <dest obj="==_1" inlet="in1"/>
+      </net>
+      <net>
+         <source obj="divremc_2" outlet="div"/>
+         <dest obj="divremc_1" inlet="a"/>
+      </net>
+      <net>
+         <source obj="to_1" outlet="o"/>
+         <dest obj="==_1" inlet="in2"/>
+      </net>
+      <net>
+         <source obj="dial_1" outlet="out"/>
+         <dest obj="to_1" inlet="i"/>
+      </net>
+      <net>
+         <dest obj="delay_st_pp_2" inlet="in_l"/>
+         <dest obj="delay_st_pp_2" inlet="in_r"/>
+      </net>
+      <net>
+         <source obj="delay_st_pp_2" outlet="out_l"/>
+         <dest obj="vca_1" inlet="a"/>
+         <dest obj="vca_3" inlet="a"/>
+      </net>
+      <net>
+         <source obj="stepseq_8_b_4" outlet="out"/>
+         <dest obj="inv_1" inlet="in"/>
+         <dest obj="bipolar2unipolar_2" inlet="i"/>
+      </net>
+      <net>
+         <source obj="inv_1" outlet="out"/>
+         <dest obj="bipolar2unipolar_1" inlet="i"/>
+      </net>
+      <net>
+         <source obj="bipolar2unipolar_1" outlet="o"/>
+         <dest obj="vca_1" inlet="v"/>
+         <dest obj="dial_6" inlet="in"/>
+      </net>
+      <net>
+         <source obj="bipolar2unipolar_2" outlet="o"/>
+         <dest obj="dial_7" inlet="in"/>
+      </net>
+      <net>
+         <source obj="to_2" outlet="o"/>
+         <dest obj="adsr_1" inlet="gate"/>
+         <dest obj="note_4" inlet="trig"/>
+      </net>
+      <net>
+         <source obj="stepseq_8_u_1" outlet="out"/>
+         <dest obj="adsr_1" inlet="s"/>
+         <dest obj="to_2" inlet="i"/>
+      </net>
+      <net>
+         <source obj="adsr_1" outlet="env"/>
+         <dest obj="vca_3" inlet="v"/>
+         <dest obj="note_4" inlet="velo"/>
+         <dest obj="braidslfo_1" inlet="env"/>
+         <dest obj="vca_4" inlet="v"/>
+      </net>
+      <net>
+         <source obj="clock_2" outlet="pos24ppq"/>
+         <dest obj="divremc_2" inlet="a"/>
+      </net>
+      <net>
+         <source obj="+_1" outlet="out"/>
+         <dest obj="note_4" inlet="note"/>
+         <dest obj="braidslfo_1" inlet="saw freq"/>
+         <dest obj="DX7controlled_1" inlet="ptch"/>
+      </net>
+      <net>
+         <source obj="stepseq_8_b_1" outlet="out"/>
+         <dest obj="+_1" inlet="in1"/>
+      </net>
+      <net>
+         <source obj="stepseq_8_b_5" outlet="out"/>
+         <dest obj="+_1" inlet="in2"/>
+      </net>
+      <net>
+         <source obj="stepseq_8_b_6" outlet="out"/>
+         <dest obj="note_5" inlet="note"/>
+      </net>
+      <net>
+         <source obj="dial_2" outlet="out"/>
+         <dest obj="note_5" inlet="velo"/>
+      </net>
+      <net>
+         <source obj="to_3" outlet="o"/>
+         <dest obj="note_5" inlet="trig"/>
+      </net>
+      <net>
+         <source obj="divremc_2" outlet="rem"/>
+         <dest obj="to_3" inlet="i"/>
+      </net>
+      <net>
+         <source obj="braidslfo_1" outlet="outlet_1"/>
+         <dest obj="mix_1" inlet="in2"/>
+      </net>
+      <net>
+         <source obj="mix_1" outlet="out"/>
+         <dest obj="out_1" inlet="left"/>
+      </net>
+      <net>
+         <source obj="DX7controlled_1" outlet="outlet_1"/>
+         <dest obj="mix_1" inlet="in1"/>
+         <dest obj="vca_4" inlet="a"/>
+      </net>
+   </nets>
+   <settings>
+      <subpatchmode>no</subpatchmode>
+   </settings>
+   <notes><![CDATA[]]></notes>
+   <windowPos>
+      <x>1540</x>
+      <y>77</y>
+      <width>1696</width>
+      <height>910</height>
+   </windowPos>
+</patch-1.0>
