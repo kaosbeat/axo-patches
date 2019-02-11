@@ -1,4 +1,12 @@
 <patch-1.0 appVersion="1.0.12">
+   <obj type="sss/osc/DX7" uuid="e374c425-dedd-4fdb-8cbd-0ca02256a33d" name="DX7_1" x="700" y="168">
+      <params>
+         <frac32.s.map name="pitch" onParent="true" value="11.0"/>
+         <int32 name="algo" onParent="true" value="6"/>
+         <int32 name="OS" onParent="true" value="1"/>
+      </params>
+      <attribs/>
+   </obj>
    <obj type="patch/inlet f" uuid="5c585d2dcd9c05631e345ac09626a22a639d7c13" name="ptch" x="0" y="196">
       <params/>
       <attribs/>
@@ -16,14 +24,6 @@
          <spinner attributeName="cc" value="29"/>
          <spinner attributeName="default" value="64"/>
       </attribs>
-   </obj>
-   <obj type="sss/osc/DX7" uuid="e374c425-dedd-4fdb-8cbd-0ca02256a33d" name="DX7_1" x="532" y="210">
-      <params>
-         <frac32.s.map name="pitch" onParent="true" value="11.0"/>
-         <int32 name="algo" onParent="true" value="6"/>
-         <int32 name="OS" onParent="true" value="1"/>
-      </params>
-      <attribs/>
    </obj>
    <obj type="patch/outlet a" uuid="abd8c5fd3b0524a6630f65cad6dc27f6c58e2a3e" name="outlet_1" x="784" y="224">
       <params/>
@@ -210,12 +210,11 @@
       <NPresetEntries>32</NPresetEntries>
       <NModulationSources>8</NModulationSources>
       <NModulationTargetsPerSource>8</NModulationTargetsPerSource>
-      <Author></Author>
    </settings>
    <notes><![CDATA[]]></notes>
    <windowPos>
-      <x>1868</x>
-      <y>201</y>
+      <x>2339</x>
+      <y>156</y>
       <width>970</width>
       <height>769</height>
    </windowPos>
