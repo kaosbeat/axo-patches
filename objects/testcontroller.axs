@@ -120,6 +120,10 @@
          <source obj="note_2" outlet="noteOn"/>
          <dest obj="load_2" inlet="trig"/>
       </net>
+      <net>
+         <source obj="note_4" outlet="noteOn"/>
+         <dest obj="load_4" inlet="trig"/>
+      </net>
    </nets>
    <settings>
       <subpatchmode>normal</subpatchmode>
@@ -128,7 +132,6 @@
       <NPresetEntries>32</NPresetEntries>
       <NModulationSources>8</NModulationSources>
       <NModulationTargetsPerSource>8</NModulationTargetsPerSource>
-      <Author></Author>
    </settings>
    <notes><![CDATA[]]></notes>
    <windowPos>

@@ -1,25 +1,25 @@
 <patch-1.0 appVersion="1.0.12">
-   <obj type="lfo/sine" uuid="75f7330c26a13953215dccc3b7b9008545c9daa9" name="sine_1" x="224" y="42">
+   <obj type="lfo/sine" uuid="75f7330c26a13953215dccc3b7b9008545c9daa9" name="sine_1" x="28" y="28">
       <params>
-         <frac32.s.map name="pitch" value="2.0"/>
+         <frac32.s.map name="pitch" MidiCC="13" value="39.0"/>
       </params>
       <attribs/>
    </obj>
-   <obj type="math/*c" uuid="7d5ef61c3bcd571ee6bbd8437ef3612125dfb225" name="*c_1" x="322" y="42">
+   <obj type="math/*c" uuid="7d5ef61c3bcd571ee6bbd8437ef3612125dfb225" name="*c_1" x="126" y="28">
       <params>
-         <frac32.u.map name="amp" value="2.5"/>
+         <frac32.u.map name="amp" MidiCC="14" value="8.5"/>
       </params>
       <attribs/>
    </obj>
-   <patcher type="patch/patcher" uuid="f3339e47-3198-4e7a-bbd8-f8c266b4a911" name="patcher_1" x="420" y="42">
+   <patcher type="patch/patcher" uuid="c2756596-3b9e-4435-8f11-5ba35352a402" name="patcher_1" x="420" y="42">
       <params>
-         <frac32.s.map name="adsr_1:a" value="-64.0"/>
-         <frac32.s.map name="adsr_1:d" value="29.0"/>
-         <frac32.u.map name="adsr_1:s" value="22.0"/>
-         <frac32.s.map name="adsr_1:r" value="35.0"/>
-         <frac32.s.map name="ZDF_1:pitch" value="26.0"/>
-         <frac32.u.map name="ZDF_1:Q" value="18.5"/>
-         <frac32.u.map name="mix_3:gain1" value="41.5"/>
+         <frac32.s.map name="adsr_1:a" MidiCC="19" value="6.0"/>
+         <frac32.s.map name="adsr_1:d" MidiCC="35" value="-8.0"/>
+         <frac32.u.map name="adsr_1:s" MidiCC="55" value="32.0"/>
+         <frac32.s.map name="adsr_1:r" MidiCC="83" value="37.0"/>
+         <frac32.s.map name="ZDF_1:pitch" MidiCC="15" value="45.0"/>
+         <frac32.u.map name="ZDF_1:Q" MidiCC="16" value="23.5"/>
+         <frac32.u.map name="mix_3:gain1" value="24.5"/>
       </params>
       <attribs>
          <combo attributeName="poly" selection="8"/>
@@ -194,10 +194,26 @@
       <params/>
       <attribs/>
    </obj>
+   <obj type="math/+" uuid="44553fdc8628c67ab535845ed1be304ad6c9553b" name="+_1" x="238" y="98">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="lfo/saw down" uuid="d831d6b82b3d559c3ba7b1b487fb292d7998fd08" name="saw_1" x="28" y="126">
+      <params>
+         <frac32.s.map name="pitch" MidiCC="29" value="-64.0"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="math/*c" uuid="7d5ef61c3bcd571ee6bbd8437ef3612125dfb225" name="*c_2" x="126" y="126">
+      <params>
+         <frac32.u.map name="amp" MidiCC="30" value="0.0"/>
+      </params>
+      <attribs/>
+   </obj>
    <obj type="midi/in/cc" uuid="6096d217701cbdf251a9ab6ba029af78c5722a56" name="cc_2" x="602" y="154">
       <params/>
       <attribs>
-         <spinner attributeName="cc" value="7"/>
+         <spinner attributeName="cc" value="84"/>
          <spinner attributeName="default" value="82"/>
       </attribs>
    </obj>
@@ -205,19 +221,35 @@
       <params/>
       <attribs/>
    </obj>
+   <obj type="math/+" uuid="44553fdc8628c67ab535845ed1be304ad6c9553b" name="+_2" x="238" y="210">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="lfo/square" uuid="de6909eb64db13af5b43f979a4c130024b3a4793" name="square_1" x="28" y="238">
+      <params>
+         <frac32.s.map name="pitch" MidiCC="49" value="0.0"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="math/*c" uuid="7d5ef61c3bcd571ee6bbd8437ef3612125dfb225" name="*c_3" x="126" y="238">
+      <params>
+         <frac32.u.map name="amp" MidiCC="50" value="0.0"/>
+      </params>
+      <attribs/>
+   </obj>
    <comment type="patch/comment" x="602" y="266" text="Volume CC"/>
    <obj type="testcontroller" uuid="6fa088de-1c71-4f37-8a38-a8cca24456a1" name="obj_1" x="644" y="336">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="rbrt/midi/in/monitor" uuid="64b3d36e-97ab-4b18-91f7-ff611e14fd7a" name="monitor_1" x="322" y="448">
       <params/>
       <attribs/>
    </obj>
    <nets>
       <net>
          <source obj="*c_1" outlet="out"/>
-         <dest obj="patcher_1" inlet="inlet_1"/>
-      </net>
-      <net>
-         <source obj="sine_1" outlet="wave"/>
-         <dest obj="*c_1" inlet="in"/>
+         <dest obj="+_1" inlet="in1"/>
       </net>
       <net>
          <source obj="cc_2" outlet="midiCC"/>
@@ -237,14 +269,42 @@
          <dest obj="vcaST_1" inlet="a1"/>
          <dest obj="vcaST_1" inlet="a2"/>
       </net>
+      <net>
+         <source obj="sine_1" outlet="wave"/>
+         <dest obj="*c_1" inlet="in"/>
+      </net>
+      <net>
+         <source obj="+_1" outlet="out"/>
+         <dest obj="+_2" inlet="in1"/>
+      </net>
+      <net>
+         <source obj="saw_1" outlet="wave"/>
+         <dest obj="*c_2" inlet="in"/>
+      </net>
+      <net>
+         <source obj="*c_2" outlet="out"/>
+         <dest obj="+_1" inlet="in2"/>
+      </net>
+      <net>
+         <source obj="square_1" outlet="wave"/>
+         <dest obj="*c_3" inlet="in"/>
+      </net>
+      <net>
+         <source obj="+_2" outlet="out"/>
+         <dest obj="patcher_1" inlet="inlet_1"/>
+      </net>
+      <net>
+         <source obj="*c_3" outlet="out"/>
+         <dest obj="+_2" inlet="in2"/>
+      </net>
    </nets>
    <settings>
       <subpatchmode>no</subpatchmode>
    </settings>
    <notes><![CDATA[]]></notes>
    <windowPos>
-      <x>0</x>
-      <y>250</y>
+      <x>1679</x>
+      <y>211</y>
       <width>1440</width>
       <height>650</height>
    </windowPos>

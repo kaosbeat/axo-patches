@@ -13,29 +13,79 @@
       </params>
       <attribs/>
    </obj>
-   <obj type="midi/in/pgm" uuid="6165409901fee4a0781b41bac3513f51c2120d67" name="pgm_1" x="210" y="0">
+   <obj type="disp/chart b" uuid="d2bdf496f96ee521628490a038411210fbe29b15" name="chart_1" x="420" y="98">
       <params/>
       <attribs/>
    </obj>
-   <obj type="patch/load i" uuid="b79124f5b7d1e8b39e187677ddab6260ce8c60a3" name="load_1" x="294" y="0">
-      <params/>
-      <attribs/>
-   </obj>
-   <patcher type="patch/patcher" uuid="7c9b5fe5-dc71-4f17-9efe-e5d8d34fd339" name="patcher_1" x="0" y="168">
+   <patcher type="patch/patcher" uuid="25810baa-2e1f-47f5-84b6-1839fef2b8de" name="patcher_1" x="0" y="168">
       <params>
          <frac32.u.map name="VIBRATO" value="29.0"/>
-         <frac32.s.map name="saw80_1:pitch" value="0.0"/>
-         <frac32.u.map name="saw80_1:pulse" value="22.0"/>
-         <frac32.s.map name="cutoffEnv:a" value="-64.0"/>
-         <frac32.s.map name="cutoffEnv:d" value="19.0"/>
-         <frac32.u.map name="cutoffEnv:s" value="8.0"/>
-         <frac32.s.map name="cutoffEnv:r" value="36.0"/>
-         <frac32.u.map name="HP Mod" value="34.5"/>
-         <frac32.s.map name="HPF:pitch" value="-64.0"/>
-         <frac32.u.map name="HPF:Q" value="0.0"/>
+         <frac32.s.map name="saw80_1:pitch" value="0.0">
+            <presets>
+               <preset index="1">
+                  <f v="0.0"/>
+               </preset>
+            </presets>
+         </frac32.s.map>
+         <frac32.u.map name="saw80_1:pulse" value="25.5"/>
+         <frac32.s.map name="cutoffEnv:a" MidiCC="18" value="-12.0">
+            <presets>
+               <preset index="1">
+                  <f v="-21.0"/>
+               </preset>
+            </presets>
+         </frac32.s.map>
+         <frac32.s.map name="cutoffEnv:d" MidiCC="34" value="7.0">
+            <presets>
+               <preset index="1">
+                  <f v="-64.0"/>
+               </preset>
+            </presets>
+         </frac32.s.map>
+         <frac32.u.map name="cutoffEnv:s" MidiCC="54" value="37.0">
+            <presets>
+               <preset index="1">
+                  <f v="8.0"/>
+               </preset>
+            </presets>
+         </frac32.u.map>
+         <frac32.s.map name="cutoffEnv:r" MidiCC="82" value="-64.0">
+            <presets>
+               <preset index="1">
+                  <f v="28.0"/>
+               </preset>
+            </presets>
+         </frac32.s.map>
+         <frac32.u.map name="HP Mod" value="32.5"/>
+         <frac32.s.map name="HPF:pitch" MidiCC="13" value="-15.0">
+            <presets>
+               <preset index="1">
+                  <f v="-15.0"/>
+               </preset>
+            </presets>
+         </frac32.s.map>
+         <frac32.u.map name="HPF:Q" MidiCC="49" value="11.0">
+            <presets>
+               <preset index="1">
+                  <f v="22.5"/>
+               </preset>
+            </presets>
+         </frac32.u.map>
          <frac32.u.map name="LP Mod" value="39.5"/>
-         <frac32.s.map name="LPF:pitch" value="-12.0"/>
-         <frac32.u.map name="LPF:Q" value="0.0"/>
+         <frac32.s.map name="LPF:pitch" MidiCC="29" value="41.0">
+            <presets>
+               <preset index="1">
+                  <f v="41.0"/>
+               </preset>
+            </presets>
+         </frac32.s.map>
+         <frac32.u.map name="LPF:Q" MidiCC="49" value="11.0">
+            <presets>
+               <preset index="1">
+                  <f v="13.0"/>
+               </preset>
+            </presets>
+         </frac32.u.map>
          <frac32.u.map name="LEVEL" value="64.0"/>
       </params>
       <attribs>
@@ -299,21 +349,75 @@
          </windowPos>
       </subpatch>
    </patcher>
-   <patcher type="patch/patcher" uuid="fd49f10d-f3e4-4dc9-8826-f2ffd952802b" name="patcher_2" x="126" y="168">
+   <patcher type="patch/patcher" uuid="78cc88d4-3c48-438f-9baa-68699e9a8be0" name="patcher_2" x="126" y="168">
       <params>
          <frac32.u.map name="VIBRATO" value="64.0"/>
-         <frac32.s.map name="saw80_1:pitch" value="7.01954984664917"/>
+         <frac32.s.map name="saw80_1:pitch" value="7.01954984664917">
+            <presets>
+               <preset index="1">
+                  <f v="7.01954984664917"/>
+               </preset>
+            </presets>
+         </frac32.s.map>
          <frac32.u.map name="saw80_1:pulse" value="19.5"/>
-         <frac32.s.map name="cutoffEnv:a" value="-64.0"/>
-         <frac32.s.map name="cutoffEnv:d" value="18.0"/>
-         <frac32.u.map name="cutoffEnv:s" value="13.0"/>
-         <frac32.s.map name="cutoffEnv:r" value="16.0"/>
-         <frac32.u.map name="HP Mod" value="46.0"/>
-         <frac32.s.map name="HPF:pitch" value="-64.0"/>
-         <frac32.u.map name="HPF:Q" value="11.0"/>
+         <frac32.s.map name="cutoffEnv:a" MidiCC="19" value="-22.0">
+            <presets>
+               <preset index="1">
+                  <f v="-22.0"/>
+               </preset>
+            </presets>
+         </frac32.s.map>
+         <frac32.s.map name="cutoffEnv:d" MidiCC="35" value="18.0">
+            <presets>
+               <preset index="1">
+                  <f v="18.0"/>
+               </preset>
+            </presets>
+         </frac32.s.map>
+         <frac32.u.map name="cutoffEnv:s" value="13.0">
+            <presets>
+               <preset index="1">
+                  <f v="13.0"/>
+               </preset>
+            </presets>
+         </frac32.u.map>
+         <frac32.s.map name="cutoffEnv:r" MidiCC="83" value="63.99999952316284">
+            <presets>
+               <preset index="1">
+                  <f v="14.0"/>
+               </preset>
+            </presets>
+         </frac32.s.map>
+         <frac32.u.map name="HP Mod" value="64.0"/>
+         <frac32.s.map name="HPF:pitch" MidiCC="14" value="-47.0">
+            <presets>
+               <preset index="1">
+                  <f v="-22.0"/>
+               </preset>
+            </presets>
+         </frac32.s.map>
+         <frac32.u.map name="HPF:Q" MidiCC="50" value="12.0">
+            <presets>
+               <preset index="1">
+                  <f v="11.0"/>
+               </preset>
+            </presets>
+         </frac32.u.map>
          <frac32.u.map name="LP Mod" value="47.5"/>
-         <frac32.s.map name="LPF:pitch" value="-18.0"/>
-         <frac32.u.map name="LPF:Q" value="11.0"/>
+         <frac32.s.map name="LPF:pitch" MidiCC="30" value="-20.0">
+            <presets>
+               <preset index="1">
+                  <f v="-18.0"/>
+               </preset>
+            </presets>
+         </frac32.s.map>
+         <frac32.u.map name="LPF:Q" MidiCC="50" value="12.0">
+            <presets>
+               <preset index="1">
+                  <f v="11.0"/>
+               </preset>
+            </presets>
+         </frac32.u.map>
          <frac32.u.map name="LEVEL" value="64.0"/>
       </params>
       <attribs>
@@ -589,13 +693,13 @@
    </obj>
    <obj type="lfo/sine" uuid="75f7330c26a13953215dccc3b7b9008545c9daa9" name="sine_4" x="392" y="308">
       <params>
-         <frac32.s.map name="pitch" value="-43.0"/>
+         <frac32.s.map name="pitch" value="-18.0"/>
       </params>
       <attribs/>
    </obj>
    <obj type="math/*c" uuid="7d5ef61c3bcd571ee6bbd8437ef3612125dfb225" name="*c_1" x="490" y="308">
       <params>
-         <frac32.u.map name="amp" value="8.5"/>
+         <frac32.u.map name="amp" value="11.0"/>
       </params>
       <attribs/>
    </obj>
@@ -609,12 +713,12 @@
       <params/>
       <attribs>
          <objref attributeName="delayname" obj="write_1"/>
-         <combo attributeName="interpol" selection="2pt"/>
+         <combo attributeName="interpol" selection="3pt"/>
       </attribs>
    </obj>
    <obj type="filter/hp1" uuid="abea7276611b289bed35b80345a6bc4efd4d9a4e" name="hp1_1" x="812" y="308">
       <params>
-         <frac32.s.map name="freq" value="-11.0"/>
+         <frac32.s.map name="freq" value="38.0"/>
       </params>
       <attribs/>
    </obj>
@@ -622,6 +726,10 @@
       <params>
          <frac32.s.map name="freq" value="64.0"/>
       </params>
+      <attribs/>
+   </obj>
+   <obj type="rbrt/midi/in/monitor" uuid="64b3d36e-97ab-4b18-91f7-ff611e14fd7a" name="monitor_1" x="1204" y="308">
+      <params/>
       <attribs/>
    </obj>
    <obj type="delay/write sdram" uuid="5ae03f8d7b815edcfc40585d8bbac2ed48460fba" name="write_2" x="280" y="406">
@@ -632,13 +740,13 @@
    </obj>
    <obj type="lfo/sine" uuid="75f7330c26a13953215dccc3b7b9008545c9daa9" name="sine_5" x="392" y="406">
       <params>
-         <frac32.s.map name="pitch" value="-48.0"/>
+         <frac32.s.map name="pitch" value="-52.0"/>
       </params>
       <attribs/>
    </obj>
    <obj type="math/*c" uuid="7d5ef61c3bcd571ee6bbd8437ef3612125dfb225" name="*c_2" x="490" y="406">
       <params>
-         <frac32.u.map name="amp" value="14.0"/>
+         <frac32.u.map name="amp" value="12.0"/>
       </params>
       <attribs/>
    </obj>
@@ -652,12 +760,12 @@
       <params/>
       <attribs>
          <objref attributeName="delayname" obj="write_2"/>
-         <combo attributeName="interpol" selection="2pt"/>
+         <combo attributeName="interpol" selection="3pt"/>
       </attribs>
    </obj>
    <obj type="filter/lp1" uuid="1b1fd7085e44d2b7b80b59b8d68796b909c1b2cc" name="lp1_2" x="812" y="406">
       <params>
-         <frac32.s.map name="freq" value="63.0"/>
+         <frac32.s.map name="freq" value="60.0"/>
       </params>
       <attribs/>
    </obj>
@@ -669,7 +777,7 @@
    </obj>
    <obj type="lfo/sine" uuid="75f7330c26a13953215dccc3b7b9008545c9daa9" name="sine_6" x="392" y="504">
       <params>
-         <frac32.s.map name="pitch" value="-51.859999656677246"/>
+         <frac32.s.map name="pitch" value="-28.0"/>
       </params>
       <attribs/>
    </obj>
@@ -689,25 +797,25 @@
       <params/>
       <attribs>
          <objref attributeName="delayname" obj="write_3"/>
-         <combo attributeName="interpol" selection="2pt"/>
+         <combo attributeName="interpol" selection="3pt"/>
       </attribs>
    </obj>
    <obj type="filter/lp1" uuid="1b1fd7085e44d2b7b80b59b8d68796b909c1b2cc" name="lp1_3" x="812" y="504">
       <params>
-         <frac32.s.map name="freq" value="61.0"/>
+         <frac32.s.map name="freq" value="46.0"/>
       </params>
       <attribs/>
    </obj>
    <obj type="ctrl/dial p" uuid="cc5d2846c3d50e425f450c4b9851371b54f4d674" name="DryWet" x="1148" y="504">
       <params>
-         <frac32.u.map name="value" value="64.0"/>
+         <frac32.u.map name="value" MidiCC="20" value="0.0"/>
       </params>
       <attribs/>
    </obj>
    <obj type="midi/in/cc" uuid="6096d217701cbdf251a9ab6ba029af78c5722a56" name="cc_2" x="1232" y="504">
       <params/>
       <attribs>
-         <spinner attributeName="cc" value="7"/>
+         <spinner attributeName="cc" value="84"/>
          <spinner attributeName="default" value="82"/>
       </attribs>
    </obj>
@@ -723,13 +831,13 @@
    </obj>
    <obj type="lfo/sine" uuid="75f7330c26a13953215dccc3b7b9008545c9daa9" name="sine_7" x="392" y="602">
       <params>
-         <frac32.s.map name="pitch" value="-51.859999656677246"/>
+         <frac32.s.map name="pitch" value="-16.0"/>
       </params>
       <attribs/>
    </obj>
    <obj type="math/*c" uuid="7d5ef61c3bcd571ee6bbd8437ef3612125dfb225" name="*c_4" x="490" y="602">
       <params>
-         <frac32.u.map name="amp" value="7.0"/>
+         <frac32.u.map name="amp" value="6.0"/>
       </params>
       <attribs/>
    </obj>
@@ -743,18 +851,18 @@
       <params/>
       <attribs>
          <objref attributeName="delayname" obj="write_4"/>
-         <combo attributeName="interpol" selection="2pt"/>
+         <combo attributeName="interpol" selection="3pt"/>
       </attribs>
    </obj>
    <obj type="filter/hp1" uuid="abea7276611b289bed35b80345a6bc4efd4d9a4e" name="hp1_2" x="812" y="602">
       <params>
-         <frac32.s.map name="freq" value="3.0"/>
+         <frac32.s.map name="freq" value="37.0"/>
       </params>
       <attribs/>
    </obj>
    <obj type="filter/lp1" uuid="1b1fd7085e44d2b7b80b59b8d68796b909c1b2cc" name="lp1_5" x="910" y="602">
       <params>
-         <frac32.s.map name="freq" value="59.0"/>
+         <frac32.s.map name="freq" value="60.0"/>
       </params>
       <attribs/>
    </obj>
@@ -913,6 +1021,7 @@
       <net>
          <source obj="bend_1" outlet="bend"/>
          <dest obj="b4b_1" inlet="in"/>
+         <dest obj="chart_1" inlet="in"/>
       </net>
       <net>
          <source obj="b4b_1" outlet="out"/>
@@ -931,14 +1040,6 @@
       <net>
          <source obj="read_4" outlet="out"/>
          <dest obj="hp1_2" inlet="in"/>
-      </net>
-      <net>
-         <source obj="pgm_1" outlet="o"/>
-         <dest obj="load_1" inlet="i"/>
-      </net>
-      <net>
-         <source obj="pgm_1" outlet="trig"/>
-         <dest obj="load_1" inlet="trig"/>
       </net>
       <net>
          <source obj="cc_2" outlet="midiCC"/>
@@ -965,7 +1066,7 @@
    <windowPos>
       <x>1440</x>
       <y>23</y>
-      <width>796</width>
+      <width>1732</width>
       <height>1057</height>
    </windowPos>
 </patch-1.0>

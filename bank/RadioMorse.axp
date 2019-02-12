@@ -15,15 +15,21 @@
    </obj>
    <obj type="tiar/kfunc/b16u" uuid="16163bcc-ca4b-430b-a01f-cd0cfaad394c" name="b16u_1" x="322" y="322">
       <params>
-         <frac32.u.mapvsl name="p0" value="48.0"/>
-         <frac32.u.mapvsl name="p1" value="48.0"/>
+         <frac32.u.mapvsl name="p0" value="48.0">
+            <presets>
+               <preset index="1">
+                  <f v="48.0"/>
+               </preset>
+            </presets>
+         </frac32.u.mapvsl>
+         <frac32.u.mapvsl name="p1" value="57.0"/>
          <frac32.u.mapvsl name="p2" value="48.0"/>
          <frac32.u.mapvsl name="p3" value="48.0"/>
          <frac32.u.mapvsl name="p4" value="58.0"/>
          <frac32.u.mapvsl name="p5" value="55.5"/>
          <frac32.u.mapvsl name="p6" value="50.5"/>
          <frac32.u.mapvsl name="p7" value="48.5"/>
-         <frac32.u.mapvsl name="p8" value="48.0"/>
+         <frac32.u.mapvsl name="p8" value="52.0"/>
          <frac32.u.mapvsl name="p9" value="48.0"/>
          <frac32.u.mapvsl name="p10" value="48.0"/>
          <frac32.u.mapvsl name="p11" value="48.0"/>
@@ -35,7 +41,7 @@
       </params>
       <attribs/>
    </obj>
-   <patcher type="patch/patcher" uuid="d4cf8c70-0a09-4426-90cb-c8ad36907a5e" name="patcher_1" x="644" y="322">
+   <patcher type="patch/patcher" uuid="e1bd8f20-33c5-45ac-8a53-8f0fc0eb2b8e" name="patcher_1" x="644" y="322">
       <params>
          <frac32.u.map name="hp1_1" value="35.0"/>
       </params>
@@ -337,6 +343,16 @@
       </params>
       <attribs/>
    </obj>
+   <obj type="ctrl/dial p" uuid="cc5d2846c3d50e425f450c4b9851371b54f4d674" name="dial_1" x="1386" y="616">
+      <params>
+         <frac32.u.map name="value" MidiCC="84" value="19.0"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="gain/vca" uuid="a9f2dcd18043e2f47364e45cb8814f63c2a37c0d" name="vca_1" x="1484" y="644">
+      <params/>
+      <attribs/>
+   </obj>
    <obj type="lfo/sine" uuid="75f7330c26a13953215dccc3b7b9008545c9daa9" name="sine_3" x="14" y="700">
       <params>
          <frac32.s.map name="pitch" value="-36.359999656677246"/>
@@ -364,7 +380,7 @@
    </obj>
    <obj type="math/*c" uuid="7d5ef61c3bcd571ee6bbd8437ef3612125dfb225" name="*c_5" x="392" y="700">
       <params>
-         <frac32.u.map name="amp" value="0.029999732971191406"/>
+         <frac32.u.map name="amp" value="29.02999973297119"/>
       </params>
       <attribs/>
    </obj>
@@ -400,7 +416,7 @@
    </obj>
    <obj type="tiar/fx/APNoodle" uuid="3674e423-ca15-4925-952a-6e150aa652da" name="APNoodle_1" x="1134" y="700">
       <params>
-         <frac32.s.map name="g" value="39.0"/>
+         <frac32.s.map name="g" value="-11.0"/>
       </params>
       <attribs/>
    </obj>
@@ -409,6 +425,10 @@
          <frac32.u.map name="gain1" value="12.5"/>
          <frac32.u.map name="gain2" value="4.0"/>
       </params>
+      <attribs/>
+   </obj>
+   <obj type="gain/vca" uuid="a9f2dcd18043e2f47364e45cb8814f63c2a37c0d" name="vca_2" x="1484" y="714">
+      <params/>
       <attribs/>
    </obj>
    <obj type="audio/out stereo" uuid="a1ca7a567f535acc21055669829101d3ee7f0189" name="out_2" x="1554" y="714">
@@ -592,8 +612,8 @@
       </net>
       <net>
          <source obj="mix_2" outlet="out"/>
-         <dest obj="out_2" inlet="left"/>
          <dest obj="mix_4" inlet="in2"/>
+         <dest obj="vca_1" inlet="a"/>
       </net>
       <net>
          <source obj="APNoodle_2" outlet="y"/>
@@ -653,8 +673,8 @@
       </net>
       <net>
          <source obj="mix_4" outlet="out"/>
-         <dest obj="out_2" inlet="right"/>
          <dest obj="mix_2" inlet="in2"/>
+         <dest obj="vca_2" inlet="a"/>
       </net>
       <net>
          <source obj="allpass_1" outlet="out"/>
@@ -684,15 +704,28 @@
          <source obj="triphase_vlfo_1" outlet="phi 0"/>
          <dest obj="b16u_1" inlet="in"/>
       </net>
+      <net>
+         <source obj="vca_1" outlet="o"/>
+         <dest obj="out_2" inlet="left"/>
+      </net>
+      <net>
+         <source obj="vca_2" outlet="o"/>
+         <dest obj="out_2" inlet="right"/>
+      </net>
+      <net>
+         <source obj="dial_1" outlet="out"/>
+         <dest obj="vca_1" inlet="v"/>
+         <dest obj="vca_2" inlet="v"/>
+      </net>
    </nets>
    <settings>
       <subpatchmode>no</subpatchmode>
    </settings>
    <notes><![CDATA[]]></notes>
    <windowPos>
-      <x>0</x>
-      <y>233</y>
-      <width>1202</width>
-      <height>644</height>
+      <x>1725</x>
+      <y>23</y>
+      <width>1456</width>
+      <height>998</height>
    </windowPos>
 </patch-1.0>
