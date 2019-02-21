@@ -1,7 +1,7 @@
 <patch-1.0 appVersion="1.0.12">
    <obj type="ctrl/dial p" uuid="cc5d2846c3d50e425f450c4b9851371b54f4d674" name="dial_9" x="490" y="28">
       <params>
-         <frac32.u.map name="value" MidiCC="13" value="26.0"/>
+         <frac32.u.map name="value" MidiCC="13" value="1.0"/>
       </params>
       <attribs/>
    </obj>
@@ -16,15 +16,15 @@
    <obj type="audio/inconfig" uuid="9a80ef3c19f2a8f81da3a3b7c1c44d18126b97d9" name="adcconfig1" x="14" y="70">
       <params/>
       <attribs>
-         <combo attributeName="gain" selection="0dB"/>
+         <combo attributeName="gain" selection="-12dB"/>
          <combo attributeName="boost" selection="0dB"/>
          <combo attributeName="mode" selection="Stereo"/>
       </attribs>
    </obj>
    <obj type="sptnk/effect/noise gate" uuid="d49f2e43-3acd-4f41-9d78-40beab399c69" name="obj_2" x="140" y="70">
       <params>
-         <frac32.u.map name="Treshold" MidiCC="36" value="41.0"/>
-         <frac32.s.map name="envelope:a" MidiCC="19" value="-31.0"/>
+         <frac32.u.map name="Treshold" MidiCC="20" value="11.5"/>
+         <frac32.s.map name="envelope:a" MidiCC="19" value="-30.0"/>
          <frac32.s.map name="envelope:d" MidiCC="35" value="6.0"/>
       </params>
       <attribs/>
@@ -54,7 +54,7 @@
    </obj>
    <obj type="ctrl/dial p" uuid="cc5d2846c3d50e425f450c4b9851371b54f4d674" name="dial_10" x="490" y="126">
       <params>
-         <frac32.u.map name="value" MidiCC="31" value="0.0"/>
+         <frac32.u.map name="value" MidiCC="31" value="23.0"/>
       </params>
       <attribs/>
    </obj>
@@ -74,19 +74,19 @@
    </obj>
    <obj type="mix/mix 1" uuid="e8f482af5b1ec4a2e9cf8ac7ce09e7c0e43cea08" name="mix_1" x="1372" y="154">
       <params>
-         <frac32.u.map name="gain1" value="32.0"/>
+         <frac32.u.map name="gain1" value="0.0"/>
       </params>
       <attribs/>
    </obj>
-   <obj type="drj/audio/out_stereo_vol" uuid="awca1a567f535acc21055669829101d3ee7f0189" name="out_stereo_vol_1" x="1484" y="154">
+   <obj type="drj/audio/out_stereo_vol" uuid="awca1a567f535acc21055669829101d3ee7f0189" name="out_stereo_vol_1" x="1540" y="168">
       <params>
-         <frac32.u.map name="volume" MidiCC="84" value="15.0"/>
+         <frac32.u.map name="volume" MidiCC="84" value="35.5"/>
       </params>
       <attribs/>
    </obj>
    <obj type="ctrl/dial p" uuid="cc5d2846c3d50e425f450c4b9851371b54f4d674" name="dial_7" x="490" y="238">
       <params>
-         <frac32.u.map name="value" MidiCC="15" value="23.5"/>
+         <frac32.u.map name="value" MidiCC="15" value="44.0"/>
       </params>
       <attribs/>
    </obj>
@@ -106,8 +106,8 @@
    </obj>
    <obj type="sptnk/effect/noise gate" uuid="d49f2e43-3acd-4f41-9d78-40beab399c69" name="obj_3" x="140" y="280">
       <params>
-         <frac32.u.map name="Treshold" MidiCC="36" value="41.0"/>
-         <frac32.s.map name="envelope:a" MidiCC="19" value="-31.0"/>
+         <frac32.u.map name="Treshold" MidiCC="36" value="15.0"/>
+         <frac32.s.map name="envelope:a" MidiCC="19" value="-30.0"/>
          <frac32.s.map name="envelope:d" MidiCC="35" value="6.0"/>
       </params>
       <attribs/>
@@ -124,6 +124,13 @@
    </obj>
    <obj type="disp/scope 128 b trig" uuid="11747dcd1dc9afe4919f537c861fb18b80b4e4e" name="scope_3" x="1190" y="280">
       <params/>
+      <attribs/>
+   </obj>
+   <obj type="mix/mix 2" uuid="30c04239c88e09d3fa5c333b784ecf54f1b0e268" name="mix_4" x="1400" y="280">
+      <params>
+         <frac32.u.map name="gain1" MidiCC="82" value="48.0"/>
+         <frac32.u.map name="gain2" MidiCC="83" value="29.5"/>
+      </params>
       <attribs/>
    </obj>
    <obj type="ctrl/button" uuid="ef3d13774349df85aa9bfecf30dbc91ab8488b3f" name="button_1" x="574" y="294">
@@ -146,7 +153,7 @@
    </obj>
    <obj type="ctrl/dial b" uuid="862e7d7f29093cb1ce4aed72244d118ad4d46692" name="dial_3" x="490" y="448">
       <params>
-         <frac32.s.map name="value" MidiCC="14" value="-15.0"/>
+         <frac32.s.map name="value" MidiCC="14" value="-13.0"/>
       </params>
       <attribs/>
    </obj>
@@ -160,7 +167,7 @@
    </obj>
    <obj type="ctrl/dial b" uuid="862e7d7f29093cb1ce4aed72244d118ad4d46692" name="dial_4" x="490" y="532">
       <params>
-         <frac32.s.map name="value" MidiCC="30" value="5.0"/>
+         <frac32.s.map name="value" MidiCC="30" value="26.0"/>
       </params>
       <attribs/>
    </obj>
@@ -180,7 +187,7 @@
    </obj>
    <obj type="ctrl/dial p" uuid="cc5d2846c3d50e425f450c4b9851371b54f4d674" name="dial_11" x="490" y="770">
       <params>
-         <frac32.u.map name="value" MidiCC="13" value="15.0"/>
+         <frac32.u.map name="value" MidiCC="16" value="47.5"/>
       </params>
       <attribs/>
    </obj>
@@ -204,7 +211,7 @@
    </obj>
    <obj type="ctrl/dial p" uuid="cc5d2846c3d50e425f450c4b9851371b54f4d674" name="dial_12" x="490" y="868">
       <params>
-         <frac32.u.map name="value" MidiCC="31" value="0.0"/>
+         <frac32.u.map name="value" MidiCC="34" value="10.5"/>
       </params>
       <attribs/>
    </obj>
@@ -220,7 +227,7 @@
    </obj>
    <obj type="ctrl/dial p" uuid="cc5d2846c3d50e425f450c4b9851371b54f4d674" name="dial_13" x="490" y="980">
       <params>
-         <frac32.u.map name="value" MidiCC="15" value="23.5"/>
+         <frac32.u.map name="value" MidiCC="18" value="43.0"/>
       </params>
       <attribs/>
    </obj>
@@ -246,7 +253,7 @@
    </obj>
    <obj type="ctrl/dial p" uuid="cc5d2846c3d50e425f450c4b9851371b54f4d674" name="dial_14" x="490" y="1092">
       <params>
-         <frac32.u.map name="value" MidiCC="29" value="11.0"/>
+         <frac32.u.map name="value" MidiCC="32" value="11.0"/>
       </params>
       <attribs/>
    </obj>
@@ -258,7 +265,7 @@
    </obj>
    <obj type="ctrl/dial b" uuid="862e7d7f29093cb1ce4aed72244d118ad4d46692" name="dial_6" x="490" y="1190">
       <params>
-         <frac32.s.map name="value" MidiCC="14" value="-15.0"/>
+         <frac32.s.map name="value" MidiCC="17" value="0.0"/>
       </params>
       <attribs/>
    </obj>
@@ -268,13 +275,13 @@
    </obj>
    <obj type="ctrl/dial b" uuid="862e7d7f29093cb1ce4aed72244d118ad4d46692" name="dial_15" x="490" y="1274">
       <params>
-         <frac32.s.map name="value" MidiCC="30" value="5.0"/>
+         <frac32.s.map name="value" MidiCC="33" value="0.0"/>
       </params>
       <attribs/>
    </obj>
    <obj type="ctrl/dial b" uuid="862e7d7f29093cb1ce4aed72244d118ad4d46692" name="dial_16" x="490" y="1358">
       <params>
-         <frac32.s.map name="value" MidiCC="50" value="-21.0"/>
+         <frac32.s.map name="value" MidiCC="53" value="5.0"/>
       </params>
       <attribs/>
    </obj>
@@ -310,6 +317,7 @@
          <source obj="mix_2" outlet="out"/>
          <dest obj="scope_2" inlet="in"/>
          <dest obj="mix_1" inlet="bus_in"/>
+         <dest obj="mix_4" inlet="in1"/>
       </net>
       <net>
          <source obj="adc_1" outlet="left"/>
@@ -378,13 +386,9 @@
          <dest obj="scope_4" inlet="in"/>
       </net>
       <net>
-         <source obj="mix_1" outlet="out"/>
-         <dest obj="out_stereo_vol_1" inlet="left"/>
-         <dest obj="out_stereo_vol_1" inlet="right"/>
-      </net>
-      <net>
          <source obj="mix_3" outlet="out"/>
          <dest obj="mix_1" inlet="in1"/>
+         <dest obj="mix_4" inlet="in2"/>
       </net>
       <net>
          <source obj="div_3" outlet="out"/>
@@ -452,6 +456,11 @@
          <source obj="env_2" outlet="amp"/>
          <dest obj="vca_3" inlet="v"/>
       </net>
+      <net>
+         <source obj="mix_4" outlet="out"/>
+         <dest obj="out_stereo_vol_1" inlet="left"/>
+         <dest obj="out_stereo_vol_1" inlet="right"/>
+      </net>
    </nets>
    <settings>
       <subpatchmode>no</subpatchmode>
@@ -471,7 +480,7 @@ t*((t>>9|t>>13)&25&t>>6)
 //good one
 t*((t>>x|t>>y)&25&t>>z)]]></notes>
    <windowPos>
-      <x>1634</x>
+      <x>194</x>
       <y>23</y>
       <width>1726</width>
       <height>1043</height>
