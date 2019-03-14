@@ -1,0 +1,152 @@
+PCBNEW-LibModule-V1  
+# encoding utf-8
+Units mm
+$INDEX
+DIL16
+$EndINDEX
+$MODULE DIL16
+Po 0 0 0 15 00000000 00000000 ~~
+Li DIL16
+Cd 
+Sc 00000000
+At STD
+Op 0 0 0
+.SolderMask 0
+.SolderPaste 0
+T0 -0.254 -11.049 1 1 0 0.05 N V 21 "DIL16"
+T1 0 0 1 0.9 0 0.05 N H 21 "VAL**"
+DS 2.921 10.16 2.921 -10.16 0.127 21
+DS -2.921 -10.16 -2.921 10.16 0.127 21
+DS 2.921 10.16 -2.921 10.16 0.127 21
+DS 2.921 -10.16 1.016 -10.16 0.127 21
+DS -2.921 -10.16 -1.016 -10.16 0.127 21
+DA 0 -10.16 -1.016 -10.16 -1800 0.127 21
+$PAD
+Sh "1" C 1.3208 1.3208 0 0 0
+Dr 0.8128 0 0
+At STD N 00C0FFFF
+.SolderMask 0
+Ne 0 ""
+Po -3.81 -8.89
+$EndPAD
+$PAD
+Sh "2" C 1.3208 1.3208 0 0 0
+Dr 0.8128 0 0
+At STD N 00C0FFFF
+.SolderMask 0
+Ne 0 ""
+Po -3.81 -6.35
+$EndPAD
+$PAD
+Sh "7" C 1.3208 1.3208 0 0 0
+Dr 0.8128 0 0
+At STD N 00C0FFFF
+.SolderMask 0
+Ne 0 ""
+Po -3.81 6.35
+$EndPAD
+$PAD
+Sh "8" C 1.3208 1.3208 0 0 0
+Dr 0.8128 0 0
+At STD N 00C0FFFF
+.SolderMask 0
+Ne 0 ""
+Po -3.81 8.89
+$EndPAD
+$PAD
+Sh "3" C 1.3208 1.3208 0 0 0
+Dr 0.8128 0 0
+At STD N 00C0FFFF
+.SolderMask 0
+Ne 0 ""
+Po -3.81 -3.81
+$EndPAD
+$PAD
+Sh "4" C 1.3208 1.3208 0 0 0
+Dr 0.8128 0 0
+At STD N 00C0FFFF
+.SolderMask 0
+Ne 0 ""
+Po -3.81 -1.27
+$EndPAD
+$PAD
+Sh "6" C 1.3208 1.3208 0 0 0
+Dr 0.8128 0 0
+At STD N 00C0FFFF
+.SolderMask 0
+Ne 0 ""
+Po -3.81 3.81
+$EndPAD
+$PAD
+Sh "5" C 1.3208 1.3208 0 0 0
+Dr 0.8128 0 0
+At STD N 00C0FFFF
+.SolderMask 0
+Ne 0 ""
+Po -3.81 1.27
+$EndPAD
+$PAD
+Sh "9" C 1.3208 1.3208 0 0 0
+Dr 0.8128 0 0
+At STD N 00C0FFFF
+.SolderMask 0
+Ne 0 ""
+Po 3.81 8.89
+$EndPAD
+$PAD
+Sh "10" C 1.3208 1.3208 0 0 0
+Dr 0.8128 0 0
+At STD N 00C0FFFF
+.SolderMask 0
+Ne 0 ""
+Po 3.81 6.35
+$EndPAD
+$PAD
+Sh "11" C 1.3208 1.3208 0 0 0
+Dr 0.8128 0 0
+At STD N 00C0FFFF
+.SolderMask 0
+Ne 0 ""
+Po 3.81 3.81
+$EndPAD
+$PAD
+Sh "12" C 1.3208 1.3208 0 0 0
+Dr 0.8128 0 0
+At STD N 00C0FFFF
+.SolderMask 0
+Ne 0 ""
+Po 3.81 1.27
+$EndPAD
+$PAD
+Sh "13" C 1.3208 1.3208 0 0 0
+Dr 0.8128 0 0
+At STD N 00C0FFFF
+.SolderMask 0
+Ne 0 ""
+Po 3.81 -1.27
+$EndPAD
+$PAD
+Sh "14" C 1.3208 1.3208 0 0 0
+Dr 0.8128 0 0
+At STD N 00C0FFFF
+.SolderMask 0
+Ne 0 ""
+Po 3.81 -3.81
+$EndPAD
+$PAD
+Sh "15" C 1.3208 1.3208 0 0 0
+Dr 0.8128 0 0
+At STD N 00C0FFFF
+.SolderMask 0
+Ne 0 ""
+Po 3.81 -6.35
+$EndPAD
+$PAD
+Sh "16" C 1.3208 1.3208 0 0 0
+Dr 0.8128 0 0
+At STD N 00C0FFFF
+.SolderMask 0
+Ne 0 ""
+Po 3.81 -8.89
+$EndPAD
+$EndMODULE DIL16
