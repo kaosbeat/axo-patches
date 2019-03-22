@@ -93,6 +93,26 @@
       <params/>
       <attribs/>
    </obj>
+   <obj type="ctrl/dial p" uuid="cc5d2846c3d50e425f450c4b9851371b54f4d674" name="dial_21" x="1190" y="336">
+      <params>
+         <frac32.u.map name="value" value="64.0"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="math/&lt;&lt;" uuid="b03d8d8009c0480be0ccb29ed65933a82fa4a80f" name="&lt;&lt;_2" x="1274" y="350">
+      <params/>
+      <attribs>
+         <spinner attributeName="shift" value="1"/>
+      </attribs>
+   </obj>
+   <obj type="gain/vca" uuid="a9f2dcd18043e2f47364e45cb8814f63c2a37c0d" name="vca_6" x="1400" y="350">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="audio/out left" uuid="b11a3c09b2fdd575ea8212f2ce7743d5269253b1" name="out_2" x="1484" y="364">
+      <params/>
+      <attribs/>
+   </obj>
    <obj type="math/&lt;c" uuid="852c84e7bd967ee4a44cc553fcf6e3fc9d8b92c4" name="&lt;c_1" x="546" y="420">
       <params>
          <frac32.u.map name="c" value="10.0"/>
@@ -132,7 +152,7 @@
          <frac32.s.map name="a" value="-64.0"/>
          <frac32.s.map name="d" value="-64.0"/>
          <frac32.u.map name="s" value="64.0"/>
-         <frac32.s.map name="r" MidiCC="49" value="0.0"/>
+         <frac32.s.map name="r" MidiCC="49" value="63.99999952316284"/>
       </params>
       <attribs/>
    </obj>
@@ -165,17 +185,13 @@
       <params/>
       <attribs/>
    </obj>
-   <obj type="mix/mix 4 g" uuid="36f472cd81da2e17bd4b4ee11b53b4c82527220c" name="mix_1" x="1204" y="518">
+   <obj type="mix/mix 4 g" uuid="36f472cd81da2e17bd4b4ee11b53b4c82527220c" name="mix_1" x="1120" y="532">
       <params>
-         <frac32.u.map name="gain1" MidiCC="77" value="63.99999952316284"/>
-         <frac32.u.map name="gain2" MidiCC="78" value="0.0"/>
-         <frac32.u.map name="gain3" MidiCC="79" value="0.0"/>
-         <frac32.u.map name="gain4" MidiCC="80" value="0.0"/>
+         <frac32.u.map name="gain1" MidiCC="77" value="23.0"/>
+         <frac32.u.map name="gain2" MidiCC="78" value="25.0"/>
+         <frac32.u.map name="gain3" MidiCC="79" value="18.5"/>
+         <frac32.u.map name="gain4" MidiCC="80" value="16.0"/>
       </params>
-      <attribs/>
-   </obj>
-   <obj type="audio/out stereo" uuid="a1ca7a567f535acc21055669829101d3ee7f0189" name="out_1" x="1358" y="532">
-      <params/>
       <attribs/>
    </obj>
    <obj type="logic/toggle" uuid="f42f0d3aab552c17bc78b9e65f85dc24f977503d" name="toggle_2" x="168" y="546">
@@ -188,7 +204,7 @@
    </obj>
    <obj type="ctrl/dial p" uuid="cc5d2846c3d50e425f450c4b9851371b54f4d674" name="dial_2" x="532" y="560">
       <params>
-         <frac32.u.map name="value" MidiCC="13" value="16.0"/>
+         <frac32.u.map name="value" MidiCC="13" value="32.0"/>
       </params>
       <attribs/>
    </obj>
@@ -279,7 +295,7 @@
    </obj>
    <obj type="table/play pitch" uuid="5632a54926261833bbb9fff049e71322c360e57e" name="play_3" x="714" y="812">
       <params>
-         <frac32.s.map name="pitch" MidiCC="30" value="0.0"/>
+         <frac32.s.map name="pitch" MidiCC="30" value="10.0"/>
       </params>
       <attribs>
          <objref attributeName="table" obj="s1"/>
@@ -290,11 +306,15 @@
          <frac32.s.map name="a" value="-64.0"/>
          <frac32.s.map name="d" value="-64.0"/>
          <frac32.u.map name="s" value="64.0"/>
-         <frac32.s.map name="r" MidiCC="50" value="11.0"/>
+         <frac32.s.map name="r" MidiCC="50" value="0.0"/>
       </params>
       <attribs/>
    </obj>
    <obj type="rbrt/midi/in/monitor" uuid="64b3d36e-97ab-4b18-91f7-ff611e14fd7a" name="monitor_1" x="1302" y="812">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="testcontroller" uuid="6fa088de-1c71-4f37-8a38-a8cca24456a1" name="obj_1" x="1456" y="812">
       <params/>
       <attribs/>
    </obj>
@@ -345,7 +365,7 @@
    </obj>
    <obj type="ctrl/dial p" uuid="cc5d2846c3d50e425f450c4b9851371b54f4d674" name="dial_3" x="532" y="910">
       <params>
-         <frac32.u.map name="value" MidiCC="14" value="0.0"/>
+         <frac32.u.map name="value" MidiCC="14" value="23.5"/>
       </params>
       <attribs/>
    </obj>
@@ -365,11 +385,11 @@
    </obj>
    <obj type="lokki/sel/sel dial 5" uuid="20767434-7ff4-41cb-bea1-7e409959cc62" name="sel_1" x="658" y="938">
       <params>
-         <frac32.u.map name="v0" value="0.0"/>
-         <frac32.u.map name="v1" value="0.0"/>
-         <frac32.u.map name="v2" value="0.0"/>
-         <frac32.u.map name="v3" value="0.0"/>
-         <frac32.u.map name="v4" value="0.0"/>
+         <frac32.u.map name="v0" value="7.5"/>
+         <frac32.u.map name="v1" value="17.0"/>
+         <frac32.u.map name="v2" value="25.5"/>
+         <frac32.u.map name="v3" value="32.0"/>
+         <frac32.u.map name="v4" value="30.5"/>
       </params>
       <attribs/>
    </obj>
@@ -593,7 +613,7 @@ MidiSend3((midi_device_t) MIDI_DEVICE_USB_HOST, 9, MIDI_NOTE_ON + (attr_channel-
          <frac32.s.map name="a" value="-64.0"/>
          <frac32.s.map name="d" value="-64.0"/>
          <frac32.u.map name="s" value="64.0"/>
-         <frac32.s.map name="r" MidiCC="51" value="17.0"/>
+         <frac32.s.map name="r" MidiCC="51" value="-42.0"/>
       </params>
       <attribs/>
    </obj>
@@ -1073,17 +1093,17 @@ prev=inlet_active;}]]></code.krate>
    </obj>
    <obj type="ctrl/dial p" uuid="cc5d2846c3d50e425f450c4b9851371b54f4d674" name="dial_4" x="532" y="1274">
       <params>
-         <frac32.u.map name="value" MidiCC="15" value="0.0"/>
+         <frac32.u.map name="value" MidiCC="15" value="32.0"/>
       </params>
       <attribs/>
    </obj>
    <obj type="lokki/sel/sel dial 5" uuid="20767434-7ff4-41cb-bea1-7e409959cc62" name="sel_7" x="658" y="1288">
       <params>
-         <frac32.u.map name="v0" value="0.0"/>
-         <frac32.u.map name="v1" value="0.0"/>
-         <frac32.u.map name="v2" value="0.0"/>
-         <frac32.u.map name="v3" value="0.0"/>
-         <frac32.u.map name="v4" value="0.0"/>
+         <frac32.u.map name="v0" value="7.5"/>
+         <frac32.u.map name="v1" value="17.0"/>
+         <frac32.u.map name="v2" value="22.5"/>
+         <frac32.u.map name="v3" value="32.0"/>
+         <frac32.u.map name="v4" value="30.5"/>
       </params>
       <attribs/>
    </obj>
@@ -1382,7 +1402,7 @@ prev=inlet_active;}]]></code.krate>
    </obj>
    <obj type="table/play pitch" uuid="5632a54926261833bbb9fff049e71322c360e57e" name="play_5" x="728" y="1512">
       <params>
-         <frac32.s.map name="pitch" MidiCC="32" value="0.0"/>
+         <frac32.s.map name="pitch" MidiCC="32" value="18.0"/>
       </params>
       <attribs>
          <objref attributeName="table" obj="s1"/>
@@ -1393,7 +1413,7 @@ prev=inlet_active;}]]></code.krate>
          <frac32.s.map name="a" value="-64.0"/>
          <frac32.s.map name="d" value="-64.0"/>
          <frac32.u.map name="s" value="64.0"/>
-         <frac32.s.map name="r" MidiCC="52" value="14.0"/>
+         <frac32.s.map name="r" MidiCC="52" value="-26.0"/>
       </params>
       <attribs/>
    </obj>
@@ -1428,7 +1448,7 @@ prev=inlet_active;}]]></code.krate>
    </obj>
    <obj type="ctrl/dial p" uuid="cc5d2846c3d50e425f450c4b9851371b54f4d674" name="dial_5" x="644" y="1582">
       <params>
-         <frac32.u.map name="value" MidiCC="16" value="0.0"/>
+         <frac32.u.map name="value" MidiCC="16" value="53.0"/>
       </params>
       <attribs/>
    </obj>
@@ -1442,7 +1462,7 @@ prev=inlet_active;}]]></code.krate>
    </obj>
    <obj type="ctrl/dial p" uuid="cc5d2846c3d50e425f450c4b9851371b54f4d674" name="dial_6" x="532" y="1624">
       <params>
-         <frac32.u.map name="value" MidiCC="15" value="0.0"/>
+         <frac32.u.map name="value" MidiCC="15" value="32.0"/>
       </params>
       <attribs/>
    </obj>
@@ -1464,6 +1484,16 @@ prev=inlet_active;}]]></code.krate>
       <params/>
       <attribs/>
    </obj>
+   <obj type="lokki/sel/sel dial 5" uuid="20767434-7ff4-41cb-bea1-7e409959cc62" name="sel_8" x="672" y="1680">
+      <params>
+         <frac32.u.map name="v0" value="7.5"/>
+         <frac32.u.map name="v1" value="17.0"/>
+         <frac32.u.map name="v2" value="22.5"/>
+         <frac32.u.map name="v3" value="32.0"/>
+         <frac32.u.map name="v4" value="30.5"/>
+      </params>
+      <attribs/>
+   </obj>
    <obj type="ctrl/dial p" uuid="cc5d2846c3d50e425f450c4b9851371b54f4d674" name="dial_8" x="392" y="1722">
       <params>
          <frac32.u.map name="value" value="20.0"/>
@@ -1481,6 +1511,134 @@ prev=inlet_active;}]]></code.krate>
       <attribs>
          <combo attributeName="device" selection="usb host port 1"/>
          <spinner attributeName="channel" value="1"/>
+      </attribs>
+   </obj>
+   <obj type="ctrl/dial b" uuid="862e7d7f29093cb1ce4aed72244d118ad4d46692" name="dial_18" x="784" y="1764">
+      <params>
+         <frac32.s.map name="value" value="12.0"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="midi/out/note" uuid="a76ae870da278cbbce5501a57ce7bd0e0ea4215c" name="note_16" x="854" y="1764">
+      <params/>
+      <attribs>
+         <combo attributeName="device" selection="usb host port 1"/>
+         <spinner attributeName="channel" value="1"/>
+      </attribs>
+   </obj>
+   <obj type="gpio/in/analog" uuid="1c0c845ed2d7e06ae5f377ba13d9d09f4747ac87" name="analog_5" x="56" y="1946">
+      <params/>
+      <attribs>
+         <combo attributeName="channel" selection="PC1 (ADC1_IN11)"/>
+      </attribs>
+   </obj>
+   <obj type="math/&lt;c" uuid="852c84e7bd967ee4a44cc553fcf6e3fc9d8b92c4" name="&lt;c_5" x="252" y="1960">
+      <params>
+         <frac32.u.map name="c" value="10.0"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="wave/play fn" uuid="25910f7130532e4934eed3cf2a934324790d0f00" name="play_1" x="448" y="2002">
+      <params/>
+      <attribs>
+         <file attributeName="fn" file="../samples/kicks/808-Kicks01.raw"/>
+      </attribs>
+   </obj>
+   <obj type="gpio/in/analog" uuid="1c0c845ed2d7e06ae5f377ba13d9d09f4747ac87" name="analog_6" x="56" y="2058">
+      <params/>
+      <attribs>
+         <combo attributeName="channel" selection="PC2 (ADC1_IN12)"/>
+      </attribs>
+   </obj>
+   <obj type="rbrt/midi/in/monitor" uuid="64b3d36e-97ab-4b18-91f7-ff611e14fd7a" name="monitor_2" x="1260" y="2058">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="math/&lt;c" uuid="852c84e7bd967ee4a44cc553fcf6e3fc9d8b92c4" name="&lt;c_6" x="252" y="2072">
+      <params>
+         <frac32.u.map name="c" value="17.0"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="math/&lt;&lt;" uuid="b03d8d8009c0480be0ccb29ed65933a82fa4a80f" name="&lt;&lt;_1" x="910" y="2072">
+      <params/>
+      <attribs>
+         <spinner attributeName="shift" value="0"/>
+      </attribs>
+   </obj>
+   <obj type="ctrl/dial p" uuid="cc5d2846c3d50e425f450c4b9851371b54f4d674" name="dial_20" x="812" y="2086">
+      <params>
+         <frac32.u.map name="value" value="64.0"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="wave/play fn" uuid="25910f7130532e4934eed3cf2a934324790d0f00" name="play_6" x="448" y="2100">
+      <params/>
+      <attribs>
+         <file attributeName="fn" file="../samples/kicks/808-Kicks40.raw"/>
+      </attribs>
+   </obj>
+   <obj type="gain/vca" uuid="a9f2dcd18043e2f47364e45cb8814f63c2a37c0d" name="vca_5" x="1022" y="2100">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="audio/out right" uuid="e58a4cbbb087052c5480366e3f5d3a04aa319777" name="out_1" x="1120" y="2100">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="gpio/in/analog" uuid="1c0c845ed2d7e06ae5f377ba13d9d09f4747ac87" name="analog_7" x="56" y="2170">
+      <params/>
+      <attribs>
+         <combo attributeName="channel" selection="PC3 (ADC1_IN13)"/>
+      </attribs>
+   </obj>
+   <obj type="math/&lt;c" uuid="852c84e7bd967ee4a44cc553fcf6e3fc9d8b92c4" name="&lt;c_7" x="238" y="2184">
+      <params>
+         <frac32.u.map name="c" value="17.0"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="wave/play fn" uuid="25910f7130532e4934eed3cf2a934324790d0f00" name="play_7" x="448" y="2198">
+      <params/>
+      <attribs>
+         <file attributeName="fn" file="../samples/percussion/808-Conga1.raw"/>
+      </attribs>
+   </obj>
+   <obj type="mix/mix 6 g" uuid="2dd642dee5072357722740c850699b79b8da3008" name="mix_2" x="812" y="2240">
+      <params>
+         <frac32.u.map name="gain1" MidiCC="81" value="38.5">
+            <presets/>
+         </frac32.u.map>
+         <frac32.u.map name="gain2" MidiCC="82" value="0.0">
+            <presets/>
+         </frac32.u.map>
+         <frac32.u.map name="gain3" MidiCC="83" value="0.0"/>
+         <frac32.u.map name="gain4" value="64.0">
+            <presets/>
+         </frac32.u.map>
+         <frac32.u.map name="gain5" value="32.5">
+            <presets/>
+         </frac32.u.map>
+         <frac32.u.map name="gain6" value="33.0"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="wave/play fn" uuid="25910f7130532e4934eed3cf2a934324790d0f00" name="play_8" x="448" y="2296">
+      <params/>
+      <attribs>
+         <file attributeName="fn" file="../samples/snares/808-Snare22.raw"/>
+      </attribs>
+   </obj>
+   <obj type="wave/play fn" uuid="25910f7130532e4934eed3cf2a934324790d0f00" name="play_9" x="448" y="2394">
+      <params/>
+      <attribs>
+         <file attributeName="fn" file="hihats/808-OpenHiHats06.raw"/>
+      </attribs>
+   </obj>
+   <obj type="wave/play fn" uuid="25910f7130532e4934eed3cf2a934324790d0f00" name="play_10" x="448" y="2492">
+      <params/>
+      <attribs>
+         <file attributeName="fn" file="percussion/808-Conga1.raw"/>
       </attribs>
    </obj>
    <nets>
@@ -1591,10 +1749,6 @@ prev=inlet_active;}]]></code.krate>
       <net>
          <source obj="vca_4" outlet="o"/>
          <dest obj="mix_1" inlet="in4"/>
-      </net>
-      <net>
-         <source obj="mix_1" outlet="out"/>
-         <dest obj="out_1" inlet="left"/>
       </net>
       <net>
          <source obj="in_1" outlet="wave"/>
@@ -1814,10 +1968,12 @@ prev=inlet_active;}]]></code.krate>
       <net>
          <source obj="note_9" outlet="gate"/>
          <dest obj="counter2_5" inlet="inc"/>
+         <dest obj="note_16" inlet="trig"/>
       </net>
       <net>
          <source obj="counter2_5" outlet="o"/>
          <dest obj="sel_5" inlet="s"/>
+         <dest obj="sel_8" inlet="s"/>
       </net>
       <net>
          <source obj="sel_5" outlet="o"/>
@@ -1909,15 +2065,103 @@ prev=inlet_active;}]]></code.krate>
          <source obj="sel_7" outlet="o"/>
          <dest obj="note_15" inlet="velo"/>
       </net>
+      <net>
+         <source obj="dial_18" outlet="out"/>
+         <dest obj="note_16" inlet="note"/>
+      </net>
+      <net>
+         <source obj="sel_8" outlet="o"/>
+         <dest obj="note_16" inlet="velo"/>
+      </net>
+      <net>
+         <source obj="play_1" outlet="out"/>
+         <dest obj="mix_2" inlet="in1"/>
+      </net>
+      <net>
+         <source obj="mix_2" outlet="out"/>
+         <dest obj="vca_5" inlet="a"/>
+      </net>
+      <net>
+         <source obj="play_6" outlet="out"/>
+         <dest obj="mix_2" inlet="in2"/>
+      </net>
+      <net>
+         <source obj="play_7" outlet="out"/>
+         <dest obj="mix_2" inlet="in3"/>
+      </net>
+      <net>
+         <source obj="play_8" outlet="out"/>
+         <dest obj="mix_2" inlet="in4"/>
+      </net>
+      <net>
+         <source obj="play_9" outlet="out"/>
+         <dest obj="mix_2" inlet="in5"/>
+      </net>
+      <net>
+         <source obj="play_10" outlet="out"/>
+         <dest obj="mix_2" inlet="in6"/>
+      </net>
+      <net>
+         <source obj="analog_5" outlet="out"/>
+         <dest obj="&lt;c_5" inlet="in"/>
+      </net>
+      <net>
+         <source obj="&lt;c_5" outlet="out"/>
+         <dest obj="play_1" inlet="start"/>
+      </net>
+      <net>
+         <source obj="analog_6" outlet="out"/>
+         <dest obj="&lt;c_6" inlet="in"/>
+      </net>
+      <net>
+         <source obj="analog_7" outlet="out"/>
+         <dest obj="&lt;c_7" inlet="in"/>
+      </net>
+      <net>
+         <source obj="&lt;c_6" outlet="out"/>
+         <dest obj="play_6" inlet="start"/>
+      </net>
+      <net>
+         <source obj="&lt;c_7" outlet="out"/>
+         <dest obj="play_7" inlet="start"/>
+      </net>
+      <net>
+         <source obj="&lt;&lt;_1" outlet="result"/>
+         <dest obj="vca_5" inlet="v"/>
+      </net>
+      <net>
+         <source obj="vca_5" outlet="o"/>
+         <dest obj="out_1" inlet="wave"/>
+      </net>
+      <net>
+         <source obj="dial_20" outlet="out"/>
+         <dest obj="&lt;&lt;_1" inlet="a"/>
+      </net>
+      <net>
+         <source obj="&lt;&lt;_2" outlet="result"/>
+         <dest obj="vca_6" inlet="v"/>
+      </net>
+      <net>
+         <source obj="dial_21" outlet="out"/>
+         <dest obj="&lt;&lt;_2" inlet="a"/>
+      </net>
+      <net>
+         <source obj="mix_1" outlet="out"/>
+         <dest obj="vca_6" inlet="a"/>
+      </net>
+      <net>
+         <source obj="vca_6" outlet="o"/>
+         <dest obj="out_2" inlet="wave"/>
+      </net>
    </nets>
    <settings>
       <subpatchmode>no</subpatchmode>
    </settings>
    <notes><![CDATA[]]></notes>
    <windowPos>
-      <x>-1906</x>
-      <y>-144</y>
-      <width>1873</width>
-      <height>1008</height>
+      <x>-1910</x>
+      <y>-157</y>
+      <width>1847</width>
+      <height>1057</height>
    </windowPos>
 </patch-1.0>
