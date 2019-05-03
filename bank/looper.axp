@@ -1,0 +1,2064 @@
+<patch-1.0 appVersion="1.0.12">
+   <obj type="midi/in/keyb note" uuid="ac0cd98e6c0373b7be73d25900342a62ebcf5f" name="keyb_5" x="336" y="168">
+      <params/>
+      <attribs>
+         <spinner attributeName="note" value="73"/>
+      </attribs>
+   </obj>
+   <obj type="patch/outlet b" uuid="191792f616d4835dba0b55375474a12942e5bcbd" name="outlet_3" x="448" y="168">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="patch/inlet b" uuid="3b0d3eacb5bb978cb05d1372aa2714d5a4790844" name="inlet_2" x="126" y="182">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="midi/out/note" uuid="a76ae870da278cbbce5501a57ce7bd0e0ea4215c" name="note_17" x="308" y="266">
+      <params/>
+      <attribs>
+         <combo attributeName="device" selection="usb host port 1"/>
+         <spinner attributeName="channel" value="1"/>
+      </attribs>
+   </obj>
+   <comment type="patch/comment" x="784" y="280" text="...something like a 4-track loopstation..you can save and re-load what you did to SD!!"/>
+   <comment type="patch/comment" x="1302" y="280" text="LAUNCH-starts/stops the loop when the global transport reaches the point "/>
+   <comment type="patch/comment" x="784" y="294" text="1.set &apos;RECORDING MODE&apos; to MASTER and record a loop."/>
+   <comment type="patch/comment" x="1302" y="294" text="where it was at when you recorded the loop"/>
+   <comment type="patch/comment" x="1708" y="294" text="SECONDS sets the maximum length of 1 bar of the global transport,"/>
+   <obj type="ctrl/dial b" uuid="862e7d7f29093cb1ce4aed72244d118ad4d46692" name="dial_38" x="224" y="308">
+      <params>
+         <frac32.s.map name="value" value="9.0"/>
+      </params>
+      <attribs/>
+   </obj>
+   <comment type="patch/comment" x="798" y="308" text="this will set the global transport to the length of your loop"/>
+   <comment type="patch/comment" x="1302" y="308" text="TOGGLE PLAY - toggles playback of the loop"/>
+   <comment type="patch/comment" x="1708" y="308" text="in order to avoid ending up with a very slooow transport when recording a loong loop."/>
+   <comment type="patch/comment" x="784" y="322" text="2. set &apos;TARGET SLOT&apos; to slot 2 and &apos;RECORDING MODE&apos; to SLAVE"/>
+   <comment type="patch/comment" x="1302" y="322" text="STATE - the playback state of the loop"/>
+   <comment type="patch/comment" x="798" y="336" text="record something,press &apos;RECORD&apos; again when you are done."/>
+   <comment type="patch/comment" x="1302" y="336" text="ZERO RESET- when enabled,the loop will be re-triggered"/>
+   <comment type="patch/comment" x="1708" y="336" text="SCALE UP - multiplies the tempo of the global transport"/>
+   <comment type="patch/comment" x="798" y="350" text="recording will start as soon as you press RECORD,when you press RECORD again,"/>
+   <comment type="patch/comment" x="1302" y="350" text="once the global transport reaches zero."/>
+   <comment type="patch/comment" x="798" y="364" text="recording will continue until the global transport reaches the point where you started recording."/>
+   <comment type="patch/comment" x="1302" y="364" text="SPEED - playback speed of the loop.expermiment with SPEED and ZERO RESET!"/>
+   <obj type="ctrl/dial p" uuid="cc5d2846c3d50e425f450c4b9851371b54f4d674" name="dial_39" x="224" y="392">
+      <params>
+         <frac32.u.map name="value" value="41.5"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="midi/in/keyb note" uuid="ac0cd98e6c0373b7be73d25900342a62ebcf5f" name="LAUNCH1" x="1036" y="448">
+      <params/>
+      <attribs>
+         <spinner attributeName="note" value="41"/>
+      </attribs>
+   </obj>
+   <obj type="ctrl/dial b" uuid="862e7d7f29093cb1ce4aed72244d118ad4d46692" name="SPEED1" x="1134" y="448">
+      <params>
+         <frac32.s.map name="value" MidiCC="13" value="11.0"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="midi/in/keyb note" uuid="ac0cd98e6c0373b7be73d25900342a62ebcf5f" name="LAUNCH2" x="1274" y="448">
+      <params/>
+      <attribs>
+         <spinner attributeName="note" value="43"/>
+      </attribs>
+   </obj>
+   <obj type="ctrl/dial b" uuid="862e7d7f29093cb1ce4aed72244d118ad4d46692" name="SPEED2" x="1372" y="448">
+      <params>
+         <frac32.s.map name="value" MidiCC="15" value="-47.0"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="ctrl/i" uuid="a3786816db6ea5bc6ac4193a5cccdb2c83b83496" name="SECONDS" x="1708" y="476">
+      <params>
+         <int32 name="value" value="8"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="audio/in left" uuid="d40e60b7641fe75af4d7c91b45bb038aacafc52e" name="in_1" x="896" y="504">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="rbrt/looper/lrec" uuid="2e5874a9-b38b-40bf-8dda-03863ab6ca59" name="lrec_1" x="1526" y="518">
+      <params>
+         <frac32.s.map name="attack" value="-64.0"/>
+         <bool32.tgl name="hard" value="0"/>
+         <frac32.s.map name="release" value="0.0"/>
+         <bool32.tgl name="nofade" value="0"/>
+      </params>
+      <attribs>
+         <objref attributeName="table" obj="rec"/>
+         <combo attributeName="slots" selection="4"/>
+      </attribs>
+   </obj>
+   <obj type="math/*" uuid="6a31299e3a491edd8c4df0e809a519a35cc08a3b" name="*_1" x="1806" y="518">
+      <params/>
+      <attribs/>
+   </obj>
+   <patcher type="patch/patcher" uuid="16bbbae7-75b1-4c60-b22d-0bbd2f4c2669" name="scale transport tempo" x="1876" y="518">
+      <params/>
+      <attribs/>
+      <subpatch appVersion="1.0.12">
+         <obj type="patch/inlet b" uuid="3b0d3eacb5bb978cb05d1372aa2714d5a4790844" name="recmode" x="28" y="112">
+            <params/>
+            <attribs/>
+         </obj>
+         <obj type="logic/inv" uuid="2bd44b865d3b63ff9b80862242bf5be779e3ad5" name="inv_2" x="140" y="112">
+            <params/>
+            <attribs/>
+         </obj>
+         <obj type="patch/inlet b" uuid="3b0d3eacb5bb978cb05d1372aa2714d5a4790844" name="recstate" x="28" y="168">
+            <params/>
+            <attribs/>
+         </obj>
+         <obj type="logic/inv" uuid="2bd44b865d3b63ff9b80862242bf5be779e3ad5" name="inv_3" x="140" y="182">
+            <params/>
+            <attribs/>
+         </obj>
+         <obj type="patch/inlet i" uuid="f11927f00c59219df0c50f73056aa19f125540b7" name="smps" x="28" y="224">
+            <params/>
+            <attribs/>
+         </obj>
+         <obj type="logic/and 2" uuid="c67031682f552aa0a80b23377495c51ea28a8c9c" name="and_1" x="196" y="252">
+            <params/>
+            <attribs/>
+         </obj>
+         <obj type="patch/inlet i" uuid="f11927f00c59219df0c50f73056aa19f125540b7" name="master" x="28" y="280">
+            <params/>
+            <attribs/>
+         </obj>
+         <obj type="logic/latch" uuid="2a50e4657301542464c6a97931847b5e8e0e6d2b" name="latch_1" x="406" y="294">
+            <params/>
+            <attribs/>
+         </obj>
+         <obj type="rbrt/patching/i2k" uuid="618c2ae8-c0af-48ff-a35a-4a4f869617d4" name="i2k_1" x="490" y="294">
+            <params/>
+            <attribs/>
+         </obj>
+         <obj type="patch/inlet i" uuid="f11927f00c59219df0c50f73056aa19f125540b7" name="1bar length" x="28" y="336">
+            <params/>
+            <attribs/>
+         </obj>
+         <obj type="rbrt/data/tablestore 4" uuid="70882983-fca1-4f37-94d9-2a26de523773" name="tablestore_1" x="644" y="336">
+            <params/>
+            <attribs>
+               <objref attributeName="table" obj="../data"/>
+            </attribs>
+         </obj>
+         <obj type="rbrt/patching/k2i" uuid="51210bea-af35-4e1d-a565-89f582299b04" name="k2i_1" x="784" y="336">
+            <params/>
+            <attribs/>
+         </obj>
+         <obj type="logic/latch" uuid="2a50e4657301542464c6a97931847b5e8e0e6d2b" name="latch_2" x="406" y="350">
+            <params/>
+            <attribs/>
+         </obj>
+         <obj type="rbrt/patching/i2k" uuid="618c2ae8-c0af-48ff-a35a-4a4f869617d4" name="i2k_2" x="490" y="350">
+            <params/>
+            <attribs/>
+         </obj>
+         <obj type="sss/math/divremc" uuid="1638b705-df81-436f-acf6-3399bf364363" name="divremc_2" x="896" y="364">
+            <params/>
+            <attribs/>
+         </obj>
+         <obj type="math/+" uuid="b94a9b8e9adcb7d18868c0ee808a9b211b65578d" name="+_1" x="1106" y="364">
+            <params/>
+            <attribs/>
+         </obj>
+         <obj type="rbrt/lfo/sphasor" uuid="bd13316a-40ec-4772-92f8-d2e462f55e20" name="sphasor_1" x="1190" y="364">
+            <params/>
+            <attribs/>
+         </obj>
+         <obj type="patch/outlet f" uuid="d18a9a550bcaaebac94e25983bd0e27dbfd7233c" name="phase" x="1302" y="364">
+            <params/>
+            <attribs/>
+         </obj>
+         <obj type="rbrt/patching/k2i" uuid="51210bea-af35-4e1d-a565-89f582299b04" name="k2i_2" x="784" y="378">
+            <params/>
+            <attribs/>
+         </obj>
+         <obj type="math/+1" uuid="13c1a4574bb81783beb8839e81782b9a34e3fc17" name="+1_1" x="1036" y="378">
+            <params/>
+            <attribs/>
+         </obj>
+         <obj type="patch/inlet i" uuid="f11927f00c59219df0c50f73056aa19f125540b7" name="multiplier" x="28" y="392">
+            <params/>
+            <attribs/>
+         </obj>
+         <obj type="const/i" uuid="e202f44b2df17ae0b3e663b98ea6b14c8ff00408" name="i_1" x="504" y="392">
+            <params/>
+            <attribs>
+               <spinner attributeName="value" value="12"/>
+            </attribs>
+         </obj>
+         <obj type="patch/outlet i" uuid="aae2176b26209e34e4fdeba5edb1ace82d178655" name="master_" x="1302" y="420">
+            <params/>
+            <attribs/>
+         </obj>
+         <nets>
+            <net>
+               <source obj="and_1" outlet="o"/>
+               <dest obj="latch_1" inlet="trig"/>
+               <dest obj="latch_2" inlet="trig"/>
+               <dest obj="sphasor_1" inlet="reset"/>
+            </net>
+            <net>
+               <source obj="inv_2" outlet="o"/>
+               <dest obj="and_1" inlet="i1"/>
+            </net>
+            <net>
+               <source obj="latch_1" outlet="o"/>
+               <dest obj="i2k_1" inlet="i"/>
+            </net>
+            <net>
+               <source obj="inv_3" outlet="o"/>
+               <dest obj="and_1" inlet="i2"/>
+            </net>
+            <net>
+               <source obj="tablestore_1" outlet="v0"/>
+               <dest obj="k2i_1" inlet="i"/>
+            </net>
+            <net>
+               <source obj="i2k_1" outlet="o"/>
+               <dest obj="tablestore_1" inlet="v0"/>
+            </net>
+            <net>
+               <source obj="k2i_1" outlet="o"/>
+               <dest obj="sphasor_1" inlet="smps"/>
+               <dest obj="divremc_2" inlet="a"/>
+            </net>
+            <net>
+               <source obj="divremc_2" outlet="div"/>
+               <dest obj="+1_1" inlet="a"/>
+            </net>
+            <net>
+               <source obj="+1_1" outlet="result"/>
+               <dest obj="+_1" inlet="in2"/>
+            </net>
+            <net>
+               <source obj="+_1" outlet="out"/>
+               <dest obj="sphasor_1" inlet="mul"/>
+            </net>
+            <net>
+               <source obj="sphasor_1" outlet="wave"/>
+               <dest obj="phase" inlet="outlet"/>
+            </net>
+            <net>
+               <source obj="recmode" outlet="inlet"/>
+               <dest obj="inv_2" inlet="i"/>
+            </net>
+            <net>
+               <source obj="recstate" outlet="inlet"/>
+               <dest obj="inv_3" inlet="i"/>
+            </net>
+            <net>
+               <source obj="smps" outlet="inlet"/>
+               <dest obj="latch_1" inlet="i"/>
+            </net>
+            <net>
+               <source obj="latch_2" outlet="o"/>
+               <dest obj="i2k_2" inlet="i"/>
+            </net>
+            <net>
+               <source obj="master" outlet="inlet"/>
+               <dest obj="latch_2" inlet="i"/>
+            </net>
+            <net>
+               <source obj="tablestore_1" outlet="v1"/>
+               <dest obj="k2i_2" inlet="i"/>
+            </net>
+            <net>
+               <source obj="1bar length" outlet="inlet"/>
+               <dest obj="divremc_2" inlet="denominator"/>
+            </net>
+            <net>
+               <source obj="multiplier" outlet="inlet"/>
+               <dest obj="+_1" inlet="in1"/>
+            </net>
+            <net>
+               <source obj="i2k_2" outlet="o"/>
+               <dest obj="tablestore_1" inlet="v1"/>
+            </net>
+            <net>
+               <source obj="k2i_2" outlet="o"/>
+               <dest obj="master_" inlet="outlet"/>
+            </net>
+            <net>
+               <source obj="i_1" outlet="out"/>
+               <dest obj="tablestore_1" inlet="offset"/>
+            </net>
+         </nets>
+         <settings>
+            <subpatchmode>no</subpatchmode>
+         </settings>
+         <notes><![CDATA[]]></notes>
+         <windowPos>
+            <x>0</x>
+            <y>23</y>
+            <width>1378</width>
+            <height>780</height>
+         </windowPos>
+      </subpatch>
+   </patcher>
+   <obj type="rbrt/data/tablestore demux" uuid="eb9a7e4c-9c60-4735-8b1f-71eae63debb2" name="tablestore_2" x="2072" y="518">
+      <params/>
+      <attribs>
+         <objref attributeName="table" obj="data"/>
+         <spinner attributeName="offset" value="0"/>
+      </attribs>
+   </obj>
+   <patcher type="patch/patcher" uuid="444e95a9-2837-4d12-ae4a-a757c35c4959" name="toggleplay1" x="1036" y="532">
+      <params/>
+      <attribs/>
+      <subpatch appVersion="1.0.12">
+         <obj type="patch/inlet b" uuid="3b0d3eacb5bb978cb05d1372aa2714d5a4790844" name="inlet_3" x="14" y="42">
+            <params/>
+            <attribs/>
+         </obj>
+         <obj type="midi/in/keyb note" uuid="ac0cd98e6c0373b7be73d25900342a62ebcf5f" name="keyb_6" x="112" y="42">
+            <params/>
+            <attribs>
+               <spinner attributeName="note" value="73"/>
+            </attribs>
+         </obj>
+         <obj type="patch/outlet b" uuid="191792f616d4835dba0b55375474a12942e5bcbd" name="outlet_4" x="336" y="42">
+            <params/>
+            <attribs/>
+         </obj>
+         <obj type="ctrl/dial b" uuid="862e7d7f29093cb1ce4aed72244d118ad4d46692" name="dial_40" x="224" y="56">
+            <params>
+               <frac32.s.map name="value" value="9.0"/>
+            </params>
+            <attribs/>
+         </obj>
+         <obj type="midi/out/note" uuid="a76ae870da278cbbce5501a57ce7bd0e0ea4215c" name="note_18" x="350" y="98">
+            <params/>
+            <attribs>
+               <combo attributeName="device" selection="usb host port 1"/>
+               <spinner attributeName="channel" value="1"/>
+            </attribs>
+         </obj>
+         <obj type="ctrl/dial p" uuid="cc5d2846c3d50e425f450c4b9851371b54f4d674" name="dial_41" x="224" y="140">
+            <params>
+               <frac32.u.map name="value" value="41.5"/>
+            </params>
+            <attribs/>
+         </obj>
+         <nets>
+            <net>
+               <source obj="dial_40" outlet="out"/>
+               <dest obj="note_18" inlet="note"/>
+            </net>
+            <net>
+               <source obj="dial_41" outlet="out"/>
+               <dest obj="note_18" inlet="velo"/>
+            </net>
+            <net>
+               <source obj="keyb_6" outlet="gate"/>
+               <dest obj="outlet_4" inlet="outlet"/>
+            </net>
+            <net>
+               <source obj="inlet_3" outlet="inlet"/>
+               <dest obj="note_18" inlet="trig"/>
+            </net>
+         </nets>
+         <settings>
+            <subpatchmode>no</subpatchmode>
+         </settings>
+         <notes><![CDATA[]]></notes>
+         <windowPos>
+            <x>-924</x>
+            <y>80</y>
+            <width>527</width>
+            <height>413</height>
+         </windowPos>
+      </subpatch>
+   </patcher>
+   <patcher type="patch/patcher" uuid="b5bab183-0e1e-41e6-b6f2-c203efaad31e" name="zeroreset" x="1134" y="532">
+      <params/>
+      <attribs/>
+      <subpatch appVersion="1.0.12">
+         <obj type="midi/in/keyb note" uuid="ac0cd98e6c0373b7be73d25900342a62ebcf5f" name="keyb_2" x="294" y="182">
+            <params/>
+            <attribs>
+               <spinner attributeName="note" value="74"/>
+            </attribs>
+         </obj>
+         <obj type="logic/toggle" uuid="f42f0d3aab552c17bc78b9e65f85dc24f977503d" name="toggle_1" x="406" y="182">
+            <params/>
+            <attribs/>
+         </obj>
+         <obj type="midi/out/note" uuid="a76ae870da278cbbce5501a57ce7bd0e0ea4215c" name="note_14" x="490" y="182">
+            <params/>
+            <attribs>
+               <combo attributeName="device" selection="usb host port 1"/>
+               <spinner attributeName="channel" value="1"/>
+            </attribs>
+         </obj>
+         <obj type="patch/outlet b" uuid="191792f616d4835dba0b55375474a12942e5bcbd" name="outlet_1" x="616" y="182">
+            <params/>
+            <attribs/>
+         </obj>
+         <obj type="ctrl/dial b" uuid="862e7d7f29093cb1ce4aed72244d118ad4d46692" name="dial_33" x="406" y="224">
+            <params>
+               <frac32.s.map name="value" value="10.0"/>
+            </params>
+            <attribs/>
+         </obj>
+         <obj type="ctrl/dial p" uuid="cc5d2846c3d50e425f450c4b9851371b54f4d674" name="dial_31" x="406" y="308">
+            <params>
+               <frac32.u.map name="value" value="18.0"/>
+            </params>
+            <attribs/>
+         </obj>
+         <nets>
+            <net>
+               <source obj="keyb_2" outlet="gate"/>
+               <dest obj="toggle_1" inlet="trig"/>
+            </net>
+            <net>
+               <source obj="toggle_1" outlet="o"/>
+               <dest obj="note_14" inlet="trig"/>
+               <dest obj="outlet_1" inlet="outlet"/>
+            </net>
+            <net>
+               <source obj="dial_33" outlet="out"/>
+               <dest obj="note_14" inlet="note"/>
+            </net>
+            <net>
+               <source obj="dial_31" outlet="out"/>
+               <dest obj="note_14" inlet="velo"/>
+            </net>
+         </nets>
+         <settings>
+            <subpatchmode>no</subpatchmode>
+         </settings>
+         <notes><![CDATA[]]></notes>
+         <windowPos>
+            <x>0</x>
+            <y>23</y>
+            <width>400</width>
+            <height>400</height>
+         </windowPos>
+      </subpatch>
+   </patcher>
+   <patcher type="patch/patcher" uuid="9ce65b2a-d514-4d09-9424-804948b9354e" name="toggleplay2" x="1274" y="532">
+      <params/>
+      <attribs/>
+      <subpatch appVersion="1.0.12">
+         <obj type="patch/inlet b" uuid="3b0d3eacb5bb978cb05d1372aa2714d5a4790844" name="inlet_1" x="0" y="42">
+            <params/>
+            <attribs/>
+         </obj>
+         <obj type="patch/outlet b" uuid="191792f616d4835dba0b55375474a12942e5bcbd" name="outlet_2" x="350" y="56">
+            <params/>
+            <attribs/>
+         </obj>
+         <obj type="midi/in/keyb note" uuid="ac0cd98e6c0373b7be73d25900342a62ebcf5f" name="keyb_4" x="98" y="84">
+            <params/>
+            <attribs>
+               <spinner attributeName="note" value="75"/>
+            </attribs>
+         </obj>
+         <obj type="ctrl/dial b" uuid="862e7d7f29093cb1ce4aed72244d118ad4d46692" name="dial_36" x="266" y="112">
+            <params>
+               <frac32.s.map name="value" value="11.0"/>
+            </params>
+            <attribs/>
+         </obj>
+         <obj type="midi/out/note" uuid="a76ae870da278cbbce5501a57ce7bd0e0ea4215c" name="note_16" x="350" y="140">
+            <params/>
+            <attribs>
+               <combo attributeName="device" selection="usb host port 1"/>
+               <spinner attributeName="channel" value="1"/>
+            </attribs>
+         </obj>
+         <obj type="ctrl/dial p" uuid="cc5d2846c3d50e425f450c4b9851371b54f4d674" name="dial_37" x="266" y="196">
+            <params>
+               <frac32.u.map name="value" value="41.5"/>
+            </params>
+            <attribs/>
+         </obj>
+         <nets>
+            <net>
+               <source obj="dial_36" outlet="out"/>
+               <dest obj="note_16" inlet="note"/>
+            </net>
+            <net>
+               <source obj="dial_37" outlet="out"/>
+               <dest obj="note_16" inlet="velo"/>
+            </net>
+            <net>
+               <source obj="keyb_4" outlet="gate"/>
+               <dest obj="outlet_2" inlet="outlet"/>
+            </net>
+            <net>
+               <source obj="inlet_1" outlet="inlet"/>
+               <dest obj="note_16" inlet="trig"/>
+            </net>
+         </nets>
+         <settings>
+            <subpatchmode>no</subpatchmode>
+         </settings>
+         <notes><![CDATA[]]></notes>
+         <windowPos>
+            <x>189</x>
+            <y>70</y>
+            <width>676</width>
+            <height>590</height>
+         </windowPos>
+      </subpatch>
+   </patcher>
+   <patcher type="patch/patcher" uuid="39b873d1-a2b3-4ca9-a626-db42be2c5068" name="zeroreset2" x="1358" y="532">
+      <params/>
+      <attribs/>
+      <subpatch appVersion="1.0.12">
+         <obj type="midi/in/keyb note" uuid="ac0cd98e6c0373b7be73d25900342a62ebcf5f" name="keyb_3" x="1218" y="98">
+            <params/>
+            <attribs>
+               <spinner attributeName="note" value="76"/>
+            </attribs>
+         </obj>
+         <obj type="logic/toggle" uuid="f42f0d3aab552c17bc78b9e65f85dc24f977503d" name="toggle_2" x="1330" y="98">
+            <params/>
+            <attribs/>
+         </obj>
+         <obj type="midi/out/note" uuid="a76ae870da278cbbce5501a57ce7bd0e0ea4215c" name="note_15" x="1414" y="98">
+            <params/>
+            <attribs>
+               <combo attributeName="device" selection="usb host port 1"/>
+               <spinner attributeName="channel" value="1"/>
+            </attribs>
+         </obj>
+         <obj type="patch/outlet b" uuid="191792f616d4835dba0b55375474a12942e5bcbd" name="outlet_1" x="1540" y="98">
+            <params/>
+            <attribs/>
+         </obj>
+         <obj type="ctrl/dial b" uuid="862e7d7f29093cb1ce4aed72244d118ad4d46692" name="dial_34" x="1330" y="140">
+            <params>
+               <frac32.s.map name="value" value="12.0"/>
+            </params>
+            <attribs/>
+         </obj>
+         <obj type="ctrl/dial p" uuid="cc5d2846c3d50e425f450c4b9851371b54f4d674" name="dial_35" x="1330" y="196">
+            <params>
+               <frac32.u.map name="value" value="18.0"/>
+            </params>
+            <attribs/>
+         </obj>
+         <nets>
+            <net>
+               <source obj="keyb_3" outlet="gate"/>
+               <dest obj="toggle_2" inlet="trig"/>
+            </net>
+            <net>
+               <source obj="toggle_2" outlet="o"/>
+               <dest obj="note_15" inlet="trig"/>
+               <dest obj="outlet_1" inlet="outlet"/>
+            </net>
+            <net>
+               <source obj="dial_34" outlet="out"/>
+               <dest obj="note_15" inlet="note"/>
+            </net>
+            <net>
+               <source obj="dial_35" outlet="out"/>
+               <dest obj="note_15" inlet="velo"/>
+            </net>
+         </nets>
+         <settings>
+            <subpatchmode>no</subpatchmode>
+         </settings>
+         <notes><![CDATA[]]></notes>
+         <windowPos>
+            <x>0</x>
+            <y>23</y>
+            <width>400</width>
+            <height>400</height>
+         </windowPos>
+      </subpatch>
+   </patcher>
+   <obj type="const/i" uuid="e202f44b2df17ae0b3e663b98ea6b14c8ff00408" name="i_5" x="1708" y="532">
+      <params/>
+      <attribs>
+         <spinner attributeName="value" value="48000"/>
+      </attribs>
+   </obj>
+   <obj type="rbrt/looper/ldrive loop" uuid="50a04ed3-8ca2-4cfb-ab23-e53c0e8cbbf4" name="ldrive_1" x="2492" y="532">
+      <params>
+         <frac32.s.map name="speed" value="0.0"/>
+      </params>
+      <attribs>
+         <objref attributeName="table" obj="rec"/>
+      </attribs>
+   </obj>
+   <obj type="table/read interp" uuid="42918ec2255011ae3787cc5488c9b29980d796a8" name="read_1" x="2632" y="532">
+      <params/>
+      <attribs>
+         <objref attributeName="table" obj="rec"/>
+      </attribs>
+   </obj>
+   <obj type="disp/dial p" uuid="44fd18b562e434b3230441681132dbeabb15cdc5" name="REC REMAIN" x="826" y="560">
+      <params/>
+      <attribs/>
+   </obj>
+   <patcher type="patch/patcher" uuid="689ed09a-4b0f-4c84-b4a7-8c9034e3925e" name="RECORD" x="896" y="560">
+      <params/>
+      <attribs/>
+      <subpatch appVersion="1.0.12">
+         <obj type="midi/in/keyb note" uuid="ac0cd98e6c0373b7be73d25900342a62ebcf5f" name="keyb_2" x="280" y="168">
+            <params/>
+            <attribs>
+               <spinner attributeName="note" value="105"/>
+            </attribs>
+         </obj>
+         <obj type="logic/toggle" uuid="f42f0d3aab552c17bc78b9e65f85dc24f977503d" name="toggle_1" x="392" y="168">
+            <params/>
+            <attribs/>
+         </obj>
+         <obj type="midi/out/note" uuid="a76ae870da278cbbce5501a57ce7bd0e0ea4215c" name="note_14" x="476" y="168">
+            <params/>
+            <attribs>
+               <combo attributeName="device" selection="usb host port 1"/>
+               <spinner attributeName="channel" value="1"/>
+            </attribs>
+         </obj>
+         <obj type="patch/outlet b" uuid="191792f616d4835dba0b55375474a12942e5bcbd" name="outlet_1" x="602" y="168">
+            <params/>
+            <attribs/>
+         </obj>
+         <obj type="ctrl/dial b" uuid="862e7d7f29093cb1ce4aed72244d118ad4d46692" name="dial_33" x="392" y="210">
+            <params>
+               <frac32.s.map name="value" value="41.0"/>
+            </params>
+            <attribs/>
+         </obj>
+         <obj type="ctrl/dial p" uuid="cc5d2846c3d50e425f450c4b9851371b54f4d674" name="dial_31" x="392" y="294">
+            <params>
+               <frac32.u.map name="value" value="64.0"/>
+            </params>
+            <attribs/>
+         </obj>
+         <nets>
+            <net>
+               <source obj="keyb_2" outlet="gate"/>
+               <dest obj="toggle_1" inlet="trig"/>
+            </net>
+            <net>
+               <source obj="toggle_1" outlet="o"/>
+               <dest obj="note_14" inlet="trig"/>
+               <dest obj="outlet_1" inlet="outlet"/>
+            </net>
+            <net>
+               <source obj="dial_33" outlet="out"/>
+               <dest obj="note_14" inlet="note"/>
+            </net>
+            <net>
+               <source obj="dial_31" outlet="out"/>
+               <dest obj="note_14" inlet="velo"/>
+            </net>
+         </nets>
+         <settings>
+            <subpatchmode>no</subpatchmode>
+         </settings>
+         <notes><![CDATA[]]></notes>
+         <windowPos>
+            <x>252</x>
+            <y>561</y>
+            <width>961</width>
+            <height>633</height>
+         </windowPos>
+      </subpatch>
+   </patcher>
+   <obj type="ctrl/i" uuid="a3786816db6ea5bc6ac4193a5cccdb2c83b83496" name="SCALE UP" x="1708" y="588">
+      <params>
+         <int32 name="value" value="0"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="rbrt/looper/lcontrol launch" uuid="8ebd8270-6021-4ca7-b5f2-a0cebc9e7235" name="obj_1" x="2338" y="602">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="midi/in/keyb note" uuid="ac0cd98e6c0373b7be73d25900342a62ebcf5f" name="LAUNCH1_" x="1008" y="630">
+      <params/>
+      <attribs>
+         <spinner attributeName="note" value="57"/>
+      </attribs>
+   </obj>
+   <obj type="ctrl/dial b" uuid="862e7d7f29093cb1ce4aed72244d118ad4d46692" name="SPEED3" x="1106" y="630">
+      <params>
+         <frac32.s.map name="value" MidiCC="17" value="60.0"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="midi/in/keyb note" uuid="ac0cd98e6c0373b7be73d25900342a62ebcf5f" name="LAUNCH1__" x="1232" y="630">
+      <params/>
+      <attribs>
+         <spinner attributeName="note" value="59"/>
+      </attribs>
+   </obj>
+   <obj type="ctrl/dial b" uuid="862e7d7f29093cb1ce4aed72244d118ad4d46692" name="SPEED4" x="1330" y="630">
+      <params>
+         <frac32.s.map name="value" MidiCC="19" value="64.0"/>
+      </params>
+      <attribs/>
+   </obj>
+   <comment type="patch/comment" x="896" y="644" text="MASTER/SLAVE"/>
+   <patcher type="patch/patcher" uuid="2ecde7e5-2752-408b-858c-653d00c92997" name="masterslave" x="896" y="658">
+      <params/>
+      <attribs/>
+      <subpatch appVersion="1.0.12">
+         <obj type="midi/in/keyb note" uuid="ac0cd98e6c0373b7be73d25900342a62ebcf5f" name="keyb_2" x="0" y="70">
+            <params/>
+            <attribs>
+               <spinner attributeName="note" value="106"/>
+            </attribs>
+         </obj>
+         <obj type="logic/toggle" uuid="f42f0d3aab552c17bc78b9e65f85dc24f977503d" name="toggle_1" x="112" y="70">
+            <params/>
+            <attribs/>
+         </obj>
+         <obj type="midi/out/note" uuid="a76ae870da278cbbce5501a57ce7bd0e0ea4215c" name="note_14" x="196" y="70">
+            <params/>
+            <attribs>
+               <combo attributeName="device" selection="usb host port 1"/>
+               <spinner attributeName="channel" value="1"/>
+            </attribs>
+         </obj>
+         <obj type="patch/outlet b" uuid="191792f616d4835dba0b55375474a12942e5bcbd" name="outlet_1" x="322" y="70">
+            <params/>
+            <attribs/>
+         </obj>
+         <obj type="ctrl/dial b" uuid="862e7d7f29093cb1ce4aed72244d118ad4d46692" name="dial_33" x="112" y="112">
+            <params>
+               <frac32.s.map name="value" value="42.0"/>
+            </params>
+            <attribs/>
+         </obj>
+         <obj type="ctrl/dial p" uuid="cc5d2846c3d50e425f450c4b9851371b54f4d674" name="dial_31" x="112" y="196">
+            <params>
+               <frac32.u.map name="value" value="64.0"/>
+            </params>
+            <attribs/>
+         </obj>
+         <nets>
+            <net>
+               <source obj="keyb_2" outlet="gate"/>
+               <dest obj="toggle_1" inlet="trig"/>
+            </net>
+            <net>
+               <source obj="toggle_1" outlet="o"/>
+               <dest obj="note_14" inlet="trig"/>
+               <dest obj="outlet_1" inlet="outlet"/>
+            </net>
+            <net>
+               <source obj="dial_33" outlet="out"/>
+               <dest obj="note_14" inlet="note"/>
+            </net>
+            <net>
+               <source obj="dial_31" outlet="out"/>
+               <dest obj="note_14" inlet="velo"/>
+            </net>
+         </nets>
+         <settings>
+            <subpatchmode>no</subpatchmode>
+         </settings>
+         <notes><![CDATA[]]></notes>
+         <windowPos>
+            <x>0</x>
+            <y>23</y>
+            <width>400</width>
+            <height>400</height>
+         </windowPos>
+      </subpatch>
+   </patcher>
+   <obj type="demux/demux 4" uuid="2d85d32578993f1b062c98cb91f49ff3f0f4be47" name="demux recstate" x="1708" y="658">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="rbrt/data/tablestore demux" uuid="eb9a7e4c-9c60-4735-8b1f-71eae63debb2" name="tablestore_3" x="2072" y="658">
+      <params/>
+      <attribs>
+         <objref attributeName="table" obj="data"/>
+         <spinner attributeName="offset" value="4"/>
+      </attribs>
+   </obj>
+   <obj type="rbrt/looper/ldrive loop" uuid="50a04ed3-8ca2-4cfb-ab23-e53c0e8cbbf4" name="ldrive_2" x="2646" y="672">
+      <params>
+         <frac32.s.map name="speed" value="0.0"/>
+      </params>
+      <attribs>
+         <objref attributeName="table" obj="rec"/>
+      </attribs>
+   </obj>
+   <obj type="table/read interp" uuid="42918ec2255011ae3787cc5488c9b29980d796a8" name="read_2" x="2786" y="672">
+      <params/>
+      <attribs>
+         <objref attributeName="table" obj="rec"/>
+      </attribs>
+   </obj>
+   <obj type="mix/mix 4 g" uuid="36f472cd81da2e17bd4b4ee11b53b4c82527220c" name="mix_1" x="3066" y="700">
+      <params>
+         <frac32.u.map name="gain1" MidiCC="77" value="0.0"/>
+         <frac32.u.map name="gain2" MidiCC="79" value="0.0"/>
+         <frac32.u.map name="gain3" MidiCC="81" value="63.99999952316284"/>
+         <frac32.u.map name="gain4" MidiCC="83" value="0.0"/>
+      </params>
+      <attribs/>
+   </obj>
+   <patcher type="patch/patcher" uuid="65ee9c31-f62e-420e-9d87-2599d12257a1" name="toggleplay3" x="1008" y="714">
+      <params/>
+      <attribs/>
+      <subpatch appVersion="1.0.12">
+         <obj type="patch/inlet b" uuid="3b0d3eacb5bb978cb05d1372aa2714d5a4790844" name="inlet_3" x="28" y="56">
+            <params/>
+            <attribs/>
+         </obj>
+         <obj type="midi/in/keyb note" uuid="ac0cd98e6c0373b7be73d25900342a62ebcf5f" name="keyb_6" x="126" y="56">
+            <params/>
+            <attribs>
+               <spinner attributeName="note" value="89"/>
+            </attribs>
+         </obj>
+         <obj type="patch/outlet b" uuid="191792f616d4835dba0b55375474a12942e5bcbd" name="outlet_4" x="350" y="56">
+            <params/>
+            <attribs/>
+         </obj>
+         <obj type="ctrl/dial b" uuid="862e7d7f29093cb1ce4aed72244d118ad4d46692" name="dial_40" x="238" y="70">
+            <params>
+               <frac32.s.map name="value" value="25.0"/>
+            </params>
+            <attribs/>
+         </obj>
+         <obj type="midi/out/note" uuid="a76ae870da278cbbce5501a57ce7bd0e0ea4215c" name="note_18" x="364" y="112">
+            <params/>
+            <attribs>
+               <combo attributeName="device" selection="usb host port 1"/>
+               <spinner attributeName="channel" value="1"/>
+            </attribs>
+         </obj>
+         <obj type="ctrl/dial p" uuid="cc5d2846c3d50e425f450c4b9851371b54f4d674" name="dial_41" x="238" y="154">
+            <params>
+               <frac32.u.map name="value" value="41.5"/>
+            </params>
+            <attribs/>
+         </obj>
+         <nets>
+            <net>
+               <source obj="dial_40" outlet="out"/>
+               <dest obj="note_18" inlet="note"/>
+            </net>
+            <net>
+               <source obj="dial_41" outlet="out"/>
+               <dest obj="note_18" inlet="velo"/>
+            </net>
+            <net>
+               <source obj="keyb_6" outlet="gate"/>
+               <dest obj="outlet_4" inlet="outlet"/>
+            </net>
+            <net>
+               <source obj="inlet_3" outlet="inlet"/>
+               <dest obj="note_18" inlet="trig"/>
+            </net>
+         </nets>
+         <settings>
+            <subpatchmode>no</subpatchmode>
+         </settings>
+         <notes><![CDATA[]]></notes>
+         <windowPos>
+            <x>0</x>
+            <y>23</y>
+            <width>400</width>
+            <height>400</height>
+         </windowPos>
+      </subpatch>
+   </patcher>
+   <patcher type="patch/patcher" uuid="2828cb2d-79f4-400c-8f8d-ac7df6ff03b0" name="zeroreset3" x="1092" y="714">
+      <params/>
+      <attribs/>
+      <subpatch appVersion="1.0.12">
+         <obj type="midi/in/keyb note" uuid="ac0cd98e6c0373b7be73d25900342a62ebcf5f" name="keyb_3" x="0" y="70">
+            <params/>
+            <attribs>
+               <spinner attributeName="note" value="90"/>
+            </attribs>
+         </obj>
+         <obj type="logic/toggle" uuid="f42f0d3aab552c17bc78b9e65f85dc24f977503d" name="toggle_2" x="98" y="70">
+            <params/>
+            <attribs/>
+         </obj>
+         <obj type="midi/out/note" uuid="a76ae870da278cbbce5501a57ce7bd0e0ea4215c" name="note_15" x="182" y="70">
+            <params/>
+            <attribs>
+               <combo attributeName="device" selection="usb host port 1"/>
+               <spinner attributeName="channel" value="1"/>
+            </attribs>
+         </obj>
+         <obj type="patch/outlet b" uuid="191792f616d4835dba0b55375474a12942e5bcbd" name="outlet_1" x="308" y="70">
+            <params/>
+            <attribs/>
+         </obj>
+         <obj type="ctrl/dial b" uuid="862e7d7f29093cb1ce4aed72244d118ad4d46692" name="dial_34" x="98" y="112">
+            <params>
+               <frac32.s.map name="value" value="26.0"/>
+            </params>
+            <attribs/>
+         </obj>
+         <obj type="ctrl/dial p" uuid="cc5d2846c3d50e425f450c4b9851371b54f4d674" name="dial_35" x="98" y="168">
+            <params>
+               <frac32.u.map name="value" value="18.0"/>
+            </params>
+            <attribs/>
+         </obj>
+         <nets>
+            <net>
+               <source obj="keyb_3" outlet="gate"/>
+               <dest obj="toggle_2" inlet="trig"/>
+            </net>
+            <net>
+               <source obj="toggle_2" outlet="o"/>
+               <dest obj="note_15" inlet="trig"/>
+               <dest obj="outlet_1" inlet="outlet"/>
+            </net>
+            <net>
+               <source obj="dial_34" outlet="out"/>
+               <dest obj="note_15" inlet="note"/>
+            </net>
+            <net>
+               <source obj="dial_35" outlet="out"/>
+               <dest obj="note_15" inlet="velo"/>
+            </net>
+         </nets>
+         <settings>
+            <subpatchmode>no</subpatchmode>
+         </settings>
+         <notes><![CDATA[]]></notes>
+         <windowPos>
+            <x>0</x>
+            <y>23</y>
+            <width>400</width>
+            <height>400</height>
+         </windowPos>
+      </subpatch>
+   </patcher>
+   <patcher type="patch/patcher" uuid="dfce42c3-8e4c-426f-8f3c-88d0cff18e7a" name="toggleplay4" x="1246" y="714">
+      <params/>
+      <attribs/>
+      <subpatch appVersion="1.0.12">
+         <obj type="patch/inlet b" uuid="3b0d3eacb5bb978cb05d1372aa2714d5a4790844" name="inlet_3" x="42" y="70">
+            <params/>
+            <attribs/>
+         </obj>
+         <obj type="midi/in/keyb note" uuid="ac0cd98e6c0373b7be73d25900342a62ebcf5f" name="keyb_6" x="140" y="70">
+            <params/>
+            <attribs>
+               <spinner attributeName="note" value="91"/>
+            </attribs>
+         </obj>
+         <obj type="patch/outlet b" uuid="191792f616d4835dba0b55375474a12942e5bcbd" name="outlet_4" x="364" y="70">
+            <params/>
+            <attribs/>
+         </obj>
+         <obj type="ctrl/dial b" uuid="862e7d7f29093cb1ce4aed72244d118ad4d46692" name="dial_40" x="252" y="84">
+            <params>
+               <frac32.s.map name="value" value="27.0"/>
+            </params>
+            <attribs/>
+         </obj>
+         <obj type="midi/out/note" uuid="a76ae870da278cbbce5501a57ce7bd0e0ea4215c" name="note_18" x="378" y="126">
+            <params/>
+            <attribs>
+               <combo attributeName="device" selection="usb host port 1"/>
+               <spinner attributeName="channel" value="1"/>
+            </attribs>
+         </obj>
+         <obj type="ctrl/dial p" uuid="cc5d2846c3d50e425f450c4b9851371b54f4d674" name="dial_41" x="252" y="168">
+            <params>
+               <frac32.u.map name="value" value="41.5"/>
+            </params>
+            <attribs/>
+         </obj>
+         <nets>
+            <net>
+               <source obj="dial_40" outlet="out"/>
+               <dest obj="note_18" inlet="note"/>
+            </net>
+            <net>
+               <source obj="dial_41" outlet="out"/>
+               <dest obj="note_18" inlet="velo"/>
+            </net>
+            <net>
+               <source obj="keyb_6" outlet="gate"/>
+               <dest obj="outlet_4" inlet="outlet"/>
+            </net>
+            <net>
+               <source obj="inlet_3" outlet="inlet"/>
+               <dest obj="note_18" inlet="trig"/>
+            </net>
+         </nets>
+         <settings>
+            <subpatchmode>no</subpatchmode>
+         </settings>
+         <notes><![CDATA[]]></notes>
+         <windowPos>
+            <x>0</x>
+            <y>23</y>
+            <width>400</width>
+            <height>400</height>
+         </windowPos>
+      </subpatch>
+   </patcher>
+   <patcher type="patch/patcher" uuid="87f2c1ba-fbf8-4a07-bfd9-6abd63a64128" name="zeroreset4" x="1330" y="714">
+      <params/>
+      <attribs/>
+      <subpatch appVersion="1.0.12">
+         <obj type="midi/in/keyb note" uuid="ac0cd98e6c0373b7be73d25900342a62ebcf5f" name="keyb_3" x="14" y="84">
+            <params/>
+            <attribs>
+               <spinner attributeName="note" value="92"/>
+            </attribs>
+         </obj>
+         <obj type="logic/toggle" uuid="f42f0d3aab552c17bc78b9e65f85dc24f977503d" name="toggle_2" x="112" y="84">
+            <params/>
+            <attribs/>
+         </obj>
+         <obj type="midi/out/note" uuid="a76ae870da278cbbce5501a57ce7bd0e0ea4215c" name="note_15" x="196" y="84">
+            <params/>
+            <attribs>
+               <combo attributeName="device" selection="usb host port 1"/>
+               <spinner attributeName="channel" value="1"/>
+            </attribs>
+         </obj>
+         <obj type="patch/outlet b" uuid="191792f616d4835dba0b55375474a12942e5bcbd" name="outlet_1" x="322" y="84">
+            <params/>
+            <attribs/>
+         </obj>
+         <obj type="ctrl/dial b" uuid="862e7d7f29093cb1ce4aed72244d118ad4d46692" name="dial_34" x="112" y="126">
+            <params>
+               <frac32.s.map name="value" value="28.0"/>
+            </params>
+            <attribs/>
+         </obj>
+         <obj type="ctrl/dial p" uuid="cc5d2846c3d50e425f450c4b9851371b54f4d674" name="dial_35" x="112" y="182">
+            <params>
+               <frac32.u.map name="value" value="18.0"/>
+            </params>
+            <attribs/>
+         </obj>
+         <nets>
+            <net>
+               <source obj="keyb_3" outlet="gate"/>
+               <dest obj="toggle_2" inlet="trig"/>
+            </net>
+            <net>
+               <source obj="toggle_2" outlet="o"/>
+               <dest obj="note_15" inlet="trig"/>
+               <dest obj="outlet_1" inlet="outlet"/>
+            </net>
+            <net>
+               <source obj="dial_34" outlet="out"/>
+               <dest obj="note_15" inlet="note"/>
+            </net>
+            <net>
+               <source obj="dial_35" outlet="out"/>
+               <dest obj="note_15" inlet="velo"/>
+            </net>
+         </nets>
+         <settings>
+            <subpatchmode>no</subpatchmode>
+         </settings>
+         <notes><![CDATA[]]></notes>
+         <windowPos>
+            <x>0</x>
+            <y>23</y>
+            <width>400</width>
+            <height>400</height>
+         </windowPos>
+      </subpatch>
+   </patcher>
+   <obj type="logic/and 2" uuid="c67031682f552aa0a80b23377495c51ea28a8c9c" name="and_2" x="2408" y="728">
+      <params/>
+      <attribs/>
+   </obj>
+   <comment type="patch/comment" x="896" y="742" text="RECORDING MODE"/>
+   <patcher type="patch/patcher" uuid="8431f450-b667-423c-ac37-e7182385a945" name="Target Slot" x="896" y="742">
+      <params/>
+      <attribs/>
+      <subpatch appVersion="1.0.12">
+         <obj type="midi/out/note" uuid="a76ae870da278cbbce5501a57ce7bd0e0ea4215c" name="note_14" x="952" y="14">
+            <params/>
+            <attribs>
+               <combo attributeName="device" selection="usb host port 1"/>
+               <spinner attributeName="channel" value="1"/>
+            </attribs>
+         </obj>
+         <obj type="ctrl/dial p" uuid="cc5d2846c3d50e425f450c4b9851371b54f4d674" name="dial_31" x="798" y="28">
+            <params>
+               <frac32.u.map name="value" value="64.0"/>
+            </params>
+            <attribs/>
+         </obj>
+         <obj type="ctrl/dial b" uuid="862e7d7f29093cb1ce4aed72244d118ad4d46692" name="dial_33" x="868" y="28">
+            <params>
+               <frac32.s.map name="value" value="-22.0"/>
+            </params>
+            <attribs/>
+         </obj>
+         <obj type="logic/or 2" uuid="3805d3c84d30032a44fbdbe42d9a2988a1790a3e" name="or_1" x="196" y="84">
+            <params/>
+            <attribs/>
+         </obj>
+         <obj type="midi/in/keyb note" uuid="ac0cd98e6c0373b7be73d25900342a62ebcf5f" name="keyb_1" x="70" y="98">
+            <params/>
+            <attribs>
+               <spinner attributeName="note" value="42"/>
+            </attribs>
+         </obj>
+         <obj type="logic/or 2" uuid="3805d3c84d30032a44fbdbe42d9a2988a1790a3e" name="or_3" x="266" y="112">
+            <params/>
+            <attribs/>
+         </obj>
+         <obj type="logic/flipflop toggle" uuid="195e489e5fc3d275944b0de56c7a91c8641ea22a" name="flipflop_1" x="336" y="112">
+            <params/>
+            <attribs/>
+         </obj>
+         <obj type="math/*c" uuid="7d5ef61c3bcd571ee6bbd8437ef3612125dfb225" name="*c_4" x="630" y="112">
+            <params>
+               <frac32.u.map name="amp" value="0.0"/>
+            </params>
+            <attribs/>
+         </obj>
+         <obj type="midi/out/note" uuid="a76ae870da278cbbce5501a57ce7bd0e0ea4215c" name="note_15" x="952" y="126">
+            <params/>
+            <attribs>
+               <combo attributeName="device" selection="usb host port 1"/>
+               <spinner attributeName="channel" value="1"/>
+            </attribs>
+         </obj>
+         <obj type="logic/or 2" uuid="3805d3c84d30032a44fbdbe42d9a2988a1790a3e" name="or_2" x="196" y="140">
+            <params/>
+            <attribs/>
+         </obj>
+         <obj type="ctrl/dial p" uuid="cc5d2846c3d50e425f450c4b9851371b54f4d674" name="dial_32" x="798" y="140">
+            <params>
+               <frac32.u.map name="value" value="64.0"/>
+            </params>
+            <attribs/>
+         </obj>
+         <obj type="ctrl/dial b" uuid="862e7d7f29093cb1ce4aed72244d118ad4d46692" name="dial_34" x="868" y="140">
+            <params>
+               <frac32.s.map name="value" value="-20.0"/>
+            </params>
+            <attribs/>
+         </obj>
+         <obj type="midi/in/keyb note" uuid="ac0cd98e6c0373b7be73d25900342a62ebcf5f" name="keyb_2" x="70" y="182">
+            <params/>
+            <attribs>
+               <spinner attributeName="note" value="44"/>
+            </attribs>
+         </obj>
+         <obj type="disp/bool" uuid="a0ee71d48208b71752cbb8c05e55145106ef3946" name="bool_2" x="490" y="182">
+            <params/>
+            <attribs/>
+         </obj>
+         <obj type="math/*c" uuid="7d5ef61c3bcd571ee6bbd8437ef3612125dfb225" name="*c_1" x="630" y="196">
+            <params>
+               <frac32.u.map name="amp" value="2.0"/>
+            </params>
+            <attribs/>
+         </obj>
+         <obj type="logic/or 2" uuid="3805d3c84d30032a44fbdbe42d9a2988a1790a3e" name="or_4" x="280" y="238">
+            <params/>
+            <attribs/>
+         </obj>
+         <obj type="logic/flipflop toggle" uuid="195e489e5fc3d275944b0de56c7a91c8641ea22a" name="flipflop_2" x="364" y="252">
+            <params/>
+            <attribs/>
+         </obj>
+         <obj type="disp/bool" uuid="a0ee71d48208b71752cbb8c05e55145106ef3946" name="bool_3" x="490" y="252">
+            <params/>
+            <attribs/>
+         </obj>
+         <obj type="azaxo/ctrl/rotator4In" uuid="e13eaeca-f3ff-4593-8cc1-9427e332885f" name="rotator4In_1" x="756" y="252">
+            <params/>
+            <attribs/>
+         </obj>
+         <obj type="midi/in/keyb note" uuid="ac0cd98e6c0373b7be73d25900342a62ebcf5f" name="keyb_3" x="70" y="266">
+            <params/>
+            <attribs>
+               <spinner attributeName="note" value="58"/>
+            </attribs>
+         </obj>
+         <obj type="logic/or 2" uuid="3805d3c84d30032a44fbdbe42d9a2988a1790a3e" name="or_5" x="280" y="266">
+            <params/>
+            <attribs/>
+         </obj>
+         <obj type="logic/or 2" uuid="3805d3c84d30032a44fbdbe42d9a2988a1790a3e" name="or_6" x="322" y="266">
+            <params/>
+            <attribs/>
+         </obj>
+         <obj type="math/*c" uuid="7d5ef61c3bcd571ee6bbd8437ef3612125dfb225" name="*c_2" x="644" y="280">
+            <params>
+               <frac32.u.map name="amp" value="3.0"/>
+            </params>
+            <attribs/>
+         </obj>
+         <obj type="patch/outlet i" uuid="aae2176b26209e34e4fdeba5edb1ace82d178655" name="outlet_1" x="938" y="280">
+            <params/>
+            <attribs/>
+         </obj>
+         <obj type="logic/or 2" uuid="3805d3c84d30032a44fbdbe42d9a2988a1790a3e" name="or_7" x="224" y="308">
+            <params/>
+            <attribs/>
+         </obj>
+         <obj type="logic/flipflop toggle" uuid="195e489e5fc3d275944b0de56c7a91c8641ea22a" name="flipflop_3" x="378" y="322">
+            <params/>
+            <attribs/>
+         </obj>
+         <obj type="disp/bool" uuid="a0ee71d48208b71752cbb8c05e55145106ef3946" name="bool_4" x="504" y="322">
+            <params/>
+            <attribs/>
+         </obj>
+         <obj type="midi/in/keyb note" uuid="ac0cd98e6c0373b7be73d25900342a62ebcf5f" name="keyb_4" x="70" y="350">
+            <params/>
+            <attribs>
+               <spinner attributeName="note" value="60"/>
+            </attribs>
+         </obj>
+         <obj type="logic/or 2" uuid="3805d3c84d30032a44fbdbe42d9a2988a1790a3e" name="or_8" x="224" y="350">
+            <params/>
+            <attribs/>
+         </obj>
+         <obj type="logic/or 2" uuid="3805d3c84d30032a44fbdbe42d9a2988a1790a3e" name="or_9" x="266" y="350">
+            <params/>
+            <attribs/>
+         </obj>
+         <obj type="midi/out/note" uuid="a76ae870da278cbbce5501a57ce7bd0e0ea4215c" name="note_16" x="952" y="350">
+            <params/>
+            <attribs>
+               <combo attributeName="device" selection="usb host port 1"/>
+               <spinner attributeName="channel" value="1"/>
+            </attribs>
+         </obj>
+         <obj type="math/*c" uuid="7d5ef61c3bcd571ee6bbd8437ef3612125dfb225" name="*c_3" x="644" y="364">
+            <params>
+               <frac32.u.map name="amp" value="4.0"/>
+            </params>
+            <attribs/>
+         </obj>
+         <obj type="ctrl/dial p" uuid="cc5d2846c3d50e425f450c4b9851371b54f4d674" name="dial_35" x="798" y="364">
+            <params>
+               <frac32.u.map name="value" value="64.0"/>
+            </params>
+            <attribs/>
+         </obj>
+         <obj type="ctrl/dial b" uuid="862e7d7f29093cb1ce4aed72244d118ad4d46692" name="dial_36" x="868" y="364">
+            <params>
+               <frac32.s.map name="value" value="-6.0"/>
+            </params>
+            <attribs/>
+         </obj>
+         <obj type="logic/or 2" uuid="3805d3c84d30032a44fbdbe42d9a2988a1790a3e" name="or_10" x="224" y="378">
+            <params/>
+            <attribs/>
+         </obj>
+         <obj type="logic/flipflop toggle" uuid="195e489e5fc3d275944b0de56c7a91c8641ea22a" name="flipflop_4" x="378" y="392">
+            <params/>
+            <attribs/>
+         </obj>
+         <obj type="disp/bool" uuid="a0ee71d48208b71752cbb8c05e55145106ef3946" name="bool_5" x="504" y="392">
+            <params/>
+            <attribs/>
+         </obj>
+         <obj type="logic/or 2" uuid="3805d3c84d30032a44fbdbe42d9a2988a1790a3e" name="or_11" x="224" y="420">
+            <params/>
+            <attribs/>
+         </obj>
+         <obj type="logic/or 2" uuid="3805d3c84d30032a44fbdbe42d9a2988a1790a3e" name="or_12" x="266" y="420">
+            <params/>
+            <attribs/>
+         </obj>
+         <obj type="midi/out/note" uuid="a76ae870da278cbbce5501a57ce7bd0e0ea4215c" name="note_17" x="952" y="462">
+            <params/>
+            <attribs>
+               <combo attributeName="device" selection="usb host port 1"/>
+               <spinner attributeName="channel" value="1"/>
+            </attribs>
+         </obj>
+         <obj type="ctrl/dial p" uuid="cc5d2846c3d50e425f450c4b9851371b54f4d674" name="dial_37" x="798" y="476">
+            <params>
+               <frac32.u.map name="value" value="64.0"/>
+            </params>
+            <attribs/>
+         </obj>
+         <obj type="ctrl/dial b" uuid="862e7d7f29093cb1ce4aed72244d118ad4d46692" name="dial_38" x="868" y="476">
+            <params>
+               <frac32.s.map name="value" value="-4.0"/>
+            </params>
+            <attribs/>
+         </obj>
+         <nets>
+            <net>
+               <source obj="rotator4In_1" outlet="Out"/>
+               <dest obj="outlet_1" inlet="outlet"/>
+            </net>
+            <net>
+               <source obj="*c_2" outlet="out"/>
+               <dest obj="rotator4In_1" inlet="In3"/>
+            </net>
+            <net>
+               <source obj="*c_1" outlet="out"/>
+               <dest obj="rotator4In_1" inlet="In2"/>
+            </net>
+            <net>
+               <source obj="*c_3" outlet="out"/>
+               <dest obj="rotator4In_1" inlet="In4"/>
+            </net>
+            <net>
+               <source obj="keyb_1" outlet="gate"/>
+               <dest obj="flipflop_1" inlet="set"/>
+               <dest obj="or_4" inlet="i1"/>
+               <dest obj="or_7" inlet="i1"/>
+               <dest obj="or_10" inlet="i1"/>
+            </net>
+            <net>
+               <source obj="or_1" outlet="o"/>
+               <dest obj="or_3" inlet="i1"/>
+            </net>
+            <net>
+               <source obj="or_2" outlet="o"/>
+               <dest obj="or_3" inlet="i2"/>
+            </net>
+            <net>
+               <source obj="or_3" outlet="o"/>
+               <dest obj="flipflop_1" inlet="reset"/>
+            </net>
+            <net>
+               <source obj="keyb_2" outlet="gate"/>
+               <dest obj="flipflop_2" inlet="set"/>
+               <dest obj="or_7" inlet="i2"/>
+               <dest obj="or_10" inlet="i2"/>
+               <dest obj="or_1" inlet="i1"/>
+            </net>
+            <net>
+               <source obj="keyb_4" outlet="gate"/>
+               <dest obj="or_2" inlet="i1"/>
+               <dest obj="or_5" inlet="i1"/>
+               <dest obj="or_8" inlet="i1"/>
+               <dest obj="flipflop_4" inlet="set"/>
+            </net>
+            <net>
+               <source obj="keyb_3" outlet="gate"/>
+               <dest obj="or_4" inlet="i2"/>
+               <dest obj="flipflop_3" inlet="set"/>
+               <dest obj="or_11" inlet="i1"/>
+               <dest obj="or_1" inlet="i2"/>
+            </net>
+            <net>
+               <source obj="flipflop_1" outlet="o"/>
+               <dest obj="bool_2" inlet="in"/>
+               <dest obj="*c_4" inlet="in"/>
+               <dest obj="note_14" inlet="trig"/>
+            </net>
+            <net>
+               <source obj="or_4" outlet="o"/>
+               <dest obj="or_6" inlet="i1"/>
+            </net>
+            <net>
+               <source obj="or_5" outlet="o"/>
+               <dest obj="or_6" inlet="i2"/>
+            </net>
+            <net>
+               <source obj="or_6" outlet="o"/>
+               <dest obj="flipflop_2" inlet="reset"/>
+            </net>
+            <net>
+               <source obj="flipflop_2" outlet="o"/>
+               <dest obj="bool_3" inlet="in"/>
+               <dest obj="*c_1" inlet="in"/>
+               <dest obj="note_15" inlet="trig"/>
+            </net>
+            <net>
+               <source obj="or_7" outlet="o"/>
+               <dest obj="or_9" inlet="i1"/>
+            </net>
+            <net>
+               <source obj="or_8" outlet="o"/>
+               <dest obj="or_9" inlet="i2"/>
+            </net>
+            <net>
+               <source obj="or_9" outlet="o"/>
+               <dest obj="flipflop_3" inlet="reset"/>
+            </net>
+            <net>
+               <source obj="flipflop_3" outlet="o"/>
+               <dest obj="bool_4" inlet="in"/>
+               <dest obj="*c_2" inlet="in"/>
+               <dest obj="note_16" inlet="trig"/>
+            </net>
+            <net>
+               <source obj="or_10" outlet="o"/>
+               <dest obj="or_12" inlet="i1"/>
+            </net>
+            <net>
+               <source obj="or_11" outlet="o"/>
+               <dest obj="or_12" inlet="i2"/>
+            </net>
+            <net>
+               <source obj="or_12" outlet="o"/>
+               <dest obj="flipflop_4" inlet="reset"/>
+            </net>
+            <net>
+               <source obj="flipflop_4" outlet="o"/>
+               <dest obj="bool_5" inlet="in"/>
+               <dest obj="*c_3" inlet="in"/>
+               <dest obj="note_17" inlet="trig"/>
+            </net>
+            <net>
+               <source obj="*c_4" outlet="out"/>
+               <dest obj="rotator4In_1" inlet="In1"/>
+            </net>
+            <net>
+               <source obj="dial_33" outlet="out"/>
+               <dest obj="note_14" inlet="note"/>
+            </net>
+            <net>
+               <source obj="dial_31" outlet="out"/>
+               <dest obj="note_14" inlet="velo"/>
+            </net>
+            <net>
+               <source obj="dial_34" outlet="out"/>
+               <dest obj="note_15" inlet="note"/>
+            </net>
+            <net>
+               <source obj="dial_32" outlet="out"/>
+               <dest obj="note_15" inlet="velo"/>
+            </net>
+            <net>
+               <source obj="dial_36" outlet="out"/>
+               <dest obj="note_16" inlet="note"/>
+            </net>
+            <net>
+               <source obj="dial_35" outlet="out"/>
+               <dest obj="note_16" inlet="velo"/>
+            </net>
+            <net>
+               <source obj="dial_38" outlet="out"/>
+               <dest obj="note_17" inlet="note"/>
+            </net>
+            <net>
+               <source obj="dial_37" outlet="out"/>
+               <dest obj="note_17" inlet="velo"/>
+            </net>
+         </nets>
+         <settings>
+            <subpatchmode>no</subpatchmode>
+         </settings>
+         <notes><![CDATA[]]></notes>
+         <windowPos>
+            <x>0</x>
+            <y>23</y>
+            <width>1200</width>
+            <height>647</height>
+         </windowPos>
+      </subpatch>
+   </patcher>
+   <obj type="rbrt/seq/timepoint" uuid="4aa7200d-f2bb-41f9-82cb-e7a6447d091c" name="timepoint_1" x="2296" y="742">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="rbrt/looper/lcontrol launch" uuid="8ebd8270-6021-4ca7-b5f2-a0cebc9e7235" name="obj_2" x="2492" y="742">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="disp/i" uuid="5e35fd0c62d81e70017289250cf28edd26e19e4a" name="i_2" x="812" y="770">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="math/+" uuid="faedbea4612d9bd3644d6d3bf31946d848a70e19" name="+_1" x="3178" y="770">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="midi/in/keyb note" uuid="ac0cd98e6c0373b7be73d25900342a62ebcf5f" name="STOP ALL" x="1050" y="798">
+      <params/>
+      <attribs>
+         <spinner attributeName="note" value="106"/>
+      </attribs>
+   </obj>
+   <obj type="rbrt/data/tablestore demux" uuid="eb9a7e4c-9c60-4735-8b1f-71eae63debb2" name="tablestore_4" x="2072" y="798">
+      <params/>
+      <attribs>
+         <objref attributeName="table" obj="data"/>
+         <spinner attributeName="offset" value="8"/>
+      </attribs>
+   </obj>
+   <obj type="disp/kscope 128 b" uuid="e71f3dd9bc5b799ad703079e63fb929dd75def0" name="GLOBAL TRANSPORT" x="1624" y="812">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="audio/out stereo" uuid="a1ca7a567f535acc21055669829101d3ee7f0189" name="out_1" x="3262" y="812">
+      <params/>
+      <attribs/>
+   </obj>
+   <comment type="patch/comment" x="896" y="826" text="TARGET SLOT"/>
+   <obj type="ctrl/dial b" uuid="862e7d7f29093cb1ce4aed72244d118ad4d46692" name="dial_33" x="616" y="840">
+      <params>
+         <frac32.s.map name="value" value="42.0"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="midi/in/keyb note" uuid="ac0cd98e6c0373b7be73d25900342a62ebcf5f" name="keyb_2" x="448" y="854">
+      <params/>
+      <attribs>
+         <spinner attributeName="note" value="106"/>
+      </attribs>
+   </obj>
+   <obj type="disp/i" uuid="5e35fd0c62d81e70017289250cf28edd26e19e4a" name="MASTER" x="896" y="854">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="logic/and 2" uuid="c67031682f552aa0a80b23377495c51ea28a8c9c" name="and_3" x="2562" y="854">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="logic/toggle" uuid="f42f0d3aab552c17bc78b9e65f85dc24f977503d" name="toggle_1" x="546" y="868">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="midi/out/note" uuid="a76ae870da278cbbce5501a57ce7bd0e0ea4215c" name="note_14" x="686" y="868">
+      <params/>
+      <attribs>
+         <combo attributeName="device" selection="usb host port 1"/>
+         <spinner attributeName="channel" value="1"/>
+      </attribs>
+   </obj>
+   <obj type="disp/bool" uuid="a0ee71d48208b71752cbb8c05e55145106ef3946" name="bool_1" x="742" y="868">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="ctrl/dial p" uuid="cc5d2846c3d50e425f450c4b9851371b54f4d674" name="dial_31" x="616" y="882">
+      <params>
+         <frac32.u.map name="value" value="64.0"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="ctrl/button" uuid="ef3d13774349df85aa9bfecf30dbc91ab8488b3f" name="SAVE" x="1092" y="882">
+      <params>
+         <bool32.mom name="b" value="0"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="ctrl/button" uuid="ef3d13774349df85aa9bfecf30dbc91ab8488b3f" name="LOAD" x="1190" y="882">
+      <params>
+         <bool32.mom name="b" value="0"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="table/alloc 16b sdram" uuid="6d8eb0fd68f404cb5d14e7d4c8c146c8ccf09da1" name="rec" x="1274" y="882">
+      <params/>
+      <attribs>
+         <combo attributeName="size" selection="4194304"/>
+         <text attributeName="init">
+            <sText><![CDATA[]]></sText>
+         </text>
+      </attribs>
+   </obj>
+   <obj type="table/alloc 32b" uuid="ac26551322b24f37c3be0e6481d1193f1fd66bc8" name="data" x="1414" y="882">
+      <params/>
+      <attribs>
+         <combo attributeName="size" selection="16"/>
+         <text attributeName="init">
+            <sText><![CDATA[]]></sText>
+         </text>
+      </attribs>
+   </obj>
+   <obj type="rbrt/looper/ldrive loop" uuid="50a04ed3-8ca2-4cfb-ab23-e53c0e8cbbf4" name="ldrive_3" x="2646" y="882">
+      <params>
+         <frac32.s.map name="speed" value="0.0"/>
+      </params>
+      <attribs>
+         <objref attributeName="table" obj="rec"/>
+      </attribs>
+   </obj>
+   <obj type="table/read interp" uuid="42918ec2255011ae3787cc5488c9b29980d796a8" name="read_3" x="2786" y="882">
+      <params/>
+      <attribs>
+         <objref attributeName="table" obj="rec"/>
+      </attribs>
+   </obj>
+   <comment type="patch/comment" x="882" y="910" text="which loop is the current master-loop?"/>
+   <comment type="patch/comment" x="1092" y="938" text="save to SD"/>
+   <comment type="patch/comment" x="1190" y="938" text="load from SD"/>
+   <obj type="rbrt/looper/lcontrol launch" uuid="8ebd8270-6021-4ca7-b5f2-a0cebc9e7235" name="obj_3" x="2492" y="952">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="string/c" uuid="4aa90a90c435a742ddfa152d232883fc5b2f1b3" name="c_1" x="1092" y="980">
+      <params/>
+      <attribs>
+         <table attributeName="str" table="4track.wav"/>
+      </attribs>
+   </obj>
+   <obj type="table/save" uuid="3e4108b607d56d9e1cd10abb898b58eea11e53b2" name="save_1" x="1260" y="980">
+      <params/>
+      <attribs>
+         <objref attributeName="table" obj="rec"/>
+      </attribs>
+   </obj>
+   <obj type="table/load" uuid="600cc22c6734d23a82620da1a14e78782a7e168e" name="load_1" x="1386" y="980">
+      <params/>
+      <attribs>
+         <objref attributeName="table" obj="rec"/>
+      </attribs>
+   </obj>
+   <obj type="rbrt/looper/ldrive loop" uuid="50a04ed3-8ca2-4cfb-ab23-e53c0e8cbbf4" name="ldrive_4" x="2800" y="1022">
+      <params>
+         <frac32.s.map name="speed" value="0.0"/>
+      </params>
+      <attribs>
+         <objref attributeName="table" obj="rec"/>
+      </attribs>
+   </obj>
+   <obj type="table/read interp" uuid="42918ec2255011ae3787cc5488c9b29980d796a8" name="read_4" x="2940" y="1022">
+      <params/>
+      <attribs>
+         <objref attributeName="table" obj="rec"/>
+      </attribs>
+   </obj>
+   <obj type="drj/math/sum4" uuid="7d7f2293cb126acaed86ae2d46124474d118a692" name="sum4_1" x="3206" y="1036">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="string/c" uuid="4aa90a90c435a742ddfa152d232883fc5b2f1b3" name="c_2" x="1092" y="1050">
+      <params/>
+      <attribs>
+         <table attributeName="str" table="4track.txt"/>
+      </attribs>
+   </obj>
+   <obj type="ctrl/dial b" uuid="862e7d7f29093cb1ce4aed72244d118ad4d46692" name="dial_32" x="504" y="1064">
+      <params>
+         <frac32.s.map name="value" value="12.0"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="rbrt/midi/in/monitor" uuid="64b3d36e-97ab-4b18-91f7-ff611e14fd7a" name="monitor_1" x="1680" y="1064">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="logic/and 2" uuid="c67031682f552aa0a80b23377495c51ea28a8c9c" name="and_4" x="2562" y="1064">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="table/save" uuid="3e4108b607d56d9e1cd10abb898b58eea11e53b2" name="save_2" x="1260" y="1078">
+      <params/>
+      <attribs>
+         <objref attributeName="table" obj="data"/>
+      </attribs>
+   </obj>
+   <obj type="table/load" uuid="600cc22c6734d23a82620da1a14e78782a7e168e" name="load_2" x="1386" y="1078">
+      <params/>
+      <attribs>
+         <objref attributeName="table" obj="data"/>
+      </attribs>
+   </obj>
+   <obj type="rbrt/looper/lcontrol launch" uuid="8ebd8270-6021-4ca7-b5f2-a0cebc9e7235" name="obj_4" x="2646" y="1092">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="drj/math/== const i" uuid="36ae23539d64bc2fb798a1b4a65cf9dda17a1952" name="==_2" x="644" y="1134">
+      <params/>
+      <attribs>
+         <spinner attributeName="value" value="0"/>
+      </attribs>
+   </obj>
+   <obj type="logic/and 2" uuid="c67031682f552aa0a80b23377495c51ea28a8c9c" name="and_5" x="2716" y="1204">
+      <params/>
+      <attribs/>
+   </obj>
+   <nets>
+      <net>
+         <source obj="in_1" outlet="wave"/>
+         <dest obj="+_1" inlet="in1"/>
+         <dest obj="lrec_1" inlet="wave"/>
+      </net>
+      <net>
+         <source obj="+_1" outlet="out"/>
+         <dest obj="out_1" inlet="left"/>
+         <dest obj="out_1" inlet="right"/>
+      </net>
+      <net>
+         <source obj="lrec_1" outlet="offset"/>
+         <dest obj="tablestore_2" inlet="in"/>
+      </net>
+      <net>
+         <source obj="ldrive_1" outlet="pos"/>
+         <dest obj="read_1" inlet="a"/>
+      </net>
+      <net>
+         <source obj="obj_1" outlet="play"/>
+         <dest obj="ldrive_1" inlet="play"/>
+         <dest obj="toggleplay1" inlet="inlet_3"/>
+      </net>
+      <net>
+         <source obj="obj_1" outlet="reset"/>
+         <dest obj="ldrive_1" inlet="r2offset"/>
+      </net>
+      <net>
+         <source obj="lrec_1" outlet="rec"/>
+         <dest obj="demux recstate" inlet="i"/>
+         <dest obj="scale transport tempo" inlet="recstate"/>
+      </net>
+      <net>
+         <source obj="lrec_1" outlet="range"/>
+         <dest obj="tablestore_3" inlet="in"/>
+      </net>
+      <net>
+         <source obj="lrec_1" outlet="smps"/>
+         <dest obj="scale transport tempo" inlet="smps"/>
+      </net>
+      <net>
+         <source obj="demux recstate" outlet="o0"/>
+         <dest obj="obj_1" inlet="rec"/>
+      </net>
+      <net>
+         <source obj="ldrive_2" outlet="pos"/>
+         <dest obj="read_2" inlet="a"/>
+      </net>
+      <net>
+         <source obj="obj_2" outlet="play"/>
+         <dest obj="ldrive_2" inlet="play"/>
+         <dest obj="toggleplay2" inlet="inlet_1"/>
+      </net>
+      <net>
+         <source obj="obj_2" outlet="reset"/>
+         <dest obj="ldrive_2" inlet="r2offset"/>
+      </net>
+      <net>
+         <source obj="ldrive_3" outlet="pos"/>
+         <dest obj="read_3" inlet="a"/>
+      </net>
+      <net>
+         <source obj="obj_3" outlet="play"/>
+         <dest obj="ldrive_3" inlet="play"/>
+         <dest obj="toggleplay3" inlet="inlet_3"/>
+      </net>
+      <net>
+         <source obj="obj_3" outlet="reset"/>
+         <dest obj="ldrive_3" inlet="r2offset"/>
+      </net>
+      <net>
+         <source obj="ldrive_4" outlet="pos"/>
+         <dest obj="read_4" inlet="a"/>
+      </net>
+      <net>
+         <source obj="obj_4" outlet="play"/>
+         <dest obj="ldrive_4" inlet="play"/>
+         <dest obj="toggleplay4" inlet="inlet_3"/>
+      </net>
+      <net>
+         <source obj="obj_4" outlet="reset"/>
+         <dest obj="ldrive_4" inlet="r2offset"/>
+      </net>
+      <net>
+         <source obj="read_2" outlet="o"/>
+         <dest obj="sum4_1" inlet="in2"/>
+         <dest obj="mix_1" inlet="in2"/>
+      </net>
+      <net>
+         <source obj="read_3" outlet="o"/>
+         <dest obj="sum4_1" inlet="in3"/>
+         <dest obj="mix_1" inlet="in3"/>
+      </net>
+      <net>
+         <source obj="read_4" outlet="o"/>
+         <dest obj="sum4_1" inlet="in4"/>
+         <dest obj="mix_1" inlet="in4"/>
+      </net>
+      <net>
+         <source obj="demux recstate" outlet="o1"/>
+         <dest obj="obj_2" inlet="rec"/>
+      </net>
+      <net>
+         <source obj="demux recstate" outlet="o2"/>
+         <dest obj="obj_3" inlet="rec"/>
+      </net>
+      <net>
+         <source obj="demux recstate" outlet="o3"/>
+         <dest obj="obj_4" inlet="rec"/>
+      </net>
+      <net>
+         <source obj="lrec_1" outlet="remain"/>
+         <dest obj="REC REMAIN" inlet="in"/>
+      </net>
+      <net>
+         <source obj="and_2" outlet="o"/>
+         <dest obj="ldrive_1" inlet="r2start"/>
+      </net>
+      <net>
+         <source obj="and_3" outlet="o"/>
+         <dest obj="ldrive_2" inlet="r2start"/>
+      </net>
+      <net>
+         <source obj="and_4" outlet="o"/>
+         <dest obj="ldrive_3" inlet="r2start"/>
+      </net>
+      <net>
+         <source obj="and_5" outlet="o"/>
+         <dest obj="ldrive_4" inlet="r2start"/>
+      </net>
+      <net>
+         <source obj="timepoint_1" outlet="trig"/>
+         <dest obj="and_4" inlet="i2"/>
+         <dest obj="and_5" inlet="i2"/>
+         <dest obj="and_3" inlet="i2"/>
+         <dest obj="and_2" inlet="i2"/>
+      </net>
+      <net>
+         <source obj="tablestore_2" outlet="v0"/>
+         <dest obj="ldrive_1" inlet="offset"/>
+      </net>
+      <net>
+         <source obj="tablestore_2" outlet="v1"/>
+         <dest obj="ldrive_2" inlet="offset"/>
+      </net>
+      <net>
+         <source obj="tablestore_2" outlet="v2"/>
+         <dest obj="ldrive_3" inlet="offset"/>
+      </net>
+      <net>
+         <source obj="tablestore_2" outlet="v3"/>
+         <dest obj="ldrive_4" inlet="offset"/>
+      </net>
+      <net>
+         <source obj="tablestore_3" outlet="v0"/>
+         <dest obj="ldrive_1" inlet="range"/>
+      </net>
+      <net>
+         <source obj="tablestore_3" outlet="v1"/>
+         <dest obj="ldrive_2" inlet="range"/>
+      </net>
+      <net>
+         <source obj="tablestore_3" outlet="v2"/>
+         <dest obj="ldrive_3" inlet="range"/>
+      </net>
+      <net>
+         <source obj="tablestore_3" outlet="v3"/>
+         <dest obj="ldrive_4" inlet="range"/>
+      </net>
+      <net>
+         <source obj="tablestore_4" outlet="v0"/>
+         <dest obj="obj_1" inlet="start"/>
+      </net>
+      <net>
+         <source obj="tablestore_4" outlet="v1"/>
+         <dest obj="obj_2" inlet="start"/>
+      </net>
+      <net>
+         <source obj="tablestore_4" outlet="v2"/>
+         <dest obj="obj_3" inlet="start"/>
+      </net>
+      <net>
+         <source obj="tablestore_4" outlet="v3"/>
+         <dest obj="obj_4" inlet="start"/>
+      </net>
+      <net>
+         <source obj="lrec_1" outlet="startpoint"/>
+         <dest obj="tablestore_4" inlet="in"/>
+      </net>
+      <net>
+         <source obj="i_5" outlet="out"/>
+         <dest obj="*_1" inlet="b"/>
+      </net>
+      <net>
+         <source obj="SCALE UP" outlet="out"/>
+         <dest obj="scale transport tempo" inlet="multiplier"/>
+      </net>
+      <net>
+         <source obj="scale transport tempo" outlet="phase"/>
+         <dest obj="obj_1" inlet="phase"/>
+         <dest obj="obj_2" inlet="phase"/>
+         <dest obj="obj_3" inlet="phase"/>
+         <dest obj="obj_4" inlet="phase"/>
+         <dest obj="GLOBAL TRANSPORT" inlet="in"/>
+         <dest obj="lrec_1" inlet="phase"/>
+         <dest obj="timepoint_1" inlet="phase"/>
+      </net>
+      <net>
+         <source obj="*_1" outlet="result"/>
+         <dest obj="scale transport tempo" inlet="1bar length"/>
+      </net>
+      <net>
+         <source obj="SECONDS" outlet="out"/>
+         <dest obj="*_1" inlet="a"/>
+      </net>
+      <net>
+         <source obj="scale transport tempo" outlet="master_"/>
+         <dest obj="MASTER" inlet="in"/>
+      </net>
+      <net>
+         <source obj="c_1" outlet="out"/>
+         <dest obj="save_1" inlet="filename"/>
+         <dest obj="load_1" inlet="filename"/>
+      </net>
+      <net>
+         <source obj="c_2" outlet="out"/>
+         <dest obj="save_2" inlet="filename"/>
+         <dest obj="load_2" inlet="filename"/>
+      </net>
+      <net>
+         <source obj="SAVE" outlet="o"/>
+         <dest obj="save_1" inlet="trig"/>
+         <dest obj="save_2" inlet="trig"/>
+      </net>
+      <net>
+         <source obj="LOAD" outlet="o"/>
+         <dest obj="load_1" inlet="trig"/>
+         <dest obj="load_2" inlet="trig"/>
+      </net>
+      <net>
+         <source obj="SPEED1" outlet="out"/>
+         <dest obj="ldrive_1" inlet="speed"/>
+      </net>
+      <net>
+         <source obj="SPEED2" outlet="out"/>
+         <dest obj="ldrive_2" inlet="speed"/>
+      </net>
+      <net>
+         <source obj="SPEED3" outlet="out"/>
+         <dest obj="ldrive_3" inlet="speed"/>
+      </net>
+      <net>
+         <source obj="SPEED4" outlet="out"/>
+         <dest obj="ldrive_4" inlet="speed"/>
+      </net>
+      <net>
+         <source obj="keyb_2" outlet="gate"/>
+         <dest obj="toggle_1" inlet="trig"/>
+      </net>
+      <net>
+         <source obj="toggle_1" outlet="o"/>
+         <dest obj="note_14" inlet="trig"/>
+         <dest obj="bool_1" inlet="in"/>
+      </net>
+      <net>
+         <source obj="dial_33" outlet="out"/>
+         <dest obj="note_14" inlet="note"/>
+      </net>
+      <net>
+         <source obj="dial_31" outlet="out"/>
+         <dest obj="note_14" inlet="velo"/>
+      </net>
+      <net>
+         <source obj="Target Slot" outlet="outlet_1"/>
+         <dest obj="i_2" inlet="in"/>
+         <dest obj="lrec_1" inlet="slot"/>
+         <dest obj="demux recstate" inlet="s"/>
+         <dest obj="scale transport tempo" inlet="master"/>
+         <dest obj="tablestore_4" inlet="i"/>
+         <dest obj="tablestore_3" inlet="i"/>
+         <dest obj="tablestore_2" inlet="i"/>
+      </net>
+      <net>
+         <source obj="RECORD" outlet="outlet_1"/>
+         <dest obj="lrec_1" inlet="rec"/>
+      </net>
+      <net>
+         <source obj="LAUNCH1" outlet="gate"/>
+         <dest obj="obj_1" inlet="launch"/>
+      </net>
+      <net>
+         <source obj="masterslave" outlet="outlet_1"/>
+         <dest obj="lrec_1" inlet="sync"/>
+         <dest obj="scale transport tempo" inlet="recmode"/>
+      </net>
+      <net>
+         <source obj="zeroreset" outlet="outlet_1"/>
+         <dest obj="and_2" inlet="i1"/>
+      </net>
+      <net>
+         <source obj="LAUNCH2" outlet="gate"/>
+         <dest obj="obj_2" inlet="launch"/>
+      </net>
+      <net>
+         <source obj="STOP ALL" outlet="gate"/>
+         <dest obj="obj_1" inlet="stop"/>
+         <dest obj="obj_2" inlet="stop"/>
+         <dest obj="obj_3" inlet="stop"/>
+         <dest obj="obj_4" inlet="stop"/>
+      </net>
+      <net>
+         <source obj="dial_38" outlet="out"/>
+         <dest obj="note_17" inlet="note"/>
+      </net>
+      <net>
+         <source obj="dial_39" outlet="out"/>
+         <dest obj="note_17" inlet="velo"/>
+      </net>
+      <net>
+         <source obj="keyb_5" outlet="gate"/>
+         <dest obj="outlet_3" inlet="outlet"/>
+      </net>
+      <net>
+         <source obj="inlet_2" outlet="inlet"/>
+         <dest obj="note_17" inlet="trig"/>
+      </net>
+      <net>
+         <source obj="toggleplay1" outlet="outlet_4"/>
+         <dest obj="obj_1" inlet="toggle"/>
+      </net>
+      <net>
+         <source obj="toggleplay2" outlet="outlet_2"/>
+         <dest obj="obj_2" inlet="toggle"/>
+      </net>
+      <net>
+         <source obj="zeroreset2" outlet="outlet_1"/>
+         <dest obj="and_3" inlet="i1"/>
+      </net>
+      <net>
+         <source obj="LAUNCH1_" outlet="gate"/>
+         <dest obj="obj_3" inlet="launch"/>
+      </net>
+      <net>
+         <source obj="toggleplay3" outlet="outlet_4"/>
+         <dest obj="obj_3" inlet="toggle"/>
+      </net>
+      <net>
+         <source obj="zeroreset3" outlet="outlet_1"/>
+         <dest obj="and_4" inlet="i1"/>
+      </net>
+      <net>
+         <source obj="LAUNCH1__" outlet="gate"/>
+         <dest obj="obj_4" inlet="launch"/>
+      </net>
+      <net>
+         <source obj="toggleplay4" outlet="outlet_4"/>
+         <dest obj="obj_4" inlet="toggle"/>
+      </net>
+      <net>
+         <source obj="zeroreset4" outlet="outlet_1"/>
+         <dest obj="and_5" inlet="i1"/>
+      </net>
+      <net>
+         <source obj="mix_1" outlet="out"/>
+         <dest obj="+_1" inlet="in2"/>
+      </net>
+      <net>
+         <source obj="read_1" outlet="o"/>
+         <dest obj="mix_1" inlet="in1"/>
+      </net>
+   </nets>
+   <settings>
+      <subpatchmode>no</subpatchmode>
+   </settings>
+   <notes><![CDATA[]]></notes>
+   <windowPos>
+      <x>-1920</x>
+      <y>-157</y>
+      <width>1920</width>
+      <height>1057</height>
+   </windowPos>
+</patch-1.0>
