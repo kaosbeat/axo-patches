@@ -1,0 +1,413 @@
+<patch-1.0 appVersion="1.0.12">
+   <obj type="disp/i" uuid="5e35fd0c62d81e70017289250cf28edd26e19e4a" name="i_1" x="224" y="0">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="timer/delayedpulse" uuid="3f05ee534ca67755fb20c7437f9e4de3d4c2f73d" name="delayedpulse_1" x="350" y="28">
+      <params>
+         <frac32.s.map name="delay" value="0.0"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="logic/flipflop toggle" uuid="195e489e5fc3d275944b0de56c7a91c8641ea22a" name="flipflop_1" x="462" y="28">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="math/-c" uuid="bc70bed87e5405985ade03f4806b9450609a9093" name="-c_1" x="140" y="42">
+      <params>
+         <frac32.u.map name="c" value="58.5"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="rbrt/midi/in/note poly" uuid="769b6569-8398-4de4-a8ad-f9f5d26f3947" name="note_1" x="0" y="56">
+      <params/>
+      <attribs>
+         <spinner attributeName="startNote" value="0"/>
+         <spinner attributeName="endNote" value="127"/>
+         <spinner attributeName="channel" value="3"/>
+      </attribs>
+   </obj>
+   <obj type="phi/patch/autopreset" uuid="503a80b1-c8ce-4a8f-b823-1bc5ecc64aa5" name="autopreset_1" x="224" y="56">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="math/&lt;&lt;" uuid="b03d8d8009c0480be0ccb29ed65933a82fa4a80f" name="&lt;&lt;_1" x="812" y="56">
+      <params/>
+      <attribs>
+         <spinner attributeName="shift" value="3"/>
+      </attribs>
+   </obj>
+   <obj type="ctrl/dial p" uuid="cc5d2846c3d50e425f450c4b9851371b54f4d674" name="dial_2" x="714" y="70">
+      <params>
+         <frac32.u.map name="value" value="33.5"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="rbrt/midi/in/monitor" uuid="64b3d36e-97ab-4b18-91f7-ff611e14fd7a" name="monitor_1" x="1092" y="98">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="midi/in/monitor" uuid="b51863ca-6afa-4d29-acfd-c8c2fe06cb16" name="monitor_2" x="1260" y="112">
+      <params>
+         <bool32.tgl name="ControlChange" value="0"/>
+         <bool32.tgl name="Note" value="1"/>
+         <bool32.tgl name="ProgramChange" value="0"/>
+         <bool32.tgl name="Bend" value="0"/>
+         <bool32.tgl name="PolyPressure" value="0"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="lfo/square" uuid="de6909eb64db13af5b43f979a4c130024b3a4793" name="square_1" x="476" y="140">
+      <params>
+         <frac32.s.map name="pitch" MidiCC="77" value="17.0"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="disp/dial p" uuid="44fd18b562e434b3230441681132dbeabb15cdc5" name="dial_5" x="882" y="140">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="logic/and 2" uuid="c67031682f552aa0a80b23377495c51ea28a8c9c" name="and_1" x="602" y="182">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="ctrl/dial p" uuid="cc5d2846c3d50e425f450c4b9851371b54f4d674" name="dial_4" x="728" y="210">
+      <params>
+         <frac32.u.map name="value" value="19.5"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="gain/vca" uuid="a9f2dcd18043e2f47364e45cb8814f63c2a37c0d" name="vca_1" x="1176" y="224">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="sel/sel dial 8" uuid="8b7d26278459cf6f12cd645dfb68e32df5b46f63" name="sel_1" x="126" y="238">
+      <params>
+         <frac32.u.map name="v0" value="0.0"/>
+         <frac32.u.map name="v1" value="0.0"/>
+         <frac32.u.map name="v2" value="0.0"/>
+         <frac32.u.map name="v3" value="0.0"/>
+         <frac32.u.map name="v4" value="0.0"/>
+         <frac32.u.map name="v5" value="0.0"/>
+         <frac32.u.map name="v6" value="0.0"/>
+         <frac32.u.map name="v7" value="0.0"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="audio/out left" uuid="b11a3c09b2fdd575ea8212f2ce7743d5269253b1" name="out_2" x="1288" y="280">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="disp/chart p" uuid="58f42040a894006a5f73ed8cb8d0bd45481b28cd" name="chart_2" x="252" y="308">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="disp/dial p" uuid="44fd18b562e434b3230441681132dbeabb15cdc5" name="dial_3" x="322" y="308">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="math/&lt;c" uuid="852c84e7bd967ee4a44cc553fcf6e3fc9d8b92c4" name="&lt;c_2" x="448" y="308">
+      <params>
+         <frac32.u.map name="c" value="10.0"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="logic/or 2" uuid="3805d3c84d30032a44fbdbe42d9a2988a1790a3e" name="or_1" x="560" y="308">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="fx/lmnts/reverb" uuid="8027561C-A0B5-4DF8-A10E-3ED1274F2980" name="reverb_1" x="882" y="308">
+      <params>
+         <frac32.u.map name="amount" value="32.0">
+            <presets>
+               <preset index="1">
+                  <f v="59.0"/>
+               </preset>
+               <preset index="2">
+                  <f v="59.0"/>
+               </preset>
+               <preset index="3">
+                  <f v="32.0"/>
+               </preset>
+               <preset index="4">
+                  <f v="32.0"/>
+               </preset>
+            </presets>
+         </frac32.u.map>
+         <frac32.u.map name="time" value="45.5">
+            <presets>
+               <preset index="1">
+                  <f v="5.5"/>
+               </preset>
+               <preset index="2">
+                  <f v="5.5"/>
+               </preset>
+               <preset index="3">
+                  <f v="45.5"/>
+               </preset>
+               <preset index="4">
+                  <f v="45.5"/>
+               </preset>
+            </presets>
+         </frac32.u.map>
+         <frac32.u.map name="diffusion" value="49.0">
+            <presets>
+               <preset index="1">
+                  <f v="34.0"/>
+               </preset>
+               <preset index="2">
+                  <f v="34.0"/>
+               </preset>
+               <preset index="3">
+                  <f v="49.0"/>
+               </preset>
+               <preset index="4">
+                  <f v="49.0"/>
+               </preset>
+            </presets>
+         </frac32.u.map>
+         <frac32.u.map name="gain" value="55.0"/>
+         <frac32.u.map name="lowpass" value="64.0">
+            <presets>
+               <preset index="1">
+                  <f v="64.0"/>
+               </preset>
+               <preset index="2">
+                  <f v="64.0"/>
+               </preset>
+               <preset index="3">
+                  <f v="64.0"/>
+               </preset>
+               <preset index="4">
+                  <f v="64.0"/>
+               </preset>
+            </presets>
+         </frac32.u.map>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="mix/mix 2 g" uuid="221f038da51943034a75e442c90624fcebfe6112" name="mix_2" x="994" y="308">
+      <params>
+         <frac32.u.map name="gain1" value="32.0"/>
+         <frac32.u.map name="gain2" value="32.0"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="gain/vca" uuid="a9f2dcd18043e2f47364e45cb8814f63c2a37c0d" name="vca_2" x="1204" y="308">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="wave/play fn" uuid="25910f7130532e4934eed3cf2a934324790d0f00" name="play_2" x="658" y="336">
+      <params/>
+      <attribs>
+         <file attributeName="fn" file="../samples/kicks/808-Kicks01.raw"/>
+      </attribs>
+   </obj>
+   <obj type="env/d lin m" uuid="e9d9a5152981b17626748fd93e7e6a39c0afe3aa" name="d_1" x="1092" y="364">
+      <params>
+         <frac32.s.map name="d" value="28.0"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="gpio/in/analog" uuid="1c0c845ed2d7e06ae5f377ba13d9d09f4747ac87" name="analog_2" x="238" y="406">
+      <params/>
+      <attribs>
+         <combo attributeName="channel" selection="PA0 (ADC1_IN0)"/>
+      </attribs>
+   </obj>
+   <obj type="wave/play fn" uuid="25910f7130532e4934eed3cf2a934324790d0f00" name="play_3" x="658" y="434">
+      <params/>
+      <attribs>
+         <file attributeName="fn" file="../samples/kicks/808-Kicks40.raw"/>
+      </attribs>
+   </obj>
+   <obj type="mix/mix 8 g" uuid="ca3c8ec626ad31e48d8374d5dd44962bf3bd7e6f" name="mix_1" x="1456" y="462">
+      <params>
+         <frac32.u.map name="gain1" value="55.5"/>
+         <frac32.u.map name="gain2" value="50.5"/>
+         <frac32.u.map name="gain3" value="32.0"/>
+         <frac32.u.map name="gain4" value="32.0"/>
+         <frac32.u.map name="gain5" value="32.0"/>
+         <frac32.u.map name="gain6" value="32.0"/>
+         <frac32.u.map name="gain7" value="32.0"/>
+         <frac32.u.map name="gain8" value="32.0"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="wave/play fn" uuid="25910f7130532e4934eed3cf2a934324790d0f00" name="play_4" x="658" y="532">
+      <params/>
+      <attribs>
+         <file attributeName="fn" file="../samples/percussion/808-Conga1.raw"/>
+      </attribs>
+   </obj>
+   <obj type="gpio/in/analog" uuid="1c0c845ed2d7e06ae5f377ba13d9d09f4747ac87" name="analog_3" x="336" y="574">
+      <params/>
+      <attribs>
+         <combo attributeName="channel" selection="PA1 (ADC1_IN1)"/>
+      </attribs>
+   </obj>
+   <obj type="math/&lt;c" uuid="852c84e7bd967ee4a44cc553fcf6e3fc9d8b92c4" name="&lt;c_3" x="532" y="588">
+      <params>
+         <frac32.u.map name="c" value="17.0"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="wave/play fn" uuid="25910f7130532e4934eed3cf2a934324790d0f00" name="play_5" x="658" y="630">
+      <params/>
+      <attribs>
+         <file attributeName="fn" file="../samples/snares/808-Snare22.raw"/>
+      </attribs>
+   </obj>
+   <obj type="gpio/in/analog" uuid="1c0c845ed2d7e06ae5f377ba13d9d09f4747ac87" name="analog_4" x="336" y="686">
+      <params/>
+      <attribs>
+         <combo attributeName="channel" selection="PA2 (ADC1_IN2)"/>
+      </attribs>
+   </obj>
+   <obj type="math/&lt;c" uuid="852c84e7bd967ee4a44cc553fcf6e3fc9d8b92c4" name="&lt;c_4" x="518" y="700">
+      <params>
+         <frac32.u.map name="c" value="17.0"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="gpio/in/analog" uuid="1c0c845ed2d7e06ae5f377ba13d9d09f4747ac87" name="analog_5" x="336" y="812">
+      <params/>
+      <attribs>
+         <combo attributeName="channel" selection="PA3 (ADC1_IN3)"/>
+      </attribs>
+   </obj>
+   <obj type="math/&lt;c" uuid="852c84e7bd967ee4a44cc553fcf6e3fc9d8b92c4" name="&lt;c_5" x="518" y="812">
+      <params>
+         <frac32.u.map name="c" value="17.0"/>
+      </params>
+      <attribs/>
+   </obj>
+   <nets>
+      <net>
+         <source obj="&lt;&lt;_1" outlet="result"/>
+         <dest obj="vca_1" inlet="v"/>
+      </net>
+      <net>
+         <source obj="dial_2" outlet="out"/>
+         <dest obj="&lt;&lt;_1" inlet="a"/>
+      </net>
+      <net>
+         <source obj="analog_2" outlet="out"/>
+         <dest obj="&lt;c_2" inlet="in"/>
+         <dest obj="chart_2" inlet="in"/>
+         <dest obj="dial_3" inlet="in"/>
+      </net>
+      <net>
+         <source obj="&lt;c_2" outlet="out"/>
+         <dest obj="delayedpulse_1" inlet="trig"/>
+         <dest obj="flipflop_1" inlet="set"/>
+         <dest obj="or_1" inlet="i2"/>
+         <dest obj="square_1" inlet="reset"/>
+         <dest obj="d_1" inlet="trig"/>
+      </net>
+      <net>
+         <source obj="analog_4" outlet="out"/>
+         <dest obj="&lt;c_4" inlet="in"/>
+      </net>
+      <net>
+         <source obj="analog_5" outlet="out"/>
+         <dest obj="&lt;c_5" inlet="in"/>
+      </net>
+      <net>
+         <source obj="&lt;c_3" outlet="out"/>
+         <dest obj="play_3" inlet="start"/>
+      </net>
+      <net>
+         <source obj="&lt;c_4" outlet="out"/>
+         <dest obj="play_4" inlet="start"/>
+      </net>
+      <net>
+         <source obj="&lt;c_5" outlet="out"/>
+         <dest obj="play_5" inlet="start"/>
+      </net>
+      <net>
+         <source obj="analog_3" outlet="out"/>
+         <dest obj="&lt;c_3" inlet="in"/>
+      </net>
+      <net>
+         <source obj="play_2" outlet="out"/>
+         <dest obj="reverb_1" inlet="l"/>
+         <dest obj="mix_2" inlet="in2"/>
+      </net>
+      <net>
+         <source obj="mix_1" outlet="out"/>
+         <dest obj="vca_1" inlet="a"/>
+      </net>
+      <net>
+         <source obj="vca_1" outlet="o"/>
+         <dest obj="out_2" inlet="wave"/>
+      </net>
+      <net>
+         <source obj="reverb_1" outlet="l"/>
+         <dest obj="mix_2" inlet="in1"/>
+      </net>
+      <net>
+         <source obj="play_3" outlet="out"/>
+         <dest obj="mix_1" inlet="in4"/>
+      </net>
+      <net>
+         <source obj="play_4" outlet="out"/>
+         <dest obj="mix_1" inlet="in6"/>
+      </net>
+      <net>
+         <source obj="play_5" outlet="out"/>
+         <dest obj="mix_1" inlet="in8"/>
+      </net>
+      <net>
+         <source obj="note_1" outlet="note"/>
+         <dest obj="-c_1" inlet="in"/>
+      </net>
+      <net>
+         <source obj="-c_1" outlet="out"/>
+         <dest obj="autopreset_1" inlet="preset"/>
+         <dest obj="i_1" inlet="in"/>
+      </net>
+      <net>
+         <source obj="delayedpulse_1" outlet="pulse"/>
+         <dest obj="flipflop_1" inlet="reset"/>
+      </net>
+      <net>
+         <source obj="or_1" outlet="o"/>
+         <dest obj="play_2" inlet="start"/>
+      </net>
+      <net>
+         <source obj="square_1" outlet="wave"/>
+         <dest obj="and_1" inlet="i2"/>
+      </net>
+      <net>
+         <source obj="flipflop_1" outlet="o"/>
+         <dest obj="and_1" inlet="i1"/>
+      </net>
+      <net>
+         <source obj="and_1" outlet="o"/>
+         <dest obj="or_1" inlet="i1"/>
+      </net>
+      <net>
+         <source obj="mix_2" outlet="out"/>
+         <dest obj="vca_2" inlet="a"/>
+      </net>
+      <net>
+         <source obj="vca_2" outlet="o"/>
+         <dest obj="mix_1" inlet="in1"/>
+      </net>
+      <net>
+         <source obj="d_1" outlet="env"/>
+         <dest obj="vca_2" inlet="v"/>
+      </net>
+   </nets>
+   <settings>
+      <subpatchmode>no</subpatchmode>
+   </settings>
+   <notes><![CDATA[]]></notes>
+   <windowPos>
+      <x>-1880</x>
+      <y>-110</y>
+      <width>1693</width>
+      <height>825</height>
+   </windowPos>
+</patch-1.0>
