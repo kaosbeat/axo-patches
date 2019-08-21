@@ -7,7 +7,7 @@
    </obj>
    <obj type="lfo/sine r" uuid="725d481acbefa181fa5d92f414d317c86b77b789" name="sine_1" x="1288" y="14">
       <params>
-         <frac32.s.map name="pitch" MidiCC="49" value="0.0"/>
+         <frac32.s.map name="pitch" MidiCC="49" value="-3.0"/>
       </params>
       <attribs/>
    </obj>
@@ -72,28 +72,28 @@
          <frac32.s.map name="freq 1" value="-16.0"/>
          <frac32.s.map name="noise decay" value="64.0"/>
          <frac32.u.map name="noise level" value="37.5"/>
-         <frac32.s.map name="decay" MidiCC="29" value="23.0">
+         <frac32.s.map name="decay" MidiCC="29" value="-11.0">
             <presets>
                <preset index="1">
                   <f v="64.0"/>
                </preset>
             </presets>
          </frac32.s.map>
-         <frac32.u.map name="curve" MidiCC="13" value="11.5">
+         <frac32.u.map name="curve" MidiCC="13" value="24.0">
             <presets>
                <preset index="1">
                   <f v="38.5"/>
                </preset>
             </presets>
          </frac32.u.map>
-         <frac32.s.map name="freq 2" MidiCC="13" value="-41.0">
+         <frac32.s.map name="freq 2" MidiCC="13" value="-16.0">
             <presets>
                <preset index="1">
                   <f v="-29.0"/>
                </preset>
             </presets>
          </frac32.s.map>
-         <frac32.s.map name="lp:pitch" MidiCC="49" value="0.0">
+         <frac32.s.map name="lp:pitch" MidiCC="49" value="-3.0">
             <modulators>
                <modulation sourceName="modsource_2" modName="" value="128.0"/>
             </modulators>
@@ -168,14 +168,14 @@
    </obj>
    <obj type="gao/edrum/snare" uuid="bedee54e-4fb4-4ec9-937d-3ab8b5149527" name="obj_2" x="616" y="280">
       <params>
-         <frac32.s.map name="body decay" MidiCC="14" value="-30.0">
+         <frac32.s.map name="body decay" MidiCC="14" value="-38.0">
             <presets>
                <preset index="1">
                   <f v="-22.0"/>
                </preset>
             </presets>
          </frac32.s.map>
-         <frac32.s.map name="noise decay" MidiCC="30" value="-23.0">
+         <frac32.s.map name="noise decay" MidiCC="30" value="-57.0">
             <presets>
                <preset index="1">
                   <f v="-62.0"/>
@@ -256,7 +256,7 @@
    </obj>
    <obj type="gao/edrum/hihat" uuid="b294618e-50da-4975-ae1b-f1f4b6826dec" name="obj_3" x="476" y="392">
       <params>
-         <frac32.s.map name="bp:pitch" MidiCC="15" value="-11.0"/>
+         <frac32.s.map name="bp:pitch" MidiCC="15" value="-16.0"/>
          <frac32.s.map name="closed decay:d" MidiCC="31" value="-20.0"/>
          <frac32.s.map name="hp closed:pitch" MidiCC="51" value="-29.0">
             <modulators>
@@ -265,14 +265,14 @@
          </frac32.s.map>
          <frac32.u.map name="hp closed:reso" value="47.5"/>
          <frac32.u.map name="gain closed" MidiCC="79" value="0.0"/>
-         <frac32.s.map name="open decay" MidiCC="32" value="-34.0"/>
+         <frac32.s.map name="open decay" MidiCC="32" value="25.0"/>
          <frac32.s.map name="hp open:pitch" MidiCC="52" value="-64.0">
             <modulators>
                <modulation sourceName="modsource_7" modName="" value="128.0"/>
             </modulators>
          </frac32.s.map>
-         <frac32.u.map name="hp open:reso" MidiCC="16" value="17.0"/>
-         <frac32.u.map name="gain open" MidiCC="80" value="0.0"/>
+         <frac32.u.map name="hp open:reso" MidiCC="16" value="18.0"/>
+         <frac32.u.map name="gain open" MidiCC="80" value="1.0"/>
       </params>
       <attribs/>
    </obj>
@@ -287,6 +287,13 @@
          <frac32.u.map name="value" MidiCC="84" value="0.0"/>
       </params>
       <attribs/>
+   </obj>
+   <obj type="audio/outconfig" uuid="eace67e3304afaa1bb695b444e9345f2d8adaf00" name="outconfig_1" x="1904" y="406">
+      <params/>
+      <attribs>
+         <combo attributeName="headphones" selection="6dB"/>
+         <combo attributeName="mode" selection="Mono(L)"/>
+      </attribs>
    </obj>
    <obj type="midi/out/note" uuid="a76ae870da278cbbce5501a57ce7bd0e0ea4215c" name="note_3" x="966" y="448">
       <params/>
@@ -343,10 +350,6 @@
          <spinner attributeName="shift" value="3"/>
       </attribs>
    </obj>
-   <obj type="gain/vca" uuid="a9f2dcd18043e2f47364e45cb8814f63c2a37c0d" name="vca_1" x="1820" y="518">
-      <params/>
-      <attribs/>
-   </obj>
    <obj type="ctrl/dial p" uuid="cc5d2846c3d50e425f450c4b9851371b54f4d674" name="dial_25" x="1442" y="532">
       <params>
          <frac32.u.map name="value" value="20.0"/>
@@ -366,19 +369,15 @@
          <spinner attributeName="channel" value="1"/>
       </attribs>
    </obj>
-   <obj type="audio/out left" uuid="b11a3c09b2fdd575ea8212f2ce7743d5269253b1" name="out_2" x="1918" y="560">
-      <params/>
-      <attribs/>
-   </obj>
    <obj type="gao/edrum/clap" uuid="fde21daf-b8a9-43b4-979c-12ac0c16624f" name="obj_4" x="742" y="602">
       <params>
-         <frac32.s.map name="pulse hp:pitch" MidiCC="17" value="-45.0"/>
+         <frac32.s.map name="pulse hp:pitch" MidiCC="17" value="-7.0"/>
          <frac32.u.map name="pulse hp:reso" value="26.0"/>
          <frac32.s.map name="ad:a" value="-16.0"/>
          <frac32.s.map name="ad:d" value="-13.0"/>
          <frac32.s.map name="fb ad:a" value="-53.0"/>
          <frac32.s.map name="fb ad:d" value="0.0"/>
-         <frac32.s.map name="bp:pitch" MidiCC="33" value="2.0"/>
+         <frac32.s.map name="bp:pitch" MidiCC="33" value="-21.0"/>
          <frac32.u.map name="bp:reso" value="21.0"/>
          <frac32.s.map name="lp:pitch" MidiCC="53" value="0.0">
             <modulators>
@@ -430,6 +429,10 @@
          <spinner attributeName="channel" value="15"/>
       </attribs>
    </obj>
+   <obj type="gain/vca" uuid="a9f2dcd18043e2f47364e45cb8814f63c2a37c0d" name="vca_1" x="1862" y="644">
+      <params/>
+      <attribs/>
+   </obj>
    <obj type="midi/in/keyb note" uuid="ac0cd98e6c0373b7be73d25900342a62ebcf5f" name="keyb_4" x="1190" y="658">
       <params/>
       <attribs>
@@ -447,6 +450,10 @@
       <attribs/>
    </obj>
    <obj type="TSG/patch/modsource auto" uuid="4ab1c80f-6017-44dc-aba7-1b9ad3949c81" name="modsource_5" x="1442" y="658">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="audio/out left" uuid="b11a3c09b2fdd575ea8212f2ce7743d5269253b1" name="out_2" x="1960" y="658">
       <params/>
       <attribs/>
    </obj>
@@ -471,12 +478,12 @@
    </obj>
    <obj type="gao/edrum/cowbell" uuid="9f5869d6-990b-4043-a655-f07cc2d0a4fd" name="obj_5" x="616" y="714">
       <params>
-         <frac32.s.map name="ad:a" MidiCC="18" value="-14.0">
+         <frac32.s.map name="ad:a" MidiCC="18" value="-13.0">
             <modulators>
                <modulation sourceName="modsource_4" modName="" value="128.0"/>
             </modulators>
          </frac32.s.map>
-         <frac32.s.map name="ad:d" MidiCC="34" value="-53.0"/>
+         <frac32.s.map name="ad:d" MidiCC="34" value="-21.0"/>
          <frac32.s.map name="bp:pitch" MidiCC="54" value="-64.0"/>
          <frac32.u.map name="bp:reso" value="9.0"/>
          <frac32.u.map name="gain" value="16.0"/>
@@ -514,9 +521,9 @@
    </obj>
    <obj type="gao/edrum/cymbal" uuid="100849a5-00e3-4883-806d-096d280a10af" name="obj_6" x="490" y="826">
       <params>
-         <frac32.s.map name="d1" MidiCC="19" value="-5.0"/>
+         <frac32.s.map name="d1" MidiCC="19" value="35.0"/>
          <frac32.s.map name="d2" value="-43.0"/>
-         <frac32.u.map name="freq 1" MidiCC="35" value="17.5"/>
+         <frac32.u.map name="freq 1" MidiCC="35" value="19.5"/>
          <frac32.u.map name="freq2" value="5.0"/>
          <frac32.s.map name="bp:pitch" MidiCC="55" value="-49.0">
             <modulators/>
@@ -536,7 +543,7 @@
    </obj>
    <obj type="lfo/sine r" uuid="725d481acbefa181fa5d92f414d317c86b77b789" name="sine_3" x="1288" y="826">
       <params>
-         <frac32.s.map name="pitch" MidiCC="18" value="-14.0"/>
+         <frac32.s.map name="pitch" MidiCC="18" value="-13.0"/>
       </params>
       <attribs/>
    </obj>
@@ -596,6 +603,10 @@
          <spinner attributeName="channel" value="15"/>
       </attribs>
    </obj>
+   <obj type="./../objects/testcontroller" uuid="df76aa37-5fcf-4de3-9a6e-b4f2d9bd6890" name="testcontroller_1" x="1232" y="1092">
+      <params/>
+      <attribs/>
+   </obj>
    <obj type="ctrl/dial b" uuid="862e7d7f29093cb1ce4aed72244d118ad4d46692" name="dial_17" x="882" y="1134">
       <params>
          <frac32.s.map name="value" value="-58.0"/>
@@ -608,10 +619,6 @@
          <combo attributeName="device" selection="din"/>
          <spinner attributeName="channel" value="15"/>
       </attribs>
-   </obj>
-   <obj type="testcontroller" uuid="6fa088de-1c71-4f37-8a38-a8cca24456a1" name="obj_7" x="1316" y="1176">
-      <params/>
-      <attribs/>
    </obj>
    <obj type="tb/midi/utils/midithru" uuid="b3868bd5-625c-4482-9948-a34e59fe2a21" name="midithru_1" x="1456" y="1176">
       <params/>
