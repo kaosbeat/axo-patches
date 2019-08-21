@@ -1,0 +1,124 @@
+<patch-1.0 appVersion="1.0.12">
+   <obj type="gao/edrum/bd" uuid="7385203f-9654-46f1-a870-65ed81743ad3" name="obj_1" x="434" y="56">
+      <params>
+         <frac32.s.map name="freq 1" value="-21.0"/>
+         <frac32.s.map name="noise decay" value="-64.0"/>
+         <frac32.u.map name="noise level" value="51.0"/>
+         <frac32.s.map name="decay" value="22.0">
+            <presets/>
+         </frac32.s.map>
+         <frac32.u.map name="curve" value="31.0">
+            <presets/>
+         </frac32.u.map>
+         <frac32.s.map name="freq 2" MidiCC="2" value="8.0">
+            <presets/>
+         </frac32.s.map>
+         <frac32.s.map name="lp:pitch" value="-22.0">
+            <modulators>
+               <modulation sourceName="modsource_2" modName="" value="128.0"/>
+            </modulators>
+         </frac32.s.map>
+         <frac32.u.map name="gain" value="38.0"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="gpio/in/analog" uuid="1c0c845ed2d7e06ae5f377ba13d9d09f4747ac87" name="analog_1" x="0" y="70">
+      <params/>
+      <attribs>
+         <combo attributeName="channel" selection="PC1 (ADC1_IN11)"/>
+      </attribs>
+   </obj>
+   <obj type="math/&lt;c" uuid="852c84e7bd967ee4a44cc553fcf6e3fc9d8b92c4" name="&lt;c_1" x="126" y="70">
+      <params>
+         <frac32.u.map name="c" value="10.0"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="disp/bool" uuid="a0ee71d48208b71752cbb8c05e55145106ef3946" name="bool_1" x="210" y="84">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="audio/out stereo" uuid="a1ca7a567f535acc21055669829101d3ee7f0189" name="out_1" x="868" y="140">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="gao/edrum/snare" uuid="8a0a2b35-49ea-4490-9809-9cfd45ce6ae6" name="obj_2" x="308" y="168">
+      <params>
+         <frac32.s.map name="body decay" MidiCC="3" value="-21.0">
+            <presets/>
+         </frac32.s.map>
+         <frac32.s.map name="noise decay" value="-1.0">
+            <presets/>
+         </frac32.s.map>
+         <frac32.s.map name="lp:pitch" value="15.0">
+            <presets/>
+            <modulators>
+               <modulation sourceName="modsource_3" modName="" value="128.0"/>
+            </modulators>
+         </frac32.s.map>
+         <frac32.u.map name="lp:reso" value="33.0"/>
+         <frac32.s.map name="notch:pitch" value="-14.0"/>
+         <frac32.u.map name="notch:reso" value="63.5"/>
+         <frac32.u.map name="gain" value="33.0"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="gpio/in/analog" uuid="1c0c845ed2d7e06ae5f377ba13d9d09f4747ac87" name="analog_2" x="0" y="182">
+      <params/>
+      <attribs>
+         <combo attributeName="channel" selection="PC2 (ADC1_IN12)"/>
+      </attribs>
+   </obj>
+   <obj type="math/&lt;c" uuid="852c84e7bd967ee4a44cc553fcf6e3fc9d8b92c4" name="&lt;c_2" x="126" y="182">
+      <params>
+         <frac32.u.map name="c" value="10.0"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="disp/bool" uuid="a0ee71d48208b71752cbb8c05e55145106ef3946" name="bool_2" x="210" y="182">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="rbrt/midi/in/monitor" uuid="64b3d36e-97ab-4b18-91f7-ff611e14fd7a" name="monitor_1" x="728" y="308">
+      <params/>
+      <attribs/>
+   </obj>
+   <nets>
+      <net>
+         <source obj="analog_1" outlet="out"/>
+         <dest obj="&lt;c_1" inlet="in"/>
+      </net>
+      <net>
+         <source obj="&lt;c_1" outlet="out"/>
+         <dest obj="obj_1" inlet="trig"/>
+         <dest obj="bool_1" inlet="in"/>
+      </net>
+      <net>
+         <source obj="analog_2" outlet="out"/>
+         <dest obj="&lt;c_2" inlet="in"/>
+      </net>
+      <net>
+         <source obj="&lt;c_2" outlet="out"/>
+         <dest obj="obj_2" inlet="trig"/>
+         <dest obj="bool_2" inlet="in"/>
+      </net>
+      <net>
+         <source obj="obj_1" outlet="out"/>
+         <dest obj="out_1" inlet="left"/>
+      </net>
+      <net>
+         <source obj="obj_2" outlet="outlet_1"/>
+         <dest obj="out_1" inlet="right"/>
+      </net>
+   </nets>
+   <settings>
+      <subpatchmode>no</subpatchmode>
+   </settings>
+   <notes><![CDATA[]]></notes>
+   <windowPos>
+      <x>706</x>
+      <y>325</y>
+      <width>1359</width>
+      <height>762</height>
+   </windowPos>
+</patch-1.0>

@@ -1,0 +1,671 @@
+<patch-1.0 appVersion="1.0.12">
+   <obj type="phi/disp/boolms" uuid="4d2b0662-f881-4953-832a-a286daf5b6a3" name="boolms_3" x="476" y="0">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="phi/disp/boolms" uuid="4d2b0662-f881-4953-832a-a286daf5b6a3" name="boolms_4" x="518" y="0">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="audio/in stereo" uuid="99848ad6d90a8e615e83b2e619cfc806f28e7281" name="adc_1" x="168" y="28">
+      <params/>
+      <attribs/>
+   </obj>
+   <patcher type="patch/patcher" uuid="3753f517-81fd-4edc-8751-f2049e1eb82c" name="patcher_1" x="266" y="28">
+      <params>
+         <frac32.u.map name="sens1" value="0.0"/>
+         <frac32.u.map name="change_1" value="56.5"/>
+         <frac32.u.map name="change_2" value="64.0"/>
+      </params>
+      <attribs/>
+      <subpatch appVersion="1.0.12">
+         <obj type="ctrl/dial p" uuid="cc5d2846c3d50e425f450c4b9851371b54f4d674" name="sens1" x="504" y="28">
+            <params>
+               <frac32.u.map name="value" onParent="true" value="0.0"/>
+            </params>
+            <attribs/>
+         </obj>
+         <obj type="env/follower" uuid="356ce1d18ac6b51704833f94dac5dea823fb8223" name="env_3" x="420" y="84">
+            <params/>
+            <attribs>
+               <combo attributeName="time" selection="1.3ms"/>
+            </attribs>
+         </obj>
+         <obj type="math/&gt;" uuid="8112942c245dbc2edf7d7de122fe83b0dcd0a391" name="&gt;_2" x="602" y="84">
+            <params/>
+            <attribs/>
+         </obj>
+         <obj type="patch/outlet b" uuid="191792f616d4835dba0b55375474a12942e5bcbd" name="trig_out_new1" x="700" y="98">
+            <params/>
+            <attribs/>
+         </obj>
+         <obj type="patch/inlet a" uuid="b577fe41e0a6bc7b5502ce33cb8a3129e2e28ee5" name="trig1" x="196" y="112">
+            <params/>
+            <attribs/>
+         </obj>
+         <obj type="env/follower" uuid="356ce1d18ac6b51704833f94dac5dea823fb8223" name="env_1" x="434" y="168">
+            <params/>
+            <attribs>
+               <combo attributeName="time" selection="1.3ms"/>
+            </attribs>
+         </obj>
+         <obj type="logic/change speedlim" uuid="9239a1be592182b71673521e7d7461e6951e8d3b" name="change_1" x="532" y="168">
+            <params>
+               <frac32.u.map name="d" onParent="true" value="64.0"/>
+            </params>
+            <attribs/>
+         </obj>
+         <obj type="patch/outlet b" uuid="191792f616d4835dba0b55375474a12942e5bcbd" name="trig_out_1" x="672" y="168">
+            <params/>
+            <attribs/>
+         </obj>
+         <obj type="patch/outlet f" uuid="d18a9a550bcaaebac94e25983bd0e27dbfd7233c" name="env_out_1" x="672" y="210">
+            <params/>
+            <attribs/>
+         </obj>
+         <obj type="logic/change speedlim" uuid="9239a1be592182b71673521e7d7461e6951e8d3b" name="change_2" x="518" y="308">
+            <params>
+               <frac32.u.map name="d" onParent="true" value="64.0"/>
+            </params>
+            <attribs/>
+         </obj>
+         <obj type="patch/outlet b" uuid="191792f616d4835dba0b55375474a12942e5bcbd" name="trig_out_2" x="672" y="308">
+            <params/>
+            <attribs/>
+         </obj>
+         <obj type="patch/inlet a" uuid="b577fe41e0a6bc7b5502ce33cb8a3129e2e28ee5" name="trig2" x="210" y="322">
+            <params/>
+            <attribs/>
+         </obj>
+         <obj type="env/follower" uuid="356ce1d18ac6b51704833f94dac5dea823fb8223" name="env_2" x="322" y="322">
+            <params/>
+            <attribs>
+               <combo attributeName="time" selection="1.3ms"/>
+            </attribs>
+         </obj>
+         <obj type="patch/outlet f" uuid="d18a9a550bcaaebac94e25983bd0e27dbfd7233c" name="env_out_2" x="672" y="364">
+            <params/>
+            <attribs/>
+         </obj>
+         <nets>
+            <net>
+               <source obj="env_1" outlet="amp"/>
+               <dest obj="change_1" inlet="in"/>
+               <dest obj="env_out_1" inlet="outlet"/>
+            </net>
+            <net>
+               <source obj="change_1" outlet="trig"/>
+               <dest obj="trig_out_1" inlet="outlet"/>
+            </net>
+            <net>
+               <source obj="change_2" outlet="trig"/>
+               <dest obj="trig_out_2" inlet="outlet"/>
+            </net>
+            <net>
+               <source obj="trig1" outlet="inlet"/>
+               <dest obj="env_3" inlet="in"/>
+               <dest obj="env_1" inlet="in"/>
+            </net>
+            <net>
+               <source obj="env_2" outlet="amp"/>
+               <dest obj="env_out_2" inlet="outlet"/>
+               <dest obj="change_2" inlet="in"/>
+            </net>
+            <net>
+               <source obj="&gt;_2" outlet="out"/>
+               <dest obj="trig_out_new1" inlet="outlet"/>
+            </net>
+            <net>
+               <source obj="sens1" outlet="out"/>
+               <dest obj="&gt;_2" inlet="in1"/>
+            </net>
+            <net>
+               <source obj="env_3" outlet="amp"/>
+               <dest obj="&gt;_2" inlet="in2"/>
+            </net>
+            <net>
+               <source obj="trig2" outlet="inlet"/>
+               <dest obj="env_2" inlet="in"/>
+            </net>
+         </nets>
+         <settings>
+            <subpatchmode>no</subpatchmode>
+         </settings>
+         <notes><![CDATA[]]></notes>
+         <windowPos>
+            <x>0</x>
+            <y>23</y>
+            <width>1195</width>
+            <height>866</height>
+         </windowPos>
+      </subpatch>
+   </patcher>
+   <obj type="disp/chart p" uuid="58f42040a894006a5f73ed8cb8d0bd45481b28cd" name="chart_2" x="840" y="42">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="math/muls 8" uuid="7f2a47c7405168a6d330c0ec6091b1ec1e7c7840" name="muls_1" x="686" y="56">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="timer/delayedpulseduration" uuid="3b7bf0a7b7f89fad06a734667f48de051deb5c78" name="delayedpulseduration_2" x="476" y="70">
+      <params>
+         <frac32.s.map name="delay" value="22.0"/>
+         <frac32.s.map name="pulselength" value="-64.0"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="audio/outconfig" uuid="eace67e3304afaa1bb695b444e9345f2d8adaf00" name="outconfig_1" x="1456" y="70">
+      <params/>
+      <attribs>
+         <combo attributeName="headphones" selection="0dB"/>
+         <combo attributeName="mode" selection="Stereo"/>
+      </attribs>
+   </obj>
+   <comment type="patch/comment" x="1204" y="84" text="can this be wiothout delay?"/>
+   <obj type="timer/delayedpulseduration" uuid="3b7bf0a7b7f89fad06a734667f48de051deb5c78" name="delayedpulseduration_1" x="1204" y="98">
+      <params>
+         <frac32.s.map name="delay" value="-64.0"/>
+         <frac32.s.map name="pulselength" value="-48.0"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="disp/i" uuid="5e35fd0c62d81e70017289250cf28edd26e19e4a" name="i_3" x="1638" y="112">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="logic/or 2" uuid="3805d3c84d30032a44fbdbe42d9a2988a1790a3e" name="or_1" x="644" y="126">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="audio/inconfig" uuid="9a80ef3c19f2a8f81da3a3b7c1c44d18126b97d9" name="adcconfig1" x="168" y="140">
+      <params/>
+      <attribs>
+         <combo attributeName="gain" selection="30dB"/>
+         <combo attributeName="boost" selection="0dB"/>
+         <combo attributeName="mode" selection="Stereo"/>
+      </attribs>
+   </obj>
+   <obj type="ctrl/dial p" uuid="cc5d2846c3d50e425f450c4b9851371b54f4d674" name="dial_2" x="1400" y="168">
+      <params>
+         <frac32.u.map name="value" MidiCC="55" value="10.5"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="math/+1" uuid="6b958b82fafa8d61216203d28f9f0e4cd27fa2a6" name="+1_3" x="1470" y="168">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="phi/logic/counter i" uuid="49f45a5d-b235-47ff-a47d-20cc357198ea" name="counter_3" x="1526" y="168">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="lokki/sel/sel dial b 8" uuid="74889821-5a6f-41a5-a921-6fc53762ff47" name="sel_2" x="1638" y="168">
+      <params>
+         <frac32.s.map name="v0" MidiCC="77" value="-54.0"/>
+         <frac32.s.map name="v1" MidiCC="78" value="-41.0"/>
+         <frac32.s.map name="v2" MidiCC="79" value="-25.0"/>
+         <frac32.s.map name="v3" MidiCC="80" value="-30.0"/>
+         <frac32.s.map name="v4" MidiCC="81" value="-29.0"/>
+         <frac32.s.map name="v5" MidiCC="82" value="-38.0"/>
+         <frac32.s.map name="v6" MidiCC="83" value="-64.0"/>
+         <frac32.s.map name="v7" MidiCC="84" value="-64.0"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="osc/brds/bowed" uuid="c914df2f-e44b-4918-be05-2c194020cca9" name="bowed_1" x="1764" y="168">
+      <params>
+         <frac32.s.map name="pitch" value="-27.0"/>
+         <frac32.u.map name="timbre" value="33.5"/>
+         <frac32.u.map name="color" value="16.5"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="ctrl/button" uuid="ef3d13774349df85aa9bfecf30dbc91ab8488b3f" name="button_1" x="910" y="182">
+      <params>
+         <bool32.mom name="b" value="0"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="disp/chart p" uuid="58f42040a894006a5f73ed8cb8d0bd45481b28cd" name="chart_3" x="1092" y="182">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="disp/i" uuid="5e35fd0c62d81e70017289250cf28edd26e19e4a" name="i_1" x="826" y="196">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="logic/change" uuid="96e39ae624c3f3c952cec4a95e1986ee0104f718" name="change_1" x="700" y="210">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="math/+1" uuid="6b958b82fafa8d61216203d28f9f0e4cd27fa2a6" name="+1_4" x="1470" y="210">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="ctrl/dial p" uuid="cc5d2846c3d50e425f450c4b9851371b54f4d674" name="dial_1" x="434" y="238">
+      <params>
+         <frac32.u.map name="value" MidiCC="19" value="13.0"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="math/+1" uuid="6b958b82fafa8d61216203d28f9f0e4cd27fa2a6" name="+1_1" x="504" y="238">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="phi/logic/counter i" uuid="49f45a5d-b235-47ff-a47d-20cc357198ea" name="counter_2" x="560" y="238">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="logic/and 2" uuid="c67031682f552aa0a80b23377495c51ea28a8c9c" name="and_1" x="798" y="266">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="env/adsr m" uuid="98bd39fb828c392b28126d259cb5175e6f6ea34b" name="adsr_2" x="980" y="266">
+      <params>
+         <frac32.s.map name="a" MidiCC="20" value="-22.0"/>
+         <frac32.s.map name="d" MidiCC="36" value="-8.0"/>
+         <frac32.u.map name="s" MidiCC="56" value="25.5"/>
+         <frac32.s.map name="r" value="-22.0"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="math/+1" uuid="6b958b82fafa8d61216203d28f9f0e4cd27fa2a6" name="+1_2" x="504" y="280">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="gain/vca" uuid="a9f2dcd18043e2f47364e45cb8814f63c2a37c0d" name="vca_2" x="1274" y="280">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="osc/brds/clockednoise" uuid="c4049bf8-426e-4b9c-b17c-4909133405c6" name="clockednoise_1" x="1120" y="308">
+      <params>
+         <frac32.s.map name="pitch" value="-12.0"/>
+         <frac32.u.map name="timbre" value="44.0"/>
+         <frac32.u.map name="color" value="36.0"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="logic/flipflop toggle" uuid="195e489e5fc3d275944b0de56c7a91c8641ea22a" name="flipflop_1" x="686" y="336">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="lfo/square" uuid="de6909eb64db13af5b43f979a4c130024b3a4793" name="square_1" x="448" y="350">
+      <params>
+         <frac32.s.map name="pitch" MidiCC="35" value="-60.0"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="wave/play fn" uuid="25910f7130532e4934eed3cf2a934324790d0f00" name="play_2" x="280" y="490">
+      <params/>
+      <attribs>
+         <file attributeName="fn" file="../samples/kicks/808-Kick06n.raw"/>
+      </attribs>
+   </obj>
+   <obj type="ctrl/dial p" uuid="cc5d2846c3d50e425f450c4b9851371b54f4d674" name="dial_3" x="1246" y="518">
+      <params>
+         <frac32.u.map name="value" MidiCC="14" value="32.0"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="sss/fx/pitchshifter" uuid="61bb08be-8581-44b0-b98b-e45cb27a408a" name="shift" x="1358" y="518">
+      <params/>
+      <attribs>
+         <objref attributeName="delayname" obj="shift"/>
+      </attribs>
+   </obj>
+   <obj type="wave/play fn" uuid="25910f7130532e4934eed3cf2a934324790d0f00" name="play_1" x="854" y="574">
+      <params/>
+      <attribs>
+         <file attributeName="fn" file="../samples/snares/808-Clap04.raw"/>
+      </attribs>
+   </obj>
+   <obj type="wave/play fn" uuid="25910f7130532e4934eed3cf2a934324790d0f00" name="play_3" x="280" y="588">
+      <params/>
+      <attribs>
+         <file attributeName="fn" file="../samples/kicks/808-Kicks12.raw"/>
+      </attribs>
+   </obj>
+   <obj type="rbrt/midi/in/monitor" uuid="64b3d36e-97ab-4b18-91f7-ff611e14fd7a" name="monitor_1" x="504" y="602">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="ctrl/dial p" uuid="cc5d2846c3d50e425f450c4b9851371b54f4d674" name="dial_4" x="1246" y="602">
+      <params>
+         <frac32.u.map name="value" MidiCC="30" value="32.0"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="fx/clds/pitchshifter" uuid="CF2FFE3A-9363-4C78-AF25-9F3A41E5F0E4" name="pitchshifter_1" x="1372" y="630">
+      <params>
+         <frac32.u.map name="ratio" value="7.0"/>
+         <frac32.u.map name="size" value="44.5"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="gpio/in/analog" uuid="1c0c845ed2d7e06ae5f377ba13d9d09f4747ac87" name="analog_1" x="0" y="658">
+      <params/>
+      <attribs>
+         <combo attributeName="channel" selection="PA0 (ADC1_IN0)"/>
+      </attribs>
+   </obj>
+   <obj type="math/&lt;c" uuid="852c84e7bd967ee4a44cc553fcf6e3fc9d8b92c4" name="&lt;c_1" x="168" y="672">
+      <params>
+         <frac32.u.map name="c" value="10.0"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="wave/play fn" uuid="25910f7130532e4934eed3cf2a934324790d0f00" name="play_4" x="308" y="700">
+      <params/>
+      <attribs>
+         <file attributeName="fn" file="../samples/kicks/808-Kicks01.raw"/>
+      </attribs>
+   </obj>
+   <obj type="disp/i" uuid="5e35fd0c62d81e70017289250cf28edd26e19e4a" name="i_2" x="1302" y="728">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="drj/seq/bpm_detect" uuid="1143145e5e9ad309eaf65a47b14cfffabca43295" name="bpm_detect_1" x="1120" y="742">
+      <params/>
+      <attribs>
+         <combo attributeName="clocksource" selection="MIDI"/>
+         <combo attributeName="device" selection="omni"/>
+         <combo attributeName="smooth" selection="2"/>
+      </attribs>
+   </obj>
+   <obj type="mix/mix 6 g" uuid="2dd642dee5072357722740c850699b79b8da3008" name="mix_1" x="616" y="756">
+      <params>
+         <frac32.u.map name="gain1" value="28.0">
+            <presets/>
+         </frac32.u.map>
+         <frac32.u.map name="gain2" value="31.0">
+            <presets/>
+         </frac32.u.map>
+         <frac32.u.map name="gain3" value="29.5"/>
+         <frac32.u.map name="gain4" value="27.0">
+            <presets/>
+         </frac32.u.map>
+         <frac32.u.map name="gain5" value="32.5">
+            <presets/>
+         </frac32.u.map>
+         <frac32.u.map name="gain6" value="33.0"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="audio/out stereo" uuid="a1ca7a567f535acc21055669829101d3ee7f0189" name="out_1" x="826" y="756">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="gpio/in/analog" uuid="1c0c845ed2d7e06ae5f377ba13d9d09f4747ac87" name="analog_2" x="0" y="770">
+      <params/>
+      <attribs>
+         <combo attributeName="channel" selection="PA1 (ADC1_IN1)"/>
+      </attribs>
+   </obj>
+   <obj type="math/&lt;c" uuid="852c84e7bd967ee4a44cc553fcf6e3fc9d8b92c4" name="&lt;c_2" x="168" y="784">
+      <params>
+         <frac32.u.map name="c" value="17.0"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="wave/play fn" uuid="25910f7130532e4934eed3cf2a934324790d0f00" name="play_5" x="308" y="798">
+      <params/>
+      <attribs>
+         <file attributeName="fn" file="../samples/kicks/808-Kicks40.raw"/>
+      </attribs>
+   </obj>
+   <obj type="audio/out stereo" uuid="a1ca7a567f535acc21055669829101d3ee7f0189" name="out_2" x="1330" y="854">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="gpio/in/analog" uuid="1c0c845ed2d7e06ae5f377ba13d9d09f4747ac87" name="analog_3" x="0" y="882">
+      <params/>
+      <attribs>
+         <combo attributeName="channel" selection="PA2 (ADC1_IN2)"/>
+      </attribs>
+   </obj>
+   <obj type="math/&lt;c" uuid="852c84e7bd967ee4a44cc553fcf6e3fc9d8b92c4" name="&lt;c_3" x="154" y="896">
+      <params>
+         <frac32.u.map name="c" value="17.0"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="wave/play fn" uuid="25910f7130532e4934eed3cf2a934324790d0f00" name="play_6" x="308" y="896">
+      <params/>
+      <attribs>
+         <file attributeName="fn" file="../samples/percussion/808-Conga1.raw"/>
+      </attribs>
+   </obj>
+   <obj type="wave/play fn" uuid="25910f7130532e4934eed3cf2a934324790d0f00" name="play_7" x="308" y="994">
+      <params/>
+      <attribs>
+         <file attributeName="fn" file="../samples/snares/808-Snare22.raw"/>
+      </attribs>
+   </obj>
+   <obj type="gpio/in/analog" uuid="1c0c845ed2d7e06ae5f377ba13d9d09f4747ac87" name="analog_4" x="0" y="1008">
+      <params/>
+      <attribs>
+         <combo attributeName="channel" selection="PA3 (ADC1_IN3)"/>
+      </attribs>
+   </obj>
+   <obj type="math/&lt;c" uuid="852c84e7bd967ee4a44cc553fcf6e3fc9d8b92c4" name="&lt;c_4" x="154" y="1008">
+      <params>
+         <frac32.u.map name="c" value="17.0"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="wave/play fn" uuid="25910f7130532e4934eed3cf2a934324790d0f00" name="play_8" x="308" y="1092">
+      <params/>
+      <attribs>
+         <file attributeName="fn" file="hihats/808-OpenHiHats06.raw"/>
+      </attribs>
+   </obj>
+   <obj type="wave/play fn" uuid="25910f7130532e4934eed3cf2a934324790d0f00" name="play_9" x="308" y="1190">
+      <params/>
+      <attribs>
+         <file attributeName="fn" file="percussion/808-Conga1.raw"/>
+      </attribs>
+   </obj>
+   <nets>
+      <net>
+         <source obj="adc_1" outlet="left"/>
+         <dest obj="patcher_1" inlet="trig1"/>
+      </net>
+      <net>
+         <source obj="adc_1" outlet="right"/>
+         <dest obj="patcher_1" inlet="trig2"/>
+      </net>
+      <net>
+         <source obj="patcher_1" outlet="env_out_1"/>
+         <dest obj="muls_1" inlet="in"/>
+         <dest obj="adsr_2" inlet="r"/>
+      </net>
+      <net>
+         <source obj="muls_1" outlet="out"/>
+         <dest obj="chart_2" inlet="in"/>
+      </net>
+      <net>
+         <source obj="patcher_1" outlet="trig_out_new1"/>
+         <dest obj="boolms_3" inlet="trig"/>
+         <dest obj="flipflop_1" inlet="set"/>
+         <dest obj="square_1" inlet="reset"/>
+         <dest obj="counter_2" inlet="r"/>
+         <dest obj="counter_3" inlet="trig"/>
+         <dest obj="bowed_1" inlet="strike"/>
+         <dest obj="delayedpulseduration_2" inlet="trig"/>
+      </net>
+      <net>
+         <source obj="adsr_2" outlet="env"/>
+         <dest obj="vca_2" inlet="v"/>
+         <dest obj="chart_3" inlet="in"/>
+      </net>
+      <net>
+         <source obj="square_1" outlet="wave"/>
+         <dest obj="counter_2" inlet="trig"/>
+      </net>
+      <net>
+         <source obj="flipflop_1" outlet="o"/>
+         <dest obj="and_1" inlet="i2"/>
+         <dest obj="boolms_4" inlet="trig"/>
+      </net>
+      <net>
+         <source obj="and_1" outlet="o"/>
+         <dest obj="delayedpulseduration_1" inlet="trig"/>
+      </net>
+      <net>
+         <source obj="change_1" outlet="trig"/>
+         <dest obj="and_1" inlet="i1"/>
+      </net>
+      <net>
+         <source obj="counter_2" outlet="o"/>
+         <dest obj="change_1" inlet="in"/>
+         <dest obj="i_1" inlet="in"/>
+      </net>
+      <net>
+         <source obj="counter_2" outlet="c"/>
+         <dest obj="or_1" inlet="i2"/>
+      </net>
+      <net>
+         <source obj="dial_1" outlet="out"/>
+         <dest obj="+1_1" inlet="a"/>
+      </net>
+      <net>
+         <source obj="+1_1" outlet="result"/>
+         <dest obj="+1_2" inlet="a"/>
+      </net>
+      <net>
+         <source obj="+1_2" outlet="result"/>
+         <dest obj="counter_2" inlet="count"/>
+      </net>
+      <net>
+         <source obj="bpm_detect_1" outlet="bpm"/>
+         <dest obj="i_2" inlet="in"/>
+      </net>
+      <net>
+         <source obj="bowed_1" outlet="wave"/>
+         <dest obj="vca_2" inlet="a"/>
+      </net>
+      <net>
+         <source obj="delayedpulseduration_1" outlet="pulse"/>
+         <dest obj="clockednoise_1" inlet="strike"/>
+         <dest obj="adsr_2" inlet="gate"/>
+         <dest obj="play_1" inlet="start"/>
+      </net>
+      <net>
+         <source obj="dial_2" outlet="out"/>
+         <dest obj="+1_3" inlet="a"/>
+      </net>
+      <net>
+         <source obj="+1_3" outlet="result"/>
+         <dest obj="+1_4" inlet="a"/>
+      </net>
+      <net>
+         <source obj="+1_4" outlet="result"/>
+         <dest obj="counter_3" inlet="count"/>
+      </net>
+      <net>
+         <source obj="counter_3" outlet="o"/>
+         <dest obj="sel_2" inlet="s"/>
+         <dest obj="i_3" inlet="in"/>
+      </net>
+      <net>
+         <source obj="sel_2" outlet="o"/>
+         <dest obj="bowed_1" inlet="pitch"/>
+         <dest obj="square_1" inlet="pitch"/>
+         <dest obj="shift" inlet="Hz"/>
+      </net>
+      <net>
+         <source obj="delayedpulseduration_2" outlet="pulse"/>
+         <dest obj="or_1" inlet="i1"/>
+      </net>
+      <net>
+         <source obj="or_1" outlet="o"/>
+         <dest obj="flipflop_1" inlet="reset"/>
+      </net>
+      <net>
+         <source obj="play_1" outlet="out"/>
+         <dest obj="out_2" inlet="right"/>
+         <dest obj="pitchshifter_1" inlet="l"/>
+         <dest obj="shift" inlet="AudioIn"/>
+      </net>
+      <net>
+         <source obj="dial_4" outlet="out"/>
+         <dest obj="shift" inlet="depth"/>
+      </net>
+      <net>
+         <source obj="shift" outlet="AudioOut"/>
+         <dest obj="out_2" inlet="left"/>
+      </net>
+      <net>
+         <source obj="play_4" outlet="out"/>
+         <dest obj="mix_1" inlet="in1"/>
+      </net>
+      <net>
+         <source obj="play_5" outlet="out"/>
+         <dest obj="mix_1" inlet="in2"/>
+      </net>
+      <net>
+         <source obj="play_6" outlet="out"/>
+         <dest obj="mix_1" inlet="in3"/>
+      </net>
+      <net>
+         <source obj="play_7" outlet="out"/>
+         <dest obj="mix_1" inlet="in4"/>
+      </net>
+      <net>
+         <source obj="play_8" outlet="out"/>
+         <dest obj="mix_1" inlet="in5"/>
+      </net>
+      <net>
+         <source obj="play_9" outlet="out"/>
+         <dest obj="mix_1" inlet="in6"/>
+      </net>
+      <net>
+         <source obj="analog_1" outlet="out"/>
+         <dest obj="&lt;c_1" inlet="in"/>
+      </net>
+      <net>
+         <source obj="&lt;c_1" outlet="out"/>
+         <dest obj="play_4" inlet="start"/>
+      </net>
+      <net>
+         <source obj="analog_2" outlet="out"/>
+         <dest obj="&lt;c_2" inlet="in"/>
+      </net>
+      <net>
+         <source obj="analog_3" outlet="out"/>
+         <dest obj="&lt;c_3" inlet="in"/>
+      </net>
+      <net>
+         <source obj="analog_4" outlet="out"/>
+         <dest obj="&lt;c_4" inlet="in"/>
+      </net>
+      <net>
+         <source obj="&lt;c_2" outlet="out"/>
+         <dest obj="play_5" inlet="start"/>
+      </net>
+      <net>
+         <source obj="&lt;c_3" outlet="out"/>
+         <dest obj="play_6" inlet="start"/>
+      </net>
+      <net>
+         <source obj="&lt;c_4" outlet="out"/>
+         <dest obj="play_7" inlet="start"/>
+      </net>
+      <net>
+         <source obj="mix_1" outlet="out"/>
+         <dest obj="out_1" inlet="left"/>
+         <dest obj="out_1" inlet="right"/>
+      </net>
+   </nets>
+   <settings>
+      <subpatchmode>no</subpatchmode>
+   </settings>
+   <notes><![CDATA[]]></notes>
+   <windowPos>
+      <x>0</x>
+      <y>23</y>
+      <width>1920</width>
+      <height>994</height>
+   </windowPos>
+</patch-1.0>

@@ -1,0 +1,488 @@
+<patch-1.0 appVersion="1.0.12">
+   <obj type="disp/i" uuid="5e35fd0c62d81e70017289250cf28edd26e19e4a" name="i_3" x="504" y="0">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="ctrl/dial p" uuid="cc5d2846c3d50e425f450c4b9851371b54f4d674" name="dial_2" x="504" y="56">
+      <params>
+         <frac32.u.map name="value" MidiCC="55" value="6.0"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="math/+1" uuid="6b958b82fafa8d61216203d28f9f0e4cd27fa2a6" name="+1_3" x="574" y="56">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="phi/logic/counter i" uuid="49f45a5d-b235-47ff-a47d-20cc357198ea" name="counter_3" x="630" y="56">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="lokki/sel/sel dial b 8" uuid="74889821-5a6f-41a5-a921-6fc53762ff47" name="sel_2" x="742" y="56">
+      <params>
+         <frac32.s.map name="v0" MidiCC="77" value="45.0"/>
+         <frac32.s.map name="v1" MidiCC="78" value="33.0"/>
+         <frac32.s.map name="v2" MidiCC="79" value="20.0"/>
+         <frac32.s.map name="v3" MidiCC="80" value="10.0"/>
+         <frac32.s.map name="v4" MidiCC="81" value="3.0"/>
+         <frac32.s.map name="v5" MidiCC="82" value="-11.0"/>
+         <frac32.s.map name="v6" MidiCC="83" value="-20.0"/>
+         <frac32.s.map name="v7" MidiCC="84" value="-26.0"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="math/+1" uuid="6b958b82fafa8d61216203d28f9f0e4cd27fa2a6" name="+1_4" x="574" y="98">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="gpio/in/analog" uuid="1c0c845ed2d7e06ae5f377ba13d9d09f4747ac87" name="analog_1" x="56" y="392">
+      <params/>
+      <attribs>
+         <combo attributeName="channel" selection="PA0 (ADC1_IN0)"/>
+      </attribs>
+   </obj>
+   <obj type="math/&lt;c" uuid="852c84e7bd967ee4a44cc553fcf6e3fc9d8b92c4" name="&lt;c_1" x="224" y="406">
+      <params>
+         <frac32.u.map name="c" value="10.0"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="mix/mix 8" uuid="f12e13a7920b67f4e286369e0e2c573e5af08f9c" name="mix_1" x="910" y="420">
+      <params>
+         <frac32.u.map name="gain1" value="32.0"/>
+         <frac32.u.map name="gain2" value="32.0"/>
+         <frac32.u.map name="gain3" value="32.0"/>
+         <frac32.u.map name="gain4" value="32.0"/>
+         <frac32.u.map name="gain5" value="47.0"/>
+         <frac32.u.map name="gain6" value="61.0"/>
+         <frac32.u.map name="gain7" value="0.0"/>
+         <frac32.u.map name="gain8" value="32.0"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="filter/hp m" uuid="fdba806c3cfd2b7aca3256c733379a06e5811e66" name="hp_1" x="644" y="434">
+      <params>
+         <frac32.s.map name="pitch" value="-23.0"/>
+         <frac32.u.map name="reso" value="0.0"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="wave/play fn" uuid="25910f7130532e4934eed3cf2a934324790d0f00" name="play_4" x="322" y="448">
+      <params/>
+      <attribs>
+         <file attributeName="fn" file="../samples/kicks/808-Kicks17.raw"/>
+      </attribs>
+   </obj>
+   <obj type="audio/out stereo" uuid="a1ca7a567f535acc21055669829101d3ee7f0189" name="out_1" x="1022" y="448">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="fx/lmnts/reverb" uuid="8027561C-A0B5-4DF8-A10E-3ED1274F2980" name="reverb_1" x="742" y="518">
+      <params>
+         <frac32.u.map name="amount" value="0.0"/>
+         <frac32.u.map name="time" value="48.0"/>
+         <frac32.u.map name="diffusion" value="58.0"/>
+         <frac32.u.map name="gain" value="64.0"/>
+         <frac32.u.map name="lowpass" value="44.0"/>
+      </params>
+      <attribs/>
+   </obj>
+   <patcher type="patch/patcher" uuid="4ff75fc2-3698-4b91-a76c-7cb22e38c144" name="patcher_1" x="238" y="602">
+      <params>
+         <frac32.u.map name="repeatlength" value="16.5"/>
+         <frac32.s.map name="repeatfreq" value="7.0"/>
+      </params>
+      <attribs/>
+      <subpatch appVersion="1.0.12">
+         <obj type="phi/disp/boolms" uuid="4d2b0662-f881-4953-832a-a286daf5b6a3" name="boolms_3" x="574" y="14">
+            <params/>
+            <attribs/>
+         </obj>
+         <obj type="phi/disp/boolms" uuid="4d2b0662-f881-4953-832a-a286daf5b6a3" name="boolms_4" x="630" y="14">
+            <params/>
+            <attribs/>
+         </obj>
+         <obj type="patch/inlet b" uuid="3b0d3eacb5bb978cb05d1372aa2714d5a4790844" name="inlet_1" x="224" y="42">
+            <params/>
+            <attribs/>
+         </obj>
+         <obj type="timer/delayedpulseduration" uuid="3b7bf0a7b7f89fad06a734667f48de051deb5c78" name="delayedpulseduration_2" x="574" y="84">
+            <params>
+               <frac32.s.map name="delay" value="22.0"/>
+               <frac32.s.map name="pulselength" value="-64.0"/>
+            </params>
+            <attribs/>
+         </obj>
+         <comment type="patch/comment" x="1050" y="98" text="can this be wiothout delay?"/>
+         <obj type="timer/delayedpulseduration" uuid="3b7bf0a7b7f89fad06a734667f48de051deb5c78" name="delayedpulseduration_1" x="1050" y="112">
+            <params>
+               <frac32.s.map name="delay" value="-64.0"/>
+               <frac32.s.map name="pulselength" value="-48.0"/>
+            </params>
+            <attribs/>
+         </obj>
+         <obj type="logic/or 2" uuid="3805d3c84d30032a44fbdbe42d9a2988a1790a3e" name="or_1" x="742" y="140">
+            <params/>
+            <attribs/>
+         </obj>
+         <obj type="patch/outlet b" uuid="191792f616d4835dba0b55375474a12942e5bcbd" name="reptrigger" x="1274" y="168">
+            <params/>
+            <attribs/>
+         </obj>
+         <obj type="patch/inlet f" uuid="5c585d2dcd9c05631e345ac09626a22a639d7c13" name="repeat" x="224" y="224">
+            <params/>
+            <attribs/>
+         </obj>
+         <obj type="logic/change" uuid="96e39ae624c3f3c952cec4a95e1986ee0104f718" name="change_1" x="798" y="224">
+            <params/>
+            <attribs/>
+         </obj>
+         <obj type="disp/i" uuid="5e35fd0c62d81e70017289250cf28edd26e19e4a" name="i_1" x="896" y="224">
+            <params/>
+            <attribs/>
+         </obj>
+         <obj type="math/+1" uuid="6b958b82fafa8d61216203d28f9f0e4cd27fa2a6" name="+1_1" x="602" y="252">
+            <params/>
+            <attribs/>
+         </obj>
+         <obj type="phi/logic/counter i" uuid="49f45a5d-b235-47ff-a47d-20cc357198ea" name="counter_2" x="658" y="252">
+            <params/>
+            <attribs/>
+         </obj>
+         <obj type="logic/flipflop toggle" uuid="195e489e5fc3d275944b0de56c7a91c8641ea22a" name="flipflop_1" x="770" y="266">
+            <params/>
+            <attribs/>
+         </obj>
+         <obj type="logic/and 2" uuid="c67031682f552aa0a80b23377495c51ea28a8c9c" name="and_1" x="896" y="280">
+            <params/>
+            <attribs/>
+         </obj>
+         <obj type="math/+1" uuid="6b958b82fafa8d61216203d28f9f0e4cd27fa2a6" name="+1_2" x="602" y="294">
+            <params/>
+            <attribs/>
+         </obj>
+         <obj type="ctrl/dial p" uuid="cc5d2846c3d50e425f450c4b9851371b54f4d674" name="repeatlength" x="196" y="308">
+            <params>
+               <frac32.u.map name="value" onParent="true" value="55.5"/>
+            </params>
+            <attribs/>
+         </obj>
+         <obj type="lfo/square" uuid="de6909eb64db13af5b43f979a4c130024b3a4793" name="repeatfreq" x="504" y="350">
+            <params>
+               <frac32.s.map name="pitch" onParent="true" value="9.0"/>
+            </params>
+            <attribs/>
+         </obj>
+         <nets>
+            <net>
+               <source obj="inlet_1" outlet="inlet"/>
+               <dest obj="boolms_3" inlet="trig"/>
+               <dest obj="flipflop_1" inlet="set"/>
+               <dest obj="repeatfreq" inlet="reset"/>
+               <dest obj="counter_2" inlet="r"/>
+               <dest obj="delayedpulseduration_2" inlet="trig"/>
+            </net>
+            <net>
+               <source obj="repeatfreq" outlet="wave"/>
+               <dest obj="counter_2" inlet="trig"/>
+            </net>
+            <net>
+               <source obj="flipflop_1" outlet="o"/>
+               <dest obj="and_1" inlet="i2"/>
+               <dest obj="boolms_4" inlet="trig"/>
+            </net>
+            <net>
+               <source obj="and_1" outlet="o"/>
+               <dest obj="delayedpulseduration_1" inlet="trig"/>
+            </net>
+            <net>
+               <source obj="change_1" outlet="trig"/>
+               <dest obj="and_1" inlet="i1"/>
+            </net>
+            <net>
+               <source obj="counter_2" outlet="o"/>
+               <dest obj="change_1" inlet="in"/>
+               <dest obj="i_1" inlet="in"/>
+            </net>
+            <net>
+               <source obj="counter_2" outlet="c"/>
+               <dest obj="or_1" inlet="i2"/>
+            </net>
+            <net>
+               <source obj="repeatlength" outlet="out"/>
+               <dest obj="+1_1" inlet="a"/>
+            </net>
+            <net>
+               <source obj="+1_1" outlet="result"/>
+               <dest obj="+1_2" inlet="a"/>
+            </net>
+            <net>
+               <source obj="+1_2" outlet="result"/>
+               <dest obj="counter_2" inlet="count"/>
+            </net>
+            <net>
+               <source obj="delayedpulseduration_2" outlet="pulse"/>
+               <dest obj="or_1" inlet="i1"/>
+            </net>
+            <net>
+               <source obj="or_1" outlet="o"/>
+               <dest obj="flipflop_1" inlet="reset"/>
+            </net>
+            <net>
+               <source obj="delayedpulseduration_1" outlet="pulse"/>
+               <dest obj="reptrigger" inlet="outlet"/>
+            </net>
+            <net>
+               <source obj="repeat" outlet="inlet"/>
+               <dest obj="repeatfreq" inlet="pitch"/>
+            </net>
+         </nets>
+         <settings>
+            <subpatchmode>no</subpatchmode>
+         </settings>
+         <notes><![CDATA[]]></notes>
+         <windowPos>
+            <x>0</x>
+            <y>23</y>
+            <width>1828</width>
+            <height>884</height>
+         </windowPos>
+      </subpatch>
+   </patcher>
+   <obj type="gpio/in/analog" uuid="1c0c845ed2d7e06ae5f377ba13d9d09f4747ac87" name="analog_2" x="0" y="616">
+      <params/>
+      <attribs>
+         <combo attributeName="channel" selection="PA1 (ADC1_IN1)"/>
+      </attribs>
+   </obj>
+   <obj type="math/&lt;c" uuid="852c84e7bd967ee4a44cc553fcf6e3fc9d8b92c4" name="&lt;c_2" x="154" y="630">
+      <params>
+         <frac32.u.map name="c" value="10.0"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="wave/play fn" uuid="25910f7130532e4934eed3cf2a934324790d0f00" name="play_5" x="378" y="658">
+      <params/>
+      <attribs>
+         <file attributeName="fn" file="../samples/snares/808-Snare36.raw"/>
+      </attribs>
+   </obj>
+   <obj type="filter/hp m" uuid="fdba806c3cfd2b7aca3256c733379a06e5811e66" name="hp_2" x="644" y="672">
+      <params>
+         <frac32.s.map name="pitch" value="-9.0"/>
+         <frac32.u.map name="reso" value="19.0"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="gpio/in/analog" uuid="1c0c845ed2d7e06ae5f377ba13d9d09f4747ac87" name="analog_3" x="70" y="798">
+      <params/>
+      <attribs>
+         <combo attributeName="channel" selection="PA2 (ADC1_IN2)"/>
+      </attribs>
+   </obj>
+   <obj type="math/&lt;c" uuid="852c84e7bd967ee4a44cc553fcf6e3fc9d8b92c4" name="&lt;c_3" x="238" y="812">
+      <params>
+         <frac32.u.map name="c" value="10.0"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="wave/play fn" uuid="25910f7130532e4934eed3cf2a934324790d0f00" name="play_6" x="378" y="840">
+      <params/>
+      <attribs>
+         <file attributeName="fn" file="../samples/hihats/808-HiHats15.raw"/>
+      </attribs>
+   </obj>
+   <obj type="osc/brds/wavemap" uuid="76c757e8-39b8-436d-9a6a-463078eff8f7" name="wavemap_1" x="952" y="882">
+      <params>
+         <frac32.s.map name="pitch" value="0.0"/>
+         <frac32.u.map name="timbre" value="14.0"/>
+         <frac32.u.map name="color" value="32.0"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="sss/dyn/copycompRMS" uuid="6c07850a-4eba-4103-b6e2-16682bce503c" name="copycompRMS_1" x="1148" y="910">
+      <params>
+         <frac32.u.map name="ratio" value="64.0"/>
+         <frac32.u.map name="attack" value="0.0"/>
+         <frac32.u.map name="decay" value="0.0"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="gpio/in/analog" uuid="1c0c845ed2d7e06ae5f377ba13d9d09f4747ac87" name="analog_4" x="70" y="966">
+      <params/>
+      <attribs>
+         <combo attributeName="channel" selection="PA3 (ADC1_IN3)"/>
+      </attribs>
+   </obj>
+   <obj type="audio/in stereo" uuid="99848ad6d90a8e615e83b2e619cfc806f28e7281" name="in_1" x="840" y="966">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="math/&lt;c" uuid="852c84e7bd967ee4a44cc553fcf6e3fc9d8b92c4" name="&lt;c_4" x="238" y="980">
+      <params>
+         <frac32.u.map name="c" value="10.0"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="filter/hp m" uuid="fdba806c3cfd2b7aca3256c733379a06e5811e66" name="hp_3" x="630" y="994">
+      <params>
+         <frac32.s.map name="pitch" value="-4.0"/>
+         <frac32.u.map name="reso" value="19.0"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="wave/play fn" uuid="25910f7130532e4934eed3cf2a934324790d0f00" name="play_7" x="378" y="1008">
+      <params/>
+      <attribs>
+         <file attributeName="fn" file="../samples/hihats/808-Ride3.raw"/>
+      </attribs>
+   </obj>
+   <obj type="osc/brds/chaoticfeedbackfm" uuid="e5d9cdd6-46dc-48c5-aaf5-102184241574" name="chaoticfeedbackfm_1" x="952" y="1092">
+      <params>
+         <frac32.s.map name="pitch" value="0.0"/>
+         <frac32.u.map name="timbre" value="64.0"/>
+         <frac32.u.map name="color" value="32.0"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="sss/dyn/copycompRMS" uuid="6c07850a-4eba-4103-b6e2-16682bce503c" name="copycompRMS_2" x="1148" y="1106">
+      <params>
+         <frac32.u.map name="ratio" value="64.0"/>
+         <frac32.u.map name="attack" value="0.0"/>
+         <frac32.u.map name="decay" value="0.0"/>
+      </params>
+      <attribs/>
+   </obj>
+   <nets>
+      <net>
+         <source obj="analog_1" outlet="out"/>
+         <dest obj="&lt;c_1" inlet="in"/>
+      </net>
+      <net>
+         <source obj="&lt;c_1" outlet="out"/>
+         <dest obj="play_4" inlet="start"/>
+      </net>
+      <net>
+         <source obj="play_4" outlet="out"/>
+         <dest obj="hp_1" inlet="in"/>
+      </net>
+      <net>
+         <source obj="hp_1" outlet="out"/>
+         <dest obj="mix_1" inlet="in1"/>
+      </net>
+      <net>
+         <source obj="mix_1" outlet="out"/>
+         <dest obj="out_1" inlet="left"/>
+         <dest obj="out_1" inlet="right"/>
+      </net>
+      <net>
+         <source obj="analog_2" outlet="out"/>
+         <dest obj="&lt;c_2" inlet="in"/>
+      </net>
+      <net>
+         <source obj="&lt;c_2" outlet="out"/>
+         <dest obj="patcher_1" inlet="inlet_1"/>
+         <dest obj="counter_3" inlet="trig"/>
+      </net>
+      <net>
+         <source obj="play_5" outlet="out"/>
+         <dest obj="hp_2" inlet="in"/>
+      </net>
+      <net>
+         <source obj="analog_3" outlet="out"/>
+         <dest obj="&lt;c_3" inlet="in"/>
+      </net>
+      <net>
+         <source obj="&lt;c_3" outlet="out"/>
+         <dest obj="play_6" inlet="start"/>
+      </net>
+      <net>
+         <source obj="analog_4" outlet="out"/>
+         <dest obj="&lt;c_4" inlet="in"/>
+      </net>
+      <net>
+         <source obj="&lt;c_4" outlet="out"/>
+         <dest obj="play_7" inlet="start"/>
+      </net>
+      <net>
+         <source obj="play_6" outlet="out"/>
+         <dest obj="mix_1" inlet="in3"/>
+      </net>
+      <net>
+         <source obj="hp_2" outlet="out"/>
+         <dest obj="reverb_1" inlet="l"/>
+      </net>
+      <net>
+         <source obj="reverb_1" outlet="l"/>
+         <dest obj="mix_1" inlet="in2"/>
+      </net>
+      <net>
+         <source obj="hp_3" outlet="out"/>
+         <dest obj="mix_1" inlet="in4"/>
+      </net>
+      <net>
+         <source obj="play_7" outlet="out"/>
+         <dest obj="hp_3" inlet="in"/>
+      </net>
+      <net>
+         <source obj="dial_2" outlet="out"/>
+         <dest obj="+1_3" inlet="a"/>
+      </net>
+      <net>
+         <source obj="+1_3" outlet="result"/>
+         <dest obj="+1_4" inlet="a"/>
+      </net>
+      <net>
+         <source obj="+1_4" outlet="result"/>
+         <dest obj="counter_3" inlet="count"/>
+      </net>
+      <net>
+         <source obj="counter_3" outlet="o"/>
+         <dest obj="sel_2" inlet="s"/>
+         <dest obj="i_3" inlet="in"/>
+      </net>
+      <net>
+         <source obj="patcher_1" outlet="reptrigger"/>
+         <dest obj="play_5" inlet="start"/>
+      </net>
+      <net>
+         <source obj="sel_2" outlet="o"/>
+         <dest obj="patcher_1" inlet="repeat"/>
+         <dest obj="chaoticfeedbackfm_1" inlet="pitch"/>
+         <dest obj="wavemap_1" inlet="pitch"/>
+      </net>
+      <net>
+         <source obj="wavemap_1" outlet="wave"/>
+         <dest obj="copycompRMS_1" inlet="in"/>
+      </net>
+      <net>
+         <source obj="in_1" outlet="left"/>
+         <dest obj="copycompRMS_1" inlet="copy"/>
+      </net>
+      <net>
+         <source obj="copycompRMS_1" outlet="out"/>
+         <dest obj="mix_1" inlet="in5"/>
+      </net>
+      <net>
+         <source obj="in_1" outlet="right"/>
+         <dest obj="copycompRMS_2" inlet="copy"/>
+      </net>
+      <net>
+         <source obj="chaoticfeedbackfm_1" outlet="wave"/>
+         <dest obj="copycompRMS_2" inlet="in"/>
+      </net>
+      <net>
+         <source obj="copycompRMS_2" outlet="out"/>
+         <dest obj="mix_1" inlet="in6"/>
+      </net>
+   </nets>
+   <settings>
+      <subpatchmode>no</subpatchmode>
+   </settings>
+   <notes><![CDATA[]]></notes>
+   <windowPos>
+      <x>150</x>
+      <y>80</y>
+      <width>1490</width>
+      <height>1000</height>
+   </windowPos>
+</patch-1.0>
