@@ -1,0 +1,982 @@
+<patch-1.0 appVersion="1.0.12">
+   <patcher type="patch/patcher" uuid="9d3e970f-2ace-435a-a8e6-7fbe2a934adc" name="remapper" x="238" y="238">
+      <params/>
+      <attribs/>
+      <subpatch appVersion="1.0.12">
+         <patchobj type="patch/object" uuid="cc955547-df3c-4e50-966b-05492e4fc4d0" name="cc_25" x="840" y="28">
+            <params/>
+            <attribs>
+               <spinner attributeName="cc" value="16"/>
+               <spinner attributeName="default" value="0"/>
+               <combo attributeName="device" selection="din"/>
+               <spinner attributeName="channel" value="2"/>
+            </attribs>
+            <object id="patch/object" uuid="cc955547-df3c-4e50-966b-05492e4fc4d0">
+               <sDescription>Receives Midi Continuous Controller messages</sDescription>
+               <author>Johannes Taelman</author>
+               <license>BSD</license>
+               <helpPatch>midi_in.axh</helpPatch>
+               <inlets/>
+               <outlets>
+                  <frac32.positive name="midiCC" description="midi CC 0-63.5"/>
+                  <bool32.pulse name="trig" description="trigger output"/>
+               </outlets>
+               <displays/>
+               <params/>
+               <attribs>
+                  <spinner name="cc" MinValue="0" MaxValue="127" DefaultValue="0"/>
+                  <spinner name="default" MinValue="0" MaxValue="127" DefaultValue="0"/>
+                  <combo name="device">
+                     <MenuEntries>
+                        <string>omni</string>
+                        <string>din</string>
+                        <string>usb host port 1</string>
+                        <string>usb host port 2</string>
+                        <string>usb host port 3</string>
+                        <string>usb host port 4</string>
+                        <string>internal port 1</string>
+                        <string>internal port 2</string>
+                        <string>usb device port 1</string>
+                     </MenuEntries>
+                     <CEntries>
+                        <string>true</string>
+                        <string>dev == MIDI_DEVICE_DIN &amp;&amp; port == 1</string>
+                        <string>dev == MIDI_DEVICE_USB_HOST &amp;&amp; port == 1</string>
+                        <string>dev == MIDI_DEVICE_USB_HOST &amp;&amp; port == 2</string>
+                        <string>dev == MIDI_DEVICE_USB_HOST &amp;&amp; port == 3</string>
+                        <string>dev == MIDI_DEVICE_USB_HOST &amp;&amp; port == 4</string>
+                        <string>dev == MIDI_DEVICE_INTERNAL &amp;&amp; port == 1</string>
+                        <string>dev == MIDI_DEVICE_INTERNAL &amp;&amp; port == 2</string>
+                        <string>dev == MIDI_DEVICE_USB_DEVICE &amp;&amp; port == 1</string>
+                     </CEntries>
+                  </combo>
+                  <spinner name="channel" MinValue="1" MaxValue="16" DefaultValue="0"/>
+               </attribs>
+               <includes/>
+               <code.declaration><![CDATA[int32_t ccv;
+int32_t ntrig;]]></code.declaration>
+               <code.init><![CDATA[ccv = attr_default << 20;]]></code.init>
+               <code.krate><![CDATA[outlet_midiCC= ccv;
+outlet_trig = ntrig;
+ntrig = 0;]]></code.krate>
+               <code.midihandler><![CDATA[if(attr_device) {  
+	if ((status == (attr_channel-1) + MIDI_CONTROL_CHANGE)&&(data1 == attr_cc)) { ccv = data2<<20; ntrig = 1;}
+}]]></code.midihandler>
+            </object>
+         </patchobj>
+         <obj type="midi/out/cc thin" uuid="5255b30d60e50223ed41179d8ce935ba9464de75" name="cc_26" x="980" y="28">
+            <params/>
+            <attribs>
+               <combo attributeName="device" selection="din"/>
+               <spinner attributeName="channel" value="1"/>
+               <spinner attributeName="cc" value="12"/>
+            </attribs>
+         </obj>
+         <patchobj type="patch/object" uuid="cc955547-df3c-4e50-966b-05492e4fc4d0" name="cc_2" x="1134" y="28">
+            <params/>
+            <attribs>
+               <spinner attributeName="cc" value="17"/>
+               <spinner attributeName="default" value="0"/>
+               <combo attributeName="device" selection="din"/>
+               <spinner attributeName="channel" value="2"/>
+            </attribs>
+            <object id="patch/object" uuid="cc955547-df3c-4e50-966b-05492e4fc4d0">
+               <sDescription>Receives Midi Continuous Controller messages</sDescription>
+               <author>Johannes Taelman</author>
+               <license>BSD</license>
+               <helpPatch>midi_in.axh</helpPatch>
+               <inlets/>
+               <outlets>
+                  <frac32.positive name="midiCC" description="midi CC 0-63.5"/>
+                  <bool32.pulse name="trig" description="trigger output"/>
+               </outlets>
+               <displays/>
+               <params/>
+               <attribs>
+                  <spinner name="cc" MinValue="0" MaxValue="127" DefaultValue="0"/>
+                  <spinner name="default" MinValue="0" MaxValue="127" DefaultValue="0"/>
+                  <combo name="device">
+                     <MenuEntries>
+                        <string>omni</string>
+                        <string>din</string>
+                        <string>usb host port 1</string>
+                        <string>usb host port 2</string>
+                        <string>usb host port 3</string>
+                        <string>usb host port 4</string>
+                        <string>internal port 1</string>
+                        <string>internal port 2</string>
+                        <string>usb device port 1</string>
+                     </MenuEntries>
+                     <CEntries>
+                        <string>true</string>
+                        <string>dev == MIDI_DEVICE_DIN &amp;&amp; port == 1</string>
+                        <string>dev == MIDI_DEVICE_USB_HOST &amp;&amp; port == 1</string>
+                        <string>dev == MIDI_DEVICE_USB_HOST &amp;&amp; port == 2</string>
+                        <string>dev == MIDI_DEVICE_USB_HOST &amp;&amp; port == 3</string>
+                        <string>dev == MIDI_DEVICE_USB_HOST &amp;&amp; port == 4</string>
+                        <string>dev == MIDI_DEVICE_INTERNAL &amp;&amp; port == 1</string>
+                        <string>dev == MIDI_DEVICE_INTERNAL &amp;&amp; port == 2</string>
+                        <string>dev == MIDI_DEVICE_USB_DEVICE &amp;&amp; port == 1</string>
+                     </CEntries>
+                  </combo>
+                  <spinner name="channel" MinValue="1" MaxValue="16" DefaultValue="0"/>
+               </attribs>
+               <includes/>
+               <code.declaration><![CDATA[int32_t ccv;
+int32_t ntrig;]]></code.declaration>
+               <code.init><![CDATA[ccv = attr_default << 20;]]></code.init>
+               <code.krate><![CDATA[outlet_midiCC= ccv;
+outlet_trig = ntrig;
+ntrig = 0;]]></code.krate>
+               <code.midihandler><![CDATA[if(attr_device) {  
+	if ((status == (attr_channel-1) + MIDI_CONTROL_CHANGE)&&(data1 == attr_cc)) { ccv = data2<<20; ntrig = 1;}
+}]]></code.midihandler>
+            </object>
+         </patchobj>
+         <obj type="midi/out/cc thin" uuid="5255b30d60e50223ed41179d8ce935ba9464de75" name="cc_1" x="1274" y="28">
+            <params/>
+            <attribs>
+               <combo attributeName="device" selection="din"/>
+               <spinner attributeName="channel" value="1"/>
+               <spinner attributeName="cc" value="8"/>
+            </attribs>
+         </obj>
+         <patchobj type="patch/object" uuid="cc955547-df3c-4e50-966b-05492e4fc4d0" name="cc_3" x="1428" y="28">
+            <params/>
+            <attribs>
+               <spinner attributeName="cc" value="18"/>
+               <spinner attributeName="default" value="0"/>
+               <combo attributeName="device" selection="din"/>
+               <spinner attributeName="channel" value="2"/>
+            </attribs>
+            <object id="patch/object" uuid="cc955547-df3c-4e50-966b-05492e4fc4d0">
+               <sDescription>Receives Midi Continuous Controller messages</sDescription>
+               <author>Johannes Taelman</author>
+               <license>BSD</license>
+               <helpPatch>midi_in.axh</helpPatch>
+               <inlets/>
+               <outlets>
+                  <frac32.positive name="midiCC" description="midi CC 0-63.5"/>
+                  <bool32.pulse name="trig" description="trigger output"/>
+               </outlets>
+               <displays/>
+               <params/>
+               <attribs>
+                  <spinner name="cc" MinValue="0" MaxValue="127" DefaultValue="0"/>
+                  <spinner name="default" MinValue="0" MaxValue="127" DefaultValue="0"/>
+                  <combo name="device">
+                     <MenuEntries>
+                        <string>omni</string>
+                        <string>din</string>
+                        <string>usb host port 1</string>
+                        <string>usb host port 2</string>
+                        <string>usb host port 3</string>
+                        <string>usb host port 4</string>
+                        <string>internal port 1</string>
+                        <string>internal port 2</string>
+                        <string>usb device port 1</string>
+                     </MenuEntries>
+                     <CEntries>
+                        <string>true</string>
+                        <string>dev == MIDI_DEVICE_DIN &amp;&amp; port == 1</string>
+                        <string>dev == MIDI_DEVICE_USB_HOST &amp;&amp; port == 1</string>
+                        <string>dev == MIDI_DEVICE_USB_HOST &amp;&amp; port == 2</string>
+                        <string>dev == MIDI_DEVICE_USB_HOST &amp;&amp; port == 3</string>
+                        <string>dev == MIDI_DEVICE_USB_HOST &amp;&amp; port == 4</string>
+                        <string>dev == MIDI_DEVICE_INTERNAL &amp;&amp; port == 1</string>
+                        <string>dev == MIDI_DEVICE_INTERNAL &amp;&amp; port == 2</string>
+                        <string>dev == MIDI_DEVICE_USB_DEVICE &amp;&amp; port == 1</string>
+                     </CEntries>
+                  </combo>
+                  <spinner name="channel" MinValue="1" MaxValue="16" DefaultValue="0"/>
+               </attribs>
+               <includes/>
+               <code.declaration><![CDATA[int32_t ccv;
+int32_t ntrig;]]></code.declaration>
+               <code.init><![CDATA[ccv = attr_default << 20;]]></code.init>
+               <code.krate><![CDATA[outlet_midiCC= ccv;
+outlet_trig = ntrig;
+ntrig = 0;]]></code.krate>
+               <code.midihandler><![CDATA[if(attr_device) {  
+	if ((status == (attr_channel-1) + MIDI_CONTROL_CHANGE)&&(data1 == attr_cc)) { ccv = data2<<20; ntrig = 1;}
+}]]></code.midihandler>
+            </object>
+         </patchobj>
+         <obj type="midi/out/cc thin" uuid="5255b30d60e50223ed41179d8ce935ba9464de75" name="cc_4" x="1568" y="28">
+            <params/>
+            <attribs>
+               <combo attributeName="device" selection="din"/>
+               <spinner attributeName="channel" value="1"/>
+               <spinner attributeName="cc" value="9"/>
+            </attribs>
+         </obj>
+         <patchobj type="patch/object" uuid="cc955547-df3c-4e50-966b-05492e4fc4d0" name="cc_5" x="1722" y="28">
+            <params/>
+            <attribs>
+               <spinner attributeName="cc" value="19"/>
+               <spinner attributeName="default" value="0"/>
+               <combo attributeName="device" selection="din"/>
+               <spinner attributeName="channel" value="2"/>
+            </attribs>
+            <object id="patch/object" uuid="cc955547-df3c-4e50-966b-05492e4fc4d0">
+               <sDescription>Receives Midi Continuous Controller messages</sDescription>
+               <author>Johannes Taelman</author>
+               <license>BSD</license>
+               <helpPatch>midi_in.axh</helpPatch>
+               <inlets/>
+               <outlets>
+                  <frac32.positive name="midiCC" description="midi CC 0-63.5"/>
+                  <bool32.pulse name="trig" description="trigger output"/>
+               </outlets>
+               <displays/>
+               <params/>
+               <attribs>
+                  <spinner name="cc" MinValue="0" MaxValue="127" DefaultValue="0"/>
+                  <spinner name="default" MinValue="0" MaxValue="127" DefaultValue="0"/>
+                  <combo name="device">
+                     <MenuEntries>
+                        <string>omni</string>
+                        <string>din</string>
+                        <string>usb host port 1</string>
+                        <string>usb host port 2</string>
+                        <string>usb host port 3</string>
+                        <string>usb host port 4</string>
+                        <string>internal port 1</string>
+                        <string>internal port 2</string>
+                        <string>usb device port 1</string>
+                     </MenuEntries>
+                     <CEntries>
+                        <string>true</string>
+                        <string>dev == MIDI_DEVICE_DIN &amp;&amp; port == 1</string>
+                        <string>dev == MIDI_DEVICE_USB_HOST &amp;&amp; port == 1</string>
+                        <string>dev == MIDI_DEVICE_USB_HOST &amp;&amp; port == 2</string>
+                        <string>dev == MIDI_DEVICE_USB_HOST &amp;&amp; port == 3</string>
+                        <string>dev == MIDI_DEVICE_USB_HOST &amp;&amp; port == 4</string>
+                        <string>dev == MIDI_DEVICE_INTERNAL &amp;&amp; port == 1</string>
+                        <string>dev == MIDI_DEVICE_INTERNAL &amp;&amp; port == 2</string>
+                        <string>dev == MIDI_DEVICE_USB_DEVICE &amp;&amp; port == 1</string>
+                     </CEntries>
+                  </combo>
+                  <spinner name="channel" MinValue="1" MaxValue="16" DefaultValue="0"/>
+               </attribs>
+               <includes/>
+               <code.declaration><![CDATA[int32_t ccv;
+int32_t ntrig;]]></code.declaration>
+               <code.init><![CDATA[ccv = attr_default << 20;]]></code.init>
+               <code.krate><![CDATA[outlet_midiCC= ccv;
+outlet_trig = ntrig;
+ntrig = 0;]]></code.krate>
+               <code.midihandler><![CDATA[if(attr_device) {  
+	if ((status == (attr_channel-1) + MIDI_CONTROL_CHANGE)&&(data1 == attr_cc)) { ccv = data2<<20; ntrig = 1;}
+}]]></code.midihandler>
+            </object>
+         </patchobj>
+         <obj type="midi/out/cc thin" uuid="5255b30d60e50223ed41179d8ce935ba9464de75" name="cc_6" x="1862" y="28">
+            <params/>
+            <attribs>
+               <combo attributeName="device" selection="din"/>
+               <spinner attributeName="channel" value="1"/>
+               <spinner attributeName="cc" value="10"/>
+            </attribs>
+         </obj>
+         <patchobj type="patch/object" uuid="cc955547-df3c-4e50-966b-05492e4fc4d0" name="cc_7" x="2016" y="28">
+            <params/>
+            <attribs>
+               <spinner attributeName="cc" value="20"/>
+               <spinner attributeName="default" value="0"/>
+               <combo attributeName="device" selection="din"/>
+               <spinner attributeName="channel" value="2"/>
+            </attribs>
+            <object id="patch/object" uuid="cc955547-df3c-4e50-966b-05492e4fc4d0">
+               <sDescription>Receives Midi Continuous Controller messages</sDescription>
+               <author>Johannes Taelman</author>
+               <license>BSD</license>
+               <helpPatch>midi_in.axh</helpPatch>
+               <inlets/>
+               <outlets>
+                  <frac32.positive name="midiCC" description="midi CC 0-63.5"/>
+                  <bool32.pulse name="trig" description="trigger output"/>
+               </outlets>
+               <displays/>
+               <params/>
+               <attribs>
+                  <spinner name="cc" MinValue="0" MaxValue="127" DefaultValue="0"/>
+                  <spinner name="default" MinValue="0" MaxValue="127" DefaultValue="0"/>
+                  <combo name="device">
+                     <MenuEntries>
+                        <string>omni</string>
+                        <string>din</string>
+                        <string>usb host port 1</string>
+                        <string>usb host port 2</string>
+                        <string>usb host port 3</string>
+                        <string>usb host port 4</string>
+                        <string>internal port 1</string>
+                        <string>internal port 2</string>
+                        <string>usb device port 1</string>
+                     </MenuEntries>
+                     <CEntries>
+                        <string>true</string>
+                        <string>dev == MIDI_DEVICE_DIN &amp;&amp; port == 1</string>
+                        <string>dev == MIDI_DEVICE_USB_HOST &amp;&amp; port == 1</string>
+                        <string>dev == MIDI_DEVICE_USB_HOST &amp;&amp; port == 2</string>
+                        <string>dev == MIDI_DEVICE_USB_HOST &amp;&amp; port == 3</string>
+                        <string>dev == MIDI_DEVICE_USB_HOST &amp;&amp; port == 4</string>
+                        <string>dev == MIDI_DEVICE_INTERNAL &amp;&amp; port == 1</string>
+                        <string>dev == MIDI_DEVICE_INTERNAL &amp;&amp; port == 2</string>
+                        <string>dev == MIDI_DEVICE_USB_DEVICE &amp;&amp; port == 1</string>
+                     </CEntries>
+                  </combo>
+                  <spinner name="channel" MinValue="1" MaxValue="16" DefaultValue="0"/>
+               </attribs>
+               <includes/>
+               <code.declaration><![CDATA[int32_t ccv;
+int32_t ntrig;]]></code.declaration>
+               <code.init><![CDATA[ccv = attr_default << 20;]]></code.init>
+               <code.krate><![CDATA[outlet_midiCC= ccv;
+outlet_trig = ntrig;
+ntrig = 0;]]></code.krate>
+               <code.midihandler><![CDATA[if(attr_device) {  
+	if ((status == (attr_channel-1) + MIDI_CONTROL_CHANGE)&&(data1 == attr_cc)) { ccv = data2<<20; ntrig = 1;}
+}]]></code.midihandler>
+            </object>
+         </patchobj>
+         <obj type="midi/out/cc thin" uuid="5255b30d60e50223ed41179d8ce935ba9464de75" name="cc_8" x="2156" y="28">
+            <params/>
+            <attribs>
+               <combo attributeName="device" selection="din"/>
+               <spinner attributeName="channel" value="1"/>
+               <spinner attributeName="cc" value="11"/>
+            </attribs>
+         </obj>
+         <patchobj type="patch/object" uuid="cc955547-df3c-4e50-966b-05492e4fc4d0" name="cc_9" x="0" y="210">
+            <params/>
+            <attribs>
+               <spinner attributeName="cc" value="29"/>
+               <spinner attributeName="default" value="0"/>
+               <combo attributeName="device" selection="din"/>
+               <spinner attributeName="channel" value="2"/>
+            </attribs>
+            <object id="patch/object" uuid="cc955547-df3c-4e50-966b-05492e4fc4d0">
+               <sDescription>Receives Midi Continuous Controller messages</sDescription>
+               <author>Johannes Taelman</author>
+               <license>BSD</license>
+               <helpPatch>midi_in.axh</helpPatch>
+               <inlets/>
+               <outlets>
+                  <frac32.positive name="midiCC" description="midi CC 0-63.5"/>
+                  <bool32.pulse name="trig" description="trigger output"/>
+               </outlets>
+               <displays/>
+               <params/>
+               <attribs>
+                  <spinner name="cc" MinValue="0" MaxValue="127" DefaultValue="0"/>
+                  <spinner name="default" MinValue="0" MaxValue="127" DefaultValue="0"/>
+                  <combo name="device">
+                     <MenuEntries>
+                        <string>omni</string>
+                        <string>din</string>
+                        <string>usb host port 1</string>
+                        <string>usb host port 2</string>
+                        <string>usb host port 3</string>
+                        <string>usb host port 4</string>
+                        <string>internal port 1</string>
+                        <string>internal port 2</string>
+                        <string>usb device port 1</string>
+                     </MenuEntries>
+                     <CEntries>
+                        <string>true</string>
+                        <string>dev == MIDI_DEVICE_DIN &amp;&amp; port == 1</string>
+                        <string>dev == MIDI_DEVICE_USB_HOST &amp;&amp; port == 1</string>
+                        <string>dev == MIDI_DEVICE_USB_HOST &amp;&amp; port == 2</string>
+                        <string>dev == MIDI_DEVICE_USB_HOST &amp;&amp; port == 3</string>
+                        <string>dev == MIDI_DEVICE_USB_HOST &amp;&amp; port == 4</string>
+                        <string>dev == MIDI_DEVICE_INTERNAL &amp;&amp; port == 1</string>
+                        <string>dev == MIDI_DEVICE_INTERNAL &amp;&amp; port == 2</string>
+                        <string>dev == MIDI_DEVICE_USB_DEVICE &amp;&amp; port == 1</string>
+                     </CEntries>
+                  </combo>
+                  <spinner name="channel" MinValue="1" MaxValue="16" DefaultValue="0"/>
+               </attribs>
+               <includes/>
+               <code.declaration><![CDATA[int32_t ccv;
+int32_t ntrig;]]></code.declaration>
+               <code.init><![CDATA[ccv = attr_default << 20;]]></code.init>
+               <code.krate><![CDATA[outlet_midiCC= ccv;
+outlet_trig = ntrig;
+ntrig = 0;]]></code.krate>
+               <code.midihandler><![CDATA[if(attr_device) {  
+	if ((status == (attr_channel-1) + MIDI_CONTROL_CHANGE)&&(data1 == attr_cc)) { ccv = data2<<20; ntrig = 1;}
+}]]></code.midihandler>
+            </object>
+         </patchobj>
+         <obj type="midi/out/cc thin" uuid="5255b30d60e50223ed41179d8ce935ba9464de75" name="cc_10" x="140" y="210">
+            <params/>
+            <attribs>
+               <combo attributeName="device" selection="din"/>
+               <spinner attributeName="channel" value="1"/>
+               <spinner attributeName="cc" value="0"/>
+            </attribs>
+         </obj>
+         <patchobj type="patch/object" uuid="cc955547-df3c-4e50-966b-05492e4fc4d0" name="cc_11" x="280" y="210">
+            <params/>
+            <attribs>
+               <spinner attributeName="cc" value="30"/>
+               <spinner attributeName="default" value="0"/>
+               <combo attributeName="device" selection="din"/>
+               <spinner attributeName="channel" value="2"/>
+            </attribs>
+            <object id="patch/object" uuid="cc955547-df3c-4e50-966b-05492e4fc4d0">
+               <sDescription>Receives Midi Continuous Controller messages</sDescription>
+               <author>Johannes Taelman</author>
+               <license>BSD</license>
+               <helpPatch>midi_in.axh</helpPatch>
+               <inlets/>
+               <outlets>
+                  <frac32.positive name="midiCC" description="midi CC 0-63.5"/>
+                  <bool32.pulse name="trig" description="trigger output"/>
+               </outlets>
+               <displays/>
+               <params/>
+               <attribs>
+                  <spinner name="cc" MinValue="0" MaxValue="127" DefaultValue="0"/>
+                  <spinner name="default" MinValue="0" MaxValue="127" DefaultValue="0"/>
+                  <combo name="device">
+                     <MenuEntries>
+                        <string>omni</string>
+                        <string>din</string>
+                        <string>usb host port 1</string>
+                        <string>usb host port 2</string>
+                        <string>usb host port 3</string>
+                        <string>usb host port 4</string>
+                        <string>internal port 1</string>
+                        <string>internal port 2</string>
+                        <string>usb device port 1</string>
+                     </MenuEntries>
+                     <CEntries>
+                        <string>true</string>
+                        <string>dev == MIDI_DEVICE_DIN &amp;&amp; port == 1</string>
+                        <string>dev == MIDI_DEVICE_USB_HOST &amp;&amp; port == 1</string>
+                        <string>dev == MIDI_DEVICE_USB_HOST &amp;&amp; port == 2</string>
+                        <string>dev == MIDI_DEVICE_USB_HOST &amp;&amp; port == 3</string>
+                        <string>dev == MIDI_DEVICE_USB_HOST &amp;&amp; port == 4</string>
+                        <string>dev == MIDI_DEVICE_INTERNAL &amp;&amp; port == 1</string>
+                        <string>dev == MIDI_DEVICE_INTERNAL &amp;&amp; port == 2</string>
+                        <string>dev == MIDI_DEVICE_USB_DEVICE &amp;&amp; port == 1</string>
+                     </CEntries>
+                  </combo>
+                  <spinner name="channel" MinValue="1" MaxValue="16" DefaultValue="0"/>
+               </attribs>
+               <includes/>
+               <code.declaration><![CDATA[int32_t ccv;
+int32_t ntrig;]]></code.declaration>
+               <code.init><![CDATA[ccv = attr_default << 20;]]></code.init>
+               <code.krate><![CDATA[outlet_midiCC= ccv;
+outlet_trig = ntrig;
+ntrig = 0;]]></code.krate>
+               <code.midihandler><![CDATA[if(attr_device) {  
+	if ((status == (attr_channel-1) + MIDI_CONTROL_CHANGE)&&(data1 == attr_cc)) { ccv = data2<<20; ntrig = 1;}
+}]]></code.midihandler>
+            </object>
+         </patchobj>
+         <obj type="midi/out/cc thin" uuid="5255b30d60e50223ed41179d8ce935ba9464de75" name="cc_12" x="420" y="210">
+            <params/>
+            <attribs>
+               <combo attributeName="device" selection="din"/>
+               <spinner attributeName="channel" value="1"/>
+               <spinner attributeName="cc" value="1"/>
+            </attribs>
+         </obj>
+         <patchobj type="patch/object" uuid="cc955547-df3c-4e50-966b-05492e4fc4d0" name="cc_13" x="574" y="210">
+            <params/>
+            <attribs>
+               <spinner attributeName="cc" value="31"/>
+               <spinner attributeName="default" value="0"/>
+               <combo attributeName="device" selection="din"/>
+               <spinner attributeName="channel" value="2"/>
+            </attribs>
+            <object id="patch/object" uuid="cc955547-df3c-4e50-966b-05492e4fc4d0">
+               <sDescription>Receives Midi Continuous Controller messages</sDescription>
+               <author>Johannes Taelman</author>
+               <license>BSD</license>
+               <helpPatch>midi_in.axh</helpPatch>
+               <inlets/>
+               <outlets>
+                  <frac32.positive name="midiCC" description="midi CC 0-63.5"/>
+                  <bool32.pulse name="trig" description="trigger output"/>
+               </outlets>
+               <displays/>
+               <params/>
+               <attribs>
+                  <spinner name="cc" MinValue="0" MaxValue="127" DefaultValue="0"/>
+                  <spinner name="default" MinValue="0" MaxValue="127" DefaultValue="0"/>
+                  <combo name="device">
+                     <MenuEntries>
+                        <string>omni</string>
+                        <string>din</string>
+                        <string>usb host port 1</string>
+                        <string>usb host port 2</string>
+                        <string>usb host port 3</string>
+                        <string>usb host port 4</string>
+                        <string>internal port 1</string>
+                        <string>internal port 2</string>
+                        <string>usb device port 1</string>
+                     </MenuEntries>
+                     <CEntries>
+                        <string>true</string>
+                        <string>dev == MIDI_DEVICE_DIN &amp;&amp; port == 1</string>
+                        <string>dev == MIDI_DEVICE_USB_HOST &amp;&amp; port == 1</string>
+                        <string>dev == MIDI_DEVICE_USB_HOST &amp;&amp; port == 2</string>
+                        <string>dev == MIDI_DEVICE_USB_HOST &amp;&amp; port == 3</string>
+                        <string>dev == MIDI_DEVICE_USB_HOST &amp;&amp; port == 4</string>
+                        <string>dev == MIDI_DEVICE_INTERNAL &amp;&amp; port == 1</string>
+                        <string>dev == MIDI_DEVICE_INTERNAL &amp;&amp; port == 2</string>
+                        <string>dev == MIDI_DEVICE_USB_DEVICE &amp;&amp; port == 1</string>
+                     </CEntries>
+                  </combo>
+                  <spinner name="channel" MinValue="1" MaxValue="16" DefaultValue="0"/>
+               </attribs>
+               <includes/>
+               <code.declaration><![CDATA[int32_t ccv;
+int32_t ntrig;]]></code.declaration>
+               <code.init><![CDATA[ccv = attr_default << 20;]]></code.init>
+               <code.krate><![CDATA[outlet_midiCC= ccv;
+outlet_trig = ntrig;
+ntrig = 0;]]></code.krate>
+               <code.midihandler><![CDATA[if(attr_device) {  
+	if ((status == (attr_channel-1) + MIDI_CONTROL_CHANGE)&&(data1 == attr_cc)) { ccv = data2<<20; ntrig = 1;}
+}]]></code.midihandler>
+            </object>
+         </patchobj>
+         <obj type="midi/out/cc thin" uuid="5255b30d60e50223ed41179d8ce935ba9464de75" name="cc_14" x="714" y="210">
+            <params/>
+            <attribs>
+               <combo attributeName="device" selection="din"/>
+               <spinner attributeName="channel" value="1"/>
+               <spinner attributeName="cc" value="2"/>
+            </attribs>
+         </obj>
+         <patchobj type="patch/object" uuid="cc955547-df3c-4e50-966b-05492e4fc4d0" name="cc_15" x="854" y="210">
+            <params/>
+            <attribs>
+               <spinner attributeName="cc" value="32"/>
+               <spinner attributeName="default" value="0"/>
+               <combo attributeName="device" selection="din"/>
+               <spinner attributeName="channel" value="2"/>
+            </attribs>
+            <object id="patch/object" uuid="cc955547-df3c-4e50-966b-05492e4fc4d0">
+               <sDescription>Receives Midi Continuous Controller messages</sDescription>
+               <author>Johannes Taelman</author>
+               <license>BSD</license>
+               <helpPatch>midi_in.axh</helpPatch>
+               <inlets/>
+               <outlets>
+                  <frac32.positive name="midiCC" description="midi CC 0-63.5"/>
+                  <bool32.pulse name="trig" description="trigger output"/>
+               </outlets>
+               <displays/>
+               <params/>
+               <attribs>
+                  <spinner name="cc" MinValue="0" MaxValue="127" DefaultValue="0"/>
+                  <spinner name="default" MinValue="0" MaxValue="127" DefaultValue="0"/>
+                  <combo name="device">
+                     <MenuEntries>
+                        <string>omni</string>
+                        <string>din</string>
+                        <string>usb host port 1</string>
+                        <string>usb host port 2</string>
+                        <string>usb host port 3</string>
+                        <string>usb host port 4</string>
+                        <string>internal port 1</string>
+                        <string>internal port 2</string>
+                        <string>usb device port 1</string>
+                     </MenuEntries>
+                     <CEntries>
+                        <string>true</string>
+                        <string>dev == MIDI_DEVICE_DIN &amp;&amp; port == 1</string>
+                        <string>dev == MIDI_DEVICE_USB_HOST &amp;&amp; port == 1</string>
+                        <string>dev == MIDI_DEVICE_USB_HOST &amp;&amp; port == 2</string>
+                        <string>dev == MIDI_DEVICE_USB_HOST &amp;&amp; port == 3</string>
+                        <string>dev == MIDI_DEVICE_USB_HOST &amp;&amp; port == 4</string>
+                        <string>dev == MIDI_DEVICE_INTERNAL &amp;&amp; port == 1</string>
+                        <string>dev == MIDI_DEVICE_INTERNAL &amp;&amp; port == 2</string>
+                        <string>dev == MIDI_DEVICE_USB_DEVICE &amp;&amp; port == 1</string>
+                     </CEntries>
+                  </combo>
+                  <spinner name="channel" MinValue="1" MaxValue="16" DefaultValue="0"/>
+               </attribs>
+               <includes/>
+               <code.declaration><![CDATA[int32_t ccv;
+int32_t ntrig;]]></code.declaration>
+               <code.init><![CDATA[ccv = attr_default << 20;]]></code.init>
+               <code.krate><![CDATA[outlet_midiCC= ccv;
+outlet_trig = ntrig;
+ntrig = 0;]]></code.krate>
+               <code.midihandler><![CDATA[if(attr_device) {  
+	if ((status == (attr_channel-1) + MIDI_CONTROL_CHANGE)&&(data1 == attr_cc)) { ccv = data2<<20; ntrig = 1;}
+}]]></code.midihandler>
+            </object>
+         </patchobj>
+         <obj type="midi/out/cc thin" uuid="5255b30d60e50223ed41179d8ce935ba9464de75" name="cc_16" x="994" y="210">
+            <params/>
+            <attribs>
+               <combo attributeName="device" selection="din"/>
+               <spinner attributeName="channel" value="1"/>
+               <spinner attributeName="cc" value="3"/>
+            </attribs>
+         </obj>
+         <patchobj type="patch/object" uuid="cc955547-df3c-4e50-966b-05492e4fc4d0" name="cc_17" x="1134" y="210">
+            <params/>
+            <attribs>
+               <spinner attributeName="cc" value="33"/>
+               <spinner attributeName="default" value="0"/>
+               <combo attributeName="device" selection="din"/>
+               <spinner attributeName="channel" value="2"/>
+            </attribs>
+            <object id="patch/object" uuid="cc955547-df3c-4e50-966b-05492e4fc4d0">
+               <sDescription>Receives Midi Continuous Controller messages</sDescription>
+               <author>Johannes Taelman</author>
+               <license>BSD</license>
+               <helpPatch>midi_in.axh</helpPatch>
+               <inlets/>
+               <outlets>
+                  <frac32.positive name="midiCC" description="midi CC 0-63.5"/>
+                  <bool32.pulse name="trig" description="trigger output"/>
+               </outlets>
+               <displays/>
+               <params/>
+               <attribs>
+                  <spinner name="cc" MinValue="0" MaxValue="127" DefaultValue="0"/>
+                  <spinner name="default" MinValue="0" MaxValue="127" DefaultValue="0"/>
+                  <combo name="device">
+                     <MenuEntries>
+                        <string>omni</string>
+                        <string>din</string>
+                        <string>usb host port 1</string>
+                        <string>usb host port 2</string>
+                        <string>usb host port 3</string>
+                        <string>usb host port 4</string>
+                        <string>internal port 1</string>
+                        <string>internal port 2</string>
+                        <string>usb device port 1</string>
+                     </MenuEntries>
+                     <CEntries>
+                        <string>true</string>
+                        <string>dev == MIDI_DEVICE_DIN &amp;&amp; port == 1</string>
+                        <string>dev == MIDI_DEVICE_USB_HOST &amp;&amp; port == 1</string>
+                        <string>dev == MIDI_DEVICE_USB_HOST &amp;&amp; port == 2</string>
+                        <string>dev == MIDI_DEVICE_USB_HOST &amp;&amp; port == 3</string>
+                        <string>dev == MIDI_DEVICE_USB_HOST &amp;&amp; port == 4</string>
+                        <string>dev == MIDI_DEVICE_INTERNAL &amp;&amp; port == 1</string>
+                        <string>dev == MIDI_DEVICE_INTERNAL &amp;&amp; port == 2</string>
+                        <string>dev == MIDI_DEVICE_USB_DEVICE &amp;&amp; port == 1</string>
+                     </CEntries>
+                  </combo>
+                  <spinner name="channel" MinValue="1" MaxValue="16" DefaultValue="0"/>
+               </attribs>
+               <includes/>
+               <code.declaration><![CDATA[int32_t ccv;
+int32_t ntrig;]]></code.declaration>
+               <code.init><![CDATA[ccv = attr_default << 20;]]></code.init>
+               <code.krate><![CDATA[outlet_midiCC= ccv;
+outlet_trig = ntrig;
+ntrig = 0;]]></code.krate>
+               <code.midihandler><![CDATA[if(attr_device) {  
+	if ((status == (attr_channel-1) + MIDI_CONTROL_CHANGE)&&(data1 == attr_cc)) { ccv = data2<<20; ntrig = 1;}
+}]]></code.midihandler>
+            </object>
+         </patchobj>
+         <obj type="midi/out/cc thin" uuid="5255b30d60e50223ed41179d8ce935ba9464de75" name="cc_18" x="1274" y="210">
+            <params/>
+            <attribs>
+               <combo attributeName="device" selection="din"/>
+               <spinner attributeName="channel" value="1"/>
+               <spinner attributeName="cc" value="4"/>
+            </attribs>
+         </obj>
+         <patchobj type="patch/object" uuid="cc955547-df3c-4e50-966b-05492e4fc4d0" name="cc_19" x="1414" y="210">
+            <params/>
+            <attribs>
+               <spinner attributeName="cc" value="34"/>
+               <spinner attributeName="default" value="0"/>
+               <combo attributeName="device" selection="din"/>
+               <spinner attributeName="channel" value="2"/>
+            </attribs>
+            <object id="patch/object" uuid="cc955547-df3c-4e50-966b-05492e4fc4d0">
+               <sDescription>Receives Midi Continuous Controller messages</sDescription>
+               <author>Johannes Taelman</author>
+               <license>BSD</license>
+               <helpPatch>midi_in.axh</helpPatch>
+               <inlets/>
+               <outlets>
+                  <frac32.positive name="midiCC" description="midi CC 0-63.5"/>
+                  <bool32.pulse name="trig" description="trigger output"/>
+               </outlets>
+               <displays/>
+               <params/>
+               <attribs>
+                  <spinner name="cc" MinValue="0" MaxValue="127" DefaultValue="0"/>
+                  <spinner name="default" MinValue="0" MaxValue="127" DefaultValue="0"/>
+                  <combo name="device">
+                     <MenuEntries>
+                        <string>omni</string>
+                        <string>din</string>
+                        <string>usb host port 1</string>
+                        <string>usb host port 2</string>
+                        <string>usb host port 3</string>
+                        <string>usb host port 4</string>
+                        <string>internal port 1</string>
+                        <string>internal port 2</string>
+                        <string>usb device port 1</string>
+                     </MenuEntries>
+                     <CEntries>
+                        <string>true</string>
+                        <string>dev == MIDI_DEVICE_DIN &amp;&amp; port == 1</string>
+                        <string>dev == MIDI_DEVICE_USB_HOST &amp;&amp; port == 1</string>
+                        <string>dev == MIDI_DEVICE_USB_HOST &amp;&amp; port == 2</string>
+                        <string>dev == MIDI_DEVICE_USB_HOST &amp;&amp; port == 3</string>
+                        <string>dev == MIDI_DEVICE_USB_HOST &amp;&amp; port == 4</string>
+                        <string>dev == MIDI_DEVICE_INTERNAL &amp;&amp; port == 1</string>
+                        <string>dev == MIDI_DEVICE_INTERNAL &amp;&amp; port == 2</string>
+                        <string>dev == MIDI_DEVICE_USB_DEVICE &amp;&amp; port == 1</string>
+                     </CEntries>
+                  </combo>
+                  <spinner name="channel" MinValue="1" MaxValue="16" DefaultValue="0"/>
+               </attribs>
+               <includes/>
+               <code.declaration><![CDATA[int32_t ccv;
+int32_t ntrig;]]></code.declaration>
+               <code.init><![CDATA[ccv = attr_default << 20;]]></code.init>
+               <code.krate><![CDATA[outlet_midiCC= ccv;
+outlet_trig = ntrig;
+ntrig = 0;]]></code.krate>
+               <code.midihandler><![CDATA[if(attr_device) {  
+	if ((status == (attr_channel-1) + MIDI_CONTROL_CHANGE)&&(data1 == attr_cc)) { ccv = data2<<20; ntrig = 1;}
+}]]></code.midihandler>
+            </object>
+         </patchobj>
+         <obj type="midi/out/cc thin" uuid="5255b30d60e50223ed41179d8ce935ba9464de75" name="cc_20" x="1554" y="210">
+            <params/>
+            <attribs>
+               <combo attributeName="device" selection="din"/>
+               <spinner attributeName="channel" value="1"/>
+               <spinner attributeName="cc" value="5"/>
+            </attribs>
+         </obj>
+         <patchobj type="patch/object" uuid="cc955547-df3c-4e50-966b-05492e4fc4d0" name="cc_21" x="1708" y="210">
+            <params/>
+            <attribs>
+               <spinner attributeName="cc" value="35"/>
+               <spinner attributeName="default" value="0"/>
+               <combo attributeName="device" selection="din"/>
+               <spinner attributeName="channel" value="2"/>
+            </attribs>
+            <object id="patch/object" uuid="cc955547-df3c-4e50-966b-05492e4fc4d0">
+               <sDescription>Receives Midi Continuous Controller messages</sDescription>
+               <author>Johannes Taelman</author>
+               <license>BSD</license>
+               <helpPatch>midi_in.axh</helpPatch>
+               <inlets/>
+               <outlets>
+                  <frac32.positive name="midiCC" description="midi CC 0-63.5"/>
+                  <bool32.pulse name="trig" description="trigger output"/>
+               </outlets>
+               <displays/>
+               <params/>
+               <attribs>
+                  <spinner name="cc" MinValue="0" MaxValue="127" DefaultValue="0"/>
+                  <spinner name="default" MinValue="0" MaxValue="127" DefaultValue="0"/>
+                  <combo name="device">
+                     <MenuEntries>
+                        <string>omni</string>
+                        <string>din</string>
+                        <string>usb host port 1</string>
+                        <string>usb host port 2</string>
+                        <string>usb host port 3</string>
+                        <string>usb host port 4</string>
+                        <string>internal port 1</string>
+                        <string>internal port 2</string>
+                        <string>usb device port 1</string>
+                     </MenuEntries>
+                     <CEntries>
+                        <string>true</string>
+                        <string>dev == MIDI_DEVICE_DIN &amp;&amp; port == 1</string>
+                        <string>dev == MIDI_DEVICE_USB_HOST &amp;&amp; port == 1</string>
+                        <string>dev == MIDI_DEVICE_USB_HOST &amp;&amp; port == 2</string>
+                        <string>dev == MIDI_DEVICE_USB_HOST &amp;&amp; port == 3</string>
+                        <string>dev == MIDI_DEVICE_USB_HOST &amp;&amp; port == 4</string>
+                        <string>dev == MIDI_DEVICE_INTERNAL &amp;&amp; port == 1</string>
+                        <string>dev == MIDI_DEVICE_INTERNAL &amp;&amp; port == 2</string>
+                        <string>dev == MIDI_DEVICE_USB_DEVICE &amp;&amp; port == 1</string>
+                     </CEntries>
+                  </combo>
+                  <spinner name="channel" MinValue="1" MaxValue="16" DefaultValue="0"/>
+               </attribs>
+               <includes/>
+               <code.declaration><![CDATA[int32_t ccv;
+int32_t ntrig;]]></code.declaration>
+               <code.init><![CDATA[ccv = attr_default << 20;]]></code.init>
+               <code.krate><![CDATA[outlet_midiCC= ccv;
+outlet_trig = ntrig;
+ntrig = 0;]]></code.krate>
+               <code.midihandler><![CDATA[if(attr_device) {  
+	if ((status == (attr_channel-1) + MIDI_CONTROL_CHANGE)&&(data1 == attr_cc)) { ccv = data2<<20; ntrig = 1;}
+}]]></code.midihandler>
+            </object>
+         </patchobj>
+         <obj type="midi/out/cc thin" uuid="5255b30d60e50223ed41179d8ce935ba9464de75" name="cc_22" x="1848" y="210">
+            <params/>
+            <attribs>
+               <combo attributeName="device" selection="din"/>
+               <spinner attributeName="channel" value="1"/>
+               <spinner attributeName="cc" value="6"/>
+            </attribs>
+         </obj>
+         <patchobj type="patch/object" uuid="cc955547-df3c-4e50-966b-05492e4fc4d0" name="cc_23" x="1988" y="210">
+            <params/>
+            <attribs>
+               <spinner attributeName="cc" value="36"/>
+               <spinner attributeName="default" value="0"/>
+               <combo attributeName="device" selection="din"/>
+               <spinner attributeName="channel" value="2"/>
+            </attribs>
+            <object id="patch/object" uuid="cc955547-df3c-4e50-966b-05492e4fc4d0">
+               <sDescription>Receives Midi Continuous Controller messages</sDescription>
+               <author>Johannes Taelman</author>
+               <license>BSD</license>
+               <helpPatch>midi_in.axh</helpPatch>
+               <inlets/>
+               <outlets>
+                  <frac32.positive name="midiCC" description="midi CC 0-63.5"/>
+                  <bool32.pulse name="trig" description="trigger output"/>
+               </outlets>
+               <displays/>
+               <params/>
+               <attribs>
+                  <spinner name="cc" MinValue="0" MaxValue="127" DefaultValue="0"/>
+                  <spinner name="default" MinValue="0" MaxValue="127" DefaultValue="0"/>
+                  <combo name="device">
+                     <MenuEntries>
+                        <string>omni</string>
+                        <string>din</string>
+                        <string>usb host port 1</string>
+                        <string>usb host port 2</string>
+                        <string>usb host port 3</string>
+                        <string>usb host port 4</string>
+                        <string>internal port 1</string>
+                        <string>internal port 2</string>
+                        <string>usb device port 1</string>
+                     </MenuEntries>
+                     <CEntries>
+                        <string>true</string>
+                        <string>dev == MIDI_DEVICE_DIN &amp;&amp; port == 1</string>
+                        <string>dev == MIDI_DEVICE_USB_HOST &amp;&amp; port == 1</string>
+                        <string>dev == MIDI_DEVICE_USB_HOST &amp;&amp; port == 2</string>
+                        <string>dev == MIDI_DEVICE_USB_HOST &amp;&amp; port == 3</string>
+                        <string>dev == MIDI_DEVICE_USB_HOST &amp;&amp; port == 4</string>
+                        <string>dev == MIDI_DEVICE_INTERNAL &amp;&amp; port == 1</string>
+                        <string>dev == MIDI_DEVICE_INTERNAL &amp;&amp; port == 2</string>
+                        <string>dev == MIDI_DEVICE_USB_DEVICE &amp;&amp; port == 1</string>
+                     </CEntries>
+                  </combo>
+                  <spinner name="channel" MinValue="1" MaxValue="16" DefaultValue="0"/>
+               </attribs>
+               <includes/>
+               <code.declaration><![CDATA[int32_t ccv;
+int32_t ntrig;]]></code.declaration>
+               <code.init><![CDATA[ccv = attr_default << 20;]]></code.init>
+               <code.krate><![CDATA[outlet_midiCC= ccv;
+outlet_trig = ntrig;
+ntrig = 0;]]></code.krate>
+               <code.midihandler><![CDATA[if(attr_device) {  
+	if ((status == (attr_channel-1) + MIDI_CONTROL_CHANGE)&&(data1 == attr_cc)) { ccv = data2<<20; ntrig = 1;}
+}]]></code.midihandler>
+            </object>
+         </patchobj>
+         <obj type="midi/out/cc thin" uuid="5255b30d60e50223ed41179d8ce935ba9464de75" name="cc_24" x="2128" y="210">
+            <params/>
+            <attribs>
+               <combo attributeName="device" selection="din"/>
+               <spinner attributeName="channel" value="1"/>
+               <spinner attributeName="cc" value="7"/>
+            </attribs>
+         </obj>
+         <nets>
+            <net>
+               <source obj="cc_2" outlet="midiCC"/>
+               <dest obj="cc_1" inlet="v"/>
+            </net>
+            <net>
+               <source obj="cc_3" outlet="midiCC"/>
+               <dest obj="cc_4" inlet="v"/>
+            </net>
+            <net>
+               <source obj="cc_5" outlet="midiCC"/>
+               <dest obj="cc_6" inlet="v"/>
+            </net>
+            <net>
+               <source obj="cc_7" outlet="midiCC"/>
+               <dest obj="cc_8" inlet="v"/>
+            </net>
+            <net>
+               <source obj="cc_9" outlet="midiCC"/>
+               <dest obj="cc_10" inlet="v"/>
+            </net>
+            <net>
+               <source obj="cc_11" outlet="midiCC"/>
+               <dest obj="cc_12" inlet="v"/>
+            </net>
+            <net>
+               <source obj="cc_13" outlet="midiCC"/>
+               <dest obj="cc_14" inlet="v"/>
+            </net>
+            <net>
+               <source obj="cc_15" outlet="midiCC"/>
+               <dest obj="cc_16" inlet="v"/>
+            </net>
+            <net>
+               <source obj="cc_17" outlet="midiCC"/>
+               <dest obj="cc_18" inlet="v"/>
+            </net>
+            <net>
+               <source obj="cc_19" outlet="midiCC"/>
+               <dest obj="cc_20" inlet="v"/>
+            </net>
+            <net>
+               <source obj="cc_21" outlet="midiCC"/>
+               <dest obj="cc_22" inlet="v"/>
+            </net>
+            <net>
+               <source obj="cc_23" outlet="midiCC"/>
+               <dest obj="cc_24" inlet="v"/>
+            </net>
+            <net>
+               <source obj="cc_25" outlet="midiCC"/>
+               <dest obj="cc_26" inlet="v"/>
+            </net>
+         </nets>
+         <settings>
+            <subpatchmode>no</subpatchmode>
+         </settings>
+         <notes><![CDATA[]]></notes>
+         <windowPos>
+            <x>425</x>
+            <y>240</y>
+            <width>978</width>
+            <height>579</height>
+         </windowPos>
+      </subpatch>
+   </patcher>
+   <comment type="patch/comment" x="238" y="308" text="13 | 14 | 15 | 12 | 08 | 09 |10 | 11"/>
+   <comment type="patch/comment" x="238" y="322" text="00 | 01 | 02 | 03 | 04 | 05 | 06 | 07"/>
+   <nets/>
+   <settings>
+      <subpatchmode>no</subpatchmode>
+   </settings>
+   <notes><![CDATA[]]></notes>
+   <windowPos>
+      <x>0</x>
+      <y>23</y>
+      <width>509</width>
+      <height>677</height>
+   </windowPos>
+</patch-1.0>
