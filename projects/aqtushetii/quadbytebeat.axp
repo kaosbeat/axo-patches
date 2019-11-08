@@ -1,21 +1,19 @@
 <patch-1.0 appVersion="1.0.12">
-   <obj type="midi/out/cc thin" uuid="5255b30d60e50223ed41179d8ce935ba9464de75" name="cc_1" x="1890" y="112">
+   <obj type="a773/midithru_incl_clock" uuid="82b2821e-bacc-4e10-8bcc-d827d6e1206d" name="midithru_incl_clock_1" x="56" y="112">
+      <params/>
+      <attribs>
+         <combo attributeName="input" selection="usb host port 1"/>
+         <combo attributeName="output" selection="din"/>
+         <combo attributeName="led" selection="off"/>
+      </attribs>
+   </obj>
+   <obj type="midi/out/cc thin" uuid="5255b30d60e50223ed41179d8ce935ba9464de75" name="cc_1" x="2002" y="196">
       <params/>
       <attribs>
          <combo attributeName="device" selection="usb device port 1"/>
          <spinner attributeName="channel" value="16"/>
          <spinner attributeName="cc" value="31"/>
       </attribs>
-   </obj>
-   <obj type="env/follower" uuid="356ce1d18ac6b51704833f94dac5dea823fb8223" name="follower_2" x="1750" y="154">
-      <params/>
-      <attribs>
-         <combo attributeName="time" selection="1.3ms"/>
-      </attribs>
-   </obj>
-   <obj type="math/muls 8" uuid="7f2a47c7405168a6d330c0ec6091b1ec1e7c7840" name="muls_1" x="1820" y="168">
-      <params/>
-      <attribs/>
    </obj>
    <obj type="CCinchannelselect" uuid="2680db0d-1d3d-4d16-a3e7-2d004545b471" name="CCinchannelselect_14" x="42" y="224">
       <params/>
@@ -26,73 +24,84 @@
          <spinner attributeName="channel" value="1"/>
       </attribs>
    </obj>
-   <obj type="disp/chart p" uuid="58f42040a894006a5f73ed8cb8d0bd45481b28cd" name="chart_6" x="210" y="224">
-      <params/>
-      <attribs/>
-   </obj>
-   <obj type="phi/disp/boolms" uuid="4d2b0662-f881-4953-832a-a286daf5b6a3" name="boolms_1" x="462" y="238">
-      <params/>
-      <attribs/>
-   </obj>
-   <obj type="tiar/logic/rising" uuid="1d591a21-ac71-4b69-96f2-5c17b11ec2cd" name="rising_4" x="308" y="252">
-      <params/>
-      <attribs/>
-   </obj>
-   <patcher type="patch/patcher" uuid="c11595ed-eec8-4f67-acfa-a8b1a9a49165" name="toggleEnv4___" x="630" y="252">
+   <patcher type="patch/patcher" uuid="a554ff1b-91a8-484d-a15e-85af14b8aeec" name="toggleEnv1" x="490" y="224">
       <params/>
       <attribs/>
       <subpatch appVersion="1.0.12">
-         <obj type="logic/flipflop toggle" uuid="195e489e5fc3d275944b0de56c7a91c8641ea22a" name="flipflop_1" x="378" y="56">
+         <obj type="logic/flipflop toggle" uuid="195e489e5fc3d275944b0de56c7a91c8641ea22a" name="flipflop_2" x="378" y="168">
             <params/>
             <attribs/>
          </obj>
-         <obj type="midinotechannel" uuid="ce92dba9-ed3a-41e2-88f0-fac388aa1454" name="midinotechannel_1" x="126" y="70">
+         <obj type="midinotechannel" uuid="ce92dba9-ed3a-41e2-88f0-fac388aa1454" name="midinotechannel_2" x="126" y="196">
             <params/>
             <attribs>
-               <spinner attributeName="note" value="9"/>
+               <spinner attributeName="note" value="10"/>
                <spinner attributeName="midichannel" value="6"/>
             </attribs>
          </obj>
-         <obj type="ctrl/dial b" uuid="862e7d7f29093cb1ce4aed72244d118ad4d46692" name="dial_40" x="252" y="84">
-            <params>
-               <frac32.s.map name="value" value="-55.0"/>
-            </params>
-            <attribs/>
-         </obj>
-         <obj type="patch/outlet b" uuid="191792f616d4835dba0b55375474a12942e5bcbd" name="outlet_1" x="518" y="112">
+         <obj type="logic/inv" uuid="2bd44b865d3b63ff9b80862242bf5be779e3ad5" name="inv_1" x="532" y="196">
             <params/>
             <attribs/>
          </obj>
-         <obj type="midi/out/note" uuid="a76ae870da278cbbce5501a57ce7bd0e0ea4215c" name="note_18" x="378" y="126">
+         <obj type="ctrl/dial b" uuid="862e7d7f29093cb1ce4aed72244d118ad4d46692" name="dial_42" x="252" y="210">
+            <params>
+               <frac32.s.map name="value" value="-54.0"/>
+            </params>
+            <attribs/>
+         </obj>
+         <obj type="patch/outlet b" uuid="191792f616d4835dba0b55375474a12942e5bcbd" name="envelopetoggle" x="518" y="238">
+            <params/>
+            <attribs/>
+         </obj>
+         <obj type="midi/out/note" uuid="a76ae870da278cbbce5501a57ce7bd0e0ea4215c" name="note_19" x="378" y="252">
             <params/>
             <attribs>
                <combo attributeName="device" selection="usb host port 1"/>
                <spinner attributeName="channel" value="7"/>
             </attribs>
          </obj>
-         <obj type="ctrl/dial p" uuid="cc5d2846c3d50e425f450c4b9851371b54f4d674" name="dial_41" x="252" y="168">
+         <obj type="ctrl/dial p" uuid="cc5d2846c3d50e425f450c4b9851371b54f4d674" name="dial_43" x="252" y="294">
             <params>
                <frac32.u.map name="value" value="24.0"/>
             </params>
             <attribs/>
          </obj>
+         <obj type="midinotechannel" uuid="ce92dba9-ed3a-41e2-88f0-fac388aa1454" name="midinotechannel_3" x="126" y="406">
+            <params/>
+            <attribs>
+               <spinner attributeName="note" value="9"/>
+               <spinner attributeName="midichannel" value="6"/>
+            </attribs>
+         </obj>
+         <obj type="patch/outlet b" uuid="191792f616d4835dba0b55375474a12942e5bcbd" name="trigger" x="518" y="406">
+            <params/>
+            <attribs/>
+         </obj>
          <nets>
             <net>
-               <source obj="dial_40" outlet="out"/>
-               <dest obj="note_18" inlet="note"/>
+               <source obj="dial_42" outlet="out"/>
+               <dest obj="note_19" inlet="note"/>
             </net>
             <net>
-               <source obj="dial_41" outlet="out"/>
-               <dest obj="note_18" inlet="velo"/>
+               <source obj="dial_43" outlet="out"/>
+               <dest obj="note_19" inlet="velo"/>
             </net>
             <net>
-               <source obj="midinotechannel_1" outlet="gate"/>
-               <dest obj="flipflop_1" inlet="trig"/>
+               <source obj="midinotechannel_2" outlet="gate"/>
+               <dest obj="flipflop_2" inlet="trig"/>
             </net>
             <net>
-               <source obj="flipflop_1" outlet="o"/>
-               <dest obj="outlet_1" inlet="outlet"/>
-               <dest obj="note_18" inlet="trig"/>
+               <source obj="flipflop_2" outlet="o"/>
+               <dest obj="envelopetoggle" inlet="outlet"/>
+               <dest obj="inv_1" inlet="i"/>
+            </net>
+            <net>
+               <source obj="inv_1" outlet="o"/>
+               <dest obj="note_19" inlet="trig"/>
+            </net>
+            <net>
+               <source obj="midinotechannel_3" outlet="gate"/>
+               <dest obj="trigger" inlet="outlet"/>
             </net>
          </nets>
          <settings>
@@ -100,13 +109,23 @@
          </settings>
          <notes><![CDATA[]]></notes>
          <windowPos>
-            <x>0</x>
-            <y>23</y>
+            <x>600</x>
+            <y>490</y>
             <width>997</width>
             <height>522</height>
          </windowPos>
       </subpatch>
    </patcher>
+   <obj type="env/follower" uuid="356ce1d18ac6b51704833f94dac5dea823fb8223" name="follower_2" x="1834" y="238">
+      <params/>
+      <attribs>
+         <combo attributeName="time" selection="1.3ms"/>
+      </attribs>
+   </obj>
+   <obj type="tiar/logic/rising" uuid="1d591a21-ac71-4b69-96f2-5c17b11ec2cd" name="rising_4" x="308" y="252">
+      <params/>
+      <attribs/>
+   </obj>
    <obj type="logic/inv" uuid="2bd44b865d3b63ff9b80862242bf5be779e3ad5" name="inv_7" x="728" y="252">
       <params/>
       <attribs/>
@@ -115,10 +134,77 @@
       <params/>
       <attribs/>
    </obj>
+   <obj type="math/muls 8" uuid="7f2a47c7405168a6d330c0ec6091b1ec1e7c7840" name="muls_1" x="1904" y="252">
+      <params/>
+      <attribs/>
+   </obj>
    <obj type="math/+" uuid="44553fdc8628c67ab535845ed1be304ad6c9553b" name="+_13" x="952" y="294">
       <params/>
       <attribs/>
    </obj>
+   <patcher type="patch/patcher" uuid="ed9a5eef-8c09-464f-b9de-bd516f9010ab" name="beatselector CH7___" x="1064" y="294">
+      <params/>
+      <attribs/>
+      <subpatch appVersion="1.0.12">
+         <obj type="CCinchannelselect" uuid="2680db0d-1d3d-4d16-a3e7-2d004545b471" name="CCinchannelselect_1" x="154" y="14">
+            <params/>
+            <attribs>
+               <spinner attributeName="cc" value="90"/>
+               <spinner attributeName="default" value="0"/>
+               <combo attributeName="device" selection="usb host port 1"/>
+               <spinner attributeName="channel" value="7"/>
+            </attribs>
+         </obj>
+         <obj type="logic/countersat2" uuid="ac2f83169ae51aaf19acf322affbe56ca1bbf48f" name="countersat2_1" x="294" y="70">
+            <params>
+               <int32 name="maximum" value="16"/>
+            </params>
+            <attribs/>
+         </obj>
+         <obj type="patch/outlet i" uuid="aae2176b26209e34e4fdeba5edb1ace82d178655" name="outlet_1" x="406" y="70">
+            <params/>
+            <attribs/>
+         </obj>
+         <obj type="CCinchannelselect" uuid="2680db0d-1d3d-4d16-a3e7-2d004545b471" name="CCinchannelselect_2" x="154" y="140">
+            <params/>
+            <attribs>
+               <spinner attributeName="cc" value="89"/>
+               <spinner attributeName="default" value="0"/>
+               <combo attributeName="device" selection="usb host port 1"/>
+               <spinner attributeName="channel" value="7"/>
+            </attribs>
+         </obj>
+         <nets>
+            <net>
+               <source obj="CCinchannelselect_1" outlet="trig"/>
+               <dest obj="countersat2_1" inlet="inc"/>
+            </net>
+            <net>
+               <source obj="CCinchannelselect_2" outlet="trig"/>
+               <dest obj="countersat2_1" inlet="dec"/>
+            </net>
+            <net>
+               <source obj="countersat2_1" outlet="o"/>
+               <dest obj="outlet_1" inlet="outlet"/>
+            </net>
+         </nets>
+         <settings>
+            <subpatchmode>no</subpatchmode>
+            <MidiChannel>7</MidiChannel>
+            <NPresets>8</NPresets>
+            <NPresetEntries>32</NPresetEntries>
+            <NModulationSources>8</NModulationSources>
+            <NModulationTargetsPerSource>8</NModulationTargetsPerSource>
+         </settings>
+         <notes><![CDATA[]]></notes>
+         <windowPos>
+            <x>0</x>
+            <y>23</y>
+            <width>1270</width>
+            <height>555</height>
+         </windowPos>
+      </subpatch>
+   </patcher>
    <obj type="env/adsr m" uuid="98bd39fb828c392b28126d259cb5175e6f6ea34b" name="adsr_4" x="308" y="308">
       <params>
          <frac32.s.map name="a" value="-16.0"/>
@@ -132,9 +218,13 @@
       <params/>
       <attribs/>
    </obj>
+   <obj type="logic/or 2" uuid="3805d3c84d30032a44fbdbe42d9a2988a1790a3e" name="or_4" x="602" y="336">
+      <params/>
+      <attribs/>
+   </obj>
    <obj type="ctrl/dial p" uuid="cc5d2846c3d50e425f450c4b9851371b54f4d674" name="start_________" x="1274" y="336">
       <params>
-         <frac32.u.map name="value" MidiCC="41" value="63.99999952316284">
+         <frac32.u.map name="value" MidiCC="41" value="36.0">
             <modulators/>
          </frac32.u.map>
       </params>
@@ -153,7 +243,7 @@
          <spinner attributeName="channel" value="1"/>
       </attribs>
    </obj>
-   <obj type="math/div 128" uuid="7e534ce0f62b1fddbad78a797d8c10c8d1a0b812" name="div_10" x="168" y="350">
+   <obj type="math/div 128" uuid="7e534ce0f62b1fddbad78a797d8c10c8d1a0b812" name="div_1" x="168" y="350">
       <params/>
       <attribs/>
    </obj>
@@ -161,27 +251,19 @@
       <params/>
       <attribs/>
    </obj>
-   <obj type="ctrl/dial p" uuid="cc5d2846c3d50e425f450c4b9851371b54f4d674" name="dial_10" x="392" y="406">
+   <obj type="ctrl/dial b" uuid="862e7d7f29093cb1ce4aed72244d118ad4d46692" name="dial_5" x="392" y="406">
       <params>
-         <frac32.u.map name="value" MidiCC="13" value="12.5"/>
+         <frac32.s.map name="value" MidiCC="13" value="40.0"/>
       </params>
-      <attribs/>
-   </obj>
-   <obj type="math/div 4" uuid="507955275561b256e540f7205386d31545a2828f" name="div_8" x="462" y="406">
-      <params/>
-      <attribs/>
-   </obj>
-   <obj type="conv/to i" uuid="305966430ee86b5c3b8e18cde0c721657c558a87" name="to_5" x="532" y="406">
-      <params/>
       <attribs/>
    </obj>
    <obj type="ctrl/dial p" uuid="cc5d2846c3d50e425f450c4b9851371b54f4d674" name="x____" x="714" y="420">
       <params>
-         <frac32.u.map name="value" MidiCC="14" value="17.0"/>
+         <frac32.u.map name="value" MidiCC="14" value="43.0"/>
       </params>
       <attribs/>
    </obj>
-   <obj type="math/div 128" uuid="7e534ce0f62b1fddbad78a797d8c10c8d1a0b812" name="div_14" x="784" y="420">
+   <obj type="math/div 128" uuid="7e534ce0f62b1fddbad78a797d8c10c8d1a0b812" name="div_3" x="784" y="420">
       <params/>
       <attribs/>
    </obj>
@@ -210,7 +292,7 @@
    </obj>
    <obj type="ctrl/dial b" uuid="862e7d7f29093cb1ce4aed72244d118ad4d46692" name="rate___" x="392" y="476">
       <params>
-         <frac32.s.map name="value" MidiCC="29" value="44.0">
+         <frac32.s.map name="value" MidiCC="29" value="-45.0">
             <modulators/>
          </frac32.s.map>
       </params>
@@ -222,7 +304,7 @@
    </obj>
    <obj type="ctrl/dial p" uuid="cc5d2846c3d50e425f450c4b9851371b54f4d674" name="start__________" x="1274" y="476">
       <params>
-         <frac32.u.map name="value" MidiCC="42" value="0.0">
+         <frac32.u.map name="value" MidiCC="42" value="19.0">
             <modulators/>
          </frac32.u.map>
       </params>
@@ -234,7 +316,7 @@
    </obj>
    <obj type="ctrl/dial p" uuid="cc5d2846c3d50e425f450c4b9851371b54f4d674" name="y____" x="714" y="490">
       <params>
-         <frac32.u.map name="value" MidiCC="30" value="31.0"/>
+         <frac32.u.map name="value" MidiCC="30" value="57.0"/>
       </params>
       <attribs/>
    </obj>
@@ -244,11 +326,11 @@
    </obj>
    <obj type="ctrl/dial p" uuid="cc5d2846c3d50e425f450c4b9851371b54f4d674" name="dial_11" x="392" y="546">
       <params>
-         <frac32.u.map name="value" MidiCC="21" value="30.5"/>
+         <frac32.u.map name="value" MidiCC="21" value="53.0"/>
       </params>
       <attribs/>
    </obj>
-   <obj type="math/div 4" uuid="507955275561b256e540f7205386d31545a2828f" name="div_22" x="574" y="546">
+   <obj type="math/div 4" uuid="507955275561b256e540f7205386d31545a2828f" name="div_4" x="574" y="546">
       <params/>
       <attribs/>
    </obj>
@@ -264,15 +346,15 @@
    </obj>
    <obj type="ctrl/dial p" uuid="cc5d2846c3d50e425f450c4b9851371b54f4d674" name="z____" x="714" y="560">
       <params>
-         <frac32.u.map name="value" MidiCC="22" value="36.0"/>
+         <frac32.u.map name="value" MidiCC="22" value="24.5"/>
       </params>
       <attribs/>
    </obj>
-   <obj type="math/div 128" uuid="7e534ce0f62b1fddbad78a797d8c10c8d1a0b812" name="div_16" x="784" y="574">
+   <obj type="math/div 128" uuid="7e534ce0f62b1fddbad78a797d8c10c8d1a0b812" name="div_8" x="784" y="574">
       <params/>
       <attribs/>
    </obj>
-   <obj type="mix/mix 8 g" uuid="ca3c8ec626ad31e48d8374d5dd44962bf3bd7e6f" name="mix_2" x="1680" y="574">
+   <obj type="mix/mix 8 g" uuid="ca3c8ec626ad31e48d8374d5dd44962bf3bd7e6f" name="mix_1" x="1680" y="574">
       <params>
          <frac32.u.map name="gain1" value="32.0"/>
          <frac32.u.map name="gain2" value="32.0"/>
@@ -283,6 +365,10 @@
          <frac32.u.map name="gain7" value="32.0"/>
          <frac32.u.map name="gain8" value="32.0"/>
       </params>
+      <attribs/>
+   </obj>
+   <obj type="audio/out left" uuid="b11a3c09b2fdd575ea8212f2ce7743d5269253b1" name="out_1" x="1904" y="574">
+      <params/>
       <attribs/>
    </obj>
    <obj type="CCinchannelselect" uuid="2680db0d-1d3d-4d16-a3e7-2d004545b471" name="CCinchannelselect_17" x="42" y="602">
@@ -298,7 +384,345 @@
       <params/>
       <attribs/>
    </obj>
-   <patcher type="patch/patcher" uuid="53b02d00-ac58-44ab-b6f0-93bb326e41d8" name="show triggers" x="1400" y="630">
+   <obj type="CCinchannelselect" uuid="2680db0d-1d3d-4d16-a3e7-2d004545b471" name="CCinchannelselect_2" x="42" y="798">
+      <params/>
+      <attribs>
+         <spinner attributeName="cc" value="4"/>
+         <spinner attributeName="default" value="0"/>
+         <combo attributeName="device" selection="din"/>
+         <spinner attributeName="channel" value="1"/>
+      </attribs>
+   </obj>
+   <obj type="tiar/logic/rising" uuid="1d591a21-ac71-4b69-96f2-5c17b11ec2cd" name="rising_3" x="308" y="812">
+      <params/>
+      <attribs/>
+   </obj>
+   <patcher type="patch/patcher" uuid="16701992-8477-4128-b62b-05795ccbc825" name="toggleEnv2" x="490" y="826">
+      <params/>
+      <attribs/>
+      <subpatch appVersion="1.0.12">
+         <obj type="logic/flipflop toggle" uuid="195e489e5fc3d275944b0de56c7a91c8641ea22a" name="flipflop_2" x="378" y="168">
+            <params/>
+            <attribs/>
+         </obj>
+         <obj type="midinotechannel" uuid="ce92dba9-ed3a-41e2-88f0-fac388aa1454" name="midinotechannel_2" x="126" y="196">
+            <params/>
+            <attribs>
+               <spinner attributeName="note" value="12"/>
+               <spinner attributeName="midichannel" value="6"/>
+            </attribs>
+         </obj>
+         <obj type="logic/inv" uuid="2bd44b865d3b63ff9b80862242bf5be779e3ad5" name="inv_1" x="532" y="196">
+            <params/>
+            <attribs/>
+         </obj>
+         <obj type="ctrl/dial b" uuid="862e7d7f29093cb1ce4aed72244d118ad4d46692" name="dial_42" x="252" y="210">
+            <params>
+               <frac32.s.map name="value" value="-52.0"/>
+            </params>
+            <attribs/>
+         </obj>
+         <obj type="patch/outlet b" uuid="191792f616d4835dba0b55375474a12942e5bcbd" name="envelopetoggle" x="518" y="238">
+            <params/>
+            <attribs/>
+         </obj>
+         <obj type="midi/out/note" uuid="a76ae870da278cbbce5501a57ce7bd0e0ea4215c" name="note_19" x="378" y="252">
+            <params/>
+            <attribs>
+               <combo attributeName="device" selection="usb host port 1"/>
+               <spinner attributeName="channel" value="7"/>
+            </attribs>
+         </obj>
+         <obj type="ctrl/dial p" uuid="cc5d2846c3d50e425f450c4b9851371b54f4d674" name="dial_43" x="252" y="294">
+            <params>
+               <frac32.u.map name="value" value="24.0"/>
+            </params>
+            <attribs/>
+         </obj>
+         <obj type="midinotechannel" uuid="ce92dba9-ed3a-41e2-88f0-fac388aa1454" name="midinotechannel_3" x="126" y="406">
+            <params/>
+            <attribs>
+               <spinner attributeName="note" value="11"/>
+               <spinner attributeName="midichannel" value="6"/>
+            </attribs>
+         </obj>
+         <obj type="patch/outlet b" uuid="191792f616d4835dba0b55375474a12942e5bcbd" name="trigger" x="518" y="406">
+            <params/>
+            <attribs/>
+         </obj>
+         <nets>
+            <net>
+               <source obj="dial_42" outlet="out"/>
+               <dest obj="note_19" inlet="note"/>
+            </net>
+            <net>
+               <source obj="dial_43" outlet="out"/>
+               <dest obj="note_19" inlet="velo"/>
+            </net>
+            <net>
+               <source obj="midinotechannel_2" outlet="gate"/>
+               <dest obj="flipflop_2" inlet="trig"/>
+            </net>
+            <net>
+               <source obj="flipflop_2" outlet="o"/>
+               <dest obj="envelopetoggle" inlet="outlet"/>
+               <dest obj="inv_1" inlet="i"/>
+            </net>
+            <net>
+               <source obj="inv_1" outlet="o"/>
+               <dest obj="note_19" inlet="trig"/>
+            </net>
+            <net>
+               <source obj="midinotechannel_3" outlet="gate"/>
+               <dest obj="trigger" inlet="outlet"/>
+            </net>
+         </nets>
+         <settings>
+            <subpatchmode>no</subpatchmode>
+         </settings>
+         <notes><![CDATA[]]></notes>
+         <windowPos>
+            <x>590</x>
+            <y>114</y>
+            <width>997</width>
+            <height>522</height>
+         </windowPos>
+      </subpatch>
+   </patcher>
+   <obj type="logic/inv" uuid="2bd44b865d3b63ff9b80862242bf5be779e3ad5" name="inv_6" x="728" y="826">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="rbrt/control/gate f" uuid="e3486875-5cef-48fb-ad63-8278ec3f4c93" name="gate_5" x="812" y="826">
+      <params/>
+      <attribs/>
+   </obj>
+   <patcher type="patch/patcher" uuid="78aa87ec-7683-4483-b00c-31362ca19d2f" name="beatselector CH7__" x="1064" y="854">
+      <params/>
+      <attribs/>
+      <subpatch appVersion="1.0.12">
+         <obj type="CCinchannelselect" uuid="2680db0d-1d3d-4d16-a3e7-2d004545b471" name="CCinchannelselect_1" x="154" y="14">
+            <params/>
+            <attribs>
+               <spinner attributeName="cc" value="92"/>
+               <spinner attributeName="default" value="0"/>
+               <combo attributeName="device" selection="usb host port 1"/>
+               <spinner attributeName="channel" value="7"/>
+            </attribs>
+         </obj>
+         <obj type="logic/countersat2" uuid="ac2f83169ae51aaf19acf322affbe56ca1bbf48f" name="countersat2_1" x="294" y="70">
+            <params>
+               <int32 name="maximum" value="16"/>
+            </params>
+            <attribs/>
+         </obj>
+         <obj type="patch/outlet i" uuid="aae2176b26209e34e4fdeba5edb1ace82d178655" name="outlet_1" x="406" y="70">
+            <params/>
+            <attribs/>
+         </obj>
+         <obj type="CCinchannelselect" uuid="2680db0d-1d3d-4d16-a3e7-2d004545b471" name="CCinchannelselect_2" x="154" y="140">
+            <params/>
+            <attribs>
+               <spinner attributeName="cc" value="91"/>
+               <spinner attributeName="default" value="0"/>
+               <combo attributeName="device" selection="usb host port 1"/>
+               <spinner attributeName="channel" value="7"/>
+            </attribs>
+         </obj>
+         <nets>
+            <net>
+               <source obj="CCinchannelselect_1" outlet="trig"/>
+               <dest obj="countersat2_1" inlet="inc"/>
+            </net>
+            <net>
+               <source obj="CCinchannelselect_2" outlet="trig"/>
+               <dest obj="countersat2_1" inlet="dec"/>
+            </net>
+            <net>
+               <source obj="countersat2_1" outlet="o"/>
+               <dest obj="outlet_1" inlet="outlet"/>
+            </net>
+         </nets>
+         <settings>
+            <subpatchmode>no</subpatchmode>
+            <MidiChannel>7</MidiChannel>
+            <NPresets>8</NPresets>
+            <NPresetEntries>32</NPresetEntries>
+            <NModulationSources>8</NModulationSources>
+            <NModulationTargetsPerSource>8</NModulationTargetsPerSource>
+         </settings>
+         <notes><![CDATA[]]></notes>
+         <windowPos>
+            <x>0</x>
+            <y>23</y>
+            <width>1270</width>
+            <height>555</height>
+         </windowPos>
+      </subpatch>
+   </patcher>
+   <obj type="math/+" uuid="44553fdc8628c67ab535845ed1be304ad6c9553b" name="+_12" x="952" y="868">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="env/adsr m" uuid="98bd39fb828c392b28126d259cb5175e6f6ea34b" name="adsr_3" x="308" y="882">
+      <params>
+         <frac32.s.map name="a" value="-16.0"/>
+         <frac32.s.map name="d" value="34.0"/>
+         <frac32.u.map name="s" value="24.5"/>
+         <frac32.s.map name="r" value="-4.0"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="logic/or 2" uuid="3805d3c84d30032a44fbdbe42d9a2988a1790a3e" name="or_3" x="616" y="882">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="rbrt/control/gate f" uuid="e3486875-5cef-48fb-ad63-8278ec3f4c93" name="gate_6" x="812" y="896">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="ctrl/dial p" uuid="cc5d2846c3d50e425f450c4b9851371b54f4d674" name="start___" x="1274" y="910">
+      <params>
+         <frac32.u.map name="value" MidiCC="43" value="0.0">
+            <modulators/>
+         </frac32.u.map>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="gain/vca" uuid="a9f2dcd18043e2f47364e45cb8814f63c2a37c0d" name="vca_4" x="1372" y="910">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="CCinchannelselect" uuid="2680db0d-1d3d-4d16-a3e7-2d004545b471" name="CCinchannelselect_3" x="42" y="924">
+      <params/>
+      <attribs>
+         <spinner attributeName="cc" value="5"/>
+         <spinner attributeName="default" value="0"/>
+         <combo attributeName="device" selection="din"/>
+         <spinner attributeName="channel" value="1"/>
+      </attribs>
+   </obj>
+   <obj type="math/div 128" uuid="7e534ce0f62b1fddbad78a797d8c10c8d1a0b812" name="div_9" x="168" y="924">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="ctrl/dial b" uuid="862e7d7f29093cb1ce4aed72244d118ad4d46692" name="dial_3" x="392" y="980">
+      <params>
+         <frac32.s.map name="value" MidiCC="15" value="55.0"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="math/div 128" uuid="7e534ce0f62b1fddbad78a797d8c10c8d1a0b812" name="div_5" x="798" y="980">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="ctrl/dial p" uuid="cc5d2846c3d50e425f450c4b9851371b54f4d674" name="x_" x="714" y="994">
+      <params>
+         <frac32.u.map name="value" MidiCC="16" value="63.99999952316284"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="math/+" uuid="44553fdc8628c67ab535845ed1be304ad6c9553b" name="+_1" x="896" y="994">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="hc/osc/beatmachine" uuid="da8bb99a-f490-4ca9-a1ed-e3dba009f1d9" name="beatmachine_2" x="1050" y="994">
+      <params/>
+      <attribs>
+         <table attributeName="beat" table="((t&amp;32*z)?((t*(t^t%y*2)|(t&gt;&gt;4))&gt;&gt;1):(t&gt;&gt;3)|((t&amp;8192)?t&lt;&lt;x:t))"/>
+      </attribs>
+   </obj>
+   <obj type="gain/vca" uuid="a9f2dcd18043e2f47364e45cb8814f63c2a37c0d" name="vca_5" x="1288" y="994">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="CCinchannelselect" uuid="2680db0d-1d3d-4d16-a3e7-2d004545b471" name="CCinchannelselect_4" x="42" y="1050">
+      <params/>
+      <attribs>
+         <spinner attributeName="cc" value="6"/>
+         <spinner attributeName="default" value="0"/>
+         <combo attributeName="device" selection="din"/>
+         <spinner attributeName="channel" value="1"/>
+      </attribs>
+   </obj>
+   <obj type="ctrl/dial b" uuid="862e7d7f29093cb1ce4aed72244d118ad4d46692" name="rate_" x="392" y="1050">
+      <params>
+         <frac32.s.map name="value" MidiCC="31" value="22.0">
+            <modulators/>
+         </frac32.s.map>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="math/+" uuid="44553fdc8628c67ab535845ed1be304ad6c9553b" name="+_3" x="476" y="1050">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="ctrl/dial p" uuid="cc5d2846c3d50e425f450c4b9851371b54f4d674" name="start____" x="1274" y="1050">
+      <params>
+         <frac32.u.map name="value" MidiCC="44" value="0.0">
+            <modulators/>
+         </frac32.u.map>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="gain/vca" uuid="a9f2dcd18043e2f47364e45cb8814f63c2a37c0d" name="vca_6" x="1372" y="1050">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="ctrl/dial p" uuid="cc5d2846c3d50e425f450c4b9851371b54f4d674" name="y_" x="714" y="1064">
+      <params>
+         <frac32.u.map name="value" MidiCC="32" value="24.0"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="math/+" uuid="44553fdc8628c67ab535845ed1be304ad6c9553b" name="+_2" x="896" y="1064">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="ctrl/dial p" uuid="cc5d2846c3d50e425f450c4b9851371b54f4d674" name="dial_4" x="392" y="1120">
+      <params>
+         <frac32.u.map name="value" MidiCC="23" value="63.99999952316284"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="math/inv" uuid="565521d3699b36d8095aa1c79b9ad0046fb133ce" name="inv_5" x="462" y="1120">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="math/+c" uuid="13eec32bd8ad57dd0bb18a02566cc0a117d320e3" name="+c_3" x="518" y="1120">
+      <params>
+         <frac32.u.map name="c" value="64.0"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="math/div 4" uuid="507955275561b256e540f7205386d31545a2828f" name="div_10" x="574" y="1120">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="ctrl/dial p" uuid="cc5d2846c3d50e425f450c4b9851371b54f4d674" name="z_" x="714" y="1134">
+      <params>
+         <frac32.u.map name="value" MidiCC="24" value="45.5"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="math/div 128" uuid="7e534ce0f62b1fddbad78a797d8c10c8d1a0b812" name="div_6" x="784" y="1148">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="CCinchannelselect" uuid="2680db0d-1d3d-4d16-a3e7-2d004545b471" name="CCinchannelselect_5" x="42" y="1176">
+      <params/>
+      <attribs>
+         <spinner attributeName="cc" value="7"/>
+         <spinner attributeName="default" value="0"/>
+         <combo attributeName="device" selection="din"/>
+         <spinner attributeName="channel" value="1"/>
+      </attribs>
+   </obj>
+   <obj type="conv/unipolar2bipolar" uuid="efc8ee28c508740c5edf7995eaaa07a6d6818e5e" name="unipolar2bipolar_1" x="168" y="1176">
+      <params/>
+      <attribs/>
+   </obj>
+   <patcher type="patch/patcher" uuid="c089a2c3-5839-4988-bc36-0af530a1c62f" name="show triggers" x="1638" y="1288">
       <params/>
       <attribs/>
       <subpatch appVersion="1.0.12">
@@ -308,7 +732,7 @@
          </obj>
          <obj type="ctrl/dial b" uuid="862e7d7f29093cb1ce4aed72244d118ad4d46692" name="dial_40" x="364" y="84">
             <params>
-               <frac32.s.map name="value" value="-54.0"/>
+               <frac32.s.map name="value" value="-55.0"/>
             </params>
             <attribs/>
          </obj>
@@ -337,7 +761,7 @@
          </obj>
          <obj type="ctrl/dial b" uuid="862e7d7f29093cb1ce4aed72244d118ad4d46692" name="dial_42" x="364" y="252">
             <params>
-               <frac32.s.map name="value" value="-52.0"/>
+               <frac32.s.map name="value" value="-53.0"/>
             </params>
             <attribs/>
          </obj>
@@ -366,7 +790,7 @@
          </obj>
          <obj type="ctrl/dial b" uuid="862e7d7f29093cb1ce4aed72244d118ad4d46692" name="dial_44" x="364" y="434">
             <params>
-               <frac32.s.map name="value" value="-38.0"/>
+               <frac32.s.map name="value" value="-39.0"/>
             </params>
             <attribs/>
          </obj>
@@ -395,7 +819,7 @@
          </obj>
          <obj type="ctrl/dial b" uuid="862e7d7f29093cb1ce4aed72244d118ad4d46692" name="dial_46" x="364" y="602">
             <params>
-               <frac32.s.map name="value" value="-36.0"/>
+               <frac32.s.map name="value" value="-37.0"/>
             </params>
             <attribs/>
          </obj>
@@ -494,281 +918,13 @@
          </settings>
          <notes><![CDATA[]]></notes>
          <windowPos>
-            <x>889</x>
+            <x>888</x>
             <y>104</y>
             <width>979</width>
             <height>982</height>
          </windowPos>
       </subpatch>
    </patcher>
-   <obj type="rbrt/midi/in/monitor" uuid="64b3d36e-97ab-4b18-91f7-ff611e14fd7a" name="monitor_2" x="910" y="672">
-      <params/>
-      <attribs/>
-   </obj>
-   <obj type="CCinchannelselect" uuid="2680db0d-1d3d-4d16-a3e7-2d004545b471" name="CCinchannelselect_2" x="42" y="798">
-      <params/>
-      <attribs>
-         <spinner attributeName="cc" value="4"/>
-         <spinner attributeName="default" value="0"/>
-         <combo attributeName="device" selection="din"/>
-         <spinner attributeName="channel" value="1"/>
-      </attribs>
-   </obj>
-   <obj type="disp/chart p" uuid="58f42040a894006a5f73ed8cb8d0bd45481b28cd" name="chart_2" x="210" y="798">
-      <params/>
-      <attribs/>
-   </obj>
-   <patcher type="patch/patcher" uuid="43b4db98-ff79-4643-a07c-d8d1677637f2" name="toggleEnv4__" x="630" y="826">
-      <params/>
-      <attribs/>
-      <subpatch appVersion="1.0.12">
-         <obj type="logic/flipflop toggle" uuid="195e489e5fc3d275944b0de56c7a91c8641ea22a" name="flipflop_1" x="378" y="56">
-            <params/>
-            <attribs/>
-         </obj>
-         <obj type="midinotechannel" uuid="ce92dba9-ed3a-41e2-88f0-fac388aa1454" name="midinotechannel_1" x="126" y="70">
-            <params/>
-            <attribs>
-               <spinner attributeName="note" value="11"/>
-               <spinner attributeName="midichannel" value="6"/>
-            </attribs>
-         </obj>
-         <obj type="ctrl/dial b" uuid="862e7d7f29093cb1ce4aed72244d118ad4d46692" name="dial_40" x="252" y="84">
-            <params>
-               <frac32.s.map name="value" value="-53.0"/>
-            </params>
-            <attribs/>
-         </obj>
-         <obj type="patch/outlet b" uuid="191792f616d4835dba0b55375474a12942e5bcbd" name="outlet_1" x="518" y="112">
-            <params/>
-            <attribs/>
-         </obj>
-         <obj type="midi/out/note" uuid="a76ae870da278cbbce5501a57ce7bd0e0ea4215c" name="note_18" x="378" y="126">
-            <params/>
-            <attribs>
-               <combo attributeName="device" selection="usb host port 1"/>
-               <spinner attributeName="channel" value="7"/>
-            </attribs>
-         </obj>
-         <obj type="ctrl/dial p" uuid="cc5d2846c3d50e425f450c4b9851371b54f4d674" name="dial_41" x="252" y="168">
-            <params>
-               <frac32.u.map name="value" value="24.0"/>
-            </params>
-            <attribs/>
-         </obj>
-         <nets>
-            <net>
-               <source obj="dial_40" outlet="out"/>
-               <dest obj="note_18" inlet="note"/>
-            </net>
-            <net>
-               <source obj="dial_41" outlet="out"/>
-               <dest obj="note_18" inlet="velo"/>
-            </net>
-            <net>
-               <source obj="midinotechannel_1" outlet="gate"/>
-               <dest obj="flipflop_1" inlet="trig"/>
-            </net>
-            <net>
-               <source obj="flipflop_1" outlet="o"/>
-               <dest obj="outlet_1" inlet="outlet"/>
-               <dest obj="note_18" inlet="trig"/>
-            </net>
-         </nets>
-         <settings>
-            <subpatchmode>no</subpatchmode>
-         </settings>
-         <notes><![CDATA[]]></notes>
-         <windowPos>
-            <x>0</x>
-            <y>23</y>
-            <width>997</width>
-            <height>522</height>
-         </windowPos>
-      </subpatch>
-   </patcher>
-   <obj type="logic/inv" uuid="2bd44b865d3b63ff9b80862242bf5be779e3ad5" name="inv_6" x="728" y="826">
-      <params/>
-      <attribs/>
-   </obj>
-   <obj type="rbrt/control/gate f" uuid="e3486875-5cef-48fb-ad63-8278ec3f4c93" name="gate_5" x="812" y="826">
-      <params/>
-      <attribs/>
-   </obj>
-   <obj type="math/+" uuid="44553fdc8628c67ab535845ed1be304ad6c9553b" name="+_12" x="952" y="868">
-      <params/>
-      <attribs/>
-   </obj>
-   <obj type="env/adsr m" uuid="98bd39fb828c392b28126d259cb5175e6f6ea34b" name="adsr_3" x="308" y="882">
-      <params>
-         <frac32.s.map name="a" value="-16.0"/>
-         <frac32.s.map name="d" value="34.0"/>
-         <frac32.u.map name="s" value="24.5"/>
-         <frac32.s.map name="r" value="-4.0"/>
-      </params>
-      <attribs/>
-   </obj>
-   <obj type="tiar/logic/rising" uuid="1d591a21-ac71-4b69-96f2-5c17b11ec2cd" name="rising_3" x="518" y="882">
-      <params/>
-      <attribs/>
-   </obj>
-   <obj type="rbrt/control/gate f" uuid="e3486875-5cef-48fb-ad63-8278ec3f4c93" name="gate_6" x="812" y="896">
-      <params/>
-      <attribs/>
-   </obj>
-   <obj type="ctrl/dial p" uuid="cc5d2846c3d50e425f450c4b9851371b54f4d674" name="start___" x="1274" y="910">
-      <params>
-         <frac32.u.map name="value" MidiCC="43" value="63.99999952316284">
-            <modulators/>
-         </frac32.u.map>
-      </params>
-      <attribs/>
-   </obj>
-   <obj type="gain/vca" uuid="a9f2dcd18043e2f47364e45cb8814f63c2a37c0d" name="vca_4" x="1372" y="910">
-      <params/>
-      <attribs/>
-   </obj>
-   <obj type="CCinchannelselect" uuid="2680db0d-1d3d-4d16-a3e7-2d004545b471" name="CCinchannelselect_3" x="42" y="924">
-      <params/>
-      <attribs>
-         <spinner attributeName="cc" value="5"/>
-         <spinner attributeName="default" value="0"/>
-         <combo attributeName="device" selection="din"/>
-         <spinner attributeName="channel" value="1"/>
-      </attribs>
-   </obj>
-   <obj type="math/div 128" uuid="7e534ce0f62b1fddbad78a797d8c10c8d1a0b812" name="div_9" x="168" y="924">
-      <params/>
-      <attribs/>
-   </obj>
-   <obj type="ctrl/dial p" uuid="cc5d2846c3d50e425f450c4b9851371b54f4d674" name="dial_3" x="392" y="980">
-      <params>
-         <frac32.u.map name="value" MidiCC="15" value="12.5"/>
-      </params>
-      <attribs/>
-   </obj>
-   <obj type="math/div 4" uuid="507955275561b256e540f7205386d31545a2828f" name="div_7" x="462" y="980">
-      <params/>
-      <attribs/>
-   </obj>
-   <obj type="conv/to i" uuid="305966430ee86b5c3b8e18cde0c721657c558a87" name="to_2" x="532" y="980">
-      <params/>
-      <attribs/>
-   </obj>
-   <obj type="ctrl/dial p" uuid="cc5d2846c3d50e425f450c4b9851371b54f4d674" name="x_" x="714" y="994">
-      <params>
-         <frac32.u.map name="value" MidiCC="16" value="17.0"/>
-      </params>
-      <attribs/>
-   </obj>
-   <obj type="math/div 128" uuid="7e534ce0f62b1fddbad78a797d8c10c8d1a0b812" name="div_5" x="784" y="994">
-      <params/>
-      <attribs/>
-   </obj>
-   <obj type="math/+" uuid="44553fdc8628c67ab535845ed1be304ad6c9553b" name="+_1" x="896" y="994">
-      <params/>
-      <attribs/>
-   </obj>
-   <obj type="hc/osc/beatmachine" uuid="da8bb99a-f490-4ca9-a1ed-e3dba009f1d9" name="beatmachine_2" x="1050" y="994">
-      <params/>
-      <attribs>
-         <table attributeName="beat" table="((t&amp;32*z)?((t*(t^t%y*2)|(t&gt;&gt;4))&gt;&gt;1):(t&gt;&gt;3)|((t&amp;8192)?t&lt;&lt;x:t))"/>
-      </attribs>
-   </obj>
-   <obj type="gain/vca" uuid="a9f2dcd18043e2f47364e45cb8814f63c2a37c0d" name="vca_5" x="1288" y="994">
-      <params/>
-      <attribs/>
-   </obj>
-   <obj type="CCinchannelselect" uuid="2680db0d-1d3d-4d16-a3e7-2d004545b471" name="CCinchannelselect_4" x="42" y="1050">
-      <params/>
-      <attribs>
-         <spinner attributeName="cc" value="6"/>
-         <spinner attributeName="default" value="0"/>
-         <combo attributeName="device" selection="din"/>
-         <spinner attributeName="channel" value="1"/>
-      </attribs>
-   </obj>
-   <obj type="ctrl/dial b" uuid="862e7d7f29093cb1ce4aed72244d118ad4d46692" name="rate_" x="392" y="1050">
-      <params>
-         <frac32.s.map name="value" MidiCC="31" value="59.0">
-            <modulators/>
-         </frac32.s.map>
-      </params>
-      <attribs/>
-   </obj>
-   <obj type="math/+" uuid="44553fdc8628c67ab535845ed1be304ad6c9553b" name="+_3" x="476" y="1050">
-      <params/>
-      <attribs/>
-   </obj>
-   <obj type="ctrl/dial p" uuid="cc5d2846c3d50e425f450c4b9851371b54f4d674" name="start____" x="1274" y="1050">
-      <params>
-         <frac32.u.map name="value" MidiCC="44" value="0.0">
-            <modulators/>
-         </frac32.u.map>
-      </params>
-      <attribs/>
-   </obj>
-   <obj type="gain/vca" uuid="a9f2dcd18043e2f47364e45cb8814f63c2a37c0d" name="vca_6" x="1372" y="1050">
-      <params/>
-      <attribs/>
-   </obj>
-   <obj type="ctrl/dial p" uuid="cc5d2846c3d50e425f450c4b9851371b54f4d674" name="y_" x="714" y="1064">
-      <params>
-         <frac32.u.map name="value" MidiCC="32" value="31.0"/>
-      </params>
-      <attribs/>
-   </obj>
-   <obj type="math/+" uuid="44553fdc8628c67ab535845ed1be304ad6c9553b" name="+_2" x="896" y="1064">
-      <params/>
-      <attribs/>
-   </obj>
-   <obj type="ctrl/dial p" uuid="cc5d2846c3d50e425f450c4b9851371b54f4d674" name="dial_4" x="392" y="1120">
-      <params>
-         <frac32.u.map name="value" MidiCC="23" value="30.5"/>
-      </params>
-      <attribs/>
-   </obj>
-   <obj type="math/inv" uuid="565521d3699b36d8095aa1c79b9ad0046fb133ce" name="inv_5" x="462" y="1120">
-      <params/>
-      <attribs/>
-   </obj>
-   <obj type="math/+c" uuid="13eec32bd8ad57dd0bb18a02566cc0a117d320e3" name="+c_3" x="518" y="1120">
-      <params>
-         <frac32.u.map name="c" value="64.0"/>
-      </params>
-      <attribs/>
-   </obj>
-   <obj type="math/div 4" uuid="507955275561b256e540f7205386d31545a2828f" name="div_21" x="574" y="1120">
-      <params/>
-      <attribs/>
-   </obj>
-   <obj type="ctrl/dial p" uuid="cc5d2846c3d50e425f450c4b9851371b54f4d674" name="z_" x="714" y="1134">
-      <params>
-         <frac32.u.map name="value" MidiCC="24" value="36.0"/>
-      </params>
-      <attribs/>
-   </obj>
-   <obj type="math/div 128" uuid="7e534ce0f62b1fddbad78a797d8c10c8d1a0b812" name="div_6" x="784" y="1148">
-      <params/>
-      <attribs/>
-   </obj>
-   <obj type="CCinchannelselect" uuid="2680db0d-1d3d-4d16-a3e7-2d004545b471" name="CCinchannelselect_5" x="42" y="1176">
-      <params/>
-      <attribs>
-         <spinner attributeName="cc" value="7"/>
-         <spinner attributeName="default" value="0"/>
-         <combo attributeName="device" selection="din"/>
-         <spinner attributeName="channel" value="1"/>
-      </attribs>
-   </obj>
-   <obj type="conv/unipolar2bipolar" uuid="efc8ee28c508740c5edf7995eaaa07a6d6818e5e" name="unipolar2bipolar_1" x="168" y="1176">
-      <params/>
-      <attribs/>
-   </obj>
-   <obj type="rbrt/control/gate f" uuid="e3486875-5cef-48fb-ad63-8278ec3f4c93" name="gate_3" x="840" y="1400">
-      <params/>
-      <attribs/>
-   </obj>
    <obj type="CCinchannelselect" uuid="2680db0d-1d3d-4d16-a3e7-2d004545b471" name="CCinchannelselect_6" x="42" y="1428">
       <params/>
       <attribs>
@@ -778,73 +934,88 @@
          <spinner attributeName="channel" value="1"/>
       </attribs>
    </obj>
-   <obj type="disp/chart p" uuid="58f42040a894006a5f73ed8cb8d0bd45481b28cd" name="chart_3" x="182" y="1428">
+   <obj type="tiar/logic/rising" uuid="1d591a21-ac71-4b69-96f2-5c17b11ec2cd" name="rising_2" x="280" y="1428">
       <params/>
       <attribs/>
    </obj>
-   <obj type="logic/inv" uuid="2bd44b865d3b63ff9b80862242bf5be779e3ad5" name="inv_3" x="728" y="1428">
-      <params/>
-      <attribs/>
-   </obj>
-   <obj type="math/+" uuid="44553fdc8628c67ab535845ed1be304ad6c9553b" name="+_11" x="980" y="1442">
-      <params/>
-      <attribs/>
-   </obj>
-   <patcher type="patch/patcher" uuid="d6dc4bb9-587f-487d-bf2b-c76f4d472bc6" name="toggleEnv4_" x="574" y="1456">
+   <patcher type="patch/patcher" uuid="17184b95-ed72-4861-8961-f594ca73cb60" name="toggleEnv3" x="392" y="1428">
       <params/>
       <attribs/>
       <subpatch appVersion="1.0.12">
-         <obj type="logic/flipflop toggle" uuid="195e489e5fc3d275944b0de56c7a91c8641ea22a" name="flipflop_1" x="378" y="56">
+         <obj type="logic/flipflop toggle" uuid="195e489e5fc3d275944b0de56c7a91c8641ea22a" name="flipflop_2" x="378" y="168">
             <params/>
             <attribs/>
          </obj>
-         <obj type="midinotechannel" uuid="ce92dba9-ed3a-41e2-88f0-fac388aa1454" name="midinotechannel_1" x="126" y="70">
+         <obj type="midinotechannel" uuid="ce92dba9-ed3a-41e2-88f0-fac388aa1454" name="midinotechannel_2" x="126" y="196">
             <params/>
             <attribs>
-               <spinner attributeName="note" value="25"/>
+               <spinner attributeName="note" value="26"/>
                <spinner attributeName="midichannel" value="6"/>
             </attribs>
          </obj>
-         <obj type="ctrl/dial b" uuid="862e7d7f29093cb1ce4aed72244d118ad4d46692" name="dial_40" x="252" y="84">
-            <params>
-               <frac32.s.map name="value" value="-39.0"/>
-            </params>
-            <attribs/>
-         </obj>
-         <obj type="patch/outlet b" uuid="191792f616d4835dba0b55375474a12942e5bcbd" name="outlet_1" x="518" y="112">
+         <obj type="logic/inv" uuid="2bd44b865d3b63ff9b80862242bf5be779e3ad5" name="inv_1" x="532" y="196">
             <params/>
             <attribs/>
          </obj>
-         <obj type="midi/out/note" uuid="a76ae870da278cbbce5501a57ce7bd0e0ea4215c" name="note_18" x="378" y="126">
+         <obj type="ctrl/dial b" uuid="862e7d7f29093cb1ce4aed72244d118ad4d46692" name="dial_42" x="252" y="210">
+            <params>
+               <frac32.s.map name="value" value="-38.0"/>
+            </params>
+            <attribs/>
+         </obj>
+         <obj type="patch/outlet b" uuid="191792f616d4835dba0b55375474a12942e5bcbd" name="envelopetoggle" x="518" y="238">
+            <params/>
+            <attribs/>
+         </obj>
+         <obj type="midi/out/note" uuid="a76ae870da278cbbce5501a57ce7bd0e0ea4215c" name="note_19" x="378" y="252">
             <params/>
             <attribs>
                <combo attributeName="device" selection="usb host port 1"/>
                <spinner attributeName="channel" value="7"/>
             </attribs>
          </obj>
-         <obj type="ctrl/dial p" uuid="cc5d2846c3d50e425f450c4b9851371b54f4d674" name="dial_41" x="252" y="168">
+         <obj type="ctrl/dial p" uuid="cc5d2846c3d50e425f450c4b9851371b54f4d674" name="dial_43" x="252" y="294">
             <params>
                <frac32.u.map name="value" value="24.0"/>
             </params>
             <attribs/>
          </obj>
+         <obj type="midinotechannel" uuid="ce92dba9-ed3a-41e2-88f0-fac388aa1454" name="midinotechannel_3" x="126" y="406">
+            <params/>
+            <attribs>
+               <spinner attributeName="note" value="25"/>
+               <spinner attributeName="midichannel" value="6"/>
+            </attribs>
+         </obj>
+         <obj type="patch/outlet b" uuid="191792f616d4835dba0b55375474a12942e5bcbd" name="trigger" x="518" y="406">
+            <params/>
+            <attribs/>
+         </obj>
          <nets>
             <net>
-               <source obj="dial_40" outlet="out"/>
-               <dest obj="note_18" inlet="note"/>
+               <source obj="dial_42" outlet="out"/>
+               <dest obj="note_19" inlet="note"/>
             </net>
             <net>
-               <source obj="dial_41" outlet="out"/>
-               <dest obj="note_18" inlet="velo"/>
+               <source obj="dial_43" outlet="out"/>
+               <dest obj="note_19" inlet="velo"/>
             </net>
             <net>
-               <source obj="midinotechannel_1" outlet="gate"/>
-               <dest obj="flipflop_1" inlet="trig"/>
+               <source obj="midinotechannel_2" outlet="gate"/>
+               <dest obj="flipflop_2" inlet="trig"/>
             </net>
             <net>
-               <source obj="flipflop_1" outlet="o"/>
-               <dest obj="outlet_1" inlet="outlet"/>
-               <dest obj="note_18" inlet="trig"/>
+               <source obj="flipflop_2" outlet="o"/>
+               <dest obj="envelopetoggle" inlet="outlet"/>
+               <dest obj="inv_1" inlet="i"/>
+            </net>
+            <net>
+               <source obj="inv_1" outlet="o"/>
+               <dest obj="note_19" inlet="trig"/>
+            </net>
+            <net>
+               <source obj="midinotechannel_3" outlet="gate"/>
+               <dest obj="trigger" inlet="outlet"/>
             </net>
          </nets>
          <settings>
@@ -852,31 +1023,102 @@
          </settings>
          <notes><![CDATA[]]></notes>
          <windowPos>
-            <x>0</x>
-            <y>23</y>
+            <x>590</x>
+            <y>114</y>
             <width>997</width>
             <height>522</height>
          </windowPos>
       </subpatch>
    </patcher>
-   <obj type="rbrt/control/gate f" uuid="e3486875-5cef-48fb-ad63-8278ec3f4c93" name="gate_4" x="840" y="1470">
+   <obj type="logic/inv" uuid="2bd44b865d3b63ff9b80862242bf5be779e3ad5" name="inv_3" x="518" y="1428">
       <params/>
       <attribs/>
    </obj>
-   <obj type="tiar/logic/rising" uuid="1d591a21-ac71-4b69-96f2-5c17b11ec2cd" name="rising_2" x="406" y="1484">
+   <obj type="rbrt/control/gate f" uuid="e3486875-5cef-48fb-ad63-8278ec3f4c93" name="gate_3" x="616" y="1428">
+      <params/>
+      <attribs/>
+   </obj>
+   <patcher type="patch/patcher" uuid="94681727-5f39-4fc1-9491-9e6385e4d2c3" name="beatselector CH7_" x="854" y="1442">
+      <params/>
+      <attribs/>
+      <subpatch appVersion="1.0.12">
+         <obj type="CCinchannelselect" uuid="2680db0d-1d3d-4d16-a3e7-2d004545b471" name="CCinchannelselect_1" x="154" y="14">
+            <params/>
+            <attribs>
+               <spinner attributeName="cc" value="94"/>
+               <spinner attributeName="default" value="0"/>
+               <combo attributeName="device" selection="usb host port 1"/>
+               <spinner attributeName="channel" value="7"/>
+            </attribs>
+         </obj>
+         <obj type="logic/countersat2" uuid="ac2f83169ae51aaf19acf322affbe56ca1bbf48f" name="countersat2_1" x="294" y="70">
+            <params>
+               <int32 name="maximum" value="16"/>
+            </params>
+            <attribs/>
+         </obj>
+         <obj type="patch/outlet i" uuid="aae2176b26209e34e4fdeba5edb1ace82d178655" name="outlet_1" x="406" y="70">
+            <params/>
+            <attribs/>
+         </obj>
+         <obj type="CCinchannelselect" uuid="2680db0d-1d3d-4d16-a3e7-2d004545b471" name="CCinchannelselect_2" x="154" y="140">
+            <params/>
+            <attribs>
+               <spinner attributeName="cc" value="93"/>
+               <spinner attributeName="default" value="0"/>
+               <combo attributeName="device" selection="usb host port 1"/>
+               <spinner attributeName="channel" value="7"/>
+            </attribs>
+         </obj>
+         <nets>
+            <net>
+               <source obj="CCinchannelselect_1" outlet="trig"/>
+               <dest obj="countersat2_1" inlet="inc"/>
+            </net>
+            <net>
+               <source obj="CCinchannelselect_2" outlet="trig"/>
+               <dest obj="countersat2_1" inlet="dec"/>
+            </net>
+            <net>
+               <source obj="countersat2_1" outlet="o"/>
+               <dest obj="outlet_1" inlet="outlet"/>
+            </net>
+         </nets>
+         <settings>
+            <subpatchmode>no</subpatchmode>
+            <MidiChannel>7</MidiChannel>
+            <NPresets>8</NPresets>
+            <NPresetEntries>32</NPresetEntries>
+            <NModulationSources>8</NModulationSources>
+            <NModulationTargetsPerSource>8</NModulationTargetsPerSource>
+         </settings>
+         <notes><![CDATA[]]></notes>
+         <windowPos>
+            <x>0</x>
+            <y>23</y>
+            <width>1270</width>
+            <height>555</height>
+         </windowPos>
+      </subpatch>
+   </patcher>
+   <obj type="math/+" uuid="44553fdc8628c67ab535845ed1be304ad6c9553b" name="+_11" x="756" y="1470">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="logic/or 2" uuid="3805d3c84d30032a44fbdbe42d9a2988a1790a3e" name="or_2" x="518" y="1484">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="rbrt/control/gate f" uuid="e3486875-5cef-48fb-ad63-8278ec3f4c93" name="gate_4" x="616" y="1498">
       <params/>
       <attribs/>
    </obj>
    <obj type="ctrl/dial p" uuid="cc5d2846c3d50e425f450c4b9851371b54f4d674" name="start_____" x="1204" y="1512">
       <params>
-         <frac32.u.map name="value" MidiCC="45" value="63.99999952316284">
+         <frac32.u.map name="value" MidiCC="45" value="0.0">
             <modulators/>
          </frac32.u.map>
       </params>
-      <attribs/>
-   </obj>
-   <obj type="audio/out left" uuid="b11a3c09b2fdd575ea8212f2ce7743d5269253b1" name="out_1" x="1904" y="1526">
-      <params/>
       <attribs/>
    </obj>
    <obj type="env/adsr m" uuid="98bd39fb828c392b28126d259cb5175e6f6ea34b" name="adsr_2" x="266" y="1540">
@@ -897,47 +1139,35 @@
          <spinner attributeName="channel" value="1"/>
       </attribs>
    </obj>
-   <obj type="math/div 128" uuid="7e534ce0f62b1fddbad78a797d8c10c8d1a0b812" name="div_13" x="168" y="1554">
+   <obj type="math/div 128" uuid="7e534ce0f62b1fddbad78a797d8c10c8d1a0b812" name="div_12" x="168" y="1554">
       <params/>
       <attribs/>
    </obj>
-   <obj type="ctrl/dial p" uuid="cc5d2846c3d50e425f450c4b9851371b54f4d674" name="x__" x="378" y="1554">
+   <obj type="ctrl/dial b" uuid="862e7d7f29093cb1ce4aed72244d118ad4d46692" name="dial_2" x="378" y="1554">
       <params>
-         <frac32.u.map name="value" MidiCC="17" value="0.0"/>
+         <frac32.s.map name="value" MidiCC="17" value="15.0"/>
       </params>
       <attribs/>
    </obj>
-   <obj type="math/div 128" uuid="7e534ce0f62b1fddbad78a797d8c10c8d1a0b812" name="div_12" x="448" y="1554">
-      <params/>
-      <attribs/>
-   </obj>
-   <obj type="ctrl/dial p" uuid="cc5d2846c3d50e425f450c4b9851371b54f4d674" name="dial_5" x="588" y="1554">
+   <obj type="ctrl/dial p" uuid="cc5d2846c3d50e425f450c4b9851371b54f4d674" name="x__" x="644" y="1554">
       <params>
-         <frac32.u.map name="value" MidiCC="18" value="54.0"/>
+         <frac32.u.map name="value" MidiCC="18" value="0.0"/>
       </params>
       <attribs/>
    </obj>
-   <obj type="math/div 4" uuid="507955275561b256e540f7205386d31545a2828f" name="div_11" x="658" y="1554">
+   <obj type="math/+" uuid="44553fdc8628c67ab535845ed1be304ad6c9553b" name="+_4" x="714" y="1554">
       <params/>
       <attribs/>
    </obj>
-   <obj type="conv/to i" uuid="305966430ee86b5c3b8e18cde0c721657c558a87" name="to_3" x="728" y="1554">
-      <params/>
-      <attribs/>
-   </obj>
-   <obj type="gain/vca" uuid="a9f2dcd18043e2f47364e45cb8814f63c2a37c0d" name="vca_7" x="1302" y="1554">
-      <params/>
-      <attribs/>
-   </obj>
-   <obj type="math/+" uuid="44553fdc8628c67ab535845ed1be304ad6c9553b" name="+_4" x="798" y="1568">
-      <params/>
-      <attribs/>
-   </obj>
-   <obj type="hc/osc/beatmachine" uuid="da8bb99a-f490-4ca9-a1ed-e3dba009f1d9" name="beatmachine_3" x="952" y="1582">
+   <obj type="hc/osc/beatmachine" uuid="da8bb99a-f490-4ca9-a1ed-e3dba009f1d9" name="beatmachine_3" x="812" y="1554">
       <params/>
       <attribs>
          <table attributeName="beat" table="((t&amp;32*z)?((t*(t^t%y*2)|(t&gt;&gt;4))&gt;&gt;1):(t&gt;&gt;3)|((t&amp;8192)?t&lt;&lt;x:t))"/>
       </attribs>
+   </obj>
+   <obj type="gain/vca" uuid="a9f2dcd18043e2f47364e45cb8814f63c2a37c0d" name="vca_7" x="1302" y="1554">
+      <params/>
+      <attribs/>
    </obj>
    <obj type="gain/vca" uuid="a9f2dcd18043e2f47364e45cb8814f63c2a37c0d" name="vca_8" x="1218" y="1596">
       <params/>
@@ -945,23 +1175,23 @@
    </obj>
    <obj type="ctrl/dial b" uuid="862e7d7f29093cb1ce4aed72244d118ad4d46692" name="rate__" x="378" y="1638">
       <params>
-         <frac32.s.map name="value" MidiCC="33" value="-47.0">
+         <frac32.s.map name="value" MidiCC="33" value="14.0">
             <modulators/>
          </frac32.s.map>
       </params>
       <attribs/>
    </obj>
-   <obj type="ctrl/dial p" uuid="cc5d2846c3d50e425f450c4b9851371b54f4d674" name="y__" x="588" y="1638">
-      <params>
-         <frac32.u.map name="value" MidiCC="34" value="19.0"/>
-      </params>
-      <attribs/>
-   </obj>
-   <obj type="math/+" uuid="44553fdc8628c67ab535845ed1be304ad6c9553b" name="+_6" x="448" y="1652">
+   <obj type="math/+" uuid="44553fdc8628c67ab535845ed1be304ad6c9553b" name="+_6" x="448" y="1638">
       <params/>
       <attribs/>
    </obj>
-   <obj type="math/+" uuid="44553fdc8628c67ab535845ed1be304ad6c9553b" name="+_5" x="658" y="1652">
+   <obj type="ctrl/dial p" uuid="cc5d2846c3d50e425f450c4b9851371b54f4d674" name="y__" x="644" y="1638">
+      <params>
+         <frac32.u.map name="value" MidiCC="34" value="0.0"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="math/+" uuid="44553fdc8628c67ab535845ed1be304ad6c9553b" name="+_5" x="714" y="1638">
       <params/>
       <attribs/>
    </obj>
@@ -988,13 +1218,13 @@
    </obj>
    <obj type="ctrl/dial p" uuid="cc5d2846c3d50e425f450c4b9851371b54f4d674" name="dial_6" x="378" y="1708">
       <params>
-         <frac32.u.map name="value" MidiCC="25" value="32.0"/>
+         <frac32.u.map name="value" MidiCC="25" value="42.0"/>
       </params>
       <attribs/>
    </obj>
-   <obj type="ctrl/dial p" uuid="cc5d2846c3d50e425f450c4b9851371b54f4d674" name="z__" x="588" y="1708">
+   <obj type="ctrl/dial p" uuid="cc5d2846c3d50e425f450c4b9851371b54f4d674" name="z__" x="644" y="1708">
       <params>
-         <frac32.u.map name="value" MidiCC="26" value="33.0"/>
+         <frac32.u.map name="value" MidiCC="26" value="63.99999952316284"/>
       </params>
       <attribs/>
    </obj>
@@ -1008,11 +1238,7 @@
       </params>
       <attribs/>
    </obj>
-   <obj type="math/div 4" uuid="507955275561b256e540f7205386d31545a2828f" name="div_20" x="560" y="1722">
-      <params/>
-      <attribs/>
-   </obj>
-   <obj type="math/div 128" uuid="7e534ce0f62b1fddbad78a797d8c10c8d1a0b812" name="div_15" x="658" y="1722">
+   <obj type="math/div 4" uuid="507955275561b256e540f7205386d31545a2828f" name="div_13" x="560" y="1722">
       <params/>
       <attribs/>
    </obj>
@@ -1029,11 +1255,7 @@
       <params/>
       <attribs/>
    </obj>
-   <obj type="logic/inv" uuid="2bd44b865d3b63ff9b80862242bf5be779e3ad5" name="inv_2" x="854" y="2044">
-      <params/>
-      <attribs/>
-   </obj>
-   <obj type="rbrt/control/gate f" uuid="e3486875-5cef-48fb-ad63-8278ec3f4c93" name="gate_2" x="924" y="2044">
+   <obj type="rbrt/control/gate f" uuid="e3486875-5cef-48fb-ad63-8278ec3f4c93" name="gate_2" x="518" y="2044">
       <params/>
       <attribs/>
    </obj>
@@ -1050,19 +1272,11 @@
          <spinner attributeName="channel" value="1"/>
       </attribs>
    </obj>
-   <obj type="disp/chart p" uuid="58f42040a894006a5f73ed8cb8d0bd45481b28cd" name="chart_4" x="266" y="2072">
+   <obj type="tiar/logic/rising" uuid="1d591a21-ac71-4b69-96f2-5c17b11ec2cd" name="rising_1" x="182" y="2058">
       <params/>
       <attribs/>
    </obj>
-   <obj type="disp/chart p" uuid="58f42040a894006a5f73ed8cb8d0bd45481b28cd" name="chart_5" x="364" y="2072">
-      <params/>
-      <attribs/>
-   </obj>
-   <obj type="math/+" uuid="44553fdc8628c67ab535845ed1be304ad6c9553b" name="+_10" x="1050" y="2072">
-      <params/>
-      <attribs/>
-   </obj>
-   <patcher type="patch/patcher" uuid="3d0d36ea-7455-4f48-94ca-f7b489df915f" name="toggleEnv4" x="756" y="2100">
+   <patcher type="patch/patcher" uuid="29ea36b3-82fa-4394-b33e-bd3373e77a96" name="toggleEnv4" x="294" y="2058">
       <params/>
       <attribs/>
       <subpatch appVersion="1.0.12">
@@ -1073,17 +1287,21 @@
          <obj type="midinotechannel" uuid="ce92dba9-ed3a-41e2-88f0-fac388aa1454" name="midinotechannel_1" x="126" y="70">
             <params/>
             <attribs>
-               <spinner attributeName="note" value="27"/>
+               <spinner attributeName="note" value="28"/>
                <spinner attributeName="midichannel" value="6"/>
             </attribs>
          </obj>
+         <obj type="logic/inv" uuid="2bd44b865d3b63ff9b80862242bf5be779e3ad5" name="inv_1" x="532" y="70">
+            <params/>
+            <attribs/>
+         </obj>
          <obj type="ctrl/dial b" uuid="862e7d7f29093cb1ce4aed72244d118ad4d46692" name="dial_40" x="252" y="84">
             <params>
-               <frac32.s.map name="value" value="-37.0"/>
+               <frac32.s.map name="value" value="-36.0"/>
             </params>
             <attribs/>
          </obj>
-         <obj type="patch/outlet b" uuid="191792f616d4835dba0b55375474a12942e5bcbd" name="outlet_1" x="518" y="112">
+         <obj type="patch/outlet b" uuid="191792f616d4835dba0b55375474a12942e5bcbd" name="envelopetoggle" x="518" y="112">
             <params/>
             <attribs/>
          </obj>
@@ -1098,6 +1316,17 @@
             <params>
                <frac32.u.map name="value" value="24.0"/>
             </params>
+            <attribs/>
+         </obj>
+         <obj type="midinotechannel" uuid="ce92dba9-ed3a-41e2-88f0-fac388aa1454" name="midinotechannel_2" x="126" y="280">
+            <params/>
+            <attribs>
+               <spinner attributeName="note" value="27"/>
+               <spinner attributeName="midichannel" value="6"/>
+            </attribs>
+         </obj>
+         <obj type="patch/outlet b" uuid="191792f616d4835dba0b55375474a12942e5bcbd" name="trigger" x="518" y="280">
+            <params/>
             <attribs/>
          </obj>
          <nets>
@@ -1115,33 +1344,117 @@
             </net>
             <net>
                <source obj="flipflop_1" outlet="o"/>
-               <dest obj="outlet_1" inlet="outlet"/>
+               <dest obj="envelopetoggle" inlet="outlet"/>
+               <dest obj="inv_1" inlet="i"/>
+            </net>
+            <net>
+               <source obj="inv_1" outlet="o"/>
                <dest obj="note_18" inlet="trig"/>
+            </net>
+            <net>
+               <source obj="midinotechannel_2" outlet="gate"/>
+               <dest obj="trigger" inlet="outlet"/>
             </net>
          </nets>
          <settings>
             <subpatchmode>no</subpatchmode>
+            <MidiChannel>7</MidiChannel>
+            <NPresets>8</NPresets>
+            <NPresetEntries>32</NPresetEntries>
+            <NModulationSources>8</NModulationSources>
+            <NModulationTargetsPerSource>8</NModulationTargetsPerSource>
          </settings>
          <notes><![CDATA[]]></notes>
          <windowPos>
             <x>0</x>
             <y>23</y>
-            <width>997</width>
-            <height>522</height>
+            <width>1920</width>
+            <height>1177</height>
          </windowPos>
       </subpatch>
    </patcher>
-   <obj type="tiar/logic/rising" uuid="1d591a21-ac71-4b69-96f2-5c17b11ec2cd" name="rising_1" x="602" y="2114">
+   <obj type="logic/inv" uuid="2bd44b865d3b63ff9b80862242bf5be779e3ad5" name="inv_2" x="434" y="2058">
       <params/>
       <attribs/>
    </obj>
-   <obj type="rbrt/control/gate f" uuid="e3486875-5cef-48fb-ad63-8278ec3f4c93" name="gate_1" x="924" y="2114">
+   <obj type="math/+" uuid="44553fdc8628c67ab535845ed1be304ad6c9553b" name="+_10" x="644" y="2072">
       <params/>
       <attribs/>
    </obj>
-   <obj type="ctrl/dial p" uuid="cc5d2846c3d50e425f450c4b9851371b54f4d674" name="start_______" x="1260" y="2170">
+   <patcher type="patch/patcher" uuid="a79e80cf-05e9-44bd-a10a-1b095d9c7c89" name="beatselector CH7" x="826" y="2086">
+      <params/>
+      <attribs/>
+      <subpatch appVersion="1.0.12">
+         <obj type="CCinchannelselect" uuid="2680db0d-1d3d-4d16-a3e7-2d004545b471" name="CCinchannelselect_1" x="154" y="14">
+            <params/>
+            <attribs>
+               <spinner attributeName="cc" value="96"/>
+               <spinner attributeName="default" value="0"/>
+               <combo attributeName="device" selection="usb host port 1"/>
+               <spinner attributeName="channel" value="7"/>
+            </attribs>
+         </obj>
+         <obj type="logic/countersat2" uuid="ac2f83169ae51aaf19acf322affbe56ca1bbf48f" name="countersat2_1" x="294" y="70">
+            <params>
+               <int32 name="maximum" value="16"/>
+            </params>
+            <attribs/>
+         </obj>
+         <obj type="patch/outlet i" uuid="aae2176b26209e34e4fdeba5edb1ace82d178655" name="outlet_1" x="406" y="70">
+            <params/>
+            <attribs/>
+         </obj>
+         <obj type="CCinchannelselect" uuid="2680db0d-1d3d-4d16-a3e7-2d004545b471" name="CCinchannelselect_2" x="154" y="140">
+            <params/>
+            <attribs>
+               <spinner attributeName="cc" value="95"/>
+               <spinner attributeName="default" value="0"/>
+               <combo attributeName="device" selection="usb host port 1"/>
+               <spinner attributeName="channel" value="7"/>
+            </attribs>
+         </obj>
+         <nets>
+            <net>
+               <source obj="CCinchannelselect_1" outlet="trig"/>
+               <dest obj="countersat2_1" inlet="inc"/>
+            </net>
+            <net>
+               <source obj="CCinchannelselect_2" outlet="trig"/>
+               <dest obj="countersat2_1" inlet="dec"/>
+            </net>
+            <net>
+               <source obj="countersat2_1" outlet="o"/>
+               <dest obj="outlet_1" inlet="outlet"/>
+            </net>
+         </nets>
+         <settings>
+            <subpatchmode>no</subpatchmode>
+            <MidiChannel>7</MidiChannel>
+            <NPresets>8</NPresets>
+            <NPresetEntries>32</NPresetEntries>
+            <NModulationSources>8</NModulationSources>
+            <NModulationTargetsPerSource>8</NModulationTargetsPerSource>
+         </settings>
+         <notes><![CDATA[]]></notes>
+         <windowPos>
+            <x>0</x>
+            <y>23</y>
+            <width>1270</width>
+            <height>555</height>
+         </windowPos>
+      </subpatch>
+   </patcher>
+   <obj type="logic/or 2" uuid="3805d3c84d30032a44fbdbe42d9a2988a1790a3e" name="or_1" x="434" y="2114">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="rbrt/control/gate f" uuid="e3486875-5cef-48fb-ad63-8278ec3f4c93" name="gate_1" x="518" y="2114">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="ctrl/dial p" uuid="cc5d2846c3d50e425f450c4b9851371b54f4d674" name="start_______" x="1036" y="2170">
       <params>
-         <frac32.u.map name="value" MidiCC="47" value="63.99999952316284">
+         <frac32.u.map name="value" MidiCC="47" value="0.0">
             <modulators/>
          </frac32.u.map>
       </params>
@@ -1156,32 +1469,32 @@
          <spinner attributeName="channel" value="1"/>
       </attribs>
    </obj>
-   <obj type="math/div 128" uuid="7e534ce0f62b1fddbad78a797d8c10c8d1a0b812" name="div_19" x="168" y="2184">
+   <obj type="math/div 128" uuid="7e534ce0f62b1fddbad78a797d8c10c8d1a0b812" name="div_14" x="168" y="2184">
       <params/>
       <attribs/>
    </obj>
-   <comment type="patch/comment" x="1694" y="2198" text="clears all leds"/>
-   <obj type="ctrl/dial p" uuid="cc5d2846c3d50e425f450c4b9851371b54f4d674" name="dial_7" x="434" y="2212">
+   <obj type="env/adsr m" uuid="98bd39fb828c392b28126d259cb5175e6f6ea34b" name="adsr_1" x="308" y="2198">
       <params>
-         <frac32.u.map name="value" MidiCC="19" value="0.0">
+         <frac32.s.map name="a" value="-54.0"/>
+         <frac32.s.map name="d" value="64.0"/>
+         <frac32.u.map name="s" value="64.0"/>
+         <frac32.s.map name="r" value="63.0"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="ctrl/dial b" uuid="862e7d7f29093cb1ce4aed72244d118ad4d46692" name="dial_1" x="392" y="2198">
+      <params>
+         <frac32.s.map name="value" MidiCC="19" value="63.99999952316284">
             <presets>
                <preset index="7">
                   <f v="0.0"/>
                </preset>
             </presets>
-         </frac32.u.map>
+         </frac32.s.map>
       </params>
       <attribs/>
    </obj>
-   <obj type="math/div 4" uuid="507955275561b256e540f7205386d31545a2828f" name="div_18" x="504" y="2212">
-      <params/>
-      <attribs/>
-   </obj>
-   <obj type="conv/to i" uuid="305966430ee86b5c3b8e18cde0c721657c558a87" name="to_4" x="574" y="2212">
-      <params/>
-      <attribs/>
-   </obj>
-   <obj type="ctrl/dial p" uuid="cc5d2846c3d50e425f450c4b9851371b54f4d674" name="x___" x="644" y="2212">
+   <obj type="ctrl/dial p" uuid="cc5d2846c3d50e425f450c4b9851371b54f4d674" name="x___" x="658" y="2198">
       <params>
          <frac32.u.map name="value" MidiCC="20" value="63.99999952316284">
             <presets>
@@ -1193,6 +1506,17 @@
       </params>
       <attribs/>
    </obj>
+   <obj type="math/+" uuid="44553fdc8628c67ab535845ed1be304ad6c9553b" name="+_7" x="728" y="2198">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="bytebeatmod" uuid="3ff6911c-4e00-4914-964d-27fd7e273482" name="bytebeatmod_2" x="826" y="2198">
+      <params/>
+      <attribs>
+         <table attributeName="beat" table="(t&amp;t/x&amp;y)*z"/>
+      </attribs>
+   </obj>
+   <comment type="patch/comment" x="1694" y="2198" text="clears all leds"/>
    <obj type="rbrt/patching/loadbang" uuid="45d1f29d-ac62-4e5b-86f8-2201d2f6c689" name="loadbang_1" x="1694" y="2212">
       <params/>
       <attribs/>
@@ -1338,36 +1662,17 @@ MidiSend3((midi_device_t) MIDI_DEVICE_USB_HOST, 9, MIDI_NOTE_ON + (attr_channel-
  }]]></code.krate>
       </object>
    </patchobj>
-   <obj type="env/adsr m" uuid="98bd39fb828c392b28126d259cb5175e6f6ea34b" name="adsr_1" x="294" y="2226">
+   <obj type="gain/vca" uuid="a9f2dcd18043e2f47364e45cb8814f63c2a37c0d" name="vca_10" x="1120" y="2226">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="gain/vca" uuid="a9f2dcd18043e2f47364e45cb8814f63c2a37c0d" name="vca_11" x="1050" y="2254">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="ctrl/dial p" uuid="cc5d2846c3d50e425f450c4b9851371b54f4d674" name="dial_9" x="392" y="2282">
       <params>
-         <frac32.s.map name="a" value="-16.0"/>
-         <frac32.s.map name="d" value="34.0"/>
-         <frac32.u.map name="s" value="24.5"/>
-         <frac32.s.map name="r" value="-4.0"/>
-      </params>
-      <attribs/>
-   </obj>
-   <obj type="math/+" uuid="44553fdc8628c67ab535845ed1be304ad6c9553b" name="+_7" x="854" y="2226">
-      <params/>
-      <attribs/>
-   </obj>
-   <obj type="gain/vca" uuid="a9f2dcd18043e2f47364e45cb8814f63c2a37c0d" name="vca_10" x="1344" y="2226">
-      <params/>
-      <attribs/>
-   </obj>
-   <obj type="hc/osc/beatmachine" uuid="da8bb99a-f490-4ca9-a1ed-e3dba009f1d9" name="beatmachine_4" x="1008" y="2240">
-      <params/>
-      <attribs>
-         <table attributeName="beat" table="(t&amp;t/x&amp;y)*z"/>
-      </attribs>
-   </obj>
-   <obj type="gain/vca" uuid="a9f2dcd18043e2f47364e45cb8814f63c2a37c0d" name="vca_11" x="1274" y="2254">
-      <params/>
-      <attribs/>
-   </obj>
-   <obj type="ctrl/dial p" uuid="cc5d2846c3d50e425f450c4b9851371b54f4d674" name="dial_9" x="434" y="2296">
-      <params>
-         <frac32.u.map name="value" MidiCC="35" value="44.5">
+         <frac32.u.map name="value" MidiCC="35" value="63.99999952316284">
             <presets>
                <preset index="7">
                   <f v="0.0"/>
@@ -1378,7 +1683,11 @@ MidiSend3((midi_device_t) MIDI_DEVICE_USB_HOST, 9, MIDI_NOTE_ON + (attr_channel-
       </params>
       <attribs/>
    </obj>
-   <obj type="ctrl/dial p" uuid="cc5d2846c3d50e425f450c4b9851371b54f4d674" name="y___" x="644" y="2296">
+   <obj type="math/+" uuid="44553fdc8628c67ab535845ed1be304ad6c9553b" name="+_9" x="462" y="2282">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="ctrl/dial p" uuid="cc5d2846c3d50e425f450c4b9851371b54f4d674" name="y___" x="658" y="2282">
       <params>
          <frac32.u.map name="value" MidiCC="36" value="63.99999952316284">
             <presets>
@@ -1390,6 +1699,10 @@ MidiSend3((midi_device_t) MIDI_DEVICE_USB_HOST, 9, MIDI_NOTE_ON + (attr_channel-
       </params>
       <attribs/>
    </obj>
+   <obj type="math/+" uuid="44553fdc8628c67ab535845ed1be304ad6c9553b" name="+_8" x="728" y="2282">
+      <params/>
+      <attribs/>
+   </obj>
    <obj type="CCinchannelselect" uuid="2680db0d-1d3d-4d16-a3e7-2d004545b471" name="CCinchannelselect_12" x="42" y="2310">
       <params/>
       <attribs>
@@ -1399,15 +1712,7 @@ MidiSend3((midi_device_t) MIDI_DEVICE_USB_HOST, 9, MIDI_NOTE_ON + (attr_channel-
          <spinner attributeName="channel" value="1"/>
       </attribs>
    </obj>
-   <obj type="math/+" uuid="44553fdc8628c67ab535845ed1be304ad6c9553b" name="+_9" x="518" y="2310">
-      <params/>
-      <attribs/>
-   </obj>
-   <obj type="math/+" uuid="44553fdc8628c67ab535845ed1be304ad6c9553b" name="+_8" x="854" y="2310">
-      <params/>
-      <attribs/>
-   </obj>
-   <obj type="ctrl/dial p" uuid="cc5d2846c3d50e425f450c4b9851371b54f4d674" name="start________" x="1260" y="2310">
+   <obj type="ctrl/dial p" uuid="cc5d2846c3d50e425f450c4b9851371b54f4d674" name="start________" x="1036" y="2310">
       <params>
          <frac32.u.map name="value" MidiCC="48" value="0.0">
             <modulators/>
@@ -1415,24 +1720,11 @@ MidiSend3((midi_device_t) MIDI_DEVICE_USB_HOST, 9, MIDI_NOTE_ON + (attr_channel-
       </params>
       <attribs/>
    </obj>
-   <obj type="gain/vca" uuid="a9f2dcd18043e2f47364e45cb8814f63c2a37c0d" name="vca_12" x="1358" y="2310">
+   <obj type="gain/vca" uuid="a9f2dcd18043e2f47364e45cb8814f63c2a37c0d" name="vca_12" x="1134" y="2310">
       <params/>
       <attribs/>
    </obj>
-   <obj type="ctrl/dial p" uuid="cc5d2846c3d50e425f450c4b9851371b54f4d674" name="z___" x="644" y="2366">
-      <params>
-         <frac32.u.map name="value" MidiCC="28" value="42.0">
-            <presets>
-               <preset index="7">
-                  <f v="0.0"/>
-               </preset>
-            </presets>
-         </frac32.u.map>
-      </params>
-      <attribs/>
-   </obj>
-   <comment type="patch/comment" x="1736" y="2366" text="lights - use one object for each colour, and just put in the notes you are using"/>
-   <patchobj type="patch/object" uuid="530ca13e-1263-4da6-b5a4-8c0ffa87594a" name="vel_4" x="1736" y="2380">
+   <patchobj type="patch/object" uuid="530ca13e-1263-4da6-b5a4-8c0ffa87594a" name="vel_4" x="1918" y="2338">
       <params/>
       <attribs>
          <combo attributeName="device" selection="usb host port 1"/>
@@ -1440,14 +1732,16 @@ MidiSend3((midi_device_t) MIDI_DEVICE_USB_HOST, 9, MIDI_NOTE_ON + (attr_channel-
          <combo attributeName="colour" selection="red S"/>
          <spinner attributeName="noteA" value="13"/>
          <spinner attributeName="noteB" value="14"/>
-         <spinner attributeName="noteC" value="29"/>
-         <spinner attributeName="noteD" value="30"/>
-         <spinner attributeName="noteE" value="31"/>
-         <spinner attributeName="noteF" value="61"/>
-         <spinner attributeName="noteG" value="62"/>
-         <spinner attributeName="noteH" value="77"/>
-         <spinner attributeName="noteI" value="78"/>
-         <spinner attributeName="noteJ" value="79"/>
+         <spinner attributeName="noteC" value="15"/>
+         <spinner attributeName="noteD" value="29"/>
+         <spinner attributeName="noteE" value="30"/>
+         <spinner attributeName="noteF" value="31"/>
+         <spinner attributeName="noteG" value="77"/>
+         <spinner attributeName="noteH" value="78"/>
+         <spinner attributeName="noteI" value="79"/>
+         <spinner attributeName="noteJ" value="93"/>
+         <spinner attributeName="noteK" value="94"/>
+         <spinner attributeName="noteL" value="95"/>
       </attribs>
       <object id="patch/object" uuid="530ca13e-1263-4da6-b5a4-8c0ffa87594a">
          <license>BSD</license>
@@ -1528,6 +1822,8 @@ MidiSend3((midi_device_t) MIDI_DEVICE_USB_HOST, 9, MIDI_NOTE_ON + (attr_channel-
             <spinner name="noteH" MinValue="0" MaxValue="127" DefaultValue="0"/>
             <spinner name="noteI" MinValue="0" MaxValue="127" DefaultValue="0"/>
             <spinner name="noteJ" MinValue="0" MaxValue="127" DefaultValue="0"/>
+            <spinner name="noteK" MinValue="0" MaxValue="127" DefaultValue="0"/>
+            <spinner name="noteL" MinValue="0" MaxValue="127" DefaultValue="0"/>
          </attribs>
          <includes/>
          <code.declaration><![CDATA[uint8_t prev;]]></code.declaration>
@@ -1542,136 +1838,31 @@ MidiSend3((midi_device_t) attr_device, MIDI_NOTE_ON + (attr_channel-1),attr_note
 MidiSend3((midi_device_t) attr_device, MIDI_NOTE_ON + (attr_channel-1),attr_noteH,attr_colour);
 MidiSend3((midi_device_t) attr_device, MIDI_NOTE_ON + (attr_channel-1),attr_noteI,attr_colour);
 MidiSend3((midi_device_t) attr_device, MIDI_NOTE_ON + (attr_channel-1),attr_noteJ,attr_colour);
+MidiSend3((midi_device_t) attr_device, MIDI_NOTE_ON + (attr_channel-1),attr_noteK,attr_colour);
+MidiSend3((midi_device_t) attr_device, MIDI_NOTE_ON + (attr_channel-1),attr_noteL,attr_colour);
 prev=inlet_active;}]]></code.krate>
       </object>
    </patchobj>
-   <patchobj type="patch/object" uuid="530ca13e-1263-4da6-b5a4-8c0ffa87594a" name="vel_2" x="1890" y="2380">
-      <params/>
-      <attribs>
-         <combo attributeName="device" selection="usb host port 1"/>
-         <spinner attributeName="channel" value="7"/>
-         <combo attributeName="colour" selection="yellow S"/>
-         <spinner attributeName="noteA" value="45"/>
-         <spinner attributeName="noteB" value="46"/>
-         <spinner attributeName="noteC" value="93"/>
-         <spinner attributeName="noteD" value="94"/>
-         <spinner attributeName="noteE" value="108"/>
-         <spinner attributeName="noteF" value="0"/>
-         <spinner attributeName="noteG" value="0"/>
-         <spinner attributeName="noteH" value="0"/>
-      </attribs>
-      <object id="patch/object" uuid="530ca13e-1263-4da6-b5a4-8c0ffa87594a">
-         <sDescription>sends 4 note velocities,no gate,no bullshit.for controllers that feel like receiving them.</sDescription>
-         <author>robert schirmer</author>
-         <license>BSD</license>
-         <helpPatch>midi_out.axh</helpPatch>
-         <inlets>
-            <bool32.rising name="active"/>
-         </inlets>
-         <outlets/>
-         <displays/>
-         <params/>
-         <attribs>
-            <combo name="device">
-               <MenuEntries>
-                  <string>din</string>
-                  <string>usb host port 1</string>
-                  <string>usb host port 2</string>
-                  <string>usb host port 3</string>
-                  <string>usb host port 4</string>
-                  <string>internal port 1</string>
-                  <string>internal port 2</string>
-                  <string>usb device port 1</string>
-               </MenuEntries>
-               <CEntries>
-                  <string>MIDI_DEVICE_DIN, 1</string>
-                  <string>MIDI_DEVICE_USB_HOST, 1</string>
-                  <string>MIDI_DEVICE_USB_HOST, 2</string>
-                  <string>MIDI_DEVICE_USB_HOST, 3</string>
-                  <string>MIDI_DEVICE_USB_HOST, 4</string>
-                  <string>MIDI_DEVICE_INTERNAL, 1</string>
-                  <string>MIDI_DEVICE_INTERNAL, 2</string>
-                  <string>MIDI_DEVICE_USB_DEVICE, 1</string>
-               </CEntries>
-            </combo>
-            <spinner name="channel" MinValue="1" MaxValue="16" DefaultValue="0"/>
-            <combo name="colour">
-               <MenuEntries>
-                  <string>off</string>
-                  <string>red W</string>
-                  <string>red M</string>
-                  <string>red S</string>
-                  <string>orange W</string>
-                  <string>orange S</string>
-                  <string>green W</string>
-                  <string>green M</string>
-                  <string>green S</string>
-                  <string>lime 1 W</string>
-                  <string>lime 1 S</string>
-                  <string>lime 2</string>
-                  <string>yellow W</string>
-                  <string>yellow M</string>
-                  <string>yellow S</string>
-               </MenuEntries>
-               <CEntries>
-                  <string>0</string>
-                  <string>1</string>
-                  <string>2</string>
-                  <string>3</string>
-                  <string>18</string>
-                  <string>35</string>
-                  <string>16</string>
-                  <string>32</string>
-                  <string>48</string>
-                  <string>33</string>
-                  <string>50</string>
-                  <string>49</string>
-                  <string>17</string>
-                  <string>34</string>
-                  <string>51</string>
-               </CEntries>
-            </combo>
-            <spinner name="noteA" MinValue="0" MaxValue="127" DefaultValue="0"/>
-            <spinner name="noteB" MinValue="0" MaxValue="127" DefaultValue="0"/>
-            <spinner name="noteC" MinValue="0" MaxValue="127" DefaultValue="0"/>
-            <spinner name="noteD" MinValue="0" MaxValue="127" DefaultValue="0"/>
-            <spinner name="noteE" MinValue="0" MaxValue="127" DefaultValue="0"/>
-            <spinner name="noteF" MinValue="0" MaxValue="127" DefaultValue="0"/>
-            <spinner name="noteG" MinValue="0" MaxValue="127" DefaultValue="0"/>
-            <spinner name="noteH" MinValue="0" MaxValue="127" DefaultValue="0"/>
-         </attribs>
-         <includes/>
-         <code.declaration><![CDATA[uint8_t prev;]]></code.declaration>
-         <code.krate><![CDATA[if (inlet_active!=prev){
-MidiSend3((midi_device_t) attr_device, MIDI_NOTE_ON + (attr_channel-1),attr_noteA,attr_colour);
-MidiSend3((midi_device_t) attr_device, MIDI_NOTE_ON + (attr_channel-1),attr_noteB,attr_colour);
-MidiSend3((midi_device_t) attr_device, MIDI_NOTE_ON + (attr_channel-1),attr_noteC,attr_colour);
-MidiSend3((midi_device_t) attr_device, MIDI_NOTE_ON + (attr_channel-1),attr_noteD,attr_colour);
-MidiSend3((midi_device_t) attr_device, MIDI_NOTE_ON + (attr_channel-1),attr_noteE,attr_colour);
-MidiSend3((midi_device_t) attr_device, MIDI_NOTE_ON + (attr_channel-1),attr_noteF,attr_colour);
-MidiSend3((midi_device_t) attr_device, MIDI_NOTE_ON + (attr_channel-1),attr_noteG,attr_colour);
-MidiSend3((midi_device_t) attr_device, MIDI_NOTE_ON + (attr_channel-1),attr_noteH,attr_colour);
-prev=inlet_active;}]]></code.krate>
-      </object>
-   </patchobj>
-   <patchobj type="patch/object" uuid="530ca13e-1263-4da6-b5a4-8c0ffa87594a" name="vel_1" x="2030" y="2380">
+   <patchobj type="patch/object" uuid="530ca13e-1263-4da6-b5a4-8c0ffa87594a" name="vel_5" x="2058" y="2338">
       <params/>
       <attribs>
          <combo attributeName="device" selection="usb host port 1"/>
          <spinner attributeName="channel" value="7"/>
          <combo attributeName="colour" selection="green S"/>
-         <spinner attributeName="noteA" value="15"/>
-         <spinner attributeName="noteB" value="63"/>
-         <spinner attributeName="noteC" value="127"/>
-         <spinner attributeName="noteD" value="58"/>
-         <spinner attributeName="noteE" value="59"/>
-         <spinner attributeName="noteF" value="60"/>
-         <spinner attributeName="noteG" value="0"/>
-         <spinner attributeName="noteH" value="0"/>
+         <spinner attributeName="noteA" value="45"/>
+         <spinner attributeName="noteB" value="46"/>
+         <spinner attributeName="noteC" value="47"/>
+         <spinner attributeName="noteD" value="61"/>
+         <spinner attributeName="noteE" value="62"/>
+         <spinner attributeName="noteF" value="63"/>
+         <spinner attributeName="noteG" value="109"/>
+         <spinner attributeName="noteH" value="110"/>
+         <spinner attributeName="noteI" value="111"/>
+         <spinner attributeName="noteJ" value="125"/>
+         <spinner attributeName="noteK" value="126"/>
+         <spinner attributeName="noteL" value="127"/>
       </attribs>
       <object id="patch/object" uuid="530ca13e-1263-4da6-b5a4-8c0ffa87594a">
-         <sDescription>sends 4 note velocities,no gate,no bullshit.for controllers that feel like receiving them.</sDescription>
-         <author>robert schirmer</author>
          <license>BSD</license>
          <helpPatch>midi_out.axh</helpPatch>
          <inlets>
@@ -1748,6 +1939,10 @@ prev=inlet_active;}]]></code.krate>
             <spinner name="noteF" MinValue="0" MaxValue="127" DefaultValue="0"/>
             <spinner name="noteG" MinValue="0" MaxValue="127" DefaultValue="0"/>
             <spinner name="noteH" MinValue="0" MaxValue="127" DefaultValue="0"/>
+            <spinner name="noteI" MinValue="0" MaxValue="127" DefaultValue="0"/>
+            <spinner name="noteJ" MinValue="0" MaxValue="127" DefaultValue="0"/>
+            <spinner name="noteK" MinValue="0" MaxValue="127" DefaultValue="0"/>
+            <spinner name="noteL" MinValue="0" MaxValue="127" DefaultValue="0"/>
          </attribs>
          <includes/>
          <code.declaration><![CDATA[uint8_t prev;]]></code.declaration>
@@ -1760,121 +1955,16 @@ MidiSend3((midi_device_t) attr_device, MIDI_NOTE_ON + (attr_channel-1),attr_note
 MidiSend3((midi_device_t) attr_device, MIDI_NOTE_ON + (attr_channel-1),attr_noteF,attr_colour);
 MidiSend3((midi_device_t) attr_device, MIDI_NOTE_ON + (attr_channel-1),attr_noteG,attr_colour);
 MidiSend3((midi_device_t) attr_device, MIDI_NOTE_ON + (attr_channel-1),attr_noteH,attr_colour);
+MidiSend3((midi_device_t) attr_device, MIDI_NOTE_ON + (attr_channel-1),attr_noteI,attr_colour);
+MidiSend3((midi_device_t) attr_device, MIDI_NOTE_ON + (attr_channel-1),attr_noteJ,attr_colour);
+MidiSend3((midi_device_t) attr_device, MIDI_NOTE_ON + (attr_channel-1),attr_noteK,attr_colour);
+MidiSend3((midi_device_t) attr_device, MIDI_NOTE_ON + (attr_channel-1),attr_noteL,attr_colour);
 prev=inlet_active;}]]></code.krate>
       </object>
    </patchobj>
-   <patchobj type="patch/object" uuid="530ca13e-1263-4da6-b5a4-8c0ffa87594a" name="vel_3" x="2170" y="2380">
-      <params/>
-      <attribs>
-         <combo attributeName="device" selection="usb host port 1"/>
-         <spinner attributeName="channel" value="7"/>
-         <combo attributeName="colour" selection="orange S"/>
-         <spinner attributeName="noteA" value="109"/>
-         <spinner attributeName="noteB" value="110"/>
-         <spinner attributeName="noteC" value="95"/>
-         <spinner attributeName="noteD" value="111"/>
-         <spinner attributeName="noteE" value="0"/>
-         <spinner attributeName="noteF" value="0"/>
-         <spinner attributeName="noteG" value="0"/>
-         <spinner attributeName="noteH" value="0"/>
-      </attribs>
-      <object id="patch/object" uuid="530ca13e-1263-4da6-b5a4-8c0ffa87594a">
-         <sDescription>sends 4 note velocities,no gate,no bullshit.for controllers that feel like receiving them.</sDescription>
-         <author>robert schirmer</author>
-         <license>BSD</license>
-         <helpPatch>midi_out.axh</helpPatch>
-         <inlets>
-            <bool32.rising name="active"/>
-         </inlets>
-         <outlets/>
-         <displays/>
-         <params/>
-         <attribs>
-            <combo name="device">
-               <MenuEntries>
-                  <string>din</string>
-                  <string>usb host port 1</string>
-                  <string>usb host port 2</string>
-                  <string>usb host port 3</string>
-                  <string>usb host port 4</string>
-                  <string>internal port 1</string>
-                  <string>internal port 2</string>
-                  <string>usb device port 1</string>
-               </MenuEntries>
-               <CEntries>
-                  <string>MIDI_DEVICE_DIN, 1</string>
-                  <string>MIDI_DEVICE_USB_HOST, 1</string>
-                  <string>MIDI_DEVICE_USB_HOST, 2</string>
-                  <string>MIDI_DEVICE_USB_HOST, 3</string>
-                  <string>MIDI_DEVICE_USB_HOST, 4</string>
-                  <string>MIDI_DEVICE_INTERNAL, 1</string>
-                  <string>MIDI_DEVICE_INTERNAL, 2</string>
-                  <string>MIDI_DEVICE_USB_DEVICE, 1</string>
-               </CEntries>
-            </combo>
-            <spinner name="channel" MinValue="1" MaxValue="16" DefaultValue="0"/>
-            <combo name="colour">
-               <MenuEntries>
-                  <string>off</string>
-                  <string>red W</string>
-                  <string>red M</string>
-                  <string>red S</string>
-                  <string>orange W</string>
-                  <string>orange S</string>
-                  <string>green W</string>
-                  <string>green M</string>
-                  <string>green S</string>
-                  <string>lime 1 W</string>
-                  <string>lime 1 S</string>
-                  <string>lime 2</string>
-                  <string>yellow W</string>
-                  <string>yellow M</string>
-                  <string>yellow S</string>
-               </MenuEntries>
-               <CEntries>
-                  <string>0</string>
-                  <string>1</string>
-                  <string>2</string>
-                  <string>3</string>
-                  <string>18</string>
-                  <string>35</string>
-                  <string>16</string>
-                  <string>32</string>
-                  <string>48</string>
-                  <string>33</string>
-                  <string>50</string>
-                  <string>49</string>
-                  <string>17</string>
-                  <string>34</string>
-                  <string>51</string>
-               </CEntries>
-            </combo>
-            <spinner name="noteA" MinValue="0" MaxValue="127" DefaultValue="0"/>
-            <spinner name="noteB" MinValue="0" MaxValue="127" DefaultValue="0"/>
-            <spinner name="noteC" MinValue="0" MaxValue="127" DefaultValue="0"/>
-            <spinner name="noteD" MinValue="0" MaxValue="127" DefaultValue="0"/>
-            <spinner name="noteE" MinValue="0" MaxValue="127" DefaultValue="0"/>
-            <spinner name="noteF" MinValue="0" MaxValue="127" DefaultValue="0"/>
-            <spinner name="noteG" MinValue="0" MaxValue="127" DefaultValue="0"/>
-            <spinner name="noteH" MinValue="0" MaxValue="127" DefaultValue="0"/>
-         </attribs>
-         <includes/>
-         <code.declaration><![CDATA[uint8_t prev;]]></code.declaration>
-         <code.krate><![CDATA[if (inlet_active!=prev){
-MidiSend3((midi_device_t) attr_device, MIDI_NOTE_ON + (attr_channel-1),attr_noteA,attr_colour);
-MidiSend3((midi_device_t) attr_device, MIDI_NOTE_ON + (attr_channel-1),attr_noteB,attr_colour);
-MidiSend3((midi_device_t) attr_device, MIDI_NOTE_ON + (attr_channel-1),attr_noteC,attr_colour);
-MidiSend3((midi_device_t) attr_device, MIDI_NOTE_ON + (attr_channel-1),attr_noteD,attr_colour);
-MidiSend3((midi_device_t) attr_device, MIDI_NOTE_ON + (attr_channel-1),attr_noteE,attr_colour);
-MidiSend3((midi_device_t) attr_device, MIDI_NOTE_ON + (attr_channel-1),attr_noteF,attr_colour);
-MidiSend3((midi_device_t) attr_device, MIDI_NOTE_ON + (attr_channel-1),attr_noteG,attr_colour);
-MidiSend3((midi_device_t) attr_device, MIDI_NOTE_ON + (attr_channel-1),attr_noteH,attr_colour);
-prev=inlet_active;}]]></code.krate>
-      </object>
-   </patchobj>
-   <obj type="ctrl/dial p" uuid="cc5d2846c3d50e425f450c4b9851371b54f4d674" name="dial_8" x="378" y="2394">
+   <obj type="ctrl/dial p" uuid="cc5d2846c3d50e425f450c4b9851371b54f4d674" name="z___" x="658" y="2352">
       <params>
-         <frac32.u.map name="value" MidiCC="27" value="30.0">
+         <frac32.u.map name="value" MidiCC="28" value="63.99999952316284">
             <presets>
                <preset index="7">
                   <f v="0.0"/>
@@ -1884,17 +1974,29 @@ prev=inlet_active;}]]></code.krate>
       </params>
       <attribs/>
    </obj>
-   <obj type="math/inv" uuid="565521d3699b36d8095aa1c79b9ad0046fb133ce" name="inv_1" x="448" y="2394">
+   <obj type="ctrl/dial p" uuid="cc5d2846c3d50e425f450c4b9851371b54f4d674" name="dial_8" x="392" y="2366">
+      <params>
+         <frac32.u.map name="value" MidiCC="27" value="43.0">
+            <presets>
+               <preset index="7">
+                  <f v="0.0"/>
+               </preset>
+            </presets>
+         </frac32.u.map>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="math/inv" uuid="565521d3699b36d8095aa1c79b9ad0046fb133ce" name="inv_1" x="462" y="2366">
       <params/>
       <attribs/>
    </obj>
-   <obj type="math/+c" uuid="13eec32bd8ad57dd0bb18a02566cc0a117d320e3" name="+c_1" x="504" y="2394">
+   <obj type="math/+c" uuid="13eec32bd8ad57dd0bb18a02566cc0a117d320e3" name="+c_1" x="518" y="2366">
       <params>
          <frac32.u.map name="c" value="64.0"/>
       </params>
       <attribs/>
    </obj>
-   <obj type="math/div 4" uuid="507955275561b256e540f7205386d31545a2828f" name="div_17" x="560" y="2394">
+   <obj type="math/div 4" uuid="507955275561b256e540f7205386d31545a2828f" name="div_15" x="574" y="2366">
       <params/>
       <attribs/>
    </obj>
@@ -1917,11 +2019,7 @@ prev=inlet_active;}]]></code.krate>
          <dest obj="muls_1" inlet="in"/>
       </net>
       <net>
-         <source obj="muls_1" outlet="out"/>
-         <dest obj="cc_1" inlet="v"/>
-      </net>
-      <net>
-         <source obj="mix_2" outlet="out"/>
+         <source obj="mix_1" outlet="out"/>
          <dest obj="out_1" inlet="wave"/>
       </net>
       <net>
@@ -1931,10 +2029,8 @@ prev=inlet_active;}]]></code.krate>
       </net>
       <net>
          <source obj="delayedpulse_2" outlet="pulse"/>
-         <dest obj="vel_2" inlet="active"/>
-         <dest obj="vel_1" inlet="active"/>
-         <dest obj="vel_3" inlet="active"/>
          <dest obj="vel_4" inlet="active"/>
+         <dest obj="vel_5" inlet="active"/>
       </net>
       <net>
          <source obj="delayedpulseduration_1" outlet="pulse"/>
@@ -1947,7 +2043,6 @@ prev=inlet_active;}]]></code.krate>
       </net>
       <net>
          <source obj="CCinchannelselect_2" outlet="midiCC"/>
-         <dest obj="chart_2" inlet="in"/>
          <dest obj="rising_3" inlet="in"/>
          <dest obj="adsr_3" inlet="gate"/>
          <dest obj="gate_6" inlet="in"/>
@@ -1958,7 +2053,7 @@ prev=inlet_active;}]]></code.krate>
       </net>
       <net>
          <source obj="vca_4" outlet="o"/>
-         <dest obj="mix_2" inlet="in3"/>
+         <dest obj="mix_1" inlet="in3"/>
       </net>
       <net>
          <source obj="start___" outlet="out"/>
@@ -1970,7 +2065,7 @@ prev=inlet_active;}]]></code.krate>
       </net>
       <net>
          <source obj="vca_6" outlet="o"/>
-         <dest obj="mix_2" inlet="in4"/>
+         <dest obj="mix_1" inlet="in4"/>
       </net>
       <net>
          <source obj="x_" outlet="out"/>
@@ -1987,18 +2082,6 @@ prev=inlet_active;}]]></code.krate>
       <net>
          <source obj="y_" outlet="out"/>
          <dest obj="+_2" inlet="in1"/>
-      </net>
-      <net>
-         <source obj="dial_3" outlet="out"/>
-         <dest obj="div_7" inlet="in"/>
-      </net>
-      <net>
-         <source obj="div_7" outlet="out"/>
-         <dest obj="to_2" inlet="i"/>
-      </net>
-      <net>
-         <source obj="to_2" outlet="o"/>
-         <dest obj="beatmachine_2" inlet="beat"/>
       </net>
       <net>
          <source obj="rate_" outlet="out"/>
@@ -2031,7 +2114,6 @@ prev=inlet_active;}]]></code.krate>
       </net>
       <net>
          <source obj="CCinchannelselect_6" outlet="midiCC"/>
-         <dest obj="chart_3" inlet="in"/>
          <dest obj="rising_2" inlet="in"/>
          <dest obj="gate_4" inlet="in"/>
          <dest obj="adsr_2" inlet="gate"/>
@@ -2049,39 +2131,15 @@ prev=inlet_active;}]]></code.krate>
          <dest obj="vca_9" inlet="v"/>
       </net>
       <net>
-         <source obj="x__" outlet="out"/>
-         <dest obj="div_12" inlet="in"/>
-      </net>
-      <net>
-         <source obj="z__" outlet="out"/>
-         <dest obj="div_15" inlet="in"/>
-      </net>
-      <net>
-         <source obj="div_12" outlet="out"/>
-         <dest obj="+_4" inlet="in2"/>
-      </net>
-      <net>
          <source obj="y__" outlet="out"/>
          <dest obj="+_5" inlet="in1"/>
       </net>
       <net>
-         <source obj="dial_5" outlet="out"/>
-         <dest obj="div_11" inlet="in"/>
-      </net>
-      <net>
-         <source obj="div_11" outlet="out"/>
-         <dest obj="to_3" inlet="i"/>
-      </net>
-      <net>
-         <source obj="to_3" outlet="o"/>
-         <dest obj="beatmachine_3" inlet="beat"/>
-      </net>
-      <net>
          <source obj="CCinchannelselect_7" outlet="midiCC"/>
-         <dest obj="div_13" inlet="in"/>
+         <dest obj="div_12" inlet="in"/>
       </net>
       <net>
-         <source obj="div_13" outlet="out"/>
+         <source obj="div_12" outlet="out"/>
          <dest obj="+_4" inlet="in1"/>
       </net>
       <net>
@@ -2101,14 +2159,13 @@ prev=inlet_active;}]]></code.krate>
          <dest obj="+_5" inlet="in2"/>
       </net>
       <net>
-         <source obj="beatmachine_4" outlet="out"/>
+         <source obj="bytebeatmod_2" outlet="out"/>
          <dest obj="vca_11" inlet="a"/>
          <dest obj="vca_12" inlet="a"/>
          <dest obj="scope_4" inlet="in"/>
       </net>
       <net>
          <source obj="CCinchannelselect_10" outlet="midiCC"/>
-         <dest obj="chart_4" inlet="in"/>
          <dest obj="adsr_1" inlet="gate"/>
          <dest obj="gate_1" inlet="in"/>
          <dest obj="rising_1" inlet="in"/>
@@ -2134,18 +2191,6 @@ prev=inlet_active;}]]></code.krate>
          <dest obj="inv_1" inlet="in"/>
       </net>
       <net>
-         <source obj="dial_7" outlet="out"/>
-         <dest obj="div_18" inlet="in"/>
-      </net>
-      <net>
-         <source obj="div_18" outlet="out"/>
-         <dest obj="to_4" inlet="i"/>
-      </net>
-      <net>
-         <source obj="to_4" outlet="o"/>
-         <dest obj="beatmachine_4" inlet="beat"/>
-      </net>
-      <net>
          <source obj="dial_9" outlet="out"/>
          <dest obj="+_9" inlet="in1"/>
       </net>
@@ -2155,15 +2200,15 @@ prev=inlet_active;}]]></code.krate>
       </net>
       <net>
          <source obj="CCinchannelselect_11" outlet="midiCC"/>
-         <dest obj="div_19" inlet="in"/>
+         <dest obj="div_14" inlet="in"/>
       </net>
       <net>
-         <source obj="div_19" outlet="out"/>
+         <source obj="div_14" outlet="out"/>
          <dest obj="+_7" inlet="in1"/>
       </net>
       <net>
          <source obj="+_8" outlet="out"/>
-         <dest obj="beatmachine_4" inlet="y"/>
+         <dest obj="bytebeatmod_2" inlet="y"/>
       </net>
       <net>
          <source obj="CCinchannelselect_12" outlet="midiCC"/>
@@ -2171,27 +2216,27 @@ prev=inlet_active;}]]></code.krate>
       </net>
       <net>
          <source obj="vca_7" outlet="o"/>
-         <dest obj="mix_2" inlet="in5"/>
+         <dest obj="mix_1" inlet="in5"/>
       </net>
       <net>
          <source obj="vca_9" outlet="o"/>
-         <dest obj="mix_2" inlet="in6"/>
+         <dest obj="mix_1" inlet="in6"/>
       </net>
       <net>
          <source obj="vca_12" outlet="o"/>
-         <dest obj="mix_2" inlet="in8"/>
+         <dest obj="mix_1" inlet="in8"/>
       </net>
       <net>
          <source obj="+_7" outlet="out"/>
-         <dest obj="beatmachine_4" inlet="x"/>
+         <dest obj="bytebeatmod_2" inlet="x"/>
       </net>
       <net>
          <source obj="+c_1" outlet="out"/>
-         <dest obj="div_17" inlet="in"/>
+         <dest obj="div_15" inlet="in"/>
       </net>
       <net>
-         <source obj="div_17" outlet="out"/>
-         <dest obj="beatmachine_4" inlet="divider"/>
+         <source obj="div_15" outlet="out"/>
+         <dest obj="bytebeatmod_2" inlet="divider"/>
       </net>
       <net>
          <source obj="CCinchannelselect_13" outlet="midiCC"/>
@@ -2199,7 +2244,7 @@ prev=inlet_active;}]]></code.krate>
       </net>
       <net>
          <source obj="z___" outlet="out"/>
-         <dest obj="beatmachine_4" inlet="z"/>
+         <dest obj="bytebeatmod_2" inlet="z"/>
       </net>
       <net>
          <source obj="start_______" outlet="out"/>
@@ -2207,15 +2252,14 @@ prev=inlet_active;}]]></code.krate>
       </net>
       <net>
          <source obj="vca_10" outlet="o"/>
-         <dest obj="mix_2" inlet="in7"/>
+         <dest obj="mix_1" inlet="in7"/>
       </net>
       <net>
          <source obj="adsr_1" outlet="env"/>
-         <dest obj="chart_5" inlet="in"/>
          <dest obj="gate_2" inlet="in"/>
       </net>
       <net>
-         <source obj="toggleEnv4" outlet="outlet_1"/>
+         <source obj="toggleEnv4" outlet="envelopetoggle"/>
          <dest obj="gate_1" inlet="control"/>
          <dest obj="inv_2" inlet="i"/>
       </net>
@@ -2237,15 +2281,15 @@ prev=inlet_active;}]]></code.krate>
       </net>
       <net>
          <source obj="rising_1" outlet="trig"/>
-         <dest obj="beatmachine_4" inlet="rst"/>
          <dest obj="show triggers" inlet="tr4"/>
+         <dest obj="or_1" inlet="i2"/>
       </net>
       <net>
          <source obj="+_9" outlet="out"/>
-         <dest obj="beatmachine_4" inlet="rate"/>
+         <dest obj="bytebeatmod_2" inlet="rate"/>
       </net>
       <net>
-         <source obj="toggleEnv4_" outlet="outlet_1"/>
+         <source obj="toggleEnv3" outlet="envelopetoggle"/>
          <dest obj="gate_4" inlet="control"/>
          <dest obj="inv_3" inlet="i"/>
       </net>
@@ -2271,16 +2315,12 @@ prev=inlet_active;}]]></code.krate>
       </net>
       <net>
          <source obj="rising_2" outlet="trig"/>
-         <dest obj="beatmachine_3" inlet="rst"/>
          <dest obj="show triggers" inlet="tr3"/>
+         <dest obj="or_2" inlet="i2"/>
       </net>
       <net>
          <source obj="rate__" outlet="out"/>
          <dest obj="+_6" inlet="in1"/>
-      </net>
-      <net>
-         <source obj="div_15" outlet="out"/>
-         <dest obj="beatmachine_3" inlet="z"/>
       </net>
       <net>
          <source obj="inv_4" outlet="out"/>
@@ -2288,14 +2328,14 @@ prev=inlet_active;}]]></code.krate>
       </net>
       <net>
          <source obj="+c_2" outlet="out"/>
-         <dest obj="div_20" inlet="in"/>
+         <dest obj="div_13" inlet="in"/>
       </net>
       <net>
          <source obj="dial_6" outlet="out"/>
          <dest obj="inv_4" inlet="in"/>
       </net>
       <net>
-         <source obj="div_20" outlet="out"/>
+         <source obj="div_13" outlet="out"/>
          <dest obj="beatmachine_3" inlet="divider"/>
       </net>
       <net>
@@ -2304,14 +2344,14 @@ prev=inlet_active;}]]></code.krate>
       </net>
       <net>
          <source obj="+c_3" outlet="out"/>
-         <dest obj="div_21" inlet="in"/>
+         <dest obj="div_10" inlet="in"/>
       </net>
       <net>
          <source obj="dial_4" outlet="out"/>
          <dest obj="inv_5" inlet="in"/>
       </net>
       <net>
-         <source obj="div_21" outlet="out"/>
+         <source obj="div_10" outlet="out"/>
          <dest obj="beatmachine_2" inlet="divider"/>
       </net>
       <net>
@@ -2323,7 +2363,7 @@ prev=inlet_active;}]]></code.krate>
          <dest obj="beatmachine_2" inlet="rate"/>
       </net>
       <net>
-         <source obj="toggleEnv4__" outlet="outlet_1"/>
+         <source obj="toggleEnv2" outlet="envelopetoggle"/>
          <dest obj="gate_6" inlet="control"/>
          <dest obj="inv_6" inlet="i"/>
       </net>
@@ -2341,8 +2381,8 @@ prev=inlet_active;}]]></code.krate>
       </net>
       <net>
          <source obj="rising_3" outlet="trig"/>
-         <dest obj="beatmachine_2" inlet="rst"/>
          <dest obj="show triggers" inlet="tr2"/>
+         <dest obj="or_3" inlet="i2"/>
       </net>
       <net>
          <source obj="adsr_3" outlet="env"/>
@@ -2379,7 +2419,6 @@ prev=inlet_active;}]]></code.krate>
       </net>
       <net>
          <source obj="CCinchannelselect_14" outlet="midiCC"/>
-         <dest obj="chart_6" inlet="in"/>
          <dest obj="rising_4" inlet="in"/>
          <dest obj="adsr_4" inlet="gate"/>
          <dest obj="gate_8" inlet="in"/>
@@ -2398,14 +2437,14 @@ prev=inlet_active;}]]></code.krate>
       </net>
       <net>
          <source obj="x____" outlet="out"/>
-         <dest obj="div_14" inlet="in"/>
+         <dest obj="div_3" inlet="in"/>
       </net>
       <net>
          <source obj="z____" outlet="out"/>
-         <dest obj="div_16" inlet="in"/>
+         <dest obj="div_8" inlet="in"/>
       </net>
       <net>
-         <source obj="div_14" outlet="out"/>
+         <source obj="div_3" outlet="out"/>
          <dest obj="+_14" inlet="in2"/>
       </net>
       <net>
@@ -2413,27 +2452,15 @@ prev=inlet_active;}]]></code.krate>
          <dest obj="+_16" inlet="in1"/>
       </net>
       <net>
-         <source obj="dial_10" outlet="out"/>
-         <dest obj="div_8" inlet="in"/>
-      </net>
-      <net>
-         <source obj="div_8" outlet="out"/>
-         <dest obj="to_5" inlet="i"/>
-      </net>
-      <net>
-         <source obj="to_5" outlet="o"/>
-         <dest obj="beatmachine_5" inlet="beat"/>
-      </net>
-      <net>
          <source obj="rate___" outlet="out"/>
          <dest obj="+_15" inlet="in1"/>
       </net>
       <net>
          <source obj="CCinchannelselect_15" outlet="midiCC"/>
-         <dest obj="div_10" inlet="in"/>
+         <dest obj="div_1" inlet="in"/>
       </net>
       <net>
-         <source obj="div_10" outlet="out"/>
+         <source obj="div_1" outlet="out"/>
          <dest obj="+_14" inlet="in1"/>
       </net>
       <net>
@@ -2454,28 +2481,23 @@ prev=inlet_active;}]]></code.krate>
       </net>
       <net>
          <source obj="+c_4" outlet="out"/>
-         <dest obj="div_22" inlet="in"/>
+         <dest obj="div_4" inlet="in"/>
       </net>
       <net>
          <source obj="dial_11" outlet="out"/>
          <dest obj="inv_8" inlet="in"/>
       </net>
       <net>
-         <source obj="div_22" outlet="out"/>
+         <source obj="div_4" outlet="out"/>
          <dest obj="beatmachine_5" inlet="divider"/>
       </net>
       <net>
-         <source obj="div_16" outlet="out"/>
+         <source obj="div_8" outlet="out"/>
          <dest obj="beatmachine_5" inlet="z"/>
       </net>
       <net>
          <source obj="+_15" outlet="out"/>
          <dest obj="beatmachine_5" inlet="rate"/>
-      </net>
-      <net>
-         <source obj="toggleEnv4___" outlet="outlet_1"/>
-         <dest obj="gate_8" inlet="control"/>
-         <dest obj="inv_7" inlet="i"/>
       </net>
       <net>
          <source obj="inv_7" outlet="o"/>
@@ -2491,9 +2513,8 @@ prev=inlet_active;}]]></code.krate>
       </net>
       <net>
          <source obj="rising_4" outlet="trig"/>
-         <dest obj="beatmachine_5" inlet="rst"/>
-         <dest obj="boolms_1" inlet="trig"/>
          <dest obj="show triggers" inlet="tr1"/>
+         <dest obj="or_4" inlet="i2"/>
       </net>
       <net>
          <source obj="adsr_4" outlet="env"/>
@@ -2513,15 +2534,92 @@ prev=inlet_active;}]]></code.krate>
       </net>
       <net>
          <source obj="vca_13" outlet="o"/>
-         <dest obj="mix_2" inlet="in1"/>
+         <dest obj="mix_1" inlet="in1"/>
       </net>
       <net>
          <source obj="vca_15" outlet="o"/>
-         <dest obj="mix_2" inlet="in2"/>
+         <dest obj="mix_1" inlet="in2"/>
       </net>
       <net>
          <source obj="show triggers" outlet="outlet_1"/>
          <dest obj="bool_1" inlet="in"/>
+      </net>
+      <net>
+         <source obj="z__" outlet="out"/>
+         <dest obj="beatmachine_3" inlet="z"/>
+      </net>
+      <net>
+         <source obj="x__" outlet="out"/>
+         <dest obj="+_4" inlet="in2"/>
+      </net>
+      <net>
+         <source obj="beatselector CH7" outlet="outlet_1"/>
+         <dest obj="bytebeatmod_2" inlet="beat"/>
+      </net>
+      <net>
+         <source obj="dial_1" outlet="out"/>
+         <dest obj="adsr_1" inlet="r"/>
+      </net>
+      <net>
+         <source obj="toggleEnv4" outlet="trigger"/>
+         <dest obj="or_1" inlet="i1"/>
+      </net>
+      <net>
+         <source obj="or_1" outlet="o"/>
+         <dest obj="bytebeatmod_2" inlet="rst"/>
+      </net>
+      <net>
+         <source obj="toggleEnv3" outlet="trigger"/>
+         <dest obj="or_2" inlet="i1"/>
+      </net>
+      <net>
+         <source obj="or_2" outlet="o"/>
+         <dest obj="beatmachine_3" inlet="rst"/>
+      </net>
+      <net>
+         <source obj="beatselector CH7_" outlet="outlet_1"/>
+         <dest obj="beatmachine_3" inlet="beat"/>
+      </net>
+      <net>
+         <source obj="dial_2" outlet="out"/>
+         <dest obj="adsr_2" inlet="r"/>
+      </net>
+      <net>
+         <source obj="toggleEnv2" outlet="trigger"/>
+         <dest obj="or_3" inlet="i1"/>
+      </net>
+      <net>
+         <source obj="or_3" outlet="o"/>
+         <dest obj="beatmachine_2" inlet="rst"/>
+      </net>
+      <net>
+         <source obj="dial_3" outlet="out"/>
+         <dest obj="adsr_3" inlet="r"/>
+      </net>
+      <net>
+         <source obj="beatselector CH7__" outlet="outlet_1"/>
+         <dest obj="beatmachine_2" inlet="beat"/>
+      </net>
+      <net>
+         <source obj="toggleEnv1" outlet="trigger"/>
+         <dest obj="or_4" inlet="i1"/>
+      </net>
+      <net>
+         <source obj="or_4" outlet="o"/>
+         <dest obj="beatmachine_5" inlet="rst"/>
+      </net>
+      <net>
+         <source obj="toggleEnv1" outlet="envelopetoggle"/>
+         <dest obj="inv_7" inlet="i"/>
+         <dest obj="gate_8" inlet="control"/>
+      </net>
+      <net>
+         <source obj="dial_5" outlet="out"/>
+         <dest obj="adsr_4" inlet="r"/>
+      </net>
+      <net>
+         <source obj="beatselector CH7___" outlet="outlet_1"/>
+         <dest obj="beatmachine_5" inlet="beat"/>
       </net>
    </nets>
    <settings>
@@ -2531,13 +2629,12 @@ prev=inlet_active;}]]></code.krate>
       <NPresetEntries>32</NPresetEntries>
       <NModulationSources>8</NModulationSources>
       <NModulationTargetsPerSource>8</NModulationTargetsPerSource>
-      <Author></Author>
    </settings>
    <notes><![CDATA[]]></notes>
    <windowPos>
-      <x>0</x>
+      <x>300</x>
       <y>23</y>
-      <width>1920</width>
-      <height>1177</height>
+      <width>1276</width>
+      <height>1032</height>
    </windowPos>
 </patch-1.0>

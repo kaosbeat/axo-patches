@@ -54,6 +54,10 @@
    <comment type="patch/comment" x="1302" y="350" text="once the global transport reaches zero."/>
    <comment type="patch/comment" x="798" y="364" text="recording will continue until the global transport reaches the point where you started recording."/>
    <comment type="patch/comment" x="1302" y="364" text="SPEED - playback speed of the loop.expermiment with SPEED and ZERO RESET!"/>
+   <obj type="patchlauncher3" uuid="477bb144-73de-48d3-812d-157af1864f47" name="obj_5" x="462" y="378">
+      <params/>
+      <attribs/>
+   </obj>
    <obj type="midinotechannel" uuid="ce92dba9-ed3a-41e2-88f0-fac388aa1454" name="midinotechannel_1" x="1022" y="420">
       <params/>
       <attribs>
@@ -73,10 +77,6 @@
       <attribs/>
    </obj>
    <obj type="rbrt/seq/timepoint" uuid="d6216495-05eb-4ea8-aed3-b39555b53dba" name="timepoint_1" x="2114" y="434">
-      <params/>
-      <attribs/>
-   </obj>
-   <obj type="patchlauncher16" uuid="c07b1396-4f26-43a0-b37a-eb335ffe66b2" name="patchlauncher" x="448" y="448">
       <params/>
       <attribs/>
    </obj>
@@ -136,7 +136,7 @@
       <params/>
       <attribs/>
    </obj>
-   <patcher type="patch/patcher" uuid="fd03d117-1f1d-45ac-b023-cf68f5ed1635" name="scale transport tempo" x="1876" y="518">
+   <patcher type="patch/patcher" uuid="42103cfb-d196-41a2-b0b5-de1d66fe0f9d" name="scale transport tempo" x="1876" y="518">
       <params/>
       <attribs/>
       <subpatch appVersion="1.0.12">
@@ -352,7 +352,7 @@
       <params/>
       <attribs/>
    </obj>
-   <patcher type="patch/patcher" uuid="7231afc6-545a-459b-b1ad-ec530ce213dc" name="toggleplay1" x="1036" y="532">
+   <patcher type="patch/patcher" uuid="10d4fbd1-326f-414b-8ebf-e8a4b9f4931c" name="toggleplay1" x="1036" y="532">
       <params/>
       <attribs/>
       <subpatch appVersion="1.0.12">
@@ -420,7 +420,7 @@
          </windowPos>
       </subpatch>
    </patcher>
-   <patcher type="patch/patcher" uuid="a19654c3-b717-482f-b37a-1c15bb309b45" name="zeroreset" x="1134" y="532">
+   <patcher type="patch/patcher" uuid="0d58ab27-08ff-4f21-8140-85b4b54551c3" name="zeroreset" x="1134" y="532">
       <params/>
       <attribs/>
       <subpatch appVersion="1.0.12">
@@ -489,7 +489,7 @@
          </windowPos>
       </subpatch>
    </patcher>
-   <patcher type="patch/patcher" uuid="15cffc2f-851e-4b0e-920c-580f7bd32d7b" name="toggleplay2" x="1274" y="532">
+   <patcher type="patch/patcher" uuid="c3c62f19-3a92-4c0b-904b-57e6a68ba833" name="toggleplay2" x="1274" y="532">
       <params/>
       <attribs/>
       <subpatch appVersion="1.0.12">
@@ -557,7 +557,7 @@
          </windowPos>
       </subpatch>
    </patcher>
-   <patcher type="patch/patcher" uuid="69f9dcde-2596-42a6-af9b-98d5ae2b299f" name="zeroreset2" x="1358" y="532">
+   <patcher type="patch/patcher" uuid="9cc35b1b-2515-496b-9e09-784d434ab6e5" name="zeroreset2" x="1358" y="532">
       <params/>
       <attribs/>
       <subpatch appVersion="1.0.12">
@@ -636,7 +636,7 @@
       <params/>
       <attribs/>
    </obj>
-   <patcher type="patch/patcher" uuid="9ce6a0bb-b8b0-4680-a90d-e38d80752c99" name="RECORD" x="896" y="560">
+   <patcher type="patch/patcher" uuid="3717bff4-d76d-491b-a76d-b936d1a2fd70" name="RECORD" x="896" y="560">
       <params/>
       <attribs/>
       <subpatch appVersion="1.0.12">
@@ -751,7 +751,7 @@
       <attribs/>
    </obj>
    <comment type="patch/comment" x="896" y="644" text="MASTER/SLAVE"/>
-   <patcher type="patch/patcher" uuid="cc3fa059-19c4-462e-ac1c-a9c27e38998b" name="masterslave" x="896" y="658">
+   <patcher type="patch/patcher" uuid="43fcee33-6870-4efa-aa85-810ff4c9d4cc" name="masterslave" x="896" y="658">
       <params/>
       <attribs/>
       <subpatch appVersion="1.0.12">
@@ -866,7 +866,7 @@
       </params>
       <attribs/>
    </obj>
-   <patcher type="patch/patcher" uuid="ad4cd05e-3ee3-4e0d-98c9-eee098be32ae" name="toggleplay3" x="1008" y="714">
+   <patcher type="patch/patcher" uuid="ed464c1a-347a-4a8e-a777-738b68d7266d" name="toggleplay3" x="1008" y="714">
       <params/>
       <attribs/>
       <subpatch appVersion="1.0.12">
@@ -934,7 +934,7 @@
          </windowPos>
       </subpatch>
    </patcher>
-   <patcher type="patch/patcher" uuid="b2b0ee7b-b641-4a34-8544-4dafc931ffb9" name="zeroreset3" x="1092" y="714">
+   <patcher type="patch/patcher" uuid="ab513cd0-5c70-466d-bd4f-0bdee8212b94" name="zeroreset3" x="1092" y="714">
       <params/>
       <attribs/>
       <subpatch appVersion="1.0.12">
@@ -1003,7 +1003,7 @@
          </windowPos>
       </subpatch>
    </patcher>
-   <patcher type="patch/patcher" uuid="665f028b-ccf5-46d9-8fc5-b467ec757857" name="toggleplay4" x="1246" y="714">
+   <patcher type="patch/patcher" uuid="26c30971-daf3-417e-aa2b-3137c9ec9681" name="toggleplay4" x="1246" y="714">
       <params/>
       <attribs/>
       <subpatch appVersion="1.0.12">
@@ -1071,7 +1071,7 @@
          </windowPos>
       </subpatch>
    </patcher>
-   <patcher type="patch/patcher" uuid="3e229f87-635b-4356-bdfb-8d80952ca702" name="zeroreset4" x="1330" y="714">
+   <patcher type="patch/patcher" uuid="f101caa4-e2b8-488d-af9e-4fc911b4dc67" name="zeroreset4" x="1330" y="714">
       <params/>
       <attribs/>
       <subpatch appVersion="1.0.12">
@@ -1149,7 +1149,7 @@
       </attribs>
    </obj>
    <comment type="patch/comment" x="896" y="742" text="RECORDING MODE"/>
-   <patcher type="patch/patcher" uuid="6d05e685-d9f0-4a09-a636-d48b5ae89e46" name="Target Slot" x="896" y="742">
+   <patcher type="patch/patcher" uuid="fe7db7db-da51-4d06-bc92-42a3caf68484" name="Target Slot" x="896" y="742">
       <params/>
       <attribs/>
       <subpatch appVersion="1.0.12">
@@ -1550,7 +1550,7 @@
          <objref attributeName="table" obj="rec"/>
       </attribs>
    </obj>
-   <patcher type="patch/patcher" uuid="84944cb8-3b1e-4757-9a7a-9c17e35e50df" name="master display" x="1092" y="910">
+   <patcher type="patch/patcher" uuid="e3c7ae75-1c2a-46bc-981e-f9a91f53d53c" name="master display" x="1092" y="910">
       <params/>
       <attribs/>
       <subpatch appVersion="1.0.12">
@@ -2644,12 +2644,11 @@ prev=inlet_active;}]]></code.krate>
       <NPresetEntries>32</NPresetEntries>
       <NModulationSources>8</NModulationSources>
       <NModulationTargetsPerSource>8</NModulationTargetsPerSource>
-      <Author></Author>
    </settings>
    <notes><![CDATA[]]></notes>
    <windowPos>
-      <x>39</x>
-      <y>119</y>
+      <x>73</x>
+      <y>51</y>
       <width>1822</width>
       <height>1059</height>
    </windowPos>

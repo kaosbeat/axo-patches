@@ -185,7 +185,7 @@
    </obj>
    <comment type="patch/comment" x="686" y="504" text="make sure to keep this field populated!"/>
    <comment type="patch/comment" x="602" y="518" text="((t&amp;32*z)?((t*(t^t%y*2)|(t&gt;&gt;4))&gt;&gt;1):(t&gt;&gt;3)|((t&amp;8192)?t&lt;&lt;x:t))"/>
-   <patcher type="patch/patcher" uuid="d4ffb3a2-f1da-4ebd-9dfe-9d3c446c2cb6" name="noise_1" x="882" y="532">
+   <patcher type="patch/patcher" uuid="b739fc48-3474-454b-8c07-762c865b6b0e" name="noise_1" x="882" y="532">
       <params>
          <frac32.u.map name="Treshold" value="15.5"/>
          <frac32.s.map name="envelope:a" value="-33.0"/>
@@ -251,10 +251,6 @@
       </subpatch>
    </patcher>
    <comment type="patch/comment" x="602" y="546" text="(t&gt;&gt;x*5)*((t&amp;1*y)+(t&gt;&gt;1*z))"/>
-   <obj type="audio/out right" uuid="e58a4cbbb087052c5480366e3f5d3a04aa319777" name="out_2" x="1218" y="560">
-      <params/>
-      <attribs/>
-   </obj>
    <obj type="ctrl/dial p" uuid="cc5d2846c3d50e425f450c4b9851371b54f4d674" name="z" x="434" y="588">
       <params>
          <frac32.u.map name="value" MidiCC="50" value="61.0"/>
@@ -265,7 +261,7 @@
       <params/>
       <attribs/>
    </obj>
-   <patcher type="patch/patcher" uuid="b90fbe4a-c5f1-473a-8d4b-3a687258e09b" name="obj_1" x="1162" y="700">
+   <patcher type="patch/patcher" uuid="65d52020-f5d4-4996-ba67-842dce696a20" name="obj_1" x="1162" y="672">
       <params>
          <frac32.s.map name="freq 1" value="-22.0"/>
          <frac32.s.map name="noise decay" value="-25.0"/>
@@ -478,6 +474,10 @@
       <params>
          <frac32.u.map name="amp" onParent="true" value="64.0"/>
       </params>
+      <attribs/>
+   </obj>
+   <obj type="audio/out right" uuid="e58a4cbbb087052c5480366e3f5d3a04aa319777" name="out_2" x="1330" y="784">
+      <params/>
       <attribs/>
    </obj>
    <obj type="env/d m" uuid="85e82f54dfc28839d300cda777af8907ae2a28d0" name="decay" x="252" y="952">
@@ -699,12 +699,11 @@
       <NPresetEntries>32</NPresetEntries>
       <NModulationSources>8</NModulationSources>
       <NModulationTargetsPerSource>8</NModulationTargetsPerSource>
-      <Author></Author>
    </settings>
    <notes><![CDATA[]]></notes>
    <windowPos>
-      <x>189</x>
-      <y>25</y>
+      <x>302</x>
+      <y>23</y>
       <width>1618</width>
       <height>1177</height>
    </windowPos>
