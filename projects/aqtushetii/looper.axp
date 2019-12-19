@@ -82,13 +82,13 @@
    </obj>
    <obj type="ctrl/dial b" uuid="862e7d7f29093cb1ce4aed72244d118ad4d46692" name="SPEED1" x="1134" y="448">
       <params>
-         <frac32.s.map name="value" MidiCC="13" value="-40.0"/>
+         <frac32.s.map name="value" MidiCC="13" value="-1.0"/>
       </params>
       <attribs/>
    </obj>
    <obj type="ctrl/dial b" uuid="862e7d7f29093cb1ce4aed72244d118ad4d46692" name="SPEED2" x="1372" y="448">
       <params>
-         <frac32.s.map name="value" MidiCC="15" value="63.99999952316284"/>
+         <frac32.s.map name="value" MidiCC="15" value="-33.0"/>
       </params>
       <attribs/>
    </obj>
@@ -98,7 +98,7 @@
    </obj>
    <obj type="rbrt/looper/ldrive loop" uuid="50a04ed3-8ca2-4cfb-ab23-e53c0e8cbbf4" name="ldrive_1" x="2646" y="462">
       <params>
-         <frac32.s.map name="speed" value="0.0"/>
+         <frac32.s.map name="speed" MidiCC="14" value="58.0"/>
       </params>
       <attribs>
          <objref attributeName="table" obj="rec"/>
@@ -109,6 +109,25 @@
       <attribs>
          <objref attributeName="table" obj="rec"/>
       </attribs>
+   </obj>
+   <obj type="sptnk/effect/bitcrusher s m" uuid="91d5af62-a47b-4fff-9648-57c96701da38" name="bitcrusher_1" x="2954" y="462">
+      <params>
+         <int32 name="bits" value="1"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="jt/fx/bode" uuid="422a756e-1b91-4750-bcdb-5f2e4d577507" name="obj_6" x="3108" y="462">
+      <params>
+         <frac32.s.map name="pitch" MidiCC="30" value="-8.0"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="filter/lp svf" uuid="2003da6360b4fdb967cd635e9f6544e832fd522e" name="lp_1" x="3234" y="462">
+      <params>
+         <frac32.s.map name="pitch" MidiCC="49" value="0.0"/>
+         <frac32.u.map name="reso" MidiCC="50" value="47.5"/>
+      </params>
+      <attribs/>
    </obj>
    <obj type="ctrl/i" uuid="a3786816db6ea5bc6ac4193a5cccdb2c83b83496" name="SECONDS" x="1708" y="476">
       <params>
@@ -136,7 +155,7 @@
       <params/>
       <attribs/>
    </obj>
-   <patcher type="patch/patcher" uuid="42103cfb-d196-41a2-b0b5-de1d66fe0f9d" name="scale transport tempo" x="1876" y="518">
+   <patcher type="patch/patcher" uuid="5adefb8c-2168-418c-8801-6eaccd7fb917" name="scale transport tempo" x="1876" y="518">
       <params/>
       <attribs/>
       <subpatch appVersion="1.0.12">
@@ -348,11 +367,7 @@
          <spinner attributeName="offset" value="0"/>
       </attribs>
    </obj>
-   <obj type="math/+" uuid="faedbea4612d9bd3644d6d3bf31946d848a70e19" name="+_1" x="3500" y="518">
-      <params/>
-      <attribs/>
-   </obj>
-   <patcher type="patch/patcher" uuid="10d4fbd1-326f-414b-8ebf-e8a4b9f4931c" name="toggleplay1" x="1036" y="532">
+   <patcher type="patch/patcher" uuid="06495e10-897d-41db-939f-86aae44427ee" name="toggleplay1" x="1036" y="532">
       <params/>
       <attribs/>
       <subpatch appVersion="1.0.12">
@@ -420,7 +435,7 @@
          </windowPos>
       </subpatch>
    </patcher>
-   <patcher type="patch/patcher" uuid="0d58ab27-08ff-4f21-8140-85b4b54551c3" name="zeroreset" x="1134" y="532">
+   <patcher type="patch/patcher" uuid="da5a55ea-56fd-4801-af45-856c92f22762" name="zeroreset" x="1134" y="532">
       <params/>
       <attribs/>
       <subpatch appVersion="1.0.12">
@@ -489,7 +504,7 @@
          </windowPos>
       </subpatch>
    </patcher>
-   <patcher type="patch/patcher" uuid="c3c62f19-3a92-4c0b-904b-57e6a68ba833" name="toggleplay2" x="1274" y="532">
+   <patcher type="patch/patcher" uuid="f5ff8032-5b42-4bf8-877b-b275c0e655c5" name="toggleplay2" x="1274" y="532">
       <params/>
       <attribs/>
       <subpatch appVersion="1.0.12">
@@ -557,7 +572,7 @@
          </windowPos>
       </subpatch>
    </patcher>
-   <patcher type="patch/patcher" uuid="9cc35b1b-2515-496b-9e09-784d434ab6e5" name="zeroreset2" x="1358" y="532">
+   <patcher type="patch/patcher" uuid="8c2e0c2c-2adb-4ec7-b961-e8b648f93d00" name="zeroreset2" x="1358" y="532">
       <params/>
       <attribs/>
       <subpatch appVersion="1.0.12">
@@ -632,11 +647,25 @@
          <spinner attributeName="value" value="48000"/>
       </attribs>
    </obj>
+   <obj type="ctrl/dial p" uuid="cc5d2846c3d50e425f450c4b9851371b54f4d674" name="dial_4" x="2954" y="532">
+      <params>
+         <frac32.u.map name="value" MidiCC="29" value="63.99999952316284"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="math/div 8" uuid="4a6007f5cb2024c50e8449b3bb6bcaef6ac42edb" name="div_2" x="2996" y="532">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="conv/to i" uuid="305966430ee86b5c3b8e18cde0c721657c558a87" name="to_1" x="3038" y="532">
+      <params/>
+      <attribs/>
+   </obj>
    <obj type="disp/dial p" uuid="44fd18b562e434b3230441681132dbeabb15cdc5" name="REC REMAIN" x="826" y="560">
       <params/>
       <attribs/>
    </obj>
-   <patcher type="patch/patcher" uuid="3717bff4-d76d-491b-a76d-b936d1a2fd70" name="RECORD" x="896" y="560">
+   <patcher type="patch/patcher" uuid="0a52c9ec-2560-4ae7-b5ac-7d445371ba1e" name="RECORD" x="896" y="560">
       <params/>
       <attribs/>
       <subpatch appVersion="1.0.12">
@@ -710,10 +739,6 @@
          </windowPos>
       </subpatch>
    </patcher>
-   <obj type="audio/out stereo" uuid="a1ca7a567f535acc21055669829101d3ee7f0189" name="out_1" x="3584" y="560">
-      <params/>
-      <attribs/>
-   </obj>
    <obj type="ctrl/i" uuid="a3786816db6ea5bc6ac4193a5cccdb2c83b83496" name="SCALE UP" x="1708" y="588">
       <params>
          <int32 name="value" value="0"/>
@@ -746,12 +771,12 @@
    </obj>
    <obj type="ctrl/dial b" uuid="862e7d7f29093cb1ce4aed72244d118ad4d46692" name="SPEED4" x="1330" y="630">
       <params>
-         <frac32.s.map name="value" MidiCC="19" value="63.99999952316284"/>
+         <frac32.s.map name="value" MidiCC="19" value="0.0"/>
       </params>
       <attribs/>
    </obj>
    <comment type="patch/comment" x="896" y="644" text="MASTER/SLAVE"/>
-   <patcher type="patch/patcher" uuid="43fcee33-6870-4efa-aa85-810ff4c9d4cc" name="masterslave" x="896" y="658">
+   <patcher type="patch/patcher" uuid="096209e4-28af-45f6-b39d-3bfade3deafa" name="masterslave" x="896" y="658">
       <params/>
       <attribs/>
       <subpatch appVersion="1.0.12">
@@ -841,7 +866,7 @@
    </obj>
    <obj type="rbrt/looper/ldrive loop" uuid="50a04ed3-8ca2-4cfb-ab23-e53c0e8cbbf4" name="ldrive_2" x="2646" y="672">
       <params>
-         <frac32.s.map name="speed" value="0.0"/>
+         <frac32.s.map name="speed" MidiCC="16" value="0.0"/>
       </params>
       <attribs>
          <objref attributeName="table" obj="rec"/>
@@ -853,20 +878,30 @@
          <objref attributeName="table" obj="rec"/>
       </attribs>
    </obj>
+   <obj type="sptnk/effect/bitcrusher s m" uuid="91d5af62-a47b-4fff-9648-57c96701da38" name="bitcrusher_2" x="2954" y="672">
+      <params>
+         <int32 name="bits" value="1"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="jt/fx/bode" uuid="422a756e-1b91-4750-bcdb-5f2e4d577507" name="obj_7" x="3108" y="672">
+      <params>
+         <frac32.s.map name="pitch" MidiCC="32" value="-7.0"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="filter/lp svf" uuid="2003da6360b4fdb967cd635e9f6544e832fd522e" name="lp_2" x="3234" y="672">
+      <params>
+         <frac32.s.map name="pitch" MidiCC="51" value="-23.0"/>
+         <frac32.u.map name="reso" MidiCC="52" value="19.5"/>
+      </params>
+      <attribs/>
+   </obj>
    <obj type="disp/i" uuid="5e35fd0c62d81e70017289250cf28edd26e19e4a" name="i_1" x="784" y="700">
       <params/>
       <attribs/>
    </obj>
-   <obj type="mix/mix 4 g" uuid="36f472cd81da2e17bd4b4ee11b53b4c82527220c" name="mix_1" x="3080" y="700">
-      <params>
-         <frac32.u.map name="gain1" MidiCC="77" value="0.0"/>
-         <frac32.u.map name="gain2" MidiCC="79" value="0.0"/>
-         <frac32.u.map name="gain3" MidiCC="81" value="0.0"/>
-         <frac32.u.map name="gain4" MidiCC="83" value="0.0"/>
-      </params>
-      <attribs/>
-   </obj>
-   <patcher type="patch/patcher" uuid="ed464c1a-347a-4a8e-a777-738b68d7266d" name="toggleplay3" x="1008" y="714">
+   <patcher type="patch/patcher" uuid="984c1029-0384-4571-ada8-8730e51fcc81" name="toggleplay3" x="1008" y="714">
       <params/>
       <attribs/>
       <subpatch appVersion="1.0.12">
@@ -934,7 +969,7 @@
          </windowPos>
       </subpatch>
    </patcher>
-   <patcher type="patch/patcher" uuid="ab513cd0-5c70-466d-bd4f-0bdee8212b94" name="zeroreset3" x="1092" y="714">
+   <patcher type="patch/patcher" uuid="af5c81ca-76dc-408b-a3a1-2fbb674fc14e" name="zeroreset3" x="1092" y="714">
       <params/>
       <attribs/>
       <subpatch appVersion="1.0.12">
@@ -1003,7 +1038,7 @@
          </windowPos>
       </subpatch>
    </patcher>
-   <patcher type="patch/patcher" uuid="26c30971-daf3-417e-aa2b-3137c9ec9681" name="toggleplay4" x="1246" y="714">
+   <patcher type="patch/patcher" uuid="34f04008-575e-4f71-96c8-d3928242dae3" name="toggleplay4" x="1246" y="714">
       <params/>
       <attribs/>
       <subpatch appVersion="1.0.12">
@@ -1071,7 +1106,7 @@
          </windowPos>
       </subpatch>
    </patcher>
-   <patcher type="patch/patcher" uuid="f101caa4-e2b8-488d-af9e-4fc911b4dc67" name="zeroreset4" x="1330" y="714">
+   <patcher type="patch/patcher" uuid="2f5261a0-09e7-41cb-8757-5b1b1253cb70" name="zeroreset4" x="1330" y="714">
       <params/>
       <attribs/>
       <subpatch appVersion="1.0.12">
@@ -1140,6 +1175,12 @@
          </windowPos>
       </subpatch>
    </patcher>
+   <obj type="ctrl/dial p" uuid="cc5d2846c3d50e425f450c4b9851371b54f4d674" name="dial_3" x="3654" y="728">
+      <params>
+         <frac32.u.map name="value" MidiCC="84" value="54.5"/>
+      </params>
+      <attribs/>
+   </obj>
    <obj type="a773/midithru_incl_clock" uuid="82b2821e-bacc-4e10-8bcc-d827d6e1206d" name="midithru_incl_clock_1" x="406" y="742">
       <params/>
       <attribs>
@@ -1149,7 +1190,7 @@
       </attribs>
    </obj>
    <comment type="patch/comment" x="896" y="742" text="RECORDING MODE"/>
-   <patcher type="patch/patcher" uuid="fe7db7db-da51-4d06-bc92-42a3caf68484" name="Target Slot" x="896" y="742">
+   <patcher type="patch/patcher" uuid="f2d95a91-0452-4c98-92e4-2bc0488256cc" name="Target Slot" x="896" y="742">
       <params/>
       <attribs/>
       <subpatch appVersion="1.0.12">
@@ -1512,6 +1553,20 @@
       <params/>
       <attribs/>
    </obj>
+   <obj type="ctrl/dial p" uuid="cc5d2846c3d50e425f450c4b9851371b54f4d674" name="dial_5" x="2954" y="742">
+      <params>
+         <frac32.u.map name="value" MidiCC="31" value="39.0"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="math/div 8" uuid="4a6007f5cb2024c50e8449b3bb6bcaef6ac42edb" name="div_3" x="2996" y="742">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="conv/to i" uuid="305966430ee86b5c3b8e18cde0c721657c558a87" name="to_2" x="3038" y="742">
+      <params/>
+      <attribs/>
+   </obj>
    <obj type="midi/in/keyb note" uuid="ac0cd98e6c0373b7be73d25900342a62ebcf5f" name="keyb_5" x="1050" y="798">
       <params/>
       <attribs>
@@ -1525,8 +1580,24 @@
          <spinner attributeName="offset" value="8"/>
       </attribs>
    </obj>
+   <obj type="gain/vca" uuid="a9f2dcd18043e2f47364e45cb8814f63c2a37c0d" name="vca_1" x="3710" y="812">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="math/+" uuid="faedbea4612d9bd3644d6d3bf31946d848a70e19" name="+_1" x="3794" y="812">
+      <params/>
+      <attribs/>
+   </obj>
    <comment type="patch/comment" x="896" y="826" text="TARGET SLOT"/>
-   <comment type="patch/comment" x="812" y="854" text="TARGET SLOT for both recording in the 4 track bank (track 1-4) &gt; record when pressing rec"/>
+   <obj type="mix/mix 4 g" uuid="36f472cd81da2e17bd4b4ee11b53b4c82527220c" name="mix_1" x="3556" y="840">
+      <params>
+         <frac32.u.map name="gain1" MidiCC="77" value="0.0"/>
+         <frac32.u.map name="gain2" MidiCC="79" value="45.5"/>
+         <frac32.u.map name="gain3" MidiCC="81" value="0.0"/>
+         <frac32.u.map name="gain4" MidiCC="83" value="11.5"/>
+      </params>
+      <attribs/>
+   </obj>
    <obj type="disp/kscope 128 b" uuid="e71f3dd9bc5b799ad703079e63fb929dd75def0" name="GLOBAL TRANSPORT" x="1610" y="854">
       <params/>
       <attribs/>
@@ -1535,10 +1606,14 @@
       <params/>
       <attribs/>
    </obj>
-   <comment type="patch/comment" x="812" y="868" text="TARGET SLOT for saving/loading the bank to SD slot A-B-C-D when pressing save/load"/>
+   <obj type="audio/out stereo" uuid="a1ca7a567f535acc21055669829101d3ee7f0189" name="out_1" x="3878" y="854">
+      <params/>
+      <attribs/>
+   </obj>
+   <comment type="patch/comment" x="812" y="882" text="TARGET SLOT for both recording in the 4 track bank (track 1-4) &gt; record when pressing rec"/>
    <obj type="rbrt/looper/ldrive loop" uuid="50a04ed3-8ca2-4cfb-ab23-e53c0e8cbbf4" name="ldrive_3" x="2646" y="882">
       <params>
-         <frac32.s.map name="speed" value="0.0"/>
+         <frac32.s.map name="speed" MidiCC="18" value="0.0"/>
       </params>
       <attribs>
          <objref attributeName="table" obj="rec"/>
@@ -1550,7 +1625,27 @@
          <objref attributeName="table" obj="rec"/>
       </attribs>
    </obj>
-   <patcher type="patch/patcher" uuid="e3c7ae75-1c2a-46bc-981e-f9a91f53d53c" name="master display" x="1092" y="910">
+   <obj type="sptnk/effect/bitcrusher s m" uuid="91d5af62-a47b-4fff-9648-57c96701da38" name="bitcrusher_3" x="2954" y="882">
+      <params>
+         <int32 name="bits" value="1"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="jt/fx/bode" uuid="422a756e-1b91-4750-bcdb-5f2e4d577507" name="obj_8" x="3108" y="882">
+      <params>
+         <frac32.s.map name="pitch" MidiCC="34" value="-52.0"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="filter/lp svf" uuid="2003da6360b4fdb967cd635e9f6544e832fd522e" name="lp_3" x="3234" y="882">
+      <params>
+         <frac32.s.map name="pitch" MidiCC="53" value="36.0"/>
+         <frac32.u.map name="reso" MidiCC="54" value="17.0"/>
+      </params>
+      <attribs/>
+   </obj>
+   <comment type="patch/comment" x="812" y="896" text="TARGET SLOT for saving/loading the bank to SD slot A-B-C-D when pressing save/load"/>
+   <patcher type="patch/patcher" uuid="a9a6d0fd-8246-4153-bbdc-d48d5c6e3ad6" name="master display" x="1092" y="910">
       <params/>
       <attribs/>
       <subpatch appVersion="1.0.12">
@@ -1625,6 +1720,20 @@
       <params/>
       <attribs/>
    </obj>
+   <obj type="ctrl/dial p" uuid="cc5d2846c3d50e425f450c4b9851371b54f4d674" name="dial_6" x="2954" y="952">
+      <params>
+         <frac32.u.map name="value" MidiCC="33" value="56.5"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="math/div 8" uuid="4a6007f5cb2024c50e8449b3bb6bcaef6ac42edb" name="div_4" x="2996" y="952">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="conv/to i" uuid="305966430ee86b5c3b8e18cde0c721657c558a87" name="to_3" x="3038" y="952">
+      <params/>
+      <attribs/>
+   </obj>
    <comment type="patch/comment" x="1064" y="994" text="which loop is the current master-loop?"/>
    <obj type="disp/i" uuid="5e35fd0c62d81e70017289250cf28edd26e19e4a" name="i_2" x="504" y="1036">
       <params/>
@@ -1672,7 +1781,7 @@
    </obj>
    <obj type="rbrt/looper/ldrive loop" uuid="50a04ed3-8ca2-4cfb-ab23-e53c0e8cbbf4" name="ldrive_4" x="2646" y="1120">
       <params>
-         <frac32.s.map name="speed" value="0.0"/>
+         <frac32.s.map name="speed" MidiCC="20" value="63.99999952316284"/>
       </params>
       <attribs>
          <objref attributeName="table" obj="rec"/>
@@ -1683,6 +1792,25 @@
       <attribs>
          <objref attributeName="table" obj="rec"/>
       </attribs>
+   </obj>
+   <obj type="sptnk/effect/bitcrusher s m" uuid="91d5af62-a47b-4fff-9648-57c96701da38" name="bitcrusher_4" x="2954" y="1120">
+      <params>
+         <int32 name="bits" value="1"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="jt/fx/bode" uuid="422a756e-1b91-4750-bcdb-5f2e4d577507" name="obj_9" x="3108" y="1120">
+      <params>
+         <frac32.s.map name="pitch" MidiCC="36" value="-25.0"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="filter/lp svf" uuid="2003da6360b4fdb967cd635e9f6544e832fd522e" name="lp_4" x="3234" y="1120">
+      <params>
+         <frac32.s.map name="pitch" MidiCC="55" value="49.0"/>
+         <frac32.u.map name="reso" MidiCC="56" value="16.5"/>
+      </params>
+      <attribs/>
    </obj>
    <obj type="table/save" uuid="3e4108b607d56d9e1cd10abb898b58eea11e53b2" name="save_1" x="644" y="1148">
       <params/>
@@ -1699,6 +1827,20 @@
    <comment type="patch/comment" x="98" y="1190" text="save to SD"/>
    <comment type="patch/comment" x="196" y="1190" text="load from SD"/>
    <obj type="rbrt/looper/lcontrol launch" uuid="8ebd8270-6021-4ca7-b5f2-a0cebc9e7235" name="obj_4" x="2492" y="1190">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="ctrl/dial p" uuid="cc5d2846c3d50e425f450c4b9851371b54f4d674" name="dial_7" x="2954" y="1190">
+      <params>
+         <frac32.u.map name="value" MidiCC="35" value="63.99999952316284"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="math/div 8" uuid="4a6007f5cb2024c50e8449b3bb6bcaef6ac42edb" name="div_5" x="2996" y="1190">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="conv/to i" uuid="305966430ee86b5c3b8e18cde0c721657c558a87" name="to_4" x="3038" y="1190">
       <params/>
       <attribs/>
    </obj>
@@ -2234,8 +2376,8 @@ prev=inlet_active;}]]></code.krate>
    <nets>
       <net>
          <source obj="in_1" outlet="wave"/>
-         <dest obj="+_1" inlet="in1"/>
          <dest obj="lrec_1" inlet="wave"/>
+         <dest obj="vca_1" inlet="a"/>
       </net>
       <net>
          <source obj="+_1" outlet="out"/>
@@ -2317,15 +2459,15 @@ prev=inlet_active;}]]></code.krate>
       </net>
       <net>
          <source obj="read_2" outlet="o"/>
-         <dest obj="mix_1" inlet="in2"/>
+         <dest obj="bitcrusher_2" inlet="a"/>
       </net>
       <net>
          <source obj="read_3" outlet="o"/>
-         <dest obj="mix_1" inlet="in3"/>
+         <dest obj="bitcrusher_3" inlet="a"/>
       </net>
       <net>
          <source obj="read_4" outlet="o"/>
-         <dest obj="mix_1" inlet="in4"/>
+         <dest obj="bitcrusher_4" inlet="a"/>
       </net>
       <net>
          <source obj="demux recstate" outlet="o1"/>
@@ -2549,10 +2691,6 @@ prev=inlet_active;}]]></code.krate>
          <dest obj="+_1" inlet="in2"/>
       </net>
       <net>
-         <source obj="read_1" outlet="o"/>
-         <dest obj="mix_1" inlet="in1"/>
-      </net>
-      <net>
          <source obj="c4_1" outlet="1"/>
          <dest obj="mux4_1" inlet="i0"/>
       </net>
@@ -2636,6 +2774,114 @@ prev=inlet_active;}]]></code.krate>
          <dest obj="load_1" inlet="trig"/>
          <dest obj="load_2" inlet="trig"/>
       </net>
+      <net>
+         <source obj="vca_1" outlet="o"/>
+         <dest obj="+_1" inlet="in1"/>
+      </net>
+      <net>
+         <source obj="dial_3" outlet="out"/>
+         <dest obj="vca_1" inlet="v"/>
+      </net>
+      <net>
+         <source obj="read_1" outlet="o"/>
+         <dest obj="bitcrusher_1" inlet="a"/>
+      </net>
+      <net>
+         <source obj="to_1" outlet="o"/>
+         <dest obj="bitcrusher_1" inlet="nmod"/>
+      </net>
+      <net>
+         <source obj="dial_4" outlet="out"/>
+         <dest obj="div_2" inlet="in"/>
+      </net>
+      <net>
+         <source obj="div_2" outlet="out"/>
+         <dest obj="to_1" inlet="i"/>
+      </net>
+      <net>
+         <source obj="bitcrusher_1" outlet="b"/>
+         <dest obj="obj_6" inlet="in"/>
+      </net>
+      <net>
+         <source obj="obj_6" outlet="up"/>
+         <dest obj="lp_1" inlet="in"/>
+      </net>
+      <net>
+         <source obj="lp_1" outlet="out"/>
+         <dest obj="mix_1" inlet="in1"/>
+      </net>
+      <net>
+         <source obj="to_2" outlet="o"/>
+         <dest obj="bitcrusher_2" inlet="nmod"/>
+      </net>
+      <net>
+         <source obj="dial_5" outlet="out"/>
+         <dest obj="div_3" inlet="in"/>
+      </net>
+      <net>
+         <source obj="div_3" outlet="out"/>
+         <dest obj="to_2" inlet="i"/>
+      </net>
+      <net>
+         <source obj="bitcrusher_2" outlet="b"/>
+         <dest obj="obj_7" inlet="in"/>
+      </net>
+      <net>
+         <source obj="obj_7" outlet="up"/>
+         <dest obj="lp_2" inlet="in"/>
+      </net>
+      <net>
+         <source obj="lp_2" outlet="out"/>
+         <dest obj="mix_1" inlet="in2"/>
+      </net>
+      <net>
+         <source obj="to_3" outlet="o"/>
+         <dest obj="bitcrusher_3" inlet="nmod"/>
+      </net>
+      <net>
+         <source obj="dial_6" outlet="out"/>
+         <dest obj="div_4" inlet="in"/>
+      </net>
+      <net>
+         <source obj="div_4" outlet="out"/>
+         <dest obj="to_3" inlet="i"/>
+      </net>
+      <net>
+         <source obj="bitcrusher_3" outlet="b"/>
+         <dest obj="obj_8" inlet="in"/>
+      </net>
+      <net>
+         <source obj="obj_8" outlet="up"/>
+         <dest obj="lp_3" inlet="in"/>
+      </net>
+      <net>
+         <source obj="lp_3" outlet="out"/>
+         <dest obj="mix_1" inlet="in3"/>
+      </net>
+      <net>
+         <source obj="to_4" outlet="o"/>
+         <dest obj="bitcrusher_4" inlet="nmod"/>
+      </net>
+      <net>
+         <source obj="dial_7" outlet="out"/>
+         <dest obj="div_5" inlet="in"/>
+      </net>
+      <net>
+         <source obj="div_5" outlet="out"/>
+         <dest obj="to_4" inlet="i"/>
+      </net>
+      <net>
+         <source obj="bitcrusher_4" outlet="b"/>
+         <dest obj="obj_9" inlet="in"/>
+      </net>
+      <net>
+         <source obj="obj_9" outlet="up"/>
+         <dest obj="lp_4" inlet="in"/>
+      </net>
+      <net>
+         <source obj="lp_4" outlet="out"/>
+         <dest obj="mix_1" inlet="in4"/>
+      </net>
    </nets>
    <settings>
       <subpatchmode>no</subpatchmode>
@@ -2647,8 +2893,8 @@ prev=inlet_active;}]]></code.krate>
    </settings>
    <notes><![CDATA[]]></notes>
    <windowPos>
-      <x>73</x>
-      <y>51</y>
+      <x>62</x>
+      <y>33</y>
       <width>1822</width>
       <height>1059</height>
    </windowPos>
