@@ -1,0 +1,415 @@
+<patch-1.0 appVersion="1.0.12">
+   <patcher type="patch/patcher" uuid="0c5dcb04-1615-4c84-a077-1df69ff9abaf" name="Gretz_1" x="462" y="70">
+      <params/>
+      <attribs>
+         <combo attributeName="poly" selection="8"/>
+      </attribs>
+      <subpatch appVersion="1.0.12">
+         <obj type="midi/in/keyb" uuid="53b04874696932f38aceaa168bd5d9efb743716d" name="keyb_1" x="0" y="42">
+            <params/>
+            <attribs/>
+         </obj>
+         <obj type="env/adsr" uuid="d1dbcc5fa6f87b98a6a91c87fd44acee5e690bac" name="adsr_2" x="112" y="42">
+            <params>
+               <frac32.s.map name="a" value="-64.0"/>
+               <frac32.s.map name="d" value="64.0"/>
+               <frac32.u.map name="s" value="0.0"/>
+               <frac32.s.map name="r" value="-2.0"/>
+            </params>
+            <attribs/>
+         </obj>
+         <obj type="mix/mix 2" uuid="682ea5496ded046d981e26b720a6e7f8eca97541" name="mix_1" x="224" y="42">
+            <params>
+               <frac32.u.map name="gain1" value="41.5"/>
+               <frac32.u.map name="gain2" value="46.0"/>
+            </params>
+            <attribs/>
+         </obj>
+         <obj type="tiar/osc/Steps/SixSync" uuid="ac53c143-aa78-4694-ae58-fc8bf2d60b5f" name="SixStepsSync_1" x="322" y="42">
+            <params>
+               <frac32.s.map name="pitch slave" value="-4.0"/>
+               <frac32.s.map name="pitch master" value="-12.0">
+                  <presets/>
+               </frac32.s.map>
+               <frac32.s.map name="level0" MidiCC="13" value="25.0">
+                  <presets>
+                     <preset index="1">
+                        <f v="-15.0"/>
+                     </preset>
+                     <preset index="2">
+                        <f v="-15.0"/>
+                     </preset>
+                     <preset index="3">
+                        <f v="25.0"/>
+                     </preset>
+                  </presets>
+               </frac32.s.map>
+               <frac32.s.map name="level1" MidiCC="29" value="53.0">
+                  <presets>
+                     <preset index="1">
+                        <f v="-24.0"/>
+                     </preset>
+                     <preset index="2">
+                        <f v="-24.0"/>
+                     </preset>
+                     <preset index="3">
+                        <f v="53.0"/>
+                     </preset>
+                  </presets>
+               </frac32.s.map>
+               <frac32.s.map name="level2" MidiCC="49" value="36.0">
+                  <presets>
+                     <preset index="1">
+                        <f v="-17.0"/>
+                     </preset>
+                     <preset index="2">
+                        <f v="-17.0"/>
+                     </preset>
+                     <preset index="3">
+                        <f v="36.0"/>
+                     </preset>
+                  </presets>
+               </frac32.s.map>
+               <frac32.s.map name="level3" MidiCC="14" value="36.0">
+                  <presets>
+                     <preset index="1">
+                        <f v="-31.0"/>
+                     </preset>
+                     <preset index="2">
+                        <f v="-31.0"/>
+                     </preset>
+                     <preset index="3">
+                        <f v="36.0"/>
+                     </preset>
+                  </presets>
+               </frac32.s.map>
+               <frac32.s.map name="level4" MidiCC="30" value="-24.0">
+                  <presets>
+                     <preset index="1">
+                        <f v="-40.0"/>
+                     </preset>
+                     <preset index="2">
+                        <f v="-40.0"/>
+                     </preset>
+                     <preset index="3">
+                        <f v="-24.0"/>
+                     </preset>
+                  </presets>
+               </frac32.s.map>
+               <frac32.s.map name="level5" MidiCC="50" value="-4.0">
+                  <presets>
+                     <preset index="1">
+                        <f v="-18.0"/>
+                     </preset>
+                     <preset index="2">
+                        <f v="-18.0"/>
+                     </preset>
+                     <preset index="3">
+                        <f v="-4.0"/>
+                     </preset>
+                  </presets>
+               </frac32.s.map>
+            </params>
+            <attribs/>
+         </obj>
+         <obj type="tiar/disp/scope" uuid="0991142e-58fa-47e6-9f89-32da05f9fe41" name="scope_1" x="490" y="42">
+            <params/>
+            <attribs/>
+         </obj>
+         <obj type="filter/vcf3" uuid="92455c652cd098cbb682a5497baa18abbf2ef865" name="vcf3_1" x="644" y="42">
+            <params>
+               <frac32.s.map name="pitch" MidiCC="1" value="3.0">
+                  <presets>
+                     <preset index="1">
+                        <f v="-32.0"/>
+                     </preset>
+                     <preset index="2">
+                        <f v="-32.0"/>
+                     </preset>
+                     <preset index="3">
+                        <f v="3.0"/>
+                     </preset>
+                  </presets>
+               </frac32.s.map>
+               <frac32.u.map name="reso" MidiCC="2" value="28.5">
+                  <presets>
+                     <preset index="1">
+                        <f v="0.0"/>
+                     </preset>
+                     <preset index="2">
+                        <f v="0.0"/>
+                     </preset>
+                     <preset index="3">
+                        <f v="28.5"/>
+                     </preset>
+                  </presets>
+               </frac32.u.map>
+            </params>
+            <attribs/>
+         </obj>
+         <obj type="filter/allpass" uuid="59cc8e3d8044e145e1eb908baa5a7d3ed2ec5f72" name="allpass_1" x="742" y="42">
+            <params>
+               <frac32.s.map name="g" MidiCC="51" value="-13.0"/>
+            </params>
+            <attribs>
+               <spinner attributeName="delay" value="73"/>
+            </attribs>
+         </obj>
+         <obj type="tiar/dist/DPSoftClip" uuid="4664e423-ca15-4925-952a-6d150aa652da" name="DPSoftClip_1" x="854" y="42">
+            <params>
+               <frac32.u.map name="InGain" value="25.5"/>
+               <frac32.u.map name="OutGain" value="31.5"/>
+            </params>
+            <attribs/>
+         </obj>
+         <obj type="tiar/osc/Wave3b" uuid="284db29c-ec57-4f25-a551-dc821a6bb46f" name="Wave3b_1" x="966" y="42">
+            <params>
+               <frac32.s.map name="pitch" MidiCC="3" value="47.010000228881836">
+                  <presets>
+                     <preset index="1">
+                        <f v="12.010000228881836"/>
+                     </preset>
+                     <preset index="2">
+                        <f v="-35.989999771118164"/>
+                     </preset>
+                     <preset index="3">
+                        <f v="47.010000228881836"/>
+                     </preset>
+                  </presets>
+               </frac32.s.map>
+               <frac32.u.map name="I1" MidiCC="32" value="16.5">
+                  <presets>
+                     <preset index="1">
+                        <f v="20.0"/>
+                     </preset>
+                     <preset index="2">
+                        <f v="58.5"/>
+                     </preset>
+                     <preset index="3">
+                        <f v="16.5"/>
+                     </preset>
+                  </presets>
+               </frac32.u.map>
+               <frac32.u.map name="I0" MidiCC="52" value="33.0">
+                  <presets>
+                     <preset index="1">
+                        <f v="1.0"/>
+                     </preset>
+                     <preset index="2">
+                        <f v="33.0"/>
+                     </preset>
+                     <preset index="3">
+                        <f v="33.0"/>
+                     </preset>
+                  </presets>
+               </frac32.u.map>
+            </params>
+            <attribs/>
+         </obj>
+         <obj type="env/adsr" uuid="d1dbcc5fa6f87b98a6a91c87fd44acee5e690bac" name="adsr_1" x="1078" y="42">
+            <params>
+               <frac32.s.map name="a" MidiCC="19" value="-42.0"/>
+               <frac32.s.map name="d" MidiCC="35" value="-56.0"/>
+               <frac32.u.map name="s" MidiCC="55" value="54.5"/>
+               <frac32.s.map name="r" MidiCC="4" value="5.0"/>
+            </params>
+            <attribs/>
+         </obj>
+         <obj type="gain/vca" uuid="a9f2dcd18043e2f47364e45cb8814f63c2a37c0d" name="vca_1" x="1190" y="42">
+            <params/>
+            <attribs/>
+         </obj>
+         <obj type="audio/out stereo" uuid="a1ca7a567f535acc21055669829101d3ee7f0189" name="out_1" x="1274" y="42">
+            <params/>
+            <attribs/>
+         </obj>
+         <obj type="gain/vca" uuid="a9f2dcd18043e2f47364e45cb8814f63c2a37c0d" name="vca_2" x="1218" y="126">
+            <params/>
+            <attribs/>
+         </obj>
+         <obj type="ctrl/dial p" uuid="cc5d2846c3d50e425f450c4b9851371b54f4d674" name="dial_1" x="1204" y="224">
+            <params>
+               <frac32.u.map name="value" MidiCC="84" value="64.0"/>
+            </params>
+            <attribs/>
+         </obj>
+         <nets>
+            <net>
+               <source obj="keyb_1" outlet="gate"/>
+               <dest obj="adsr_1" inlet="gate"/>
+               <dest obj="adsr_2" inlet="gate"/>
+            </net>
+            <net>
+               <source obj="adsr_1" outlet="env"/>
+               <dest obj="vca_1" inlet="v"/>
+            </net>
+            <net>
+               <source obj="keyb_1" outlet="note"/>
+               <dest obj="SixStepsSync_1" inlet="pitch master"/>
+               <dest obj="Wave3b_1" inlet="pitch"/>
+               <dest obj="mix_1" inlet="bus_in"/>
+            </net>
+            <net>
+               <source obj="SixStepsSync_1" outlet="out"/>
+               <dest obj="scope_1" inlet="in"/>
+               <dest obj="vcf3_1" inlet="in"/>
+            </net>
+            <net>
+               <source obj="mix_1" outlet="out"/>
+               <dest obj="SixStepsSync_1" inlet="pitch slave"/>
+               <dest obj="vcf3_1" inlet="pitch"/>
+            </net>
+            <net>
+               <source obj="adsr_2" outlet="env"/>
+               <dest obj="Wave3b_1" inlet="mEnv"/>
+               <dest obj="mix_1" inlet="in2"/>
+            </net>
+            <net>
+               <source obj="Wave3b_1" outlet="wave"/>
+               <dest obj="vca_1" inlet="a"/>
+            </net>
+            <net>
+               <source obj="DPSoftClip_1" outlet="out"/>
+               <dest obj="Wave3b_1" inlet="m"/>
+            </net>
+            <net>
+               <source obj="vca_1" outlet="o"/>
+               <dest obj="vca_2" inlet="a"/>
+            </net>
+            <net>
+               <source obj="allpass_1" outlet="out"/>
+               <dest obj="DPSoftClip_1" inlet="in"/>
+            </net>
+            <net>
+               <source obj="vcf3_1" outlet="out"/>
+               <dest obj="allpass_1" inlet="in"/>
+            </net>
+            <net>
+               <source obj="vca_2" outlet="o"/>
+               <dest obj="out_1" inlet="right"/>
+               <dest obj="out_1" inlet="left"/>
+            </net>
+            <net>
+               <source obj="dial_1" outlet="out"/>
+               <dest obj="vca_2" inlet="v"/>
+            </net>
+         </nets>
+         <settings>
+            <subpatchmode>polyphonic</subpatchmode>
+            <MidiChannel>1</MidiChannel>
+            <NPresets>8</NPresets>
+            <NPresetEntries>32</NPresetEntries>
+            <NModulationSources>8</NModulationSources>
+            <NModulationTargetsPerSource>8</NModulationTargetsPerSource>
+         </settings>
+         <notes><![CDATA[]]></notes>
+         <windowPos>
+            <x>510</x>
+            <y>405</y>
+            <width>1348</width>
+            <height>702</height>
+         </windowPos>
+      </subpatch>
+   </patcher>
+   <obj type="const/i" uuid="e202f44b2df17ae0b3e663b98ea6b14c8ff00408" name="i_1" x="224" y="238">
+      <params/>
+      <attribs>
+         <spinner attributeName="value" value="3"/>
+      </attribs>
+   </obj>
+   <obj type="phonebankcontroller" uuid="857a3298-d350-4fb3-83c8-d7044d64f2c4" name="phonebankcontroller_1" x="392" y="238">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="phone_interface" uuid="2d7c7349-fc04-40dd-8f8e-b7f25a050837" name="obj_2" x="224" y="322">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="midi/out/cc thin" uuid="5255b30d60e50223ed41179d8ce935ba9464de75" name="cc_1" x="490" y="336">
+      <params/>
+      <attribs>
+         <combo attributeName="device" selection="internal port 1"/>
+         <spinner attributeName="channel" value="1"/>
+         <spinner attributeName="cc" value="1"/>
+      </attribs>
+   </obj>
+   <obj type="jv/lkm1638/lkm1638-display-toggle-leds" uuid="4468253eabf3e6db740cd1ac7df53f6e093ec943" name="lkm1638-display-toggle-led_3" x="714" y="364">
+      <params/>
+      <attribs>
+         <table attributeName="display" table="gretz"/>
+      </attribs>
+   </obj>
+   <obj type="midi/out/cc thin" uuid="5255b30d60e50223ed41179d8ce935ba9464de75" name="cc_3" x="490" y="434">
+      <params/>
+      <attribs>
+         <combo attributeName="device" selection="internal port 1"/>
+         <spinner attributeName="channel" value="1"/>
+         <spinner attributeName="cc" value="2"/>
+      </attribs>
+   </obj>
+   <obj type="gpio/spi/config" uuid="d3e75d8a02e2ccabbbc2af3bc2fcdb8ea65a6133" name="config_1" x="994" y="434">
+      <params/>
+      <attribs>
+         <combo attributeName="clock_polarity" selection="CPOL=0"/>
+         <combo attributeName="clock_phase" selection="CPHA=0"/>
+         <combo attributeName="baudrate" selection="FPCLK/128"/>
+         <combo attributeName="format" selection="LSB first"/>
+      </attribs>
+   </obj>
+   <obj type="midi/out/cc thin" uuid="5255b30d60e50223ed41179d8ce935ba9464de75" name="cc_4" x="490" y="532">
+      <params/>
+      <attribs>
+         <combo attributeName="device" selection="internal port 1"/>
+         <spinner attributeName="channel" value="1"/>
+         <spinner attributeName="cc" value="3"/>
+      </attribs>
+   </obj>
+   <obj type="midi/out/cc thin" uuid="5255b30d60e50223ed41179d8ce935ba9464de75" name="cc_5" x="490" y="630">
+      <params/>
+      <attribs>
+         <combo attributeName="device" selection="internal port 1"/>
+         <spinner attributeName="channel" value="1"/>
+         <spinner attributeName="cc" value="4"/>
+      </attribs>
+   </obj>
+   <nets>
+      <net>
+         <source obj="obj_2" outlet="top"/>
+         <dest obj="phonebankcontroller_1" inlet="patch_up"/>
+      </net>
+      <net>
+         <source obj="i_1" outlet="out"/>
+         <dest obj="phonebankcontroller_1" inlet="currentpatch"/>
+      </net>
+      <net>
+         <source obj="obj_2" outlet="bottom"/>
+         <dest obj="phonebankcontroller_1" inlet="patch_down"/>
+      </net>
+      <net>
+         <source obj="obj_2" outlet="dial 1"/>
+         <dest obj="cc_1" inlet="v"/>
+      </net>
+      <net>
+         <source obj="obj_2" outlet="dial 2"/>
+         <dest obj="cc_3" inlet="v"/>
+      </net>
+      <net>
+         <source obj="obj_2" outlet="dial 3"/>
+         <dest obj="cc_4" inlet="v"/>
+      </net>
+      <net>
+         <source obj="obj_2" outlet="dial 4"/>
+         <dest obj="cc_5" inlet="v"/>
+      </net>
+   </nets>
+   <settings>
+      <subpatchmode>no</subpatchmode>
+   </settings>
+   <notes><![CDATA[]]></notes>
+   <windowPos>
+      <x>240</x>
+      <y>151</y>
+      <width>1499</width>
+      <height>1025</height>
+   </windowPos>
+</patch-1.0>

@@ -14,8 +14,8 @@
    </obj>
    <obj type="mix/mix 2" uuid="682ea5496ded046d981e26b720a6e7f8eca97541" name="mix_1" x="224" y="42">
       <params>
-         <frac32.u.map name="gain1" value="0.0"/>
-         <frac32.u.map name="gain2" value="31.0"/>
+         <frac32.u.map name="gain1" value="41.5"/>
+         <frac32.u.map name="gain2" value="46.0"/>
       </params>
       <attribs/>
    </obj>
@@ -25,42 +25,42 @@
          <frac32.s.map name="pitch master" value="-12.0">
             <presets/>
          </frac32.s.map>
-         <frac32.s.map name="level0" MidiCC="13" value="-59.0">
+         <frac32.s.map name="level0" MidiCC="13" value="0.0">
             <presets>
                <preset index="1">
                   <f v="64.0"/>
                </preset>
             </presets>
          </frac32.s.map>
-         <frac32.s.map name="level1" MidiCC="29" value="-64.0">
+         <frac32.s.map name="level1" MidiCC="29" value="-45.0">
             <presets>
                <preset index="1">
                   <f v="32.0"/>
                </preset>
             </presets>
          </frac32.s.map>
-         <frac32.s.map name="level2" MidiCC="49" value="63.99999952316284">
+         <frac32.s.map name="level2" MidiCC="49" value="-64.0">
             <presets>
                <preset index="1">
                   <f v="26.0"/>
                </preset>
             </presets>
          </frac32.s.map>
-         <frac32.s.map name="level3" MidiCC="14" value="50.0">
+         <frac32.s.map name="level3" MidiCC="14" value="-57.0">
             <presets>
                <preset index="1">
                   <f v="-1.0"/>
                </preset>
             </presets>
          </frac32.s.map>
-         <frac32.s.map name="level4" MidiCC="30" value="61.0">
+         <frac32.s.map name="level4" MidiCC="30" value="9.0">
             <presets>
                <preset index="1">
                   <f v="-40.0"/>
                </preset>
             </presets>
          </frac32.s.map>
-         <frac32.s.map name="level5" MidiCC="50" value="38.0">
+         <frac32.s.map name="level5" MidiCC="50" value="-25.0">
             <presets>
                <preset index="1">
                   <f v="-64.0"/>
@@ -76,14 +76,14 @@
    </obj>
    <obj type="filter/vcf3" uuid="92455c652cd098cbb682a5497baa18abbf2ef865" name="vcf3_1" x="644" y="42">
       <params>
-         <frac32.s.map name="pitch" MidiCC="15" value="0.0">
+         <frac32.s.map name="pitch" MidiCC="1" value="-25.0">
             <presets>
                <preset index="1">
                   <f v="22.0"/>
                </preset>
             </presets>
          </frac32.s.map>
-         <frac32.u.map name="reso" MidiCC="31" value="32.0">
+         <frac32.u.map name="reso" MidiCC="2" value="64.0">
             <presets>
                <preset index="1">
                   <f v="0.0"/>
@@ -95,7 +95,7 @@
    </obj>
    <obj type="filter/allpass" uuid="59cc8e3d8044e145e1eb908baa5a7d3ed2ec5f72" name="allpass_1" x="742" y="42">
       <params>
-         <frac32.s.map name="g" MidiCC="51" value="34.0"/>
+         <frac32.s.map name="g" MidiCC="51" value="-13.0"/>
       </params>
       <attribs>
          <spinner attributeName="delay" value="73"/>
@@ -110,21 +110,21 @@
    </obj>
    <obj type="tiar/osc/Wave3b" uuid="284db29c-ec57-4f25-a551-dc821a6bb46f" name="Wave3b_1" x="966" y="42">
       <params>
-         <frac32.s.map name="pitch" MidiCC="16" value="0.0">
+         <frac32.s.map name="pitch" MidiCC="3" value="-19.0">
             <presets>
                <preset index="1">
                   <f v="12.010000228881836"/>
                </preset>
             </presets>
          </frac32.s.map>
-         <frac32.u.map name="I1" MidiCC="32" value="20.0">
+         <frac32.u.map name="I1" MidiCC="32" value="10.0">
             <presets>
                <preset index="1">
                   <f v="20.0"/>
                </preset>
             </presets>
          </frac32.u.map>
-         <frac32.u.map name="I0" MidiCC="52" value="1.0">
+         <frac32.u.map name="I0" MidiCC="52" value="40.0">
             <presets>
                <preset index="1">
                   <f v="1.0"/>
@@ -136,10 +136,10 @@
    </obj>
    <obj type="env/adsr" uuid="d1dbcc5fa6f87b98a6a91c87fd44acee5e690bac" name="adsr_1" x="1078" y="42">
       <params>
-         <frac32.s.map name="a" MidiCC="19" value="-17.0"/>
-         <frac32.s.map name="d" MidiCC="35" value="-14.0"/>
-         <frac32.u.map name="s" MidiCC="55" value="38.5"/>
-         <frac32.s.map name="r" MidiCC="83" value="-2.0"/>
+         <frac32.s.map name="a" MidiCC="19" value="-42.0"/>
+         <frac32.s.map name="d" MidiCC="35" value="-56.0"/>
+         <frac32.u.map name="s" MidiCC="55" value="54.5"/>
+         <frac32.s.map name="r" MidiCC="4" value="5.0"/>
       </params>
       <attribs/>
    </obj>
@@ -157,7 +157,7 @@
    </obj>
    <obj type="ctrl/dial p" uuid="cc5d2846c3d50e425f450c4b9851371b54f4d674" name="dial_1" x="1204" y="224">
       <params>
-         <frac32.u.map name="value" MidiCC="84" value="7.5"/>
+         <frac32.u.map name="value" MidiCC="84" value="64.0"/>
       </params>
       <attribs/>
    </obj>
@@ -236,8 +236,8 @@
    </settings>
    <notes><![CDATA[]]></notes>
    <windowPos>
-      <x>1557</x>
-      <y>218</y>
+      <x>346</x>
+      <y>373</y>
       <width>1348</width>
       <height>702</height>
    </windowPos>
