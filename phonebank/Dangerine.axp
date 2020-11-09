@@ -1,73 +1,67 @@
 <patch-1.0 appVersion="1.0.12">
-   <obj type="string/c" uuid="4aa90a90c435a742ddfa152d232883fc5b2f1b3" name="c_1" x="210" y="28">
+   <obj type="phone_interface_buttons" uuid="4c0d9077-b4c1-4c92-9172-fc2aa9067a3d" name="phone_interface_buttons_1" x="0" y="0">
+      <params>
+         <bin16 name="seqg" value="2"/>
+         <bin16 name="seqr" value="0"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="string/c" uuid="4aa90a90c435a742ddfa152d232883fc5b2f1b3" name="c_1" x="490" y="112">
       <params/>
       <attribs>
          <table attributeName="str" table="hello123"/>
       </attribs>
    </obj>
-   <obj type="timer/delayedpulseduration" uuid="3b7bf0a7b7f89fad06a734667f48de051deb5c78" name="delayedpulseduration_1" x="182" y="98">
+   <obj type="timer/delayedpulseduration" uuid="3b7bf0a7b7f89fad06a734667f48de051deb5c78" name="delayedpulseduration_1" x="462" y="182">
       <params>
          <frac32.s.map name="delay" value="10.0"/>
          <frac32.s.map name="pulselength" value="-8.0"/>
       </params>
       <attribs/>
    </obj>
-   <obj type="rbrt/patching/loadbang" uuid="45d1f29d-ac62-4e5b-86f8-2201d2f6c689" name="loadbang_1" x="0" y="112">
+   <obj type="rbrt/patching/loadbang" uuid="45d1f29d-ac62-4e5b-86f8-2201d2f6c689" name="loadbang_1" x="280" y="196">
       <params/>
       <attribs/>
    </obj>
-   <obj type="gpio/spi/config" uuid="d3e75d8a02e2ccabbbc2af3bc2fcdb8ea65a6133" name="config_1" x="742" y="168">
-      <params/>
-      <attribs>
-         <combo attributeName="clock_polarity" selection="CPOL=0"/>
-         <combo attributeName="clock_phase" selection="CPHA=0"/>
-         <combo attributeName="baudrate" selection="FPCLK/128"/>
-         <combo attributeName="format" selection="LSB first"/>
-      </attribs>
-   </obj>
-   <obj type="phonebankcontroller" uuid="366064e5-fa5a-4187-8f26-799af425fd32" name="phonebankcontroller_1" x="1302" y="168">
+   <obj type="phonebankcontroller" uuid="366064e5-fa5a-4187-8f26-799af425fd32" name="phonebankcontroller_1" x="1582" y="252">
       <params/>
       <attribs/>
    </obj>
-   <obj type="const/i" uuid="e202f44b2df17ae0b3e663b98ea6b14c8ff00408" name="i_1" x="1022" y="182">
+   <obj type="const/i" uuid="e202f44b2df17ae0b3e663b98ea6b14c8ff00408" name="i_1" x="1302" y="266">
       <params/>
       <attribs>
          <spinner attributeName="value" value="1"/>
       </attribs>
    </obj>
-   <obj type="timer/delayedpulseduration" uuid="3b7bf0a7b7f89fad06a734667f48de051deb5c78" name="delayedpulseduration_2" x="182" y="210">
+   <obj type="timer/delayedpulseduration" uuid="3b7bf0a7b7f89fad06a734667f48de051deb5c78" name="delayedpulseduration_2" x="462" y="294">
       <params>
          <frac32.s.map name="delay" value="-3.0"/>
          <frac32.s.map name="pulselength" value="-8.0"/>
       </params>
       <attribs/>
    </obj>
-   <obj type="timer/delayedpulseduration" uuid="3b7bf0a7b7f89fad06a734667f48de051deb5c78" name="delayedpulseduration_4" x="966" y="238">
+   <obj type="timer/delayedpulseduration" uuid="3b7bf0a7b7f89fad06a734667f48de051deb5c78" name="delayedpulseduration_4" x="1246" y="322">
       <params>
          <frac32.s.map name="delay" value="3.0"/>
          <frac32.s.map name="pulselength" value="-64.0"/>
       </params>
       <attribs/>
    </obj>
-   <obj type="logic/and 2" uuid="c67031682f552aa0a80b23377495c51ea28a8c9c" name="and_1" x="1302" y="308">
+   <obj type="logic/and 2" uuid="c67031682f552aa0a80b23377495c51ea28a8c9c" name="and_1" x="1582" y="392">
       <params/>
       <attribs/>
    </obj>
-   <obj type="logic/flipflop toggle" uuid="195e489e5fc3d275944b0de56c7a91c8641ea22a" name="flipflop_1" x="994" y="350">
+   <obj type="logic/flipflop toggle" uuid="195e489e5fc3d275944b0de56c7a91c8641ea22a" name="flipflop_1" x="1274" y="434">
       <params/>
       <attribs/>
    </obj>
-   <obj type="phone_interface" uuid="f8790fd4-5f35-4150-9b58-ecf601e7c725" name="obj_1" x="14" y="392">
-      <params/>
-      <attribs/>
-   </obj>
-   <obj type="math/*c" uuid="7d5ef61c3bcd571ee6bbd8437ef3612125dfb225" name="*c_13" x="420" y="420">
+   <obj type="math/*c" uuid="7d5ef61c3bcd571ee6bbd8437ef3612125dfb225" name="*c_13" x="700" y="504">
       <params>
          <frac32.u.map name="amp" value="64.0"/>
       </params>
       <attribs/>
    </obj>
-   <obj type="midi/out/cc thin" uuid="5255b30d60e50223ed41179d8ce935ba9464de75" name="cc_5" x="518" y="420">
+   <obj type="midi/out/cc thin" uuid="5255b30d60e50223ed41179d8ce935ba9464de75" name="cc_5" x="798" y="504">
       <params/>
       <attribs>
          <combo attributeName="device" selection="internal port 1"/>
@@ -75,14 +69,14 @@
          <spinner attributeName="cc" value="5"/>
       </attribs>
    </obj>
-   <obj type="timer/delayedpulseduration" uuid="3b7bf0a7b7f89fad06a734667f48de051deb5c78" name="delayedpulseduration_5" x="966" y="420">
+   <obj type="timer/delayedpulseduration" uuid="3b7bf0a7b7f89fad06a734667f48de051deb5c78" name="delayedpulseduration_5" x="1246" y="504">
       <params>
          <frac32.s.map name="delay" value="3.0"/>
          <frac32.s.map name="pulselength" value="-64.0"/>
       </params>
       <attribs/>
    </obj>
-   <obj type="midi/out/cc thin" uuid="5255b30d60e50223ed41179d8ce935ba9464de75" name="cc_1" x="728" y="462">
+   <obj type="midi/out/cc thin" uuid="5255b30d60e50223ed41179d8ce935ba9464de75" name="cc_1" x="1008" y="546">
       <params/>
       <attribs>
          <combo attributeName="device" selection="internal port 1"/>
@@ -90,13 +84,13 @@
          <spinner attributeName="cc" value="1"/>
       </attribs>
    </obj>
-   <obj type="math/*c" uuid="7d5ef61c3bcd571ee6bbd8437ef3612125dfb225" name="*c_14" x="420" y="518">
+   <obj type="math/*c" uuid="7d5ef61c3bcd571ee6bbd8437ef3612125dfb225" name="*c_14" x="700" y="602">
       <params>
          <frac32.u.map name="amp" value="64.0"/>
       </params>
       <attribs/>
    </obj>
-   <obj type="midi/out/cc thin" uuid="5255b30d60e50223ed41179d8ce935ba9464de75" name="cc_6" x="518" y="518">
+   <obj type="midi/out/cc thin" uuid="5255b30d60e50223ed41179d8ce935ba9464de75" name="cc_6" x="798" y="602">
       <params/>
       <attribs>
          <combo attributeName="device" selection="internal port 1"/>
@@ -104,7 +98,7 @@
          <spinner attributeName="cc" value="6"/>
       </attribs>
    </obj>
-   <obj type="midi/out/cc thin" uuid="5255b30d60e50223ed41179d8ce935ba9464de75" name="cc_2" x="728" y="560">
+   <obj type="midi/out/cc thin" uuid="5255b30d60e50223ed41179d8ce935ba9464de75" name="cc_2" x="1008" y="644">
       <params/>
       <attribs>
          <combo attributeName="device" selection="internal port 1"/>
@@ -112,13 +106,13 @@
          <spinner attributeName="cc" value="2"/>
       </attribs>
    </obj>
-   <obj type="math/*c" uuid="7d5ef61c3bcd571ee6bbd8437ef3612125dfb225" name="*c_15" x="420" y="616">
+   <obj type="math/*c" uuid="7d5ef61c3bcd571ee6bbd8437ef3612125dfb225" name="*c_15" x="700" y="700">
       <params>
          <frac32.u.map name="amp" value="64.0"/>
       </params>
       <attribs/>
    </obj>
-   <obj type="midi/out/cc thin" uuid="5255b30d60e50223ed41179d8ce935ba9464de75" name="cc_7" x="518" y="616">
+   <obj type="midi/out/cc thin" uuid="5255b30d60e50223ed41179d8ce935ba9464de75" name="cc_7" x="798" y="700">
       <params/>
       <attribs>
          <combo attributeName="device" selection="internal port 1"/>
@@ -126,7 +120,7 @@
          <spinner attributeName="cc" value="7"/>
       </attribs>
    </obj>
-   <obj type="midi/out/cc thin" uuid="5255b30d60e50223ed41179d8ce935ba9464de75" name="cc_3" x="728" y="658">
+   <obj type="midi/out/cc thin" uuid="5255b30d60e50223ed41179d8ce935ba9464de75" name="cc_3" x="1008" y="742">
       <params/>
       <attribs>
          <combo attributeName="device" selection="internal port 1"/>
@@ -134,17 +128,17 @@
          <spinner attributeName="cc" value="3"/>
       </attribs>
    </obj>
-   <patcher type="patch/patcher" uuid="a21be55d-12c3-4d3c-a725-a152941365ec" name="patcher_1" x="994" y="686">
+   <patcher type="patch/patcher" uuid="c0376a34-abd2-4b52-843a-d6db66188ea8" name="patcher_1" x="1274" y="770">
       <params>
          <frac32.s.map name="lowpass_1" value="-26.0"/>
-         <frac32.s.map name="adsr_1:a" MidiCC="1" value="-64.0">
+         <frac32.s.map name="adsr_1:a" MidiCC="1" value="63.99999952316284">
             <presets>
                <preset index="1">
                   <f v="-23.0"/>
                </preset>
             </presets>
          </frac32.s.map>
-         <frac32.s.map name="adsr_1:d" MidiCC="2" value="-22.0">
+         <frac32.s.map name="adsr_1:d" MidiCC="2" value="-49.0">
             <presets>
                <preset index="1">
                   <f v="-28.0"/>
@@ -166,7 +160,7 @@
             </presets>
          </frac32.s.map>
          <frac32.u.map name="mix_1" value="16.0"/>
-         <frac32.s.map name="ZDF_1:pitch" MidiCC="3" value="-27.0">
+         <frac32.s.map name="ZDF_1:pitch" MidiCC="3" value="-64.0">
             <presets>
                <preset index="1">
                   <f v="11.0"/>
@@ -174,7 +168,7 @@
             </presets>
          </frac32.s.map>
          <frac32.s.map name="lowpass_2" value="14.0"/>
-         <frac32.u.map name="ZDF1_Q" MidiCC="4" value="32.0">
+         <frac32.u.map name="ZDF1_Q" MidiCC="4" value="17.0">
             <presets>
                <preset index="1">
                   <f v="18.0"/>
@@ -495,14 +489,14 @@
          </settings>
          <notes><![CDATA[]]></notes>
          <windowPos>
-            <x>1808</x>
+            <x>320</x>
             <y>214</y>
             <width>1600</width>
             <height>832</height>
          </windowPos>
       </subpatch>
    </patcher>
-   <obj type="midi/out/cc thin" uuid="5255b30d60e50223ed41179d8ce935ba9464de75" name="cc_4" x="728" y="756">
+   <obj type="midi/out/cc thin" uuid="5255b30d60e50223ed41179d8ce935ba9464de75" name="cc_4" x="1008" y="840">
       <params/>
       <attribs>
          <combo attributeName="device" selection="internal port 1"/>
@@ -510,7 +504,7 @@
          <spinner attributeName="cc" value="4"/>
       </attribs>
    </obj>
-   <obj type="tiar/dist/DPSoftClip" uuid="4664e423-ca15-4925-952a-6d150aa652da" name="DPSoftClip_1" x="1512" y="770">
+   <obj type="tiar/dist/DPSoftClip" uuid="4664e423-ca15-4925-952a-6d150aa652da" name="DPSoftClip_1" x="1792" y="854">
       <params>
          <frac32.u.map name="InGain" MidiCC="20" value="46.5">
             <presets>
@@ -529,68 +523,68 @@
       </params>
       <attribs/>
    </obj>
-   <obj type="lfo/sine" uuid="75f7330c26a13953215dccc3b7b9008545c9daa9" name="sine_6" x="476" y="924">
+   <obj type="lfo/sine" uuid="75f7330c26a13953215dccc3b7b9008545c9daa9" name="sine_6" x="756" y="1008">
       <params>
          <frac32.s.map name="pitch" value="-58.0"/>
       </params>
       <attribs/>
    </obj>
-   <obj type="math/*c" uuid="7d5ef61c3bcd571ee6bbd8437ef3612125dfb225" name="*c_1" x="574" y="924">
+   <obj type="math/*c" uuid="7d5ef61c3bcd571ee6bbd8437ef3612125dfb225" name="*c_1" x="854" y="1008">
       <params>
          <frac32.u.map name="amp" value="3.7149996757507324"/>
       </params>
       <attribs/>
    </obj>
-   <obj type="lfo/sine" uuid="75f7330c26a13953215dccc3b7b9008545c9daa9" name="sine_7" x="672" y="924">
+   <obj type="lfo/sine" uuid="75f7330c26a13953215dccc3b7b9008545c9daa9" name="sine_7" x="952" y="1008">
       <params>
          <frac32.s.map name="pitch" value="-33.0"/>
       </params>
       <attribs/>
    </obj>
-   <obj type="lfo/sine" uuid="75f7330c26a13953215dccc3b7b9008545c9daa9" name="sine_4" x="476" y="1008">
+   <obj type="lfo/sine" uuid="75f7330c26a13953215dccc3b7b9008545c9daa9" name="sine_4" x="756" y="1092">
       <params>
          <frac32.s.map name="pitch" value="-44.72999906539917"/>
       </params>
       <attribs/>
    </obj>
-   <obj type="math/*c" uuid="7d5ef61c3bcd571ee6bbd8437ef3612125dfb225" name="*c_2" x="574" y="1008">
+   <obj type="math/*c" uuid="7d5ef61c3bcd571ee6bbd8437ef3612125dfb225" name="*c_2" x="854" y="1092">
       <params>
          <frac32.u.map name="amp" value="2.2699999809265137"/>
       </params>
       <attribs/>
    </obj>
-   <obj type="lfo/sine" uuid="75f7330c26a13953215dccc3b7b9008545c9daa9" name="sine_5" x="672" y="1008">
+   <obj type="lfo/sine" uuid="75f7330c26a13953215dccc3b7b9008545c9daa9" name="sine_5" x="952" y="1092">
       <params>
          <frac32.s.map name="pitch" value="-17.80999994277954"/>
       </params>
       <attribs/>
    </obj>
-   <obj type="lfo/sine" uuid="75f7330c26a13953215dccc3b7b9008545c9daa9" name="sine_3" x="476" y="1092">
+   <obj type="lfo/sine" uuid="75f7330c26a13953215dccc3b7b9008545c9daa9" name="sine_3" x="756" y="1176">
       <params>
          <frac32.s.map name="pitch" value="-36.359999656677246"/>
       </params>
       <attribs/>
    </obj>
-   <obj type="math/*c" uuid="7d5ef61c3bcd571ee6bbd8437ef3612125dfb225" name="*c_3" x="574" y="1092">
+   <obj type="math/*c" uuid="7d5ef61c3bcd571ee6bbd8437ef3612125dfb225" name="*c_3" x="854" y="1176">
       <params>
          <frac32.u.map name="amp" value="0.6149997711181641"/>
       </params>
       <attribs/>
    </obj>
-   <obj type="lfo/sine" uuid="75f7330c26a13953215dccc3b7b9008545c9daa9" name="sine_2" x="672" y="1092">
+   <obj type="lfo/sine" uuid="75f7330c26a13953215dccc3b7b9008545c9daa9" name="sine_2" x="952" y="1176">
       <params>
          <frac32.s.map name="pitch" value="-7.0"/>
       </params>
       <attribs/>
    </obj>
-   <obj type="mix/mix 2" uuid="682ea5496ded046d981e26b720a6e7f8eca97541" name="mix_1" x="770" y="1092">
+   <obj type="mix/mix 2" uuid="682ea5496ded046d981e26b720a6e7f8eca97541" name="mix_1" x="1050" y="1176">
       <params>
          <frac32.u.map name="gain1" value="40.0"/>
          <frac32.u.map name="gain2" value="50.5"/>
       </params>
       <attribs/>
    </obj>
-   <obj type="math/*c" uuid="7d5ef61c3bcd571ee6bbd8437ef3612125dfb225" name="*c_4" x="854" y="1092">
+   <obj type="math/*c" uuid="7d5ef61c3bcd571ee6bbd8437ef3612125dfb225" name="*c_4" x="1134" y="1176">
       <params>
          <frac32.u.map name="amp" MidiCC="5" value="0.0">
             <presets>
@@ -602,13 +596,13 @@
       </params>
       <attribs/>
    </obj>
-   <obj type="delay/write sdram" uuid="5ae03f8d7b815edcfc40585d8bbac2ed48460fba" name="delay1" x="1106" y="1092">
+   <obj type="delay/write sdram" uuid="5ae03f8d7b815edcfc40585d8bbac2ed48460fba" name="delay1" x="1386" y="1176">
       <params/>
       <attribs>
          <combo attributeName="size" selection="16384 (341ms)"/>
       </attribs>
    </obj>
-   <obj type="delay/read" uuid="9323a43569373145e559ad309eaf65a47b14cb54" name="read_1" x="1218" y="1092">
+   <obj type="delay/read" uuid="9323a43569373145e559ad309eaf65a47b14cb54" name="read_1" x="1498" y="1176">
       <params>
          <frac32.u.map name="time" value="55.0"/>
       </params>
@@ -616,7 +610,7 @@
          <objref attributeName="delayname" obj="delay1"/>
       </attribs>
    </obj>
-   <obj type="filter/allpass" uuid="59cc8e3d8044e145e1eb908baa5a7d3ed2ec5f72" name="allpass_1" x="1372" y="1092">
+   <obj type="filter/allpass" uuid="59cc8e3d8044e145e1eb908baa5a7d3ed2ec5f72" name="allpass_1" x="1652" y="1176">
       <params>
          <frac32.s.map name="g" value="64.0"/>
       </params>
@@ -624,7 +618,7 @@
          <spinner attributeName="delay" value="1726"/>
       </attribs>
    </obj>
-   <obj type="filter/allpass" uuid="59cc8e3d8044e145e1eb908baa5a7d3ed2ec5f72" name="allpass_3" x="1470" y="1092">
+   <obj type="filter/allpass" uuid="59cc8e3d8044e145e1eb908baa5a7d3ed2ec5f72" name="allpass_3" x="1750" y="1176">
       <params>
          <frac32.s.map name="g" value="46.0"/>
       </params>
@@ -632,7 +626,7 @@
          <spinner attributeName="delay" value="1117"/>
       </attribs>
    </obj>
-   <obj type="tiar/fx/APNoodle" uuid="3674e423-ca15-4925-952a-6e150aa652da" name="APNoodle_1" x="1596" y="1092">
+   <obj type="tiar/fx/APNoodle" uuid="3674e423-ca15-4925-952a-6e150aa652da" name="APNoodle_1" x="1876" y="1176">
       <params>
          <frac32.s.map name="g" MidiCC="15" value="26.0">
             <presets>
@@ -644,97 +638,97 @@
       </params>
       <attribs/>
    </obj>
-   <obj type="mix/mix 2" uuid="30c04239c88e09d3fa5c333b784ecf54f1b0e268" name="mix_2" x="1750" y="1092">
+   <obj type="mix/mix 2" uuid="30c04239c88e09d3fa5c333b784ecf54f1b0e268" name="mix_2" x="2030" y="1176">
       <params>
          <frac32.u.map name="gain1" value="64.0"/>
          <frac32.u.map name="gain2" value="64.0"/>
       </params>
       <attribs/>
    </obj>
-   <obj type="gain/vca" uuid="a9f2dcd18043e2f47364e45cb8814f63c2a37c0d" name="vca_1" x="1932" y="1092">
+   <obj type="gain/vca" uuid="a9f2dcd18043e2f47364e45cb8814f63c2a37c0d" name="vca_1" x="2212" y="1176">
       <params/>
       <attribs/>
    </obj>
-   <obj type="audio/out stereo" uuid="a1ca7a567f535acc21055669829101d3ee7f0189" name="out_1" x="2016" y="1106">
+   <obj type="audio/out stereo" uuid="a1ca7a567f535acc21055669829101d3ee7f0189" name="out_1" x="2296" y="1190">
       <params/>
       <attribs/>
    </obj>
-   <obj type="ctrl/dial p" uuid="cc5d2846c3d50e425f450c4b9851371b54f4d674" name="dial_1" x="1848" y="1120">
+   <obj type="ctrl/dial p" uuid="cc5d2846c3d50e425f450c4b9851371b54f4d674" name="dial_1" x="2128" y="1204">
       <params>
          <frac32.u.map name="value" MidiCC="84" value="64.0"/>
       </params>
       <attribs/>
    </obj>
-   <obj type="gain/vca" uuid="a9f2dcd18043e2f47364e45cb8814f63c2a37c0d" name="vca_2" x="1932" y="1148">
+   <obj type="gain/vca" uuid="a9f2dcd18043e2f47364e45cb8814f63c2a37c0d" name="vca_2" x="2212" y="1232">
       <params/>
       <attribs/>
    </obj>
-   <obj type="lfo/sine" uuid="75f7330c26a13953215dccc3b7b9008545c9daa9" name="sine_8" x="476" y="1246">
+   <obj type="lfo/sine" uuid="75f7330c26a13953215dccc3b7b9008545c9daa9" name="sine_8" x="756" y="1330">
       <params>
          <frac32.s.map name="pitch" value="-56.34999990463257"/>
       </params>
       <attribs/>
    </obj>
-   <obj type="math/*c" uuid="7d5ef61c3bcd571ee6bbd8437ef3612125dfb225" name="*c_5" x="574" y="1246">
+   <obj type="math/*c" uuid="7d5ef61c3bcd571ee6bbd8437ef3612125dfb225" name="*c_5" x="854" y="1330">
       <params>
          <frac32.u.map name="amp" value="3.7149996757507324"/>
       </params>
       <attribs/>
    </obj>
-   <obj type="lfo/sine" uuid="75f7330c26a13953215dccc3b7b9008545c9daa9" name="sine_9" x="672" y="1246">
+   <obj type="lfo/sine" uuid="75f7330c26a13953215dccc3b7b9008545c9daa9" name="sine_9" x="952" y="1330">
       <params>
          <frac32.s.map name="pitch" value="-33.0"/>
       </params>
       <attribs/>
    </obj>
-   <obj type="tiar/disp/scope" uuid="0991142e-58fa-47e6-9f89-32da05f9fe41" name="scope_1" x="2016" y="1302">
+   <obj type="tiar/disp/scope" uuid="0991142e-58fa-47e6-9f89-32da05f9fe41" name="scope_1" x="2296" y="1386">
       <params/>
       <attribs/>
    </obj>
-   <obj type="lfo/sine" uuid="75f7330c26a13953215dccc3b7b9008545c9daa9" name="sine_10" x="476" y="1330">
+   <obj type="lfo/sine" uuid="75f7330c26a13953215dccc3b7b9008545c9daa9" name="sine_10" x="756" y="1414">
       <params>
          <frac32.s.map name="pitch" value="-24.81999921798706"/>
       </params>
       <attribs/>
    </obj>
-   <obj type="math/*c" uuid="7d5ef61c3bcd571ee6bbd8437ef3612125dfb225" name="*c_6" x="574" y="1330">
+   <obj type="math/*c" uuid="7d5ef61c3bcd571ee6bbd8437ef3612125dfb225" name="*c_6" x="854" y="1414">
       <params>
          <frac32.u.map name="amp" value="23.269999980926514"/>
       </params>
       <attribs/>
    </obj>
-   <obj type="lfo/sine" uuid="75f7330c26a13953215dccc3b7b9008545c9daa9" name="sine_11" x="672" y="1330">
+   <obj type="lfo/sine" uuid="75f7330c26a13953215dccc3b7b9008545c9daa9" name="sine_11" x="952" y="1414">
       <params>
          <frac32.s.map name="pitch" value="-17.80999994277954"/>
       </params>
       <attribs/>
    </obj>
-   <obj type="lfo/sine" uuid="75f7330c26a13953215dccc3b7b9008545c9daa9" name="sine_12" x="476" y="1414">
+   <obj type="lfo/sine" uuid="75f7330c26a13953215dccc3b7b9008545c9daa9" name="sine_12" x="756" y="1498">
       <params>
          <frac32.s.map name="pitch" value="-34.84999990463257"/>
       </params>
       <attribs/>
    </obj>
-   <obj type="math/*c" uuid="7d5ef61c3bcd571ee6bbd8437ef3612125dfb225" name="*c_7" x="574" y="1414">
+   <obj type="math/*c" uuid="7d5ef61c3bcd571ee6bbd8437ef3612125dfb225" name="*c_7" x="854" y="1498">
       <params>
          <frac32.u.map name="amp" value="0.6149997711181641"/>
       </params>
       <attribs/>
    </obj>
-   <obj type="lfo/sine" uuid="75f7330c26a13953215dccc3b7b9008545c9daa9" name="sine_13" x="672" y="1414">
+   <obj type="lfo/sine" uuid="75f7330c26a13953215dccc3b7b9008545c9daa9" name="sine_13" x="952" y="1498">
       <params>
          <frac32.s.map name="pitch" value="-7.0"/>
       </params>
       <attribs/>
    </obj>
-   <obj type="mix/mix 2" uuid="682ea5496ded046d981e26b720a6e7f8eca97541" name="mix_3" x="770" y="1414">
+   <obj type="mix/mix 2" uuid="682ea5496ded046d981e26b720a6e7f8eca97541" name="mix_3" x="1050" y="1498">
       <params>
          <frac32.u.map name="gain1" value="40.0"/>
          <frac32.u.map name="gain2" value="50.5"/>
       </params>
       <attribs/>
    </obj>
-   <obj type="math/*c" uuid="7d5ef61c3bcd571ee6bbd8437ef3612125dfb225" name="*c_8" x="854" y="1414">
+   <obj type="math/*c" uuid="7d5ef61c3bcd571ee6bbd8437ef3612125dfb225" name="*c_8" x="1134" y="1498">
       <params>
          <frac32.u.map name="amp" MidiCC="6" value="0.0">
             <presets>
@@ -746,13 +740,13 @@
       </params>
       <attribs/>
    </obj>
-   <obj type="delay/write sdram" uuid="5ae03f8d7b815edcfc40585d8bbac2ed48460fba" name="delay2" x="1106" y="1414">
+   <obj type="delay/write sdram" uuid="5ae03f8d7b815edcfc40585d8bbac2ed48460fba" name="delay2" x="1386" y="1498">
       <params/>
       <attribs>
          <combo attributeName="size" selection="16384 (341ms)"/>
       </attribs>
    </obj>
-   <obj type="delay/read" uuid="9323a43569373145e559ad309eaf65a47b14cb54" name="read_2" x="1218" y="1414">
+   <obj type="delay/read" uuid="9323a43569373145e559ad309eaf65a47b14cb54" name="read_2" x="1498" y="1498">
       <params>
          <frac32.u.map name="time" value="58.0"/>
       </params>
@@ -760,7 +754,7 @@
          <objref attributeName="delayname" obj="delay2"/>
       </attribs>
    </obj>
-   <obj type="filter/allpass" uuid="59cc8e3d8044e145e1eb908baa5a7d3ed2ec5f72" name="allpass_2" x="1372" y="1414">
+   <obj type="filter/allpass" uuid="59cc8e3d8044e145e1eb908baa5a7d3ed2ec5f72" name="allpass_2" x="1652" y="1498">
       <params>
          <frac32.s.map name="g" value="54.0"/>
       </params>
@@ -768,7 +762,7 @@
          <spinner attributeName="delay" value="1685"/>
       </attribs>
    </obj>
-   <obj type="filter/allpass" uuid="59cc8e3d8044e145e1eb908baa5a7d3ed2ec5f72" name="allpass_4" x="1470" y="1414">
+   <obj type="filter/allpass" uuid="59cc8e3d8044e145e1eb908baa5a7d3ed2ec5f72" name="allpass_4" x="1750" y="1498">
       <params>
          <frac32.s.map name="g" value="54.0"/>
       </params>
@@ -776,7 +770,7 @@
          <spinner attributeName="delay" value="1343"/>
       </attribs>
    </obj>
-   <obj type="tiar/fx/APNoodle" uuid="3674e423-ca15-4925-952a-6e150aa652da" name="APNoodle_2" x="1596" y="1414">
+   <obj type="tiar/fx/APNoodle" uuid="3674e423-ca15-4925-952a-6e150aa652da" name="APNoodle_2" x="1876" y="1498">
       <params>
          <frac32.s.map name="g" MidiCC="31" value="47.0">
             <presets>
@@ -788,75 +782,75 @@
       </params>
       <attribs/>
    </obj>
-   <obj type="mix/mix 2" uuid="30c04239c88e09d3fa5c333b784ecf54f1b0e268" name="mix_4" x="1750" y="1414">
+   <obj type="mix/mix 2" uuid="30c04239c88e09d3fa5c333b784ecf54f1b0e268" name="mix_4" x="2030" y="1498">
       <params>
          <frac32.u.map name="gain1" value="64.0"/>
          <frac32.u.map name="gain2" value="33.0"/>
       </params>
       <attribs/>
    </obj>
-   <obj type="lfo/sine" uuid="75f7330c26a13953215dccc3b7b9008545c9daa9" name="sine_14" x="476" y="1596">
+   <obj type="lfo/sine" uuid="75f7330c26a13953215dccc3b7b9008545c9daa9" name="sine_14" x="756" y="1680">
       <params>
          <frac32.s.map name="pitch" value="-57.11999988555908"/>
       </params>
       <attribs/>
    </obj>
-   <obj type="math/*c" uuid="7d5ef61c3bcd571ee6bbd8437ef3612125dfb225" name="*c_9" x="574" y="1596">
+   <obj type="math/*c" uuid="7d5ef61c3bcd571ee6bbd8437ef3612125dfb225" name="*c_9" x="854" y="1680">
       <params>
          <frac32.u.map name="amp" value="3.7149996757507324"/>
       </params>
       <attribs/>
    </obj>
-   <obj type="lfo/sine" uuid="75f7330c26a13953215dccc3b7b9008545c9daa9" name="sine_15" x="672" y="1596">
+   <obj type="lfo/sine" uuid="75f7330c26a13953215dccc3b7b9008545c9daa9" name="sine_15" x="952" y="1680">
       <params>
          <frac32.s.map name="pitch" value="-34.739999771118164"/>
       </params>
       <attribs/>
    </obj>
-   <obj type="lfo/sine" uuid="75f7330c26a13953215dccc3b7b9008545c9daa9" name="sine_16" x="476" y="1680">
+   <obj type="lfo/sine" uuid="75f7330c26a13953215dccc3b7b9008545c9daa9" name="sine_16" x="756" y="1764">
       <params>
          <frac32.s.map name="pitch" value="-49.309998989105225"/>
       </params>
       <attribs/>
    </obj>
-   <obj type="math/*c" uuid="7d5ef61c3bcd571ee6bbd8437ef3612125dfb225" name="*c_10" x="574" y="1680">
+   <obj type="math/*c" uuid="7d5ef61c3bcd571ee6bbd8437ef3612125dfb225" name="*c_10" x="854" y="1764">
       <params>
          <frac32.u.map name="amp" value="2.2699999809265137"/>
       </params>
       <attribs/>
    </obj>
-   <obj type="lfo/sine" uuid="75f7330c26a13953215dccc3b7b9008545c9daa9" name="sine_17" x="672" y="1680">
+   <obj type="lfo/sine" uuid="75f7330c26a13953215dccc3b7b9008545c9daa9" name="sine_17" x="952" y="1764">
       <params>
          <frac32.s.map name="pitch" value="-23.229999542236328"/>
       </params>
       <attribs/>
    </obj>
-   <obj type="lfo/sine" uuid="75f7330c26a13953215dccc3b7b9008545c9daa9" name="sine_18" x="476" y="1764">
+   <obj type="lfo/sine" uuid="75f7330c26a13953215dccc3b7b9008545c9daa9" name="sine_18" x="756" y="1848">
       <params>
          <frac32.s.map name="pitch" value="-49.83999967575073"/>
       </params>
       <attribs/>
    </obj>
-   <obj type="math/*c" uuid="7d5ef61c3bcd571ee6bbd8437ef3612125dfb225" name="*c_11" x="574" y="1764">
+   <obj type="math/*c" uuid="7d5ef61c3bcd571ee6bbd8437ef3612125dfb225" name="*c_11" x="854" y="1848">
       <params>
          <frac32.u.map name="amp" value="0.6149997711181641"/>
       </params>
       <attribs/>
    </obj>
-   <obj type="lfo/sine" uuid="75f7330c26a13953215dccc3b7b9008545c9daa9" name="sine_19" x="672" y="1764">
+   <obj type="lfo/sine" uuid="75f7330c26a13953215dccc3b7b9008545c9daa9" name="sine_19" x="952" y="1848">
       <params>
          <frac32.s.map name="pitch" value="-16.959999561309814"/>
       </params>
       <attribs/>
    </obj>
-   <obj type="mix/mix 2" uuid="682ea5496ded046d981e26b720a6e7f8eca97541" name="mix_5" x="770" y="1764">
+   <obj type="mix/mix 2" uuid="682ea5496ded046d981e26b720a6e7f8eca97541" name="mix_5" x="1050" y="1848">
       <params>
          <frac32.u.map name="gain1" value="40.0"/>
          <frac32.u.map name="gain2" value="50.5"/>
       </params>
       <attribs/>
    </obj>
-   <obj type="math/*c" uuid="7d5ef61c3bcd571ee6bbd8437ef3612125dfb225" name="*c_12" x="854" y="1764">
+   <obj type="math/*c" uuid="7d5ef61c3bcd571ee6bbd8437ef3612125dfb225" name="*c_12" x="1134" y="1848">
       <params>
          <frac32.u.map name="amp" MidiCC="7" value="0.0">
             <presets>
@@ -868,13 +862,13 @@
       </params>
       <attribs/>
    </obj>
-   <obj type="delay/write sdram" uuid="5ae03f8d7b815edcfc40585d8bbac2ed48460fba" name="delay3" x="1106" y="1764">
+   <obj type="delay/write sdram" uuid="5ae03f8d7b815edcfc40585d8bbac2ed48460fba" name="delay3" x="1386" y="1848">
       <params/>
       <attribs>
          <combo attributeName="size" selection="32768 (682ms)"/>
       </attribs>
    </obj>
-   <obj type="delay/read" uuid="9323a43569373145e559ad309eaf65a47b14cb54" name="read_3" x="1218" y="1764">
+   <obj type="delay/read" uuid="9323a43569373145e559ad309eaf65a47b14cb54" name="read_3" x="1498" y="1848">
       <params>
          <frac32.u.map name="time" value="56.0"/>
       </params>
@@ -882,7 +876,7 @@
          <objref attributeName="delayname" obj="delay3"/>
       </attribs>
    </obj>
-   <obj type="filter/allpass" uuid="59cc8e3d8044e145e1eb908baa5a7d3ed2ec5f72" name="allpass_5" x="1372" y="1764">
+   <obj type="filter/allpass" uuid="59cc8e3d8044e145e1eb908baa5a7d3ed2ec5f72" name="allpass_5" x="1652" y="1848">
       <params>
          <frac32.s.map name="g" value="-45.0"/>
       </params>
@@ -890,7 +884,7 @@
          <spinner attributeName="delay" value="1304"/>
       </attribs>
    </obj>
-   <obj type="filter/allpass" uuid="59cc8e3d8044e145e1eb908baa5a7d3ed2ec5f72" name="allpass_6" x="1470" y="1764">
+   <obj type="filter/allpass" uuid="59cc8e3d8044e145e1eb908baa5a7d3ed2ec5f72" name="allpass_6" x="1750" y="1848">
       <params>
          <frac32.s.map name="g" value="-45.0"/>
       </params>
@@ -898,7 +892,7 @@
          <spinner attributeName="delay" value="1167"/>
       </attribs>
    </obj>
-   <obj type="tiar/fx/APNoodle" uuid="3674e423-ca15-4925-952a-6e150aa652da" name="APNoodle_3" x="1596" y="1764">
+   <obj type="tiar/fx/APNoodle" uuid="3674e423-ca15-4925-952a-6e150aa652da" name="APNoodle_3" x="1876" y="1848">
       <params>
          <frac32.s.map name="g" MidiCC="51" value="48.0">
             <presets>
@@ -1139,23 +1133,23 @@
          <dest obj="vca_2" inlet="v"/>
       </net>
       <net>
-         <source obj="obj_1" outlet="dial 1"/>
+         <source obj="phone_interface_buttons_1" outlet="dial 1"/>
          <dest obj="cc_1" inlet="v"/>
       </net>
       <net>
-         <source obj="obj_1" outlet="dial 2"/>
+         <source obj="phone_interface_buttons_1" outlet="dial 2"/>
          <dest obj="cc_2" inlet="v"/>
       </net>
       <net>
-         <source obj="obj_1" outlet="dial 3"/>
+         <source obj="phone_interface_buttons_1" outlet="dial 3"/>
          <dest obj="cc_3" inlet="v"/>
       </net>
       <net>
-         <source obj="obj_1" outlet="dial 4"/>
+         <source obj="phone_interface_buttons_1" outlet="dial 4"/>
          <dest obj="cc_4" inlet="v"/>
       </net>
       <net>
-         <source obj="obj_1" outlet="toggle 1"/>
+         <source obj="phone_interface_buttons_1" outlet="toggle 1"/>
          <dest obj="*c_13" inlet="in"/>
       </net>
       <net>
@@ -1167,7 +1161,7 @@
          <dest obj="cc_6" inlet="v"/>
       </net>
       <net>
-         <source obj="obj_1" outlet="toggle 2"/>
+         <source obj="phone_interface_buttons_1" outlet="toggle 2"/>
          <dest obj="*c_14" inlet="in"/>
       </net>
       <net>
@@ -1175,7 +1169,7 @@
          <dest obj="cc_7" inlet="v"/>
       </net>
       <net>
-         <source obj="obj_1" outlet="button 1"/>
+         <source obj="phone_interface_buttons_1" outlet="button 1"/>
          <dest obj="*c_15" inlet="in"/>
       </net>
       <net>
@@ -1196,7 +1190,7 @@
          <dest obj="phonebankcontroller_1" inlet="patch_down"/>
       </net>
       <net>
-         <source obj="obj_1" outlet="bottom"/>
+         <source obj="phone_interface_buttons_1" outlet="bottom"/>
          <dest obj="delayedpulseduration_4" inlet="trig"/>
       </net>
       <net>
@@ -1204,7 +1198,7 @@
          <dest obj="and_1" inlet="i1"/>
       </net>
       <net>
-         <source obj="obj_1" outlet="top"/>
+         <source obj="phone_interface_buttons_1" outlet="top"/>
          <dest obj="delayedpulseduration_5" inlet="trig"/>
       </net>
       <net>

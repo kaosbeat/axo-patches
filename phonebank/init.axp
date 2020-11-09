@@ -1,47 +1,19 @@
 <patch-1.0 appVersion="1.0.12">
-   <obj type="const/i" uuid="e202f44b2df17ae0b3e663b98ea6b14c8ff00408" name="i_1" x="0" y="0">
+   <obj type="phone_interface_buttons" uuid="4c0d9077-b4c1-4c92-9172-fc2aa9067a3d" name="phone_interface_buttons_1" x="0" y="0">
+      <params>
+         <bin16 name="seqg" value="1"/>
+         <bin16 name="seqr" value="0"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="const/i" uuid="e202f44b2df17ae0b3e663b98ea6b14c8ff00408" name="i_1" x="266" y="56">
       <params/>
       <attribs>
          <spinner attributeName="value" value="0"/>
       </attribs>
    </obj>
-   <obj type="phone_interface" uuid="2d7c7349-fc04-40dd-8f8e-b7f25a050837" name="obj_2" x="0" y="70">
+   <obj type="phonebankcontroller" uuid="d57d7cc0-a505-4cf9-8bc8-79288a49a016" name="phonebankcontroller_1" x="518" y="112">
       <params/>
-      <attribs/>
-   </obj>
-   <obj type="phonebankcontroller" uuid="d57d7cc0-a505-4cf9-8bc8-79288a49a016" name="phonebankcontroller_1" x="280" y="70">
-      <params/>
-      <attribs/>
-   </obj>
-   <obj type="string/c" uuid="4aa90a90c435a742ddfa152d232883fc5b2f1b3" name="c_1" x="266" y="210">
-      <params/>
-      <attribs>
-         <table attributeName="str" table="init"/>
-      </attribs>
-   </obj>
-   <obj type="timer/delayedpulse" uuid="3f05ee534ca67755fb20c7437f9e4de3d4c2f73d" name="delayedpulse_1" x="336" y="294">
-      <params>
-         <frac32.s.map name="delay" value="25.0"/>
-      </params>
-      <attribs/>
-   </obj>
-   <obj type="rbrt/patching/loadbang" uuid="45d1f29d-ac62-4e5b-86f8-2201d2f6c689" name="loadbang_1" x="182" y="308">
-      <params/>
-      <attribs/>
-   </obj>
-   <obj type="gpio/spi/config" uuid="d3e75d8a02e2ccabbbc2af3bc2fcdb8ea65a6133" name="config_1" x="168" y="378">
-      <params/>
-      <attribs>
-         <combo attributeName="clock_polarity" selection="CPOL=0"/>
-         <combo attributeName="clock_phase" selection="CPHA=0"/>
-         <combo attributeName="baudrate" selection="FPCLK/128"/>
-         <combo attributeName="format" selection="LSB first"/>
-      </attribs>
-   </obj>
-   <obj type="timer/delayedpulse" uuid="3f05ee534ca67755fb20c7437f9e4de3d4c2f73d" name="delayedpulse_2" x="336" y="378">
-      <params>
-         <frac32.s.map name="delay" value="15.0"/>
-      </params>
       <attribs/>
    </obj>
    <nets>
@@ -50,17 +22,12 @@
          <dest obj="phonebankcontroller_1" inlet="currentpatch"/>
       </net>
       <net>
-         <source obj="obj_2" outlet="top"/>
+         <source obj="phone_interface_buttons_1" outlet="top"/>
          <dest obj="phonebankcontroller_1" inlet="patch_up"/>
       </net>
       <net>
-         <source obj="obj_2" outlet="bottom"/>
+         <source obj="phone_interface_buttons_1" outlet="bottom"/>
          <dest obj="phonebankcontroller_1" inlet="patch_down"/>
-      </net>
-      <net>
-         <source obj="loadbang_1" outlet="pulse"/>
-         <dest obj="delayedpulse_1" inlet="trig"/>
-         <dest obj="delayedpulse_2" inlet="trig"/>
       </net>
    </nets>
    <settings>

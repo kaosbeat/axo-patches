@@ -1,68 +1,75 @@
 <patch-1.0 appVersion="1.0.12">
-   <comment type="patch/comment" x="686" y="0" text="NOTES"/>
-   <comment type="patch/comment" x="532" y="14" text="Updated midi looper. it&apos;s 4 objects - one to sync to the clock, one to record/play back notes, one to record bend/mono touch/ ccs, and one to record poly touch. I made it like this so if you only want notes, you can delete the others"/>
-   <comment type="patch/comment" x="532" y="42" text="DO NOT PUT IN POLY SUB PATCH - it does it&apos;s own poly assigning. currently it can record up to 9 notes at once, and can playback 15."/>
-   <comment type="patch/comment" x="131" y="55" text="KNOWN BUGS!!!!!!!!!!!!!!!"/>
-   <comment type="patch/comment" x="532" y="56" text="the note recorder is a big object, I&apos;m going to make a couple of variations with different amounts of record/playback voices so you can use smaller ones when space/sram is running out"/>
-   <comment type="patch/comment" x="126" y="70" text="it sometimes plays back a note from the last playing "/>
-   <comment type="patch/comment" x="126" y="84" text="loop whilst recording a new loop. not sure why yet!"/>
-   <comment type="patch/comment" x="602" y="84" text="It records at 128PPQ, when quantized it preserves note lengths and shifts start and end points by the same amount"/>
-   <comment type="patch/comment" x="756" y="98" text=". you can turn quantize on/off while overdubbing and record a mix of the two"/>
-   <comment type="patch/comment" x="126" y="112" text="if you find any weirdness, let me know!"/>
-   <comment type="patch/comment" x="602" y="126" text="it will record any cc&apos;s coming in on that channel, and is able to play back 3 at once"/>
-   <comment type="patch/comment" x="602" y="154" text="DATA - you can have a max of 32 slots, each can be as many bars long as you like (depending on settings on object)"/>
-   <comment type="patch/comment" x="602" y="168" text="the &quot;size&quot; attribute sets the size the note rec/play object will use on the table. the table must be the same size or bigger than this. "/>
-   <comment type="patch/comment" x="602" y="182" text="if the cc/bend/touch recorders are used, you can see the total size on table from the final offset output, if you see what i mean (disp object below)"/>
-   <obj type="table/alloc 16b sdram load" uuid="e6b85dad3ab43565cda93ea4c43c73b668b1cd43" name="midiloop" x="112" y="196">
+   <obj type="phone_interface_buttons" uuid="4c0d9077-b4c1-4c92-9172-fc2aa9067a3d" name="phone_interface_buttons_1" x="0" y="0">
+      <params>
+         <bin16 name="seqg" value="0"/>
+         <bin16 name="seqr" value="1"/>
+      </params>
+      <attribs/>
+   </obj>
+   <comment type="patch/comment" x="966" y="84" text="NOTES"/>
+   <comment type="patch/comment" x="812" y="98" text="Updated midi looper. it&apos;s 4 objects - one to sync to the clock, one to record/play back notes, one to record bend/mono touch/ ccs, and one to record poly touch. I made it like this so if you only want notes, you can delete the others"/>
+   <comment type="patch/comment" x="812" y="126" text="DO NOT PUT IN POLY SUB PATCH - it does it&apos;s own poly assigning. currently it can record up to 9 notes at once, and can playback 15."/>
+   <comment type="patch/comment" x="411" y="139" text="KNOWN BUGS!!!!!!!!!!!!!!!"/>
+   <comment type="patch/comment" x="812" y="140" text="the note recorder is a big object, I&apos;m going to make a couple of variations with different amounts of record/playback voices so you can use smaller ones when space/sram is running out"/>
+   <comment type="patch/comment" x="406" y="154" text="it sometimes plays back a note from the last playing "/>
+   <comment type="patch/comment" x="406" y="168" text="loop whilst recording a new loop. not sure why yet!"/>
+   <comment type="patch/comment" x="882" y="168" text="It records at 128PPQ, when quantized it preserves note lengths and shifts start and end points by the same amount"/>
+   <comment type="patch/comment" x="1036" y="182" text=". you can turn quantize on/off while overdubbing and record a mix of the two"/>
+   <comment type="patch/comment" x="406" y="196" text="if you find any weirdness, let me know!"/>
+   <comment type="patch/comment" x="882" y="210" text="it will record any cc&apos;s coming in on that channel, and is able to play back 3 at once"/>
+   <comment type="patch/comment" x="882" y="238" text="DATA - you can have a max of 32 slots, each can be as many bars long as you like (depending on settings on object)"/>
+   <comment type="patch/comment" x="882" y="252" text="the &quot;size&quot; attribute sets the size the note rec/play object will use on the table. the table must be the same size or bigger than this. "/>
+   <comment type="patch/comment" x="882" y="266" text="if the cc/bend/touch recorders are used, you can see the total size on table from the final offset output, if you see what i mean (disp object below)"/>
+   <obj type="table/alloc 16b sdram load" uuid="e6b85dad3ab43565cda93ea4c43c73b668b1cd43" name="midiloop" x="392" y="280">
       <params/>
       <attribs>
          <combo attributeName="size" selection="1048576"/>
          <file attributeName="filename" file="/midiloop"/>
       </attribs>
    </obj>
-   <comment type="patch/comment" x="602" y="196" text="you can see the maximum amount of notes per slot (derived from the size attribute) on the maxnotes outlet (display below)"/>
-   <comment type="patch/comment" x="602" y="224" text="the cc/bend/touch recording uses much more rooom on the table than the note recorder (i&apos;ve found a size of 16384 is fine for 7 x 8bar loops, with a LOT of notes playing)"/>
-   <comment type="patch/comment" x="602" y="252" text="INPUT/OUTPUT DVEICES - you can set the inputs and outputs and channels in the three recording objects  in the objects."/>
-   <comment type="patch/comment" x="602" y="266" text="INTERNAL MIDI BUS ROUTING - if you want to record from AND play back from the internal midi bus, use different ports for input and output. other wise when you overdub it&apos;s going to keep recording it&apos;s own playback"/>
-   <comment type="patch/comment" x="602" y="280" text="the outlets are mainly for feedback or controlling the sub modules"/>
-   <comment type="patch/comment" x="252" y="308" text="start/stop internal clock"/>
-   <comment type="patch/comment" x="378" y="308" text="internal clock"/>
-   <comment type="patch/comment" x="700" y="308" text="CONTROLS"/>
-   <obj type="ctrl/toggle" uuid="42b8134fa729d54bfc8d62d6ef3fa99498c1de99" name="toggle_1" x="266" y="322">
+   <comment type="patch/comment" x="882" y="280" text="you can see the maximum amount of notes per slot (derived from the size attribute) on the maxnotes outlet (display below)"/>
+   <comment type="patch/comment" x="882" y="308" text="the cc/bend/touch recording uses much more rooom on the table than the note recorder (i&apos;ve found a size of 16384 is fine for 7 x 8bar loops, with a LOT of notes playing)"/>
+   <comment type="patch/comment" x="882" y="336" text="INPUT/OUTPUT DVEICES - you can set the inputs and outputs and channels in the three recording objects  in the objects."/>
+   <comment type="patch/comment" x="882" y="350" text="INTERNAL MIDI BUS ROUTING - if you want to record from AND play back from the internal midi bus, use different ports for input and output. other wise when you overdub it&apos;s going to keep recording it&apos;s own playback"/>
+   <comment type="patch/comment" x="882" y="364" text="the outlets are mainly for feedback or controlling the sub modules"/>
+   <comment type="patch/comment" x="532" y="392" text="start/stop internal clock"/>
+   <comment type="patch/comment" x="658" y="392" text="internal clock"/>
+   <comment type="patch/comment" x="980" y="392" text="CONTROLS"/>
+   <obj type="ctrl/toggle" uuid="42b8134fa729d54bfc8d62d6ef3fa99498c1de99" name="toggle_1" x="546" y="406">
       <params>
          <bool32.tgl name="b" value="0"/>
       </params>
       <attribs/>
    </obj>
-   <obj type="midi/intern/clock" uuid="7f6f35e92d2c29e950af2b3af5cebb2e9e3b778c" name="clock_3" x="378" y="322">
+   <obj type="midi/intern/clock" uuid="7f6f35e92d2c29e950af2b3af5cebb2e9e3b778c" name="clock_3" x="658" y="406">
       <params>
          <frac32.u.map name="bpm" value="14.5"/>
       </params>
       <attribs/>
    </obj>
-   <comment type="patch/comment" x="700" y="322" text="it&apos;s currently setup to record channel 7 from the DIN, and to playback to internal bus, port 1"/>
-   <comment type="patch/comment" x="700" y="336" text="it currently has 7 available slots, each has a maximum length of 8 bars"/>
-   <comment type="patch/comment" x="700" y="364" text="1. Trigger an empty clipslot and it starts recording at next bar. If trigger it again (or if it reaches the maxbar length on the object)  playback will start "/>
-   <comment type="patch/comment" x="700" y="378" text="2. Trigger a full clipslot and it will start playing at next bar. if already playing, it will restart"/>
-   <comment type="patch/comment" x="700" y="378" text="3. click stop to stop at next bar"/>
-   <comment type="patch/comment" x="700" y="392" text="4. overdub toggles overdubon/off - I don&apos;t think it currently let&apos;s you overdub into an empty slot"/>
-   <comment type="patch/comment" x="700" y="406" text="5. record button forces record at beginning of next bar, even if slot is full/playing"/>
-   <comment type="patch/comment" x="700" y="420" text="6. quantize toggles on /off quantize. quantize amount can be set in the object. so far you can do 1/4, 1/8, 1/16, 1/32. planning to add triplets at some point"/>
-   <comment type="patch/comment" x="700" y="434" text="7. clear clears the selected slot. you can clear a slot while another slot is playing"/>
-   <comment type="patch/comment" x="98" y="448" text="measures length of a midi sync pulse in K cycles "/>
-   <comment type="patch/comment" x="84" y="462" text="and puts out average length of a beat. updates each bar"/>
-   <comment type="patch/comment" x="476" y="462" text="rough bpm"/>
-   <comment type="patch/comment" x="602" y="462" text="quantize"/>
-   <comment type="patch/comment" x="714" y="462" text="clear"/>
-   <comment type="patch/comment" x="812" y="462" text="slot empty/full"/>
-   <comment type="patch/comment" x="910" y="462" text="clipslot"/>
-   <comment type="patch/comment" x="980" y="462" text="trigger"/>
-   <comment type="patch/comment" x="1064" y="462" text="stop"/>
-   <comment type="patch/comment" x="1148" y="462" text="overdub"/>
-   <comment type="patch/comment" x="1232" y="462" text="record"/>
-   <comment type="patch/comment" x="1330" y="462" text="metronom vol"/>
-   <comment type="patch/comment" x="1484" y="462" text="save loops to SDcard (axo table files, not midi files)"/>
-   <patchobj type="patch/object" uuid="3914464d-774e-4973-b888-9dc1d6e0561e" name="clock_1" x="126" y="476">
+   <comment type="patch/comment" x="980" y="406" text="it&apos;s currently setup to record channel 7 from the DIN, and to playback to internal bus, port 1"/>
+   <comment type="patch/comment" x="980" y="420" text="it currently has 7 available slots, each has a maximum length of 8 bars"/>
+   <comment type="patch/comment" x="980" y="448" text="1. Trigger an empty clipslot and it starts recording at next bar. If trigger it again (or if it reaches the maxbar length on the object)  playback will start "/>
+   <comment type="patch/comment" x="980" y="462" text="2. Trigger a full clipslot and it will start playing at next bar. if already playing, it will restart"/>
+   <comment type="patch/comment" x="980" y="462" text="3. click stop to stop at next bar"/>
+   <comment type="patch/comment" x="980" y="476" text="4. overdub toggles overdubon/off - I don&apos;t think it currently let&apos;s you overdub into an empty slot"/>
+   <comment type="patch/comment" x="980" y="490" text="5. record button forces record at beginning of next bar, even if slot is full/playing"/>
+   <comment type="patch/comment" x="980" y="504" text="6. quantize toggles on /off quantize. quantize amount can be set in the object. so far you can do 1/4, 1/8, 1/16, 1/32. planning to add triplets at some point"/>
+   <comment type="patch/comment" x="980" y="518" text="7. clear clears the selected slot. you can clear a slot while another slot is playing"/>
+   <comment type="patch/comment" x="378" y="532" text="measures length of a midi sync pulse in K cycles "/>
+   <comment type="patch/comment" x="364" y="546" text="and puts out average length of a beat. updates each bar"/>
+   <comment type="patch/comment" x="756" y="546" text="rough bpm"/>
+   <comment type="patch/comment" x="882" y="546" text="quantize"/>
+   <comment type="patch/comment" x="994" y="546" text="clear"/>
+   <comment type="patch/comment" x="1092" y="546" text="slot empty/full"/>
+   <comment type="patch/comment" x="1190" y="546" text="clipslot"/>
+   <comment type="patch/comment" x="1260" y="546" text="trigger"/>
+   <comment type="patch/comment" x="1344" y="546" text="stop"/>
+   <comment type="patch/comment" x="1428" y="546" text="overdub"/>
+   <comment type="patch/comment" x="1512" y="546" text="record"/>
+   <comment type="patch/comment" x="1610" y="546" text="metronom vol"/>
+   <comment type="patch/comment" x="1764" y="546" text="save loops to SDcard (axo table files, not midi files)"/>
+   <patchobj type="patch/object" uuid="3914464d-774e-4973-b888-9dc1d6e0561e" name="clock_1" x="406" y="560">
       <params/>
       <attribs/>
       <object id="patch/object" uuid="3914464d-774e-4973-b888-9dc1d6e0561e">
@@ -236,17 +243,17 @@ stop=0;]]></code.krate>
 }]]></code.midihandler>
       </object>
    </patchobj>
-   <obj type="disp/i" uuid="5e35fd0c62d81e70017289250cf28edd26e19e4a" name="i_2" x="476" y="476">
+   <obj type="disp/i" uuid="5e35fd0c62d81e70017289250cf28edd26e19e4a" name="i_2" x="756" y="560">
       <params/>
       <attribs/>
    </obj>
-   <obj type="ctrl/toggle" uuid="42b8134fa729d54bfc8d62d6ef3fa99498c1de99" name="toggle_2" x="588" y="476">
+   <obj type="ctrl/toggle" uuid="42b8134fa729d54bfc8d62d6ef3fa99498c1de99" name="toggle_2" x="868" y="560">
       <params>
          <bool32.tgl name="b" value="1"/>
       </params>
       <attribs/>
    </obj>
-   <patchobj type="patch/object" uuid="e1f4c92e-077d-44eb-9bcc-a09f56514998" name="button_8" x="714" y="476">
+   <patchobj type="patch/object" uuid="e1f4c92e-077d-44eb-9bcc-a09f56514998" name="button_8" x="994" y="560">
       <params>
          <bool32.mom name="b" value="0"/>
       </params>
@@ -270,70 +277,70 @@ stop=0;]]></code.krate>
 ]]></code.krate>
       </object>
    </patchobj>
-   <obj type="disp/bool" uuid="a0ee71d48208b71752cbb8c05e55145106ef3946" name="bool_5" x="826" y="476">
+   <obj type="disp/bool" uuid="a0ee71d48208b71752cbb8c05e55145106ef3946" name="bool_5" x="1106" y="560">
       <params/>
       <attribs/>
    </obj>
-   <obj type="ctrl/i" uuid="a3786816db6ea5bc6ac4193a5cccdb2c83b83496" name="i_15" x="910" y="476">
+   <obj type="ctrl/i" uuid="a3786816db6ea5bc6ac4193a5cccdb2c83b83496" name="i_15" x="1190" y="560">
       <params>
          <int32 name="value" value="4"/>
       </params>
       <attribs/>
    </obj>
-   <obj type="ctrl/button" uuid="ef3d13774349df85aa9bfecf30dbc91ab8488b3f" name="button_7" x="980" y="476">
+   <obj type="ctrl/button" uuid="ef3d13774349df85aa9bfecf30dbc91ab8488b3f" name="button_7" x="1260" y="560">
       <params>
          <bool32.mom name="b" value="0"/>
       </params>
       <attribs/>
    </obj>
-   <obj type="ctrl/button" uuid="ef3d13774349df85aa9bfecf30dbc91ab8488b3f" name="button_2" x="1064" y="476">
+   <obj type="ctrl/button" uuid="ef3d13774349df85aa9bfecf30dbc91ab8488b3f" name="button_2" x="1344" y="560">
       <params>
          <bool32.mom name="b" value="0"/>
       </params>
       <attribs/>
    </obj>
-   <obj type="ctrl/button" uuid="ef3d13774349df85aa9bfecf30dbc91ab8488b3f" name="button_4" x="1148" y="476">
+   <obj type="ctrl/button" uuid="ef3d13774349df85aa9bfecf30dbc91ab8488b3f" name="button_4" x="1428" y="560">
       <params>
          <bool32.mom name="b" value="0"/>
       </params>
       <attribs/>
    </obj>
-   <obj type="ctrl/button" uuid="ef3d13774349df85aa9bfecf30dbc91ab8488b3f" name="button_5" x="1232" y="476">
+   <obj type="ctrl/button" uuid="ef3d13774349df85aa9bfecf30dbc91ab8488b3f" name="button_5" x="1512" y="560">
       <params>
          <bool32.mom name="b" value="0"/>
       </params>
       <attribs/>
    </obj>
-   <obj type="ctrl/dial p" uuid="cc5d2846c3d50e425f450c4b9851371b54f4d674" name="dial_1" x="1330" y="476">
+   <obj type="ctrl/dial p" uuid="cc5d2846c3d50e425f450c4b9851371b54f4d674" name="dial_1" x="1610" y="560">
       <params>
          <frac32.u.map name="value" value="1.5"/>
       </params>
       <attribs/>
    </obj>
-   <obj type="ctrl/button" uuid="ef3d13774349df85aa9bfecf30dbc91ab8488b3f" name="button_1" x="1484" y="476">
+   <obj type="ctrl/button" uuid="ef3d13774349df85aa9bfecf30dbc91ab8488b3f" name="button_1" x="1764" y="560">
       <params>
          <bool32.mom name="b" value="0"/>
       </params>
       <attribs/>
    </obj>
-   <comment type="patch/comment" x="294" y="560" text="note recording/playback and clock"/>
-   <obj type="math/div 8" uuid="4a6007f5cb2024c50e8449b3bb6bcaef6ac42edb" name="div_1" x="1134" y="560">
+   <comment type="patch/comment" x="574" y="644" text="note recording/playback and clock"/>
+   <obj type="math/div 8" uuid="4a6007f5cb2024c50e8449b3bb6bcaef6ac42edb" name="div_1" x="1414" y="644">
       <params/>
       <attribs/>
    </obj>
-   <obj type="conv/to i" uuid="305966430ee86b5c3b8e18cde0c721657c558a87" name="to_1" x="1204" y="560">
+   <obj type="conv/to i" uuid="305966430ee86b5c3b8e18cde0c721657c558a87" name="to_1" x="1484" y="644">
       <params/>
       <attribs/>
    </obj>
-   <obj type="disp/i" uuid="5e35fd0c62d81e70017289250cf28edd26e19e4a" name="i_6" x="1260" y="560">
+   <obj type="disp/i" uuid="5e35fd0c62d81e70017289250cf28edd26e19e4a" name="i_6" x="1540" y="644">
       <params/>
       <attribs/>
    </obj>
-   <obj type="disp/dial p" uuid="44fd18b562e434b3230441681132dbeabb15cdc5" name="dial_3" x="1330" y="560">
+   <obj type="disp/dial p" uuid="44fd18b562e434b3230441681132dbeabb15cdc5" name="dial_3" x="1610" y="644">
       <params/>
       <attribs/>
    </obj>
-   <patchobj type="patch/object" uuid="d2e7db3f-0ba6-43fb-848f-afa25d0caebd" name="1_1" x="294" y="574">
+   <patchobj type="patch/object" uuid="d2e7db3f-0ba6-43fb-848f-afa25d0caebd" name="1_1" x="574" y="658">
       <params>
          <bool32.tgl name="quantize" value="0"/>
          <int32.hradio name="quantization" value="2"/>
@@ -2997,72 +3004,65 @@ currentin=data1;
 }]]></code.midihandler>
       </object>
    </patchobj>
-   <comment type="patch/comment" x="588" y="588" text="waiting"/>
-   <comment type="patch/comment" x="686" y="588" text="overdub"/>
-   <comment type="patch/comment" x="784" y="588" text="record"/>
-   <comment type="patch/comment" x="882" y="588" text="play"/>
-   <comment type="patch/comment" x="994" y="588" text="playing slot"/>
-   <obj type="disp/bool" uuid="a0ee71d48208b71752cbb8c05e55145106ef3946" name="bool_27" x="588" y="602">
+   <comment type="patch/comment" x="868" y="672" text="waiting"/>
+   <comment type="patch/comment" x="966" y="672" text="overdub"/>
+   <comment type="patch/comment" x="1064" y="672" text="record"/>
+   <comment type="patch/comment" x="1162" y="672" text="play"/>
+   <comment type="patch/comment" x="1274" y="672" text="playing slot"/>
+   <obj type="disp/bool" uuid="a0ee71d48208b71752cbb8c05e55145106ef3946" name="bool_27" x="868" y="686">
       <params/>
       <attribs/>
    </obj>
-   <obj type="disp/bool" uuid="a0ee71d48208b71752cbb8c05e55145106ef3946" name="bool_3" x="686" y="602">
+   <obj type="disp/bool" uuid="a0ee71d48208b71752cbb8c05e55145106ef3946" name="bool_3" x="966" y="686">
       <params/>
       <attribs/>
    </obj>
-   <obj type="disp/bool" uuid="a0ee71d48208b71752cbb8c05e55145106ef3946" name="bool_4" x="784" y="602">
+   <obj type="disp/bool" uuid="a0ee71d48208b71752cbb8c05e55145106ef3946" name="bool_4" x="1064" y="686">
       <params/>
       <attribs/>
    </obj>
-   <obj type="disp/bool" uuid="a0ee71d48208b71752cbb8c05e55145106ef3946" name="bool_26" x="882" y="602">
+   <obj type="disp/bool" uuid="a0ee71d48208b71752cbb8c05e55145106ef3946" name="bool_26" x="1162" y="686">
       <params/>
       <attribs/>
    </obj>
-   <obj type="disp/i" uuid="5e35fd0c62d81e70017289250cf28edd26e19e4a" name="i_1" x="1008" y="602">
+   <obj type="disp/i" uuid="5e35fd0c62d81e70017289250cf28edd26e19e4a" name="i_1" x="1288" y="686">
       <params/>
       <attribs/>
    </obj>
-   <obj type="string/c" uuid="4aa90a90c435a742ddfa152d232883fc5b2f1b3" name="c_1" x="1498" y="630">
+   <obj type="string/c" uuid="4aa90a90c435a742ddfa152d232883fc5b2f1b3" name="c_1" x="1778" y="714">
       <params/>
       <attribs>
          <table attributeName="str" table="/midiloop"/>
       </attribs>
    </obj>
-   <obj type="phone_interface_buttons" uuid="7fcae7d6-5e55-4b4a-b5d8-08e414ec42d2" name="obj_1" x="42" y="644">
-      <params>
-         <bin16 name="seqg" value="0"/>
-         <bin16 name="seqr" value="1"/>
-      </params>
-      <attribs/>
-   </obj>
-   <comment type="patch/comment" x="700" y="686" text="max notes per slot"/>
-   <comment type="patch/comment" x="812" y="686" text="amount of notesrecorded in slot"/>
-   <comment type="patch/comment" x="1008" y="686" text="128ppq clock that follows the clip"/>
-   <comment type="patch/comment" x="1218" y="686" text="playstate - 0=stopped, 1=play, 2= record, 3= waiting"/>
-   <obj type="disp/i" uuid="5e35fd0c62d81e70017289250cf28edd26e19e4a" name="i_16" x="700" y="700">
+   <comment type="patch/comment" x="980" y="770" text="max notes per slot"/>
+   <comment type="patch/comment" x="1092" y="770" text="amount of notesrecorded in slot"/>
+   <comment type="patch/comment" x="1288" y="770" text="128ppq clock that follows the clip"/>
+   <comment type="patch/comment" x="1498" y="770" text="playstate - 0=stopped, 1=play, 2= record, 3= waiting"/>
+   <obj type="disp/i" uuid="5e35fd0c62d81e70017289250cf28edd26e19e4a" name="i_16" x="980" y="784">
       <params/>
       <attribs/>
    </obj>
-   <obj type="disp/i" uuid="5e35fd0c62d81e70017289250cf28edd26e19e4a" name="i_9" x="840" y="700">
+   <obj type="disp/i" uuid="5e35fd0c62d81e70017289250cf28edd26e19e4a" name="i_9" x="1120" y="784">
       <params/>
       <attribs/>
    </obj>
-   <obj type="disp/i" uuid="5e35fd0c62d81e70017289250cf28edd26e19e4a" name="i_10" x="1050" y="700">
+   <obj type="disp/i" uuid="5e35fd0c62d81e70017289250cf28edd26e19e4a" name="i_10" x="1330" y="784">
       <params/>
       <attribs/>
    </obj>
-   <obj type="disp/i" uuid="5e35fd0c62d81e70017289250cf28edd26e19e4a" name="i_3" x="1218" y="700">
+   <obj type="disp/i" uuid="5e35fd0c62d81e70017289250cf28edd26e19e4a" name="i_3" x="1498" y="784">
       <params/>
       <attribs/>
    </obj>
-   <obj type="table/save" uuid="3e4108b607d56d9e1cd10abb898b58eea11e53b2" name="save_1" x="1526" y="700">
+   <obj type="table/save" uuid="3e4108b607d56d9e1cd10abb898b58eea11e53b2" name="save_1" x="1806" y="784">
       <params/>
       <attribs>
          <objref attributeName="table" obj="midiloop"/>
       </attribs>
    </obj>
-   <comment type="patch/comment" x="532" y="798" text="cc , channel touch, bend rcording/playback"/>
-   <patchobj type="patch/object" uuid="fe4a74a0-f685-4f99-b2bf-4a4aeff9878b" name="1_2" x="532" y="812">
+   <comment type="patch/comment" x="812" y="882" text="cc , channel touch, bend rcording/playback"/>
+   <patchobj type="patch/object" uuid="fe4a74a0-f685-4f99-b2bf-4a4aeff9878b" name="1_2" x="812" y="896">
       <params/>
       <attribs>
          <combo attributeName="input" selection="din"/>
@@ -3323,9 +3323,9 @@ if (status == MIDI_CHANNEL_PRESSURE+(attr_channel-1)){
 }]]></code.midihandler>
       </object>
    </patchobj>
-   <comment type="patch/comment" x="770" y="826" text="polytouch recording"/>
-   <comment type="patch/comment" x="980" y="826" text="total size on table"/>
-   <patchobj type="patch/object" uuid="ff5f58fd-7957-4f21-a1ac-1d7ca63ec6bf" name="1_7" x="770" y="840">
+   <comment type="patch/comment" x="1050" y="910" text="polytouch recording"/>
+   <comment type="patch/comment" x="1260" y="910" text="total size on table"/>
+   <patchobj type="patch/object" uuid="ff5f58fd-7957-4f21-a1ac-1d7ca63ec6bf" name="1_7" x="1050" y="924">
       <params/>
       <attribs>
          <combo attributeName="input" selection="din"/>
@@ -3738,7 +3738,7 @@ if (status == (attr_channel-1) + MIDI_POLY_PRESSURE){
 }]]></code.midihandler>
       </object>
    </patchobj>
-   <patchobj type="patch/object" uuid="f286242b-4a12-46f8-995e-6eeb6ad540dd" name="i_4" x="980" y="840">
+   <patchobj type="patch/object" uuid="f286242b-4a12-46f8-995e-6eeb6ad540dd" name="i_4" x="1260" y="924">
       <params/>
       <attribs/>
       <object id="patch/object" uuid="f286242b-4a12-46f8-995e-6eeb6ad540dd">
@@ -3760,8 +3760,8 @@ if (status == (attr_channel-1) + MIDI_POLY_PRESSURE){
 ]]></code.krate>
       </object>
    </patchobj>
-   <comment type="patch/comment" x="1134" y="840" text="simple test synth"/>
-   <patcher type="patch/patcher" uuid="4387f52f-12cb-4582-8910-b23d1df75bdd" name="patcher_1" x="1134" y="854">
+   <comment type="patch/comment" x="1414" y="924" text="simple test synth"/>
+   <patcher type="patch/patcher" uuid="b96d6cf7-01b1-48d5-b5a0-07d78dcb257c" name="patcher_1" x="1414" y="938">
       <params>
          <frac32.s.map name="filter:pitch" value="15.0"/>
          <frac32.u.map name="filter:reso" value="11.5"/>
@@ -3896,49 +3896,49 @@ if (status == (attr_channel-1) + MIDI_POLY_PRESSURE){
          </windowPos>
       </subpatch>
    </patcher>
-   <obj type="noise/pink" uuid="72c03a2468ee865f248733fcf9b12d4cf42b5a61" name="pink_1" x="1470" y="896">
+   <obj type="noise/pink" uuid="72c03a2468ee865f248733fcf9b12d4cf42b5a61" name="pink_1" x="1750" y="980">
       <params/>
       <attribs/>
    </obj>
-   <comment type="patch/comment" x="1358" y="938" text="metronom"/>
-   <obj type="env/d" uuid="190ae648e41832b41adbedb465317c18a010aefe" name="d_1" x="1358" y="952">
+   <comment type="patch/comment" x="1638" y="1022" text="metronom"/>
+   <obj type="env/d" uuid="190ae648e41832b41adbedb465317c18a010aefe" name="d_1" x="1638" y="1036">
       <params>
          <frac32.s.map name="d" value="-40.0"/>
       </params>
       <attribs/>
    </obj>
-   <obj type="gain/vca" uuid="a9f2dcd18043e2f47364e45cb8814f63c2a37c0d" name="vca_4" x="1470" y="952">
+   <obj type="gain/vca" uuid="a9f2dcd18043e2f47364e45cb8814f63c2a37c0d" name="vca_4" x="1750" y="1036">
       <params/>
       <attribs/>
    </obj>
-   <obj type="gain/vca" uuid="a9f2dcd18043e2f47364e45cb8814f63c2a37c0d" name="vca_1" x="1540" y="952">
+   <obj type="gain/vca" uuid="a9f2dcd18043e2f47364e45cb8814f63c2a37c0d" name="vca_1" x="1820" y="1036">
       <params/>
       <attribs/>
    </obj>
-   <obj type="audio/out left" uuid="b11a3c09b2fdd575ea8212f2ce7743d5269253b1" name="out_2" x="1652" y="952">
+   <obj type="audio/out left" uuid="b11a3c09b2fdd575ea8212f2ce7743d5269253b1" name="out_2" x="1932" y="1036">
       <params/>
       <attribs/>
    </obj>
-   <comment type="patch/comment" x="1358" y="1036" text="bar pulse"/>
-   <obj type="env/d" uuid="190ae648e41832b41adbedb465317c18a010aefe" name="d_2" x="1358" y="1050">
+   <comment type="patch/comment" x="1638" y="1120" text="bar pulse"/>
+   <obj type="env/d" uuid="190ae648e41832b41adbedb465317c18a010aefe" name="d_2" x="1638" y="1134">
       <params>
          <frac32.s.map name="d" value="-23.0"/>
       </params>
       <attribs/>
    </obj>
-   <obj type="gain/vca" uuid="a9f2dcd18043e2f47364e45cb8814f63c2a37c0d" name="vca_5" x="1470" y="1050">
+   <obj type="gain/vca" uuid="a9f2dcd18043e2f47364e45cb8814f63c2a37c0d" name="vca_5" x="1750" y="1134">
       <params/>
       <attribs/>
    </obj>
-   <obj type="gain/vca" uuid="a9f2dcd18043e2f47364e45cb8814f63c2a37c0d" name="vca_2" x="1540" y="1050">
+   <obj type="gain/vca" uuid="a9f2dcd18043e2f47364e45cb8814f63c2a37c0d" name="vca_2" x="1820" y="1134">
       <params/>
       <attribs/>
    </obj>
-   <obj type="audio/out left" uuid="b11a3c09b2fdd575ea8212f2ce7743d5269253b1" name="out_3" x="1652" y="1050">
+   <obj type="audio/out left" uuid="b11a3c09b2fdd575ea8212f2ce7743d5269253b1" name="out_3" x="1932" y="1134">
       <params/>
       <attribs/>
    </obj>
-   <patcher type="patch/patcher" uuid="16841485-9d33-424a-b0c5-5e8b529b19f3" name="patcher_2" x="420" y="1092">
+   <patcher type="patch/patcher" uuid="b8668bc4-742a-4217-aa0b-62141f69b81b" name="patcher_2" x="700" y="1176">
       <params/>
       <attribs/>
       <subpatch appVersion="1.0.12">
@@ -4191,11 +4191,11 @@ if (status == (attr_channel-1) + MIDI_POLY_PRESSURE){
          <dest obj="save_1" inlet="trig"/>
       </net>
       <net>
-         <source obj="obj_1" outlet="toggle 1"/>
+         <source obj="phone_interface_buttons_1" outlet="toggle 1"/>
          <dest obj="1_1" inlet="quantize"/>
       </net>
       <net>
-         <source obj="obj_1" outlet="dial 1"/>
+         <source obj="phone_interface_buttons_1" outlet="dial 1"/>
          <dest obj="dial_3" inlet="in"/>
          <dest obj="vca_1" inlet="v"/>
          <dest obj="vca_2" inlet="v"/>
@@ -4205,7 +4205,7 @@ if (status == (attr_channel-1) + MIDI_POLY_PRESSURE){
          <dest obj="to_1" inlet="i"/>
       </net>
       <net>
-         <source obj="obj_1" outlet="dial 2"/>
+         <source obj="phone_interface_buttons_1" outlet="dial 2"/>
          <dest obj="div_1" inlet="in"/>
       </net>
       <net>
@@ -4214,18 +4214,18 @@ if (status == (attr_channel-1) + MIDI_POLY_PRESSURE){
          <dest obj="1_2" inlet="cslot"/>
          <dest obj="1_1" inlet="slot"/>
          <dest obj="i_6" inlet="in"/>
-         <dest obj="obj_1" inlet="red"/>
+         <dest obj="phone_interface_buttons_1" inlet="red"/>
       </net>
       <net>
-         <source obj="obj_1" outlet="button 1"/>
+         <source obj="phone_interface_buttons_1" outlet="button 1"/>
          <dest obj="1_1" inlet="trigger"/>
       </net>
       <net>
-         <source obj="obj_1" outlet="down"/>
+         <source obj="phone_interface_buttons_1" outlet="down"/>
          <dest obj="1_1" inlet="stop"/>
       </net>
       <net>
-         <source obj="obj_1" outlet="button 4"/>
+         <source obj="phone_interface_buttons_1" outlet="button 4"/>
          <dest obj="1_1" inlet="record"/>
       </net>
    </nets>
@@ -4239,8 +4239,8 @@ if (status == (attr_channel-1) + MIDI_POLY_PRESSURE){
    </settings>
    <notes><![CDATA[]]></notes>
    <windowPos>
-      <x>35</x>
-      <y>457</y>
+      <x>-181</x>
+      <y>23</y>
       <width>1920</width>
       <height>1122</height>
    </windowPos>
