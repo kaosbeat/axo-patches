@@ -1,0 +1,173 @@
+<patch-1.0 appVersion="1.0.12">
+   <obj type="phone_interface_buttons_screen" uuid="fd19b29a-6108-4b54-80c0-5fc46bf52997" name="obj_1" x="56" y="56">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="disp/dial p" uuid="44fd18b562e434b3230441681132dbeabb15cdc5" name="dial_1" x="560" y="224">
+      <params/>
+      <attribs/>
+   </obj>
+   <patchobj type="patch/object" uuid="53f92056-d3f3-48e8-9848-798339b6c7ce" name="demux_sh_5" x="420" y="266">
+      <params/>
+      <attribs/>
+      <object id="patch/object" uuid="53f92056-d3f3-48e8-9848-798339b6c7ce">
+         <sDescription>demultiplexer with sample and hold.connect inlet in to outlet number s.
+the output value of output number s will be held until the value of inlet in changes.
+when s changes,the output value of the previous outlet number s will be held.</sDescription>
+         <author>robert schirmer</author>
+         <license>who cares</license>
+         <inlets>
+            <frac32 name="in"/>
+            <int32.positive name="s"/>
+         </inlets>
+         <outlets>
+            <frac32 name="o0"/>
+            <frac32 name="o1"/>
+            <frac32 name="o2"/>
+            <frac32 name="o3"/>
+         </outlets>
+         <displays>
+            <bool32 name="PotPickupWait"/>
+         </displays>
+         <params/>
+         <attribs/>
+         <includes/>
+         <code.declaration><![CDATA[int32_t hold0;
+int32_t hold1;
+int32_t hold2;
+int32_t hold3;
+int32_t prev;
+int32_t prev_s;
+bool ppwait; //potpickup wait]]></code.declaration>
+         <code.init><![CDATA[hold0 = 0;
+hold1 = 0;
+hold2 = 0;
+hold3 = 0;
+prev = 0;
+prev_s = 0;
+ppwait = 1;]]></code.init>
+         <code.krate><![CDATA[//Pot Pickup Mode enbabled
+if (inlet_s != prev_s) {
+	ppwait = 1;
+	prev_s = inlet_s;
+
+}
+
+if (inlet_s == 0){
+	if (ppwait==1){
+		outlet_o0 = hold0;
+		if (abs(inlet_in - hold0)>>20 < 2) {
+			ppwait=0;
+		}
+	} else {
+		hold0 = inlet_in;
+		outlet_o0 = inlet_in;
+	}
+} else {
+	outlet_o0 = hold0;
+}
+
+
+
+if ((inlet_s == 1)&& (inlet_in>>20 != prev>>20)){
+	if (ppwait==1){
+		outlet_o1 = hold1;
+		if (abs(inlet_in - hold1)>>20 < 2) {
+			ppwait=0;
+		}
+	} else {
+		hold1 = inlet_in;
+		outlet_o1 = inlet_in;
+	}
+} else {
+	outlet_o1 = hold1;
+}
+
+if (inlet_s == 2){
+	if (ppwait==1){
+		outlet_o2 = hold2;
+		if (abs(inlet_in - hold2)>>20 < 2) {
+			ppwait=0;
+		}
+	} else {
+		hold2 = inlet_in;
+		outlet_o2 = inlet_in;
+	}
+} else {
+	outlet_o2 = hold2;
+}
+
+
+
+if ((inlet_s == 3)&& (inlet_in>>20 != prev>>20)){
+	if (ppwait==1){
+		outlet_o3 = hold3;
+		if (abs(inlet_in - hold3)>>20 < 2) {
+			ppwait=0;
+		}
+	} else {
+		hold3 = inlet_in;
+		outlet_o3 = inlet_in;
+	}
+} else {
+	outlet_o3 = hold3;
+}
+
+disp_PotPickupWait=ppwait;]]></code.krate>
+      </object>
+   </patchobj>
+   <obj type="disp/dial p" uuid="44fd18b562e434b3230441681132dbeabb15cdc5" name="dial_2" x="560" y="266">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="ctrl/i radio 4 h" uuid="f87ae81e3162014f3bdca0f56dbbdf9322e69dfd" name="i_1" x="308" y="294">
+      <params>
+         <int32.hradio name="value" value="3"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="disp/dial p" uuid="44fd18b562e434b3230441681132dbeabb15cdc5" name="dial_3" x="560" y="308">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="disp/dial p" uuid="44fd18b562e434b3230441681132dbeabb15cdc5" name="dial_4" x="560" y="350">
+      <params/>
+      <attribs/>
+   </obj>
+   <nets>
+      <net>
+         <source obj="demux_sh_5" outlet="o0"/>
+         <dest obj="dial_1" inlet="in"/>
+      </net>
+      <net>
+         <source obj="demux_sh_5" outlet="o1"/>
+         <dest obj="dial_2" inlet="in"/>
+      </net>
+      <net>
+         <source obj="demux_sh_5" outlet="o2"/>
+         <dest obj="dial_3" inlet="in"/>
+      </net>
+      <net>
+         <source obj="demux_sh_5" outlet="o3"/>
+         <dest obj="dial_4" inlet="in"/>
+      </net>
+      <net>
+         <source obj="i_1" outlet="out"/>
+         <dest obj="demux_sh_5" inlet="s"/>
+      </net>
+      <net>
+         <source obj="obj_1" outlet="dial 1"/>
+         <dest obj="demux_sh_5" inlet="in"/>
+      </net>
+   </nets>
+   <settings>
+      <subpatchmode>no</subpatchmode>
+   </settings>
+   <notes><![CDATA[]]></notes>
+   <windowPos>
+      <x>-1166</x>
+      <y>95</y>
+      <width>740</width>
+      <height>650</height>
+   </windowPos>
+</patch-1.0>

@@ -1,0 +1,897 @@
+<patch-1.0 appVersion="1.0.12">
+   <obj type="conv/unipolar2bipolar" uuid="efc8ee28c508740c5edf7995eaaa07a6d6818e5e" name="unipolar2bipolar_1" x="784" y="0">
+      <params/>
+      <attribs/>
+   </obj>
+   <patchobj type="patch/object" uuid="09bf3cb6-b616-45b7-8e11-86e1b3bd6a66" name="strbar_1" x="910" y="0">
+      <params/>
+      <attribs>
+         <table attributeName="prefix" table="saw1FRQ"/>
+      </attribs>
+      <object id="patch/object" uuid="09bf3cb6-b616-45b7-8e11-86e1b3bd6a66">
+         <sDescription>string and bar for OLED</sDescription>
+         <author>Smashed Transistors</author>
+         <license>LGPL</license>
+         <helpPatch>bar.axh</helpPatch>
+         <inlets>
+            <frac32 name="in"/>
+         </inlets>
+         <outlets>
+            <charptr32 name="out" description="string"/>
+         </outlets>
+         <displays/>
+         <params/>
+         <attribs>
+            <table name="prefix" description="five char prefix"/>
+         </attribs>
+         <includes/>
+         <code.declaration><![CDATA[char c[2 + strlen("attr_prefix")];]]></code.declaration>
+         <code.init><![CDATA[strcpy(&c[2], "attr_prefix");
+c[0] = 1;                         //string bar mode]]></code.init>
+         <code.krate><![CDATA[int32_t v = __SSAT(inlet_in,28)>>21;
+if(v >= 0)
+  c[1] = (uint8_t)(v + 1); // must not be zero !
+else 
+  c[1] = (uint8_t)(256 + v); 
+outlet_out = c;]]></code.krate>
+      </object>
+   </patchobj>
+   <obj type="logic/counter2" uuid="d9536f238ab92e53ac93d5927c3b43ceef998dc1" name="counter2_1" x="476" y="28">
+      <params>
+         <int32 name="maximum" value="4"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="kaos/demux_4_pp" uuid="2db6af83-ff5c-495d-a392-5e3c4551cee3" name="demux_4_pp_1" x="616" y="28">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="hohum/disp/string_muxer" uuid="4f2198f5-878b-4b26-8259-b8b1540e2a72" name="string_muxer_1" x="0" y="42">
+      <params/>
+      <attribs>
+         <table attributeName="a1" table="par1efsdgsdfg"/>
+         <table attributeName="a2" table="par2"/>
+         <table attributeName="a3" table="FLTR"/>
+         <table attributeName="a4" table="AMP "/>
+         <table attributeName="a5" table=""/>
+         <table attributeName="a6" table=""/>
+         <table attributeName="a7" table=""/>
+         <table attributeName="a8" table=""/>
+         <table attributeName="a9" table=""/>
+         <table attributeName="a10" table=""/>
+      </attribs>
+   </obj>
+   <patchobj type="patch/object" uuid="09bf3cb6-b616-45b7-8e11-86e1b3bd6a66" name="strbar_2" x="910" y="70">
+      <params/>
+      <attribs>
+         <table attributeName="prefix" table="saw1VOL"/>
+      </attribs>
+      <object id="patch/object" uuid="09bf3cb6-b616-45b7-8e11-86e1b3bd6a66">
+         <sDescription>string and bar for OLED</sDescription>
+         <author>Smashed Transistors</author>
+         <license>LGPL</license>
+         <helpPatch>bar.axh</helpPatch>
+         <inlets>
+            <frac32 name="in"/>
+         </inlets>
+         <outlets>
+            <charptr32 name="out" description="string"/>
+         </outlets>
+         <displays/>
+         <params/>
+         <attribs>
+            <table name="prefix" description="five char prefix"/>
+         </attribs>
+         <includes/>
+         <code.declaration><![CDATA[char c[2 + strlen("attr_prefix")];]]></code.declaration>
+         <code.init><![CDATA[strcpy(&c[2], "attr_prefix");
+c[0] = 1;                         //string bar mode]]></code.init>
+         <code.krate><![CDATA[int32_t v = __SSAT(inlet_in,28)>>21;
+if(v >= 0)
+  c[1] = (uint8_t)(v + 1); // must not be zero !
+else 
+  c[1] = (uint8_t)(256 + v); 
+outlet_out = c;]]></code.krate>
+      </object>
+   </patchobj>
+   <obj type="timer/delayedpulseduration" uuid="3b7bf0a7b7f89fad06a734667f48de051deb5c78" name="delayedpulseduration_1" x="1344" y="98">
+      <params>
+         <frac32.s.map name="delay" value="-64.0"/>
+         <frac32.s.map name="pulselength" value="64.0"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="ctrl/i" uuid="a3786816db6ea5bc6ac4193a5cccdb2c83b83496" name="i_4" x="1540" y="98">
+      <params>
+         <int32 name="value" value="2"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="rbrt/control/gate i" uuid="1c6fad01-84d2-4635-9ce0-11270f15d835" name="gate_1" x="1652" y="98">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="phone_interface_buttons_screen" uuid="fd19b29a-6108-4b54-80c0-5fc46bf52997" name="phone_interface_buttons_screen_1" x="392" y="126">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="kaos/demux_4_pp" uuid="2db6af83-ff5c-495d-a392-5e3c4551cee3" name="demux_4_pp_2" x="616" y="126">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="conv/unipolar2bipolar" uuid="efc8ee28c508740c5edf7995eaaa07a6d6818e5e" name="unipolar2bipolar_2" x="784" y="154">
+      <params/>
+      <attribs/>
+   </obj>
+   <patchobj type="patch/object" uuid="09bf3cb6-b616-45b7-8e11-86e1b3bd6a66" name="strbar_3" x="910" y="154">
+      <params/>
+      <attribs>
+         <table attributeName="prefix" table="sq1FRQ"/>
+      </attribs>
+      <object id="patch/object" uuid="09bf3cb6-b616-45b7-8e11-86e1b3bd6a66">
+         <sDescription>string and bar for OLED</sDescription>
+         <author>Smashed Transistors</author>
+         <license>LGPL</license>
+         <helpPatch>bar.axh</helpPatch>
+         <inlets>
+            <frac32 name="in"/>
+         </inlets>
+         <outlets>
+            <charptr32 name="out" description="string"/>
+         </outlets>
+         <displays/>
+         <params/>
+         <attribs>
+            <table name="prefix" description="five char prefix"/>
+         </attribs>
+         <includes/>
+         <code.declaration><![CDATA[char c[2 + strlen("attr_prefix")];]]></code.declaration>
+         <code.init><![CDATA[strcpy(&c[2], "attr_prefix");
+c[0] = 1;                         //string bar mode]]></code.init>
+         <code.krate><![CDATA[int32_t v = __SSAT(inlet_in,28)>>21;
+if(v >= 0)
+  c[1] = (uint8_t)(v + 1); // must not be zero !
+else 
+  c[1] = (uint8_t)(256 + v); 
+outlet_out = c;]]></code.krate>
+      </object>
+   </patchobj>
+   <obj type="ctrl/i" uuid="a3786816db6ea5bc6ac4193a5cccdb2c83b83496" name="i_5" x="1498" y="154">
+      <params>
+         <int32 name="value" value="0"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="jaffa/mux/muxi" uuid="93cb393c-0004-4da9-a7af-2ad631439fe1" name="muxi_1" x="1568" y="196">
+      <params>
+         <bool32.tgl name="on" value="0"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="disp/i" uuid="5e35fd0c62d81e70017289250cf28edd26e19e4a" name="i_6" x="1680" y="210">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="ctrl/i radio 4 h" uuid="f87ae81e3162014f3bdca0f56dbbdf9322e69dfd" name="i_1" x="182" y="224">
+      <params>
+         <int32.hradio name="value" value="0"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="kaos/demux_4_pp" uuid="2db6af83-ff5c-495d-a392-5e3c4551cee3" name="demux_4_pp_3" x="616" y="224">
+      <params/>
+      <attribs/>
+   </obj>
+   <patchobj type="patch/object" uuid="09bf3cb6-b616-45b7-8e11-86e1b3bd6a66" name="strbar_4" x="910" y="238">
+      <params/>
+      <attribs>
+         <table attributeName="prefix" table="sq1VOL"/>
+      </attribs>
+      <object id="patch/object" uuid="09bf3cb6-b616-45b7-8e11-86e1b3bd6a66">
+         <sDescription>string and bar for OLED</sDescription>
+         <author>Smashed Transistors</author>
+         <license>LGPL</license>
+         <helpPatch>bar.axh</helpPatch>
+         <inlets>
+            <frac32 name="in"/>
+         </inlets>
+         <outlets>
+            <charptr32 name="out" description="string"/>
+         </outlets>
+         <displays/>
+         <params/>
+         <attribs>
+            <table name="prefix" description="five char prefix"/>
+         </attribs>
+         <includes/>
+         <code.declaration><![CDATA[char c[2 + strlen("attr_prefix")];]]></code.declaration>
+         <code.init><![CDATA[strcpy(&c[2], "attr_prefix");
+c[0] = 1;                         //string bar mode]]></code.init>
+         <code.krate><![CDATA[int32_t v = __SSAT(inlet_in,28)>>21;
+if(v >= 0)
+  c[1] = (uint8_t)(v + 1); // must not be zero !
+else 
+  c[1] = (uint8_t)(256 + v); 
+outlet_out = c;]]></code.krate>
+      </object>
+   </patchobj>
+   <obj type="ctrl/i radio 4 h" uuid="f87ae81e3162014f3bdca0f56dbbdf9322e69dfd" name="i_2" x="182" y="280">
+      <params>
+         <int32.hradio name="value" value="2"/>
+      </params>
+      <attribs/>
+   </obj>
+   <comment type="patch/comment" x="952" y="280" text="OSC1 Saw/Sqr"/>
+   <comment type="patch/comment" x="1106" y="280" text="Used to change from Saw to Square"/>
+   <patchobj type="patch/object" uuid="56566c34-a507-46bf-9304-09fe02848fd0" name="par_swap_1_1" x="1134" y="294">
+      <params>
+         <frac32.u.map name="dev1vol" value="64.0"/>
+         <frac32.u.map name="dev2vol" value="64.0"/>
+      </params>
+      <attribs/>
+      <object id="patch/object" uuid="56566c34-a507-46bf-9304-09fe02848fd0">
+         <sDescription>Mono swappable parallel routing switch</sDescription>
+         <author>Are Leistad</author>
+         <license>BSD</license>
+         <inlets>
+            <frac32buffer name="i1" description="Input 1"/>
+            <frac32buffer name="i2" description="Input 2"/>
+            <bool32 name="swap" description="Swap device 1 and 2 outputs"/>
+            <frac32.positive name="dev1vol"/>
+            <frac32.positive name="dev2vol"/>
+         </inlets>
+         <outlets>
+            <frac32buffer name="o1" description="Output 1"/>
+            <frac32buffer name="o2" description="Output 2"/>
+         </outlets>
+         <displays/>
+         <params>
+            <frac32.u.map.squaregain name="dev1vol" description="Device 1 volume"/>
+            <frac32.u.map.squaregain name="dev2vol" description="Device 2 volume"/>
+         </params>
+         <attribs/>
+         <includes/>
+         <code.krate><![CDATA[int32_t j,out;
+      if( inlet_swap )
+        {
+          for( j = 0; j < BUFSIZE; ++j )
+            {
+              // Feed input 1 to out 2
+              // Feed input 2 to out 1
+              outlet_o2[j] = ___SMMUL( inlet_i1[j]<<3, param_dev1vol+inlet_dev1vol<<2 );
+              outlet_o1[j] = ___SMMUL( inlet_i2[j]<<3, param_dev2vol+inlet_dev2vol<<2 );
+            }
+        }
+      else
+        {
+          for( j = 0; j < BUFSIZE; ++j )
+            {
+              // Feed input 1 to out 1
+              // Feed input 2 to out 2
+              outlet_o1[j] = ___SMMUL( inlet_i1[j]<<3, param_dev1vol<<2 );
+              outlet_o2[j] = ___SMMUL( inlet_i2[j]<<3, param_dev2vol<<2 );
+            }
+        }]]></code.krate>
+      </object>
+   </patchobj>
+   <obj type="kaos/demux_4_pp" uuid="2db6af83-ff5c-495d-a392-5e3c4551cee3" name="demux_4_pp_4" x="616" y="322">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="osc/saw" uuid="739ecc36017ef3249479b8f01716b8bbfba9abc1" name="saw_1" x="980" y="336">
+      <params>
+         <frac32.s.map name="pitch" value="0.0"/>
+      </params>
+      <attribs/>
+   </obj>
+   <comment type="patch/comment" x="1288" y="336" text="Control amount of each OSC"/>
+   <comment type="patch/comment" x="1498" y="336" text="Filter"/>
+   <comment type="patch/comment" x="1694" y="336" text="VCA"/>
+   <comment type="patch/comment" x="1932" y="336" text="Output"/>
+   <obj type="math/+" uuid="44553fdc8628c67ab535845ed1be304ad6c9553b" name="+_1" x="910" y="350">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="tiar/gain/vca3" uuid="05c838a7-a7de-4c03-ad05-309f17497344" name="vca3_1" x="1330" y="364">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="jaffa/filt/mm24db" uuid="c4c58c14-f990-4f51-a6bb-8b853d6665a6" name="mm24db_1" x="1498" y="364">
+      <params>
+         <bool32.tgl name="on" value="1"/>
+         <frac32.u.map name="freq" value="24.0"/>
+         <int32.hradio name="type" value="1"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="gain/vca" uuid="a9f2dcd18043e2f47364e45cb8814f63c2a37c0d" name="vca_1" x="1694" y="364">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="audio/out stereo" uuid="a1ca7a567f535acc21055669829101d3ee7f0189" name="out_1" x="1932" y="364">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="tiar/string/mux8" uuid="6ca6d07e-aec7-4c1f-81f4-3584126acf5d" name="mux8_1" x="224" y="392">
+      <params/>
+      <attribs/>
+   </obj>
+   <comment type="patch/comment" x="546" y="406" text="Input"/>
+   <obj type="osc/square" uuid="aa9592566d3673fe64dcaede132e9ebd45d2202f" name="square_1" x="980" y="420">
+      <params>
+         <frac32.s.map name="pitch" value="0.0"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="audio/in stereo" uuid="99848ad6d90a8e615e83b2e619cfc806f28e7281" name="in_1" x="546" y="434">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="mix/mix 2 g" uuid="221f038da51943034a75e442c90624fcebfe6112" name="mix_2" x="644" y="434">
+      <params>
+         <frac32.u.map name="gain1" value="64.0"/>
+         <frac32.u.map name="gain2" value="64.0"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="math/+" uuid="44553fdc8628c67ab535845ed1be304ad6c9553b" name="+_2" x="910" y="434">
+      <params/>
+      <attribs/>
+   </obj>
+   <comment type="patch/comment" x="938" y="518" text="These toogles switch between the saw and square oscillators"/>
+   <obj type="tiar/string/mux8" uuid="6ca6d07e-aec7-4c1f-81f4-3584126acf5d" name="mux8_2" x="224" y="546">
+      <params/>
+      <attribs/>
+   </obj>
+   <comment type="patch/comment" x="1414" y="546" text="Filter ENV"/>
+   <comment type="patch/comment" x="1498" y="546" text="Filter ENV / EG Amount"/>
+   <comment type="patch/comment" x="1736" y="546" text="Amp ENV"/>
+   <obj type="env/adsr m" uuid="98bd39fb828c392b28126d259cb5175e6f6ea34b" name="adsr_1" x="1414" y="574">
+      <params>
+         <frac32.s.map name="a" value="63.0"/>
+         <frac32.s.map name="d" value="0.0"/>
+         <frac32.u.map name="s" value="35.0"/>
+         <frac32.s.map name="r" value="0.0"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="math/*c" uuid="7d5ef61c3bcd571ee6bbd8437ef3612125dfb225" name="*c_1" x="1498" y="574">
+      <params>
+         <frac32.u.map name="amp" value="35.5"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="env/adsr m" uuid="98bd39fb828c392b28126d259cb5175e6f6ea34b" name="adsr_2" x="1736" y="574">
+      <params>
+         <frac32.s.map name="a" value="37.0"/>
+         <frac32.s.map name="d" value="0.0"/>
+         <frac32.u.map name="s" value="35.0"/>
+         <frac32.s.map name="r" value="0.0"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="tiar/conv/f_to_c" uuid="a16394eb-0588-4449-abdc-bc73587f1b71" name="f_to_c_5" x="1820" y="574">
+      <params/>
+      <attribs>
+         <table attributeName="prefix" table="amp A"/>
+      </attribs>
+   </obj>
+   <comment type="patch/comment" x="546" y="616" text="Glide Control"/>
+   <comment type="patch/comment" x="770" y="616" text="this controls the tuning of osc2"/>
+   <comment type="patch/comment" x="952" y="616" text="OSC2 Saw/Sqr"/>
+   <obj type="logic/toggle" uuid="f42f0d3aab552c17bc78b9e65f85dc24f977503d" name="toggle_3" x="462" y="644">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="sss/math/glideMultiExt" uuid="b0be6350-d9b7-4407-b6b5-70011ed760de" name="glideMultiExt_1" x="546" y="644">
+      <params>
+         <frac32.u.map name="glide" value="5.5"/>
+         <int32.hradio name="mode" value="0"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="mix/mix 1" uuid="26fb1fe4ed25d8bc2ac4a3f91ab6b80ed6d9d4fa" name="mix_4" x="770" y="644">
+      <params>
+         <frac32.u.map name="gain1" value="27.5"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="osc/square" uuid="aa9592566d3673fe64dcaede132e9ebd45d2202f" name="square_2" x="952" y="644">
+      <params>
+         <frac32.s.map name="pitch" value="-12.0"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="drj/switch/par_swap_1" uuid="bwca1a296fb35ac448725339829101d3ee7f0181" name="par_swap_1_2" x="1106" y="644">
+      <params>
+         <frac32.u.map name="dev1vol" value="30.0"/>
+         <frac32.u.map name="dev2vol" value="30.0"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="tiar/conv/f_to_c" uuid="a16394eb-0588-4449-abdc-bc73587f1b71" name="f_to_c_6" x="1820" y="644">
+      <params/>
+      <attribs>
+         <table attributeName="prefix" table="amp D"/>
+      </attribs>
+   </obj>
+   <obj type="tiar/conv/f_to_c" uuid="a16394eb-0588-4449-abdc-bc73587f1b71" name="f_to_c_1" x="1498" y="672">
+      <params/>
+      <attribs>
+         <table attributeName="prefix" table="fltr A"/>
+      </attribs>
+   </obj>
+   <obj type="tiar/string/mux8" uuid="6ca6d07e-aec7-4c1f-81f4-3584126acf5d" name="mux8_3" x="224" y="700">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="tiar/conv/f_to_c" uuid="a16394eb-0588-4449-abdc-bc73587f1b71" name="f_to_c_7" x="1820" y="714">
+      <params/>
+      <attribs>
+         <table attributeName="prefix" table="amp S"/>
+      </attribs>
+   </obj>
+   <obj type="osc/saw" uuid="739ecc36017ef3249479b8f01716b8bbfba9abc1" name="saw_2" x="952" y="728">
+      <params>
+         <frac32.s.map name="pitch" value="-12.0"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="tiar/conv/f_to_c" uuid="a16394eb-0588-4449-abdc-bc73587f1b71" name="f_to_c_2" x="1498" y="742">
+      <params/>
+      <attribs>
+         <table attributeName="prefix" table="fltr D"/>
+      </attribs>
+   </obj>
+   <obj type="tiar/conv/f_to_c" uuid="a16394eb-0588-4449-abdc-bc73587f1b71" name="f_to_c_8" x="1820" y="784">
+      <params/>
+      <attribs>
+         <table attributeName="prefix" table="amp R"/>
+      </attribs>
+   </obj>
+   <obj type="tiar/conv/f_to_c" uuid="a16394eb-0588-4449-abdc-bc73587f1b71" name="f_to_c_3" x="1498" y="812">
+      <params/>
+      <attribs>
+         <table attributeName="prefix" table="fltr S"/>
+      </attribs>
+   </obj>
+   <comment type="patch/comment" x="462" y="840" text="External Controls"/>
+   <comment type="patch/comment" x="686" y="840" text="Midi-in Control"/>
+   <comment type="patch/comment" x="854" y="840" text="Midi-in CC - I think I&apos;ll need one for each of the basic Paramters"/>
+   <obj type="tiar/string/mux8" uuid="6ca6d07e-aec7-4c1f-81f4-3584126acf5d" name="mux8_4" x="224" y="854">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="midi/in/keyb zone lru" uuid="36a44968a4f8b980273e94dca846b7544a3c45d2" name="keybzone_lru1" x="686" y="868">
+      <params/>
+      <attribs>
+         <spinner attributeName="startNote" value="0"/>
+         <spinner attributeName="endNote" value="127"/>
+      </attribs>
+   </obj>
+   <obj type="midi/in/cc hr i" uuid="72d8018c0f072c469fcd902b0423ba8fd5e6433" name="cc_1" x="854" y="868">
+      <params/>
+      <attribs>
+         <spinner attributeName="cc" value="10"/>
+         <spinner attributeName="default" value="0"/>
+      </attribs>
+   </obj>
+   <obj type="midi/in/cc hr i" uuid="72d8018c0f072c469fcd902b0423ba8fd5e6433" name="cc_2" x="938" y="868">
+      <params/>
+      <attribs>
+         <spinner attributeName="cc" value="11"/>
+         <spinner attributeName="default" value="0"/>
+      </attribs>
+   </obj>
+   <obj type="midi/in/cc hr i" uuid="72d8018c0f072c469fcd902b0423ba8fd5e6433" name="cc_3" x="1022" y="868">
+      <params/>
+      <attribs>
+         <spinner attributeName="cc" value="11"/>
+         <spinner attributeName="default" value="0"/>
+      </attribs>
+   </obj>
+   <obj type="tiar/conv/f_to_c" uuid="a16394eb-0588-4449-abdc-bc73587f1b71" name="f_to_c_4" x="1498" y="882">
+      <params/>
+      <attribs>
+         <table attributeName="prefix" table="fltr R"/>
+      </attribs>
+   </obj>
+   <obj type="rbrt/string/scroll v 8" uuid="90ae57dd-6065-440b-9354-a8678c799480" name="scroll_2" x="14" y="1078">
+      <params/>
+      <attribs>
+         <table attributeName="str0" table="another"/>
+         <table attributeName="str1" table="difficult"/>
+         <table attributeName="str2" table="to"/>
+         <table attributeName="str3" table="get"/>
+         <table attributeName="str4" table="thing"/>
+         <table attributeName="str5" table="adddd"/>
+         <table attributeName="str6" table="dsf"/>
+         <table attributeName="str7" table="ddddd"/>
+      </attribs>
+   </obj>
+   <obj type="hohum/disp/string_muxer" uuid="4f2198f5-878b-4b26-8259-b8b1540e2a72" name="string_muxer_5" x="126" y="1148">
+      <params/>
+      <attribs>
+         <table attributeName="a1" table=""/>
+         <table attributeName="a2" table=""/>
+         <table attributeName="a3" table=""/>
+         <table attributeName="a4" table=""/>
+         <table attributeName="a5" table=""/>
+         <table attributeName="a6" table=""/>
+         <table attributeName="a7" table=""/>
+         <table attributeName="a8" table=""/>
+         <table attributeName="a9" table=""/>
+         <table attributeName="a10" table=""/>
+      </attribs>
+   </obj>
+   <obj type="disp/i" uuid="5e35fd0c62d81e70017289250cf28edd26e19e4a" name="i_3" x="882" y="1162">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="ctrl/dial b" uuid="862e7d7f29093cb1ce4aed72244d118ad4d46692" name="fltr A" x="588" y="1260">
+      <params>
+         <frac32.s.map name="value" value="0.0"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="ctrl/dial b" uuid="862e7d7f29093cb1ce4aed72244d118ad4d46692" name="amp A" x="588" y="1260">
+      <params>
+         <frac32.s.map name="value" value="0.0"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="ctrl/dial b" uuid="862e7d7f29093cb1ce4aed72244d118ad4d46692" name="fltr D" x="588" y="1344">
+      <params>
+         <frac32.s.map name="value" value="0.0"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="ctrl/dial b" uuid="862e7d7f29093cb1ce4aed72244d118ad4d46692" name="amp D" x="588" y="1344">
+      <params>
+         <frac32.s.map name="value" value="0.0"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="ctrl/dial b" uuid="862e7d7f29093cb1ce4aed72244d118ad4d46692" name="fltr S" x="588" y="1428">
+      <params>
+         <frac32.s.map name="value" value="0.0"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="ctrl/dial b" uuid="862e7d7f29093cb1ce4aed72244d118ad4d46692" name="amp S" x="588" y="1428">
+      <params>
+         <frac32.s.map name="value" value="0.0"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="ctrl/dial b" uuid="862e7d7f29093cb1ce4aed72244d118ad4d46692" name="fltr R" x="588" y="1512">
+      <params>
+         <frac32.s.map name="value" value="0.0"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="ctrl/dial b" uuid="862e7d7f29093cb1ce4aed72244d118ad4d46692" name="amp R" x="588" y="1512">
+      <params>
+         <frac32.s.map name="value" value="0.0"/>
+      </params>
+      <attribs/>
+   </obj>
+   <nets>
+      <net>
+         <source obj="in_1" outlet="left"/>
+         <dest obj="mix_2" inlet="in1"/>
+      </net>
+      <net>
+         <source obj="in_1" outlet="right"/>
+         <dest obj="mix_2" inlet="in2"/>
+      </net>
+      <net>
+         <source obj="saw_1" outlet="wave"/>
+         <dest obj="par_swap_1_1" inlet="i1"/>
+      </net>
+      <net>
+         <source obj="square_1" outlet="wave"/>
+         <dest obj="par_swap_1_1" inlet="i2"/>
+      </net>
+      <net>
+         <source obj="square_2" outlet="wave"/>
+         <dest obj="par_swap_1_2" inlet="i1"/>
+      </net>
+      <net>
+         <source obj="saw_2" outlet="wave"/>
+         <dest obj="par_swap_1_2" inlet="i2"/>
+      </net>
+      <net>
+         <source obj="keybzone_lru1" outlet="gate"/>
+         <dest obj="adsr_1" inlet="gate"/>
+         <dest obj="adsr_2" inlet="gate"/>
+      </net>
+      <net>
+         <source obj="toggle_3" outlet="o"/>
+         <dest obj="glideMultiExt_1" inlet="glideOFF"/>
+      </net>
+      <net>
+         <source obj="par_swap_1_1" outlet="o1"/>
+         <dest obj="vca3_1" inlet="in1"/>
+         <dest obj="phone_interface_buttons_screen_1" inlet="scope1"/>
+      </net>
+      <net>
+         <source obj="par_swap_1_2" outlet="o1"/>
+         <dest obj="vca3_1" inlet="in2"/>
+      </net>
+      <net>
+         <source obj="mix_2" outlet="out"/>
+         <dest obj="vca3_1" inlet="in3"/>
+      </net>
+      <net>
+         <source obj="adsr_1" outlet="env"/>
+         <dest obj="*c_1" inlet="in"/>
+      </net>
+      <net>
+         <source obj="vca3_1" outlet="out"/>
+         <dest obj="mm24db_1" inlet="in"/>
+      </net>
+      <net>
+         <source obj="mix_4" outlet="out"/>
+         <dest obj="square_2" inlet="pitch"/>
+         <dest obj="saw_2" inlet="pitch"/>
+      </net>
+      <net>
+         <source obj="keybzone_lru1" outlet="note"/>
+         <dest obj="glideMultiExt_1" inlet="in"/>
+      </net>
+      <net>
+         <source obj="glideMultiExt_1" outlet="out"/>
+         <dest obj="mix_4" inlet="bus_in"/>
+         <dest obj="+_1" inlet="in2"/>
+         <dest obj="+_2" inlet="in2"/>
+      </net>
+      <net>
+         <source obj="*c_1" outlet="out"/>
+         <dest obj="mm24db_1" inlet="freq"/>
+      </net>
+      <net>
+         <source obj="mm24db_1" outlet="out"/>
+         <dest obj="vca_1" inlet="a"/>
+      </net>
+      <net>
+         <source obj="vca_1" outlet="o"/>
+         <dest obj="out_1" inlet="left"/>
+         <dest obj="out_1" inlet="right"/>
+      </net>
+      <net>
+         <source obj="phone_interface_buttons_screen_1" outlet="toggle 1"/>
+         <dest obj="par_swap_1_1" inlet="swap"/>
+      </net>
+      <net>
+         <source obj="phone_interface_buttons_screen_1" outlet="toggle 2"/>
+         <dest obj="par_swap_1_2" inlet="swap"/>
+      </net>
+      <net>
+         <source obj="phone_interface_buttons_screen_1" outlet="dial 1"/>
+         <dest obj="vca3_1" inlet="g1"/>
+         <dest obj="demux_4_pp_1" inlet="in"/>
+      </net>
+      <net>
+         <source obj="phone_interface_buttons_screen_1" outlet="dial 2"/>
+         <dest obj="vca3_1" inlet="g2"/>
+         <dest obj="demux_4_pp_2" inlet="in"/>
+      </net>
+      <net>
+         <source obj="phone_interface_buttons_screen_1" outlet="dial 3"/>
+         <dest obj="mix_4" inlet="in1"/>
+         <dest obj="demux_4_pp_3" inlet="in"/>
+      </net>
+      <net>
+         <source obj="phone_interface_buttons_screen_1" outlet="button 1"/>
+         <dest obj="toggle_3" inlet="trig"/>
+      </net>
+      <net>
+         <source obj="par_swap_1_1" outlet="o2"/>
+         <dest obj="phone_interface_buttons_screen_1" inlet="scope2"/>
+      </net>
+      <net>
+         <source obj="phone_interface_buttons_screen_1" outlet="top"/>
+         <dest obj="counter2_1" inlet="inc"/>
+         <dest obj="delayedpulseduration_1" inlet="trig"/>
+      </net>
+      <net>
+         <source obj="phone_interface_buttons_screen_1" outlet="bottom"/>
+         <dest obj="counter2_1" inlet="dec"/>
+      </net>
+      <net>
+         <source obj="mux8_2" outlet="out"/>
+         <dest obj="phone_interface_buttons_screen_1" inlet="S1_L2"/>
+      </net>
+      <net>
+         <source obj="mux8_3" outlet="out"/>
+         <dest obj="phone_interface_buttons_screen_1" inlet="S1_L3"/>
+      </net>
+      <net>
+         <source obj="mux8_4" outlet="out"/>
+         <dest obj="phone_interface_buttons_screen_1" inlet="S1_L4"/>
+      </net>
+      <net>
+         <source obj="counter2_1" outlet="o"/>
+         <dest obj="mux8_1" inlet="sel"/>
+         <dest obj="mux8_2" inlet="sel"/>
+         <dest obj="mux8_3" inlet="sel"/>
+         <dest obj="mux8_4" inlet="sel"/>
+         <dest obj="i_3" inlet="in"/>
+         <dest obj="demux_4_pp_1" inlet="s"/>
+         <dest obj="demux_4_pp_2" inlet="s"/>
+         <dest obj="demux_4_pp_3" inlet="s"/>
+         <dest obj="demux_4_pp_4" inlet="s"/>
+      </net>
+      <net>
+         <source obj="f_to_c_1" outlet="o"/>
+         <dest obj="mux8_1" inlet="i0"/>
+      </net>
+      <net>
+         <source obj="f_to_c_2" outlet="o"/>
+         <dest obj="mux8_2" inlet="i0"/>
+      </net>
+      <net>
+         <source obj="f_to_c_3" outlet="o"/>
+         <dest obj="mux8_3" inlet="i0"/>
+      </net>
+      <net>
+         <source obj="f_to_c_4" outlet="o"/>
+         <dest obj="mux8_4" inlet="i0"/>
+      </net>
+      <net>
+         <source obj="adsr_2" outlet="env"/>
+         <dest obj="vca_1" inlet="v"/>
+      </net>
+      <net>
+         <source obj="demux_4_pp_1" outlet="o0"/>
+         <dest obj="adsr_1" inlet="a"/>
+         <dest obj="f_to_c_1" inlet="i"/>
+      </net>
+      <net>
+         <source obj="demux_4_pp_2" outlet="o0"/>
+         <dest obj="adsr_1" inlet="d"/>
+         <dest obj="f_to_c_2" inlet="i"/>
+      </net>
+      <net>
+         <source obj="demux_4_pp_2" outlet="o1"/>
+         <dest obj="adsr_2" inlet="d"/>
+         <dest obj="f_to_c_6" inlet="i"/>
+      </net>
+      <net>
+         <source obj="demux_4_pp_1" outlet="o1"/>
+         <dest obj="adsr_2" inlet="a"/>
+         <dest obj="f_to_c_5" inlet="i"/>
+      </net>
+      <net>
+         <source obj="demux_4_pp_3" outlet="o0"/>
+         <dest obj="adsr_1" inlet="s"/>
+         <dest obj="f_to_c_3" inlet="i"/>
+      </net>
+      <net>
+         <source obj="demux_4_pp_3" outlet="o1"/>
+         <dest obj="adsr_2" inlet="s"/>
+         <dest obj="f_to_c_7" inlet="i"/>
+      </net>
+      <net>
+         <source obj="demux_4_pp_4" outlet="o0"/>
+         <dest obj="adsr_1" inlet="r"/>
+         <dest obj="f_to_c_4" inlet="i"/>
+      </net>
+      <net>
+         <source obj="demux_4_pp_4" outlet="o1"/>
+         <dest obj="adsr_2" inlet="r"/>
+         <dest obj="f_to_c_8" inlet="i"/>
+      </net>
+      <net>
+         <source obj="mux8_1" outlet="out"/>
+         <dest obj="phone_interface_buttons_screen_1" inlet="S1_L1"/>
+      </net>
+      <net>
+         <source obj="f_to_c_5" outlet="o"/>
+         <dest obj="mux8_1" inlet="i1"/>
+      </net>
+      <net>
+         <source obj="f_to_c_6" outlet="o"/>
+         <dest obj="mux8_2" inlet="i1"/>
+      </net>
+      <net>
+         <source obj="f_to_c_7" outlet="o"/>
+         <dest obj="mux8_3" inlet="i1"/>
+      </net>
+      <net>
+         <source obj="f_to_c_8" outlet="o"/>
+         <dest obj="mux8_4" inlet="i1"/>
+      </net>
+      <net>
+         <source obj="phone_interface_buttons_screen_1" outlet="dial 4"/>
+         <dest obj="demux_4_pp_4" inlet="in"/>
+      </net>
+      <net>
+         <source obj="delayedpulseduration_1" outlet="pulse"/>
+         <dest obj="gate_1" inlet="control"/>
+         <dest obj="muxi_1" inlet="s"/>
+      </net>
+      <net>
+         <source obj="i_4" outlet="out"/>
+         <dest obj="muxi_1" inlet="i1"/>
+      </net>
+      <net>
+         <source obj="i_5" outlet="out"/>
+         <dest obj="muxi_1" inlet="i2"/>
+      </net>
+      <net>
+         <source obj="muxi_1" outlet="o"/>
+         <dest obj="i_6" inlet="in"/>
+         <dest obj="phone_interface_buttons_screen_1" inlet="S2mode"/>
+         <dest obj="phone_interface_buttons_screen_1" inlet="S1mode"/>
+      </net>
+      <net>
+         <source obj="+_1" outlet="out"/>
+         <dest obj="saw_1" inlet="pitch"/>
+      </net>
+      <net>
+         <source obj="demux_4_pp_1" outlet="o2"/>
+         <dest obj="unipolar2bipolar_1" inlet="i"/>
+      </net>
+      <net>
+         <source obj="strbar_1" outlet="out"/>
+         <dest obj="mux8_1" inlet="i2"/>
+      </net>
+      <net>
+         <source obj="unipolar2bipolar_1" outlet="o"/>
+         <dest obj="+_1" inlet="in1"/>
+         <dest obj="strbar_1" inlet="in"/>
+      </net>
+      <net>
+         <source obj="demux_4_pp_2" outlet="o2"/>
+         <dest obj="strbar_2" inlet="in"/>
+         <dest obj="par_swap_1_1" inlet="dev1vol"/>
+      </net>
+      <net>
+         <source obj="strbar_2" outlet="out"/>
+         <dest obj="mux8_2" inlet="i2"/>
+      </net>
+      <net>
+         <source obj="strbar_3" outlet="out"/>
+         <dest obj="mux8_3" inlet="i2"/>
+      </net>
+      <net>
+         <source obj="strbar_4" outlet="out"/>
+         <dest obj="mux8_4" inlet="i2"/>
+      </net>
+      <net>
+         <source obj="demux_4_pp_3" outlet="o2"/>
+         <dest obj="unipolar2bipolar_2" inlet="i"/>
+         <dest obj="strbar_3" inlet="in"/>
+      </net>
+      <net>
+         <source obj="+_2" outlet="out"/>
+         <dest obj="square_1" inlet="pitch"/>
+      </net>
+      <net>
+         <source obj="unipolar2bipolar_2" outlet="o"/>
+         <dest obj="+_2" inlet="in1"/>
+      </net>
+      <net>
+         <source obj="demux_4_pp_4" outlet="o2"/>
+         <dest obj="strbar_4" inlet="in"/>
+         <dest obj="par_swap_1_1" inlet="dev2vol"/>
+      </net>
+   </nets>
+   <settings>
+      <subpatchmode>no</subpatchmode>
+      <MidiChannel>1</MidiChannel>
+      <NPresets>8</NPresets>
+      <NPresetEntries>32</NPresetEntries>
+      <NModulationSources>8</NModulationSources>
+      <NModulationTargetsPerSource>8</NModulationTargetsPerSource>
+   </settings>
+   <notes><![CDATA[]]></notes>
+   <windowPos>
+      <x>73</x>
+      <y>39</y>
+      <width>1837</width>
+      <height>1177</height>
+   </windowPos>
+</patch-1.0>
