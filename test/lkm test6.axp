@@ -1,0 +1,2793 @@
+<patch-1.0 appVersion="1.0.12">
+   <obj type="gpio/spi/config" uuid="d3e75d8a02e2ccabbbc2af3bc2fcdb8ea65a6133" name="config_1" x="42" y="28">
+      <params/>
+      <attribs>
+         <combo attributeName="clock_polarity" selection="CPOL=0"/>
+         <combo attributeName="clock_phase" selection="CPHA=0"/>
+         <combo attributeName="baudrate" selection="FPCLK/32"/>
+         <combo attributeName="format" selection="LSB first"/>
+      </attribs>
+   </obj>
+   <obj type="lkm full test2" uuid="401746e9-8449-4d2b-b5a1-1b458faaaab0" name="lkm_1" x="1022" y="28">
+      <params/>
+      <attribs>
+         <table attributeName="display" table="yo"/>
+      </attribs>
+   </obj>
+   <obj type="logic/change" uuid="96e39ae624c3f3c952cec4a95e1986ee0104f718" name="change_1" x="1288" y="28">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="lfo/square" uuid="de6909eb64db13af5b43f979a4c130024b3a4793" name="square_1" x="154" y="42">
+      <params>
+         <frac32.s.map name="pitch" value="14.899999618530273"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="conv/to i" uuid="305966430ee86b5c3b8e18cde0c721657c558a87" name="to_1" x="364" y="42">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="logic/decode/bin 8" uuid="dfc0a6e9d7e817cec64fd01f6972f64d897863a4" name="BLOC BIN" x="420" y="42">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="drj/math/== const i" uuid="36ae23539d64bc2fb798a1b4a65cf9dda17a1952" name="==_5" x="546" y="42">
+      <params/>
+      <attribs>
+         <spinner attributeName="value" value="0"/>
+      </attribs>
+   </obj>
+   <obj type="mux/mux 2" uuid="e1c92bc92f4d191bfadf0efeae4503b458a4e440" name="mux_10" x="658" y="42">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="logic/change" uuid="96e39ae624c3f3c952cec4a95e1986ee0104f718" name="change_2" x="756" y="42">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="logic/or 2" uuid="3805d3c84d30032a44fbdbe42d9a2988a1790a3e" name="or_1" x="840" y="42">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="timer/delayedpulse" uuid="3f05ee534ca67755fb20c7437f9e4de3d4c2f73d" name="delayedpulse_1" x="910" y="42">
+      <params>
+         <frac32.s.map name="delay" value="-15.0"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="table/write" uuid="50b8c8807ba1fc700ed79381c9360a982e0c3fb9" name="BLOC" x="1708" y="42">
+      <params/>
+      <attribs>
+         <objref attributeName="table" obj="alloc_1"/>
+      </attribs>
+   </obj>
+   <obj type="logic/counter" uuid="7a141ba82230e54e5f5cd12da5dbe5a74ba854a5" name="counter_1" x="1288" y="70">
+      <params>
+         <int32 name="maximum" value="1096"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="drj/math/!= const i" uuid="3673539d698a1bc2fb17a19524a65cf9dd11e24b" name="!=_1" x="1372" y="70">
+      <params/>
+      <attribs>
+         <spinner attributeName="value" value="1"/>
+      </attribs>
+   </obj>
+   <obj type="logic/change" uuid="96e39ae624c3f3c952cec4a95e1986ee0104f718" name="change_5" x="756" y="84">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="logic/or 2" uuid="3805d3c84d30032a44fbdbe42d9a2988a1790a3e" name="or_3" x="840" y="98">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="logic/and 2" uuid="c67031682f552aa0a80b23377495c51ea28a8c9c" name="and_2" x="1484" y="98">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="drj/math/== const i" uuid="36ae23539d64bc2fb798a1b4a65cf9dda17a1952" name="==_2" x="546" y="112">
+      <params/>
+      <attribs>
+         <spinner attributeName="value" value="1"/>
+      </attribs>
+   </obj>
+   <obj type="mux/mux 2" uuid="e1c92bc92f4d191bfadf0efeae4503b458a4e440" name="mux_7" x="658" y="112">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="ctrl/button" uuid="ef3d13774349df85aa9bfecf30dbc91ab8488b3f" name="reset" x="84" y="126">
+      <params>
+         <bool32.mom name="b" value="0"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="logic/change" uuid="96e39ae624c3f3c952cec4a95e1986ee0104f718" name="change_6" x="756" y="126">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="phi/math/==0" uuid="f13df532-f227-4120-a1d2-29d30a7ee25c" name="==0_1" x="1288" y="140">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="const/i" uuid="e202f44b2df17ae0b3e663b98ea6b14c8ff00408" name="i_1" x="1554" y="140">
+      <params/>
+      <attribs>
+         <spinner attributeName="value" value="8"/>
+      </attribs>
+   </obj>
+   <obj type="math/+" uuid="b94a9b8e9adcb7d18868c0ee808a9b211b65578d" name="+_1" x="1638" y="140">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="table/write" uuid="50b8c8807ba1fc700ed79381c9360a982e0c3fb9" name="BLOC2" x="1708" y="140">
+      <params/>
+      <attribs>
+         <objref attributeName="table" obj="alloc_1"/>
+      </attribs>
+   </obj>
+   <obj type="logic/or 2" uuid="3805d3c84d30032a44fbdbe42d9a2988a1790a3e" name="or_4" x="840" y="154">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="logic/change" uuid="42071f8cb4cfe1f35956c0bd5a313a57e049bec4" name="change_3" x="1204" y="154">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="logic/change" uuid="96e39ae624c3f3c952cec4a95e1986ee0104f718" name="change_7" x="756" y="168">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="table/alloc 16b" uuid="597fcaac36aa638ba120b0fbdcadcde4ad405a7e" name="alloc_1" x="70" y="182">
+      <params/>
+      <attribs>
+         <combo attributeName="size" selection="1024"/>
+         <text attributeName="init">
+            <sText><![CDATA[]]></sText>
+         </text>
+      </attribs>
+   </obj>
+   <obj type="table/read" uuid="65eb8d0f6a3344638de94c9882999b9af15510d0" name="read_BLOC1" x="154" y="182">
+      <params/>
+      <attribs>
+         <objref attributeName="table" obj="alloc_1"/>
+      </attribs>
+   </obj>
+   <obj type="drj/math/== const i" uuid="36ae23539d64bc2fb798a1b4a65cf9dda17a1952" name="==_6" x="546" y="182">
+      <params/>
+      <attribs>
+         <spinner attributeName="value" value="2"/>
+      </attribs>
+   </obj>
+   <obj type="mux/mux 2" uuid="e1c92bc92f4d191bfadf0efeae4503b458a4e440" name="mux_11" x="658" y="182">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="logic/or 2" uuid="3805d3c84d30032a44fbdbe42d9a2988a1790a3e" name="or_2" x="1302" y="182">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="logic/and 2" uuid="c67031682f552aa0a80b23377495c51ea28a8c9c" name="and_1" x="1386" y="182">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="logic/change" uuid="42071f8cb4cfe1f35956c0bd5a313a57e049bec4" name="change_4" x="1204" y="196">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="conv/to i" uuid="305966430ee86b5c3b8e18cde0c721657c558a87" name="to_2" x="364" y="210">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="logic/decode/bin 8" uuid="dfc0a6e9d7e817cec64fd01f6972f64d897863a4" name="BLOC BIN_" x="420" y="210">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="logic/change" uuid="96e39ae624c3f3c952cec4a95e1986ee0104f718" name="change_8" x="756" y="210">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="logic/or 2" uuid="3805d3c84d30032a44fbdbe42d9a2988a1790a3e" name="or_5" x="840" y="210">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="logic/counter" uuid="7a141ba82230e54e5f5cd12da5dbe5a74ba854a5" name="counter_2" x="1288" y="238">
+      <params>
+         <int32 name="maximum" value="1096"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="const/i" uuid="e202f44b2df17ae0b3e663b98ea6b14c8ff00408" name="i_2" x="1554" y="238">
+      <params/>
+      <attribs>
+         <spinner attributeName="value" value="8"/>
+      </attribs>
+   </obj>
+   <obj type="math/+" uuid="b94a9b8e9adcb7d18868c0ee808a9b211b65578d" name="+_2" x="1638" y="238">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="table/write" uuid="50b8c8807ba1fc700ed79381c9360a982e0c3fb9" name="LENG" x="1708" y="238">
+      <params/>
+      <attribs>
+         <objref attributeName="table" obj="alloc_1"/>
+      </attribs>
+   </obj>
+   <obj type="table/read" uuid="65eb8d0f6a3344638de94c9882999b9af15510d0" name="read_BLOC2" x="154" y="252">
+      <params/>
+      <attribs>
+         <objref attributeName="table" obj="alloc_1"/>
+      </attribs>
+   </obj>
+   <obj type="drj/math/== const i" uuid="36ae23539d64bc2fb798a1b4a65cf9dda17a1952" name="==_1" x="546" y="252">
+      <params/>
+      <attribs>
+         <spinner attributeName="value" value="3"/>
+      </attribs>
+   </obj>
+   <obj type="mux/mux 2" uuid="e1c92bc92f4d191bfadf0efeae4503b458a4e440" name="mux_6" x="658" y="252">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="logic/change" uuid="42071f8cb4cfe1f35956c0bd5a313a57e049bec4" name="change_9" x="1204" y="252">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="drj/math/&gt; const i" uuid="a498caeb4da17a59588d64bcf9d5e9b4a652362f" name="&gt;_1" x="1372" y="252">
+      <params/>
+      <attribs>
+         <spinner attributeName="value" value="1"/>
+      </attribs>
+   </obj>
+   <obj type="logic/change" uuid="96e39ae624c3f3c952cec4a95e1986ee0104f718" name="change_12" x="756" y="266">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="logic/or 2" uuid="3805d3c84d30032a44fbdbe42d9a2988a1790a3e" name="or_6" x="840" y="266">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="table/read" uuid="65eb8d0f6a3344638de94c9882999b9af15510d0" name="read_LENG" x="154" y="322">
+      <params/>
+      <attribs>
+         <objref attributeName="table" obj="alloc_1"/>
+      </attribs>
+   </obj>
+   <obj type="conv/to i" uuid="305966430ee86b5c3b8e18cde0c721657c558a87" name="to_5" x="280" y="322">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="drj/math/== const i" uuid="36ae23539d64bc2fb798a1b4a65cf9dda17a1952" name="==_7" x="546" y="322">
+      <params/>
+      <attribs>
+         <spinner attributeName="value" value="4"/>
+      </attribs>
+   </obj>
+   <obj type="mux/mux 2" uuid="e1c92bc92f4d191bfadf0efeae4503b458a4e440" name="mux_12" x="658" y="322">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="logic/change" uuid="96e39ae624c3f3c952cec4a95e1986ee0104f718" name="change_13" x="756" y="322">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="logic/or 2" uuid="3805d3c84d30032a44fbdbe42d9a2988a1790a3e" name="or_7" x="840" y="322">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="logic/change" uuid="42071f8cb4cfe1f35956c0bd5a313a57e049bec4" name="change_10" x="1204" y="336">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="logic/counter" uuid="7a141ba82230e54e5f5cd12da5dbe5a74ba854a5" name="counter_3" x="1288" y="336">
+      <params>
+         <int32 name="maximum" value="1096"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="const/i" uuid="e202f44b2df17ae0b3e663b98ea6b14c8ff00408" name="i_3" x="1400" y="336">
+      <params/>
+      <attribs>
+         <spinner attributeName="value" value="16"/>
+      </attribs>
+   </obj>
+   <obj type="math/*" uuid="6a31299e3a491edd8c4df0e809a519a35cc08a3b" name="*_1" x="1498" y="336">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="math/+" uuid="b94a9b8e9adcb7d18868c0ee808a9b211b65578d" name="+_4" x="1568" y="336">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="math/+" uuid="b94a9b8e9adcb7d18868c0ee808a9b211b65578d" name="+_3" x="1638" y="336">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="table/write" uuid="50b8c8807ba1fc700ed79381c9360a982e0c3fb9" name="VEL" x="1708" y="336">
+      <params/>
+      <attribs>
+         <objref attributeName="table" obj="alloc_1"/>
+      </attribs>
+   </obj>
+   <obj type="logic/change" uuid="96e39ae624c3f3c952cec4a95e1986ee0104f718" name="change_15" x="756" y="378">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="logic/or 2" uuid="3805d3c84d30032a44fbdbe42d9a2988a1790a3e" name="or_8" x="840" y="378">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="table/read" uuid="65eb8d0f6a3344638de94c9882999b9af15510d0" name="read_VEL" x="154" y="392">
+      <params/>
+      <attribs>
+         <objref attributeName="table" obj="alloc_1"/>
+      </attribs>
+   </obj>
+   <obj type="conv/to i" uuid="305966430ee86b5c3b8e18cde0c721657c558a87" name="to_7" x="280" y="392">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="drj/math/== const i" uuid="36ae23539d64bc2fb798a1b4a65cf9dda17a1952" name="==_4" x="546" y="392">
+      <params/>
+      <attribs>
+         <spinner attributeName="value" value="5"/>
+      </attribs>
+   </obj>
+   <obj type="mux/mux 2" uuid="e1c92bc92f4d191bfadf0efeae4503b458a4e440" name="mux_9" x="658" y="392">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="drj/math/&gt; const i" uuid="a498caeb4da17a59588d64bcf9d5e9b4a652362f" name="&gt;_2" x="1372" y="392">
+      <params/>
+      <attribs>
+         <spinner attributeName="value" value="1"/>
+      </attribs>
+   </obj>
+   <obj type="math/+1" uuid="13c1a4574bb81783beb8839e81782b9a34e3fc17" name="+1_1" x="1498" y="392">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="logic/change" uuid="96e39ae624c3f3c952cec4a95e1986ee0104f718" name="change_16" x="756" y="434">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="logic/or 2" uuid="3805d3c84d30032a44fbdbe42d9a2988a1790a3e" name="or_9" x="840" y="434">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="math/*" uuid="6a31299e3a491edd8c4df0e809a519a35cc08a3b" name="*_2" x="1498" y="434">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="math/+" uuid="b94a9b8e9adcb7d18868c0ee808a9b211b65578d" name="+_5" x="1568" y="434">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="math/+" uuid="b94a9b8e9adcb7d18868c0ee808a9b211b65578d" name="+_6" x="1638" y="434">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="table/write" uuid="50b8c8807ba1fc700ed79381c9360a982e0c3fb9" name="PITCH" x="1708" y="434">
+      <params/>
+      <attribs>
+         <objref attributeName="table" obj="alloc_1"/>
+      </attribs>
+   </obj>
+   <obj type="table/read" uuid="65eb8d0f6a3344638de94c9882999b9af15510d0" name="read_PITCH" x="154" y="462">
+      <params/>
+      <attribs>
+         <objref attributeName="table" obj="alloc_1"/>
+      </attribs>
+   </obj>
+   <obj type="conv/to i" uuid="305966430ee86b5c3b8e18cde0c721657c558a87" name="to_10" x="280" y="462">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="drj/math/== const i" uuid="36ae23539d64bc2fb798a1b4a65cf9dda17a1952" name="==_8" x="546" y="462">
+      <params/>
+      <attribs>
+         <spinner attributeName="value" value="6"/>
+      </attribs>
+   </obj>
+   <obj type="mux/mux 2" uuid="e1c92bc92f4d191bfadf0efeae4503b458a4e440" name="mux_13" x="658" y="462">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="logic/change" uuid="42071f8cb4cfe1f35956c0bd5a313a57e049bec4" name="change_11" x="1204" y="462">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="logic/counter" uuid="7a141ba82230e54e5f5cd12da5dbe5a74ba854a5" name="counter_4" x="1288" y="462">
+      <params>
+         <int32 name="maximum" value="1096"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="const/i" uuid="e202f44b2df17ae0b3e663b98ea6b14c8ff00408" name="i_6" x="1372" y="462">
+      <params/>
+      <attribs>
+         <spinner attributeName="value" value="88"/>
+      </attribs>
+   </obj>
+   <obj type="logic/change" uuid="96e39ae624c3f3c952cec4a95e1986ee0104f718" name="change_18" x="756" y="490">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="logic/or 2" uuid="3805d3c84d30032a44fbdbe42d9a2988a1790a3e" name="or_10" x="840" y="490">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="math/+1" uuid="13c1a4574bb81783beb8839e81782b9a34e3fc17" name="+1_2" x="1498" y="490">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="drj/math/&gt; const i" uuid="a498caeb4da17a59588d64bcf9d5e9b4a652362f" name="&gt;_3" x="1372" y="518">
+      <params/>
+      <attribs>
+         <spinner attributeName="value" value="1"/>
+      </attribs>
+   </obj>
+   <obj type="table/read" uuid="65eb8d0f6a3344638de94c9882999b9af15510d0" name="read_PROB" x="154" y="532">
+      <params/>
+      <attribs>
+         <objref attributeName="table" obj="alloc_1"/>
+      </attribs>
+   </obj>
+   <obj type="conv/to i" uuid="305966430ee86b5c3b8e18cde0c721657c558a87" name="to_13" x="280" y="532">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="math/*" uuid="6a31299e3a491edd8c4df0e809a519a35cc08a3b" name="*_3" x="1498" y="532">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="math/+" uuid="b94a9b8e9adcb7d18868c0ee808a9b211b65578d" name="+_7" x="1568" y="532">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="math/+" uuid="b94a9b8e9adcb7d18868c0ee808a9b211b65578d" name="+_8" x="1638" y="532">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="table/write" uuid="50b8c8807ba1fc700ed79381c9360a982e0c3fb9" name="PROB" x="1708" y="532">
+      <params/>
+      <attribs>
+         <objref attributeName="table" obj="alloc_1"/>
+      </attribs>
+   </obj>
+   <obj type="logic/change" uuid="96e39ae624c3f3c952cec4a95e1986ee0104f718" name="change_19" x="756" y="546">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="logic/or 2" uuid="3805d3c84d30032a44fbdbe42d9a2988a1790a3e" name="or_11" x="840" y="546">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="logic/change" uuid="42071f8cb4cfe1f35956c0bd5a313a57e049bec4" name="change_14" x="1204" y="588">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="logic/counter" uuid="7a141ba82230e54e5f5cd12da5dbe5a74ba854a5" name="counter_5" x="1288" y="588">
+      <params>
+         <int32 name="maximum" value="1096"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="const/i" uuid="e202f44b2df17ae0b3e663b98ea6b14c8ff00408" name="i_7" x="1372" y="588">
+      <params/>
+      <attribs>
+         <spinner attributeName="value" value="160"/>
+      </attribs>
+   </obj>
+   <obj type="math/+1" uuid="13c1a4574bb81783beb8839e81782b9a34e3fc17" name="+1_3" x="1498" y="588">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="table/read" uuid="65eb8d0f6a3344638de94c9882999b9af15510d0" name="read_PAN" x="154" y="602">
+      <params/>
+      <attribs>
+         <objref attributeName="table" obj="alloc_1"/>
+      </attribs>
+   </obj>
+   <obj type="conv/to i" uuid="305966430ee86b5c3b8e18cde0c721657c558a87" name="to_16" x="280" y="602">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="logic/change" uuid="96e39ae624c3f3c952cec4a95e1986ee0104f718" name="change_21" x="756" y="602">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="logic/or 2" uuid="3805d3c84d30032a44fbdbe42d9a2988a1790a3e" name="or_12" x="840" y="602">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="math/+" uuid="b94a9b8e9adcb7d18868c0ee808a9b211b65578d" name="+_9" x="1568" y="630">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="math/+" uuid="b94a9b8e9adcb7d18868c0ee808a9b211b65578d" name="+_10" x="1638" y="630">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="table/write" uuid="50b8c8807ba1fc700ed79381c9360a982e0c3fb9" name="PAN" x="1708" y="630">
+      <params/>
+      <attribs>
+         <objref attributeName="table" obj="alloc_1"/>
+      </attribs>
+   </obj>
+   <obj type="drj/math/&gt; const i" uuid="a498caeb4da17a59588d64bcf9d5e9b4a652362f" name="&gt;_4" x="1372" y="644">
+      <params/>
+      <attribs>
+         <spinner attributeName="value" value="1"/>
+      </attribs>
+   </obj>
+   <obj type="logic/change" uuid="96e39ae624c3f3c952cec4a95e1986ee0104f718" name="change_23" x="756" y="658">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="logic/or 2" uuid="3805d3c84d30032a44fbdbe42d9a2988a1790a3e" name="or_13" x="840" y="658">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="math/*" uuid="6a31299e3a491edd8c4df0e809a519a35cc08a3b" name="*_4" x="1498" y="658">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="table/read" uuid="65eb8d0f6a3344638de94c9882999b9af15510d0" name="read_CHAIN" x="154" y="672">
+      <params/>
+      <attribs>
+         <objref attributeName="table" obj="alloc_1"/>
+      </attribs>
+   </obj>
+   <obj type="conv/to i" uuid="305966430ee86b5c3b8e18cde0c721657c558a87" name="to_17" x="280" y="672">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="logic/change" uuid="42071f8cb4cfe1f35956c0bd5a313a57e049bec4" name="change_17" x="1176" y="700">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="logic/counter" uuid="7a141ba82230e54e5f5cd12da5dbe5a74ba854a5" name="counter_6" x="1274" y="700">
+      <params>
+         <int32 name="maximum" value="1096"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="logic/change" uuid="96e39ae624c3f3c952cec4a95e1986ee0104f718" name="change_25" x="756" y="714">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="logic/or 2" uuid="3805d3c84d30032a44fbdbe42d9a2988a1790a3e" name="or_14" x="840" y="714">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="const/i" uuid="e202f44b2df17ae0b3e663b98ea6b14c8ff00408" name="i_8" x="1372" y="714">
+      <params/>
+      <attribs>
+         <spinner attributeName="value" value="232"/>
+      </attribs>
+   </obj>
+   <obj type="math/+1" uuid="13c1a4574bb81783beb8839e81782b9a34e3fc17" name="+1_4" x="1498" y="714">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="table/write" uuid="50b8c8807ba1fc700ed79381c9360a982e0c3fb9" name="CHAIN" x="1708" y="728">
+      <params/>
+      <attribs>
+         <objref attributeName="table" obj="alloc_1"/>
+      </attribs>
+   </obj>
+   <obj type="table/read" uuid="65eb8d0f6a3344638de94c9882999b9af15510d0" name="read_SOUND1" x="154" y="742">
+      <params/>
+      <attribs>
+         <objref attributeName="table" obj="alloc_1"/>
+      </attribs>
+   </obj>
+   <obj type="conv/to i" uuid="305966430ee86b5c3b8e18cde0c721657c558a87" name="to_19" x="280" y="742">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="drj/math/&gt; const i" uuid="a498caeb4da17a59588d64bcf9d5e9b4a652362f" name="&gt;_5" x="1358" y="770">
+      <params/>
+      <attribs>
+         <spinner attributeName="value" value="1"/>
+      </attribs>
+   </obj>
+   <obj type="table/read" uuid="65eb8d0f6a3344638de94c9882999b9af15510d0" name="read_SOUND2" x="154" y="812">
+      <params/>
+      <attribs>
+         <objref attributeName="table" obj="alloc_1"/>
+      </attribs>
+   </obj>
+   <obj type="conv/to i" uuid="305966430ee86b5c3b8e18cde0c721657c558a87" name="to_22" x="280" y="812">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="logic/change" uuid="42071f8cb4cfe1f35956c0bd5a313a57e049bec4" name="change_20" x="1176" y="826">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="logic/counter" uuid="7a141ba82230e54e5f5cd12da5dbe5a74ba854a5" name="counter_7" x="1274" y="826">
+      <params>
+         <int32 name="maximum" value="1096"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="math/+" uuid="b94a9b8e9adcb7d18868c0ee808a9b211b65578d" name="+_11" x="1624" y="826">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="table/write" uuid="50b8c8807ba1fc700ed79381c9360a982e0c3fb9" name="SOUND1" x="1708" y="826">
+      <params/>
+      <attribs>
+         <objref attributeName="table" obj="alloc_1"/>
+      </attribs>
+   </obj>
+   <obj type="const/i" uuid="e202f44b2df17ae0b3e663b98ea6b14c8ff00408" name="i_9" x="1372" y="840">
+      <params/>
+      <attribs>
+         <spinner attributeName="value" value="304"/>
+      </attribs>
+   </obj>
+   <obj type="drj/math/&gt; const i" uuid="a498caeb4da17a59588d64bcf9d5e9b4a652362f" name="&gt;_6" x="1358" y="896">
+      <params/>
+      <attribs>
+         <spinner attributeName="value" value="1"/>
+      </attribs>
+   </obj>
+   <obj type="ctrl/i radio 8 h" uuid="81c4cf13a2d0e267b327a4663a711c2f96f7f9b7" name="MENU" x="0" y="924">
+      <params>
+         <int32.hradio name="value" value="3"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="math/+" uuid="b94a9b8e9adcb7d18868c0ee808a9b211b65578d" name="+_12" x="1624" y="924">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="table/write" uuid="50b8c8807ba1fc700ed79381c9360a982e0c3fb9" name="SOUND2" x="1708" y="924">
+      <params/>
+      <attribs>
+         <objref attributeName="table" obj="alloc_1"/>
+      </attribs>
+   </obj>
+   <obj type="logic/change" uuid="42071f8cb4cfe1f35956c0bd5a313a57e049bec4" name="change_22" x="1176" y="952">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="logic/counter" uuid="7a141ba82230e54e5f5cd12da5dbe5a74ba854a5" name="counter_8" x="1274" y="952">
+      <params>
+         <int32 name="maximum" value="1096"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="disp/i" uuid="5e35fd0c62d81e70017289250cf28edd26e19e4a" name="i_4" x="350" y="966">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="const/i" uuid="e202f44b2df17ae0b3e663b98ea6b14c8ff00408" name="i_10" x="1372" y="966">
+      <params/>
+      <attribs>
+         <spinner attributeName="value" value="305"/>
+      </attribs>
+   </obj>
+   <obj type="ctrl/i radio 8 v" uuid="577436e6982cb8ac1f816144195641eeb6846f79" name="SELECT" x="28" y="980">
+      <params>
+         <int32.vradio name="value" value="7"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="drj/math/&gt; const i" uuid="a498caeb4da17a59588d64bcf9d5e9b4a652362f" name="&gt;_7" x="1358" y="1022">
+      <params/>
+      <attribs>
+         <spinner attributeName="value" value="1"/>
+      </attribs>
+   </obj>
+   <obj type="logic/change" uuid="42071f8cb4cfe1f35956c0bd5a313a57e049bec4" name="change_24" x="1176" y="1078">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="logic/counter" uuid="7a141ba82230e54e5f5cd12da5dbe5a74ba854a5" name="counter_9" x="1274" y="1078">
+      <params>
+         <int32 name="maximum" value="1096"/>
+      </params>
+      <attribs/>
+   </obj>
+   <patcher type="patch/patcher" uuid="788f2282-975f-4d27-b0a4-a2e27e3feb2a" name="1 BD" x="252" y="1092">
+      <params/>
+      <attribs/>
+      <subpatch appVersion="1.0.12">
+         <obj type="const/i" uuid="e202f44b2df17ae0b3e663b98ea6b14c8ff00408" name="i_1" x="126" y="28">
+            <params/>
+            <attribs>
+               <spinner attributeName="value" value="0"/>
+            </attribs>
+         </obj>
+         <obj type="math/+" uuid="b94a9b8e9adcb7d18868c0ee808a9b211b65578d" name="+_1" x="210" y="28">
+            <params/>
+            <attribs/>
+         </obj>
+         <obj type="table/read" uuid="65eb8d0f6a3344638de94c9882999b9af15510d0" name="nibble1" x="294" y="28">
+            <params/>
+            <attribs>
+               <objref attributeName="table" obj="../alloc_1"/>
+            </attribs>
+         </obj>
+         <obj type="conv/to i" uuid="305966430ee86b5c3b8e18cde0c721657c558a87" name="to_1" x="420" y="28">
+            <params/>
+            <attribs/>
+         </obj>
+         <obj type="logic/decode/bin 8" uuid="dfc0a6e9d7e817cec64fd01f6972f64d897863a4" name="bin_1" x="546" y="28">
+            <params/>
+            <attribs/>
+         </obj>
+         <obj type="logic/decode/bin 8" uuid="dfc0a6e9d7e817cec64fd01f6972f64d897863a4" name="bin_2" x="686" y="28">
+            <params/>
+            <attribs/>
+         </obj>
+         <obj type="mux/mux 8" uuid="39db4571d158ce2c2bc895f16048aee73f12d315" name="mux_1" x="840" y="28">
+            <params/>
+            <attribs/>
+         </obj>
+         <obj type="patch/inlet i" uuid="f11927f00c59219df0c50f73056aa19f125540b7" name="select" x="42" y="56">
+            <params/>
+            <attribs/>
+         </obj>
+         <obj type="const/i" uuid="e202f44b2df17ae0b3e663b98ea6b14c8ff00408" name="i_2" x="126" y="98">
+            <params/>
+            <attribs>
+               <spinner attributeName="value" value="8"/>
+            </attribs>
+         </obj>
+         <obj type="math/+" uuid="b94a9b8e9adcb7d18868c0ee808a9b211b65578d" name="+_2" x="210" y="98">
+            <params/>
+            <attribs/>
+         </obj>
+         <obj type="table/read" uuid="65eb8d0f6a3344638de94c9882999b9af15510d0" name="nibble2" x="294" y="98">
+            <params/>
+            <attribs>
+               <objref attributeName="table" obj="../alloc_1"/>
+            </attribs>
+         </obj>
+         <obj type="conv/to i" uuid="305966430ee86b5c3b8e18cde0c721657c558a87" name="to_2" x="420" y="98">
+            <params/>
+            <attribs/>
+         </obj>
+         <obj type="mux/mux 2" uuid="e1c92bc92f4d191bfadf0efeae4503b458a4e440" name="mux_2" x="952" y="112">
+            <params/>
+            <attribs/>
+         </obj>
+         <obj type="const/i" uuid="e202f44b2df17ae0b3e663b98ea6b14c8ff00408" name="i_3" x="126" y="168">
+            <params/>
+            <attribs>
+               <spinner attributeName="value" value="16"/>
+            </attribs>
+         </obj>
+         <obj type="math/+" uuid="b94a9b8e9adcb7d18868c0ee808a9b211b65578d" name="+_3" x="210" y="168">
+            <params/>
+            <attribs/>
+         </obj>
+         <obj type="table/read" uuid="65eb8d0f6a3344638de94c9882999b9af15510d0" name="length" x="294" y="168">
+            <params/>
+            <attribs>
+               <objref attributeName="table" obj="../alloc_1"/>
+            </attribs>
+         </obj>
+         <obj type="conv/to i" uuid="305966430ee86b5c3b8e18cde0c721657c558a87" name="to_3" x="420" y="168">
+            <params/>
+            <attribs/>
+         </obj>
+         <obj type="math/+1" uuid="13c1a4574bb81783beb8839e81782b9a34e3fc17" name="+1_1" x="476" y="168">
+            <params/>
+            <attribs/>
+         </obj>
+         <obj type="logic/counter" uuid="7a141ba82230e54e5f5cd12da5dbe5a74ba854a5" name="counter_2" x="28" y="238">
+            <params>
+               <int32 name="maximum" value="8"/>
+            </params>
+            <attribs/>
+         </obj>
+         <obj type="const/i" uuid="e202f44b2df17ae0b3e663b98ea6b14c8ff00408" name="i_4" x="126" y="238">
+            <params/>
+            <attribs>
+               <spinner attributeName="value" value="24"/>
+            </attribs>
+         </obj>
+         <obj type="math/+" uuid="b94a9b8e9adcb7d18868c0ee808a9b211b65578d" name="+_4" x="210" y="238">
+            <params/>
+            <attribs/>
+         </obj>
+         <obj type="table/read" uuid="65eb8d0f6a3344638de94c9882999b9af15510d0" name="vel" x="294" y="238">
+            <params/>
+            <attribs>
+               <objref attributeName="table" obj="../alloc_1"/>
+            </attribs>
+         </obj>
+         <obj type="math/muls 8" uuid="7f2a47c7405168a6d330c0ec6091b1ec1e7c7840" name="muls_1" x="434" y="238">
+            <params/>
+            <attribs/>
+         </obj>
+         <obj type="patch/outlet a" uuid="abd8c5fd3b0524a6630f65cad6dc27f6c58e2a3e" name="outlet_1" x="1498" y="238">
+            <params/>
+            <attribs/>
+         </obj>
+         <obj type="logic/counter" uuid="7a141ba82230e54e5f5cd12da5dbe5a74ba854a5" name="counter_4" x="28" y="308">
+            <params>
+               <int32 name="maximum" value="8"/>
+            </params>
+            <attribs/>
+         </obj>
+         <obj type="const/i" uuid="e202f44b2df17ae0b3e663b98ea6b14c8ff00408" name="i_5" x="126" y="308">
+            <params/>
+            <attribs>
+               <spinner attributeName="value" value="88"/>
+            </attribs>
+         </obj>
+         <obj type="math/+" uuid="b94a9b8e9adcb7d18868c0ee808a9b211b65578d" name="+_5" x="210" y="308">
+            <params/>
+            <attribs/>
+         </obj>
+         <obj type="table/read" uuid="65eb8d0f6a3344638de94c9882999b9af15510d0" name="pitch" x="294" y="308">
+            <params/>
+            <attribs>
+               <objref attributeName="table" obj="../alloc_1"/>
+            </attribs>
+         </obj>
+         <obj type="gain/vca" uuid="a9f2dcd18043e2f47364e45cb8814f63c2a37c0d" name="vca_1" x="1288" y="322">
+            <params/>
+            <attribs/>
+         </obj>
+         <obj type="phi/prob/%bang in" uuid="3ecf5771-a8c1-44e0-9886-41a1c8d0adaa" name="%bang_1" x="980" y="336">
+            <params/>
+            <attribs/>
+         </obj>
+         <obj type="edrum/bd1" uuid="9afa325e-6764-4666-885c-62efd6ccbe41" name="obj_1" x="1120" y="336">
+            <params>
+               <frac32.s.map name="d1" value="-16.0"/>
+               <frac32.s.map name="lp1" value="32.0"/>
+               <frac32.s.map name="d2" value="-12.0"/>
+               <frac32.u.map name="amt" value="63.5"/>
+               <frac32.s.map name="sine_1" value="-44.0"/>
+            </params>
+            <attribs/>
+         </obj>
+         <obj type="mix/mix 2 g" uuid="221f038da51943034a75e442c90624fcebfe6112" name="mix_1" x="1484" y="336">
+            <params>
+               <frac32.u.map name="gain1" value="32.0"/>
+               <frac32.u.map name="gain2" value="7.5"/>
+            </params>
+            <attribs/>
+         </obj>
+         <obj type="logic/counter" uuid="7a141ba82230e54e5f5cd12da5dbe5a74ba854a5" name="counter_5" x="28" y="378">
+            <params>
+               <int32 name="maximum" value="8"/>
+            </params>
+            <attribs/>
+         </obj>
+         <obj type="const/i" uuid="e202f44b2df17ae0b3e663b98ea6b14c8ff00408" name="i_6" x="126" y="378">
+            <params/>
+            <attribs>
+               <spinner attributeName="value" value="88"/>
+            </attribs>
+         </obj>
+         <obj type="math/+" uuid="b94a9b8e9adcb7d18868c0ee808a9b211b65578d" name="+_6" x="210" y="378">
+            <params/>
+            <attribs/>
+         </obj>
+         <obj type="table/read" uuid="65eb8d0f6a3344638de94c9882999b9af15510d0" name="prob" x="294" y="378">
+            <params/>
+            <attribs>
+               <objref attributeName="table" obj="../alloc_1"/>
+            </attribs>
+         </obj>
+         <obj type="math/muls 8" uuid="7f2a47c7405168a6d330c0ec6091b1ec1e7c7840" name="muls_2" x="434" y="378">
+            <params/>
+            <attribs/>
+         </obj>
+         <obj type="drj/seq/clk_div" uuid="ae123abb3a471eb627811120af4abcaf5343f972" name="clk_div_1" x="602" y="406">
+            <params>
+               <int32 name="clockdiv" value="8"/>
+            </params>
+            <attribs/>
+         </obj>
+         <obj type="logic/counter" uuid="7a141ba82230e54e5f5cd12da5dbe5a74ba854a5" name="counter_1" x="728" y="406">
+            <params>
+               <int32 name="maximum" value="8"/>
+            </params>
+            <attribs/>
+         </obj>
+         <obj type="gao/edrum/clap" uuid="90f2eff1-faea-422e-91d6-d0d3f8cb9208" name="obj_2" x="980" y="420">
+            <params>
+               <frac32.s.map name="pulse hp:pitch" value="10.0"/>
+               <frac32.u.map name="pulse hp:reso" value="40.0"/>
+               <frac32.s.map name="ad:a" value="-40.0"/>
+               <frac32.s.map name="ad:d" value="-30.0"/>
+               <frac32.s.map name="fb ad:a" value="-53.0"/>
+               <frac32.s.map name="fb ad:d" value="-2.0"/>
+               <frac32.s.map name="bp:pitch" value="23.0"/>
+               <frac32.u.map name="bp:reso" value="51.5"/>
+               <frac32.s.map name="lp:pitch" value="30.0"/>
+               <frac32.u.map name="lp:reso" value="40.0"/>
+               <frac32.u.map name="gain" value="16.5"/>
+            </params>
+            <attribs/>
+         </obj>
+         <obj type="clk_mul in" uuid="91e7448a-fb0f-40da-8b52-57919b7064ac" name="clk_mul_1" x="616" y="490">
+            <params/>
+            <attribs/>
+         </obj>
+         <obj type="phi/logic/counter i" uuid="49f45a5d-b235-47ff-a47d-20cc357198ea" name="counter_3" x="770" y="504">
+            <params/>
+            <attribs/>
+         </obj>
+         <obj type="ctrl/toggle" uuid="42b8134fa729d54bfc8d62d6ef3fa99498c1de99" name="toggle_1" x="0" y="518">
+            <params>
+               <bool32.tgl name="b" value="1"/>
+            </params>
+            <attribs/>
+         </obj>
+         <obj type="drj/seq/seq_clk" uuid="de6909eb611b13af5b43f97484c130024b3a4793" name="seq_clk_1" x="0" y="574">
+            <params>
+               <frac32.s.map name="tempo" value="12.0"/>
+               <frac32.u.map name="gatelength" value="0.0"/>
+               <int32 name="seqlength" value="1"/>
+            </params>
+            <attribs/>
+         </obj>
+         <nets>
+            <net>
+               <source obj="seq_clk_1" outlet="clock"/>
+               <dest obj="clk_div_1" inlet="clk"/>
+            </net>
+            <net>
+               <source obj="toggle_1" outlet="o"/>
+               <dest obj="seq_clk_1" inlet="run"/>
+            </net>
+            <net>
+               <source obj="clk_div_1" outlet="clk"/>
+               <dest obj="counter_1" inlet="r"/>
+               <dest obj="clk_mul_1" inlet="clk"/>
+               <dest obj="obj_2" inlet="trig"/>
+               <dest obj="counter_2" inlet="r"/>
+               <dest obj="counter_4" inlet="r"/>
+            </net>
+            <net>
+               <source obj="bin_1" outlet="o0"/>
+               <dest obj="mux_1" inlet="i0"/>
+            </net>
+            <net>
+               <source obj="bin_2" outlet="o0"/>
+               <dest obj="mux_1" inlet="i1"/>
+            </net>
+            <net>
+               <source obj="bin_1" outlet="o1"/>
+               <dest obj="mux_1" inlet="i2"/>
+            </net>
+            <net>
+               <source obj="bin_2" outlet="o1"/>
+               <dest obj="mux_1" inlet="i3"/>
+            </net>
+            <net>
+               <source obj="bin_1" outlet="o2"/>
+               <dest obj="mux_1" inlet="i4"/>
+            </net>
+            <net>
+               <source obj="bin_2" outlet="o2"/>
+               <dest obj="mux_1" inlet="i5"/>
+            </net>
+            <net>
+               <source obj="bin_1" outlet="o3"/>
+               <dest obj="mux_1" inlet="i6"/>
+            </net>
+            <net>
+               <source obj="bin_2" outlet="o3"/>
+               <dest obj="mux_1" inlet="i7"/>
+            </net>
+            <net>
+               <source obj="counter_1" outlet="o"/>
+               <dest obj="mux_1" inlet="s"/>
+            </net>
+            <net>
+               <source obj="clk_mul_1" outlet="clk"/>
+               <dest obj="counter_1" inlet="trig"/>
+               <dest obj="mux_2" inlet="i2"/>
+               <dest obj="counter_2" inlet="trig"/>
+               <dest obj="counter_4" inlet="trig"/>
+            </net>
+            <net>
+               <source obj="obj_2" outlet="outlet_1"/>
+               <dest obj="mix_1" inlet="in2"/>
+            </net>
+            <net>
+               <source obj="mix_1" outlet="out"/>
+               <dest obj="outlet_1" inlet="outlet"/>
+            </net>
+            <net>
+               <source obj="mux_1" outlet="o"/>
+               <dest obj="mux_2" inlet="s"/>
+            </net>
+            <net>
+               <source obj="+1_1" outlet="result"/>
+               <dest obj="clk_mul_1" inlet="clkmul"/>
+            </net>
+            <net>
+               <source obj="nibble1" outlet="o"/>
+               <dest obj="to_1" inlet="i"/>
+            </net>
+            <net>
+               <source obj="to_1" outlet="o"/>
+               <dest obj="bin_1" inlet="i1"/>
+            </net>
+            <net>
+               <source obj="i_2" outlet="out"/>
+               <dest obj="+_2" inlet="in1"/>
+            </net>
+            <net>
+               <source obj="nibble2" outlet="o"/>
+               <dest obj="to_2" inlet="i"/>
+            </net>
+            <net>
+               <source obj="to_2" outlet="o"/>
+               <dest obj="bin_2" inlet="i1"/>
+            </net>
+            <net>
+               <source obj="select" outlet="inlet"/>
+               <dest obj="+_1" inlet="in2"/>
+               <dest obj="+_2" inlet="in2"/>
+               <dest obj="+_3" inlet="in2"/>
+            </net>
+            <net>
+               <source obj="i_1" outlet="out"/>
+               <dest obj="+_1" inlet="in1"/>
+            </net>
+            <net>
+               <source obj="+_1" outlet="out"/>
+               <dest obj="nibble1" inlet="a"/>
+            </net>
+            <net>
+               <source obj="+_2" outlet="out"/>
+               <dest obj="nibble2" inlet="a"/>
+            </net>
+            <net>
+               <source obj="i_3" outlet="out"/>
+               <dest obj="+_3" inlet="in1"/>
+            </net>
+            <net>
+               <source obj="length" outlet="o"/>
+               <dest obj="to_3" inlet="i"/>
+            </net>
+            <net>
+               <source obj="+_3" outlet="out"/>
+               <dest obj="length" inlet="a"/>
+            </net>
+            <net>
+               <source obj="to_3" outlet="o"/>
+               <dest obj="+1_1" inlet="a"/>
+            </net>
+            <net>
+               <source obj="i_4" outlet="out"/>
+               <dest obj="+_4" inlet="in1"/>
+            </net>
+            <net>
+               <source obj="+_4" outlet="out"/>
+               <dest obj="vel" inlet="a"/>
+            </net>
+            <net>
+               <source obj="counter_2" outlet="o"/>
+               <dest obj="+_4" inlet="in2"/>
+            </net>
+            <net>
+               <source obj="vel" outlet="o"/>
+               <dest obj="muls_1" inlet="in"/>
+            </net>
+            <net>
+               <source obj="obj_1" outlet="out"/>
+               <dest obj="vca_1" inlet="a"/>
+            </net>
+            <net>
+               <source obj="vca_1" outlet="o"/>
+               <dest obj="mix_1" inlet="in1"/>
+            </net>
+            <net>
+               <source obj="muls_1" outlet="out"/>
+               <dest obj="vca_1" inlet="v"/>
+            </net>
+            <net>
+               <source obj="i_5" outlet="out"/>
+               <dest obj="+_5" inlet="in1"/>
+            </net>
+            <net>
+               <source obj="+_5" outlet="out"/>
+               <dest obj="pitch" inlet="a"/>
+            </net>
+            <net>
+               <source obj="counter_4" outlet="o"/>
+               <dest obj="+_5" inlet="in2"/>
+            </net>
+            <net>
+               <source obj="i_6" outlet="out"/>
+               <dest obj="+_6" inlet="in1"/>
+            </net>
+            <net>
+               <source obj="+_6" outlet="out"/>
+               <dest obj="prob" inlet="a"/>
+            </net>
+            <net>
+               <source obj="counter_5" outlet="o"/>
+               <dest obj="+_6" inlet="in2"/>
+            </net>
+            <net>
+               <source obj="prob" outlet="o"/>
+               <dest obj="muls_2" inlet="in"/>
+            </net>
+            <net>
+               <source obj="%bang_1" outlet="o"/>
+               <dest obj="obj_1" inlet="trig"/>
+            </net>
+            <net>
+               <source obj="mux_2" outlet="o"/>
+               <dest obj="%bang_1" inlet="trig"/>
+            </net>
+            <net>
+               <source obj="muls_2" outlet="out"/>
+               <dest obj="%bang_1" inlet="prob"/>
+            </net>
+         </nets>
+         <settings>
+            <subpatchmode>no</subpatchmode>
+         </settings>
+         <notes><![CDATA[]]></notes>
+         <windowPos>
+            <x>28</x>
+            <y>125</y>
+            <width>1412</width>
+            <height>634</height>
+         </windowPos>
+      </subpatch>
+   </patcher>
+   <obj type="const/i" uuid="e202f44b2df17ae0b3e663b98ea6b14c8ff00408" name="i_11" x="1372" y="1092">
+      <params/>
+      <attribs>
+         <spinner attributeName="value" value="313"/>
+      </attribs>
+   </obj>
+   <obj type="ctrl/dial p" uuid="cc5d2846c3d50e425f450c4b9851371b54f4d674" name="PAR1" x="532" y="1148">
+      <params>
+         <frac32.u.map name="value" value="64.0"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="ctrl/dial p" uuid="cc5d2846c3d50e425f450c4b9851371b54f4d674" name="PAR2" x="896" y="1148">
+      <params>
+         <frac32.u.map name="value" value="28.0"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="drj/math/&gt; const i" uuid="a498caeb4da17a59588d64bcf9d5e9b4a652362f" name="&gt;_8" x="1358" y="1148">
+      <params/>
+      <attribs>
+         <spinner attributeName="value" value="1"/>
+      </attribs>
+   </obj>
+   <obj type="audio/out stereo" uuid="a1ca7a567f535acc21055669829101d3ee7f0189" name="out_1" x="2114" y="1176">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="demux/demux 8" uuid="a7c1c9ee4fbbc2ebf3722eeb5c6d8e87033769ac" name="demux_1" x="504" y="1232">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="math/div 8" uuid="4a6007f5cb2024c50e8449b3bb6bcaef6ac42edb" name="div_1" x="630" y="1232">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="conv/to i" uuid="305966430ee86b5c3b8e18cde0c721657c558a87" name="to_3" x="700" y="1232">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="demux/demux 8" uuid="a7c1c9ee4fbbc2ebf3722eeb5c6d8e87033769ac" name="demux_2" x="896" y="1232">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="math/div 8" uuid="4a6007f5cb2024c50e8449b3bb6bcaef6ac42edb" name="div_3" x="1008" y="1232">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="conv/to i" uuid="305966430ee86b5c3b8e18cde0c721657c558a87" name="to_6" x="1078" y="1232">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="math/div 8" uuid="4a6007f5cb2024c50e8449b3bb6bcaef6ac42edb" name="div_2" x="630" y="1274">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="conv/to i" uuid="305966430ee86b5c3b8e18cde0c721657c558a87" name="to_4" x="700" y="1274">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="TSG/math/map" uuid="e93b4617-4075-4591-b602-3e1fc252e881" name="map_2" x="994" y="1274">
+      <params>
+         <frac32.u.map name="a" value="0.0"/>
+         <frac32.u.map name="b" value="10.0"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="conv/to i" uuid="305966430ee86b5c3b8e18cde0c721657c558a87" name="to_8" x="1078" y="1274">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="math/div 8" uuid="4a6007f5cb2024c50e8449b3bb6bcaef6ac42edb" name="div_5" x="630" y="1316">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="conv/to i" uuid="305966430ee86b5c3b8e18cde0c721657c558a87" name="to_9" x="700" y="1316">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="math/div 8" uuid="4a6007f5cb2024c50e8449b3bb6bcaef6ac42edb" name="div_7" x="630" y="1358">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="conv/to i" uuid="305966430ee86b5c3b8e18cde0c721657c558a87" name="to_12" x="700" y="1358">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="math/div 8" uuid="4a6007f5cb2024c50e8449b3bb6bcaef6ac42edb" name="div_6" x="1008" y="1386">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="conv/to i" uuid="305966430ee86b5c3b8e18cde0c721657c558a87" name="to_11" x="1078" y="1386">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="math/div 8" uuid="4a6007f5cb2024c50e8449b3bb6bcaef6ac42edb" name="div_9" x="630" y="1400">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="conv/to i" uuid="305966430ee86b5c3b8e18cde0c721657c558a87" name="to_15" x="700" y="1400">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="TSG/math/map" uuid="e93b4617-4075-4591-b602-3e1fc252e881" name="map_1" x="1008" y="1428">
+      <params>
+         <frac32.u.map name="a" value="0.0"/>
+         <frac32.u.map name="b" value="10.0"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="math/div 8" uuid="4a6007f5cb2024c50e8449b3bb6bcaef6ac42edb" name="div_10" x="630" y="1442">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="conv/to i" uuid="305966430ee86b5c3b8e18cde0c721657c558a87" name="to_18" x="700" y="1442">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="conv/to i" uuid="305966430ee86b5c3b8e18cde0c721657c558a87" name="to_14" x="1092" y="1442">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="math/div 2" uuid="f14884de1baf3e615e12ee162a96a013eca76789" name="div_8" x="630" y="1484">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="conv/to i" uuid="305966430ee86b5c3b8e18cde0c721657c558a87" name="to_20" x="700" y="1484">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="math/div 2" uuid="f14884de1baf3e615e12ee162a96a013eca76789" name="div_11" x="1008" y="1540">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="conv/to i" uuid="305966430ee86b5c3b8e18cde0c721657c558a87" name="to_21" x="1078" y="1540">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="string/c" uuid="4aa90a90c435a742ddfa152d232883fc5b2f1b3" name="c_1" x="56" y="1596">
+      <params/>
+      <attribs>
+         <table attributeName="str" table="BLOC"/>
+      </attribs>
+   </obj>
+   <obj type="string/c" uuid="4aa90a90c435a742ddfa152d232883fc5b2f1b3" name="c_5" x="210" y="1596">
+      <params/>
+      <attribs>
+         <table attributeName="str" table="PRO"/>
+      </attribs>
+   </obj>
+   <obj type="mux/mux 8" uuid="5f992dab2d3768081b3da60ba557a2eda93df0fe" name="mux_1" x="392" y="1596">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="string/c" uuid="4aa90a90c435a742ddfa152d232883fc5b2f1b3" name="c_9" x="700" y="1596">
+      <params/>
+      <attribs>
+         <table attributeName="str" table="--1"/>
+      </attribs>
+   </obj>
+   <obj type="string/c" uuid="4aa90a90c435a742ddfa152d232883fc5b2f1b3" name="c_10" x="854" y="1596">
+      <params/>
+      <attribs>
+         <table attributeName="str" table="--5"/>
+      </attribs>
+   </obj>
+   <obj type="mux/mux 8" uuid="5f992dab2d3768081b3da60ba557a2eda93df0fe" name="mux_2" x="1092" y="1596">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="mux/mux 8" uuid="5f992dab2d3768081b3da60ba557a2eda93df0fe" name="mux_4" x="1302" y="1596">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="lokki/string/concat" uuid="dccfcd5c-7f7d-4bf5-9885-bbac0a558926" name="concat_1" x="1400" y="1596">
+      <params/>
+      <attribs>
+         <spinner attributeName="size" value="8"/>
+      </attribs>
+   </obj>
+   <obj type="string/c" uuid="4aa90a90c435a742ddfa152d232883fc5b2f1b3" name="c_25" x="1610" y="1610">
+      <params/>
+      <attribs>
+         <table attributeName="str" table=" -4"/>
+      </attribs>
+   </obj>
+   <obj type="string/c" uuid="4aa90a90c435a742ddfa152d232883fc5b2f1b3" name="c_26" x="1764" y="1610">
+      <params/>
+      <attribs>
+         <table attributeName="str" table="  1"/>
+      </attribs>
+   </obj>
+   <obj type="string/c" uuid="4aa90a90c435a742ddfa152d232883fc5b2f1b3" name="c_34" x="1946" y="1624">
+      <params/>
+      <attribs>
+         <table attributeName="str" table="PAR1"/>
+      </attribs>
+   </obj>
+   <obj type="string/c" uuid="4aa90a90c435a742ddfa152d232883fc5b2f1b3" name="c_35" x="2100" y="1624">
+      <params/>
+      <attribs>
+         <table attributeName="str" table="PAR5"/>
+      </attribs>
+   </obj>
+   <obj type="string/c" uuid="4aa90a90c435a742ddfa152d232883fc5b2f1b3" name="c_2" x="56" y="1666">
+      <params/>
+      <attribs>
+         <table attributeName="str" table="LENG"/>
+      </attribs>
+   </obj>
+   <obj type="string/c" uuid="4aa90a90c435a742ddfa152d232883fc5b2f1b3" name="c_6" x="210" y="1666">
+      <params/>
+      <attribs>
+         <table attributeName="str" table="PAN"/>
+      </attribs>
+   </obj>
+   <obj type="string/c" uuid="4aa90a90c435a742ddfa152d232883fc5b2f1b3" name="c_11" x="700" y="1666">
+      <params/>
+      <attribs>
+         <table attributeName="str" table="--2"/>
+      </attribs>
+   </obj>
+   <obj type="string/c" uuid="4aa90a90c435a742ddfa152d232883fc5b2f1b3" name="c_12" x="854" y="1666">
+      <params/>
+      <attribs>
+         <table attributeName="str" table="--6"/>
+      </attribs>
+   </obj>
+   <obj type="string/c" uuid="4aa90a90c435a742ddfa152d232883fc5b2f1b3" name="c_27" x="1610" y="1680">
+      <params/>
+      <attribs>
+         <table attributeName="str" table=" -3"/>
+      </attribs>
+   </obj>
+   <obj type="string/c" uuid="4aa90a90c435a742ddfa152d232883fc5b2f1b3" name="c_28" x="1764" y="1680">
+      <params/>
+      <attribs>
+         <table attributeName="str" table="  2"/>
+      </attribs>
+   </obj>
+   <obj type="string/c" uuid="4aa90a90c435a742ddfa152d232883fc5b2f1b3" name="c_36" x="1946" y="1694">
+      <params/>
+      <attribs>
+         <table attributeName="str" table="PAR2"/>
+      </attribs>
+   </obj>
+   <obj type="string/c" uuid="4aa90a90c435a742ddfa152d232883fc5b2f1b3" name="c_37" x="2100" y="1694">
+      <params/>
+      <attribs>
+         <table attributeName="str" table="PAR6"/>
+      </attribs>
+   </obj>
+   <obj type="mux/mux 2" uuid="16f90f81694766b0bc8187bfcba5a021e5701d81" name="mux_5" x="1022" y="1708">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="string/c" uuid="4aa90a90c435a742ddfa152d232883fc5b2f1b3" name="c_3" x="56" y="1736">
+      <params/>
+      <attribs>
+         <table attributeName="str" table="VEL"/>
+      </attribs>
+   </obj>
+   <obj type="string/c" uuid="4aa90a90c435a742ddfa152d232883fc5b2f1b3" name="c_7" x="210" y="1736">
+      <params/>
+      <attribs>
+         <table attributeName="str" table="CHAI"/>
+      </attribs>
+   </obj>
+   <obj type="string/c" uuid="4aa90a90c435a742ddfa152d232883fc5b2f1b3" name="c_13" x="700" y="1736">
+      <params/>
+      <attribs>
+         <table attributeName="str" table="--3"/>
+      </attribs>
+   </obj>
+   <obj type="string/c" uuid="4aa90a90c435a742ddfa152d232883fc5b2f1b3" name="c_14" x="854" y="1736">
+      <params/>
+      <attribs>
+         <table attributeName="str" table="--7"/>
+      </attribs>
+   </obj>
+   <obj type="string/c" uuid="4aa90a90c435a742ddfa152d232883fc5b2f1b3" name="c_29" x="1610" y="1750">
+      <params/>
+      <attribs>
+         <table attributeName="str" table=" -2"/>
+      </attribs>
+   </obj>
+   <obj type="string/c" uuid="4aa90a90c435a742ddfa152d232883fc5b2f1b3" name="c_30" x="1764" y="1750">
+      <params/>
+      <attribs>
+         <table attributeName="str" table="  3"/>
+      </attribs>
+   </obj>
+   <obj type="string/c" uuid="4aa90a90c435a742ddfa152d232883fc5b2f1b3" name="c_38" x="1946" y="1764">
+      <params/>
+      <attribs>
+         <table attributeName="str" table="PAR3"/>
+      </attribs>
+   </obj>
+   <obj type="string/c" uuid="4aa90a90c435a742ddfa152d232883fc5b2f1b3" name="c_39" x="2100" y="1764">
+      <params/>
+      <attribs>
+         <table attributeName="str" table="PAR7"/>
+      </attribs>
+   </obj>
+   <obj type="string/c" uuid="4aa90a90c435a742ddfa152d232883fc5b2f1b3" name="c_4" x="56" y="1806">
+      <params/>
+      <attribs>
+         <table attributeName="str" table="PIT"/>
+      </attribs>
+   </obj>
+   <obj type="string/c" uuid="4aa90a90c435a742ddfa152d232883fc5b2f1b3" name="c_8" x="210" y="1806">
+      <params/>
+      <attribs>
+         <table attributeName="str" table="SOUN"/>
+      </attribs>
+   </obj>
+   <obj type="string/c" uuid="4aa90a90c435a742ddfa152d232883fc5b2f1b3" name="c_15" x="700" y="1806">
+      <params/>
+      <attribs>
+         <table attributeName="str" table="--4"/>
+      </attribs>
+   </obj>
+   <obj type="string/c" uuid="4aa90a90c435a742ddfa152d232883fc5b2f1b3" name="c_16" x="854" y="1806">
+      <params/>
+      <attribs>
+         <table attributeName="str" table="--8"/>
+      </attribs>
+   </obj>
+   <obj type="mux/mux 8" uuid="5f992dab2d3768081b3da60ba557a2eda93df0fe" name="mux_22" x="1372" y="1820">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="string/c" uuid="4aa90a90c435a742ddfa152d232883fc5b2f1b3" name="c_31" x="1610" y="1820">
+      <params/>
+      <attribs>
+         <table attributeName="str" table=" -1"/>
+      </attribs>
+   </obj>
+   <obj type="string/c" uuid="4aa90a90c435a742ddfa152d232883fc5b2f1b3" name="c_32" x="1764" y="1820">
+      <params/>
+      <attribs>
+         <table attributeName="str" table="  4"/>
+      </attribs>
+   </obj>
+   <obj type="string/c" uuid="4aa90a90c435a742ddfa152d232883fc5b2f1b3" name="c_40" x="1946" y="1834">
+      <params/>
+      <attribs>
+         <table attributeName="str" table="PAR4"/>
+      </attribs>
+   </obj>
+   <obj type="string/c" uuid="4aa90a90c435a742ddfa152d232883fc5b2f1b3" name="c_41" x="2100" y="1834">
+      <params/>
+      <attribs>
+         <table attributeName="str" table="PAR8"/>
+      </attribs>
+   </obj>
+   <obj type="mux/mux 2" uuid="16f90f81694766b0bc8187bfcba5a021e5701d81" name="mux_25" x="1288" y="1890">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="string/c" uuid="4aa90a90c435a742ddfa152d232883fc5b2f1b3" name="c_33" x="1610" y="1890">
+      <params/>
+      <attribs>
+         <table attributeName="str" table="  0"/>
+      </attribs>
+   </obj>
+   <obj type="string/c" uuid="4aa90a90c435a742ddfa152d232883fc5b2f1b3" name="c_17" x="56" y="1904">
+      <params/>
+      <attribs>
+         <table attributeName="str" table="1"/>
+      </attribs>
+   </obj>
+   <obj type="string/c" uuid="4aa90a90c435a742ddfa152d232883fc5b2f1b3" name="c_18" x="210" y="1904">
+      <params/>
+      <attribs>
+         <table attributeName="str" table="5"/>
+      </attribs>
+   </obj>
+   <obj type="mux/mux 8" uuid="5f992dab2d3768081b3da60ba557a2eda93df0fe" name="mux_3" x="392" y="1904">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="lokki/string/concat" uuid="dccfcd5c-7f7d-4bf5-9885-bbac0a558926" name="concat_2" x="658" y="1904">
+      <params/>
+      <attribs>
+         <spinner attributeName="size" value="8"/>
+      </attribs>
+   </obj>
+   <obj type="string/c" uuid="4aa90a90c435a742ddfa152d232883fc5b2f1b3" name="c_19" x="56" y="1974">
+      <params/>
+      <attribs>
+         <table attributeName="str" table="2"/>
+      </attribs>
+   </obj>
+   <obj type="string/c" uuid="4aa90a90c435a742ddfa152d232883fc5b2f1b3" name="c_20" x="210" y="1974">
+      <params/>
+      <attribs>
+         <table attributeName="str" table="6"/>
+      </attribs>
+   </obj>
+   <obj type="lokki/string/concat" uuid="dccfcd5c-7f7d-4bf5-9885-bbac0a558926" name="concat_3" x="798" y="2002">
+      <params/>
+      <attribs>
+         <spinner attributeName="size" value="8"/>
+      </attribs>
+   </obj>
+   <obj type="mux 9" uuid="b1f015b2-ef26-4ea2-9f16-58b10d26a825" name="mux_17" x="1120" y="2002">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="mux 9" uuid="b1f015b2-ef26-4ea2-9f16-58b10d26a825" name="mux_26" x="1932" y="2002">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="mux/mux 8" uuid="5f992dab2d3768081b3da60ba557a2eda93df0fe" name="mux_27" x="2156" y="2002">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="mux/mux 8" uuid="5f992dab2d3768081b3da60ba557a2eda93df0fe" name="mux_8" x="574" y="2016">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="mux/mux 8" uuid="5f992dab2d3768081b3da60ba557a2eda93df0fe" name="mux_14" x="714" y="2016">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="mux/mux 8" uuid="5f992dab2d3768081b3da60ba557a2eda93df0fe" name="mux_16" x="980" y="2016">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="lokki/string/concat" uuid="dccfcd5c-7f7d-4bf5-9885-bbac0a558926" name="concat_4" x="1204" y="2016">
+      <params/>
+      <attribs>
+         <spinner attributeName="size" value="8"/>
+      </attribs>
+   </obj>
+   <obj type="mux/mux 8" uuid="5f992dab2d3768081b3da60ba557a2eda93df0fe" name="mux_19" x="1344" y="2016">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="mux/mux 8" uuid="5f992dab2d3768081b3da60ba557a2eda93df0fe" name="mux_20" x="1512" y="2016">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="lokki/string/concat" uuid="dccfcd5c-7f7d-4bf5-9885-bbac0a558926" name="concat_5" x="1596" y="2016">
+      <params/>
+      <attribs>
+         <spinner attributeName="size" value="8"/>
+      </attribs>
+   </obj>
+   <obj type="mux/mux 8" uuid="5f992dab2d3768081b3da60ba557a2eda93df0fe" name="mux_23" x="1764" y="2016">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="lokki/string/concat" uuid="dccfcd5c-7f7d-4bf5-9885-bbac0a558926" name="concat_6" x="2002" y="2016">
+      <params/>
+      <attribs>
+         <spinner attributeName="size" value="8"/>
+      </attribs>
+   </obj>
+   <obj type="string/c" uuid="4aa90a90c435a742ddfa152d232883fc5b2f1b3" name="c_21" x="56" y="2044">
+      <params/>
+      <attribs>
+         <table attributeName="str" table="3"/>
+      </attribs>
+   </obj>
+   <obj type="string/c" uuid="4aa90a90c435a742ddfa152d232883fc5b2f1b3" name="c_22" x="210" y="2044">
+      <params/>
+      <attribs>
+         <table attributeName="str" table="7"/>
+      </attribs>
+   </obj>
+   <obj type="mux/mux 2" uuid="16f90f81694766b0bc8187bfcba5a021e5701d81" name="mux_15" x="644" y="2100">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="mux/mux 2" uuid="16f90f81694766b0bc8187bfcba5a021e5701d81" name="mux_18" x="1050" y="2100">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="mux/mux 2" uuid="16f90f81694766b0bc8187bfcba5a021e5701d81" name="mux_21" x="1428" y="2100">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="mux/mux 2" uuid="16f90f81694766b0bc8187bfcba5a021e5701d81" name="mux_24" x="1848" y="2100">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="string/c" uuid="4aa90a90c435a742ddfa152d232883fc5b2f1b3" name="c_23" x="56" y="2114">
+      <params/>
+      <attribs>
+         <table attributeName="str" table="4"/>
+      </attribs>
+   </obj>
+   <obj type="string/c" uuid="4aa90a90c435a742ddfa152d232883fc5b2f1b3" name="c_24" x="210" y="2114">
+      <params/>
+      <attribs>
+         <table attributeName="str" table="8"/>
+      </attribs>
+   </obj>
+   <nets>
+      <net>
+         <source obj="reset" outlet="o"/>
+         <dest obj="lkm_1" inlet="dispres"/>
+      </net>
+      <net>
+         <source obj="BLOC BIN" outlet="o0"/>
+         <dest obj="lkm_1" inlet="LED1rd"/>
+      </net>
+      <net>
+         <source obj="i_1" outlet="out"/>
+         <dest obj="+_1" inlet="in2"/>
+      </net>
+      <net>
+         <source obj="+_1" outlet="out"/>
+         <dest obj="BLOC2" inlet="a"/>
+         <dest obj="+_2" inlet="in1"/>
+         <dest obj="read_BLOC2" inlet="a"/>
+      </net>
+      <net>
+         <source obj="BLOC BIN" outlet="o1"/>
+         <dest obj="mux_7" inlet="i1"/>
+      </net>
+      <net>
+         <source obj="BLOC BIN" outlet="o3"/>
+         <dest obj="mux_9" inlet="i1"/>
+      </net>
+      <net>
+         <source obj="read_BLOC2" outlet="o"/>
+         <dest obj="to_2" inlet="i"/>
+      </net>
+      <net>
+         <source obj="BLOC BIN_" outlet="o0"/>
+         <dest obj="mux_10" inlet="i1"/>
+      </net>
+      <net>
+         <source obj="BLOC BIN_" outlet="o1"/>
+         <dest obj="mux_11" inlet="i1"/>
+      </net>
+      <net>
+         <source obj="BLOC BIN_" outlet="o2"/>
+         <dest obj="mux_12" inlet="i1"/>
+      </net>
+      <net>
+         <source obj="BLOC BIN_" outlet="o3"/>
+         <dest obj="mux_13" inlet="i1"/>
+      </net>
+      <net>
+         <source obj="read_BLOC1" outlet="o"/>
+         <dest obj="to_1" inlet="i"/>
+      </net>
+      <net>
+         <source obj="to_1" outlet="o"/>
+         <dest obj="BLOC BIN" inlet="i1"/>
+      </net>
+      <net>
+         <source obj="to_2" outlet="o"/>
+         <dest obj="BLOC BIN_" inlet="i1"/>
+      </net>
+      <net>
+         <source obj="MENU" outlet="out"/>
+         <dest obj="==0_1" inlet="in1"/>
+         <dest obj="change_1" inlet="in"/>
+         <dest obj="change_2" inlet="in"/>
+         <dest obj="demux_1" inlet="s"/>
+         <dest obj="demux_2" inlet="s"/>
+         <dest obj="mux_1" inlet="s"/>
+         <dest obj="mux_4" inlet="s"/>
+      </net>
+      <net>
+         <source obj="demux_1" outlet="o0"/>
+         <dest obj="BLOC" inlet="v"/>
+         <dest obj="change_3" inlet="in"/>
+      </net>
+      <net>
+         <source obj="demux_2" outlet="o0"/>
+         <dest obj="BLOC2" inlet="v"/>
+         <dest obj="change_4" inlet="in"/>
+      </net>
+      <net>
+         <source obj="demux_1" outlet="o1"/>
+         <dest obj="div_1" inlet="in"/>
+      </net>
+      <net>
+         <source obj="SELECT" outlet="out"/>
+         <dest obj="BLOC" inlet="a"/>
+         <dest obj="change_5" inlet="in"/>
+         <dest obj="+_1" inlet="in1"/>
+         <dest obj="read_BLOC1" inlet="a"/>
+         <dest obj="+1_1" inlet="a"/>
+         <dest obj="+1_2" inlet="a"/>
+         <dest obj="+1_3" inlet="a"/>
+         <dest obj="+1_4" inlet="a"/>
+         <dest obj="mux_3" inlet="s"/>
+         <dest obj="mux_27" inlet="s"/>
+         <dest obj="+_11" inlet="in2"/>
+         <dest obj="+_12" inlet="in2"/>
+         <dest obj="1 BD" inlet="select"/>
+      </net>
+      <net>
+         <source obj="PAR2" outlet="out"/>
+         <dest obj="demux_2" inlet="i"/>
+      </net>
+      <net>
+         <source obj="change_3" outlet="trig"/>
+         <dest obj="or_2" inlet="i1"/>
+      </net>
+      <net>
+         <source obj="change_4" outlet="trig"/>
+         <dest obj="or_2" inlet="i2"/>
+      </net>
+      <net>
+         <source obj="==0_1" outlet="out"/>
+         <dest obj="and_1" inlet="i1"/>
+      </net>
+      <net>
+         <source obj="or_2" outlet="o"/>
+         <dest obj="and_1" inlet="i2"/>
+         <dest obj="counter_1" inlet="trig"/>
+      </net>
+      <net>
+         <source obj="and_1" outlet="o"/>
+         <dest obj="and_2" inlet="i1"/>
+      </net>
+      <net>
+         <source obj="change_1" outlet="trig"/>
+         <dest obj="counter_1" inlet="r"/>
+      </net>
+      <net>
+         <source obj="counter_1" outlet="o"/>
+         <dest obj="!=_1" inlet="in"/>
+      </net>
+      <net>
+         <source obj="!=_1" outlet="out"/>
+         <dest obj="and_2" inlet="i2"/>
+      </net>
+      <net>
+         <source obj="and_2" outlet="o"/>
+         <dest obj="BLOC" inlet="trig"/>
+         <dest obj="BLOC2" inlet="trig"/>
+      </net>
+      <net>
+         <source obj="c_1" outlet="out"/>
+         <dest obj="mux_1" inlet="i0"/>
+      </net>
+      <net>
+         <source obj="c_2" outlet="out"/>
+         <dest obj="mux_1" inlet="i1"/>
+      </net>
+      <net>
+         <source obj="c_5" outlet="out"/>
+         <dest obj="mux_1" inlet="i4"/>
+      </net>
+      <net>
+         <source obj="c_6" outlet="out"/>
+         <dest obj="mux_1" inlet="i5"/>
+      </net>
+      <net>
+         <source obj="c_7" outlet="out"/>
+         <dest obj="mux_1" inlet="i6"/>
+      </net>
+      <net>
+         <source obj="c_8" outlet="out"/>
+         <dest obj="mux_1" inlet="i7"/>
+      </net>
+      <net>
+         <source obj="mux_1" outlet="o"/>
+         <dest obj="concat_1" inlet="str1"/>
+      </net>
+      <net>
+         <source obj="c_9" outlet="out"/>
+         <dest obj="mux_2" inlet="i0"/>
+         <dest obj="mux_14" inlet="i0"/>
+         <dest obj="mux_20" inlet="i0"/>
+      </net>
+      <net>
+         <source obj="c_11" outlet="out"/>
+         <dest obj="mux_2" inlet="i1"/>
+         <dest obj="mux_14" inlet="i1"/>
+         <dest obj="mux_20" inlet="i1"/>
+      </net>
+      <net>
+         <source obj="c_13" outlet="out"/>
+         <dest obj="mux_2" inlet="i2"/>
+         <dest obj="mux_14" inlet="i2"/>
+         <dest obj="mux_20" inlet="i2"/>
+      </net>
+      <net>
+         <source obj="c_15" outlet="out"/>
+         <dest obj="mux_2" inlet="i3"/>
+         <dest obj="mux_14" inlet="i3"/>
+         <dest obj="mux_20" inlet="i3"/>
+      </net>
+      <net>
+         <source obj="c_10" outlet="out"/>
+         <dest obj="mux_2" inlet="i4"/>
+         <dest obj="mux_14" inlet="i4"/>
+         <dest obj="mux_20" inlet="i4"/>
+      </net>
+      <net>
+         <source obj="c_12" outlet="out"/>
+         <dest obj="mux_2" inlet="i5"/>
+         <dest obj="mux_14" inlet="i5"/>
+         <dest obj="mux_20" inlet="i5"/>
+      </net>
+      <net>
+         <source obj="c_14" outlet="out"/>
+         <dest obj="mux_2" inlet="i6"/>
+         <dest obj="mux_14" inlet="i6"/>
+         <dest obj="mux_20" inlet="i6"/>
+      </net>
+      <net>
+         <source obj="c_16" outlet="out"/>
+         <dest obj="mux_2" inlet="i7"/>
+         <dest obj="mux_14" inlet="i7"/>
+         <dest obj="mux_20" inlet="i7"/>
+      </net>
+      <net>
+         <source obj="c_17" outlet="out"/>
+         <dest obj="mux_3" inlet="i0"/>
+         <dest obj="mux_8" inlet="i0"/>
+         <dest obj="mux_16" inlet="i0"/>
+         <dest obj="mux_19" inlet="i0"/>
+         <dest obj="mux_23" inlet="i0"/>
+         <dest obj="mux_22" inlet="i0"/>
+      </net>
+      <net>
+         <source obj="c_19" outlet="out"/>
+         <dest obj="mux_3" inlet="i1"/>
+         <dest obj="mux_8" inlet="i1"/>
+         <dest obj="mux_16" inlet="i1"/>
+         <dest obj="mux_19" inlet="i1"/>
+         <dest obj="mux_23" inlet="i1"/>
+         <dest obj="mux_22" inlet="i1"/>
+      </net>
+      <net>
+         <source obj="c_21" outlet="out"/>
+         <dest obj="mux_3" inlet="i2"/>
+         <dest obj="mux_8" inlet="i2"/>
+         <dest obj="mux_16" inlet="i2"/>
+         <dest obj="mux_19" inlet="i2"/>
+         <dest obj="mux_23" inlet="i2"/>
+         <dest obj="mux_22" inlet="i2"/>
+      </net>
+      <net>
+         <source obj="c_23" outlet="out"/>
+         <dest obj="mux_3" inlet="i3"/>
+         <dest obj="mux_8" inlet="i3"/>
+         <dest obj="mux_16" inlet="i3"/>
+         <dest obj="mux_19" inlet="i3"/>
+         <dest obj="mux_23" inlet="i3"/>
+         <dest obj="mux_22" inlet="i3"/>
+      </net>
+      <net>
+         <source obj="c_18" outlet="out"/>
+         <dest obj="mux_3" inlet="i4"/>
+         <dest obj="mux_8" inlet="i4"/>
+         <dest obj="mux_16" inlet="i4"/>
+         <dest obj="mux_19" inlet="i4"/>
+         <dest obj="mux_23" inlet="i4"/>
+         <dest obj="mux_22" inlet="i4"/>
+      </net>
+      <net>
+         <source obj="c_20" outlet="out"/>
+         <dest obj="mux_3" inlet="i5"/>
+         <dest obj="mux_8" inlet="i5"/>
+         <dest obj="mux_16" inlet="i5"/>
+         <dest obj="mux_19" inlet="i5"/>
+         <dest obj="mux_23" inlet="i5"/>
+         <dest obj="mux_22" inlet="i5"/>
+      </net>
+      <net>
+         <source obj="c_22" outlet="out"/>
+         <dest obj="mux_3" inlet="i6"/>
+         <dest obj="mux_8" inlet="i6"/>
+         <dest obj="mux_16" inlet="i6"/>
+         <dest obj="mux_19" inlet="i6"/>
+         <dest obj="mux_23" inlet="i6"/>
+         <dest obj="mux_22" inlet="i6"/>
+      </net>
+      <net>
+         <source obj="c_24" outlet="out"/>
+         <dest obj="mux_3" inlet="i7"/>
+         <dest obj="mux_8" inlet="i7"/>
+         <dest obj="mux_16" inlet="i7"/>
+         <dest obj="mux_19" inlet="i7"/>
+         <dest obj="mux_23" inlet="i7"/>
+         <dest obj="mux_22" inlet="i7"/>
+      </net>
+      <net>
+         <source obj="mux_3" outlet="o"/>
+         <dest obj="concat_2" inlet="str1"/>
+         <dest obj="concat_3" inlet="str1"/>
+         <dest obj="concat_4" inlet="str1"/>
+         <dest obj="concat_5" inlet="str1"/>
+         <dest obj="concat_6" inlet="str1"/>
+         <dest obj="mux_4" inlet="i0"/>
+      </net>
+      <net>
+         <source obj="mux_4" outlet="o"/>
+         <dest obj="concat_1" inlet="str2"/>
+      </net>
+      <net>
+         <source obj="concat_2" outlet="out"/>
+         <dest obj="mux_4" inlet="i1"/>
+      </net>
+      <net>
+         <source obj="mux_2" outlet="o"/>
+         <dest obj="concat_2" inlet="str2"/>
+      </net>
+      <net>
+         <source obj="or_1" outlet="o"/>
+         <dest obj="or_3" inlet="i1"/>
+      </net>
+      <net>
+         <source obj="change_2" outlet="trig"/>
+         <dest obj="or_1" inlet="i1"/>
+      </net>
+      <net>
+         <source obj="change_5" outlet="trig"/>
+         <dest obj="or_1" inlet="i2"/>
+      </net>
+      <net>
+         <source obj="i_2" outlet="out"/>
+         <dest obj="+_2" inlet="in2"/>
+         <dest obj="*_1" inlet="a"/>
+         <dest obj="*_2" inlet="a"/>
+         <dest obj="*_3" inlet="a"/>
+         <dest obj="*_4" inlet="a"/>
+      </net>
+      <net>
+         <source obj="+_2" outlet="out"/>
+         <dest obj="LENG" inlet="a"/>
+         <dest obj="read_LENG" inlet="a"/>
+      </net>
+      <net>
+         <source obj="read_LENG" outlet="o"/>
+         <dest obj="to_5" inlet="i"/>
+      </net>
+      <net>
+         <source obj="to_5" outlet="o"/>
+         <dest obj="==_5" inlet="in"/>
+         <dest obj="==_2" inlet="in"/>
+         <dest obj="==_6" inlet="in"/>
+         <dest obj="==_1" inlet="in"/>
+         <dest obj="==_7" inlet="in"/>
+         <dest obj="==_4" inlet="in"/>
+         <dest obj="==_8" inlet="in"/>
+         <dest obj="mux_5" inlet="i1"/>
+      </net>
+      <net>
+         <source obj="change_6" outlet="trig"/>
+         <dest obj="or_3" inlet="i2"/>
+      </net>
+      <net>
+         <source obj="or_3" outlet="o"/>
+         <dest obj="counter_2" inlet="r"/>
+         <dest obj="or_4" inlet="i1"/>
+      </net>
+      <net>
+         <source obj="change_9" outlet="trig"/>
+         <dest obj="counter_2" inlet="trig"/>
+      </net>
+      <net>
+         <source obj="counter_2" outlet="o"/>
+         <dest obj="&gt;_1" inlet="in"/>
+      </net>
+      <net>
+         <source obj="&gt;_1" outlet="out"/>
+         <dest obj="LENG" inlet="trig"/>
+         <dest obj="mux_5" inlet="s"/>
+      </net>
+      <net>
+         <source obj="to_3" outlet="o"/>
+         <dest obj="mux_5" inlet="i2"/>
+      </net>
+      <net>
+         <source obj="mux_5" outlet="o"/>
+         <dest obj="change_6" inlet="in"/>
+         <dest obj="mux_2" inlet="s"/>
+      </net>
+      <net>
+         <source obj="div_1" outlet="out"/>
+         <dest obj="to_3" inlet="i"/>
+         <dest obj="LENG" inlet="v"/>
+         <dest obj="change_9" inlet="in"/>
+      </net>
+      <net>
+         <source obj="PAR1" outlet="out"/>
+         <dest obj="demux_1" inlet="i"/>
+      </net>
+      <net>
+         <source obj="BLOC BIN" outlet="o2"/>
+         <dest obj="mux_6" inlet="i1"/>
+      </net>
+      <net>
+         <source obj="==_1" outlet="out"/>
+         <dest obj="mux_6" inlet="s"/>
+      </net>
+      <net>
+         <source obj="square_1" outlet="wave"/>
+         <dest obj="mux_10" inlet="i2"/>
+         <dest obj="mux_7" inlet="i2"/>
+         <dest obj="mux_11" inlet="i2"/>
+         <dest obj="mux_6" inlet="i2"/>
+         <dest obj="mux_12" inlet="i2"/>
+         <dest obj="mux_9" inlet="i2"/>
+         <dest obj="mux_13" inlet="i2"/>
+      </net>
+      <net>
+         <source obj="==_2" outlet="out"/>
+         <dest obj="mux_7" inlet="s"/>
+      </net>
+      <net>
+         <source obj="==_4" outlet="out"/>
+         <dest obj="mux_9" inlet="s"/>
+      </net>
+      <net>
+         <source obj="==_7" outlet="out"/>
+         <dest obj="mux_12" inlet="s"/>
+      </net>
+      <net>
+         <source obj="==_6" outlet="out"/>
+         <dest obj="mux_11" inlet="s"/>
+      </net>
+      <net>
+         <source obj="==_5" outlet="out"/>
+         <dest obj="mux_10" inlet="s"/>
+      </net>
+      <net>
+         <source obj="==_8" outlet="out"/>
+         <dest obj="mux_13" inlet="s"/>
+      </net>
+      <net>
+         <source obj="mux_10" outlet="o"/>
+         <dest obj="lkm_1" inlet="LED2rd"/>
+      </net>
+      <net>
+         <source obj="mux_7" outlet="o"/>
+         <dest obj="lkm_1" inlet="LED3rd"/>
+      </net>
+      <net>
+         <source obj="mux_11" outlet="o"/>
+         <dest obj="lkm_1" inlet="LED4rd"/>
+      </net>
+      <net>
+         <source obj="mux_6" outlet="o"/>
+         <dest obj="lkm_1" inlet="LED5rd"/>
+      </net>
+      <net>
+         <source obj="mux_12" outlet="o"/>
+         <dest obj="lkm_1" inlet="LED6rd"/>
+      </net>
+      <net>
+         <source obj="mux_9" outlet="o"/>
+         <dest obj="lkm_1" inlet="LED7rd"/>
+      </net>
+      <net>
+         <source obj="mux_13" outlet="o"/>
+         <dest obj="lkm_1" inlet="LED8rd"/>
+      </net>
+      <net>
+         <source obj="div_2" outlet="out"/>
+         <dest obj="to_4" inlet="i"/>
+      </net>
+      <net>
+         <source obj="demux_1" outlet="o2"/>
+         <dest obj="div_2" inlet="in"/>
+      </net>
+      <net>
+         <source obj="c_4" outlet="out"/>
+         <dest obj="mux_1" inlet="i3"/>
+      </net>
+      <net>
+         <source obj="c_3" outlet="out"/>
+         <dest obj="mux_1" inlet="i2"/>
+      </net>
+      <net>
+         <source obj="to_4" outlet="o"/>
+         <dest obj="change_7" inlet="in"/>
+         <dest obj="+_3" inlet="in2"/>
+         <dest obj="mux_8" inlet="s"/>
+      </net>
+      <net>
+         <source obj="mux_8" outlet="o"/>
+         <dest obj="concat_3" inlet="str2"/>
+      </net>
+      <net>
+         <source obj="div_3" outlet="out"/>
+         <dest obj="to_6" inlet="i"/>
+         <dest obj="change_10" inlet="in"/>
+         <dest obj="VEL" inlet="v"/>
+      </net>
+      <net>
+         <source obj="demux_2" outlet="o2"/>
+         <dest obj="div_3" inlet="in"/>
+      </net>
+      <net>
+         <source obj="to_6" outlet="o"/>
+         <dest obj="change_8" inlet="in"/>
+         <dest obj="mux_15" inlet="i2"/>
+      </net>
+      <net>
+         <source obj="mux_14" outlet="o"/>
+         <dest obj="concat_3" inlet="str3"/>
+      </net>
+      <net>
+         <source obj="concat_3" outlet="out"/>
+         <dest obj="mux_4" inlet="i2"/>
+      </net>
+      <net>
+         <source obj="or_5" outlet="o"/>
+         <dest obj="counter_3" inlet="r"/>
+         <dest obj="or_6" inlet="i1"/>
+      </net>
+      <net>
+         <source obj="change_7" outlet="trig"/>
+         <dest obj="or_4" inlet="i2"/>
+      </net>
+      <net>
+         <source obj="or_4" outlet="o"/>
+         <dest obj="or_5" inlet="i1"/>
+      </net>
+      <net>
+         <source obj="change_8" outlet="trig"/>
+         <dest obj="or_5" inlet="i2"/>
+      </net>
+      <net>
+         <source obj="i_3" outlet="out"/>
+         <dest obj="+_4" inlet="in2"/>
+      </net>
+      <net>
+         <source obj="+_3" outlet="out"/>
+         <dest obj="VEL" inlet="a"/>
+         <dest obj="read_VEL" inlet="a"/>
+         <dest obj="i_4" inlet="in"/>
+      </net>
+      <net>
+         <source obj="read_VEL" outlet="o"/>
+         <dest obj="to_7" inlet="i"/>
+      </net>
+      <net>
+         <source obj="to_7" outlet="o"/>
+         <dest obj="mux_15" inlet="i1"/>
+      </net>
+      <net>
+         <source obj="+1_1" outlet="result"/>
+         <dest obj="*_1" inlet="b"/>
+      </net>
+      <net>
+         <source obj="*_1" outlet="result"/>
+         <dest obj="+_4" inlet="in1"/>
+      </net>
+      <net>
+         <source obj="+_4" outlet="out"/>
+         <dest obj="+_3" inlet="in1"/>
+      </net>
+      <net>
+         <source obj="counter_3" outlet="o"/>
+         <dest obj="&gt;_2" inlet="in"/>
+      </net>
+      <net>
+         <source obj="&gt;_2" outlet="out"/>
+         <dest obj="VEL" inlet="trig"/>
+         <dest obj="mux_15" inlet="s"/>
+      </net>
+      <net>
+         <source obj="mux_15" outlet="o"/>
+         <dest obj="mux_14" inlet="s"/>
+      </net>
+      <net>
+         <source obj="change_10" outlet="trig"/>
+         <dest obj="counter_3" inlet="trig"/>
+      </net>
+      <net>
+         <source obj="1 BD" outlet="outlet_1"/>
+         <dest obj="out_1" inlet="left"/>
+         <dest obj="out_1" inlet="right"/>
+      </net>
+      <net>
+         <source obj="delayedpulse_1" outlet="pulse"/>
+         <dest obj="lkm_1" inlet="dispupd"/>
+      </net>
+      <net>
+         <source obj="concat_1" outlet="out"/>
+         <dest obj="lkm_1" inlet="display"/>
+      </net>
+      <net>
+         <source obj="map_2" outlet="o"/>
+         <dest obj="to_8" inlet="i"/>
+         <dest obj="PITCH" inlet="v"/>
+         <dest obj="change_11" inlet="in"/>
+      </net>
+      <net>
+         <source obj="div_5" outlet="out"/>
+         <dest obj="to_9" inlet="i"/>
+      </net>
+      <net>
+         <source obj="demux_1" outlet="o3"/>
+         <dest obj="div_5" inlet="in"/>
+      </net>
+      <net>
+         <source obj="change_11" outlet="trig"/>
+         <dest obj="counter_4" inlet="trig"/>
+      </net>
+      <net>
+         <source obj="*_2" outlet="result"/>
+         <dest obj="+_5" inlet="in1"/>
+      </net>
+      <net>
+         <source obj="+_5" outlet="out"/>
+         <dest obj="+_6" inlet="in1"/>
+      </net>
+      <net>
+         <source obj="+_6" outlet="out"/>
+         <dest obj="PITCH" inlet="a"/>
+         <dest obj="read_PITCH" inlet="a"/>
+      </net>
+      <net>
+         <source obj="counter_4" outlet="o"/>
+         <dest obj="&gt;_3" inlet="in"/>
+      </net>
+      <net>
+         <source obj="&gt;_3" outlet="out"/>
+         <dest obj="PITCH" inlet="trig"/>
+         <dest obj="mux_18" inlet="s"/>
+      </net>
+      <net>
+         <source obj="i_6" outlet="out"/>
+         <dest obj="+_5" inlet="in2"/>
+      </net>
+      <net>
+         <source obj="+1_2" outlet="result"/>
+         <dest obj="*_2" inlet="b"/>
+      </net>
+      <net>
+         <source obj="to_9" outlet="o"/>
+         <dest obj="change_12" inlet="in"/>
+         <dest obj="+_6" inlet="in2"/>
+         <dest obj="mux_16" inlet="s"/>
+      </net>
+      <net>
+         <source obj="read_PITCH" outlet="o"/>
+         <dest obj="to_10" inlet="i"/>
+      </net>
+      <net>
+         <source obj="mux_16" outlet="o"/>
+         <dest obj="concat_4" inlet="str2"/>
+      </net>
+      <net>
+         <source obj="mux_17" outlet="o"/>
+         <dest obj="concat_4" inlet="str3"/>
+      </net>
+      <net>
+         <source obj="mux_18" outlet="o"/>
+         <dest obj="mux_17" inlet="s"/>
+      </net>
+      <net>
+         <source obj="to_10" outlet="o"/>
+         <dest obj="mux_18" inlet="i1"/>
+      </net>
+      <net>
+         <source obj="to_8" outlet="o"/>
+         <dest obj="change_13" inlet="in"/>
+         <dest obj="mux_18" inlet="i2"/>
+      </net>
+      <net>
+         <source obj="concat_4" outlet="out"/>
+         <dest obj="mux_4" inlet="i3"/>
+      </net>
+      <net>
+         <source obj="change_12" outlet="trig"/>
+         <dest obj="or_6" inlet="i2"/>
+      </net>
+      <net>
+         <source obj="change_13" outlet="trig"/>
+         <dest obj="or_7" inlet="i2"/>
+      </net>
+      <net>
+         <source obj="or_6" outlet="o"/>
+         <dest obj="or_7" inlet="i1"/>
+      </net>
+      <net>
+         <source obj="or_7" outlet="o"/>
+         <dest obj="counter_4" inlet="r"/>
+         <dest obj="or_8" inlet="i1"/>
+      </net>
+      <net>
+         <source obj="*_3" outlet="result"/>
+         <dest obj="+_7" inlet="in1"/>
+      </net>
+      <net>
+         <source obj="+_7" outlet="out"/>
+         <dest obj="+_8" inlet="in1"/>
+      </net>
+      <net>
+         <source obj="+1_3" outlet="result"/>
+         <dest obj="*_3" inlet="b"/>
+      </net>
+      <net>
+         <source obj="i_7" outlet="out"/>
+         <dest obj="+_7" inlet="in2"/>
+      </net>
+      <net>
+         <source obj="div_6" outlet="out"/>
+         <dest obj="to_11" inlet="i"/>
+         <dest obj="PROB" inlet="v"/>
+         <dest obj="change_14" inlet="in"/>
+      </net>
+      <net>
+         <source obj="demux_2" outlet="o4"/>
+         <dest obj="div_6" inlet="in"/>
+      </net>
+      <net>
+         <source obj="div_7" outlet="out"/>
+         <dest obj="to_12" inlet="i"/>
+      </net>
+      <net>
+         <source obj="demux_1" outlet="o4"/>
+         <dest obj="div_7" inlet="in"/>
+      </net>
+      <net>
+         <source obj="to_12" outlet="o"/>
+         <dest obj="change_15" inlet="in"/>
+         <dest obj="+_8" inlet="in2"/>
+         <dest obj="mux_19" inlet="s"/>
+      </net>
+      <net>
+         <source obj="change_14" outlet="trig"/>
+         <dest obj="counter_5" inlet="trig"/>
+      </net>
+      <net>
+         <source obj="counter_5" outlet="o"/>
+         <dest obj="&gt;_4" inlet="in"/>
+      </net>
+      <net>
+         <source obj="&gt;_4" outlet="out"/>
+         <dest obj="PROB" inlet="trig"/>
+         <dest obj="mux_21" inlet="s"/>
+      </net>
+      <net>
+         <source obj="change_15" outlet="trig"/>
+         <dest obj="or_8" inlet="i2"/>
+      </net>
+      <net>
+         <source obj="change_16" outlet="trig"/>
+         <dest obj="or_9" inlet="i2"/>
+      </net>
+      <net>
+         <source obj="or_8" outlet="o"/>
+         <dest obj="or_9" inlet="i1"/>
+      </net>
+      <net>
+         <source obj="or_9" outlet="o"/>
+         <dest obj="counter_5" inlet="r"/>
+         <dest obj="or_10" inlet="i1"/>
+      </net>
+      <net>
+         <source obj="to_11" outlet="o"/>
+         <dest obj="change_16" inlet="in"/>
+         <dest obj="mux_21" inlet="i2"/>
+      </net>
+      <net>
+         <source obj="read_PROB" outlet="o"/>
+         <dest obj="to_13" inlet="i"/>
+      </net>
+      <net>
+         <source obj="+_8" outlet="out"/>
+         <dest obj="read_PROB" inlet="a"/>
+         <dest obj="PROB" inlet="a"/>
+      </net>
+      <net>
+         <source obj="mux_19" outlet="o"/>
+         <dest obj="concat_5" inlet="str2"/>
+      </net>
+      <net>
+         <source obj="mux_20" outlet="o"/>
+         <dest obj="concat_5" inlet="str3"/>
+      </net>
+      <net>
+         <source obj="concat_5" outlet="out"/>
+         <dest obj="mux_4" inlet="i4"/>
+      </net>
+      <net>
+         <source obj="mux_21" outlet="o"/>
+         <dest obj="mux_20" inlet="s"/>
+      </net>
+      <net>
+         <source obj="to_13" outlet="o"/>
+         <dest obj="mux_21" inlet="i1"/>
+      </net>
+      <net>
+         <source obj="demux_2" outlet="o5"/>
+         <dest obj="map_1" inlet="c"/>
+      </net>
+      <net>
+         <source obj="mux_23" outlet="o"/>
+         <dest obj="concat_6" inlet="str2"/>
+      </net>
+      <net>
+         <source obj="*_4" outlet="result"/>
+         <dest obj="+_9" inlet="in1"/>
+      </net>
+      <net>
+         <source obj="+_9" outlet="out"/>
+         <dest obj="+_10" inlet="in1"/>
+      </net>
+      <net>
+         <source obj="+1_4" outlet="result"/>
+         <dest obj="*_4" inlet="b"/>
+      </net>
+      <net>
+         <source obj="change_17" outlet="trig"/>
+         <dest obj="counter_6" inlet="trig"/>
+      </net>
+      <net>
+         <source obj="counter_6" outlet="o"/>
+         <dest obj="&gt;_5" inlet="in"/>
+      </net>
+      <net>
+         <source obj="&gt;_5" outlet="out"/>
+         <dest obj="mux_24" inlet="s"/>
+         <dest obj="PAN" inlet="trig"/>
+      </net>
+      <net>
+         <source obj="+_10" outlet="out"/>
+         <dest obj="read_PAN" inlet="a"/>
+         <dest obj="PAN" inlet="a"/>
+      </net>
+      <net>
+         <source obj="div_9" outlet="out"/>
+         <dest obj="to_15" inlet="i"/>
+      </net>
+      <net>
+         <source obj="demux_1" outlet="o5"/>
+         <dest obj="div_9" inlet="in"/>
+      </net>
+      <net>
+         <source obj="to_15" outlet="o"/>
+         <dest obj="+_10" inlet="in2"/>
+         <dest obj="mux_23" inlet="s"/>
+         <dest obj="change_18" inlet="in"/>
+      </net>
+      <net>
+         <source obj="i_8" outlet="out"/>
+         <dest obj="+_9" inlet="in2"/>
+      </net>
+      <net>
+         <source obj="read_PAN" outlet="o"/>
+         <dest obj="to_16" inlet="i"/>
+      </net>
+      <net>
+         <source obj="to_16" outlet="o"/>
+         <dest obj="mux_24" inlet="i1"/>
+      </net>
+      <net>
+         <source obj="to_14" outlet="o"/>
+         <dest obj="mux_24" inlet="i2"/>
+         <dest obj="change_19" inlet="in"/>
+      </net>
+      <net>
+         <source obj="concat_6" outlet="out"/>
+         <dest obj="mux_4" inlet="i5"/>
+      </net>
+      <net>
+         <source obj="mux_26" outlet="o"/>
+         <dest obj="concat_6" inlet="str3"/>
+      </net>
+      <net>
+         <source obj="c_25" outlet="out"/>
+         <dest obj="mux_26" inlet="i0"/>
+         <dest obj="mux_17" inlet="i0"/>
+      </net>
+      <net>
+         <source obj="c_27" outlet="out"/>
+         <dest obj="mux_26" inlet="i1"/>
+         <dest obj="mux_17" inlet="i1"/>
+      </net>
+      <net>
+         <source obj="c_29" outlet="out"/>
+         <dest obj="mux_26" inlet="i2"/>
+         <dest obj="mux_17" inlet="i2"/>
+      </net>
+      <net>
+         <source obj="c_31" outlet="out"/>
+         <dest obj="mux_26" inlet="i3"/>
+         <dest obj="mux_17" inlet="i3"/>
+      </net>
+      <net>
+         <source obj="change_18" outlet="trig"/>
+         <dest obj="or_10" inlet="i2"/>
+      </net>
+      <net>
+         <source obj="change_19" outlet="trig"/>
+         <dest obj="or_11" inlet="i2"/>
+      </net>
+      <net>
+         <source obj="or_10" outlet="o"/>
+         <dest obj="or_11" inlet="i1"/>
+      </net>
+      <net>
+         <source obj="or_11" outlet="o"/>
+         <dest obj="counter_6" inlet="r"/>
+         <dest obj="or_12" inlet="i1"/>
+      </net>
+      <net>
+         <source obj="mux_24" outlet="o"/>
+         <dest obj="mux_26" inlet="s"/>
+      </net>
+      <net>
+         <source obj="map_1" outlet="o"/>
+         <dest obj="change_17" inlet="in"/>
+         <dest obj="PAN" inlet="v"/>
+         <dest obj="to_14" inlet="i"/>
+      </net>
+      <net>
+         <source obj="c_33" outlet="out"/>
+         <dest obj="mux_26" inlet="i4"/>
+         <dest obj="mux_17" inlet="i4"/>
+      </net>
+      <net>
+         <source obj="c_26" outlet="out"/>
+         <dest obj="mux_26" inlet="i5"/>
+         <dest obj="mux_17" inlet="i5"/>
+      </net>
+      <net>
+         <source obj="c_28" outlet="out"/>
+         <dest obj="mux_26" inlet="i6"/>
+         <dest obj="mux_17" inlet="i6"/>
+      </net>
+      <net>
+         <source obj="c_30" outlet="out"/>
+         <dest obj="mux_26" inlet="i7"/>
+         <dest obj="mux_17" inlet="i7"/>
+      </net>
+      <net>
+         <source obj="c_32" outlet="out"/>
+         <dest obj="mux_26" inlet="i8"/>
+         <dest obj="mux_17" inlet="i8"/>
+      </net>
+      <net>
+         <source obj="read_CHAIN" outlet="o"/>
+         <dest obj="to_17" inlet="i"/>
+      </net>
+      <net>
+         <source obj="demux_1" outlet="o6"/>
+         <dest obj="div_10" inlet="in"/>
+      </net>
+      <net>
+         <source obj="div_10" outlet="out"/>
+         <dest obj="CHAIN" inlet="v"/>
+         <dest obj="change_20" inlet="in"/>
+         <dest obj="to_18" inlet="i"/>
+      </net>
+      <net>
+         <source obj="change_20" outlet="trig"/>
+         <dest obj="counter_7" inlet="trig"/>
+      </net>
+      <net>
+         <source obj="counter_7" outlet="o"/>
+         <dest obj="&gt;_6" inlet="in"/>
+      </net>
+      <net>
+         <source obj="i_9" outlet="out"/>
+         <dest obj="CHAIN" inlet="a"/>
+         <dest obj="read_CHAIN" inlet="a"/>
+      </net>
+      <net>
+         <source obj="&gt;_6" outlet="out"/>
+         <dest obj="CHAIN" inlet="trig"/>
+         <dest obj="mux_25" inlet="s"/>
+      </net>
+      <net>
+         <source obj="change_21" outlet="trig"/>
+         <dest obj="or_12" inlet="i2"/>
+      </net>
+      <net>
+         <source obj="to_18" outlet="o"/>
+         <dest obj="change_21" inlet="in"/>
+         <dest obj="mux_25" inlet="i2"/>
+      </net>
+      <net>
+         <source obj="or_12" outlet="o"/>
+         <dest obj="counter_7" inlet="r"/>
+         <dest obj="or_13" inlet="i1"/>
+         <dest obj="delayedpulse_1" inlet="trig"/>
+      </net>
+      <net>
+         <source obj="mux_25" outlet="o"/>
+         <dest obj="mux_22" inlet="s"/>
+      </net>
+      <net>
+         <source obj="to_17" outlet="o"/>
+         <dest obj="mux_25" inlet="i1"/>
+      </net>
+      <net>
+         <source obj="mux_22" outlet="o"/>
+         <dest obj="mux_4" inlet="i6"/>
+      </net>
+      <net>
+         <source obj="change_22" outlet="trig"/>
+         <dest obj="counter_8" inlet="trig"/>
+      </net>
+      <net>
+         <source obj="counter_8" outlet="o"/>
+         <dest obj="&gt;_7" inlet="in"/>
+      </net>
+      <net>
+         <source obj="&gt;_7" outlet="out"/>
+         <dest obj="SOUND1" inlet="trig"/>
+      </net>
+      <net>
+         <source obj="i_10" outlet="out"/>
+         <dest obj="+_11" inlet="in1"/>
+      </net>
+      <net>
+         <source obj="read_SOUND1" outlet="o"/>
+         <dest obj="to_19" inlet="i"/>
+      </net>
+      <net>
+         <source obj="change_23" outlet="trig"/>
+         <dest obj="or_13" inlet="i2"/>
+      </net>
+      <net>
+         <source obj="or_13" outlet="o"/>
+         <dest obj="counter_8" inlet="r"/>
+         <dest obj="or_14" inlet="i1"/>
+      </net>
+      <net>
+         <source obj="to_20" outlet="o"/>
+         <dest obj="change_23" inlet="in"/>
+      </net>
+      <net>
+         <source obj="demux_1" outlet="o7"/>
+         <dest obj="div_8" inlet="in"/>
+      </net>
+      <net>
+         <source obj="div_8" outlet="out"/>
+         <dest obj="to_20" inlet="i"/>
+         <dest obj="change_22" inlet="in"/>
+         <dest obj="SOUND1" inlet="v"/>
+      </net>
+      <net>
+         <source obj="c_34" outlet="out"/>
+         <dest obj="mux_27" inlet="i0"/>
+      </net>
+      <net>
+         <source obj="c_36" outlet="out"/>
+         <dest obj="mux_27" inlet="i1"/>
+      </net>
+      <net>
+         <source obj="c_38" outlet="out"/>
+         <dest obj="mux_27" inlet="i2"/>
+      </net>
+      <net>
+         <source obj="c_40" outlet="out"/>
+         <dest obj="mux_27" inlet="i3"/>
+      </net>
+      <net>
+         <source obj="c_35" outlet="out"/>
+         <dest obj="mux_27" inlet="i4"/>
+      </net>
+      <net>
+         <source obj="c_37" outlet="out"/>
+         <dest obj="mux_27" inlet="i5"/>
+      </net>
+      <net>
+         <source obj="c_39" outlet="out"/>
+         <dest obj="mux_27" inlet="i6"/>
+      </net>
+      <net>
+         <source obj="c_41" outlet="out"/>
+         <dest obj="mux_27" inlet="i7"/>
+      </net>
+      <net>
+         <source obj="mux_27" outlet="o"/>
+         <dest obj="mux_4" inlet="i7"/>
+      </net>
+      <net>
+         <source obj="+_11" outlet="out"/>
+         <dest obj="SOUND1" inlet="a"/>
+         <dest obj="read_SOUND1" inlet="a"/>
+      </net>
+      <net>
+         <source obj="+_12" outlet="out"/>
+         <dest obj="SOUND2" inlet="a"/>
+         <dest obj="read_SOUND2" inlet="a"/>
+      </net>
+      <net>
+         <source obj="div_11" outlet="out"/>
+         <dest obj="to_21" inlet="i"/>
+         <dest obj="change_24" inlet="in"/>
+         <dest obj="SOUND2" inlet="v"/>
+      </net>
+      <net>
+         <source obj="demux_2" outlet="o7"/>
+         <dest obj="div_11" inlet="in"/>
+      </net>
+      <net>
+         <source obj="change_24" outlet="trig"/>
+         <dest obj="counter_9" inlet="trig"/>
+      </net>
+      <net>
+         <source obj="counter_9" outlet="o"/>
+         <dest obj="&gt;_8" inlet="in"/>
+      </net>
+      <net>
+         <source obj="&gt;_8" outlet="out"/>
+         <dest obj="SOUND2" inlet="trig"/>
+      </net>
+      <net>
+         <source obj="i_11" outlet="out"/>
+         <dest obj="+_12" inlet="in1"/>
+      </net>
+      <net>
+         <source obj="change_25" outlet="trig"/>
+         <dest obj="or_14" inlet="i2"/>
+      </net>
+      <net>
+         <source obj="or_14" outlet="o"/>
+         <dest obj="counter_9" inlet="r"/>
+      </net>
+      <net>
+         <source obj="read_SOUND2" outlet="o"/>
+         <dest obj="to_22" inlet="i"/>
+      </net>
+      <net>
+         <source obj="to_21" outlet="o"/>
+         <dest obj="change_25" inlet="in"/>
+      </net>
+      <net>
+         <source obj="demux_2" outlet="o3"/>
+         <dest obj="map_2" inlet="c"/>
+      </net>
+   </nets>
+   <settings>
+      <subpatchmode>no</subpatchmode>
+   </settings>
+   <notes><![CDATA[]]></notes>
+   <windowPos>
+      <x>0</x>
+      <y>31</y>
+      <width>1440</width>
+      <height>877</height>
+   </windowPos>
+</patch-1.0>

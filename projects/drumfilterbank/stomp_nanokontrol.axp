@@ -1,0 +1,100 @@
+<patch-1.0 appVersion="1.0.12">
+   <obj type="stomps/distortion1" uuid="162d4ee3-2a6d-4547-a386-e1313d82f157" name="obj_4" x="224" y="0">
+      <params>
+         <frac32.u.map name="gain_1" MidiCC="14" value="12.0"/>
+         <frac32.u.map name="*c_1" MidiCC="2" value="18.5"/>
+         <int32 name="eq:lowmid" value="-3"/>
+         <int32 name="eq:mid" value="6"/>
+         <int32 name="eq:highmid" value="-4"/>
+         <int32 name="eq:high" value="3"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="audio/in stereo" uuid="99848ad6d90a8e615e83b2e619cfc806f28e7281" name="in_1" x="0" y="98">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="stomps/delay" uuid="8834048b-f899-4ebf-8b68-fcbfa82eee06" name="obj_2" x="462" y="126">
+      <params>
+         <bool32.tgl name="on" MidiCC="24" value="0"/>
+         <frac32.u.map name="fdbk" MidiCC="15" value="15.0"/>
+         <frac32.u.map name="time" MidiCC="3" value="22.5"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="stomps/reverb1" uuid="1144f66f-a7ef-46a4-9c60-66f4faff5bf1" name="obj_8" x="658" y="126">
+      <params>
+         <bool32.tgl name="on" MidiCC="25" value="0"/>
+         <frac32.u.map name="*c_1" MidiCC="16" value="32.0"/>
+         <frac32.u.map name="decay" MidiCC="4" value="16.5"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="stomps/ab" uuid="e6c70954-a455-4e82-95fc-de4cbb9f93e0" name="obj_3" x="266" y="182">
+      <params>
+         <bool32.tgl name="a/b" MidiCC="23" value="0"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="audio/inconfig" uuid="9a80ef3c19f2a8f81da3a3b7c1c44d18126b97d9" name="inconfig_1" x="0" y="210">
+      <params/>
+      <attribs>
+         <combo attributeName="gain" selection="0dB"/>
+         <combo attributeName="boost" selection="0dB"/>
+         <combo attributeName="mode" selection="Stereo"/>
+      </attribs>
+   </obj>
+   <obj type="stomps/wah1" uuid="1c36c046-0be2-4817-91c9-1dedbdf437c1" name="obj_1" x="1036" y="210">
+      <params>
+         <bool32.tgl name="on" MidiCC="26" value="0"/>
+         <frac32.u.map name="freq" MidiCC="17" value="49.5"/>
+         <frac32.u.map name="flt:reso" MidiCC="5" value="37.5"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="audio/out stereo" uuid="a1ca7a567f535acc21055669829101d3ee7f0189" name="out_1" x="1442" y="238">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="rbrt/midi/in/monitor" uuid="64b3d36e-97ab-4b18-91f7-ff611e14fd7a" name="monitor_1" x="0" y="294">
+      <params/>
+      <attribs/>
+   </obj>
+   <nets>
+      <net>
+         <source obj="in_1" outlet="left"/>
+         <dest obj="obj_4" inlet="in"/>
+         <dest obj="obj_3" inlet="a"/>
+      </net>
+      <net>
+         <source obj="obj_3" outlet="out"/>
+         <dest obj="obj_2" inlet="in"/>
+      </net>
+      <net>
+         <source obj="obj_4" outlet="out"/>
+         <dest obj="obj_3" inlet="b"/>
+      </net>
+      <net>
+         <source obj="obj_2" outlet="out"/>
+         <dest obj="obj_8" inlet="inL"/>
+      </net>
+      <net>
+         <source obj="obj_8" outlet="outL"/>
+         <dest obj="obj_1" inlet="in"/>
+      </net>
+      <net>
+         <source obj="obj_1" outlet="out"/>
+         <dest obj="out_1" inlet="left"/>
+      </net>
+   </nets>
+   <settings>
+      <subpatchmode>no</subpatchmode>
+   </settings>
+   <notes><![CDATA[]]></notes>
+   <windowPos>
+      <x>213</x>
+      <y>234</y>
+      <width>1707</width>
+      <height>874</height>
+   </windowPos>
+</patch-1.0>

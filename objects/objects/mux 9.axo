@@ -1,0 +1,38 @@
+<objdefs appVersion="1.0.12">
+   <obj.normal id="mux 9" uuid="b1f015b2-ef26-4ea2-9f16-58b10d26a825">
+      <sDescription>input multiplexer. Output is i1 when s &lt; 1, i[i] when....</sDescription>
+      <author>Johannes Taelman</author>
+      <license>BSD</license>
+      <helpPatch>mux.axh</helpPatch>
+      <inlets>
+         <charptr32 name="i0" description="input 0"/>
+         <charptr32 name="i1" description="input 1"/>
+         <charptr32 name="i2" description="input 2"/>
+         <charptr32 name="i3" description="input 3"/>
+         <charptr32 name="i4" description="input 4"/>
+         <charptr32 name="i5" description="input 5"/>
+         <charptr32 name="i6" description="input 6"/>
+         <charptr32 name="i7" description="input 7"/>
+         <charptr32 name="i8" description="input 8"/>
+         <int32.positive name="s" description="select"/>
+      </inlets>
+      <outlets>
+         <charptr32 name="o" description="output"/>
+      </outlets>
+      <displays/>
+      <params/>
+      <attribs/>
+      <code.krate><![CDATA[switch(inlet_s>0?inlet_s:0){
+      case 0: outlet_o= (char *)inlet_i0;break;
+      case 1: outlet_o= (char *)inlet_i1;break;
+      case 2: outlet_o= (char *)inlet_i2;break;
+      case 3: outlet_o= (char *)inlet_i3;break;
+      case 4: outlet_o= (char *)inlet_i4;break;
+      case 5: outlet_o= (char *)inlet_i5;break;
+      case 6: outlet_o= (char *)inlet_i6;break;
+      case 7: outlet_o= (char *)inlet_i7;break;
+      case 8: outlet_o= (char *)inlet_i7;break;
+      default: outlet_o= (char *)inlet_i8;break;
+}]]></code.krate>
+   </obj.normal>
+</objdefs>

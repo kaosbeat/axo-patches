@@ -1,0 +1,367 @@
+<patch-1.0 appVersion="1.0.12">
+   <obj type="stomps/reverb1" uuid="1144f66f-a7ef-46a4-9c60-66f4faff5bf1" name="obj_8" x="826" y="42">
+      <params>
+         <bool32.tgl name="on" value="1"/>
+         <frac32.u.map name="*c_1" MidiCC="18" value="32.0"/>
+         <frac32.u.map name="decay" MidiCC="34" value="32.0"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="stomps/delay" uuid="8834048b-f899-4ebf-8b68-fcbfa82eee06" name="obj_2" x="560" y="56">
+      <params>
+         <bool32.tgl name="on" value="1"/>
+         <frac32.u.map name="fdbk" MidiCC="53" value="19.0"/>
+         <frac32.u.map name="time" MidiCC="82" value="0.0"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="stomps/distortion1" uuid="162d4ee3-2a6d-4547-a386-e1313d82f157" name="obj_4" x="252" y="84">
+      <params>
+         <frac32.u.map name="gain_1" MidiCC="17" value="32.0"/>
+         <frac32.u.map name="*c_1" MidiCC="33" value="4.5"/>
+         <int32 name="eq:lowmid" value="-3"/>
+         <int32 name="eq:mid" value="6"/>
+         <int32 name="eq:highmid" value="-4"/>
+         <int32 name="eq:high" value="3"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="stomps/wah1" uuid="1c36c046-0be2-4817-91c9-1dedbdf437c1" name="obj_1" x="1162" y="126">
+      <params>
+         <bool32.tgl name="on" value="1"/>
+         <frac32.u.map name="freq" MidiCC="54" value="0.0"/>
+         <frac32.u.map name="flt:reso" MidiCC="82" value="0.0"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="audio/in stereo" uuid="99848ad6d90a8e615e83b2e619cfc806f28e7281" name="in_1" x="0" y="154">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="midi/in/keyb note" uuid="ac0cd98e6c0373b7be73d25900342a62ebcf5f" name="keyb_2" x="476" y="196">
+      <params/>
+      <attribs>
+         <spinner attributeName="note" value="89"/>
+      </attribs>
+   </obj>
+   <obj type="logic/toggle" uuid="f42f0d3aab552c17bc78b9e65f85dc24f977503d" name="toggle_2" x="574" y="196">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="ab_inlet" uuid="2317c2fc-1097-462f-b32b-a5f273784892" name="ab_inlet_2" x="644" y="196">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="midi/in/keyb note" uuid="ac0cd98e6c0373b7be73d25900342a62ebcf5f" name="keyb_3" x="770" y="196">
+      <params/>
+      <attribs>
+         <spinner attributeName="note" value="58"/>
+      </attribs>
+   </obj>
+   <obj type="logic/toggle" uuid="f42f0d3aab552c17bc78b9e65f85dc24f977503d" name="toggle_3" x="868" y="196">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="ab_inlet" uuid="2317c2fc-1097-462f-b32b-a5f273784892" name="ab_inlet_3" x="938" y="196">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="midi/in/keyb note" uuid="ac0cd98e6c0373b7be73d25900342a62ebcf5f" name="keyb_1" x="168" y="238">
+      <params/>
+      <attribs>
+         <spinner attributeName="note" value="57"/>
+      </attribs>
+   </obj>
+   <obj type="logic/toggle" uuid="f42f0d3aab552c17bc78b9e65f85dc24f977503d" name="toggle_1" x="266" y="238">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="ab_inlet" uuid="2317c2fc-1097-462f-b32b-a5f273784892" name="ab_inlet_1" x="336" y="238">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="audio/inconfig" uuid="9a80ef3c19f2a8f81da3a3b7c1c44d18126b97d9" name="inconfig_1" x="0" y="266">
+      <params/>
+      <attribs>
+         <combo attributeName="gain" selection="0dB"/>
+         <combo attributeName="boost" selection="0dB"/>
+         <combo attributeName="mode" selection="Stereo"/>
+      </attribs>
+   </obj>
+   <obj type="midi/in/keyb note" uuid="ac0cd98e6c0373b7be73d25900342a62ebcf5f" name="keyb_4" x="1106" y="280">
+      <params/>
+      <attribs>
+         <spinner attributeName="note" value="90"/>
+      </attribs>
+   </obj>
+   <obj type="logic/toggle" uuid="f42f0d3aab552c17bc78b9e65f85dc24f977503d" name="toggle_4" x="1204" y="280">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="ab_inlet" uuid="2317c2fc-1097-462f-b32b-a5f273784892" name="ab_inlet_4" x="1274" y="280">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="rbrt/midi/in/monitor" uuid="64b3d36e-97ab-4b18-91f7-ff611e14fd7a" name="monitor_1" x="0" y="350">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="stomps/distortion1" uuid="162d4ee3-2a6d-4547-a386-e1313d82f157" name="obj_5" x="238" y="392">
+      <params>
+         <frac32.u.map name="gain_1" MidiCC="19" value="32.0"/>
+         <frac32.u.map name="*c_1" MidiCC="35" value="6.0"/>
+         <int32 name="eq:lowmid" value="-3"/>
+         <int32 name="eq:mid" value="6"/>
+         <int32 name="eq:highmid" value="-4"/>
+         <int32 name="eq:high" value="3"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="stomps/reverb1" uuid="1144f66f-a7ef-46a4-9c60-66f4faff5bf1" name="obj_9" x="840" y="434">
+      <params>
+         <bool32.tgl name="on" value="1"/>
+         <frac32.u.map name="*c_1" MidiCC="20" value="32.0"/>
+         <frac32.u.map name="decay" MidiCC="36" value="32.0"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="stomps/delay" uuid="8834048b-f899-4ebf-8b68-fcbfa82eee06" name="obj_3" x="560" y="448">
+      <params>
+         <bool32.tgl name="on" value="1"/>
+         <frac32.u.map name="fdbk" MidiCC="55" value="18.5"/>
+         <frac32.u.map name="time" MidiCC="83" value="32.0"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="stomps/wah1" uuid="1c36c046-0be2-4817-91c9-1dedbdf437c1" name="obj_6" x="1176" y="448">
+      <params>
+         <bool32.tgl name="on" value="1"/>
+         <frac32.u.map name="freq" MidiCC="56" value="32.0"/>
+         <frac32.u.map name="flt:reso" MidiCC="84" value="0.0"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="midi/in/keyb note" uuid="ac0cd98e6c0373b7be73d25900342a62ebcf5f" name="keyb_7" x="224" y="574">
+      <params/>
+      <attribs>
+         <spinner attributeName="note" value="59"/>
+      </attribs>
+   </obj>
+   <obj type="logic/toggle" uuid="f42f0d3aab552c17bc78b9e65f85dc24f977503d" name="toggle_7" x="322" y="574">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="ab_inlet" uuid="2317c2fc-1097-462f-b32b-a5f273784892" name="ab_inlet_7" x="392" y="574">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="midi/in/keyb note" uuid="ac0cd98e6c0373b7be73d25900342a62ebcf5f" name="keyb_5" x="476" y="588">
+      <params/>
+      <attribs>
+         <spinner attributeName="note" value="91"/>
+      </attribs>
+   </obj>
+   <obj type="logic/toggle" uuid="f42f0d3aab552c17bc78b9e65f85dc24f977503d" name="toggle_5" x="574" y="588">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="ab_inlet" uuid="2317c2fc-1097-462f-b32b-a5f273784892" name="ab_inlet_5" x="644" y="588">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="midi/in/keyb note" uuid="ac0cd98e6c0373b7be73d25900342a62ebcf5f" name="keyb_6" x="770" y="588">
+      <params/>
+      <attribs>
+         <spinner attributeName="note" value="60"/>
+      </attribs>
+   </obj>
+   <obj type="logic/toggle" uuid="f42f0d3aab552c17bc78b9e65f85dc24f977503d" name="toggle_6" x="868" y="588">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="ab_inlet" uuid="2317c2fc-1097-462f-b32b-a5f273784892" name="ab_inlet_6" x="938" y="588">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="midi/in/keyb note" uuid="ac0cd98e6c0373b7be73d25900342a62ebcf5f" name="keyb_8" x="1092" y="588">
+      <params/>
+      <attribs>
+         <spinner attributeName="note" value="92"/>
+      </attribs>
+   </obj>
+   <obj type="logic/toggle" uuid="f42f0d3aab552c17bc78b9e65f85dc24f977503d" name="toggle_8" x="1190" y="588">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="ab_inlet" uuid="2317c2fc-1097-462f-b32b-a5f273784892" name="ab_inlet_8" x="1260" y="588">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="audio/out stereo" uuid="a1ca7a567f535acc21055669829101d3ee7f0189" name="out_1" x="1470" y="672">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="audio/outconfig" uuid="eace67e3304afaa1bb695b444e9345f2d8adaf00" name="outconfig_1" x="1470" y="770">
+      <params/>
+      <attribs>
+         <combo attributeName="headphones" selection="0dB"/>
+         <combo attributeName="mode" selection="Stereo"/>
+      </attribs>
+   </obj>
+   <nets>
+      <net>
+         <source obj="in_1" outlet="left"/>
+         <dest obj="obj_4" inlet="in"/>
+         <dest obj="ab_inlet_1" inlet="a"/>
+      </net>
+      <net>
+         <source obj="obj_2" outlet="out"/>
+         <dest obj="ab_inlet_2" inlet="b"/>
+      </net>
+      <net>
+         <source obj="keyb_1" outlet="gate"/>
+         <dest obj="toggle_1" inlet="trig"/>
+      </net>
+      <net>
+         <source obj="toggle_1" outlet="o"/>
+         <dest obj="ab_inlet_1" inlet="ab"/>
+      </net>
+      <net>
+         <source obj="ab_inlet_1" outlet="out"/>
+         <dest obj="obj_2" inlet="in"/>
+         <dest obj="ab_inlet_2" inlet="a"/>
+      </net>
+      <net>
+         <source obj="keyb_2" outlet="gate"/>
+         <dest obj="toggle_2" inlet="trig"/>
+      </net>
+      <net>
+         <source obj="toggle_2" outlet="o"/>
+         <dest obj="ab_inlet_2" inlet="ab"/>
+      </net>
+      <net>
+         <source obj="keyb_3" outlet="gate"/>
+         <dest obj="toggle_3" inlet="trig"/>
+      </net>
+      <net>
+         <source obj="toggle_3" outlet="o"/>
+         <dest obj="ab_inlet_3" inlet="ab"/>
+      </net>
+      <net>
+         <source obj="keyb_4" outlet="gate"/>
+         <dest obj="toggle_4" inlet="trig"/>
+      </net>
+      <net>
+         <source obj="toggle_4" outlet="o"/>
+         <dest obj="ab_inlet_4" inlet="ab"/>
+      </net>
+      <net>
+         <source obj="obj_4" outlet="out"/>
+         <dest obj="ab_inlet_1" inlet="b"/>
+      </net>
+      <net>
+         <source obj="ab_inlet_2" outlet="out"/>
+         <dest obj="obj_8" inlet="inL"/>
+         <dest obj="ab_inlet_3" inlet="a"/>
+      </net>
+      <net>
+         <source obj="ab_inlet_3" outlet="out"/>
+         <dest obj="ab_inlet_4" inlet="a"/>
+         <dest obj="obj_1" inlet="in"/>
+      </net>
+      <net>
+         <source obj="ab_inlet_4" outlet="out"/>
+         <dest obj="out_1" inlet="left"/>
+      </net>
+      <net>
+         <source obj="obj_1" outlet="out"/>
+         <dest obj="ab_inlet_4" inlet="b"/>
+      </net>
+      <net>
+         <source obj="obj_8" outlet="outL"/>
+         <dest obj="ab_inlet_3" inlet="b"/>
+      </net>
+      <net>
+         <source obj="in_1" outlet="right"/>
+         <dest obj="obj_5" inlet="in"/>
+         <dest obj="ab_inlet_7" inlet="a"/>
+      </net>
+      <net>
+         <source obj="obj_3" outlet="out"/>
+         <dest obj="ab_inlet_5" inlet="b"/>
+      </net>
+      <net>
+         <source obj="keyb_7" outlet="gate"/>
+         <dest obj="toggle_7" inlet="trig"/>
+      </net>
+      <net>
+         <source obj="toggle_7" outlet="o"/>
+         <dest obj="ab_inlet_7" inlet="ab"/>
+      </net>
+      <net>
+         <source obj="ab_inlet_7" outlet="out"/>
+         <dest obj="obj_3" inlet="in"/>
+         <dest obj="ab_inlet_5" inlet="a"/>
+      </net>
+      <net>
+         <source obj="keyb_5" outlet="gate"/>
+         <dest obj="toggle_5" inlet="trig"/>
+      </net>
+      <net>
+         <source obj="toggle_5" outlet="o"/>
+         <dest obj="ab_inlet_5" inlet="ab"/>
+      </net>
+      <net>
+         <source obj="keyb_6" outlet="gate"/>
+         <dest obj="toggle_6" inlet="trig"/>
+      </net>
+      <net>
+         <source obj="toggle_6" outlet="o"/>
+         <dest obj="ab_inlet_6" inlet="ab"/>
+      </net>
+      <net>
+         <source obj="keyb_8" outlet="gate"/>
+         <dest obj="toggle_8" inlet="trig"/>
+      </net>
+      <net>
+         <source obj="toggle_8" outlet="o"/>
+         <dest obj="ab_inlet_8" inlet="ab"/>
+      </net>
+      <net>
+         <source obj="obj_5" outlet="out"/>
+         <dest obj="ab_inlet_7" inlet="b"/>
+      </net>
+      <net>
+         <source obj="ab_inlet_5" outlet="out"/>
+         <dest obj="obj_9" inlet="inL"/>
+         <dest obj="ab_inlet_6" inlet="a"/>
+      </net>
+      <net>
+         <source obj="ab_inlet_6" outlet="out"/>
+         <dest obj="ab_inlet_8" inlet="a"/>
+         <dest obj="obj_6" inlet="in"/>
+      </net>
+      <net>
+         <source obj="obj_6" outlet="out"/>
+         <dest obj="ab_inlet_8" inlet="b"/>
+      </net>
+      <net>
+         <source obj="obj_9" outlet="outL"/>
+         <dest obj="ab_inlet_6" inlet="b"/>
+      </net>
+      <net>
+         <source obj="ab_inlet_8" outlet="out"/>
+         <dest obj="out_1" inlet="right"/>
+      </net>
+   </nets>
+   <settings>
+      <subpatchmode>no</subpatchmode>
+   </settings>
+   <notes><![CDATA[]]></notes>
+   <windowPos>
+      <x>350</x>
+      <y>49</y>
+      <width>1591</width>
+      <height>1069</height>
+   </windowPos>
+</patch-1.0>

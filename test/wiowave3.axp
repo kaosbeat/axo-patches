@@ -1,0 +1,295 @@
+<patch-1.0 appVersion="1.0.12">
+   <obj type="disp/kscope 128 b" uuid="e71f3dd9bc5b799ad703079e63fb929dd75def0" name="kscope_2" x="406" y="28">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="disp/kscope 128 p" uuid="664f9317a38a6910ae9bc020e00ca2dd2ee692fa" name="scope_1" x="546" y="28">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="gpio/i2c/config" uuid="b095a33e56de5fcd23740a7d983bc0bafb315d81" name="config_1" x="98" y="56">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="ctrl/dial p" uuid="cc5d2846c3d50e425f450c4b9851371b54f4d674" name="dial_1" x="196" y="126">
+      <params>
+         <frac32.u.map name="value" value="16.0"/>
+      </params>
+      <attribs/>
+   </obj>
+   <patchobj type="patch/object" uuid="e37c841d-1836-43e2-8ee7-fb4da6c2b3ee" name="saw_1" x="770" y="238">
+      <params>
+         <frac32.s.map name="pitch" value="0.0"/>
+      </params>
+      <attribs/>
+      <object id="patch/object" uuid="e37c841d-1836-43e2-8ee7-fb4da6c2b3ee">
+         <sDescription>saw wave LFO, rising slope, pitch input</sDescription>
+         <author>Johannes Taelman</author>
+         <license>BSD</license>
+         <helpPatch>lfo.axh</helpPatch>
+         <inlets>
+            <frac32.bipolar name="pitch" description="pitch"/>
+            <bool32.rising name="reset" description="reset phase"/>
+         </inlets>
+         <outlets>
+            <frac32.positive name="wave" description="saw wave"/>
+         </outlets>
+         <displays/>
+         <params>
+            <frac32.s.map.lfopitch name="pitch" noLabel="true"/>
+         </params>
+         <attribs/>
+         <includes/>
+         <code.declaration><![CDATA[uint32_t Phase;
+uint32_t r;
+]]></code.declaration>
+         <code.init><![CDATA[Phase = 0;
+   r = 1;
+]]></code.init>
+         <code.krate><![CDATA[   {
+      if (inlet_reset && r) {
+         Phase = 0;
+         r = 0;
+      } else {
+         if (!inlet_reset) r = 1;
+         int32_t freq;
+         MTOFEXTENDED(param_pitch + inlet_pitch,freq);
+         Phase += freq>>2;
+      }
+      outlet_wave= (Phase>>5);
+   }]]></code.krate>
+      </object>
+   </patchobj>
+   <obj type="disp/kscope 128 b trig" uuid="b24afecdaf757006c3a4bb578f0aea1d7441153e" name="kscope_1" x="518" y="266">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="ctrl/i" uuid="a3786816db6ea5bc6ac4193a5cccdb2c83b83496" name="i_3" x="210" y="280">
+      <params>
+         <int32 name="value" value="17"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="ctrl/i" uuid="a3786816db6ea5bc6ac4193a5cccdb2c83b83496" name="i_1" x="210" y="336">
+      <params>
+         <int32 name="value" value="1"/>
+      </params>
+      <attribs/>
+   </obj>
+   <patchobj type="patch/object" uuid="49d0b581-12e1-41d2-95e0-d664a9cda381" name="ahd_1" x="336" y="336">
+      <params>
+         <frac32.u.map name="a" value="40.5"/>
+         <frac32.u.map name="d" value="35.0"/>
+      </params>
+      <attribs/>
+      <object id="patch/object" uuid="49d0b581-12e1-41d2-95e0-d664a9cda381">
+         <sDescription>attack hold decay envelope with modulation inputs</sDescription>
+         <author>Johannes Taelman</author>
+         <license>BSD</license>
+         <helpPatch>env.axh</helpPatch>
+         <inlets>
+            <frac32 name="a" description="attack time"/>
+            <int32.positive name="totaltime"/>
+            <int32.positive name="holdtime"/>
+            <int32.positive name="risespeed"/>
+            <int32.positive name="fallspeed"/>
+            <bool32.rising name="start"/>
+         </inlets>
+         <outlets>
+            <frac32.positive name="env" description="envelope output"/>
+            <bool32.pulse name="end"/>
+         </outlets>
+         <displays>
+            <int32.label name="d1"/>
+            <int32.label name="d2"/>
+            <int32.label name="d3"/>
+         </displays>
+         <params>
+            <frac32.u.map.kdecaytime name="a"/>
+            <frac32.u.map.kdecaytime name="d"/>
+         </params>
+         <attribs/>
+         <includes/>
+         <code.declaration><![CDATA[int32_t val;
+int32_t rise;
+int32_t risespeed;
+int32_t totaltime;
+int32_t hold;
+int32_t holdtime;
+int32_t holdbuffer;
+int32_t fall;
+int32_t fallspeed;
+int32_t starttrig;]]></code.declaration>
+         <code.init><![CDATA[val = 0;
+rise = 0;
+risespeed = 0;
+totaltime = 0;
+hold = 0;
+holdtime = 0;
+holdbuffer = 0;
+fall = 0;
+fallspeed;
+starttrig = 0;]]></code.init>
+         <code.krate><![CDATA[//   if (inlet_gate>0) val = ___SMMLA((1<<27)-val,(1<<26)-(param_a>>1)-(inlet_a>>1),val);
+//   else val = ___SMMLA(val,(-1<<26)+(param_d>>1)+(inlet_d>>1),val);
+//   outlet_env= val;
+//
+risespeed = inlet_risespeed;
+fallspeed = inlet_fallspeed;
+holdtime = inlet_holdtime;
+totaltime = inlet_totaltime * 10;
+//totaltime = 12;
+
+int fractime;
+fractime = totaltime/(risespeed+fallspeed+holdtime);
+risespeed = fractime*risespeed;
+holdtime = fractime*holdtime;
+fallspeed = fractime*fallspeed;
+
+if (inlet_start > 0 && starttrig != 1){
+	starttrig = 1;
+	val=0;
+	holdbuffer = 0;
+	rise = 1;
+}
+
+if (starttrig == 1) {
+	if (rise == 1) {
+		val = val+risespeed;
+		if (val >= 120){
+			rise = 0;
+			hold = 1;
+		}
+	} else if (hold == 1 && holdbuffer < holdtime) {
+		holdbuffer++;
+		if (holdtime == holdbuffer) {
+			hold = 0;
+			fall = 1;
+		}
+	} else if (fall == 1 && val > 0) {
+		val = val - fallspeed;
+	} if (val <= 0 ) {
+		starttrig = 0;
+		outlet_end = 1;
+		val = 0;
+	}
+}
+
+outlet_env= val << 20;
+//if (inlet_start > 0 ) {outlet_env = 128 >>27;}
+disp_d1 = risespeed;
+disp_d2 = holdtime;
+disp_d3 = fallspeed;
+
+//outlet_env = 63 << 20;]]></code.krate>
+      </object>
+   </patchobj>
+   <obj type="tiar/disp/scope" uuid="0991142e-58fa-47e6-9f89-32da05f9fe41" name="scope_1ddd" x="742" y="392">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="ctrl/i" uuid="a3786816db6ea5bc6ac4193a5cccdb2c83b83496" name="i_2" x="224" y="406">
+      <params>
+         <int32 name="value" value="23"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="ctrl/button" uuid="ef3d13774349df85aa9bfecf30dbc91ab8488b3f" name="button_1" x="98" y="490">
+      <params>
+         <bool32.mom name="b" value="0"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="logic/or 2" uuid="3805d3c84d30032a44fbdbe42d9a2988a1790a3e" name="or_1" x="196" y="490">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="phi/disp/boolms" uuid="4d2b0662-f881-4953-832a-a286daf5b6a3" name="boolms_1" x="476" y="518">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="tiar/HW/OLED128x64nice" uuid="5bde8c3d-fe37-40b3-848e-edb113767bc8" name="OLED128x64nice_1" x="574" y="532">
+      <params/>
+      <attribs>
+         <objref attributeName="scope" obj="kscope_2"/>
+         <combo attributeName="type" selection="SH1106"/>
+         <combo attributeName="I2CADDR" selection="0x3D"/>
+      </attribs>
+   </obj>
+   <obj type="tiar/HW/strbar" uuid="19acb9de-7b6b-4c8e-87ee-75013c6b6e2f" name="strbar_1" x="210" y="602">
+      <params/>
+      <attribs>
+         <table attributeName="prefix" table="portables"/>
+      </attribs>
+   </obj>
+   <obj type="tiar/HW/OLED128x64nice" uuid="5bde8c3d-fe37-40b3-848e-edb113767bc8" name="OLED128x64nice_2" x="728" y="630">
+      <params/>
+      <attribs>
+         <objref attributeName="scope" obj="kscope_1"/>
+         <combo attributeName="type" selection="SH1106"/>
+         <combo attributeName="I2CADDR" selection="0x3C"/>
+      </attribs>
+   </obj>
+   <obj type="ctrl/i radio 4 h" uuid="f87ae81e3162014f3bdca0f56dbbdf9322e69dfd" name="i_4" x="420" y="644">
+      <params>
+         <int32.hradio name="value" value="2"/>
+      </params>
+      <attribs/>
+   </obj>
+   <nets>
+      <net>
+         <source obj="ahd_1" outlet="env"/>
+         <dest obj="kscope_1" inlet="in"/>
+         <dest obj="scope_1" inlet="in"/>
+         <dest obj="kscope_2" inlet="in"/>
+      </net>
+      <net>
+         <source obj="button_1" outlet="o"/>
+         <dest obj="or_1" inlet="i1"/>
+      </net>
+      <net>
+         <source obj="or_1" outlet="o"/>
+         <dest obj="ahd_1" inlet="start"/>
+      </net>
+      <net>
+         <source obj="ahd_1" outlet="end"/>
+         <dest obj="or_1" inlet="i2"/>
+         <dest obj="boolms_1" inlet="trig"/>
+      </net>
+      <net>
+         <source obj="i_1" outlet="out"/>
+         <dest obj="ahd_1" inlet="risespeed"/>
+      </net>
+      <net>
+         <source obj="i_2" outlet="out"/>
+         <dest obj="ahd_1" inlet="fallspeed"/>
+      </net>
+      <net>
+         <source obj="i_3" outlet="out"/>
+         <dest obj="ahd_1" inlet="holdtime"/>
+      </net>
+      <net>
+         <source obj="dial_1" outlet="out"/>
+         <dest obj="ahd_1" inlet="totaltime"/>
+      </net>
+      <net>
+         <source obj="i_4" outlet="out"/>
+         <dest obj="OLED128x64nice_1" inlet="mode"/>
+         <dest obj="OLED128x64nice_2" inlet="mode"/>
+      </net>
+      <net>
+         <source obj="strbar_1" outlet="out"/>
+         <dest obj="OLED128x64nice_1" inlet="line1"/>
+      </net>
+   </nets>
+   <settings>
+      <subpatchmode>no</subpatchmode>
+   </settings>
+   <notes><![CDATA[]]></notes>
+   <windowPos>
+      <x>688</x>
+      <y>134</y>
+      <width>937</width>
+      <height>831</height>
+   </windowPos>
+</patch-1.0>

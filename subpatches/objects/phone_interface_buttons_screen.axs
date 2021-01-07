@@ -496,9 +496,9 @@
    </settings>
    <notes><![CDATA[]]></notes>
    <windowPos>
-      <x>32</x>
-      <y>23</y>
+      <x>-1656</x>
+      <y>0</y>
       <width>1619</width>
-      <height>1110</height>
+      <height>1050</height>
    </windowPos>
 </patch-1.0>

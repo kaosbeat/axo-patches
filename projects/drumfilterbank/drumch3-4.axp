@@ -1,0 +1,139 @@
+<patch-1.0 appVersion="1.0.12">
+   <obj type="audio/in stereo" uuid="99848ad6d90a8e615e83b2e619cfc806f28e7281" name="in_1" x="14" y="56">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="jt/dist/class a" uuid="2e434261-5101-486e-8685-800ec8406675" name="class_1" x="126" y="56">
+      <params>
+         <frac32.u.map name="drive" MidiCC="17" value="0.0"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="filter/lp svf" uuid="2003da6360b4fdb967cd635e9f6544e832fd522e" name="lp_1" x="266" y="56">
+      <params>
+         <frac32.s.map name="pitch" MidiCC="33" value="0.0"/>
+         <frac32.u.map name="reso" MidiCC="53" value="0.0"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="fx/lmnts/reverb" uuid="8027561C-A0B5-4DF8-A10E-3ED1274F2980" name="reverb_1" x="420" y="56">
+      <params>
+         <frac32.u.map name="amount" MidiCC="81" value="0.0"/>
+         <frac32.u.map name="time" MidiCC="18" value="53.5"/>
+         <frac32.u.map name="diffusion" MidiCC="34" value="19.0"/>
+         <frac32.u.map name="gain" MidiCC="54" value="63.99999952316284"/>
+         <frac32.u.map name="lowpass" MidiCC="82" value="0.0"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="sss/dyn/compST" uuid="011bc610-1365-4629-8a4c-be04df5f5757" name="compST_1" x="574" y="56">
+      <params>
+         <frac32.u.map name="tresh" value="9.5"/>
+         <frac32.u.map name="soft" value="0.0"/>
+         <frac32.u.map name="ratio" value="37.0"/>
+         <frac32.u.map name="attack" value="0.0"/>
+         <frac32.u.map name="decay" value="41.5"/>
+         <frac32.u.map name="gain" value="26.0"/>
+         <bool32.tgl name="limiter" value="1"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="audio/out stereo" uuid="a1ca7a567f535acc21055669829101d3ee7f0189" name="out_1" x="1050" y="84">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="audio/inconfig" uuid="9a80ef3c19f2a8f81da3a3b7c1c44d18126b97d9" name="inconfig_1" x="42" y="182">
+      <params/>
+      <attribs>
+         <combo attributeName="gain" selection="18dB"/>
+         <combo attributeName="boost" selection="0dB"/>
+         <combo attributeName="mode" selection="Stereo"/>
+      </attribs>
+   </obj>
+   <obj type="audio/outconfig" uuid="eace67e3304afaa1bb695b444e9345f2d8adaf00" name="outconfig_1" x="1050" y="224">
+      <params/>
+      <attribs>
+         <combo attributeName="headphones" selection="-54dB"/>
+         <combo attributeName="mode" selection="Stereo"/>
+      </attribs>
+   </obj>
+   <obj type="rbrt/midi/in/monitor" uuid="64b3d36e-97ab-4b18-91f7-ff611e14fd7a" name="monitor_1" x="42" y="266">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="jt/dist/class a" uuid="2e434261-5101-486e-8685-800ec8406675" name="class_2" x="126" y="420">
+      <params>
+         <frac32.u.map name="drive" MidiCC="19" value="35.5"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="filter/lp svf" uuid="2003da6360b4fdb967cd635e9f6544e832fd522e" name="lp_2" x="266" y="420">
+      <params>
+         <frac32.s.map name="pitch" MidiCC="35" value="-4.0"/>
+         <frac32.u.map name="reso" MidiCC="55" value="25.5"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="fx/lmnts/reverb" uuid="8027561C-A0B5-4DF8-A10E-3ED1274F2980" name="reverb_2" x="420" y="420">
+      <params>
+         <frac32.u.map name="amount" MidiCC="83" value="0.0"/>
+         <frac32.u.map name="time" MidiCC="20" value="63.99999952316284"/>
+         <frac32.u.map name="diffusion" MidiCC="36" value="62.5"/>
+         <frac32.u.map name="gain" MidiCC="56" value="63.99999952316284"/>
+         <frac32.u.map name="lowpass" MidiCC="84" value="0.0"/>
+      </params>
+      <attribs/>
+   </obj>
+   <nets>
+      <net>
+         <source obj="class_1" outlet="out"/>
+         <dest obj="lp_1" inlet="in"/>
+      </net>
+      <net>
+         <source obj="lp_1" outlet="out"/>
+         <dest obj="reverb_1" inlet="l"/>
+      </net>
+      <net>
+         <source obj="in_1" outlet="left"/>
+         <dest obj="class_1" inlet="in"/>
+      </net>
+      <net>
+         <source obj="compST_1" outlet="outL"/>
+         <dest obj="out_1" inlet="left"/>
+      </net>
+      <net>
+         <source obj="compST_1" outlet="outR"/>
+         <dest obj="out_1" inlet="right"/>
+      </net>
+      <net>
+         <source obj="reverb_1" outlet="l"/>
+         <dest obj="compST_1" inlet="inL"/>
+      </net>
+      <net>
+         <source obj="class_2" outlet="out"/>
+         <dest obj="lp_2" inlet="in"/>
+      </net>
+      <net>
+         <source obj="lp_2" outlet="out"/>
+         <dest obj="reverb_2" inlet="l"/>
+      </net>
+      <net>
+         <source obj="in_1" outlet="right"/>
+         <dest obj="class_2" inlet="in"/>
+      </net>
+      <net>
+         <source obj="reverb_2" outlet="l"/>
+         <dest obj="compST_1" inlet="inR"/>
+      </net>
+   </nets>
+   <settings>
+      <subpatchmode>no</subpatchmode>
+   </settings>
+   <notes><![CDATA[]]></notes>
+   <windowPos>
+      <x>400</x>
+      <y>23</y>
+      <width>1221</width>
+      <height>922</height>
+   </windowPos>
+</patch-1.0>

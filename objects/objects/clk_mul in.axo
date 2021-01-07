@@ -1,0 +1,62 @@
+<objdefs appVersion="1.0.12">
+   <obj.normal id="clk_mul in" uuid="91e7448a-fb0f-40da-8b52-57919b7064ac">
+      <sDescription>Clock multiplier</sDescription>
+      <author>Are Leistad</author>
+      <license>BSD</license>
+      <inlets>
+         <bool32.rising name="clk" description="Clock input"/>
+         <int32 name="clkmul"/>
+      </inlets>
+      <outlets>
+         <bool32.pulse name="clk" description="Clock output"/>
+      </outlets>
+      <displays/>
+      <params/>
+      <attribs/>
+      <code.declaration><![CDATA[uint32_t  synced;
+      uint32_t  ktimer;
+      uint32_t  last_ktime;
+      uint32_t  period;
+      uint32_t  last_period;
+      uint32_t  remaining_clocks;
+      uint32_t  old_clk;]]></code.declaration>
+      <code.init><![CDATA[synced           = 0;
+      ktimer           = 0;
+      last_ktime       = ktimer;
+      period           = 1;
+      last_period      = period;
+      remaining_clocks = 0;
+      old_clk          = 0;]]></code.init>
+      <code.krate><![CDATA[outlet_clk = 0;
+
+      if( inlet_clk && !old_clk )
+        {
+          float tmp_period = (ktimer - last_ktime);
+          period           = (int32_t) ((tmp_period / inlet_clkmul) + 0.5f);
+          if( period < 2 )
+            {
+              period = 2;
+            }
+          last_ktime        = ktimer;
+          last_period       = period;
+          remaining_clocks  = inlet_clkmul - 1;
+          if( synced < 2 )
+            {
+              synced++;
+            }
+          else
+            {
+              outlet_clk = 1;
+            }
+        }
+      else if( synced >= 2 && remaining_clocks > 0 && --period == 0 )
+        {
+          remaining_clocks--;
+          period     = last_period;
+          outlet_clk = 1;
+        }
+
+      old_clk = inlet_clk;
+      ktimer++;]]></code.krate>
+   </obj.normal>
+</objdefs>

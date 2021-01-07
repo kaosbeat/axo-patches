@@ -1,0 +1,383 @@
+<objdefs appVersion="1.0.12">
+   <obj.normal id="lkm full test2" uuid="401746e9-8449-4d2b-b5a1-1b458faaaab0">
+      <sDescription>Sets a text to the display. Uses the buttons on the LKM1638 as toggles. Lights up the corresponding LEDs.</sDescription>
+      <author>Jan Vantomme</author>
+      <license>BSD</license>
+      <helpPatch>lkm1638_dyn.axh</helpPatch>
+      <inlets>
+         <charptr32 name="display" description="display text"/>
+         <bool32.rising name="dispupd" description="display update"/>
+         <bool32 name="LED1rd" description="LED1 rd"/>
+         <bool32 name="LED2rd" description="LED2 rd"/>
+         <bool32 name="LED3rd" description="LED3 rd"/>
+         <bool32 name="LED4rd" description="LED4 rd"/>
+         <bool32 name="LED5rd" description="LED5 rd"/>
+         <bool32 name="LED6rd" description="LED6 rd"/>
+         <bool32 name="LED7rd" description="LED7 rd"/>
+         <bool32 name="LED8rd" description="LED8 rd"/>
+         <bool32.rising name="dispres" description="reset display"/>
+      </inlets>
+      <outlets>
+         <bool32 name="button1" description="button1"/>
+         <bool32 name="button2" description="button2"/>
+         <bool32 name="button3" description="button3"/>
+         <bool32 name="button4" description="button4"/>
+         <bool32 name="button5" description="button5"/>
+         <bool32 name="button6" description="button6"/>
+         <bool32 name="button7" description="button7"/>
+         <bool32 name="button8" description="button8"/>
+      </outlets>
+      <displays/>
+      <params/>
+      <attribs>
+         <table name="display"/>
+      </attribs>
+      <depends>
+         <depend>SPID1</depend>
+      </depends>
+      <code.declaration><![CDATA[uint8_t *txbuf;
+		uint8_t *rxbuf;
+
+		bool btn1;
+		bool btn2;
+		bool btn3;
+		bool btn4;
+		bool btn5;
+		bool btn6;
+		bool btn7;
+		bool btn8;
+		bool led_red[8]={false};
+		bool led_green[8]={false};
+		bool i1_prev=false;
+		bool i2_prev=false;
+		
+		char txt[8];
+
+		// Font to use on the display
+		// ------------------------------------
+		
+		uint8_t tm1638_font(char c)
+		{
+			const uint8_t f[] = {
+    			0x00, 0x00, 0x00, 0x00,  0x00, 0x00, 0x00, 0x00,
+    			0x00, 0x00, 0x00, 0x00,  0x00, 0x00, 0x00, 0x00,
+    			0x00, 0x00, 0x00, 0x00,  0x00, 0x00, 0x00, 0x00,
+    			0x00, 0x00, 0x00, 0x00,  0x00, 0x00, 0x00, 0x00,
+    			0x00, 0x86, 0x22, 0x7e,  0x6d, 0x00, 0x00, 0x02,
+    			0x30, 0x06, 0x63, 0x00,  0x04, 0x40, 0x80, 0x52,
+    			0x3f, 0x06, 0x5b, 0x4f,  0x66, 0x6d, 0x7d, 0x27,
+    			0x7f, 0x6f, 0x00, 0x00,  0x00, 0x48, 0x00, 0x53,
+    			0x5f, 0x77, 0x7f, 0x39,  0x3f, 0x79, 0x71, 0x3d,
+    			0x76, 0x06, 0x1f, 0x69,  0x38, 0x15, 0x37, 0x3f,
+    			0x73, 0x67, 0x31, 0x6d,  0x78, 0x3e, 0x2a, 0x1d,
+    			0x76, 0x6e, 0x5b, 0x39,  0x64, 0x0f, 0x00, 0x08,
+    			0x20, 0x5f, 0x7c, 0x58,  0x5e, 0x7b, 0x31, 0x6f,
+    			0x74, 0x04, 0x0e, 0x75,  0x30, 0x55, 0x54, 0x5c,
+    			0x73, 0x67, 0x50, 0x6d,  0x78, 0x1c, 0x2a, 0x1d,
+    			0x76, 0x6e, 0x47, 0x46,  0x06, 0x70, 0x01, 0x00
+  			};
+
+  			return (c > 127) ? 0 : f[(unsigned char)c];
+		}
+
+		// Send a raw character to the display
+		// ------------------------------------
+
+		void tm1638_set_7seg_raw( uint8_t digit, uint8_t n)
+		{
+			tm1638_send_data( digit << 1, n);
+		}
+
+		// Send a text to the display
+		// ------------------------------------
+
+		void tm1638_set_7seg_text( const char *str, uint8_t dots)
+		{
+			const char *p = str;
+
+			for(int i = 0, j = 1; i < 8; i++, j <<= 1) {
+				// We want the loop to finish, but don't walk over the end of the string
+				char c = *p;
+				if (c) {
+					p++;
+      			}
+      			
+				uint8_t f =  tm1638_font(c);
+
+				if (dots & j) {
+					f |= 128;
+				}
+				
+				tm1638_set_7seg_raw( i, f);
+			}
+		}
+
+
+		// Send a command to the TM1638 Chip
+		// ------------------------------------
+
+		void tm1638_send_command( uint8_t x )
+		{
+			SPID1.spi->CR1 |= SPI_CR1_BIDIOE;
+			spiSelect( &SPID1 );
+			txbuf[0] = x;
+			spiSend( &SPID1, 1, &txbuf[0] );
+			spiUnselect( &SPID1 );
+		}
+
+		// Send data to the TM1638 Chip
+		// ------------------------------------
+
+		void tm1638_send_data( uint8_t addr, uint8_t data ){
+			SPID1.spi->CR1 |= SPI_CR1_BIDIOE;
+			tm1638_send_command( 0x44 );
+			txbuf[0] = addr | 0xc0;
+			txbuf[1] = data;
+			spiSelect( &SPID1 );
+			spiSend( &SPID1, 2, txbuf );
+			spiUnselect( &SPID1 );
+		}
+
+		//Clear display
+		//------------------------------------------
+		
+		void tm1638_reset(){
+					
+			SPID1.spi->CR1 |= SPI_CR1_BIDIOE;
+			tm1638_send_command( 0x40 );
+			uint8_t addr;
+			spiSelect( &SPID1 );
+			addr = 0xc0;
+			txbuf[0] = 0xc0;
+			for ( uint8_t i=1; i<<17; i++){
+				txbuf[i] = 0x00;}
+			spiSend( &SPID1, 17, txbuf );
+			spiUnselect( &SPID1 );
+		}
+
+		void tm1638_read_buttons(){
+
+			//LogTextMessage("Reading Buttons!");
+			txbuf[0] = 0x42;
+			spiSelect(&SPID1);
+			spiSend(&SPID1,1,&txbuf[0]);
+			palSetPadMode(GPIOA, 7, PAL_MODE_INPUT); // MOSI -> tristate
+			chThdSleepMilliseconds( 1 );
+			spiReceive(&SPID1,4,rxbuf);
+			spiUnselect(&SPID1);
+			palSetPadMode(GPIOA, 7, PAL_MODE_ALTERNATE(5)); // MOSI -> output
+
+		
+			 btn1 = rxbuf[0]&0x01 ? true : false;
+			 btn2 = rxbuf[1]&0x01 ? true : false;
+			 btn3 = rxbuf[2]&0x01 ? true : false;
+			 btn4 = rxbuf[3]&0x01 ? true : false;
+			 btn5 = rxbuf[0]&0x10 ? true : false;
+			 btn6 = rxbuf[1]&0x10 ? true : false;
+			 btn7 = rxbuf[2]&0x10 ? true : false;
+			 btn8 = rxbuf[3]&0x10 ? true : false;
+		 
+		
+		}
+
+
+		// Set the color for a single LED
+		// ------------------------------------
+		// 0 = OFF
+		// 1 = GREEN
+		// 2 = RED
+
+		void tm1638_set_led( uint8_t led, uint8_t cols ){
+			tm1638_send_data( (led << 1) + 1, cols );
+		}
+
+		
+		// SETUP
+		// ------------------
+
+		void setup()
+		{
+			static uint8_t _txbuf[8] __attribute__ ((section (".sram2")));
+			static uint8_t _rxbuf[8] __attribute__ ((section (".sram2")));
+			txbuf = _txbuf;
+			rxbuf = _rxbuf;
+
+			// initialize display and set brightness (0x8a..0x8f)
+			//--------------------------------------------------
+			tm1638_send_command(0x8a); 
+			
+				// Copy the text from the text field into the txt variable
+				strcpy( &txt[0], "attr_display" );
+				// Send the text to the display
+				tm1638_set_7seg_text( txt, 0 );
+			
+		}
+
+		// LOOP
+		// ------------------
+		void loop (){
+			tm1638_read_buttons();
+			//required to handle text display in K-rate
+			chThdSleepMilliseconds( 100 );
+
+			//set LEDs to red or off
+			if ( led_red[1] == true ) {
+				tm1638_set_led( 0, 1 );
+			} 
+			
+			else {
+				tm1638_set_led( 0, 0 );
+			}
+
+			if ( led_red[2] == true ) {
+				tm1638_set_led( 1, 1 );
+			} 
+			else {
+				tm1638_set_led( 1, 0 );
+			}
+
+			if ( led_red[3] == true ) {
+				tm1638_set_led( 2, 1 );
+			} 
+			
+			else {
+				tm1638_set_led( 2, 0 );
+			}
+
+			if ( led_red[4] == true ) {
+				tm1638_set_led( 3, 1 );
+			} 
+			
+			else {
+				tm1638_set_led( 3, 0 );
+			}
+
+			if ( led_red[5] == true ) {
+				tm1638_set_led( 4, 1 );
+			} 
+			
+			else {
+				tm1638_set_led( 4, 0 );
+			}
+
+			if ( led_red[6] == true ) {
+				tm1638_set_led( 5, 1 );
+			} 
+			
+			else {
+				tm1638_set_led( 5, 0 );
+			}
+
+			if ( led_red[7] == true ) {
+				tm1638_set_led( 6, 1 );
+			} 
+			
+			
+			else {
+				tm1638_set_led( 6, 0 );
+			}
+
+			if ( led_red[8] == true ) {
+				tm1638_set_led( 7, 1 );
+			} 
+			
+			else {
+				tm1638_set_led( 7, 0 );
+			}
+
+		chThdSleepMilliseconds( 1 );
+
+					
+		}
+		// ------------------------------------------------------------------------------------------------
+		// THREADS
+		// ------------------------------------------------------------------------------------------------
+
+		msg_t ThreadX2()
+		{
+			setup();
+			while ( !chThdShouldTerminate() ) {
+			loop();
+			chThdSleepMilliseconds( 1 );
+			}
+	
+			chThdExit((msg_t)0);
+		}
+
+		static msg_t ThreadX(void *arg) {
+			((attr_parent *)arg)->ThreadX2();
+		}
+
+		WORKING_AREA(waThreadX, 1024);
+
+		Thread *Thd;]]></code.declaration>
+      <code.init><![CDATA[Thd = chThdCreateStatic(waThreadX, sizeof(waThreadX), NORMALPRIO, ThreadX, (void *)this);
+
+//		 btn1 = false;
+//		 btn2 = false;
+//		 btn3 = false;
+//		 btn4 = false;
+//		 btn5 = false;
+//		 btn6 = false;
+//		 btn7 = false;
+//		 btn8 = false;
+		 
+//		 btn1_on = false;
+//		 btn2_on = false;
+//		 btn3_on = false;
+//		 btn4_on = false;
+//		 btn5_on = false;
+//		 btn6_on = false;
+//		 btn7_on = false;
+//		 btn8_on = false;
+//
+//		buttons_prev = 0;]]></code.init>
+      <code.dispose><![CDATA[chThdTerminate( Thd );
+		chThdWait( Thd );]]></code.dispose>
+      <code.krate><![CDATA[//update text display
+
+if (i1_prev == false){
+			if (inlet_dispupd == true) {tm1638_set_7seg_text(inlet_display, 0 );
+	 				i1_prev = true;
+	 				//chThdSleepMilliseconds( 10 );
+					}
+}
+if (i1_prev == true){			
+		if (inlet_dispupd == false) {i1_prev = false;
+					//chThdSleepMilliseconds( 100 );
+			}
+	}
+
+
+//clear text display
+if (i2_prev == false){		
+		if (inlet_dispres == true) {tm1638_reset();
+	 			i2_prev = true;
+				//chThdSleepMilliseconds( 10 );
+				}		
+		}
+if (inlet_dispres == false && i2_prev == true) {i2_prev = false;
+				//chThdSleepMilliseconds( 10 );
+				}
+
+//transfer local variables to outputs		
+		 outlet_button1 = btn1;
+		 outlet_button2 = btn2;
+		 outlet_button3 = btn3;
+		 outlet_button4 = btn4;
+		 outlet_button5 = btn5;
+		 outlet_button6 = btn6;
+		 outlet_button7 = btn7;
+		 outlet_button8 = btn8;
+
+//transfer inputs to local variables
+	led_red[1]=inlet_LED1rd;
+	led_red[2]=inlet_LED2rd;
+	led_red[3]=inlet_LED3rd;
+	led_red[4]=inlet_LED4rd;
+	led_red[5]=inlet_LED5rd;
+	led_red[6]=inlet_LED6rd;
+	led_red[7]=inlet_LED7rd;
+	led_red[8]=inlet_LED8rd;]]></code.krate>
+   </obj.normal>
+</objdefs>
