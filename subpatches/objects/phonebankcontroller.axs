@@ -1,11 +1,11 @@
 <patch-1.0 appVersion="1.0.12">
    <comment type="patch/comment" x="294" y="42" text="total"/>
    <comment type="patch/comment" x="420" y="42" text="startpatch"/>
-   <obj type="const/i" uuid="e202f44b2df17ae0b3e663b98ea6b14c8ff00408" name="i_1" x="294" y="56">
-      <params/>
-      <attribs>
-         <spinner attributeName="value" value="2"/>
-      </attribs>
+   <obj type="ctrl/i" uuid="a3786816db6ea5bc6ac4193a5cccdb2c83b83496" name="total_patches" x="294" y="56">
+      <params>
+         <int32 name="value" onParent="true" value="2"/>
+      </params>
+      <attribs/>
    </obj>
    <obj type="const/i" uuid="e202f44b2df17ae0b3e663b98ea6b14c8ff00408" name="i_2" x="420" y="56">
       <params/>
@@ -13,7 +13,7 @@
          <spinner attributeName="value" value="0"/>
       </attribs>
    </obj>
-   <obj type="patch/inlet i" uuid="f11927f00c59219df0c50f73056aa19f125540b7" name="currentpatch" x="294" y="182">
+   <obj type="patch/bankindex" uuid="943bd281-10a5-4994-9876-11a3b1fbde8a" name="bankindex_1" x="210" y="154">
       <params/>
       <attribs/>
    </obj>
@@ -123,11 +123,6 @@
    </obj>
    <nets>
       <net>
-         <source obj="i_1" outlet="out"/>
-         <dest obj="==_1" inlet="in1"/>
-         <dest obj="load_5" inlet="i"/>
-      </net>
-      <net>
          <source obj="==_1" outlet="out"/>
          <dest obj="and_1" inlet="i1"/>
       </net>
@@ -143,13 +138,6 @@
       <net>
          <source obj="and_2" outlet="o"/>
          <dest obj="load_4" inlet="trig"/>
-      </net>
-      <net>
-         <source obj="currentpatch" outlet="inlet"/>
-         <dest obj="==_1" inlet="in2"/>
-         <dest obj="+1_1" inlet="a"/>
-         <dest obj="==_2" inlet="in2"/>
-         <dest obj="-1_1" inlet="a"/>
       </net>
       <net>
          <source obj="patch_up" outlet="inlet"/>
@@ -228,14 +216,26 @@
          <source obj="+1_1" outlet="result"/>
          <dest obj="load_4" inlet="i"/>
       </net>
+      <net>
+         <source obj="bankindex_1" outlet="index"/>
+         <dest obj="==_1" inlet="in2"/>
+         <dest obj="+1_1" inlet="a"/>
+         <dest obj="==_2" inlet="in2"/>
+         <dest obj="-1_1" inlet="a"/>
+      </net>
+      <net>
+         <source obj="total_patches" outlet="out"/>
+         <dest obj="==_1" inlet="in1"/>
+         <dest obj="load_5" inlet="i"/>
+      </net>
    </nets>
    <settings>
       <subpatchmode>no</subpatchmode>
    </settings>
    <notes><![CDATA[]]></notes>
    <windowPos>
-      <x>178</x>
-      <y>260</y>
+      <x>-1465</x>
+      <y>-3</y>
       <width>1380</width>
       <height>778</height>
    </windowPos>
