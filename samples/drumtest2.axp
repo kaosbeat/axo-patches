@@ -1,0 +1,279 @@
+<patch-1.0 appVersion="1.0.12">
+   <obj type="audio/out left" uuid="b11a3c09b2fdd575ea8212f2ce7743d5269253b1" name="out_2" x="994" y="56">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="env/adsr m" uuid="98bd39fb828c392b28126d259cb5175e6f6ea34b" name="adsr_1" x="504" y="84">
+      <params>
+         <frac32.s.map name="a" value="-26.0"/>
+         <frac32.s.map name="d" value="-57.0"/>
+         <frac32.u.map name="s" value="1.5"/>
+         <frac32.s.map name="r" value="-64.0"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="fx/lmnts/tube" uuid="DA10F64F-A80A-41DA-A97E-5E010D8E46E9" name="tube_1" x="686" y="84">
+      <params>
+         <frac32.u.map name="frequency" value="64.0"/>
+         <frac32.u.map name="envelope" value="64.0"/>
+         <frac32.u.map name="damping" value="63.0"/>
+         <frac32.u.map name="timbre" value="26.5"/>
+         <frac32.u.map name="gain" value="53.5"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="midi/in/cc any" uuid="eca13eae3f7625f3ca80cadd19a90de033698aa" name="cc_1" x="70" y="98">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="osc/saw" uuid="739ecc36017ef3249479b8f01716b8bbfba9abc1" name="saw_1" x="364" y="98">
+      <params>
+         <frac32.s.map name="pitch" value="4.0"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="math/==" uuid="d80966871d5328696da567bba03c3fa83060f08d" name="==_1" x="266" y="112">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="gain/vca" uuid="a9f2dcd18043e2f47364e45cb8814f63c2a37c0d" name="vca_1" x="616" y="112">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="ctrl/dial p" uuid="cc5d2846c3d50e425f450c4b9851371b54f4d674" name="dial_2" x="168" y="126">
+      <params>
+         <frac32.u.map name="value" value="19.0"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="mix/mix 6 g" uuid="2dd642dee5072357722740c850699b79b8da3008" name="mix_1" x="868" y="196">
+      <params>
+         <frac32.u.map name="gain1" value="28.0">
+            <presets/>
+         </frac32.u.map>
+         <frac32.u.map name="gain2" value="37.0">
+            <presets/>
+         </frac32.u.map>
+         <frac32.u.map name="gain3" value="45.5"/>
+         <frac32.u.map name="gain4" value="33.0">
+            <presets/>
+         </frac32.u.map>
+         <frac32.u.map name="gain5" value="32.5">
+            <presets/>
+         </frac32.u.map>
+         <frac32.u.map name="gain6" value="33.0"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="fx/lmnts/tube" uuid="DA10F64F-A80A-41DA-A97E-5E010D8E46E9" name="tube_2" x="686" y="392">
+      <params>
+         <frac32.u.map name="frequency" value="51.5"/>
+         <frac32.u.map name="envelope" value="20.0"/>
+         <frac32.u.map name="damping" value="47.0"/>
+         <frac32.u.map name="timbre" value="64.0"/>
+         <frac32.u.map name="gain" value="27.5"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="osc/sine" uuid="6e094045cca76a9dbf7ebfa72e44e4700d2b3ba" name="sine_1" x="364" y="462">
+      <params>
+         <frac32.s.map name="pitch" value="0.0"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="env/adsr" uuid="d1dbcc5fa6f87b98a6a91c87fd44acee5e690bac" name="adsr_2" x="476" y="462">
+      <params>
+         <frac32.s.map name="a" value="-64.0"/>
+         <frac32.s.map name="d" value="-44.0"/>
+         <frac32.u.map name="s" value="20.0"/>
+         <frac32.s.map name="r" value="-31.0"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="gain/vca" uuid="a9f2dcd18043e2f47364e45cb8814f63c2a37c0d" name="vca_2" x="574" y="462">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="math/==" uuid="d80966871d5328696da567bba03c3fa83060f08d" name="==_2" x="266" y="476">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="ctrl/dial p" uuid="cc5d2846c3d50e425f450c4b9851371b54f4d674" name="dial_3" x="168" y="490">
+      <params>
+         <frac32.u.map name="value" value="14.0"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="ctrl/dial p" uuid="cc5d2846c3d50e425f450c4b9851371b54f4d674" name="dial_4" x="168" y="588">
+      <params>
+         <frac32.u.map name="value" value="51.0"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="math/==" uuid="d80966871d5328696da567bba03c3fa83060f08d" name="==_3" x="266" y="588">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="ctrl/dial p" uuid="cc5d2846c3d50e425f450c4b9851371b54f4d674" name="dial_5" x="168" y="686">
+      <params>
+         <frac32.u.map name="value" value="33.0"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="math/==" uuid="d80966871d5328696da567bba03c3fa83060f08d" name="==_4" x="266" y="686">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="osc/sine" uuid="6e094045cca76a9dbf7ebfa72e44e4700d2b3ba" name="sine_2" x="378" y="756">
+      <params>
+         <frac32.s.map name="pitch" value="-25.0"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="env/adsr" uuid="d1dbcc5fa6f87b98a6a91c87fd44acee5e690bac" name="adsr_3" x="490" y="756">
+      <params>
+         <frac32.s.map name="a" value="-64.0"/>
+         <frac32.s.map name="d" value="-27.0"/>
+         <frac32.u.map name="s" value="18.0"/>
+         <frac32.s.map name="r" value="-31.0"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="gain/vca" uuid="a9f2dcd18043e2f47364e45cb8814f63c2a37c0d" name="vca_3" x="644" y="756">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="fx/lmnts/diffuser" uuid="C1031A8D-A6A5-4640-9440-5FA1E2FA756E" name="diffuser_1" x="714" y="756">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="ctrl/dial p" uuid="cc5d2846c3d50e425f450c4b9851371b54f4d674" name="dial_6" x="168" y="798">
+      <params>
+         <frac32.u.map name="value" value="25.5"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="math/==" uuid="d80966871d5328696da567bba03c3fa83060f08d" name="==_5" x="266" y="798">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="ctrl/dial p" uuid="cc5d2846c3d50e425f450c4b9851371b54f4d674" name="dial_7" x="168" y="896">
+      <params>
+         <frac32.u.map name="value" value="38.0"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="math/==" uuid="d80966871d5328696da567bba03c3fa83060f08d" name="==_6" x="266" y="896">
+      <params/>
+      <attribs/>
+   </obj>
+   <nets>
+      <net>
+         <source obj="cc_1" outlet="value"/>
+         <dest obj="==_1" inlet="in1"/>
+         <dest obj="==_2" inlet="in1"/>
+         <dest obj="==_4" inlet="in1"/>
+         <dest obj="==_5" inlet="in1"/>
+         <dest obj="==_6" inlet="in1"/>
+         <dest obj="==_3" inlet="in1"/>
+      </net>
+      <net>
+         <source obj="dial_2" outlet="out"/>
+         <dest obj="==_1" inlet="in2"/>
+      </net>
+      <net>
+         <source obj="dial_3" outlet="out"/>
+         <dest obj="==_2" inlet="in2"/>
+      </net>
+      <net>
+         <source obj="dial_4" outlet="out"/>
+         <dest obj="==_3" inlet="in2"/>
+      </net>
+      <net>
+         <source obj="dial_5" outlet="out"/>
+         <dest obj="==_4" inlet="in2"/>
+      </net>
+      <net>
+         <source obj="dial_6" outlet="out"/>
+         <dest obj="==_5" inlet="in2"/>
+      </net>
+      <net>
+         <source obj="dial_7" outlet="out"/>
+         <dest obj="==_6" inlet="in2"/>
+      </net>
+      <net>
+         <source obj="==_1" outlet="out"/>
+         <dest obj="adsr_1" inlet="gate"/>
+      </net>
+      <net>
+         <source obj="adsr_1" outlet="env"/>
+         <dest obj="vca_1" inlet="v"/>
+      </net>
+      <net>
+         <source obj="vca_1" outlet="o"/>
+         <dest obj="tube_1" inlet="in"/>
+      </net>
+      <net>
+         <source obj="saw_1" outlet="wave"/>
+         <dest obj="vca_1" inlet="a"/>
+      </net>
+      <net>
+         <source obj="tube_1" outlet="out"/>
+         <dest obj="mix_1" inlet="in1"/>
+      </net>
+      <net>
+         <source obj="vca_2" outlet="o"/>
+         <dest obj="tube_2" inlet="in"/>
+      </net>
+      <net>
+         <source obj="adsr_2" outlet="env"/>
+         <dest obj="vca_2" inlet="v"/>
+      </net>
+      <net>
+         <source obj="sine_1" outlet="wave"/>
+         <dest obj="vca_2" inlet="a"/>
+      </net>
+      <net>
+         <source obj="==_2" outlet="out"/>
+         <dest obj="adsr_2" inlet="gate"/>
+      </net>
+      <net>
+         <source obj="tube_2" outlet="out"/>
+         <dest obj="mix_1" inlet="in2"/>
+      </net>
+      <net>
+         <source obj="mix_1" outlet="out"/>
+         <dest obj="out_2" inlet="wave"/>
+      </net>
+      <net>
+         <source obj="adsr_3" outlet="env"/>
+         <dest obj="vca_3" inlet="v"/>
+      </net>
+      <net>
+         <source obj="sine_2" outlet="wave"/>
+         <dest obj="vca_3" inlet="a"/>
+      </net>
+      <net>
+         <source obj="vca_3" outlet="o"/>
+         <dest obj="diffuser_1" inlet="in"/>
+      </net>
+      <net>
+         <source obj="diffuser_1" outlet="out"/>
+         <dest obj="mix_1" inlet="in3"/>
+      </net>
+      <net>
+         <source obj="==_3" outlet="out"/>
+         <dest obj="adsr_3" inlet="gate"/>
+      </net>
+   </nets>
+   <settings>
+      <subpatchmode>no</subpatchmode>
+   </settings>
+   <notes><![CDATA[]]></notes>
+   <windowPos>
+      <x>1776</x>
+      <y>136</y>
+      <width>1261</width>
+      <height>1003</height>
+   </windowPos>
+</patch-1.0>
