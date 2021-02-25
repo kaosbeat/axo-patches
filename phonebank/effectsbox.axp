@@ -1,5 +1,5 @@
 <patch-1.0 appVersion="1.0.12">
-   <obj type="phone_interface_buttons_screen" uuid="87d5c5d5-a9c7-45b4-a1ae-cccefb50c860" name="obj_1" x="0" y="28">
+   <obj type="phone_interface_buttons_screen" uuid="f725a976-708d-4323-87f6-f0b42c6aef0e" name="phone_interface_buttons_screen_1" x="0" y="28">
       <params/>
       <attribs/>
    </obj>
@@ -53,8 +53,8 @@
          <attribs/>
          <includes/>
          <code.declaration><![CDATA[//menu and screen and pot state
-char* state[6] = {"filter","reverb","delay","wah", "phaser", "menu"};
-char* patch[3] = {"filterbank","midilooper","moog"};
+char* state[7] = {"filter","reverb","delay","wah", "phaser", "menu", "mixer"};
+char* patch[3] = {"effects","dangerine","1976"};
 int numstates = *(&state + 1) - state - 1;
 int currentstate;
 int patchselect;
@@ -133,6 +133,23 @@ int flg_fdbk_hold;
 char flg_fdbk_c[10];
 int flg_spd_hold;
 char flg_spd_c[10];
+
+
+
+
+
+int mix_Lin_fx_hold;
+char mix_Lin_fx_c[10];
+int mix_Rin_fx_hold;
+char mix_Rin_fx_c[10];
+int mix_Lin_dry_hold;
+char mix_Lin_dry_c[10];
+int mix_Rin_dry_hold;
+char mix_Rin_dry_c[10];
+int mix_drywet_hold;
+char mix_drywet_c[10];
+
+
 
 
 //functions
@@ -276,6 +293,17 @@ flg_depth_hold = 100<<20;
 flg_fdbk_hold= 100<<20;
 flg_spd_hold= 100<<20;
 
+
+mix_Lin_fx_hold= 100<<20;
+mix_Rin_fx_hold= 100<<20;
+mix_Lin_dry_hold= 100<<20;
+mix_Rin_dry_hold= 100<<20;
+mix_drywet_hold= 100<<20;
+
+
+
+
+
 //
 //cc1 = 1;
 //cc1trig = 0;
@@ -336,6 +364,7 @@ if (!(inlet_bottom>0) && bottomtrig) {
 
 
 if (state[currentstate] == "filter"){
+	outlet_S2mode = 2;
 	checkToggleState(inlet_button1,flttrig, fltstate);
 
 	if (fltstate == 1){
@@ -354,6 +383,7 @@ if (state[currentstate] == "filter"){
 
 
 if (state[currentstate] == "reverb"){
+	outlet_S2mode = 2;
 	checkToggleState(inlet_button1,revtrig, revstate);
 
 	if (revstate == 1){
@@ -371,6 +401,7 @@ if (state[currentstate] == "reverb"){
 }
 
 if (state[currentstate] == "delay"){
+	outlet_S2mode = 2;
 	checkToggleState(inlet_button1,deltrig, delstate);
 	if (delstate == 1){
 		outlet_S1L1 = "delay   ON";
@@ -388,6 +419,7 @@ if (state[currentstate] == "delay"){
 
 
 if (state[currentstate] == "wah"){
+	outlet_S2mode = 2;
 	checkToggleState(inlet_button1,wahtrig, wahstate);
 	if (wahstate == 1){
 		outlet_S1L1 = "wah     ON";
@@ -403,6 +435,7 @@ if (state[currentstate] == "wah"){
 
 }
 if (state[currentstate] == "phaser"){
+	outlet_S2mode = 2;
 	checkToggleState(inlet_button1,phstrig, phsstate);
 	if (phsstate == 1){
 		outlet_S1L1 = "phaser  ON";
@@ -419,6 +452,7 @@ if (state[currentstate] == "phaser"){
 }
 
 if (state[currentstate] == "menu"){
+	outlet_S2mode = 2;
 	outlet_S1L1 = "menu";
 	patchselect = inlet_dial5>>23;
 	disp_d1 = patchselect%3;
@@ -427,9 +461,27 @@ if (state[currentstate] == "menu"){
 	outlet_S1L4 = "to load";
 	outlet_loadpatch = patchselect%3;
 	outlet_loadtrig = inlet_button4;
+	
 
 }
 
+if (state[currentstate] == "mixer"){
+//	outlet_S2mode = 0;
+//	outlet_S1L1 = "mixer";
+//	midiCCout(ppchange (inlet_dial5, &mix_drywet_hold, ppwait5), 114, 1);
+//	outlet_S1L3 = addItoS(mix_drywet_hold,"dry/wet",mix_drywet_c);
+//	
+	midiCCout(ppchange (inlet_dial1, &mix_Lin_fx_hold, ppwait1), 96, 1);
+	outlet_S1L1 = addItoS(mix_Lin_fx_hold,"L_fx",mix_Lin_fx_c);
+	midiCCout(ppchange (inlet_dial2, &mix_Rin_fx_hold, ppwait2), 97, 1);		
+	outlet_S1L2 = addItoS(mix_Rin_fx_hold,"R_fx",mix_Rin_fx_c);
+//	midiCCout(ppchange (inlet_dial3, &mix_Lin_dry_hold, ppwait3), 112, 1);
+//	outlet_S1L3 = addItoS(mix_Lin_dry_hold,"L_dry",mix_Lin_dry_c);
+//	midiCCout(ppchange (inlet_dial4, &mix_Rin_dry_hold, ppwait4), 113, 1);		
+//	outlet_S1L4 = addItoS(mix_Rin_dry_hold,"R_dry",mix_Rin_dry_c);
+
+
+}
 
 
 
@@ -450,27 +502,27 @@ if (state[currentstate] == "menu"){
 //	outlet_S1L3 = addItoS(flg_fdbk_hold,"fdbk",flg_fdbk_c);
 //	midiCCout(ppchange (inlet_dial3, &flg_spd_hold, ppwait3), 54, 1);		
 //	outlet_S1L4 = addItoS(flg_spd_hold,"spd",flg_spd_c);
-//
-//}
-
-outlet_S2mode = 2;]]></code.krate>
+//]]></code.krate>
       </object>
    </patchobj>
    <obj type="patch/load i" uuid="b79124f5b7d1e8b39e187677ddab6260ce8c60a3" name="load_1" x="602" y="224">
       <params/>
       <attribs/>
    </obj>
-   <obj type="audio/in left" uuid="d40e60b7641fe75af4d7c91b45bb038aacafc52e" name="in_1" x="140" y="350">
+   <obj type="audio/in left" uuid="d40e60b7641fe75af4d7c91b45bb038aacafc52e" name="in_1" x="154" y="350">
       <params/>
       <attribs/>
    </obj>
-   <obj type="gain/vca" uuid="a9f2dcd18043e2f47364e45cb8814f63c2a37c0d" name="vca_1" x="434" y="420">
-      <params/>
+   <obj type="mix/mix 2 g" uuid="221f038da51943034a75e442c90624fcebfe6112" name="mix_1" x="294" y="406">
+      <params>
+         <frac32.u.map name="gain1" MidiCC="96" value="50.0"/>
+         <frac32.u.map name="gain2" MidiCC="97" value="50.0"/>
+      </params>
       <attribs/>
    </obj>
    <obj type="filter/vcf3" uuid="92455c652cd098cbb682a5497baa18abbf2ef865" name="vcf3_1" x="532" y="420">
       <params>
-         <frac32.s.map name="pitch" MidiCC="17" value="36.0"/>
+         <frac32.s.map name="pitch" MidiCC="17" value="50.0"/>
          <frac32.u.map name="reso" MidiCC="33" value="50.0"/>
       </params>
       <attribs/>
@@ -478,14 +530,14 @@ outlet_S2mode = 2;]]></code.krate>
    <obj type="audio/inconfig l" uuid="7007d026acb7c3586f60a7f0898718d1ca7e0607" name="inconfig_2" x="126" y="434">
       <params/>
       <attribs>
-         <combo attributeName="gain" selection="-12dB"/>
+         <combo attributeName="gain" selection="24dB"/>
          <combo attributeName="boost" selection="0dB"/>
       </attribs>
    </obj>
    <obj type="stomps/reverb1" uuid="5354d961-a49b-47d3-acba-0d662ba23576" name="obj_6" x="714" y="434">
       <params>
          <bool32.tgl name="on" MidiCC="2" value="0"/>
-         <frac32.u.map name="*c_1" MidiCC="18" value="52.5"/>
+         <frac32.u.map name="*c_1" MidiCC="18" value="50.0"/>
          <frac32.u.map name="decay" MidiCC="34" value="50.0"/>
       </params>
       <attribs/>
@@ -501,14 +553,14 @@ outlet_S2mode = 2;]]></code.krate>
    <obj type="stomps/wah1" uuid="eb6024a1-5572-408b-bf95-dfaf705a8bc9" name="obj_7" x="980" y="434">
       <params>
          <bool32.tgl name="on" MidiCC="4" value="0"/>
-         <frac32.u.map name="freq" MidiCC="20" value="57.0"/>
+         <frac32.u.map name="freq" MidiCC="20" value="50.0"/>
          <frac32.u.map name="flt:reso" MidiCC="36" value="50.0"/>
       </params>
       <attribs/>
    </obj>
    <obj type="jho/stomp/phaser" uuid="8309d67b-4f2d-4cf1-a10c-5ddf5bc344cd" name="obj_3" x="1120" y="448">
       <params>
-         <frac32.s.map name="speed" MidiCC="21" value="-41.0"/>
+         <frac32.s.map name="speed" MidiCC="21" value="50.0"/>
          <frac32.u.map name="waveform" value="54.0"/>
          <frac32.u.map name="depth" MidiCC="37" value="50.0"/>
          <frac32.u.map name="offset" value="32.0"/>
@@ -517,10 +569,18 @@ outlet_S2mode = 2;]]></code.krate>
       </params>
       <attribs/>
    </obj>
+   <obj type="mix/xfade" uuid="375dc91d218e96cdc9cbc7e92adb48f705ef701a" name="xfade_1" x="1316" y="476">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="audio/out left" uuid="b11a3c09b2fdd575ea8212f2ce7743d5269253b1" name="out_1" x="1442" y="476">
+      <params/>
+      <attribs/>
+   </obj>
    <obj type="audio/inconfig r" uuid="8468fe7907553f335959a7f69cbc5a1f7b5d4d1d" name="inconfig_1" x="126" y="504">
       <params/>
       <attribs>
-         <combo attributeName="gain" selection="-12dB"/>
+         <combo attributeName="gain" selection="24dB"/>
          <combo attributeName="boost" selection="0dB"/>
       </attribs>
    </obj>
@@ -530,15 +590,14 @@ outlet_S2mode = 2;]]></code.krate>
       </params>
       <attribs/>
    </obj>
-   <obj type="audio/in right" uuid="5f35c9f87b3f291a8120a10db71935bebd186469" name="in_2" x="140" y="574">
-      <params/>
+   <obj type="mix/mix 2 g" uuid="221f038da51943034a75e442c90624fcebfe6112" name="mix_2" x="294" y="574">
+      <params>
+         <frac32.u.map name="gain1" MidiCC="112" value="50.0"/>
+         <frac32.u.map name="gain2" MidiCC="113" value="50.0"/>
+      </params>
       <attribs/>
    </obj>
-   <obj type="audio/out left" uuid="b11a3c09b2fdd575ea8212f2ce7743d5269253b1" name="out_1" x="1400" y="588">
-      <params/>
-      <attribs/>
-   </obj>
-   <obj type="audio/out right" uuid="e58a4cbbb087052c5480366e3f5d3a04aa319777" name="out_2" x="1400" y="644">
+   <obj type="audio/in right" uuid="5f35c9f87b3f291a8120a10db71935bebd186469" name="in_2" x="140" y="602">
       <params/>
       <attribs/>
    </obj>
@@ -556,124 +615,120 @@ outlet_S2mode = 2;]]></code.krate>
          <dest obj="obj_3" inlet="in"/>
       </net>
       <net>
-         <source obj="obj_1" outlet="forward"/>
+         <source obj="phone_interface_buttons_screen_1" outlet="forward"/>
          <dest obj="object_1" inlet="forward"/>
       </net>
       <net>
-         <source obj="obj_1" outlet="backward"/>
+         <source obj="phone_interface_buttons_screen_1" outlet="backward"/>
          <dest obj="object_1" inlet="backward"/>
       </net>
       <net>
-         <source obj="in_1" outlet="wave"/>
-         <dest obj="vca_1" inlet="a"/>
-      </net>
-      <net>
-         <source obj="obj_1" outlet="top"/>
+         <source obj="phone_interface_buttons_screen_1" outlet="top"/>
          <dest obj="object_1" inlet="top"/>
       </net>
       <net>
-         <source obj="obj_1" outlet="bottom"/>
+         <source obj="phone_interface_buttons_screen_1" outlet="bottom"/>
          <dest obj="object_1" inlet="bottom"/>
       </net>
       <net>
-         <source obj="obj_1" outlet="toggle 1"/>
+         <source obj="phone_interface_buttons_screen_1" outlet="toggle 1"/>
          <dest obj="object_1" inlet="toggle1"/>
       </net>
       <net>
-         <source obj="obj_1" outlet="toggle 2"/>
+         <source obj="phone_interface_buttons_screen_1" outlet="toggle 2"/>
          <dest obj="object_1" inlet="toggle2"/>
       </net>
       <net>
-         <source obj="obj_1" outlet="dial 1"/>
+         <source obj="phone_interface_buttons_screen_1" outlet="dial 1"/>
          <dest obj="object_1" inlet="dial1"/>
       </net>
       <net>
-         <source obj="obj_1" outlet="dial 2"/>
+         <source obj="phone_interface_buttons_screen_1" outlet="dial 2"/>
          <dest obj="object_1" inlet="dial2"/>
       </net>
       <net>
-         <source obj="obj_1" outlet="dial 3"/>
+         <source obj="phone_interface_buttons_screen_1" outlet="dial 3"/>
          <dest obj="object_1" inlet="dial3"/>
       </net>
       <net>
-         <source obj="obj_1" outlet="dial 4"/>
+         <source obj="phone_interface_buttons_screen_1" outlet="dial 4"/>
          <dest obj="object_1" inlet="dial4"/>
       </net>
       <net>
-         <source obj="obj_1" outlet="dial 5"/>
+         <source obj="phone_interface_buttons_screen_1" outlet="dial 5"/>
          <dest obj="object_1" inlet="dial5"/>
       </net>
       <net>
-         <source obj="obj_1" outlet="dial 6"/>
-         <dest obj="vca_1" inlet="v"/>
+         <source obj="phone_interface_buttons_screen_1" outlet="dial 6"/>
+         <dest obj="xfade_1" inlet="c"/>
          <dest obj="object_1" inlet="dial6"/>
       </net>
       <net>
-         <source obj="obj_1" outlet="up"/>
+         <source obj="phone_interface_buttons_screen_1" outlet="up"/>
          <dest obj="object_1" inlet="up"/>
       </net>
       <net>
-         <source obj="obj_1" outlet="down"/>
+         <source obj="phone_interface_buttons_screen_1" outlet="down"/>
          <dest obj="object_1" inlet="down"/>
       </net>
       <net>
          <source obj="object_1" outlet="S1L1"/>
-         <dest obj="obj_1" inlet="S1_L1"/>
+         <dest obj="phone_interface_buttons_screen_1" inlet="S1_L1"/>
       </net>
       <net>
          <source obj="object_1" outlet="S1L2"/>
-         <dest obj="obj_1" inlet="S1_L2"/>
+         <dest obj="phone_interface_buttons_screen_1" inlet="S1_L2"/>
       </net>
       <net>
          <source obj="object_1" outlet="S1L3"/>
-         <dest obj="obj_1" inlet="S1_L3"/>
+         <dest obj="phone_interface_buttons_screen_1" inlet="S1_L3"/>
       </net>
       <net>
          <source obj="object_1" outlet="S1L4"/>
-         <dest obj="obj_1" inlet="S1_L4"/>
+         <dest obj="phone_interface_buttons_screen_1" inlet="S1_L4"/>
       </net>
       <net>
          <source obj="object_1" outlet="S1mode"/>
-         <dest obj="obj_1" inlet="S1mode"/>
+         <dest obj="phone_interface_buttons_screen_1" inlet="S1mode"/>
       </net>
       <net>
          <source obj="object_1" outlet="S2L1"/>
-         <dest obj="obj_1" inlet="S2_L1"/>
+         <dest obj="phone_interface_buttons_screen_1" inlet="S2_L1"/>
       </net>
       <net>
          <source obj="object_1" outlet="S2L2"/>
-         <dest obj="obj_1" inlet="S2_L2"/>
+         <dest obj="phone_interface_buttons_screen_1" inlet="S2_L2"/>
       </net>
       <net>
          <source obj="object_1" outlet="S2L3"/>
-         <dest obj="obj_1" inlet="S2_L3"/>
+         <dest obj="phone_interface_buttons_screen_1" inlet="S2_L3"/>
       </net>
       <net>
          <source obj="object_1" outlet="S2L4"/>
-         <dest obj="obj_1" inlet="S2_L4"/>
+         <dest obj="phone_interface_buttons_screen_1" inlet="S2_L4"/>
       </net>
       <net>
          <source obj="object_1" outlet="S2mode"/>
-         <dest obj="obj_1" inlet="S2mode"/>
+         <dest obj="phone_interface_buttons_screen_1" inlet="S2mode"/>
       </net>
       <net>
-         <source obj="obj_1" outlet="button 2"/>
+         <source obj="phone_interface_buttons_screen_1" outlet="button 2"/>
          <dest obj="object_1" inlet="button2"/>
       </net>
       <net>
-         <source obj="obj_1" outlet="button 3"/>
+         <source obj="phone_interface_buttons_screen_1" outlet="button 3"/>
          <dest obj="object_1" inlet="button3"/>
       </net>
       <net>
-         <source obj="obj_1" outlet="button 4"/>
+         <source obj="phone_interface_buttons_screen_1" outlet="button 4"/>
          <dest obj="object_1" inlet="button4"/>
       </net>
       <net>
-         <source obj="obj_1" outlet="button 1"/>
+         <source obj="phone_interface_buttons_screen_1" outlet="button 1"/>
          <dest obj="object_1" inlet="button1"/>
       </net>
       <net>
-         <source obj="vca_1" outlet="o"/>
+         <source obj="mix_1" outlet="out"/>
          <dest obj="vcf3_1" inlet="in"/>
          <dest obj="obj_2" inlet="a"/>
       </net>
@@ -687,12 +742,13 @@ outlet_S2mode = 2;]]></code.krate>
       </net>
       <net>
          <source obj="obj_3" outlet="out"/>
-         <dest obj="out_1" inlet="wave"/>
-         <dest obj="obj_1" inlet="scope2"/>
+         <dest obj="xfade_1" inlet="i1"/>
+         <dest obj="phone_interface_buttons_screen_1" inlet="scope2"/>
       </net>
       <net>
          <source obj="in_2" outlet="wave"/>
-         <dest obj="out_2" inlet="wave"/>
+         <dest obj="mix_1" inlet="in2"/>
+         <dest obj="mix_2" inlet="in2"/>
       </net>
       <net>
          <source obj="object_1" outlet="loadpatch"/>
@@ -702,14 +758,27 @@ outlet_S2mode = 2;]]></code.krate>
          <source obj="object_1" outlet="loadtrig"/>
          <dest obj="load_1" inlet="trig"/>
       </net>
+      <net>
+         <source obj="in_1" outlet="wave"/>
+         <dest obj="mix_1" inlet="in1"/>
+         <dest obj="mix_2" inlet="in1"/>
+      </net>
+      <net>
+         <source obj="xfade_1" outlet="o"/>
+         <dest obj="out_1" inlet="wave"/>
+      </net>
+      <net>
+         <source obj="mix_2" outlet="out"/>
+         <dest obj="xfade_1" inlet="i2"/>
+      </net>
    </nets>
    <settings>
       <subpatchmode>no</subpatchmode>
    </settings>
    <notes><![CDATA[]]></notes>
    <windowPos>
-      <x>-1569</x>
-      <y>-93</y>
+      <x>98</x>
+      <y>234</y>
       <width>1765</width>
       <height>868</height>
    </windowPos>

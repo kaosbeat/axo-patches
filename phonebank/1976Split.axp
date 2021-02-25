@@ -1,30 +1,346 @@
 <patch-1.0 appVersion="1.0.12">
-   <obj type="phone_interface_buttons" uuid="4c0d9077-b4c1-4c92-9172-fc2aa9067a3d" name="obj_1" x="0" y="0">
-      <params>
-         <bin16 name="seqg" value="4"/>
-         <bin16 name="seqr" value="0"/>
-      </params>
+   <obj type="phone_interface_buttons_screen" uuid="f725a976-708d-4323-87f6-f0b42c6aef0e" name="obj_1" x="0" y="0">
+      <params/>
       <attribs/>
    </obj>
-   <obj type="lfo/sine" uuid="75f7330c26a13953215dccc3b7b9008545c9daa9" name="sine_6" x="224" y="182">
+   <patchobj type="patch/object" uuid="daee1ce6-92c6-4d98-9cb0-801c1ee91042" name="object_1" x="238" y="0">
+      <params/>
+      <attribs/>
+      <object id="patch/object" uuid="daee1ce6-92c6-4d98-9cb0-801c1ee91042">
+         <inlets>
+            <bool32 name="top"/>
+            <bool32 name="bottom"/>
+            <bool32 name="toggle1"/>
+            <bool32 name="toggle2"/>
+            <frac32.positive name="dial1"/>
+            <frac32.positive name="dial2"/>
+            <frac32.positive name="dial3"/>
+            <frac32.positive name="dial4"/>
+            <frac32.positive name="dial5"/>
+            <frac32.positive name="dial6"/>
+            <bool32 name="button1"/>
+            <bool32 name="button2"/>
+            <bool32 name="button3"/>
+            <bool32 name="button4"/>
+            <bool32 name="forward"/>
+            <bool32 name="backward"/>
+            <bool32 name="up"/>
+            <bool32 name="down"/>
+         </inlets>
+         <outlets>
+            <charptr32 name="S1L1"/>
+            <charptr32 name="S1L2"/>
+            <charptr32 name="S1L3"/>
+            <charptr32 name="S1L4"/>
+            <int32 name="S1mode"/>
+            <charptr32 name="S2L1"/>
+            <charptr32 name="S2L2"/>
+            <charptr32 name="S2L3"/>
+            <charptr32 name="S2L4"/>
+            <int32 name="S2mode"/>
+            <int32 name="cc1"/>
+            <bool32 name="cc1trig"/>
+            <frac32.positive name="cc1val"/>
+            <frac32.bipolar name="o2freq"/>
+            <frac32.positive name="vol"/>
+            <int32 name="loadpatch"/>
+            <bool32 name="loadtrig"/>
+         </outlets>
+         <displays>
+            <int32.label name="d1"/>
+         </displays>
+         <params/>
+         <attribs/>
+         <includes/>
+         <code.declaration><![CDATA[//menu and screen and pot state
+char* state[2] = {"1976", "menu"};
+char* patch[3] = {"effects","dangerine","1976"};
+int numstates = *(&state + 1) - state - 1;
+int currentstate;
+int patchselect;
+bool ppwait1;
+bool ppwait2;
+bool ppwait3;
+bool ppwait4;
+bool ppwait5;
+bool ppwait6;
+int32_t lsend;
+int timer;
+
+
+
+//int *holdp;
+//int *inp
+//int 
+
+//main menu params
+int volhold;
+
+//button debouncing
+int toptrig;
+int bottomtrig;
+
+
+
+//mainmix
+int mmix_dange1_hold; 
+int mmix_dange2_hold; 
+int mmix_delay1_hold;
+int mmix_delay2_hold;
+int mmix_delay3_hold;
+char mmix_dange1_c[10]; 
+char mmix_dange2_c[10]; 
+char mmix_delay1_c[10];
+char mmix_delay2_c[10];
+char mmix_delay3_c[10];
+
+
+int ngin_Adsr_hold;
+int ngin_aDsr_hold;
+int ngin_adSr_hold;
+int ngin_adsR_hold;
+int ngin_flt_ptch_hold;
+int ngin_flt_reso_hold;
+char ngin_Adsr_c[10];
+char ngin_aDsr_c[10];
+char ngin_adSr_c[10];
+char ngin_adsR_c[10];
+char ngin_flt_ptch_c[10];
+char ngin_flt_reso_c[10];
+
+//functions
+// function definition to swap the values.
+void swap(int& x, int& y) {
+
+   int temp;
+   temp = x; /* save the value at address x */
+   x = y;    /* put y into x */
+   y = temp; /* put x into y */
+  
+   return;
+}
+
+// pot pickup function
+int32_t ppchange (int in, int* hold, bool &ppwait){
+//	if (timer==0) LogTextMessage((char*)(ppwait));
+	if (ppwait==true){
+		if (abs(in - *hold)>>20 < 2) {
+			ppwait = false;
+			
+		}
+		return *hold; ///goes to out!
+	} else {
+		*hold = in;
+		return in; ///goes to out!
+	}
+}
+
+
+//append int tot str
+char* addItoS(int i, char* s, char* c){
+	int32_t v = __SSAT(i,28)>>21;
+	strcpy(&c[2],s);
+	c[0] = 1;
+	if(v >= 0)
+  		c[1] = (uint8_t)(v + 1); // must not be zero !
+	else 
+	  	c[1] = (uint8_t)(256 + v); 
+	return c;
+}
+
+char* inttobar(int i) {
+	char c[2];
+	int32_t v = __SSAT(i,28)>>21;
+	if(v >= 0)
+  		c[0] = (uint8_t)(v + 1); // must not be zero !
+	else 
+  		c[0] = (uint8_t)(256 + v); 
+//  	char k[5];
+//  	strncpy(c,k,5);
+//  	k[5] = '\0';
+//	return k;
+	return (char*)(i);
+}
+
+void checkToggleState(int inlet, int &trigstate, int &state){
+	if (!(inlet>0) && trigstate) {
+   		trigstate = 0;
+	}
+	if ((inlet>0) && !trigstate) {
+   		trigstate = 1;
+   		if (state == 1)
+   			state = 0;
+   		else
+   			state = 1;
+	}
+}
+
+
+
+
+
+
+///midiCCthin
+void midiCCout(int v, int cc, int channel){
+	if (((lsend>v+(1<<19))||(v>lsend+(1<<19))) && (timer>60)) {
+	   lsend = v;
+	   PatchMidiInHandler(MIDI_DEVICE_INTERNAL ,0,MIDI_CONTROL_CHANGE + (channel-1),cc,__USAT(v>>20,7));
+	   timer = 0;
+	} else timer++;
+}]]></code.declaration>
+         <code.init><![CDATA[//state
+currentstate = 0;
+patchselect = 0;
+ppwait1=true; //enable potpickup wait on change
+ppwait2=true;
+ppwait3=true;
+ppwait4=true;
+ppwait5=true;
+ppwait6=true;
+//ppwait1=false; //enable potpickup wait on change
+//ppwait2=false;
+//ppwait3=false;
+//ppwait4=false;
+//ppwait5=false;
+//ppwait6=false;
+timer = 0;
+
+//buttons
+toptrig = 0;
+bottomtrig = 0;
+
+
+//outlets
+//freq1hold = 0;
+//freq2hold = 0;
+//volhold = 100<<20;\
+
+
+
+
+//
+//cc1 = 1;
+//cc1trig = 0;
+//cc1val  = 0;]]></code.init>
+         <code.krate><![CDATA[//// pot pickup function declaration
+//int32_t ppchange (int32_t in);//, int32_t* hold);
+//void swap(int& x, int& y);
+
+outlet_loadtrig = 0;
+outlet_S1L1 = "";
+outlet_S1L2 = "";
+outlet_S1L3 = "";
+outlet_S1L4 = "";
+///buttonpresses MENU up/down
+if ((inlet_top>0) && !toptrig) {
+   if (currentstate < numstates) { 
+   	currentstate++;
+   } else {
+   	currentstate = 0;
+   }
+   toptrig = 1;
+   ppwait1=true; //enable potpickup wait on change
+   ppwait2=true;
+   ppwait3=true;
+   ppwait4=true;
+   ppwait5=true;
+   ppwait6=true;
+}
+if (!(inlet_top>0) && toptrig) {
+   toptrig = 0;
+}
+
+
+if ((inlet_bottom>0) && !bottomtrig) {
+   
+   if (currentstate > 0) { 
+   	currentstate--;
+   } else {
+   	currentstate = numstates;
+   }
+   bottomtrig = 1;
+   ppwait1=true; //enable potpickup wait on change
+   ppwait2=true;
+   ppwait3=true;
+   ppwait4=true;
+   ppwait5=true;
+   ppwait6=true;
+}
+
+
+if (!(inlet_bottom>0) && bottomtrig) {
+   bottomtrig = 0;
+}
+
+//outlet_S1L1 = state[currentstate];
+
+//midiCCout(127, 1, 1);
+
+if (state[currentstate] == "1976"){
+	outlet_S1L1 = "1976";
+
+}
+
+
+
+
+if (state[currentstate] == "menu"){
+	outlet_S1L1 = "menu";
+	patchselect = inlet_dial5>>23;
+	disp_d1 = patchselect%3;
+	outlet_S1L2 = patch[patchselect%3];
+	outlet_S1L3 = "press B4";
+	outlet_S1L4 = "to load";
+	outlet_loadpatch = patchselect%3;
+	outlet_loadtrig = inlet_button4;
+
+}
+
+
+
+
+
+// //works with stomps/flanger
+//if (state[currentstate] == "flanger"){
+//	checkToggleState(inlet_button1,flgtrig, flgstate);
+//	if (flgstate == 1){
+//		outlet_S1L1 = "flanger ON";
+//		midiCCout(127<<20, 6, 1);
+//	} else {
+//		outlet_S1L1 = "flanger OFF";
+//		midiCCout(0, 6, 1);
+//	}
+//	midiCCout(ppchange (inlet_dial1, &flg_depth_hold, ppwait1), 22, 1);
+//	outlet_S1L2 = addItoS(flg_depth_hold,"dpth",flg_depth_c);
+//	midiCCout(ppchange (inlet_dial2, &flg_fdbk_hold, ppwait2), 38, 1);		
+//	outlet_S1L3 = addItoS(flg_fdbk_hold,"fdbk",flg_fdbk_c);
+//	midiCCout(ppchange (inlet_dial3, &flg_spd_hold, ppwait3), 54, 1);		
+//	outlet_S1L4 = addItoS(flg_spd_hold,"spd",flg_spd_c);
+//
+//}
+
+outlet_S2mode = 0;]]></code.krate>
+      </object>
+   </patchobj>
+   <obj type="lfo/sine" uuid="75f7330c26a13953215dccc3b7b9008545c9daa9" name="sine_6" x="406" y="182">
       <params>
          <frac32.s.map name="pitch" value="-34.0"/>
       </params>
       <attribs/>
    </obj>
-   <obj type="math/*c" uuid="7d5ef61c3bcd571ee6bbd8437ef3612125dfb225" name="*c_1" x="322" y="182">
+   <obj type="math/*c" uuid="7d5ef61c3bcd571ee6bbd8437ef3612125dfb225" name="*c_1" x="504" y="182">
       <params>
          <frac32.u.map name="amp" value="3.5"/>
       </params>
       <attribs/>
    </obj>
-   <obj type="lfo/sine" uuid="75f7330c26a13953215dccc3b7b9008545c9daa9" name="sine_1" x="420" y="182">
+   <obj type="lfo/sine" uuid="75f7330c26a13953215dccc3b7b9008545c9daa9" name="sine_1" x="602" y="182">
       <params>
          <frac32.s.map name="pitch" value="2.0"/>
       </params>
       <attribs/>
    </obj>
-   <obj type="mix/mix 4" uuid="d464e7be146a755212e37afdb57a018c87b3f54" name="mix_1" x="518" y="182">
+   <obj type="mix/mix 4" uuid="d464e7be146a755212e37afdb57a018c87b3f54" name="mix_1" x="700" y="182">
       <params>
          <frac32.u.map name="gain1" value="35.5"/>
          <frac32.u.map name="gain2" value="9.5"/>
@@ -33,7 +349,7 @@
       </params>
       <attribs/>
    </obj>
-   <obj type="tiar/oscBnk/Osc Bnk I" uuid="e7e2f25e-ee0a-42c8-baec-7f68d3d0adca" name="Osc_1" x="602" y="182">
+   <obj type="tiar/oscBnk/Osc Bnk I" uuid="e7e2f25e-ee0a-42c8-baec-7f68d3d0adca" name="Osc_1" x="784" y="182">
       <params>
          <frac32.s.map name="Attack" value="-7.0"/>
          <frac32.s.map name="Release" value="48.0"/>
@@ -45,41 +361,41 @@
          <combo attributeName="algo" selection="DPW"/>
       </attribs>
    </obj>
-   <obj type="filter/hp" uuid="7829b56456e975f1d89bda2ad1c7ad678080a73b" name="hp_1" x="700" y="182">
+   <obj type="filter/hp" uuid="7829b56456e975f1d89bda2ad1c7ad678080a73b" name="hp_1" x="882" y="182">
       <params>
          <frac32.s.map name="pitch" value="-13.0"/>
          <frac32.u.map name="reso" value="0.0"/>
       </params>
       <attribs/>
    </obj>
-   <obj type="filter/lp1" uuid="1b1fd7085e44d2b7b80b59b8d68796b909c1b2cc" name="lp1_1" x="798" y="182">
+   <obj type="filter/lp1" uuid="1b1fd7085e44d2b7b80b59b8d68796b909c1b2cc" name="lp1_1" x="980" y="182">
       <params>
          <frac32.s.map name="freq" value="64.0"/>
       </params>
       <attribs/>
    </obj>
-   <obj type="tiar/dist/DPSoftClip" uuid="4664e423-ca15-4925-952a-6d150aa652da" name="DPSoftClip_1" x="910" y="182">
+   <obj type="tiar/dist/DPSoftClip" uuid="4664e423-ca15-4925-952a-6d150aa652da" name="DPSoftClip_1" x="1092" y="182">
       <params>
          <frac32.u.map name="InGain" value="27.5"/>
          <frac32.u.map name="OutGain" value="16.0"/>
       </params>
       <attribs/>
    </obj>
-   <obj type="midi/in/keyb zone" uuid="e7413176a91acc060036fd7f68fda24bbee265d3" name="keyb_1" x="1050" y="182">
+   <obj type="midi/in/keyb zone" uuid="e7413176a91acc060036fd7f68fda24bbee265d3" name="keyb_1" x="1232" y="182">
       <params/>
       <attribs>
          <spinner attributeName="startNote" value="72"/>
          <spinner attributeName="endNote" value="127"/>
       </attribs>
    </obj>
-   <obj type="mix/mix 2" uuid="682ea5496ded046d981e26b720a6e7f8eca97541" name="mix_3" x="1148" y="182">
+   <obj type="mix/mix 2" uuid="682ea5496ded046d981e26b720a6e7f8eca97541" name="mix_3" x="1330" y="182">
       <params>
          <frac32.u.map name="gain1" value="21.0"/>
          <frac32.u.map name="gain2" value="1.5"/>
       </params>
       <attribs/>
    </obj>
-   <obj type="tiar/osc/Steps/SixBLISync" uuid="57ed4042-b950-4049-bd9b-ca568480c278" name="SixStepsBLISync_1" x="1232" y="182">
+   <obj type="tiar/osc/Steps/SixBLISync" uuid="57ed4042-b950-4049-bd9b-ca568480c278" name="SixStepsBLISync_1" x="1414" y="182">
       <params>
          <frac32.s.map name="pitch slave" value="-24.0"/>
          <frac32.s.map name="pitch master" value="-16.0"/>
@@ -92,7 +408,7 @@
       </params>
       <attribs/>
    </obj>
-   <obj type="env/adsr" uuid="d1dbcc5fa6f87b98a6a91c87fd44acee5e690bac" name="adsr_1" x="1386" y="182">
+   <obj type="env/adsr" uuid="d1dbcc5fa6f87b98a6a91c87fd44acee5e690bac" name="adsr_1" x="1568" y="182">
       <params>
          <frac32.s.map name="a" value="-64.0"/>
          <frac32.s.map name="d" value="-64.0"/>
@@ -101,21 +417,21 @@
       </params>
       <attribs/>
    </obj>
-   <obj type="mix/mix 2" uuid="682ea5496ded046d981e26b720a6e7f8eca97541" name="mix_5" x="1498" y="182">
+   <obj type="mix/mix 2" uuid="682ea5496ded046d981e26b720a6e7f8eca97541" name="mix_5" x="1680" y="182">
       <params>
          <frac32.u.map name="gain1" value="64.0"/>
          <frac32.u.map name="gain2" value="32.0"/>
       </params>
       <attribs/>
    </obj>
-   <obj type="tiar/filter/ZDF SVF 1" uuid="f6cd89ac-2ff5-4c22-82d9-e487e9c85e9f" name="ZDF_1" x="1582" y="182">
+   <obj type="tiar/filter/ZDF SVF 1" uuid="f6cd89ac-2ff5-4c22-82d9-e487e9c85e9f" name="ZDF_1" x="1764" y="182">
       <params>
          <frac32.s.map name="pitch" value="-4.0"/>
          <frac32.u.map name="Q" value="22.5"/>
       </params>
       <attribs/>
    </obj>
-   <obj type="tiar/filter/APChain" uuid="7875c220-4569-4ce4-a213-0f765024bef8" name="APChain_2" x="1708" y="182">
+   <obj type="tiar/filter/APChain" uuid="7875c220-4569-4ce4-a213-0f765024bef8" name="APChain_2" x="1890" y="182">
       <params>
          <frac32.u.map name="freq" value="6.0"/>
          <frac32.s.map name="g2" value="8.0"/>
@@ -124,71 +440,71 @@
          <combo attributeName="order" selection="12"/>
       </attribs>
    </obj>
-   <obj type="mix/mix 1" uuid="e8f482af5b1ec4a2e9cf8ac7ce09e7c0e43cea08" name="mix_6" x="1806" y="182">
+   <obj type="mix/mix 1" uuid="e8f482af5b1ec4a2e9cf8ac7ce09e7c0e43cea08" name="mix_6" x="1988" y="182">
       <params>
          <frac32.u.map name="gain1" value="64.0"/>
       </params>
       <attribs/>
    </obj>
-   <obj type="gain/vca" uuid="a9f2dcd18043e2f47364e45cb8814f63c2a37c0d" name="vca_1" x="1904" y="182">
+   <obj type="gain/vca" uuid="a9f2dcd18043e2f47364e45cb8814f63c2a37c0d" name="vca_1" x="2086" y="182">
       <params/>
       <attribs/>
    </obj>
-   <obj type="mix/mix 1" uuid="e8f482af5b1ec4a2e9cf8ac7ce09e7c0e43cea08" name="mix_4" x="1960" y="182">
+   <obj type="mix/mix 1" uuid="e8f482af5b1ec4a2e9cf8ac7ce09e7c0e43cea08" name="mix_4" x="2142" y="182">
       <params>
          <frac32.u.map name="gain1" value="42.0"/>
       </params>
       <attribs/>
    </obj>
-   <obj type="lfo/sine" uuid="75f7330c26a13953215dccc3b7b9008545c9daa9" name="sine_2" x="224" y="266">
+   <obj type="lfo/sine" uuid="75f7330c26a13953215dccc3b7b9008545c9daa9" name="sine_2" x="406" y="266">
       <params>
          <frac32.s.map name="pitch" value="-27.0"/>
       </params>
       <attribs/>
    </obj>
-   <obj type="lfo/sine" uuid="75f7330c26a13953215dccc3b7b9008545c9daa9" name="sine_3" x="322" y="266">
+   <obj type="lfo/sine" uuid="75f7330c26a13953215dccc3b7b9008545c9daa9" name="sine_3" x="504" y="266">
       <params>
          <frac32.s.map name="pitch" value="10.429999828338623"/>
       </params>
       <attribs/>
    </obj>
-   <obj type="lfo/sine" uuid="75f7330c26a13953215dccc3b7b9008545c9daa9" name="sine_4" x="420" y="266">
+   <obj type="lfo/sine" uuid="75f7330c26a13953215dccc3b7b9008545c9daa9" name="sine_4" x="602" y="266">
       <params>
          <frac32.s.map name="pitch" value="16.619999408721924"/>
       </params>
       <attribs/>
    </obj>
-   <comment type="patch/comment" x="714" y="336" text="A paraphonic String Machine"/>
-   <comment type="patch/comment" x="336" y="350" text="Some mixture LFO for a nice vibrato"/>
-   <obj type="lfo/sine" uuid="75f7330c26a13953215dccc3b7b9008545c9daa9" name="sine_8" x="1442" y="392">
+   <comment type="patch/comment" x="896" y="336" text="A paraphonic String Machine"/>
+   <comment type="patch/comment" x="518" y="350" text="Some mixture LFO for a nice vibrato"/>
+   <obj type="lfo/sine" uuid="75f7330c26a13953215dccc3b7b9008545c9daa9" name="sine_8" x="1624" y="392">
       <params>
          <frac32.s.map name="pitch" value="-23.0"/>
       </params>
       <attribs/>
    </obj>
-   <obj type="math/*c" uuid="7d5ef61c3bcd571ee6bbd8437ef3612125dfb225" name="*c_2" x="1540" y="392">
+   <obj type="math/*c" uuid="7d5ef61c3bcd571ee6bbd8437ef3612125dfb225" name="*c_2" x="1722" y="392">
       <params>
          <frac32.u.map name="amp" value="3.5"/>
       </params>
       <attribs/>
    </obj>
-   <comment type="patch/comment" x="938" y="420" text="A little reverb"/>
-   <obj type="phi/lfo/slowlfo2" uuid="f378ff44-c9bb-4dbd-81e6-36d6338af913" name="slowlfo2_1" x="224" y="434">
+   <comment type="patch/comment" x="1120" y="420" text="A little reverb"/>
+   <obj type="phi/lfo/slowlfo2" uuid="f378ff44-c9bb-4dbd-81e6-36d6338af913" name="slowlfo2_1" x="406" y="434">
       <params>
          <frac32.s.map name="pitch" value="-37.0"/>
          <int32 name="div" value="2"/>
       </params>
       <attribs/>
    </obj>
-   <obj type="mix/mix 3" uuid="7d947bff9b8466d81c2ddd49b4a7fb702302e05c" name="mix_2" x="322" y="434">
+   <obj type="mix/mix 3" uuid="7d947bff9b8466d81c2ddd49b4a7fb702302e05c" name="mix_2" x="504" y="434">
       <params>
-         <frac32.u.map name="gain1" MidiCC="2" value="7.5"/>
-         <frac32.u.map name="gain2" MidiCC="3" value="0.0"/>
-         <frac32.u.map name="gain3" MidiCC="4" value="17.5"/>
+         <frac32.u.map name="gain1" MidiCC="2" value="51.5"/>
+         <frac32.u.map name="gain2" MidiCC="3" value="23.0"/>
+         <frac32.u.map name="gain3" MidiCC="4" value="40.0"/>
       </params>
       <attribs/>
    </obj>
-   <obj type="tiar/kfunc/b8u" uuid="a01253ac-ca4b-430b-901f-cd378aad394c" name="b8u_1" x="406" y="434">
+   <obj type="tiar/kfunc/b8u" uuid="a01253ac-ca4b-430b-901f-cd378aad394c" name="b8u_1" x="588" y="434">
       <params>
          <frac32.u.mapvsl name="p0" value="2.0"/>
          <frac32.u.mapvsl name="p1" value="7.5"/>
@@ -202,60 +518,58 @@
       </params>
       <attribs/>
    </obj>
-   <obj type="tiar/filter/APChain" uuid="7875c220-4569-4ce4-a213-0f765024bef8" name="APChain_1" x="602" y="434">
+   <obj type="tiar/filter/APChain" uuid="7875c220-4569-4ce4-a213-0f765024bef8" name="APChain_1" x="784" y="434">
       <params>
-         <frac32.u.map name="freq" MidiCC="1" value="63.99999952316284"/>
+         <frac32.u.map name="freq" MidiCC="1" value="21.5"/>
          <frac32.s.map name="g2" value="26.0"/>
       </params>
       <attribs>
          <combo attributeName="order" selection="4"/>
       </attribs>
    </obj>
-   <obj type="math/+" uuid="faedbea4612d9bd3644d6d3bf31946d848a70e19" name="+_1" x="700" y="434">
+   <obj type="math/+" uuid="faedbea4612d9bd3644d6d3bf31946d848a70e19" name="+_1" x="882" y="434">
       <params/>
       <attribs/>
    </obj>
-   <obj type="tiar/fx/nestVerb" uuid="1fe4ba32-848b-48e4-bc7b-1287135b1a31" name="nestVerb_1" x="938" y="434">
+   <obj type="tiar/fx/nestVerb" uuid="1fe4ba32-848b-48e4-bc7b-1287135b1a31" name="nestVerb_1" x="1120" y="434">
       <params/>
       <attribs/>
    </obj>
-   <obj type="audio/out stereo" uuid="a1ca7a567f535acc21055669829101d3ee7f0189" name="out_1" x="1036" y="434">
+   <obj type="audio/out stereo" uuid="a1ca7a567f535acc21055669829101d3ee7f0189" name="out_1" x="1218" y="434">
       <params/>
       <attribs/>
    </obj>
-   <comment type="patch/comment" x="532" y="518" text="------&gt;"/>
-   <comment type="patch/comment" x="714" y="518" text="&lt;------"/>
-   <obj type="lfo/sine" uuid="75f7330c26a13953215dccc3b7b9008545c9daa9" name="sine_5" x="224" y="546">
+   <comment type="patch/comment" x="714" y="518" text="------&gt;"/>
+   <comment type="patch/comment" x="896" y="518" text="&lt;------"/>
+   <obj type="lfo/sine" uuid="75f7330c26a13953215dccc3b7b9008545c9daa9" name="sine_5" x="406" y="546">
       <params>
          <frac32.s.map name="pitch" value="-40.0"/>
       </params>
       <attribs/>
    </obj>
-   <obj type="sss/disp/MIDscope" uuid="e22193bf-a8b3-4166-b583-f3bb50c1b0ee" name="MIDscope_2" x="826" y="546">
-      <params/>
-      <attribs/>
-   </obj>
-   <comment type="patch/comment" x="602" y="602" text="The All Pass Chain "/>
-   <comment type="patch/comment" x="546" y="616" text="mixed with its input for the famous phasing effect"/>
-   <obj type="lfo/sine" uuid="75f7330c26a13953215dccc3b7b9008545c9daa9" name="sine_7" x="224" y="630">
+   <comment type="patch/comment" x="784" y="602" text="The All Pass Chain "/>
+   <comment type="patch/comment" x="728" y="616" text="mixed with its input for the famous phasing effect"/>
+   <obj type="lfo/sine" uuid="75f7330c26a13953215dccc3b7b9008545c9daa9" name="sine_7" x="406" y="630">
       <params>
          <frac32.s.map name="pitch" value="-21.0"/>
       </params>
       <attribs/>
    </obj>
-   <comment type="patch/comment" x="336" y="658" text="A slow complicated LFO"/>
-   <hyperlink type="patch/hyperlink" name="http://community.axoloti.com/t/tiar-smashedtransistors-contributions/2737/135" x="350" y="686"/>
-   <obj type="const/i" uuid="e202f44b2df17ae0b3e663b98ea6b14c8ff00408" name="i_1" x="322" y="770">
+   <comment type="patch/comment" x="518" y="658" text="A slow complicated LFO"/>
+   <hyperlink type="patch/hyperlink" name="http://community.axoloti.com/t/tiar-smashedtransistors-contributions/2737/135" x="532" y="686"/>
+   <obj type="const/i" uuid="e202f44b2df17ae0b3e663b98ea6b14c8ff00408" name="i_1" x="504" y="770">
       <params/>
       <attribs>
          <spinner attributeName="value" value="2"/>
       </attribs>
    </obj>
-   <obj type="phonebankcontroller" uuid="366064e5-fa5a-4187-8f26-799af425fd32" name="phonebankcontroller_1" x="518" y="770">
-      <params/>
+   <obj type="phonebankcontroller" uuid="366064e5-fa5a-4187-8f26-799af425fd32" name="phonebankcontroller_1" x="700" y="770">
+      <params>
+         <int32 name="total_patches" value="0"/>
+      </params>
       <attribs/>
    </obj>
-   <obj type="midi/out/cc thin" uuid="5255b30d60e50223ed41179d8ce935ba9464de75" name="cc_1" x="546" y="868">
+   <obj type="midi/out/cc thin" uuid="5255b30d60e50223ed41179d8ce935ba9464de75" name="cc_1" x="728" y="868">
       <params/>
       <attribs>
          <combo attributeName="device" selection="internal port 1"/>
@@ -263,7 +577,7 @@
          <spinner attributeName="cc" value="1"/>
       </attribs>
    </obj>
-   <obj type="midi/out/cc thin" uuid="5255b30d60e50223ed41179d8ce935ba9464de75" name="cc_2" x="546" y="966">
+   <obj type="midi/out/cc thin" uuid="5255b30d60e50223ed41179d8ce935ba9464de75" name="cc_2" x="728" y="966">
       <params/>
       <attribs>
          <combo attributeName="device" selection="internal port 1"/>
@@ -271,7 +585,7 @@
          <spinner attributeName="cc" value="2"/>
       </attribs>
    </obj>
-   <obj type="midi/out/cc thin" uuid="5255b30d60e50223ed41179d8ce935ba9464de75" name="cc_3" x="546" y="1064">
+   <obj type="midi/out/cc thin" uuid="5255b30d60e50223ed41179d8ce935ba9464de75" name="cc_3" x="728" y="1064">
       <params/>
       <attribs>
          <combo attributeName="device" selection="internal port 1"/>
@@ -279,7 +593,7 @@
          <spinner attributeName="cc" value="3"/>
       </attribs>
    </obj>
-   <obj type="midi/out/cc thin" uuid="5255b30d60e50223ed41179d8ce935ba9464de75" name="cc_4" x="546" y="1162">
+   <obj type="midi/out/cc thin" uuid="5255b30d60e50223ed41179d8ce935ba9464de75" name="cc_4" x="728" y="1162">
       <params/>
       <attribs>
          <combo attributeName="device" selection="internal port 1"/>
@@ -290,7 +604,6 @@
    <nets>
       <net>
          <source obj="Osc_1" outlet="out"/>
-         <dest obj="MIDscope_2" inlet="syncIn"/>
          <dest obj="hp_1" inlet="in"/>
       </net>
       <net>
@@ -303,7 +616,6 @@
       </net>
       <net>
          <source obj="+_1" outlet="out"/>
-         <dest obj="MIDscope_2" inlet="in"/>
          <dest obj="nestVerb_1" inlet="inlet_1"/>
       </net>
       <net>
@@ -436,10 +748,6 @@
          <dest obj="phonebankcontroller_1" inlet="patch_up"/>
       </net>
       <net>
-         <source obj="i_1" outlet="out"/>
-         <dest obj="phonebankcontroller_1" inlet="currentpatch"/>
-      </net>
-      <net>
          <source obj="obj_1" outlet="bottom"/>
          <dest obj="phonebankcontroller_1" inlet="patch_down"/>
       </net>
@@ -459,13 +767,53 @@
          <source obj="obj_1" outlet="dial 4"/>
          <dest obj="cc_4" inlet="v"/>
       </net>
+      <net>
+         <source obj="object_1" outlet="S1L1"/>
+         <dest obj="obj_1" inlet="S1_L1"/>
+      </net>
+      <net>
+         <source obj="object_1" outlet="S1L2"/>
+         <dest obj="obj_1" inlet="S1_L2"/>
+      </net>
+      <net>
+         <source obj="object_1" outlet="S1L3"/>
+         <dest obj="obj_1" inlet="S1_L3"/>
+      </net>
+      <net>
+         <source obj="object_1" outlet="S1L4"/>
+         <dest obj="obj_1" inlet="S1_L4"/>
+      </net>
+      <net>
+         <source obj="object_1" outlet="S1mode"/>
+         <dest obj="obj_1" inlet="S1mode"/>
+      </net>
+      <net>
+         <source obj="object_1" outlet="S2L1"/>
+         <dest obj="obj_1" inlet="S2_L1"/>
+      </net>
+      <net>
+         <source obj="object_1" outlet="S2L2"/>
+         <dest obj="obj_1" inlet="S2_L2"/>
+      </net>
+      <net>
+         <source obj="object_1" outlet="S2L3"/>
+         <dest obj="obj_1" inlet="S2_L3"/>
+      </net>
+      <net>
+         <source obj="object_1" outlet="S2L4"/>
+         <dest obj="obj_1" inlet="S2_L4"/>
+      </net>
+      <net>
+         <source obj="object_1" outlet="S2mode"/>
+         <dest obj="obj_1" inlet="S2mode"/>
+      </net>
    </nets>
    <settings>
       <subpatchmode>no</subpatchmode>
    </settings>
    <notes><![CDATA[]]></notes>
    <windowPos>
-      <x>10</x>
+      <x>33</x>
       <y>23</y>
       <width>1904</width>
       <height>1057</height>
