@@ -1,5 +1,5 @@
 <patch-1.0 appVersion="1.0.12">
-   <obj type="phone_interface_buttons_screen" uuid="87d5c5d5-a9c7-45b4-a1ae-cccefb50c860" name="obj_1" x="784" y="616">
+   <obj type="phone_interface_buttons_screen" uuid="13898c49-e3f8-46d8-a436-2544f65c0fde" name="obj_1" x="784" y="616">
       <params/>
       <attribs/>
    </obj>
@@ -54,8 +54,9 @@
          <includes/>
          <code.declaration><![CDATA[//menu and screen and pot state
 char* state[6] = {"mainmix","engine","delay1","delay2", "delay3", "menu"};
-char* patch[3] = {"filterbank","Dangerine","moog"};
+char* patch[8] = {"effects","dangerine","1976","effectsMic", "sidechain",  "side_bd", "side_cy", "sawdrone"};
 int numstates = *(&state + 1) - state - 1;
+int menucount = *(&patch + 1) - patch;
 int currentstate;
 int patchselect;
 bool ppwait1;
@@ -335,11 +336,11 @@ ngin_flt_reso_hold = 100<<20;
 if (state[currentstate] == "menu"){
 	outlet_S1L1 = "menu";
 	patchselect = inlet_dial5>>23;
-	disp_d1 = patchselect%3;
-	outlet_S1L2 = patch[patchselect%3];
+	disp_d1 = patchselect%menucount;
+	outlet_S1L2 = patch[patchselect%menucount];
 	outlet_S1L3 = "press B4";
 	outlet_S1L4 = "to load";
-	outlet_loadpatch = patchselect%3;
+	outlet_loadpatch = patchselect%menucount;
 	outlet_loadtrig = inlet_button4;
 
 }
@@ -370,7 +371,7 @@ if (state[currentstate] == "menu"){
 outlet_S2mode = 0;]]></code.krate>
       </object>
    </patchobj>
-   <patcher type="patch/patcher" uuid="c84cae5c-826a-46d9-b822-137b344b3977" name="patcher_1" x="1358" y="700">
+   <patcher type="patch/patcher" uuid="ce308937-a54e-49ad-846b-305b6931df3f" name="patcher_1" x="1358" y="700">
       <params>
          <frac32.s.map name="lowpass_1" value="-8.0"/>
          <frac32.s.map name="adsr_1:a" MidiCC="6" value="36.0">
@@ -707,8 +708,8 @@ outlet_S2mode = 0;]]></code.krate>
          </settings>
          <notes><![CDATA[]]></notes>
          <windowPos>
-            <x>-1559</x>
-            <y>201</y>
+            <x>-1611</x>
+            <y>709</y>
             <width>1611</width>
             <height>861</height>
          </windowPos>
@@ -1453,8 +1454,8 @@ outlet_S2mode = 0;]]></code.krate>
    </settings>
    <notes><![CDATA[]]></notes>
    <windowPos>
-      <x>-1664</x>
-      <y>-157</y>
+      <x>-1707</x>
+      <y>709</y>
       <width>1523</width>
       <height>1035</height>
    </windowPos>

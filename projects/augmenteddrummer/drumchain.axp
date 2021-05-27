@@ -1,0 +1,891 @@
+<patch-1.0 appVersion="1.0.12">
+   <obj type="gao/edrum/cymbal" uuid="c49ceb8b-1245-4652-b793-b7ca06f415f4" name="obj_6" x="1834" y="518">
+      <params>
+         <frac32.s.map name="d1" value="-23.0"/>
+         <frac32.s.map name="d2" value="7.0"/>
+         <frac32.u.map name="freq 1" value="11.150000095367432"/>
+         <frac32.u.map name="freq2" value="9.0"/>
+         <frac32.s.map name="bp:pitch" value="-38.0"/>
+         <frac32.u.map name="bp:reso" value="10.0"/>
+         <frac32.s.map name="hp:pitch" value="-57.0"/>
+         <frac32.u.map name="hp:reso" value="0.0"/>
+         <frac32.u.map name="gain" value="32.0"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="audio/inconfig" uuid="9a80ef3c19f2a8f81da3a3b7c1c44d18126b97d9" name="inconfig_1" x="434" y="616">
+      <params/>
+      <attribs>
+         <combo attributeName="gain" selection="12dB"/>
+         <combo attributeName="boost" selection="20dB"/>
+         <combo attributeName="mode" selection="Stereo"/>
+      </attribs>
+   </obj>
+   <patcher type="patch/patcher" uuid="c27cfae5-f69f-4042-83a5-dafaed6a4301" name="BD" x="1036" y="630">
+      <params>
+         <frac32.u.map name="noise level" MidiCC="21" value="18.0"/>
+         <frac32.u.map name="curve" MidiCC="22" value="19.0"/>
+         <frac32.s.map name="freq 2" MidiCC="23" value="-40.0"/>
+         <frac32.s.map name="lp:pitch" MidiCC="24" value="12.0"/>
+         <frac32.u.map name="gain" MidiCC="20" value="63.99999952316284"/>
+      </params>
+      <attribs/>
+      <subpatch appVersion="1.0.12">
+         <obj type="noise/uniform" uuid="a3926ef22ae9ac217cd09933d90101848796eb78" name="uniform_1" x="42" y="56">
+            <params/>
+            <attribs/>
+         </obj>
+         <obj type="math/abs" uuid="f4078fd9b2dff40d4f1551b79900c9ab360c99" name="abs_1" x="140" y="56">
+            <params/>
+            <attribs/>
+         </obj>
+         <obj type="math/*" uuid="c16a625a661f40e4b359db604dcd00b3befcdbe3" name="*_3" x="322" y="56">
+            <params/>
+            <attribs/>
+         </obj>
+         <obj type="math/*c" uuid="7a66f52a9594e7e9eb31328ea725cb3641a80b55" name="noise level" x="392" y="56">
+            <params>
+               <frac32.u.map name="amp" onParent="true" value="43.0"/>
+            </params>
+            <attribs/>
+         </obj>
+         <obj type="patch/inlet f" uuid="5c585d2dcd9c05631e345ac09626a22a639d7c13" name="env" x="42" y="112">
+            <params/>
+            <attribs/>
+         </obj>
+         <obj type="math/*c" uuid="7d5ef61c3bcd571ee6bbd8437ef3612125dfb225" name="curve" x="196" y="182">
+            <params>
+               <frac32.u.map name="amp" onParent="true" value="15.5"/>
+            </params>
+            <attribs/>
+         </obj>
+         <obj type="osc/sine" uuid="6e094045cca76a9dbf7ebfa72e44e4700d2b3ba" name="freq 2" x="322" y="182">
+            <params>
+               <frac32.s.map name="pitch" onParent="true" value="-4.0"/>
+            </params>
+            <attribs/>
+         </obj>
+         <obj type="math/+" uuid="faedbea4612d9bd3644d6d3bf31946d848a70e19" name="*_1" x="448" y="182">
+            <params/>
+            <attribs/>
+         </obj>
+         <obj type="math/*" uuid="c16a625a661f40e4b359db604dcd00b3befcdbe3" name="*_2" x="448" y="252">
+            <params/>
+            <attribs/>
+         </obj>
+         <obj type="filter/lp" uuid="1427779cf086ab83c8b03eeeac69c2a97759c651" name="lp" x="532" y="252">
+            <params>
+               <frac32.s.map name="pitch" onParent="true" value="8.0"/>
+               <frac32.u.map name="reso" value="0.0"/>
+            </params>
+            <attribs/>
+         </obj>
+         <obj type="math/gain" uuid="62b1c1a6337c7c8f6aec96408a432477b113cfa0" name="gain" x="658" y="252">
+            <params>
+               <frac32.u.map name="amp" onParent="true" value="3.5"/>
+            </params>
+            <attribs/>
+         </obj>
+         <obj type="dist/soft" uuid="e680d76a805e4866027cdf654c7efd8b2e54622" name="soft_1" x="784" y="252">
+            <params/>
+            <attribs/>
+         </obj>
+         <obj type="patch/outlet a" uuid="abd8c5fd3b0524a6630f65cad6dc27f6c58e2a3e" name="out" x="882" y="252">
+            <params/>
+            <attribs/>
+         </obj>
+         <nets>
+            <net>
+               <source obj="freq 2" outlet="wave"/>
+               <dest obj="*_1" inlet="in1"/>
+            </net>
+            <net>
+               <source obj="*_1" outlet="out"/>
+               <dest obj="*_2" inlet="a"/>
+            </net>
+            <net>
+               <source obj="*_3" outlet="result"/>
+               <dest obj="noise level" inlet="in"/>
+            </net>
+            <net>
+               <source obj="uniform_1" outlet="wave"/>
+               <dest obj="abs_1" inlet="in"/>
+            </net>
+            <net>
+               <source obj="abs_1" outlet="out"/>
+               <dest obj="*_3" inlet="a"/>
+            </net>
+            <net>
+               <source obj="gain" outlet="out"/>
+               <dest obj="soft_1" inlet="in"/>
+            </net>
+            <net>
+               <source obj="noise level" outlet="out"/>
+               <dest obj="*_1" inlet="in2"/>
+            </net>
+            <net>
+               <source obj="curve" outlet="out"/>
+               <dest obj="freq 2" inlet="pitch"/>
+            </net>
+            <net>
+               <source obj="lp" outlet="out"/>
+               <dest obj="gain" inlet="in"/>
+            </net>
+            <net>
+               <source obj="*_2" outlet="result"/>
+               <dest obj="lp" inlet="in"/>
+            </net>
+            <net>
+               <source obj="env" outlet="inlet"/>
+               <dest obj="*_2" inlet="b"/>
+               <dest obj="curve" inlet="in"/>
+               <dest obj="*_3" inlet="b"/>
+            </net>
+            <net>
+               <source obj="soft_1" outlet="out"/>
+               <dest obj="out" inlet="outlet"/>
+            </net>
+         </nets>
+         <settings>
+            <subpatchmode>normal</subpatchmode>
+            <MidiChannel>1</MidiChannel>
+            <NPresets>0</NPresets>
+            <NPresetEntries>0</NPresetEntries>
+            <NModulationSources>0</NModulationSources>
+            <NModulationTargetsPerSource>0</NModulationTargetsPerSource>
+            <Author>GaoTamanrasset</Author>
+            <License>GPL</License>
+         </settings>
+         <notes><![CDATA[]]></notes>
+         <windowPos>
+            <x>434</x>
+            <y>174</y>
+            <width>1486</width>
+            <height>648</height>
+         </windowPos>
+      </subpatch>
+   </patcher>
+   <obj type="audio/out left" uuid="b11a3c09b2fdd575ea8212f2ce7743d5269253b1" name="out_1" x="1274" y="630">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="env/follower" uuid="356ce1d18ac6b51704833f94dac5dea823fb8223" name="follower_3" x="686" y="686">
+      <params/>
+      <attribs>
+         <combo attributeName="time" selection="2.7ms"/>
+      </attribs>
+   </obj>
+   <obj type="math/&gt;c" uuid="99f2934d97d62b715a829979ef6c8abef35dcdb2" name="Treshold__" x="756" y="686">
+      <params>
+         <frac32.u.map name="c" MidiCC="17" value="39.0"/>
+      </params>
+      <attribs/>
+   </obj>
+   <patchobj type="patch/object" uuid="78c5a8c3-c3fe-47da-8bfe-a3346746273e" name="envelope__" x="826" y="686">
+      <params>
+         <frac32.s.map name="a" MidiCC="18" value="-18.0"/>
+         <frac32.s.map name="d" MidiCC="19" value="19.0"/>
+      </params>
+      <attribs/>
+      <object id="patch/object" uuid="78c5a8c3-c3fe-47da-8bfe-a3346746273e">
+         <sDescription>attack hold decay envelope</sDescription>
+         <author>Johannes Taelman</author>
+         <license>BSD</license>
+         <helpPatch>env.axh</helpPatch>
+         <inlets>
+            <bool32.risingfalling name="gate" description="gate"/>
+         </inlets>
+         <outlets>
+            <frac32.positive name="env" description="envelope output"/>
+         </outlets>
+         <displays/>
+         <params>
+            <frac32.s.map.kdecaytime.exp name="a"/>
+            <frac32.s.map.kdecaytime.exp name="d"/>
+         </params>
+         <attribs/>
+         <includes/>
+         <code.declaration><![CDATA[int32_t val;]]></code.declaration>
+         <code.init><![CDATA[val = 0;]]></code.init>
+         <code.krate><![CDATA[if (inlet_gate>0) val = (1<<27) - (___SMMUL((1<<27)-val, param_a)<<1);
+   else val = ___SMMUL(val, param_d)<<1;
+   outlet_env= val;]]></code.krate>
+      </object>
+   </patchobj>
+   <obj type="audio/out right" uuid="e58a4cbbb087052c5480366e3f5d3a04aa319777" name="out_2" x="1274" y="686">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="audio/in left" uuid="d40e60b7641fe75af4d7c91b45bb038aacafc52e" name="in_1" x="588" y="700">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="audio/in right" uuid="5f35c9f87b3f291a8120a10db71935bebd186469" name="in_2" x="588" y="826">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="env/follower" uuid="356ce1d18ac6b51704833f94dac5dea823fb8223" name="follower_2" x="700" y="826">
+      <params/>
+      <attribs>
+         <combo attributeName="time" selection="2.7ms"/>
+      </attribs>
+   </obj>
+   <obj type="math/&gt;c" uuid="99f2934d97d62b715a829979ef6c8abef35dcdb2" name="Treshold_" x="770" y="826">
+      <params>
+         <frac32.u.map name="c" MidiCC="33" value="8.5"/>
+      </params>
+      <attribs/>
+   </obj>
+   <patchobj type="patch/object" uuid="78c5a8c3-c3fe-47da-8bfe-a3346746273e" name="envelope_" x="840" y="826">
+      <params>
+         <frac32.s.map name="a" MidiCC="34" value="-64.0"/>
+         <frac32.s.map name="d" MidiCC="35" value="0.0"/>
+      </params>
+      <attribs/>
+      <object id="patch/object" uuid="78c5a8c3-c3fe-47da-8bfe-a3346746273e">
+         <sDescription>attack hold decay envelope</sDescription>
+         <author>Johannes Taelman</author>
+         <license>BSD</license>
+         <helpPatch>env.axh</helpPatch>
+         <inlets>
+            <bool32.risingfalling name="gate" description="gate"/>
+         </inlets>
+         <outlets>
+            <frac32.positive name="env" description="envelope output"/>
+         </outlets>
+         <displays/>
+         <params>
+            <frac32.s.map.kdecaytime.exp name="a"/>
+            <frac32.s.map.kdecaytime.exp name="d"/>
+         </params>
+         <attribs/>
+         <includes/>
+         <code.declaration><![CDATA[int32_t val;]]></code.declaration>
+         <code.init><![CDATA[val = 0;]]></code.init>
+         <code.krate><![CDATA[if (inlet_gate>0) val = (1<<27) - (___SMMUL((1<<27)-val, param_a)<<1);
+   else val = ___SMMUL(val, param_d)<<1;
+   outlet_env= val;]]></code.krate>
+      </object>
+   </patchobj>
+   <obj type="phone_interface_buttons_screen" uuid="f725a976-708d-4323-87f6-f0b42c6aef0e" name="phone_interface_buttons_screen_1" x="434" y="938">
+      <params/>
+      <attribs/>
+   </obj>
+   <patchobj type="patch/object" uuid="daee1ce6-92c6-4d98-9cb0-801c1ee91042" name="object_1" x="630" y="938">
+      <params/>
+      <attribs/>
+      <object id="patch/object" uuid="daee1ce6-92c6-4d98-9cb0-801c1ee91042">
+         <inlets>
+            <bool32 name="top"/>
+            <bool32 name="bottom"/>
+            <bool32 name="toggle1"/>
+            <bool32 name="toggle2"/>
+            <frac32.positive name="dial1"/>
+            <frac32.positive name="dial2"/>
+            <frac32.positive name="dial3"/>
+            <frac32.positive name="dial4"/>
+            <frac32.positive name="dial5"/>
+            <frac32.positive name="dial6"/>
+            <bool32 name="button1"/>
+            <bool32 name="button2"/>
+            <bool32 name="button3"/>
+            <bool32 name="button4"/>
+            <bool32 name="forward"/>
+            <bool32 name="backward"/>
+            <bool32 name="up"/>
+            <bool32 name="down"/>
+         </inlets>
+         <outlets>
+            <charptr32 name="S1L1"/>
+            <charptr32 name="S1L2"/>
+            <charptr32 name="S1L3"/>
+            <charptr32 name="S1L4"/>
+            <int32 name="S1mode"/>
+            <charptr32 name="S2L1"/>
+            <charptr32 name="S2L2"/>
+            <charptr32 name="S2L3"/>
+            <charptr32 name="S2L4"/>
+            <int32 name="S2mode"/>
+            <int32 name="cc1"/>
+            <bool32 name="cc1trig"/>
+            <frac32.positive name="cc1val"/>
+            <frac32.bipolar name="o2freq"/>
+            <frac32.positive name="vol"/>
+            <int32 name="loadpatch"/>
+            <bool32 name="loadtrig"/>
+            <bool32 name="scopechannel"/>
+         </outlets>
+         <displays>
+            <int32.label name="d1"/>
+         </displays>
+         <params/>
+         <attribs/>
+         <includes/>
+         <code.declaration><![CDATA[//menu and screen and pot state
+char* state[6] = {"bd1", "bd2", "cy1", "cy2", "cy3" ,"menu"  };
+char* patch[5] = {"effects","dangerine","1976","effectsMic", "sidedrum"};
+int numstates = *(&state + 1) - state - 1;
+int currentstate;
+int patchselect;
+bool ppwait1;
+bool ppwait2;
+bool ppwait3;
+bool ppwait4;
+bool ppwait5;
+bool ppwait6;
+int32_t lsend;
+int timer;
+
+
+
+//int *holdp;
+//int *inp
+//int 
+
+//main menu params
+int volhold;
+
+//button debouncing
+int toptrig;
+int bottomtrig;
+
+
+////oscilators
+
+
+//bd
+
+int bd_tresh_hold;
+char bd_tresh_c[10];
+int bd_att_hold;
+char bd_att_c[10];
+int bd_dec_hold;
+char bd_dec_c[10];
+int bd_gain_hold;
+char bd_gain_c[10];
+//
+int bd2trig;
+int bd2state;
+int bd_noise_hold;
+char bd_noise_c[10];
+int bd_curve_hold;
+char bd_curve_c[10];
+int bd_freq_hold;
+char bd_freq_c[10];
+int bd_lppitch_hold;
+char bd_lppitch_c[10];
+
+
+int cy_tresh_hold;
+char cy_tresh_c[10];
+int cy_att_hold;
+char cy_att_c[10];
+int cy_dec_hold;
+char cy_dec_c[10];
+
+//
+
+int cy_d1_hold;
+char cy_d1_c[10];
+int cy_d2_hold;
+char cy_d2_c[10];
+int cy_freq1_hold;
+char cy_freq1_c[10];
+int cy_freq2_hold;
+char cy_freq2_c[10];
+int cy_bppitch_hold;
+char cy_bppitch_c[10];
+int cy_bpreso_hold;
+char cy_bpreso_c[10];
+int cy_hppitch_hold;
+char cy_hppitch_c[10];
+int cy_hpreso_hold;
+char cy_hpreso_c[10];
+
+//functions
+// function definition to swap the values.
+void swap(int& x, int& y) {
+
+   int temp;
+   temp = x; /* save the value at address x */
+   x = y;    /* put y into x */
+   y = temp; /* put x into y */
+  
+   return;
+}
+
+// pot pickup function
+int32_t ppchange (int in, int* hold, bool &ppwait){
+//	if (timer==0) LogTextMessage((char*)(ppwait));
+	if (ppwait==true){
+		if (abs(in - *hold)>>20 < 2) {
+			ppwait = false;
+			
+		}
+		return *hold; ///goes to out!
+	} else {
+		*hold = in;
+		return in; ///goes to out!
+	}
+}
+
+
+//append int tot str
+char* addItoS(int i, char* s, char* c){
+	int32_t v = __SSAT(i,28)>>21;
+	strcpy(&c[2],s);
+	c[0] = 1;
+	if(v >= 0)
+  		c[1] = (uint8_t)(v + 1); // must not be zero !
+	else 
+	  	c[1] = (uint8_t)(256 + v); 
+	return c;
+}
+
+char* inttobar(int i) {
+	char c[2];
+	int32_t v = __SSAT(i,28)>>21;
+	if(v >= 0)
+  		c[0] = (uint8_t)(v + 1); // must not be zero !
+	else 
+  		c[0] = (uint8_t)(256 + v); 
+//  	char k[5];
+//  	strncpy(c,k,5);
+//  	k[5] = '\0';
+//	return k;
+	return (char*)(i);
+}
+
+void checkToggleState(int inlet, int &trigstate, int &state){
+	if (!(inlet>0) && trigstate) {
+   		trigstate = 0;
+	}
+	if ((inlet>0) && !trigstate) {
+   		trigstate = 1;
+   		if (state == 1)
+   			state = 0;
+   		else
+   			state = 1;
+	}
+}
+
+
+
+
+
+
+///midiCCthin
+void midiCCout(int v, int cc, int channel){
+	if (((lsend>v+(1<<19))||(v>lsend+(1<<19))) && (timer>60)) {
+	   lsend = v;
+	   PatchMidiInHandler(MIDI_DEVICE_INTERNAL ,0,MIDI_CONTROL_CHANGE + (channel-1),cc,__USAT(v>>20,7));
+	   timer = 0;
+	} else timer++;
+}]]></code.declaration>
+         <code.init><![CDATA[//state
+currentstate = 0;
+patchselect = 0;
+ppwait1=true; //enable potpickup wait on change
+ppwait2=true;
+ppwait3=true;
+ppwait4=true;
+ppwait5=true;
+ppwait6=true;
+//ppwait1=false; //enable potpickup wait on change
+//ppwait2=false;
+//ppwait3=false;
+//ppwait4=false;
+//ppwait5=false;
+//ppwait6=false;
+timer = 0;
+
+//buttons
+toptrig = 0;
+bottomtrig = 0;
+
+
+//outlets
+//freq1hold = 0;
+//freq2hold = 0;
+//volhold = 100<<20;\
+
+
+bd_tresh_hold = 100<<20;
+bd_att_hold = 20<<20;
+bd_dec_hold = 40<<20;
+bd_gain_hold = 100<<20;
+bd_noise_hold = 100<<20;
+bd_curve_hold = 100<<20;
+bd_freq_hold = 64<<20;
+bd_lppitch_hold = 100<<20;
+
+
+cy_tresh_hold = 100<<20;
+cy_att_hold = 100<<20;
+cy_dec_hold = 100<<20;
+cy_d1_hold = 100<<20;
+cy_d2_hold = 100<<20;
+cy_freq1_hold = 100<<20;
+cy_freq2_hold = 100<<20;
+cy_bppitch_hold = 100<<20;
+cy_bpreso_hold = 100<<20;
+cy_hppitch_hold = 100<<20;
+cy_hpreso_hold = 100<<20;
+
+
+
+
+
+//
+//cc1 = 1;
+//cc1trig = 0;
+//cc1val  = 0;]]></code.init>
+         <code.krate><![CDATA[//// pot pickup function declaration
+//int32_t ppchange (int32_t in);//, int32_t* hold);
+//void swap(int& x, int& y);
+
+outlet_loadtrig = 0;
+outlet_S1L1 = "";
+outlet_S1L2 = "";
+outlet_S1L3 = "";
+outlet_S1L4 = "";
+///buttonpresses MENU up/down
+if ((inlet_top>0) && !toptrig) {
+   if (currentstate < numstates) { 
+   	currentstate++;
+   } else {
+   	currentstate = 0;
+   }
+   toptrig = 1;
+   ppwait1=true; //enable potpickup wait on change
+   ppwait2=true;
+   ppwait3=true;
+   ppwait4=true;
+   ppwait5=true;
+   ppwait6=true;
+}
+if (!(inlet_top>0) && toptrig) {
+   toptrig = 0;
+}
+
+
+if ((inlet_bottom>0) && !bottomtrig) {
+   
+   if (currentstate > 0) { 
+   	currentstate--;
+   } else {
+   	currentstate = numstates;
+   }
+   bottomtrig = 1;
+   ppwait1=true; //enable potpickup wait on change
+   ppwait2=true;
+   ppwait3=true;
+   ppwait4=true;
+   ppwait5=true;
+   ppwait6=true;
+}
+
+
+if (!(inlet_bottom>0) && bottomtrig) {
+   bottomtrig = 0;
+}
+
+//outlet_S1L1 = state[currentstate];
+
+//midiCCout(127, 1, 1);
+
+
+if (state[currentstate] == "bd1"){
+	outlet_S2mode = 2;
+	outlet_scopechannel = 0;
+	outlet_S1L1 = "BassDrum";
+	midiCCout(ppchange (inlet_dial1, &bd_tresh_hold, ppwait1), 17, 1);
+	outlet_S1L2 = addItoS(bd_tresh_hold,"tresh",bd_tresh_c);
+	midiCCout(ppchange (inlet_dial2, &bd_att_hold, ppwait2), 18, 1);
+	outlet_S1L3 = addItoS(bd_att_hold,"attack",bd_att_c);
+	midiCCout(ppchange (inlet_dial3, &bd_dec_hold, ppwait3), 19, 1);
+	outlet_S1L4 = addItoS(bd_dec_hold,"decay",bd_dec_c);
+}
+
+
+if (state[currentstate] == "bd2"){
+	outlet_S2mode = 0;
+	outlet_S1L1 = "BassDrum";
+	midiCCout(ppchange (inlet_dial6, &bd_gain_hold, ppwait6), 20, 1);
+	outlet_S1L4 = addItoS(bd_gain_hold,"gain",bd_gain_c);
+	midiCCout(ppchange (inlet_dial1, &bd_noise_hold, ppwait1), 21, 1);
+	outlet_S2L1 = addItoS(bd_noise_hold,"noise",bd_noise_c);
+	midiCCout(ppchange (inlet_dial2, &bd_curve_hold, ppwait2), 22, 1);
+	outlet_S2L2 = addItoS(bd_curve_hold,"curve",bd_curve_c);
+	midiCCout(ppchange (inlet_dial3, &bd_freq_hold, ppwait3), 23, 1);
+	outlet_S2L3 = addItoS(bd_freq_hold,"freq",bd_freq_c);
+	midiCCout(ppchange (inlet_dial4, &bd_lppitch_hold, ppwait4), 24, 1);
+	outlet_S2L4 = addItoS(bd_lppitch_hold,"lppit",bd_lppitch_c);
+
+}
+
+if (state[currentstate] == "cy1"){
+	outlet_S2mode = 2;
+	outlet_S1L1 = "cymbal";
+	outlet_scopechannel = 1;
+	midiCCout(ppchange (inlet_dial1, &cy_tresh_hold, ppwait1), 33, 1);
+	outlet_S1L2 = addItoS(cy_tresh_hold,"tresh",cy_tresh_c);
+	midiCCout(ppchange (inlet_dial2, &cy_att_hold, ppwait2), 34, 1);
+	outlet_S1L3 = addItoS(cy_att_hold,"attack",cy_att_c);
+	midiCCout(ppchange (inlet_dial3, &cy_dec_hold, ppwait3), 35, 1);
+	outlet_S1L4 = addItoS(cy_dec_hold,"decay",cy_dec_c);
+}
+
+if (state[currentstate] == "cy2"){
+	outlet_S2mode = 0;
+	outlet_S1L1 = "cymbal";
+	midiCCout(ppchange (inlet_dial1, &cy_d1_hold, ppwait1), 36, 1);
+	outlet_S2L1 = addItoS(cy_d1_hold,"d1",cy_d1_c);
+	midiCCout(ppchange (inlet_dial2, &cy_d2_hold, ppwait2), 37, 1);
+	outlet_S2L2 = addItoS(cy_d2_hold,"d2",cy_d2_c);
+	midiCCout(ppchange (inlet_dial3, &cy_freq1_hold, ppwait3), 38, 1);
+	outlet_S2L3 = addItoS(cy_freq1_hold,"freq1",cy_freq1_c);
+	midiCCout(ppchange (inlet_dial4, &cy_freq2_hold, ppwait4), 39, 1);
+	outlet_S2L4 = addItoS(cy_freq2_hold,"freq1",cy_freq2_c);
+
+}
+
+if (state[currentstate] == "cy3"){
+	outlet_S2mode = 0;
+	outlet_S1L1 = "cymbal";
+	midiCCout(ppchange (inlet_dial1, &cy_bppitch_hold, ppwait1), 40, 1);
+	outlet_S2L1 = addItoS(cy_bppitch_hold,"bppitch",cy_bppitch_c);
+	midiCCout(ppchange (inlet_dial2, &cy_bpreso_hold, ppwait2), 41, 1);
+	outlet_S2L2 = addItoS(cy_bpreso_hold,"bpreso",cy_bpreso_c);
+	midiCCout(ppchange (inlet_dial3, &cy_hppitch_hold, ppwait3), 42, 1);
+	outlet_S2L3 = addItoS(cy_hppitch_hold,"hppitch",cy_hppitch_c);
+	midiCCout(ppchange (inlet_dial4, &cy_hpreso_hold, ppwait4), 43, 1);
+	outlet_S2L4 = addItoS(cy_hpreso_hold,"hpreso",cy_hpreso_c);
+
+}
+
+
+
+
+if (state[currentstate] == "menu"){
+	outlet_S2mode = 2;
+	outlet_S1L1 = "menu";
+	patchselect = inlet_dial5>>23;
+	disp_d1 = patchselect%4;
+	outlet_S1L2 = patch[patchselect%4];
+	outlet_S1L3 = "press B4";
+	outlet_S1L4 = "to load";
+	outlet_loadpatch = patchselect%4;
+	outlet_loadtrig = inlet_button4;
+	
+
+}]]></code.krate>
+      </object>
+   </patchobj>
+   <obj type="mux/mux 2" uuid="539c246f4c360ac476e128cfbfa84348fb7f7e73" name="mux_1" x="854" y="980">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="patch/load i" uuid="b79124f5b7d1e8b39e187677ddab6260ce8c60a3" name="load_1" x="798" y="1148">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="gao/edrum/cowbell" uuid="9f5869d6-990b-4043-a655-f07cc2d0a4fd" name="obj_9" x="2198" y="1512">
+      <params>
+         <frac32.s.map name="ad:a" value="-64.0"/>
+         <frac32.s.map name="ad:d" value="0.0"/>
+         <frac32.s.map name="bp:pitch" value="13.0"/>
+         <frac32.u.map name="bp:reso" value="47.5"/>
+         <frac32.u.map name="gain" value="4.0"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="gao/edrum/cymbal" uuid="c49ceb8b-1245-4652-b793-b7ca06f415f4" name="obj_10" x="2310" y="1512">
+      <params>
+         <frac32.s.map name="d1" value="-23.0"/>
+         <frac32.s.map name="d2" value="7.0"/>
+         <frac32.u.map name="freq 1" value="11.150000095367432"/>
+         <frac32.u.map name="freq2" value="9.0"/>
+         <frac32.s.map name="bp:pitch" value="-38.0"/>
+         <frac32.u.map name="bp:reso" value="10.0"/>
+         <frac32.s.map name="hp:pitch" value="-57.0"/>
+         <frac32.u.map name="hp:reso" value="0.0"/>
+         <frac32.u.map name="gain" value="32.0"/>
+      </params>
+      <attribs/>
+   </obj>
+   <nets>
+      <net>
+         <source obj="phone_interface_buttons_screen_1" outlet="forward"/>
+         <dest obj="object_1" inlet="forward"/>
+      </net>
+      <net>
+         <source obj="phone_interface_buttons_screen_1" outlet="backward"/>
+         <dest obj="object_1" inlet="backward"/>
+      </net>
+      <net>
+         <source obj="phone_interface_buttons_screen_1" outlet="top"/>
+         <dest obj="object_1" inlet="top"/>
+      </net>
+      <net>
+         <source obj="phone_interface_buttons_screen_1" outlet="bottom"/>
+         <dest obj="object_1" inlet="bottom"/>
+      </net>
+      <net>
+         <source obj="phone_interface_buttons_screen_1" outlet="toggle 1"/>
+         <dest obj="object_1" inlet="toggle1"/>
+      </net>
+      <net>
+         <source obj="phone_interface_buttons_screen_1" outlet="toggle 2"/>
+         <dest obj="object_1" inlet="toggle2"/>
+      </net>
+      <net>
+         <source obj="phone_interface_buttons_screen_1" outlet="dial 1"/>
+         <dest obj="object_1" inlet="dial1"/>
+      </net>
+      <net>
+         <source obj="phone_interface_buttons_screen_1" outlet="dial 2"/>
+         <dest obj="object_1" inlet="dial2"/>
+      </net>
+      <net>
+         <source obj="phone_interface_buttons_screen_1" outlet="dial 3"/>
+         <dest obj="object_1" inlet="dial3"/>
+      </net>
+      <net>
+         <source obj="phone_interface_buttons_screen_1" outlet="dial 4"/>
+         <dest obj="object_1" inlet="dial4"/>
+      </net>
+      <net>
+         <source obj="phone_interface_buttons_screen_1" outlet="dial 5"/>
+         <dest obj="object_1" inlet="dial5"/>
+      </net>
+      <net>
+         <source obj="phone_interface_buttons_screen_1" outlet="dial 6"/>
+         <dest obj="object_1" inlet="dial6"/>
+      </net>
+      <net>
+         <source obj="phone_interface_buttons_screen_1" outlet="up"/>
+         <dest obj="object_1" inlet="up"/>
+      </net>
+      <net>
+         <source obj="phone_interface_buttons_screen_1" outlet="down"/>
+         <dest obj="object_1" inlet="down"/>
+      </net>
+      <net>
+         <source obj="object_1" outlet="S1L1"/>
+         <dest obj="phone_interface_buttons_screen_1" inlet="S1_L1"/>
+      </net>
+      <net>
+         <source obj="object_1" outlet="S1L2"/>
+         <dest obj="phone_interface_buttons_screen_1" inlet="S1_L2"/>
+      </net>
+      <net>
+         <source obj="object_1" outlet="S1L3"/>
+         <dest obj="phone_interface_buttons_screen_1" inlet="S1_L3"/>
+      </net>
+      <net>
+         <source obj="object_1" outlet="S1L4"/>
+         <dest obj="phone_interface_buttons_screen_1" inlet="S1_L4"/>
+      </net>
+      <net>
+         <source obj="object_1" outlet="S1mode"/>
+         <dest obj="phone_interface_buttons_screen_1" inlet="S1mode"/>
+      </net>
+      <net>
+         <source obj="object_1" outlet="S2L1"/>
+         <dest obj="phone_interface_buttons_screen_1" inlet="S2_L1"/>
+      </net>
+      <net>
+         <source obj="object_1" outlet="S2L2"/>
+         <dest obj="phone_interface_buttons_screen_1" inlet="S2_L2"/>
+      </net>
+      <net>
+         <source obj="object_1" outlet="S2L3"/>
+         <dest obj="phone_interface_buttons_screen_1" inlet="S2_L3"/>
+      </net>
+      <net>
+         <source obj="object_1" outlet="S2L4"/>
+         <dest obj="phone_interface_buttons_screen_1" inlet="S2_L4"/>
+      </net>
+      <net>
+         <source obj="object_1" outlet="S2mode"/>
+         <dest obj="phone_interface_buttons_screen_1" inlet="S2mode"/>
+      </net>
+      <net>
+         <source obj="phone_interface_buttons_screen_1" outlet="button 2"/>
+         <dest obj="object_1" inlet="button2"/>
+      </net>
+      <net>
+         <source obj="phone_interface_buttons_screen_1" outlet="button 3"/>
+         <dest obj="object_1" inlet="button3"/>
+      </net>
+      <net>
+         <source obj="phone_interface_buttons_screen_1" outlet="button 4"/>
+         <dest obj="object_1" inlet="button4"/>
+      </net>
+      <net>
+         <source obj="phone_interface_buttons_screen_1" outlet="button 1"/>
+         <dest obj="object_1" inlet="button1"/>
+      </net>
+      <net>
+         <source obj="object_1" outlet="loadpatch"/>
+         <dest obj="load_1" inlet="i"/>
+      </net>
+      <net>
+         <source obj="object_1" outlet="loadtrig"/>
+         <dest obj="load_1" inlet="trig"/>
+      </net>
+      <net>
+         <source obj="BD" outlet="out"/>
+         <dest obj="out_1" inlet="wave"/>
+      </net>
+      <net>
+         <source obj="follower_2" outlet="amp"/>
+         <dest obj="Treshold_" inlet="in"/>
+      </net>
+      <net>
+         <source obj="Treshold_" outlet="out"/>
+         <dest obj="envelope_" inlet="gate"/>
+      </net>
+      <net>
+         <source obj="in_2" outlet="wave"/>
+         <dest obj="follower_2" inlet="in"/>
+         <dest obj="mux_1" inlet="i2"/>
+      </net>
+      <net>
+         <source obj="follower_3" outlet="amp"/>
+         <dest obj="Treshold__" inlet="in"/>
+      </net>
+      <net>
+         <source obj="Treshold__" outlet="out"/>
+         <dest obj="envelope__" inlet="gate"/>
+      </net>
+      <net>
+         <source obj="envelope__" outlet="env"/>
+         <dest obj="BD" inlet="env"/>
+      </net>
+      <net>
+         <source obj="in_1" outlet="wave"/>
+         <dest obj="follower_3" inlet="in"/>
+         <dest obj="mux_1" inlet="i1"/>
+      </net>
+      <net>
+         <source obj="mux_1" outlet="o"/>
+         <dest obj="phone_interface_buttons_screen_1" inlet="scope2"/>
+      </net>
+      <net>
+         <source obj="object_1" outlet="scopechannel"/>
+         <dest obj="mux_1" inlet="s"/>
+      </net>
+   </nets>
+   <settings>
+      <subpatchmode>no</subpatchmode>
+   </settings>
+   <notes><![CDATA[]]></notes>
+   <windowPos>
+      <x>-1916</x>
+      <y>716</y>
+      <width>1854</width>
+      <height>1177</height>
+   </windowPos>
+</patch-1.0>

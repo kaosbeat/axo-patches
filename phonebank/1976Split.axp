@@ -54,7 +54,7 @@
          <includes/>
          <code.declaration><![CDATA[//menu and screen and pot state
 char* state[2] = {"1976", "menu"};
-char* patch[3] = {"effects","dangerine","1976"};
+char* patch[7] = {"effects","dangerine","1976","effectsMic", "sidechain",  "side_bd", "side_cy"};
 int numstates = *(&state + 1) - state - 1;
 int currentstate;
 int patchselect;
@@ -287,11 +287,11 @@ if (state[currentstate] == "1976"){
 if (state[currentstate] == "menu"){
 	outlet_S1L1 = "menu";
 	patchselect = inlet_dial5>>23;
-	disp_d1 = patchselect%3;
-	outlet_S1L2 = patch[patchselect%3];
+	disp_d1 = patchselect%7;
+	outlet_S1L2 = patch[patchselect%7];
 	outlet_S1L3 = "press B4";
 	outlet_S1L4 = "to load";
-	outlet_loadpatch = patchselect%3;
+	outlet_loadpatch = patchselect%7;
 	outlet_loadtrig = inlet_button4;
 
 }
@@ -813,7 +813,7 @@ outlet_S2mode = 0;]]></code.krate>
    </settings>
    <notes><![CDATA[]]></notes>
    <windowPos>
-      <x>33</x>
+      <x>16</x>
       <y>23</y>
       <width>1904</width>
       <height>1057</height>

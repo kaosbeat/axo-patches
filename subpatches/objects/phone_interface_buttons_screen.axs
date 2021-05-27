@@ -131,7 +131,7 @@
    <obj type="gpio/in/digital" uuid="f59f139e8da912742832dc541157f20f30b7ac1b" name="digital_8" x="1330" y="476">
       <params/>
       <attribs>
-         <combo attributeName="pad" selection="PB7"/>
+         <combo attributeName="pad" selection="PC1"/>
          <combo attributeName="mode" selection="pulldown"/>
       </attribs>
    </obj>
@@ -168,7 +168,7 @@
    <obj type="gpio/in/analog" uuid="1c0c845ed2d7e06ae5f377ba13d9d09f4747ac87" name="analog_2" x="1148" y="588">
       <params/>
       <attribs>
-         <combo attributeName="channel" selection="PC1 (ADC1_IN11)"/>
+         <combo attributeName="channel" selection="PA2 (ADC1_IN2)"/>
       </attribs>
    </obj>
    <obj type="gpio/in/analog" uuid="1c0c845ed2d7e06ae5f377ba13d9d09f4747ac87" name="analog_3" x="1330" y="588">
@@ -270,7 +270,7 @@
    <obj type="gpio/in/digital" uuid="f59f139e8da912742832dc541157f20f30b7ac1b" name="digital_4" x="490" y="854">
       <params/>
       <attribs>
-         <combo attributeName="pad" selection="PA2"/>
+         <combo attributeName="pad" selection="PB7"/>
          <combo attributeName="mode" selection="pulldown"/>
       </attribs>
    </obj>
@@ -496,9 +496,9 @@
    </settings>
    <notes><![CDATA[]]></notes>
    <windowPos>
-      <x>-1656</x>
-      <y>0</y>
-      <width>1619</width>
-      <height>1050</height>
+      <x>43</x>
+      <y>41</y>
+      <width>1877</width>
+      <height>1159</height>
    </windowPos>
 </patch-1.0>
