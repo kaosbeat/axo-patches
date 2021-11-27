@@ -477,7 +477,7 @@ if (state[currentstate] == "menu"){
    </obj>
    <obj type="lfo/sine" uuid="75f7330c26a13953215dccc3b7b9008545c9daa9" name="sine_2" x="574" y="294">
       <params>
-         <frac32.s.map name="pitch" value="0.0"/>
+         <frac32.s.map name="pitch" value="10.0"/>
       </params>
       <attribs/>
    </obj>
@@ -487,10 +487,10 @@ if (state[currentstate] == "menu"){
    </obj>
    <obj type="mix/mix 4 g" uuid="36f472cd81da2e17bd4b4ee11b53b4c82527220c" name="mix_1" x="1204" y="406">
       <params>
-         <frac32.u.map name="gain1" MidiCC="9" value="0.0"/>
-         <frac32.u.map name="gain2" MidiCC="10" value="0.0"/>
+         <frac32.u.map name="gain1" MidiCC="9" value="30.5"/>
+         <frac32.u.map name="gain2" MidiCC="10" value="31.0"/>
          <frac32.u.map name="gain3" MidiCC="11" value="32.0"/>
-         <frac32.u.map name="gain4" MidiCC="12" value="32.0"/>
+         <frac32.u.map name="gain4" MidiCC="12" value="16.0"/>
       </params>
       <attribs/>
    </obj>
@@ -503,6 +503,13 @@ if (state[currentstate] == "menu"){
          <frac32.s.map name="pitch" value="0.0"/>
          <frac32.u.map name="timbre" value="0.0"/>
          <frac32.u.map name="color" value="32.0"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="fx/rngs/chorus" uuid="fefe9ec6-1b22-431f-ad8f-09529a3fb5e6" name="chorus_1" x="1428" y="490">
+      <params>
+         <frac32.u.map name="amount" value="0.0"/>
+         <frac32.u.map name="depth" value="31.0"/>
       </params>
       <attribs/>
    </obj>
@@ -520,7 +527,7 @@ if (state[currentstate] == "menu"){
    </obj>
    <obj type="lfo/sine" uuid="75f7330c26a13953215dccc3b7b9008545c9daa9" name="sine_3" x="560" y="560">
       <params>
-         <frac32.s.map name="pitch" value="0.0"/>
+         <frac32.s.map name="pitch" value="-1.0"/>
       </params>
       <attribs/>
    </obj>
@@ -530,10 +537,10 @@ if (state[currentstate] == "menu"){
    </obj>
    <obj type="mix/mix 4 g" uuid="36f472cd81da2e17bd4b4ee11b53b4c82527220c" name="mix_2" x="1204" y="672">
       <params>
-         <frac32.u.map name="gain1" MidiCC="13" value="32.5"/>
-         <frac32.u.map name="gain2" MidiCC="14" value="32.0"/>
-         <frac32.u.map name="gain3" MidiCC="15" value="0.0"/>
-         <frac32.u.map name="gain4" MidiCC="16" value="0.0"/>
+         <frac32.u.map name="gain1" MidiCC="13" value="32.0"/>
+         <frac32.u.map name="gain2" MidiCC="14" value="31.0"/>
+         <frac32.u.map name="gain3" MidiCC="15" value="14.0"/>
+         <frac32.u.map name="gain4" MidiCC="16" value="29.5"/>
       </params>
       <attribs/>
    </obj>
@@ -581,7 +588,7 @@ if (state[currentstate] == "menu"){
    </obj>
    <obj type="lfo/sine" uuid="75f7330c26a13953215dccc3b7b9008545c9daa9" name="sine_5" x="574" y="1036">
       <params>
-         <frac32.s.map name="pitch" value="0.0"/>
+         <frac32.s.map name="pitch" value="-8.0"/>
       </params>
       <attribs/>
    </obj>
@@ -717,7 +724,7 @@ if (state[currentstate] == "menu"){
       <net>
          <source obj="mix_1" outlet="out"/>
          <dest obj="phone_interface_buttons_screen_1" inlet="scope1"/>
-         <dest obj="out_1" inlet="wave"/>
+         <dest obj="chorus_1" inlet="l"/>
       </net>
       <net>
          <source obj="sawswarm_2" outlet="wave"/>
@@ -750,7 +757,7 @@ if (state[currentstate] == "menu"){
       <net>
          <source obj="mix_2" outlet="out"/>
          <dest obj="phone_interface_buttons_screen_1" inlet="scope2"/>
-         <dest obj="out_2" inlet="wave"/>
+         <dest obj="chorus_1" inlet="r"/>
       </net>
       <net>
          <source obj="sine_3" outlet="wave"/>
@@ -824,13 +831,21 @@ if (state[currentstate] == "menu"){
          <source obj="object_1" outlet="o4t"/>
          <dest obj="sawswarm_4" inlet="timbre"/>
       </net>
+      <net>
+         <source obj="chorus_1" outlet="l"/>
+         <dest obj="out_1" inlet="wave"/>
+      </net>
+      <net>
+         <source obj="chorus_1" outlet="r"/>
+         <dest obj="out_2" inlet="wave"/>
+      </net>
    </nets>
    <settings>
       <subpatchmode>no</subpatchmode>
    </settings>
    <notes><![CDATA[]]></notes>
    <windowPos>
-      <x>202</x>
+      <x>122</x>
       <y>119</y>
       <width>1798</width>
       <height>953</height>
