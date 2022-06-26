@@ -319,7 +319,7 @@ outlet_S1L2 = "";
 outlet_S1L3 = "";
 outlet_S1L4 = "";
 ///buttonpresses MENU up/down
-if ((inlet_top>0) && !toptrig) {
+if (((inlet_up>0) || (inlet_top>0)) && !toptrig) {
    if (currentstate < numstates) { 
    	currentstate++;
    } else {
@@ -333,12 +333,12 @@ if ((inlet_top>0) && !toptrig) {
    ppwait5=true;
    ppwait6=true;
 }
-if (!(inlet_top>0) && toptrig) {
+if (!((inlet_up>0) || (inlet_top>0)) && toptrig) {
    toptrig = 0;
 }
 
 
-if ((inlet_bottom>0) && !bottomtrig) {
+if (((inlet_down>0)||(inlet_bottom>0)) && !bottomtrig) {
    
    if (currentstate > 0) { 
    	currentstate--;
@@ -355,7 +355,7 @@ if ((inlet_bottom>0) && !bottomtrig) {
 }
 
 
-if (!(inlet_bottom>0) && bottomtrig) {
+if (!((inlet_down>0) || (inlet_bottom>0)) && bottomtrig) {
    bottomtrig = 0;
 }
 
@@ -523,7 +523,7 @@ if (state[currentstate] == "mixer"){
    </obj>
    <obj type="filter/vcf3" uuid="92455c652cd098cbb682a5497baa18abbf2ef865" name="vcf3_1" x="532" y="420">
       <params>
-         <frac32.s.map name="pitch" MidiCC="17" value="50.0"/>
+         <frac32.s.map name="pitch" MidiCC="17" value="7.0"/>
          <frac32.u.map name="reso" MidiCC="33" value="50.0"/>
       </params>
       <attribs/>
@@ -587,7 +587,7 @@ if (state[currentstate] == "mixer"){
    </obj>
    <obj type="stomps/ab" uuid="5596ce30-e752-414a-8e6b-0b1b2dbb4802" name="obj_2" x="560" y="560">
       <params>
-         <bool32.tgl name="a/b" MidiCC="1" value="0"/>
+         <bool32.tgl name="a/b" MidiCC="1" value="1"/>
       </params>
       <attribs/>
    </obj>
@@ -778,8 +778,8 @@ if (state[currentstate] == "mixer"){
    </settings>
    <notes><![CDATA[]]></notes>
    <windowPos>
-      <x>242</x>
-      <y>409</y>
+      <x>2068</x>
+      <y>131</y>
       <width>1765</width>
       <height>868</height>
    </windowPos>
