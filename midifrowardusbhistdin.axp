@@ -12,17 +12,17 @@
    <obj type="matroe/midi/thru clock" uuid="1db36a48-9e05-4831-9cf0-7112db1c1f52" name="thru_1" x="154" y="420">
       <params/>
       <attribs>
-         <combo attributeName="input" selection="din"/>
-         <combo attributeName="outputA" selection="usb host port 1"/>
+         <combo attributeName="input" selection="usb device port 1"/>
+         <combo attributeName="outputA" selection="din"/>
          <combo attributeName="onA" selection="on"/>
-         <combo attributeName="outputB" selection="din"/>
+         <combo attributeName="outputB" selection="usb host port 1"/>
          <combo attributeName="onB" selection="on"/>
       </attribs>
    </obj>
    <obj type="tb/midi/utils/midithru" uuid="b3868bd5-625c-4482-9948-a34e59fe2a21" name="midithru_1" x="350" y="434">
       <params/>
       <attribs>
-         <combo attributeName="input" selection="din"/>
+         <combo attributeName="input" selection="usb device port 1"/>
          <combo attributeName="output" selection="din"/>
          <combo attributeName="led" selection="on"/>
       </attribs>
@@ -38,6 +38,12 @@
    <nets/>
    <settings>
       <subpatchmode>no</subpatchmode>
+      <MidiChannel>1</MidiChannel>
+      <NPresets>8</NPresets>
+      <NPresetEntries>32</NPresetEntries>
+      <NModulationSources>8</NModulationSources>
+      <NModulationTargetsPerSource>8</NModulationTargetsPerSource>
+      <Author></Author>
    </settings>
    <notes><![CDATA[]]></notes>
    <windowPos>

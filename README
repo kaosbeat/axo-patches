@@ -1,0 +1,16 @@
+if compile fails on linux
+
+
+sudo vi /opt/Axoloti/app/firmware/Makefile.patch 
+
+SPACE +=
+#BDIR=$(subst $(SPACE),\ ,${axoloti_home}/build)
+BDIR=${axoloti_home}/build
+# theoretically should be this...., but CSRC expansion cannot cope with escape spaces
+#FIRMWARE=$(subst $(SPACE),\ ,${axoloti_firmware})
+#FIRMWARE=${axoloti_firmware}
+FIRMWARE=.
+
+
+
+
