@@ -1,0 +1,785 @@
+<patch-1.0 appVersion="1.0.12">
+   <obj type="audio/out stereo" uuid="a1ca7a567f535acc21055669829101d3ee7f0189" name="out_1" x="812" y="14">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="audio/in left" uuid="d40e60b7641fe75af4d7c91b45bb038aacafc52e" name="in_1" x="70" y="70">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="audio/inconfig l" uuid="7007d026acb7c3586f60a7f0898718d1ca7e0607" name="inconfig_2" x="42" y="126">
+      <params/>
+      <attribs>
+         <combo attributeName="gain" selection="24dB"/>
+         <combo attributeName="boost" selection="0dB"/>
+      </attribs>
+   </obj>
+   <obj type="audio/inconfig r" uuid="8468fe7907553f335959a7f69cbc5a1f7b5d4d1d" name="inconfig_1" x="42" y="182">
+      <params/>
+      <attribs>
+         <combo attributeName="gain" selection="24dB"/>
+         <combo attributeName="boost" selection="0dB"/>
+      </attribs>
+   </obj>
+   <obj type="audio/in right" uuid="5f35c9f87b3f291a8120a10db71935bebd186469" name="in_2" x="56" y="238">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="disp/dial b" uuid="9ffed04e6a3052d9001eda83bae7024cb6d17037" name="dial_1" x="826" y="294">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="conv/unipolar2bipolar" uuid="efc8ee28c508740c5edf7995eaaa07a6d6818e5e" name="unipolar2bipolar_1" x="308" y="308">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="fx/clds/clds" uuid="FD6EFF1B-3317-4BA5-A952-841327FC2F47" name="clds_1" x="644" y="308">
+      <params>
+         <frac32.u.map name="position" value="0.0"/>
+         <frac32.u.map name="size" value="0.0"/>
+         <frac32.s.map name="pitch" value="0.0"/>
+         <frac32.u.map name="density" value="0.0"/>
+         <frac32.u.map name="texture" value="0.0"/>
+         <frac32.u.map name="mix" value="64.0"/>
+         <frac32.u.map name="spread" value="0.0"/>
+         <frac32.u.map name="feedback" value="0.0"/>
+         <frac32.u.map name="reverb" value="0.0"/>
+         <int32.hradio name="playmode" value="0"/>
+         <bool32.tgl name="mono" value="0"/>
+         <bool32.tgl name="lofi" value="0"/>
+         <bool32.tgl name="silence" value="0"/>
+         <bool32.tgl name="bypass" value="0"/>
+      </params>
+      <attribs>
+         <combo attributeName="large buffer" selection="131072"/>
+         <combo attributeName="small buffer" selection="65536"/>
+      </attribs>
+   </obj>
+   <obj type="phone_interface_buttons_screen" uuid="d8e7f5d8-d6be-41e7-bd36-d0b3f5d45898" name="obj_1" x="14" y="322">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="conv/unipolar2bipolar" uuid="efc8ee28c508740c5edf7995eaaa07a6d6818e5e" name="unipolar2bipolar_2" x="308" y="350">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="conv/unipolar2bipolar" uuid="efc8ee28c508740c5edf7995eaaa07a6d6818e5e" name="unipolar2bipolar_3" x="308" y="392">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="conv/unipolar2bipolar" uuid="efc8ee28c508740c5edf7995eaaa07a6d6818e5e" name="unipolar2bipolar_4" x="308" y="434">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="conv/unipolar2bipolar" uuid="efc8ee28c508740c5edf7995eaaa07a6d6818e5e" name="unipolar2bipolar_5" x="308" y="476">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="conv/unipolar2bipolar" uuid="efc8ee28c508740c5edf7995eaaa07a6d6818e5e" name="unipolar2bipolar_6" x="308" y="518">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="logic/counter2" uuid="d9536f238ab92e53ac93d5927c3b43ceef998dc1" name="counter2_1" x="308" y="588">
+      <params>
+         <int32 name="maximum" value="64"/>
+      </params>
+      <attribs/>
+   </obj>
+   <patchobj type="patch/object" uuid="daee1ce6-92c6-4d98-9cb0-801c1ee91042" name="object_1" x="42" y="644">
+      <params/>
+      <attribs/>
+      <object id="patch/object" uuid="daee1ce6-92c6-4d98-9cb0-801c1ee91042">
+         <inlets>
+            <bool32 name="top"/>
+            <bool32 name="bottom"/>
+            <bool32 name="toggle1"/>
+            <bool32 name="toggle2"/>
+            <frac32.positive name="dial1"/>
+            <frac32.positive name="dial2"/>
+            <frac32.positive name="dial3"/>
+            <frac32.positive name="dial4"/>
+            <frac32.positive name="dial5"/>
+            <frac32.positive name="dial6"/>
+            <bool32 name="button1"/>
+            <bool32 name="button2"/>
+            <bool32 name="button3"/>
+            <bool32 name="button4"/>
+            <bool32 name="forward"/>
+            <bool32 name="backward"/>
+            <bool32 name="up"/>
+            <bool32 name="down"/>
+         </inlets>
+         <outlets>
+            <charptr32 name="S1L1"/>
+            <charptr32 name="S1L2"/>
+            <charptr32 name="S1L3"/>
+            <charptr32 name="S1L4"/>
+            <int32 name="S1mode"/>
+            <charptr32 name="S2L1"/>
+            <charptr32 name="S2L2"/>
+            <charptr32 name="S2L3"/>
+            <charptr32 name="S2L4"/>
+            <int32 name="S2mode"/>
+            <frac32.positive name="vol"/>
+            <int32 name="loadpatch"/>
+            <bool32 name="loadtrig"/>
+         </outlets>
+         <displays>
+            <int32.label name="d1"/>
+         </displays>
+         <params/>
+         <attribs/>
+         <includes/>
+         <code.declaration><![CDATA[//menu and screen and pot state
+char* state[7] = {"filter","reverb","delay","wah", "phaser", "menu", "mixer"};
+char* patch[8] = {"effects","dangerine","1976","effectsMic", "sidechain",  "side_bd", "side_cy", "sawdrone"};
+int menucount = *(&patch + 1) - patch;
+int numstates = *(&state + 1) - state - 1;
+int currentstate;
+int patchselect;
+bool ppwait1;
+bool ppwait2;
+bool ppwait3;
+bool ppwait4;
+bool ppwait5;
+bool ppwait6;
+int32_t lsend;
+int timer;
+
+
+
+//int *holdp;
+//int *inp
+//int 
+
+//main menu params
+int volhold;
+
+//button debouncing
+int toptrig;
+int bottomtrig;
+
+
+//oscilators
+int freq1hold;
+int freq2hold;
+
+//effects
+int flttrig;
+int fltstate;
+int flt_pitch_hold;
+char flt_pitch_c[10];
+int flt_reso_hold;
+char flt_reso_c[10];
+
+
+int revtrig;
+int revstate;
+int rev_amp_hold;
+char rev_amp_c[10];
+int rev_dec_hold;
+char rev_dec_c[10];
+
+int deltrig;
+int delstate;
+int del_fdbk_hold;
+char del_fdbk_c[10];
+int del_time_hold;
+char del_time_c[10];
+
+int wahtrig;
+int wahstate;
+int wah_freq_hold;
+char wah_freq_c[10];
+int wah_reso_hold;
+char wah_reso_c[10];
+
+
+int phstrig;
+int phsstate;
+int phs_amp_hold;
+char phs_amp_c[10];
+int phs_dec_hold;
+char phs_dec_c[10];
+
+
+
+int flgtrig;
+int flgstate;
+int flg_depth_hold;
+char flg_depth_c[10];
+int flg_fdbk_hold;
+char flg_fdbk_c[10];
+int flg_spd_hold;
+char flg_spd_c[10];
+
+
+
+
+
+int mix_Lin_fx_hold;
+char mix_Lin_fx_c[10];
+int mix_Rin_fx_hold;
+char mix_Rin_fx_c[10];
+int mix_Lin_dry_hold;
+char mix_Lin_dry_c[10];
+int mix_Rin_dry_hold;
+char mix_Rin_dry_c[10];
+int mix_drywet_hold;
+char mix_drywet_c[10];
+
+
+
+
+//functions
+// function definition to swap the values.
+void swap(int& x, int& y) {
+
+   int temp;
+   temp = x; /* save the value at address x */
+   x = y;    /* put y into x */
+   y = temp; /* put x into y */
+  
+   return;
+}
+
+// pot pickup function
+int32_t ppchange (int in, int* hold, bool &ppwait){
+//	if (timer==0) LogTextMessage((char*)(ppwait));
+	if (ppwait==true){
+		if (abs(in - *hold)>>20 < 2) {
+			ppwait = false;
+			
+		}
+		return *hold; ///goes to out!
+	} else {
+		*hold = in;
+		return in; ///goes to out!
+	}
+}
+
+
+//append int tot str
+char* addItoS(int i, char* s, char* c){
+	int32_t v = __SSAT(i,28)>>21;
+	strcpy(&c[2],s);
+	c[0] = 1;
+	if(v >= 0)
+  		c[1] = (uint8_t)(v + 1); // must not be zero !
+	else 
+	  	c[1] = (uint8_t)(256 + v); 
+	return c;
+}
+
+char* inttobar(int i) {
+	char c[2];
+	int32_t v = __SSAT(i,28)>>21;
+	if(v >= 0)
+  		c[0] = (uint8_t)(v + 1); // must not be zero !
+	else 
+  		c[0] = (uint8_t)(256 + v); 
+//  	char k[5];
+//  	strncpy(c,k,5);
+//  	k[5] = '\0';
+//	return k;
+	return (char*)(i);
+}
+
+void checkToggleState(int inlet, int &trigstate, int &state){
+	if (!(inlet>0) && trigstate) {
+   		trigstate = 0;
+	}
+	if ((inlet>0) && !trigstate) {
+   		trigstate = 1;
+   		if (state == 1)
+   			state = 0;
+   		else
+   			state = 1;
+	}
+}
+
+
+
+
+
+
+///midiCCthin
+void midiCCout(int v, int cc, int channel){
+	if (((lsend>v+(1<<19))||(v>lsend+(1<<19))) && (timer>60)) {
+	   lsend = v;
+	   PatchMidiInHandler(MIDI_DEVICE_INTERNAL ,0,MIDI_CONTROL_CHANGE + (channel-1),cc,__USAT(v>>20,7));
+	   timer = 0;
+	} else timer++;
+}]]></code.declaration>
+         <code.init><![CDATA[//state
+currentstate = 0;
+patchselect = 0;
+ppwait1=true; //enable potpickup wait on change
+ppwait2=true;
+ppwait3=true;
+ppwait4=true;
+ppwait5=true;
+ppwait6=true;
+//ppwait1=false; //enable potpickup wait on change
+//ppwait2=false;
+//ppwait3=false;
+//ppwait4=false;
+//ppwait5=false;
+//ppwait6=false;
+timer = 0;
+
+//buttons
+toptrig = 0;
+bottomtrig = 0;
+
+
+//outlets
+//freq1hold = 0;
+//freq2hold = 0;
+//volhold = 100<<20;\
+
+flttrig = 0;
+fltstate = 0;
+flt_pitch_hold = 100<<20;
+flt_reso_hold = 100<<20;
+
+
+revtrig = 0;
+revstate = 0;
+rev_amp_hold = 100<<20;
+rev_dec_hold = 100<<20;
+
+deltrig = 0;
+delstate = 0;
+del_time_hold = 100<<20;
+del_fdbk_hold= 100<<20;
+
+
+wahtrig = 0;
+wahstate = 0;
+wah_freq_hold = 100<<20;
+wah_reso_hold = 100<<20;
+
+
+phstrig = 0;
+phsstate = 0;
+phs_amp_hold = 100<<20;
+phs_dec_hold = 100<<20;
+
+flgtrig = 0;
+flgstate = 0;
+flg_depth_hold = 100<<20;
+flg_fdbk_hold= 100<<20;
+flg_spd_hold= 100<<20;
+
+
+mix_Lin_fx_hold= 100<<20;
+mix_Rin_fx_hold= 100<<20;
+mix_Lin_dry_hold= 100<<20;
+mix_Rin_dry_hold= 100<<20;
+mix_drywet_hold= 100<<20;
+
+
+
+
+
+//
+//cc1 = 1;
+//cc1trig = 0;
+//cc1val  = 0;]]></code.init>
+         <code.krate><![CDATA[//// pot pickup function declaration
+//int32_t ppchange (int32_t in);//, int32_t* hold);
+//void swap(int& x, int& y);
+
+outlet_loadtrig = 0;
+outlet_S1L1 = "";
+outlet_S1L2 = "";
+outlet_S1L3 = "";
+outlet_S1L4 = "";
+///buttonpresses MENU up/down
+if (((inlet_up>0) || (inlet_top>0)) && !toptrig) {
+   if (currentstate < numstates) { 
+   	currentstate++;
+   } else {
+   	currentstate = 0;
+   }
+   toptrig = 1;
+   ppwait1=true; //enable potpickup wait on change
+   ppwait2=true;
+   ppwait3=true;
+   ppwait4=true;
+   ppwait5=true;
+   ppwait6=true;
+}
+if (!((inlet_up>0) || (inlet_top>0)) && toptrig) {
+   toptrig = 0;
+}
+
+
+if (((inlet_down>0)||(inlet_bottom>0)) && !bottomtrig) {
+   
+   if (currentstate > 0) { 
+   	currentstate--;
+   } else {
+   	currentstate = numstates;
+   }
+   bottomtrig = 1;
+   ppwait1=true; //enable potpickup wait on change
+   ppwait2=true;
+   ppwait3=true;
+   ppwait4=true;
+   ppwait5=true;
+   ppwait6=true;
+}
+
+
+if (!((inlet_down>0) || (inlet_bottom>0)) && bottomtrig) {
+   bottomtrig = 0;
+}
+
+//outlet_S1L1 = state[currentstate];
+
+//midiCCout(127, 1, 1);
+
+
+if (state[currentstate] == "filter"){
+	outlet_S2mode = 2;
+	checkToggleState(inlet_button1,flttrig, fltstate);
+
+	if (fltstate == 1){
+		midiCCout(127<<20, 1, 1);
+		outlet_S1L1 = "filter  ON";
+	} else {
+		midiCCout(0, 1, 1);
+		outlet_S1L1 = "filter  OFF";
+	}
+	midiCCout(ppchange (inlet_dial1, &flt_pitch_hold, ppwait1), 17, 1);
+	outlet_S1L2 = addItoS(flt_pitch_hold,"pitch",flt_pitch_c);
+	midiCCout(ppchange (inlet_dial2, &flt_reso_hold, ppwait2), 33, 1);
+	outlet_S1L3 = addItoS(flt_reso_hold,"reso",flt_reso_c);
+
+}
+
+
+if (state[currentstate] == "reverb"){
+	outlet_S2mode = 2;
+	checkToggleState(inlet_button1,revtrig, revstate);
+
+	if (revstate == 1){
+		midiCCout(127<<20, 2, 1);
+		outlet_S1L1 = "reverb  ON";
+	} else {
+		midiCCout(0, 2, 1);
+		outlet_S1L1 = "reverb  OFF";
+	}
+	midiCCout(ppchange (inlet_dial1, &rev_amp_hold, ppwait1), 18, 1);
+	outlet_S1L2 = addItoS(rev_amp_hold,"amp",rev_amp_c);
+	midiCCout(ppchange (inlet_dial2, &rev_dec_hold, ppwait2), 34, 1);
+	outlet_S1L3 = addItoS(rev_dec_hold,"dec",rev_dec_c);
+
+}
+
+if (state[currentstate] == "delay"){
+	outlet_S2mode = 2;
+	checkToggleState(inlet_button1,deltrig, delstate);
+	if (delstate == 1){
+		outlet_S1L1 = "delay   ON";
+		midiCCout(127<<20, 3, 1);
+	} else {
+		outlet_S1L1 = "delay   OFF";
+		midiCCout(0, 3, 1);
+	}
+	midiCCout(ppchange (inlet_dial1, &del_fdbk_hold, ppwait1), 19, 1);
+	outlet_S1L2 = addItoS(del_fdbk_hold,"fdbk",del_fdbk_c);
+	midiCCout(ppchange (inlet_dial2, &del_time_hold, ppwait2), 35, 1);		
+	outlet_S1L3 = addItoS(del_time_hold,"time",del_time_c);
+
+}
+
+
+if (state[currentstate] == "wah"){
+	outlet_S2mode = 2;
+	checkToggleState(inlet_button1,wahtrig, wahstate);
+	if (wahstate == 1){
+		outlet_S1L1 = "wah     ON";
+		midiCCout(127<<20, 4, 1);
+	} else {
+		outlet_S1L1 = "wah     OFF";
+		midiCCout(0, 4, 1);
+	}
+	midiCCout(ppchange (inlet_dial1, &wah_freq_hold, ppwait1), 20, 1);
+	outlet_S1L2 = addItoS(wah_freq_hold,"freq",wah_freq_c);
+	midiCCout(ppchange (inlet_dial2, &wah_reso_hold, ppwait2), 36, 1);		
+	outlet_S1L3 = addItoS(wah_reso_hold,"reso",wah_reso_c);
+
+}
+if (state[currentstate] == "phaser"){
+	outlet_S2mode = 2;
+	checkToggleState(inlet_button1,phstrig, phsstate);
+	if (phsstate == 1){
+		outlet_S1L1 = "phaser  ON";
+		midiCCout(127<<20, 5, 1);
+	} else {
+		outlet_S1L1 = "phaser  OFF";
+		midiCCout(0, 5, 1);
+	}
+	midiCCout(ppchange (inlet_dial1, &phs_amp_hold, ppwait1), 21, 1);
+	outlet_S1L2 = addItoS(phs_amp_hold,"spd",phs_amp_c);
+	midiCCout(ppchange (inlet_dial2, &phs_dec_hold, ppwait2), 37, 1);		
+	outlet_S1L3 = addItoS(phs_dec_hold,"depth",phs_dec_c);
+
+}
+
+if (state[currentstate] == "menu"){
+	outlet_S2mode = 2;
+	outlet_S1L1 = "menu";
+	patchselect = inlet_dial5>>23;
+	disp_d1 = patchselect%menucount;
+	outlet_S1L2 = patch[patchselect%menucount];
+	outlet_S1L3 = "press B4";
+	outlet_S1L4 = "to load";
+	outlet_loadpatch = patchselect%menucount;
+	outlet_loadtrig = inlet_button4;
+	
+
+}
+
+if (state[currentstate] == "mixer"){
+//	outlet_S2mode = 0;
+//	outlet_S1L1 = "mixer";
+//	midiCCout(ppchange (inlet_dial5, &mix_drywet_hold, ppwait5), 114, 1);
+//	outlet_S1L3 = addItoS(mix_drywet_hold,"dry/wet",mix_drywet_c);
+//	
+	midiCCout(ppchange (inlet_dial1, &mix_Lin_fx_hold, ppwait1), 96, 1);
+	outlet_S1L1 = addItoS(mix_Lin_fx_hold,"L_fx",mix_Lin_fx_c);
+	midiCCout(ppchange (inlet_dial2, &mix_Rin_fx_hold, ppwait2), 97, 1);		
+	outlet_S1L2 = addItoS(mix_Rin_fx_hold,"R_fx",mix_Rin_fx_c);
+//	midiCCout(ppchange (inlet_dial3, &mix_Lin_dry_hold, ppwait3), 112, 1);
+//	outlet_S1L3 = addItoS(mix_Lin_dry_hold,"L_dry",mix_Lin_dry_c);
+//	midiCCout(ppchange (inlet_dial4, &mix_Rin_dry_hold, ppwait4), 113, 1);		
+//	outlet_S1L4 = addItoS(mix_Rin_dry_hold,"R_dry",mix_Rin_dry_c);
+
+
+}
+
+
+
+
+// //works with stomps/flanger
+//if (state[currentstate] == "flanger"){
+//	checkToggleState(inlet_button1,flgtrig, flgstate);
+//	if (flgstate == 1){
+//		outlet_S1L1 = "flanger ON";
+//		midiCCout(127<<20, 6, 1);
+//	} else {
+//		outlet_S1L1 = "flanger OFF";
+//		midiCCout(0, 6, 1);
+//	}
+//	midiCCout(ppchange (inlet_dial1, &flg_depth_hold, ppwait1), 22, 1);
+//	outlet_S1L2 = addItoS(flg_depth_hold,"dpth",flg_depth_c);
+//	midiCCout(ppchange (inlet_dial2, &flg_fdbk_hold, ppwait2), 38, 1);		
+//	outlet_S1L3 = addItoS(flg_fdbk_hold,"fdbk",flg_fdbk_c);
+//	midiCCout(ppchange (inlet_dial3, &flg_spd_hold, ppwait3), 54, 1);		
+//	outlet_S1L4 = addItoS(flg_spd_hold,"spd",flg_spd_c);
+//]]></code.krate>
+      </object>
+   </patchobj>
+   <obj type="disp/i" uuid="5e35fd0c62d81e70017289250cf28edd26e19e4a" name="i_1" x="504" y="644">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="patch/load i" uuid="b79124f5b7d1e8b39e187677ddab6260ce8c60a3" name="load_1" x="322" y="882">
+      <params/>
+      <attribs/>
+   </obj>
+   <nets>
+      <net>
+         <source obj="obj_1" outlet="dial 1"/>
+         <dest obj="unipolar2bipolar_1" inlet="i"/>
+         <dest obj="object_1" inlet="dial1"/>
+      </net>
+      <net>
+         <source obj="obj_1" outlet="dial 2"/>
+         <dest obj="unipolar2bipolar_2" inlet="i"/>
+         <dest obj="object_1" inlet="dial2"/>
+      </net>
+      <net>
+         <source obj="obj_1" outlet="dial 3"/>
+         <dest obj="unipolar2bipolar_3" inlet="i"/>
+         <dest obj="object_1" inlet="dial3"/>
+      </net>
+      <net>
+         <source obj="obj_1" outlet="dial 4"/>
+         <dest obj="unipolar2bipolar_4" inlet="i"/>
+         <dest obj="object_1" inlet="dial4"/>
+      </net>
+      <net>
+         <source obj="obj_1" outlet="dial 5"/>
+         <dest obj="unipolar2bipolar_5" inlet="i"/>
+         <dest obj="object_1" inlet="dial5"/>
+      </net>
+      <net>
+         <source obj="obj_1" outlet="dial 6"/>
+         <dest obj="unipolar2bipolar_6" inlet="i"/>
+         <dest obj="object_1" inlet="dial6"/>
+      </net>
+      <net>
+         <source obj="in_2" outlet="wave"/>
+         <dest obj="clds_1" inlet="r"/>
+      </net>
+      <net>
+         <source obj="in_1" outlet="wave"/>
+         <dest obj="clds_1" inlet="l"/>
+      </net>
+      <net>
+         <source obj="obj_1" outlet="toggle 1"/>
+         <dest obj="clds_1" inlet="lofi"/>
+         <dest obj="object_1" inlet="toggle1"/>
+      </net>
+      <net>
+         <source obj="obj_1" outlet="toggle 2"/>
+         <dest obj="clds_1" inlet="mode"/>
+         <dest obj="object_1" inlet="toggle2"/>
+      </net>
+      <net>
+         <source obj="clds_1" outlet="l"/>
+         <dest obj="out_1" inlet="left"/>
+         <dest obj="obj_1" inlet="scope2"/>
+      </net>
+      <net>
+         <source obj="clds_1" outlet="r"/>
+         <dest obj="out_1" inlet="right"/>
+         <dest obj="obj_1" inlet="scope1"/>
+      </net>
+      <net>
+         <source obj="unipolar2bipolar_1" outlet="o"/>
+         <dest obj="clds_1" inlet="position"/>
+         <dest obj="dial_1" inlet="in"/>
+      </net>
+      <net>
+         <source obj="unipolar2bipolar_2" outlet="o"/>
+         <dest obj="clds_1" inlet="size"/>
+      </net>
+      <net>
+         <source obj="unipolar2bipolar_3" outlet="o"/>
+         <dest obj="clds_1" inlet="pitch"/>
+      </net>
+      <net>
+         <source obj="unipolar2bipolar_4" outlet="o"/>
+         <dest obj="clds_1" inlet="texture"/>
+      </net>
+      <net>
+         <source obj="unipolar2bipolar_5" outlet="o"/>
+         <dest obj="clds_1" inlet="spread"/>
+      </net>
+      <net>
+         <source obj="unipolar2bipolar_6" outlet="o"/>
+         <dest obj="clds_1" inlet="reverb"/>
+      </net>
+      <net>
+         <source obj="obj_1" outlet="forward"/>
+         <dest obj="counter2_1" inlet="inc"/>
+         <dest obj="object_1" inlet="forward"/>
+      </net>
+      <net>
+         <source obj="obj_1" outlet="backward"/>
+         <dest obj="counter2_1" inlet="dec"/>
+         <dest obj="object_1" inlet="backward"/>
+      </net>
+      <net>
+         <source obj="counter2_1" outlet="o"/>
+         <dest obj="i_1" inlet="in"/>
+         <dest obj="clds_1" inlet="density"/>
+      </net>
+      <net>
+         <source obj="obj_1" outlet="top"/>
+         <dest obj="object_1" inlet="top"/>
+      </net>
+      <net>
+         <source obj="obj_1" outlet="bottom"/>
+         <dest obj="object_1" inlet="bottom"/>
+      </net>
+      <net>
+         <source obj="obj_1" outlet="button 1"/>
+         <dest obj="object_1" inlet="button1"/>
+      </net>
+      <net>
+         <source obj="obj_1" outlet="button 2"/>
+         <dest obj="object_1" inlet="button2"/>
+      </net>
+      <net>
+         <source obj="obj_1" outlet="button 3"/>
+         <dest obj="object_1" inlet="button3"/>
+      </net>
+      <net>
+         <source obj="obj_1" outlet="button 4"/>
+         <dest obj="object_1" inlet="button4"/>
+      </net>
+      <net>
+         <source obj="obj_1" outlet="up"/>
+         <dest obj="object_1" inlet="up"/>
+      </net>
+      <net>
+         <source obj="obj_1" outlet="down"/>
+         <dest obj="object_1" inlet="down"/>
+      </net>
+      <net>
+         <source obj="object_1" outlet="loadpatch"/>
+         <dest obj="load_1" inlet="i"/>
+      </net>
+      <net>
+         <source obj="object_1" outlet="loadtrig"/>
+         <dest obj="load_1" inlet="trig"/>
+      </net>
+      <net>
+         <source obj="object_1" outlet="S1L1"/>
+         <dest obj="obj_1" inlet="S1_L1"/>
+      </net>
+      <net>
+         <source obj="object_1" outlet="S1L2"/>
+         <dest obj="obj_1" inlet="S1_L2"/>
+      </net>
+      <net>
+         <source obj="object_1" outlet="S1L3"/>
+         <dest obj="obj_1" inlet="S1_L3"/>
+      </net>
+      <net>
+         <source obj="object_1" outlet="S1L4"/>
+         <dest obj="obj_1" inlet="S1_L4"/>
+      </net>
+      <net>
+         <source obj="object_1" outlet="S1mode"/>
+         <dest obj="obj_1" inlet="S1mode"/>
+      </net>
+      <net>
+         <source obj="object_1" outlet="S2L1"/>
+         <dest obj="obj_1" inlet="S2_L1"/>
+      </net>
+      <net>
+         <source obj="object_1" outlet="S2L2"/>
+         <dest obj="obj_1" inlet="S2_L2"/>
+      </net>
+      <net>
+         <source obj="object_1" outlet="S2L3"/>
+         <dest obj="obj_1" inlet="S2_L3"/>
+      </net>
+      <net>
+         <source obj="object_1" outlet="S2L4"/>
+         <dest obj="obj_1" inlet="S2_L4"/>
+      </net>
+      <net>
+         <source obj="object_1" outlet="S2mode"/>
+         <dest obj="obj_1" inlet="S2mode"/>
+      </net>
+   </nets>
+   <settings>
+      <subpatchmode>no</subpatchmode>
+   </settings>
+   <notes><![CDATA[]]></notes>
+   <windowPos>
+      <x>2980</x>
+      <y>661</y>
+      <width>1019</width>
+      <height>904</height>
+   </windowPos>
+</patch-1.0>
