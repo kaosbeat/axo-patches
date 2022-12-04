@@ -1,0 +1,849 @@
+<patch-1.0 appVersion="1.0.12">
+   <obj type="osc/brds/plucked" uuid="e78bfbb5-2963-49a0-8863-dead044d748c" name="plucked_3" x="616" y="98">
+      <params>
+         <frac32.s.map name="pitch" MidiCC="1" value="-9.0"/>
+         <frac32.u.map name="timbre" MidiCC="5" value="32.0"/>
+         <frac32.u.map name="color" MidiCC="9" value="13.5"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="midi/out/cc thin" uuid="5255b30d60e50223ed41179d8ce935ba9464de75" name="cc_1" x="896" y="196">
+      <params/>
+      <attribs>
+         <combo attributeName="device" selection="internal port 1"/>
+         <spinner attributeName="channel" value="1"/>
+         <spinner attributeName="cc" value="20"/>
+      </attribs>
+   </obj>
+   <obj type="midi/out/cc thin" uuid="5255b30d60e50223ed41179d8ce935ba9464de75" name="cc_2" x="1050" y="196">
+      <params/>
+      <attribs>
+         <combo attributeName="device" selection="internal port 1"/>
+         <spinner attributeName="channel" value="1"/>
+         <spinner attributeName="cc" value="30"/>
+      </attribs>
+   </obj>
+   <obj type="phone_interface_buttons_screen" uuid="b9908465-74c1-4357-a40e-1da2e441217c" name="phone_interface_buttons_screen_1" x="28" y="280">
+      <params/>
+      <attribs/>
+   </obj>
+   <patchobj type="patch/object" uuid="daee1ce6-92c6-4d98-9cb0-801c1ee91042" name="object_1" x="224" y="280">
+      <params/>
+      <attribs/>
+      <object id="patch/object" uuid="daee1ce6-92c6-4d98-9cb0-801c1ee91042">
+         <inlets>
+            <bool32 name="top"/>
+            <bool32 name="bottom"/>
+            <bool32 name="toggle1"/>
+            <bool32 name="toggle2"/>
+            <frac32.positive name="dial1"/>
+            <frac32.positive name="dial2"/>
+            <frac32.positive name="dial3"/>
+            <frac32.positive name="dial4"/>
+            <frac32.positive name="dial5"/>
+            <frac32.positive name="dial6"/>
+            <bool32 name="button1"/>
+            <bool32 name="button2"/>
+            <bool32 name="button3"/>
+            <bool32 name="button4"/>
+            <bool32 name="forward"/>
+            <bool32 name="backward"/>
+            <bool32 name="up"/>
+            <bool32 name="down"/>
+         </inlets>
+         <outlets>
+            <charptr32 name="S1L1"/>
+            <charptr32 name="S1L2"/>
+            <charptr32 name="S1L3"/>
+            <charptr32 name="S1L4"/>
+            <int32 name="S1mode"/>
+            <charptr32 name="S2L1"/>
+            <charptr32 name="S2L2"/>
+            <charptr32 name="S2L3"/>
+            <charptr32 name="S2L4"/>
+            <int32 name="S2mode"/>
+            <frac32.positive name="vol"/>
+            <int32 name="loadpatch"/>
+            <bool32 name="loadtrig"/>
+            <frac32.positive name="chdepth"/>
+            <frac32.positive name="chspeed"/>
+            <frac32.positive name="revsize"/>
+            <frac32.positive name="revdecay"/>
+         </outlets>
+         <displays>
+            <int32.label name="d1"/>
+            <int32.label name="d2"/>
+         </displays>
+         <params/>
+         <attribs/>
+         <includes/>
+         <code.declaration><![CDATA[//menu and screen and pot state
+char* state[5] = {"pitch", "color", "timbre",  "fx", "menu"};
+char* patch[8] = {"effects","dangerine","1976","effectsMic", "sidechain",  "side_bd", "side_cy", "sawdrone"};
+char* notes[12] = {"Sa   C", "Sa # C","Re   D","Re # D","Ga   E","Ma   F","Ma # F", "Pa   G", "Pa # G",  "Dha  A","Dha #A", "Ni   B"};
+char* octave[11] = {" -1","  0","  1","  2","  3","  4","  5","  6","  7","  8","  9"};
+
+int menucount = *(&patch + 1) - patch;
+int numstates = *(&state + 1) - state - 1;
+int currentstate;
+int patchselect;
+bool ppwait1;
+bool ppwait2;
+bool ppwait3;
+bool ppwait4;
+bool ppwait5;
+bool ppwait6;
+int32_t lsend;
+int timer;
+
+
+
+//int *holdp;
+//int *inp
+//int 
+
+/// PITCH menu
+char string1[12];
+char string1hold[12];
+char string2[12];
+char string2hold[12];
+char string3[12];
+char string3hold[12];
+char string4[12];
+char string4hold[12];
+int noteindex;
+int stringindex;
+int octindex;
+int str1oct_hold;
+int str2oct_hold;
+int str3oct_hold;
+int str4oct_hold;
+int str1;
+int str2;
+int str3;
+int str4;
+int str1hold;
+bool str1wait;
+int str2hold;
+bool str2wait;
+int str3hold;
+bool str3wait;
+int str4hold;
+bool str4wait;
+
+//menu color
+int str1col_hold;
+char str1col_c[10];
+int str2col_hold;
+char str2col_c[10];
+int str3col_hold;
+char str3col_c[10];
+int str4col_hold;
+char str4col_c[10];
+
+//menu timbre
+int str1tim_hold;
+char str1tim_c[10];
+int str2tim_hold;
+char str2tim_c[10];
+int str3tim_hold;
+char str3tim_c[10];
+int str4tim_hold;
+char str4tim_c[10];
+
+//menu fx
+int ch_depth_hold;
+char ch_depth_c[10];
+int ch_spd_hold;
+char ch_spd_c[10];
+int rev_size_hold;
+char rev_size_c[10];
+int rev_decay_hold;
+char rev_decay_c[10];
+
+//main menu params
+int volhold;
+
+//button debouncing
+int toptrig;
+int bottomtrig;
+int uptrig;
+int downtrig;
+int forwardtrig;
+int backwardtrig;
+
+
+//functions
+// function definition to swap the values.
+void swap(int& x, int& y) {
+
+   int temp;
+   temp = x; /* save the value at address x */
+   x = y;    /* put y into x */
+   y = temp; /* put x into y */
+  
+   return;
+}
+
+// pot pickup function
+int32_t ppchange (int in, int* hold, bool &ppwait){
+//	if (timer==0) LogTextMessage((char*)(ppwait));
+	if (ppwait==true){
+		if (abs(in - *hold)>>20 < 2) {
+			ppwait = false;
+			
+		}
+		return *hold; ///goes to out!
+	} else {
+		*hold = in;
+		return in; ///goes to out!
+	}
+}
+
+
+//append int tot str
+char* addItoS(int i, char* s, char* c){
+	int32_t v = __SSAT(i,28)>>21;
+	strcpy(&c[2],s);
+	c[0] = 1;
+	if(v >= 0)
+  		c[1] = (uint8_t)(v + 1); // must not be zero !
+	else 
+	  	c[1] = (uint8_t)(256 + v); 
+	return c;
+}
+
+char* inttobar(int i) {
+	char c[2];
+	int32_t v = __SSAT(i,28)>>21;
+	if(v >= 0)
+  		c[0] = (uint8_t)(v + 1); // must not be zero !
+	else 
+  		c[0] = (uint8_t)(256 + v); 
+//  	char k[5];
+//  	strncpy(c,k,5);
+//  	k[5] = '\0';
+//	return k;
+	return (char*)(i);
+}
+
+void checkToggleState(int inlet, int &trigstate, int &state){
+	if (!(inlet>0) && trigstate) {
+   		trigstate = 0;
+	}
+	if ((inlet>0) && !trigstate) {
+   		trigstate = 1;
+   		if (state == 1)
+   			state = 0;
+   		else
+   			state = 1;
+	}
+}
+
+int checkCountStateUp(int inlet, int &trigstate, int &state, int count){
+	if (((inlet>0)) && !trigstate) {
+	   if (state < count) { 
+	   	state++;
+	   } else {
+	   	state = 0;
+	   }
+	ppwait5=true; /// we need to enable the ppwait on change
+	trigstate = 1;
+	}
+	if (!(inlet>0) && trigstate) {
+   		trigstate = 0;
+	}
+	return state;
+	
+}
+
+void checkCountStateDown(int inlet, int &trigstate, int &state, int count){
+	if (((inlet>0)) && !trigstate) {
+	   if (state > 0) { 
+	   	state--;
+	   } else {
+	   	state = count;
+	   }
+	ppwait5=true; /// we need to enable the ppwait on change
+	trigstate = 1;
+	}
+	if (!(inlet>0) && trigstate) {
+   		trigstate = 0;
+	}
+	
+}
+// calculatestring
+void calcNoteString(int &strnumber, char* stringname){
+	int note = strnumber%12;
+	int oct = ((strnumber-note)/12);
+	strcpy(stringname,notes[strnumber%12]);
+	strcat(stringname,octave[oct]);
+}
+
+//changstringnote
+void changeStringNoteUp(int inlet, int &trigstate, int &stringnote){
+	if (((inlet>0)) && !trigstate) {
+	   if (stringnote <127) { 
+	   	stringnote++;
+	   } else {
+	   	stringnote = 127;
+	   }
+	trigstate = 1;
+	}
+	if (!(inlet>0) && trigstate) {
+   		trigstate = 0;
+	}
+}
+
+void changeStringNoteDown(int inlet, int &trigstate, int &stringnote){
+	if (((inlet>0)) && !trigstate) {
+	   if (stringnote > 0) { 
+	   	stringnote--;
+	   } else {
+	   	stringnote = 0;
+	   }
+	trigstate = 1;
+	}
+	if (!(inlet>0) && trigstate) {
+   		trigstate = 0;
+	}
+}
+
+
+///midiCCthin
+void midiCCout(int v, int cc, int channel){
+	if (((lsend>v+(1<<19))||(v>lsend+(1<<19))) && (timer>60)) {
+	//if ((v>lsend+(1<<19)) && (timer>60)) {
+	   lsend = v;
+	   PatchMidiInHandler(MIDI_DEVICE_INTERNAL ,0,MIDI_CONTROL_CHANGE + (channel-1),cc,__USAT(v>>20,7));
+	   timer = 0;
+	} else {
+		timer++;
+	}
+}]]></code.declaration>
+         <code.init><![CDATA[//state
+currentstate = 0;
+patchselect = 0;
+ppwait1=true; //enable potpickup wait on change
+ppwait2=true;
+ppwait3=true;
+ppwait4=true;
+ppwait5=true;
+ppwait6=true;
+//ppwait1=false; //enable potpickup wait on change
+//ppwait2=false;
+//ppwait3=false;
+//ppwait4=false;
+//ppwait5=false;
+//ppwait6=false;
+timer = 0;
+
+//buttons
+toptrig = 0;
+bottomtrig = 0;
+uptrig = 0;
+downtrig = 0;
+forwardtrig = 0;
+backwardtrig = 0;
+
+//pitch menu
+noteindex = 0;
+stringindex = 0;
+octindex = 6;
+str1=55;
+str2=60;
+str3=60;
+str4=48;
+
+str1oct_hold = 6<<20;
+str2oct_hold = 6<<20;
+str3oct_hold = 6<<20;
+str4oct_hold = 6<<20;
+
+str1hold = str1;
+str2hold = str2;
+str3hold = str3;
+str4hold = str4;
+
+calcNoteString(str1, string1);
+calcNoteString(str2, string2);
+calcNoteString(str3, string3);
+calcNoteString(str4, string4);
+strcpy(string1hold,string1);
+strcpy(string2hold,string2);
+strcpy(string3hold,string3);
+strcpy(string4hold,string4);
+
+// color menu
+str1col_hold = 64<<20;
+str2col_hold = 64<<20;
+str3col_hold = 64<<20;
+str4col_hold = 64<<20;
+
+// timbre menu
+str1tim_hold = 64<<20;
+str2tim_hold = 64<<20;
+str3tim_hold = 64<<20;
+str4tim_hold = 64<<20;
+
+
+//fx menu
+ch_depth_hold = 64<<20;
+ch_spd_hold = 64<<20;
+rev_size_hold = 64<<20;
+rev_decay_hold = 64<<20;]]></code.init>
+         <code.krate><![CDATA[//// pot pickup function declaration
+//int32_t ppchange (int32_t in);//, int32_t* hold);
+//void swap(int& x, int& y);
+outlet_S1mode = 0;
+outlet_S2mode = 2;
+outlet_loadtrig = 0;
+outlet_S1L1 = "";
+outlet_S1L2 = "";
+outlet_S1L3 = "";
+outlet_S1L4 = "";
+//outlet_fx = 0;
+
+disp_d1 = timer;
+///buttonpresses MENU up/down
+if ((inlet_top>0) && !toptrig) {
+   if (currentstate < numstates) { 
+   	currentstate++;
+   } else {
+   	currentstate = 0;
+   }
+   toptrig = 1;
+   ppwait1=true; //enable potpickup wait on change
+   ppwait2=true;
+   ppwait3=true;
+   ppwait4=true;
+   ppwait5=true;
+   ppwait6=true;
+}
+if (!(inlet_top>0) && toptrig) {
+   toptrig = 0;
+}
+
+
+if ((inlet_bottom>0) && !bottomtrig) {
+   
+   if (currentstate > 0) { 
+   	currentstate--;
+   } else {
+   	currentstate = numstates;
+   }
+   bottomtrig = 1;
+   ppwait1=true; //enable potpickup wait on change
+   ppwait2=true;
+   ppwait3=true;
+   ppwait4=true;
+   ppwait5=true;
+   ppwait6=true;
+}
+
+
+if (!(inlet_bottom>0) && bottomtrig) {
+   bottomtrig = 0;
+}
+
+
+
+
+if (state[currentstate] == "pitch"){
+	strcpy(string1,string1hold);
+	strcpy(string2,string2hold);
+	strcpy(string3,string3hold);
+	strcpy(string4,string4hold);
+	
+	
+	
+	
+
+	checkCountStateUp(inlet_forward, forwardtrig, stringindex, 3);
+	checkCountStateDown(inlet_backward, backwardtrig, stringindex, 3);
+
+	if (stringindex == 0){
+		changeStringNoteUp(inlet_up, uptrig, str1);
+		changeStringNoteDown(inlet_down, downtrig, str1);
+		calcNoteString(str1, string1);
+		strcpy(string1hold,string1);
+		strcat(string1,"<");
+		midiCCout(str1<<20,1,1);
+
+	}
+	if (stringindex == 1){
+		changeStringNoteUp(inlet_up, uptrig, str2);
+		changeStringNoteDown(inlet_down, downtrig, str2);
+		calcNoteString(str2, string2);
+		strcpy(string2hold,string2);
+		strcat(string2,"<");
+		midiCCout(str2<<20,2,1);
+
+	}
+	if (stringindex == 2){
+		changeStringNoteUp(inlet_up, uptrig, str3);
+		changeStringNoteDown(inlet_down, downtrig, str3);
+		calcNoteString(str3, string3);
+		strcpy(string3hold,string3);
+		strcat(string3,"<");
+		midiCCout(str3<<20,3,1);
+	}
+	if (stringindex == 3){
+		changeStringNoteUp(inlet_up, uptrig, str4);
+		changeStringNoteDown(inlet_down, downtrig, str4);
+		calcNoteString(str4, string4);
+		strcpy(string4hold,string4);
+		strcat(string4,"<");
+		midiCCout(str4<<20,4,1);
+	}
+	outlet_S1L1 = string1;
+	outlet_S1L2 = string2;
+	outlet_S1L3 = string3;
+	outlet_S1L4 = string4;
+	//disp_d1 = str1;
+	//disp_d2 = str3;
+	}
+
+
+if (state[currentstate] == "timbre"){
+	midiCCout(ppchange (inlet_dial1, &str1tim_hold, ppwait1), 5, 1);
+	outlet_S1L1 = addItoS(str1tim_hold,"s1tim",str1tim_c);
+	midiCCout(ppchange (inlet_dial2, &str2tim_hold, ppwait2), 6, 1);
+	outlet_S1L2 = addItoS(str2tim_hold,"s2tim",str2tim_c);
+	midiCCout(ppchange (inlet_dial3, &str3tim_hold, ppwait3), 7, 1);
+	outlet_S1L3 = addItoS(str3tim_hold,"s3tim",str3tim_c);
+	midiCCout(ppchange (inlet_dial4, &str4tim_hold, ppwait4), 8, 1);
+	outlet_S1L4 = addItoS(str4tim_hold,"s4tim",str4tim_c);
+}
+
+
+if (state[currentstate] == "color"){
+	midiCCout(ppchange (inlet_dial1, &str1col_hold, ppwait1), 9, 1);
+	outlet_S1L1 = addItoS(str1col_hold,"s1col",str1col_c);
+	midiCCout(ppchange (inlet_dial2, &str2col_hold, ppwait2), 10, 1);
+	outlet_S1L2 = addItoS(str2col_hold,"s2col",str2col_c);
+	midiCCout(ppchange (inlet_dial3, &str3col_hold, ppwait3), 11, 1);
+	outlet_S1L3 = addItoS(str3col_hold,"s3col",str3col_c);
+	midiCCout(ppchange (inlet_dial4, &str4col_hold, ppwait4), 12, 1);
+	outlet_S1L4 = addItoS(str4col_hold,"s4col",str4col_c);
+}
+
+if (state[currentstate] == "menu"){
+	outlet_S2mode = 2;
+	outlet_S1L1 = "menu";
+	patchselect = inlet_dial5>>23;
+	//disp_d1 = patchselect%menucount;
+	outlet_S1L2 = patch[patchselect%menucount];
+	outlet_S1L3 = "press B4";
+	outlet_S1L4 = "to load";
+	outlet_loadpatch = patchselect%menucount;
+	outlet_loadtrig = inlet_button4;
+	
+
+}
+
+if (state[currentstate] == "fx"){
+	outlet_S1mode = 0;
+	outlet_S2mode = 0;
+	if(inlet_toggle1==1){
+		outlet_S1L1 = "chorus  ON";
+		//midiCCout(120, 20, 1);
+	} else {
+		outlet_S1L1 = "chorus OFF";
+		//midiCCout(0, 20, 1);
+	}
+	outlet_chdepth = ppchange (inlet_dial1, &ch_depth_hold, ppwait1);
+	outlet_S1L2 = addItoS(ch_depth_hold,"depth",ch_depth_c);
+	outlet_chspeed = ppchange (inlet_dial2, &ch_spd_hold, ppwait2);
+	outlet_S1L3 = addItoS(ch_spd_hold,"speed",ch_spd_c);
+	if(inlet_toggle2==1){
+		outlet_S2L1 = "reverb  ON";
+		//midiCCout(120, 20, 1);
+	} else {
+		outlet_S2L1 = "reverb OFF";
+		//midiCCout(0, 20, 1);
+	}
+	outlet_revsize = ppchange (inlet_dial3, &rev_size_hold, ppwait3);
+	outlet_S2L2 = addItoS(rev_size_hold,"size",rev_size_c);
+	outlet_revdecay = ppchange (inlet_dial4, &rev_decay_hold, ppwait4);
+	outlet_S2L3 = addItoS(rev_decay_hold,"decay",rev_decay_c);
+}]]></code.krate>
+      </object>
+   </patchobj>
+   <obj type="mix/mix 4 g" uuid="36f472cd81da2e17bd4b4ee11b53b4c82527220c" name="mix_1" x="784" y="280">
+      <params>
+         <frac32.u.map name="gain1" value="64.0"/>
+         <frac32.u.map name="gain2" value="64.0"/>
+         <frac32.u.map name="gain3" value="64.0"/>
+         <frac32.u.map name="gain4" value="64.0"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="osc/brds/plucked" uuid="e78bfbb5-2963-49a0-8863-dead044d748c" name="plucked_2" x="616" y="294">
+      <params>
+         <frac32.s.map name="pitch" MidiCC="2" value="-6.0"/>
+         <frac32.u.map name="timbre" MidiCC="6" value="58.5"/>
+         <frac32.u.map name="color" MidiCC="10" value="9.0"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="stomps/chorus1" uuid="84245e7c-5635-41e4-acca-6dbcb0392264" name="obj_1" x="910" y="308">
+      <params>
+         <bool32.tgl name="on" MidiCC="20" value="1"/>
+         <frac32.u.map name="depth" MidiCC="21" value="18.5"/>
+         <frac32.s.map name="speed" MidiCC="22" value="-43.0"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="stomps/reverb1" uuid="fa0db41a-8c5f-4551-979d-d1aaf6f0933e" name="reverb1_1" x="1064" y="322">
+      <params>
+         <bool32.tgl name="on" MidiCC="30" value="1"/>
+         <frac32.u.map name="*c_1" MidiCC="31" value="41.5"/>
+         <frac32.u.map name="decay" MidiCC="32" value="22.5"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="audio/out stereo" uuid="a1ca7a567f535acc21055669829101d3ee7f0189" name="out_1" x="1204" y="336">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="osc/brds/plucked" uuid="e78bfbb5-2963-49a0-8863-dead044d748c" name="plucked_5" x="616" y="490">
+      <params>
+         <frac32.s.map name="pitch" MidiCC="3" value="-6.0"/>
+         <frac32.u.map name="timbre" MidiCC="7" value="54.0"/>
+         <frac32.u.map name="color" MidiCC="11" value="13.0"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="midi/out/cc thin" uuid="5255b30d60e50223ed41179d8ce935ba9464de75" name="cc_3" x="812" y="588">
+      <params/>
+      <attribs>
+         <combo attributeName="device" selection="internal port 1"/>
+         <spinner attributeName="channel" value="1"/>
+         <spinner attributeName="cc" value="21"/>
+      </attribs>
+   </obj>
+   <obj type="patch/load i" uuid="b79124f5b7d1e8b39e187677ddab6260ce8c60a3" name="load_1" x="476" y="672">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="osc/brds/plucked" uuid="e78bfbb5-2963-49a0-8863-dead044d748c" name="plucked_4" x="616" y="686">
+      <params>
+         <frac32.s.map name="pitch" MidiCC="4" value="-18.0"/>
+         <frac32.u.map name="timbre" MidiCC="8" value="32.0"/>
+         <frac32.u.map name="color" MidiCC="12" value="21.5"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="midi/out/cc thin" uuid="5255b30d60e50223ed41179d8ce935ba9464de75" name="cc_4" x="812" y="686">
+      <params/>
+      <attribs>
+         <combo attributeName="device" selection="internal port 1"/>
+         <spinner attributeName="channel" value="1"/>
+         <spinner attributeName="cc" value="22"/>
+      </attribs>
+   </obj>
+   <obj type="midi/out/cc thin" uuid="5255b30d60e50223ed41179d8ce935ba9464de75" name="cc_5" x="812" y="784">
+      <params/>
+      <attribs>
+         <combo attributeName="device" selection="internal port 1"/>
+         <spinner attributeName="channel" value="1"/>
+         <spinner attributeName="cc" value="31"/>
+      </attribs>
+   </obj>
+   <obj type="midi/out/cc thin" uuid="5255b30d60e50223ed41179d8ce935ba9464de75" name="cc_6" x="812" y="882">
+      <params/>
+      <attribs>
+         <combo attributeName="device" selection="internal port 1"/>
+         <spinner attributeName="channel" value="1"/>
+         <spinner attributeName="cc" value="32"/>
+      </attribs>
+   </obj>
+   <nets>
+      <net>
+         <source obj="plucked_2" outlet="wave"/>
+         <dest obj="mix_1" inlet="in2"/>
+      </net>
+      <net>
+         <source obj="plucked_4" outlet="wave"/>
+         <dest obj="mix_1" inlet="in4"/>
+      </net>
+      <net>
+         <source obj="mix_1" outlet="out"/>
+         <dest obj="phone_interface_buttons_screen_1" inlet="scope2"/>
+         <dest obj="obj_1" inlet="in"/>
+      </net>
+      <net>
+         <source obj="phone_interface_buttons_screen_1" outlet="dial 1"/>
+         <dest obj="object_1" inlet="dial1"/>
+      </net>
+      <net>
+         <source obj="phone_interface_buttons_screen_1" outlet="dial 2"/>
+         <dest obj="object_1" inlet="dial2"/>
+      </net>
+      <net>
+         <source obj="phone_interface_buttons_screen_1" outlet="dial 3"/>
+         <dest obj="object_1" inlet="dial3"/>
+      </net>
+      <net>
+         <source obj="phone_interface_buttons_screen_1" outlet="dial 4"/>
+         <dest obj="object_1" inlet="dial4"/>
+      </net>
+      <net>
+         <source obj="phone_interface_buttons_screen_1" outlet="dial 5"/>
+         <dest obj="object_1" inlet="dial5"/>
+      </net>
+      <net>
+         <source obj="phone_interface_buttons_screen_1" outlet="dial 6"/>
+         <dest obj="object_1" inlet="dial6"/>
+      </net>
+      <net>
+         <source obj="phone_interface_buttons_screen_1" outlet="toggle 1"/>
+         <dest obj="cc_1" inlet="v"/>
+         <dest obj="object_1" inlet="toggle1"/>
+      </net>
+      <net>
+         <source obj="phone_interface_buttons_screen_1" outlet="toggle 2"/>
+         <dest obj="cc_2" inlet="v"/>
+         <dest obj="object_1" inlet="toggle2"/>
+      </net>
+      <net>
+         <source obj="phone_interface_buttons_screen_1" outlet="forward"/>
+         <dest obj="object_1" inlet="forward"/>
+      </net>
+      <net>
+         <source obj="phone_interface_buttons_screen_1" outlet="backward"/>
+         <dest obj="object_1" inlet="backward"/>
+      </net>
+      <net>
+         <source obj="phone_interface_buttons_screen_1" outlet="top"/>
+         <dest obj="object_1" inlet="top"/>
+      </net>
+      <net>
+         <source obj="phone_interface_buttons_screen_1" outlet="button 2"/>
+         <dest obj="plucked_2" inlet="strike"/>
+      </net>
+      <net>
+         <source obj="phone_interface_buttons_screen_1" outlet="button 4"/>
+         <dest obj="plucked_4" inlet="strike"/>
+      </net>
+      <net>
+         <source obj="phone_interface_buttons_screen_1" outlet="up"/>
+         <dest obj="object_1" inlet="up"/>
+      </net>
+      <net>
+         <source obj="phone_interface_buttons_screen_1" outlet="down"/>
+         <dest obj="object_1" inlet="down"/>
+      </net>
+      <net>
+         <source obj="object_1" outlet="S1L1"/>
+         <dest obj="phone_interface_buttons_screen_1" inlet="S1_L1"/>
+      </net>
+      <net>
+         <source obj="object_1" outlet="S1L2"/>
+         <dest obj="phone_interface_buttons_screen_1" inlet="S1_L2"/>
+      </net>
+      <net>
+         <source obj="object_1" outlet="S1L3"/>
+         <dest obj="phone_interface_buttons_screen_1" inlet="S1_L3"/>
+      </net>
+      <net>
+         <source obj="object_1" outlet="S1L4"/>
+         <dest obj="phone_interface_buttons_screen_1" inlet="S1_L4"/>
+      </net>
+      <net>
+         <source obj="object_1" outlet="S1mode"/>
+         <dest obj="phone_interface_buttons_screen_1" inlet="S1mode"/>
+      </net>
+      <net>
+         <source obj="object_1" outlet="S2L1"/>
+         <dest obj="phone_interface_buttons_screen_1" inlet="S2_L1"/>
+      </net>
+      <net>
+         <source obj="object_1" outlet="S2L2"/>
+         <dest obj="phone_interface_buttons_screen_1" inlet="S2_L2"/>
+      </net>
+      <net>
+         <source obj="object_1" outlet="S2L3"/>
+         <dest obj="phone_interface_buttons_screen_1" inlet="S2_L3"/>
+      </net>
+      <net>
+         <source obj="object_1" outlet="S2L4"/>
+         <dest obj="phone_interface_buttons_screen_1" inlet="S2_L4"/>
+      </net>
+      <net>
+         <source obj="object_1" outlet="S2mode"/>
+         <dest obj="phone_interface_buttons_screen_1" inlet="S2mode"/>
+      </net>
+      <net>
+         <source obj="phone_interface_buttons_screen_1" outlet="bottom"/>
+         <dest obj="object_1" inlet="bottom"/>
+      </net>
+      <net>
+         <source obj="phone_interface_buttons_screen_1" outlet="button 1"/>
+         <dest obj="plucked_3" inlet="strike"/>
+      </net>
+      <net>
+         <source obj="phone_interface_buttons_screen_1" outlet="button 3"/>
+         <dest obj="plucked_5" inlet="strike"/>
+      </net>
+      <net>
+         <source obj="plucked_3" outlet="wave"/>
+         <dest obj="mix_1" inlet="in1"/>
+      </net>
+      <net>
+         <source obj="plucked_5" outlet="wave"/>
+         <dest obj="mix_1" inlet="in3"/>
+      </net>
+      <net>
+         <source obj="obj_1" outlet="L"/>
+         <dest obj="reverb1_1" inlet="inL"/>
+      </net>
+      <net>
+         <source obj="obj_1" outlet="R"/>
+         <dest obj="reverb1_1" inlet="inR"/>
+      </net>
+      <net>
+         <source obj="reverb1_1" outlet="outL"/>
+         <dest obj="out_1" inlet="left"/>
+      </net>
+      <net>
+         <source obj="reverb1_1" outlet="outR"/>
+         <dest obj="out_1" inlet="right"/>
+      </net>
+      <net>
+         <source obj="object_1" outlet="chdepth"/>
+         <dest obj="cc_3" inlet="v"/>
+      </net>
+      <net>
+         <source obj="object_1" outlet="chspeed"/>
+         <dest obj="cc_4" inlet="v"/>
+      </net>
+      <net>
+         <source obj="object_1" outlet="revsize"/>
+         <dest obj="cc_5" inlet="v"/>
+      </net>
+      <net>
+         <source obj="object_1" outlet="revdecay"/>
+         <dest obj="cc_6" inlet="v"/>
+      </net>
+      <net>
+         <source obj="object_1" outlet="loadpatch"/>
+         <dest obj="load_1" inlet="i"/>
+      </net>
+      <net>
+         <source obj="object_1" outlet="loadtrig"/>
+         <dest obj="load_1" inlet="trig"/>
+      </net>
+   </nets>
+   <settings>
+      <subpatchmode>no</subpatchmode>
+   </settings>
+   <notes><![CDATA[]]></notes>
+   <windowPos>
+      <x>3293</x>
+      <y>295</y>
+      <width>1203</width>
+      <height>1107</height>
+   </windowPos>
+</patch-1.0>
