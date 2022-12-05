@@ -21,31 +21,31 @@
    </obj>
    <obj type="ctrl/toggle" uuid="42b8134fa729d54bfc8d62d6ef3fa99498c1de99" name="overdub" x="434" y="28">
       <params>
-         <bool32.tgl name="b" value="1"/>
+         <bool32.tgl name="b" value="0"/>
       </params>
       <attribs/>
    </obj>
    <obj type="ctrl/dial b" uuid="862e7d7f29093cb1ce4aed72244d118ad4d46692" name="pitch" x="532" y="28">
       <params>
-         <frac32.s.map name="value" value="47.0"/>
+         <frac32.s.map name="value" value="64.0"/>
       </params>
       <attribs/>
    </obj>
    <obj type="ctrl/dial b" uuid="862e7d7f29093cb1ce4aed72244d118ad4d46692" name="loopspeed" x="616" y="28">
       <params>
-         <frac32.s.map name="value" value="29.0"/>
+         <frac32.s.map name="value" value="37.0"/>
       </params>
       <attribs/>
    </obj>
    <obj type="ctrl/dial p" uuid="cc5d2846c3d50e425f450c4b9851371b54f4d674" name="chunksize" x="700" y="28">
       <params>
-         <frac32.u.map name="value" value="27.5"/>
+         <frac32.u.map name="value" value="54.0"/>
       </params>
       <attribs/>
    </obj>
    <obj type="math/*c" uuid="7d5ef61c3bcd571ee6bbd8437ef3612125dfb225" name="length" x="784" y="28">
       <params>
-         <frac32.u.map name="amp" value="64.0"/>
+         <frac32.u.map name="amp" value="0.0"/>
       </params>
       <attribs/>
    </obj>
@@ -55,7 +55,7 @@
       </params>
       <attribs/>
    </obj>
-   <obj type="phone_interface_buttons_screen" uuid="d8e7f5d8-d6be-41e7-bd36-d0b3f5d45898" name="obj_2" x="1036" y="56">
+   <obj type="phone_interface_buttons_screen" uuid="b9908465-74c1-4357-a40e-1da2e441217c" name="obj_2" x="1036" y="56">
       <params/>
       <attribs/>
    </obj>
@@ -326,7 +326,7 @@ if(play){
          <includes/>
          <code.declaration><![CDATA[//menu and screen and pot state
 char* state[7] = {"filter","reverb","delay","wah", "phaser", "menu", "mixer"};
-char* patch[8] = {"effects","dangerine","1976","effectsMic", "sidechain",  "side_bd", "side_cy", "sawdrone"};
+char* patch[14] = {"menu","effects","dangerine","1976","effectsMic", "sidechain",  "side_bd", "side_cy", "sawdrone", "answmachine", "sawdrone2","granclds","dronephone", "tanpura"};
 int menucount = *(&patch + 1) - patch;
 int numstates = *(&state + 1) - state - 1;
 int currentstate;
@@ -503,7 +503,9 @@ void midiCCout(int v, int cc, int channel){
 	   lsend = v;
 	   PatchMidiInHandler(MIDI_DEVICE_INTERNAL ,0,MIDI_CONTROL_CHANGE + (channel-1),cc,__USAT(v>>20,7));
 	   timer = 0;
-	} else timer++;
+	} else {
+		timer++;
+	}
 }]]></code.declaration>
          <code.init><![CDATA[//state
 currentstate = 0;
@@ -827,23 +829,23 @@ if (state[currentstate] == "mixer"){
       </net>
       <net>
          <source obj="obj_2" outlet="dial 1"/>
-         <dest obj="object_1" inlet="dial1"/>
          <dest obj="unipolar2bipolar_1" inlet="i"/>
+         <dest obj="object_1" inlet="dial1"/>
       </net>
       <net>
          <source obj="obj_2" outlet="dial 2"/>
-         <dest obj="object_1" inlet="dial2"/>
          <dest obj="unipolar2bipolar_3" inlet="i"/>
+         <dest obj="object_1" inlet="dial2"/>
       </net>
       <net>
          <source obj="obj_2" outlet="dial 3"/>
-         <dest obj="object_1" inlet="dial3"/>
          <dest obj="v1" inlet="chunksize"/>
+         <dest obj="object_1" inlet="dial3"/>
       </net>
       <net>
          <source obj="obj_2" outlet="dial 4"/>
-         <dest obj="object_1" inlet="dial4"/>
          <dest obj="ldrive_1" inlet="range"/>
+         <dest obj="object_1" inlet="dial4"/>
       </net>
       <net>
          <source obj="obj_2" outlet="dial 5"/>
@@ -855,13 +857,13 @@ if (state[currentstate] == "mixer"){
       </net>
       <net>
          <source obj="obj_2" outlet="toggle 1"/>
-         <dest obj="object_1" inlet="toggle1"/>
          <dest obj="or_2" inlet="i2"/>
+         <dest obj="object_1" inlet="toggle1"/>
       </net>
       <net>
          <source obj="obj_2" outlet="toggle 2"/>
-         <dest obj="object_1" inlet="toggle2"/>
          <dest obj="or_3" inlet="i2"/>
+         <dest obj="object_1" inlet="toggle2"/>
       </net>
       <net>
          <source obj="obj_2" outlet="forward"/>
@@ -877,8 +879,8 @@ if (state[currentstate] == "mixer"){
       </net>
       <net>
          <source obj="obj_2" outlet="button 1"/>
-         <dest obj="object_1" inlet="button1"/>
          <dest obj="or_1" inlet="i2"/>
+         <dest obj="object_1" inlet="button1"/>
       </net>
       <net>
          <source obj="obj_2" outlet="button 2"/>

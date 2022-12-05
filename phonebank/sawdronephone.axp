@@ -55,7 +55,7 @@
       <params/>
       <attribs/>
    </obj>
-   <obj type="phone_interface_buttons_screen" uuid="d8e7f5d8-d6be-41e7-bd36-d0b3f5d45898" name="obj_2" x="1050" y="126">
+   <obj type="phone_interface_buttons_screen" uuid="b9908465-74c1-4357-a40e-1da2e441217c" name="phone_interface_buttons_screen_1" x="1050" y="126">
       <params/>
       <attribs/>
    </obj>
@@ -106,7 +106,7 @@
          <includes/>
          <code.declaration><![CDATA[//menu and screen and pot state
 char* state[7] = {"filter","reverb","delay","wah", "phaser", "menu", "mixer"};
-char* patch[8] = {"effects","dangerine","1976","effectsMic", "sidechain",  "side_bd", "side_cy", "sawdrone"};
+char* patch[14] = {"menu","effects","dangerine","1976","effectsMic", "sidechain",  "side_bd", "side_cy", "sawdrone", "answmachine", "sawdrone2","granclds","dronephone", "tanpura"};
 int menucount = *(&patch + 1) - patch;
 int numstates = *(&state + 1) - state - 1;
 int currentstate;
@@ -743,7 +743,7 @@ if (state[currentstate] == "mixer"){
       <params/>
       <attribs/>
    </obj>
-   <obj type="fx/chorus" uuid="d7ef6376-6c63-47af-b7b0-a0e096f2413c" name="obj_1" x="1344" y="686">
+   <obj type="fx/chorus" uuid="02302858-b8c8-44bf-9dda-4c4ed0034474" name="obj_1" x="1344" y="686">
       <params>
          <frac32.u.map name="depth" MidiCC="35" value="63.99999952316284"/>
          <frac32.s.map name="speed" MidiCC="55" value="63.99999952316284"/>
@@ -825,7 +825,7 @@ if (state[currentstate] == "mixer"){
    </obj>
    <obj type="osc/brds/saw" uuid="ed06f020-7e68-4db6-836a-95a85e200cfb" name="saw_4" x="728" y="812">
       <params>
-         <frac32.s.map name="pitch" MidiCC="17" value="63.99999952316284"/>
+         <frac32.s.map name="pitch" MidiCC="17" value="36.0"/>
       </params>
       <attribs/>
    </obj>
@@ -874,7 +874,7 @@ if (state[currentstate] == "mixer"){
    </obj>
    <obj type="osc/brds/struckbell" uuid="7dc99f76-9a23-4faf-a6da-3654cd168670" name="struckbell_1" x="686" y="896">
       <params>
-         <frac32.s.map name="pitch" MidiCC="17" value="63.99999952316284"/>
+         <frac32.s.map name="pitch" MidiCC="17" value="36.0"/>
          <frac32.u.map name="timbre" MidiCC="34" value="0.0"/>
          <frac32.u.map name="color" MidiCC="54" value="30.5"/>
       </params>
@@ -1117,7 +1117,7 @@ if (state[currentstate] == "mixer"){
       <net>
          <source obj="reverb_1" outlet="l"/>
          <dest obj="out_1" inlet="wave"/>
-         <dest obj="obj_2" inlet="scope2"/>
+         <dest obj="phone_interface_buttons_screen_1" inlet="scope2"/>
       </net>
       <net>
          <source obj="reverb_1" outlet="r"/>
@@ -1197,115 +1197,115 @@ if (state[currentstate] == "mixer"){
          <dest obj="square_1" inlet="pitch"/>
       </net>
       <net>
-         <source obj="obj_2" outlet="dial 1"/>
+         <source obj="phone_interface_buttons_screen_1" outlet="dial 1"/>
          <dest obj="object_1" inlet="dial1"/>
       </net>
       <net>
-         <source obj="obj_2" outlet="dial 2"/>
+         <source obj="phone_interface_buttons_screen_1" outlet="dial 2"/>
          <dest obj="object_1" inlet="dial2"/>
       </net>
       <net>
-         <source obj="obj_2" outlet="dial 3"/>
+         <source obj="phone_interface_buttons_screen_1" outlet="dial 3"/>
          <dest obj="object_1" inlet="dial3"/>
       </net>
       <net>
-         <source obj="obj_2" outlet="dial 4"/>
+         <source obj="phone_interface_buttons_screen_1" outlet="dial 4"/>
          <dest obj="object_1" inlet="dial4"/>
       </net>
       <net>
-         <source obj="obj_2" outlet="dial 5"/>
+         <source obj="phone_interface_buttons_screen_1" outlet="dial 5"/>
          <dest obj="object_1" inlet="dial5"/>
       </net>
       <net>
-         <source obj="obj_2" outlet="dial 6"/>
+         <source obj="phone_interface_buttons_screen_1" outlet="dial 6"/>
          <dest obj="object_1" inlet="dial6"/>
       </net>
       <net>
-         <source obj="obj_2" outlet="toggle 1"/>
+         <source obj="phone_interface_buttons_screen_1" outlet="toggle 1"/>
          <dest obj="object_1" inlet="toggle1"/>
       </net>
       <net>
-         <source obj="obj_2" outlet="toggle 2"/>
+         <source obj="phone_interface_buttons_screen_1" outlet="toggle 2"/>
          <dest obj="object_1" inlet="toggle2"/>
       </net>
       <net>
-         <source obj="obj_2" outlet="forward"/>
+         <source obj="phone_interface_buttons_screen_1" outlet="forward"/>
          <dest obj="object_1" inlet="forward"/>
       </net>
       <net>
-         <source obj="obj_2" outlet="backward"/>
+         <source obj="phone_interface_buttons_screen_1" outlet="backward"/>
          <dest obj="object_1" inlet="backward"/>
       </net>
       <net>
-         <source obj="obj_2" outlet="top"/>
+         <source obj="phone_interface_buttons_screen_1" outlet="top"/>
          <dest obj="object_1" inlet="top"/>
       </net>
       <net>
-         <source obj="obj_2" outlet="button 1"/>
+         <source obj="phone_interface_buttons_screen_1" outlet="button 1"/>
          <dest obj="object_1" inlet="button1"/>
       </net>
       <net>
-         <source obj="obj_2" outlet="button 2"/>
+         <source obj="phone_interface_buttons_screen_1" outlet="button 2"/>
          <dest obj="object_1" inlet="button2"/>
       </net>
       <net>
-         <source obj="obj_2" outlet="button 3"/>
+         <source obj="phone_interface_buttons_screen_1" outlet="button 3"/>
          <dest obj="object_1" inlet="button3"/>
       </net>
       <net>
-         <source obj="obj_2" outlet="button 4"/>
+         <source obj="phone_interface_buttons_screen_1" outlet="button 4"/>
          <dest obj="object_1" inlet="button4"/>
       </net>
       <net>
-         <source obj="obj_2" outlet="up"/>
+         <source obj="phone_interface_buttons_screen_1" outlet="up"/>
          <dest obj="object_1" inlet="up"/>
       </net>
       <net>
-         <source obj="obj_2" outlet="down"/>
+         <source obj="phone_interface_buttons_screen_1" outlet="down"/>
          <dest obj="object_1" inlet="down"/>
       </net>
       <net>
          <source obj="object_1" outlet="S1L1"/>
-         <dest obj="obj_2" inlet="S1_L1"/>
+         <dest obj="phone_interface_buttons_screen_1" inlet="S1_L1"/>
       </net>
       <net>
          <source obj="object_1" outlet="S1L2"/>
-         <dest obj="obj_2" inlet="S1_L2"/>
+         <dest obj="phone_interface_buttons_screen_1" inlet="S1_L2"/>
       </net>
       <net>
          <source obj="object_1" outlet="S1L3"/>
-         <dest obj="obj_2" inlet="S1_L3"/>
+         <dest obj="phone_interface_buttons_screen_1" inlet="S1_L3"/>
       </net>
       <net>
          <source obj="object_1" outlet="S1L4"/>
-         <dest obj="obj_2" inlet="S1_L4"/>
+         <dest obj="phone_interface_buttons_screen_1" inlet="S1_L4"/>
       </net>
       <net>
          <source obj="object_1" outlet="S1mode"/>
-         <dest obj="obj_2" inlet="S1mode"/>
+         <dest obj="phone_interface_buttons_screen_1" inlet="S1mode"/>
       </net>
       <net>
          <source obj="object_1" outlet="S2L1"/>
-         <dest obj="obj_2" inlet="S2_L1"/>
+         <dest obj="phone_interface_buttons_screen_1" inlet="S2_L1"/>
       </net>
       <net>
          <source obj="object_1" outlet="S2L2"/>
-         <dest obj="obj_2" inlet="S2_L2"/>
+         <dest obj="phone_interface_buttons_screen_1" inlet="S2_L2"/>
       </net>
       <net>
          <source obj="object_1" outlet="S2L3"/>
-         <dest obj="obj_2" inlet="S2_L3"/>
+         <dest obj="phone_interface_buttons_screen_1" inlet="S2_L3"/>
       </net>
       <net>
          <source obj="object_1" outlet="S2L4"/>
-         <dest obj="obj_2" inlet="S2_L4"/>
+         <dest obj="phone_interface_buttons_screen_1" inlet="S2_L4"/>
       </net>
       <net>
          <source obj="object_1" outlet="S2mode"/>
-         <dest obj="obj_2" inlet="S2mode"/>
+         <dest obj="phone_interface_buttons_screen_1" inlet="S2mode"/>
       </net>
       <net>
-         <source obj="obj_2" outlet="bottom"/>
+         <source obj="phone_interface_buttons_screen_1" outlet="bottom"/>
          <dest obj="object_1" inlet="bottom"/>
       </net>
    </nets>
@@ -1314,9 +1314,9 @@ if (state[currentstate] == "mixer"){
    </settings>
    <notes><![CDATA[]]></notes>
    <windowPos>
-      <x>2955</x>
-      <y>364</y>
+      <x>2974</x>
+      <y>281</y>
       <width>1845</width>
-      <height>1177</height>
+      <height>1173</height>
    </windowPos>
 </patch-1.0>

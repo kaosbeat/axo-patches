@@ -1,5 +1,5 @@
 <patch-1.0 appVersion="1.0.12">
-   <obj type="phone_interface_buttons_screen" uuid="13898c49-e3f8-46d8-a436-2544f65c0fde" name="obj_1" x="784" y="616">
+   <obj type="phone_interface_buttons_screen" uuid="b9908465-74c1-4357-a40e-1da2e441217c" name="obj_1" x="784" y="616">
       <params/>
       <attribs/>
    </obj>
@@ -54,7 +54,7 @@
          <includes/>
          <code.declaration><![CDATA[//menu and screen and pot state
 char* state[6] = {"mainmix","engine","delay1","delay2", "delay3", "menu"};
-char* patch[8] = {"effects","dangerine","1976","effectsMic", "sidechain",  "side_bd", "side_cy", "sawdrone"};
+char* patch[14] = {"menu","effects","dangerine","1976","effectsMic", "sidechain",  "side_bd", "side_cy", "sawdrone", "answmachine", "sawdrone2","granclds","dronephone", "tanpura"};
 int numstates = *(&state + 1) - state - 1;
 int menucount = *(&patch + 1) - patch;
 int currentstate;
@@ -371,7 +371,7 @@ if (state[currentstate] == "menu"){
 outlet_S2mode = 0;]]></code.krate>
       </object>
    </patchobj>
-   <patcher type="patch/patcher" uuid="ce308937-a54e-49ad-846b-305b6931df3f" name="patcher_1" x="1358" y="700">
+   <patcher type="patch/patcher" uuid="758d1986-5d48-4030-abe4-9ec21d33f708" name="patcher_1" x="1358" y="700">
       <params>
          <frac32.s.map name="lowpass_1" value="-8.0"/>
          <frac32.s.map name="adsr_1:a" MidiCC="6" value="36.0">
@@ -715,10 +715,6 @@ outlet_S2mode = 0;]]></code.krate>
          </windowPos>
       </subpatch>
    </patcher>
-   <obj type="tiar/disp/scope" uuid="0991142e-58fa-47e6-9f89-32da05f9fe41" name="scope_1" x="546" y="742">
-      <params/>
-      <attribs/>
-   </obj>
    <obj type="patch/load i" uuid="b79124f5b7d1e8b39e187677ddab6260ce8c60a3" name="load_1" x="1218" y="770">
       <params/>
       <attribs/>
@@ -1102,7 +1098,6 @@ outlet_S2mode = 0;]]></code.krate>
    <nets>
       <net>
          <source obj="APNoodle_1" outlet="y"/>
-         <dest obj="scope_1" inlet="in"/>
          <dest obj="mix_2" inlet="in1"/>
          <dest obj="obj_1" inlet="scope2"/>
       </net>
@@ -1454,8 +1449,8 @@ outlet_S2mode = 0;]]></code.krate>
    </settings>
    <notes><![CDATA[]]></notes>
    <windowPos>
-      <x>-1707</x>
-      <y>709</y>
+      <x>2880</x>
+      <y>285</y>
       <width>1523</width>
       <height>1035</height>
    </windowPos>

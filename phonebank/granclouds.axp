@@ -132,7 +132,7 @@
          <includes/>
          <code.declaration><![CDATA[//menu and screen and pot state
 char* state[7] = {"filter","reverb","delay","wah", "phaser", "menu", "mixer"};
-char* patch[8] = {"effects","dangerine","1976","effectsMic", "sidechain",  "side_bd", "side_cy", "sawdrone"};
+char* patch[14] = {"menu","effects","dangerine","1976","effectsMic", "sidechain",  "side_bd", "side_cy", "sawdrone", "answmachine", "sawdrone2","granclds","dronephone", "tanpura"};
 int menucount = *(&patch + 1) - patch;
 int numstates = *(&state + 1) - state - 1;
 int currentstate;
@@ -777,8 +777,8 @@ if (state[currentstate] == "mixer"){
    </settings>
    <notes><![CDATA[]]></notes>
    <windowPos>
-      <x>2980</x>
-      <y>661</y>
+      <x>3154</x>
+      <y>352</y>
       <width>1019</width>
       <height>904</height>
    </windowPos>

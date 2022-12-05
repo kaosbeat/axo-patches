@@ -1,5 +1,5 @@
 <patch-1.0 appVersion="1.0.12">
-   <obj type="phone_interface_buttons_screen" uuid="f725a976-708d-4323-87f6-f0b42c6aef0e" name="obj_1" x="0" y="0">
+   <obj type="phone_interface_buttons_screen" uuid="b9908465-74c1-4357-a40e-1da2e441217c" name="obj_1" x="0" y="0">
       <params/>
       <attribs/>
    </obj>
@@ -54,7 +54,7 @@
          <includes/>
          <code.declaration><![CDATA[//menu and screen and pot state
 char* state[2] = {"1976", "menu"};
-char* patch[7] = {"effects","dangerine","1976","effectsMic", "sidechain",  "side_bd", "side_cy"};
+char* patch[14] = {"menu","effects","dangerine","1976","effectsMic", "sidechain",  "side_bd", "side_cy", "sawdrone", "answmachine", "sawdrone2","granclds","dronephone", "tanpura"};
 int numstates = *(&state + 1) - state - 1;
 int currentstate;
 int patchselect;
@@ -186,7 +186,8 @@ void midiCCout(int v, int cc, int channel){
 	   lsend = v;
 	   PatchMidiInHandler(MIDI_DEVICE_INTERNAL ,0,MIDI_CONTROL_CHANGE + (channel-1),cc,__USAT(v>>20,7));
 	   timer = 0;
-	} else timer++;
+	} else { timer++;
+	}
 }]]></code.declaration>
          <code.init><![CDATA[//state
 currentstate = 0;
@@ -322,6 +323,10 @@ if (state[currentstate] == "menu"){
 outlet_S2mode = 0;]]></code.krate>
       </object>
    </patchobj>
+   <obj type="patch/load i" uuid="b79124f5b7d1e8b39e187677ddab6260ce8c60a3" name="load_1" x="434" y="98">
+      <params/>
+      <attribs/>
+   </obj>
    <obj type="lfo/sine" uuid="75f7330c26a13953215dccc3b7b9008545c9daa9" name="sine_6" x="406" y="182">
       <params>
          <frac32.s.map name="pitch" value="-34.0"/>
@@ -498,9 +503,9 @@ outlet_S2mode = 0;]]></code.krate>
    </obj>
    <obj type="mix/mix 3" uuid="7d947bff9b8466d81c2ddd49b4a7fb702302e05c" name="mix_2" x="504" y="434">
       <params>
-         <frac32.u.map name="gain1" MidiCC="2" value="51.5"/>
-         <frac32.u.map name="gain2" MidiCC="3" value="23.0"/>
-         <frac32.u.map name="gain3" MidiCC="4" value="40.0"/>
+         <frac32.u.map name="gain1" MidiCC="2" value="36.5"/>
+         <frac32.u.map name="gain2" MidiCC="3" value="33.0"/>
+         <frac32.u.map name="gain3" MidiCC="4" value="17.0"/>
       </params>
       <attribs/>
    </obj>
@@ -520,7 +525,7 @@ outlet_S2mode = 0;]]></code.krate>
    </obj>
    <obj type="tiar/filter/APChain" uuid="7875c220-4569-4ce4-a213-0f765024bef8" name="APChain_1" x="784" y="434">
       <params>
-         <frac32.u.map name="freq" MidiCC="1" value="21.5"/>
+         <frac32.u.map name="freq" MidiCC="1" value="63.99999952316284"/>
          <frac32.s.map name="g2" value="26.0"/>
       </params>
       <attribs>
@@ -557,18 +562,6 @@ outlet_S2mode = 0;]]></code.krate>
    </obj>
    <comment type="patch/comment" x="518" y="658" text="A slow complicated LFO"/>
    <hyperlink type="patch/hyperlink" name="http://community.axoloti.com/t/tiar-smashedtransistors-contributions/2737/135" x="532" y="686"/>
-   <obj type="const/i" uuid="e202f44b2df17ae0b3e663b98ea6b14c8ff00408" name="i_1" x="504" y="770">
-      <params/>
-      <attribs>
-         <spinner attributeName="value" value="2"/>
-      </attribs>
-   </obj>
-   <obj type="phonebankcontroller" uuid="366064e5-fa5a-4187-8f26-799af425fd32" name="phonebankcontroller_1" x="700" y="770">
-      <params>
-         <int32 name="total_patches" value="0"/>
-      </params>
-      <attribs/>
-   </obj>
    <obj type="midi/out/cc thin" uuid="5255b30d60e50223ed41179d8ce935ba9464de75" name="cc_1" x="728" y="868">
       <params/>
       <attribs>
@@ -744,14 +737,6 @@ outlet_S2mode = 0;]]></code.krate>
          <dest obj="mix_6" inlet="bus_in"/>
       </net>
       <net>
-         <source obj="obj_1" outlet="top"/>
-         <dest obj="phonebankcontroller_1" inlet="patch_up"/>
-      </net>
-      <net>
-         <source obj="obj_1" outlet="bottom"/>
-         <dest obj="phonebankcontroller_1" inlet="patch_down"/>
-      </net>
-      <net>
          <source obj="obj_1" outlet="dial 1"/>
          <dest obj="cc_1" inlet="v"/>
       </net>
@@ -807,14 +792,74 @@ outlet_S2mode = 0;]]></code.krate>
          <source obj="object_1" outlet="S2mode"/>
          <dest obj="obj_1" inlet="S2mode"/>
       </net>
+      <net>
+         <source obj="object_1" outlet="loadtrig"/>
+         <dest obj="load_1" inlet="trig"/>
+      </net>
+      <net>
+         <source obj="object_1" outlet="loadpatch"/>
+         <dest obj="load_1" inlet="i"/>
+      </net>
+      <net>
+         <source obj="obj_1" outlet="button 1"/>
+         <dest obj="object_1" inlet="button1"/>
+      </net>
+      <net>
+         <source obj="obj_1" outlet="top"/>
+         <dest obj="object_1" inlet="top"/>
+      </net>
+      <net>
+         <source obj="obj_1" outlet="bottom"/>
+         <dest obj="object_1" inlet="bottom"/>
+      </net>
+      <net>
+         <source obj="obj_1" outlet="toggle 1"/>
+         <dest obj="object_1" inlet="toggle1"/>
+      </net>
+      <net>
+         <source obj="obj_1" outlet="toggle 2"/>
+         <dest obj="object_1" inlet="toggle2"/>
+      </net>
+      <net>
+         <source obj="obj_1" outlet="button 2"/>
+         <dest obj="object_1" inlet="button2"/>
+      </net>
+      <net>
+         <source obj="obj_1" outlet="button 3"/>
+         <dest obj="object_1" inlet="button3"/>
+      </net>
+      <net>
+         <source obj="obj_1" outlet="button 4"/>
+         <dest obj="object_1" inlet="button4"/>
+      </net>
+      <net>
+         <source obj="obj_1" outlet="forward"/>
+         <dest obj="object_1" inlet="forward"/>
+      </net>
+      <net>
+         <source obj="obj_1" outlet="backward"/>
+         <dest obj="object_1" inlet="backward"/>
+      </net>
+      <net>
+         <source obj="obj_1" outlet="up"/>
+         <dest obj="object_1" inlet="up"/>
+      </net>
+      <net>
+         <source obj="obj_1" outlet="down"/>
+         <dest obj="object_1" inlet="down"/>
+      </net>
+      <net>
+         <source obj="obj_1" outlet="dial 5"/>
+         <dest obj="object_1" inlet="dial5"/>
+      </net>
    </nets>
    <settings>
       <subpatchmode>no</subpatchmode>
    </settings>
    <notes><![CDATA[]]></notes>
    <windowPos>
-      <x>16</x>
-      <y>23</y>
+      <x>2991</x>
+      <y>450</y>
       <width>1904</width>
       <height>1057</height>
    </windowPos>

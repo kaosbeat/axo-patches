@@ -53,7 +53,7 @@
          <code.declaration><![CDATA[//menu and screen and pot state
 char* state[5] = {"pitch", "timbre", "mixLeft", "mixRight","menu"};
 //char* state[3] = {"pitch","timbre" ,"menu"};
-char* patch[8] = {"effects","dangerine","1976","effectsMic", "sidechain",  "side_bd", "side_cy", "sawdrone"};
+char* patch[14] = {"menu","effects","dangerine","1976","effectsMic", "sidechain",  "side_bd", "side_cy", "sawdrone", "answmachine", "sawdrone2","granclds","dronephone", "tanpura"};
 int numstates = *(&state + 1) - state - 1;
 int currentstate;
 int patchselect;
@@ -237,7 +237,9 @@ void midiCCout(int v, int cc, int channel){
 	   lsend = v;
 	   PatchMidiInHandler(MIDI_DEVICE_INTERNAL ,0,MIDI_CONTROL_CHANGE + (channel-1),cc,__USAT(v>>20,7));
 	   timer = 0;
-	} else timer++;
+	} else {
+		timer++;
+	}
 }]]></code.declaration>
          <code.init><![CDATA[//state
 currentstate = 0;
@@ -451,7 +453,7 @@ if (state[currentstate] == "menu"){
 }]]></code.krate>
       </object>
    </patchobj>
-   <obj type="phone_interface_buttons_screen" uuid="13898c49-e3f8-46d8-a436-2544f65c0fde" name="phone_interface_buttons_screen_1" x="14" y="84">
+   <obj type="phone_interface_buttons_screen" uuid="b9908465-74c1-4357-a40e-1da2e441217c" name="phone_interface_buttons_screen_1" x="14" y="84">
       <params/>
       <attribs/>
    </obj>
@@ -845,8 +847,8 @@ if (state[currentstate] == "menu"){
    </settings>
    <notes><![CDATA[]]></notes>
    <windowPos>
-      <x>122</x>
-      <y>119</y>
+      <x>3067</x>
+      <y>392</y>
       <width>1798</width>
       <height>953</height>
    </windowPos>

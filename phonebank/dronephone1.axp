@@ -1,102 +1,136 @@
 <patch-1.0 appVersion="1.0.12">
-   <obj type="ctrl/dial b" uuid="862e7d7f29093cb1ce4aed72244d118ad4d46692" name="dial_2" x="42" y="70">
+   <obj type="ctrl/dial b" uuid="862e7d7f29093cb1ce4aed72244d118ad4d46692" name="dial_2" x="126" y="182">
       <params>
-         <frac32.s.map name="value" value="-16.0"/>
+         <frac32.s.map name="value" MidiCC="1" value="-40.0"/>
       </params>
       <attribs/>
    </obj>
-   <obj type="phi/lfo/slowsine" uuid="8a84c6d2-875f-4d19-bceb-701220bc6e28" name="slowsine_1" x="140" y="70">
+   <obj type="ctrl/dial b" uuid="862e7d7f29093cb1ce4aed72244d118ad4d46692" name="dial_1" x="308" y="182">
       <params>
-         <frac32.s.map name="pitch" value="-40.0"/>
-         <int32.hradio name="div" value="3"/>
+         <frac32.s.map name="value" MidiCC="2" value="14.0"/>
       </params>
       <attribs/>
    </obj>
-   <obj type="osc/brds/csaw" uuid="28778e96-5d2f-4b8a-8fcf-3eec1c081da2" name="csaw_1" x="294" y="70">
+   <obj type="osc/brds/csaw" uuid="28778e96-5d2f-4b8a-8fcf-3eec1c081da2" name="csaw_1" x="126" y="252">
       <params>
          <frac32.s.map name="pitch" value="15.0"/>
-         <frac32.u.map name="timbre" value="29.0"/>
-         <frac32.u.map name="color" value="51.5"/>
+         <frac32.u.map name="timbre" value="32.0"/>
+         <frac32.u.map name="color" value="32.0"/>
       </params>
       <attribs/>
    </obj>
-   <obj type="ctrl/dial b" uuid="862e7d7f29093cb1ce4aed72244d118ad4d46692" name="dial_1" x="406" y="70">
-      <params>
-         <frac32.s.map name="value" value="-3.0"/>
-      </params>
-      <attribs/>
-   </obj>
-   <obj type="osc/brds/csaw" uuid="28778e96-5d2f-4b8a-8fcf-3eec1c081da2" name="csaw_2" x="518" y="70">
+   <obj type="osc/brds/csaw" uuid="28778e96-5d2f-4b8a-8fcf-3eec1c081da2" name="csaw_2" x="308" y="252">
       <params>
          <frac32.s.map name="pitch" value="-14.0"/>
-         <frac32.u.map name="timbre" value="64.0"/>
-         <frac32.u.map name="color" value="0.0"/>
+         <frac32.u.map name="timbre" value="32.0"/>
+         <frac32.u.map name="color" value="32.0"/>
       </params>
       <attribs/>
    </obj>
-   <obj type="math/+" uuid="faedbea4612d9bd3644d6d3bf31946d848a70e19" name="+_1" x="644" y="70">
+   <obj type="math/+" uuid="faedbea4612d9bd3644d6d3bf31946d848a70e19" name="+_1" x="476" y="252">
       <params/>
       <attribs/>
    </obj>
-   <obj type="math/*c" uuid="7a66f52a9594e7e9eb31328ea725cb3641a80b55" name="*c_2" x="728" y="70">
+   <obj type="math/*c" uuid="7a66f52a9594e7e9eb31328ea725cb3641a80b55" name="*c_2" x="560" y="252">
       <params>
-         <frac32.u.map name="amp" value="29.0"/>
+         <frac32.u.map name="amp" value="21.5"/>
       </params>
       <attribs/>
    </obj>
-   <obj type="filter/vcf3" uuid="92455c652cd098cbb682a5497baa18abbf2ef865" name="vcf3_1" x="854" y="70">
+   <obj type="filter/vcf3" uuid="92455c652cd098cbb682a5497baa18abbf2ef865" name="vcf3_1" x="700" y="252">
       <params>
-         <frac32.s.map name="pitch" value="5.0"/>
-         <frac32.u.map name="reso" value="34.5"/>
+         <frac32.s.map name="pitch" MidiCC="6" value="-32.0"/>
+         <frac32.u.map name="reso" MidiCC="5" value="61.0"/>
       </params>
       <attribs/>
    </obj>
-   <obj type="sss/filter/LPHQOS" uuid="63b369d1-b70d-403c-b1f5-2453c7c67fe3" name="LPHQOS_1" x="1050" y="70">
+   <obj type="sss/filter/LPHQOS" uuid="63b369d1-b70d-403c-b1f5-2453c7c67fe3" name="LPHQOS_1" x="924" y="280">
       <params>
          <frac32.s.map name="pitch" value="-33.0"/>
          <frac32.u.map name="res" value="64.0"/>
-         <frac32.s.map name="spread" value="-64.0"/>
+         <frac32.s.map name="spread" value="-56.0"/>
          <int32 name="OS" value="3"/>
          <int32 name="poles" value="5"/>
       </params>
       <attribs/>
    </obj>
-   <obj type="mix/mix 4 sq" uuid="f107ee8ee1e69e4443b27ddf7eb7d72e9b9cc9ba" name="mix_1" x="1176" y="168">
+   <obj type="audio/out left" uuid="b11a3c09b2fdd575ea8212f2ce7743d5269253b1" name="out_1" x="1526" y="308">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="mix/mix 4 sq" uuid="f107ee8ee1e69e4443b27ddf7eb7d72e9b9cc9ba" name="mix_1" x="1078" y="322">
       <params>
-         <frac32.u.map name="gain1" value="64.0"/>
-         <frac32.u.map name="gain2" value="54.0"/>
+         <frac32.u.map name="gain1" value="31.5"/>
+         <frac32.u.map name="gain2" value="58.0"/>
          <frac32.u.map name="gain3" value="64.0"/>
          <frac32.u.map name="gain4" value="64.0"/>
       </params>
       <attribs/>
    </obj>
-   <obj type="phi/lfo/slowsine" uuid="8a84c6d2-875f-4d19-bceb-701220bc6e28" name="slowsine_2" x="140" y="182">
+   <obj type="stomps/chorus1" uuid="84245e7c-5635-41e4-acca-6dbcb0392264" name="obj_3" x="1260" y="322">
       <params>
-         <frac32.s.map name="pitch" value="-38.0"/>
-         <int32.hradio name="div" value="3"/>
-      </params>
-      <attribs/>
-   </obj>
-   <obj type="fx/chorus" uuid="d7ef6376-6c63-47af-b7b0-a0e096f2413c" name="obj_3" x="1330" y="210">
-      <params>
+         <bool32.tgl name="on" value="0"/>
          <frac32.u.map name="depth" value="47.0"/>
          <frac32.s.map name="speed" value="-51.0"/>
       </params>
       <attribs/>
    </obj>
-   <obj type="audio/out left" uuid="b11a3c09b2fdd575ea8212f2ce7743d5269253b1" name="out_1" x="1554" y="210">
+   <obj type="stomps/reverb1" uuid="fa0db41a-8c5f-4551-979d-d1aaf6f0933e" name="obj_4" x="1400" y="322">
+      <params>
+         <bool32.tgl name="on" value="0"/>
+         <frac32.u.map name="*c_1" value="17.5"/>
+         <frac32.u.map name="decay" value="46.0"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="audio/outconfig" uuid="eace67e3304afaa1bb695b444e9345f2d8adaf00" name="outconfig_1" x="1540" y="364">
+      <params/>
+      <attribs>
+         <combo attributeName="headphones" selection="0dB"/>
+         <combo attributeName="mode" selection="Stereo"/>
+      </attribs>
+   </obj>
+   <obj type="audio/out right" uuid="e58a4cbbb087052c5480366e3f5d3a04aa319777" name="out_2" x="1540" y="434">
       <params/>
       <attribs/>
    </obj>
-   <obj type="disp/kscope 128 b trig" uuid="b24afecdaf757006c3a4bb578f0aea1d7441153e" name="kscope_1" x="252" y="266">
-      <params/>
+   <obj type="phi/lfo/slowsine" uuid="8a84c6d2-875f-4d19-bceb-701220bc6e28" name="slowsine_1" x="126" y="448">
+      <params>
+         <frac32.s.map name="pitch" MidiCC="4" value="32.0"/>
+         <int32.hradio name="div" value="3"/>
+      </params>
       <attribs/>
    </obj>
-   <obj type="phone_interface_buttons_screen" uuid="d8e7f5d8-d6be-41e7-bd36-d0b3f5d45898" name="obj_2" x="588" y="266">
-      <params/>
+   <obj type="phi/lfo/slowsine" uuid="8a84c6d2-875f-4d19-bceb-701220bc6e28" name="slowsine_2" x="308" y="448">
+      <params>
+         <frac32.s.map name="pitch" MidiCC="3" value="0.0"/>
+         <int32.hradio name="div" value="3"/>
+      </params>
       <attribs/>
    </obj>
-   <obj type="filter/fdbkcomb" uuid="b252513db2f8cc9a8964bad2a8eb7922be08690f" name="fdbkcomb_1" x="952" y="266">
+   <obj type="env/follower" uuid="356ce1d18ac6b51704833f94dac5dea823fb8223" name="follower_1" x="448" y="462">
+      <params/>
+      <attribs>
+         <combo attributeName="time" selection="1.3ms"/>
+      </attribs>
+   </obj>
+   <obj type="env/adsr" uuid="d1dbcc5fa6f87b98a6a91c87fd44acee5e690bac" name="adsr_1" x="532" y="462">
+      <params>
+         <frac32.s.map name="a" MidiCC="7" value="-20.0"/>
+         <frac32.s.map name="d" MidiCC="8" value="-27.0"/>
+         <frac32.u.map name="s" MidiCC="8" value="18.5"/>
+         <frac32.s.map name="r" MidiCC="9" value="-32.0"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="audio/inconfig l" uuid="7007d026acb7c3586f60a7f0898718d1ca7e0607" name="inconfig_1" x="0" y="518">
+      <params/>
+      <attribs>
+         <combo attributeName="gain" selection="21dB"/>
+         <combo attributeName="boost" selection="0dB"/>
+      </attribs>
+   </obj>
+   <obj type="filter/fdbkcomb" uuid="b252513db2f8cc9a8964bad2a8eb7922be08690f" name="fdbkcomb_1" x="924" y="532">
       <params>
          <frac32.s.map name="a" value="49.0"/>
          <frac32.s.map name="b" value="15.0"/>
@@ -105,31 +139,15 @@
          <spinner attributeName="delay" value="1000"/>
       </attribs>
    </obj>
-   <obj type="audio/out right" uuid="e58a4cbbb087052c5480366e3f5d3a04aa319777" name="out_2" x="1568" y="336">
+   <obj type="audio/in stereo" uuid="99848ad6d90a8e615e83b2e619cfc806f28e7281" name="in_1" x="14" y="574">
       <params/>
       <attribs/>
    </obj>
-   <obj type="audio/outconfig" uuid="eace67e3304afaa1bb695b444e9345f2d8adaf00" name="outconfig_1" x="812" y="364">
+   <obj type="phone_interface_buttons_screen" uuid="b9908465-74c1-4357-a40e-1da2e441217c" name="obj_2" x="84" y="686">
       <params/>
-      <attribs>
-         <combo attributeName="headphones" selection="0dB"/>
-         <combo attributeName="mode" selection="Stereo"/>
-      </attribs>
-   </obj>
-   <obj type="sptnk/filter/vowel" uuid="607fa0fe-e282-457f-8ccf-174d56c1a3ac" name="obj_1" x="952" y="406">
-      <params>
-         <frac32.u.map name="Formant" value="15.5"/>
-         <frac32.u.map name="Filter 1:reso" value="23.5"/>
-         <frac32.u.map name="Filter 2:reso" value="25.0"/>
-         <frac32.u.map name="Filter 3:reso" value="46.5"/>
-         <frac32.u.map name="Formant Mix:gain1" value="42.0"/>
-         <frac32.u.map name="Formant Mix:gain2" value="51.5"/>
-         <frac32.u.map name="Formant Mix:gain3" value="53.5"/>
-         <frac32.u.map name="Master gain" value="28.0"/>
-      </params>
       <attribs/>
    </obj>
-   <patchobj type="patch/object" uuid="daee1ce6-92c6-4d98-9cb0-801c1ee91042" name="object_1" x="616" y="588">
+   <patchobj type="patch/object" uuid="daee1ce6-92c6-4d98-9cb0-801c1ee91042" name="object_1" x="266" y="686">
       <params/>
       <attribs/>
       <object id="patch/object" uuid="daee1ce6-92c6-4d98-9cb0-801c1ee91042">
@@ -152,6 +170,7 @@
             <bool32 name="backward"/>
             <bool32 name="up"/>
             <bool32 name="down"/>
+            <frac32.positive name="env"/>
          </inlets>
          <outlets>
             <charptr32 name="S1L1"/>
@@ -168,15 +187,13 @@
             <int32 name="loadpatch"/>
             <bool32 name="loadtrig"/>
          </outlets>
-         <displays>
-            <int32.label name="d1"/>
-         </displays>
+         <displays/>
          <params/>
          <attribs/>
          <includes/>
          <code.declaration><![CDATA[//menu and screen and pot state
-char* state[7] = {"filter","reverb","delay","wah", "phaser", "menu", "mixer"};
-char* patch[8] = {"effects","dangerine","1976","effectsMic", "sidechain",  "side_bd", "side_cy", "sawdrone"};
+char* state[7] = {"osc","filter", "menu"};
+char* patch[14] = {"menu","effects","dangerine","1976","effectsMic", "sidechain",  "side_bd", "side_cy", "sawdrone", "answmachine", "sawdrone2","granclds","dronephone", "tanpura"};
 int menucount = *(&patch + 1) - patch;
 int numstates = *(&state + 1) - state - 1;
 int currentstate;
@@ -190,31 +207,53 @@ bool ppwait6;
 int32_t lsend;
 int timer;
 
-
-
-//int *holdp;
-//int *inp
-//int 
-
-//main menu params
-int volhold;
-
 //button debouncing
 int toptrig;
 int bottomtrig;
 
 
 //oscilators
-int freq1hold;
-int freq2hold;
+int osc1trig;
+int osc1state; 
+int osc1pitch_hold;
+char osc1pitch_c[10];
+int osc2pitch_hold;
+char osc2pitch_c[10];
+int osccolmod_hold;
+char osccolmod_c[10];
+int osctimbmod_hold;
+char osctimbmod_c[10];
+int osccoldiv;
+char osccoldiv_c[10];
+int osctimbdiv;
+char osctimbdiv_c[10];
+int osc1timer;
+int osc2timer;
+int osccolmodtimer;
+int osctimbmodtimer;
 
-//effects
-int flttrig;
-int fltstate;
+
+/// filter
 int flt_pitch_hold;
 char flt_pitch_c[10];
 int flt_reso_hold;
 char flt_reso_c[10];
+int enva_hold;
+char enva_c[10];
+int envd_hold;
+char envd_c[10];
+int envs_hold;
+char envs_c[10];
+int envr_hold;
+char envr_c[10];
+int fltpitchtimer;
+int fltresotimer;
+int envatimer;
+int envdtimer;
+int envstimer;
+int envrtimer;
+char fltrnv_c[10];
+
 
 
 int revtrig;
@@ -344,12 +383,9 @@ void checkToggleState(int inlet, int &trigstate, int &state){
 
 
 
-
-
-
 ///midiCCthin
-void midiCCout(int v, int cc, int channel){
-	if (((lsend>v+(1<<19))||(v>lsend+(1<<19))) && (timer>60)) {
+void midiCCout(int v, int cc, int channel, int &timer){
+	if (((lsend>v+(1<<19))||(v>lsend+(1<<19))) && (timer>120)) {
 	   lsend = v;
 	   PatchMidiInHandler(MIDI_DEVICE_INTERNAL ,0,MIDI_CONTROL_CHANGE + (channel-1),cc,__USAT(v>>20,7));
 	   timer = 0;
@@ -364,73 +400,47 @@ ppwait3=true;
 ppwait4=true;
 ppwait5=true;
 ppwait6=true;
-//ppwait1=false; //enable potpickup wait on change
-//ppwait2=false;
-//ppwait3=false;
-//ppwait4=false;
-//ppwait5=false;
-//ppwait6=false;
+
 timer = 0;
 
 //buttons
 toptrig = 0;
 bottomtrig = 0;
 
+// osc
 
-//outlets
-//freq1hold = 0;
-//freq2hold = 0;
-//volhold = 100<<20;\
+osc1trig = 0;
+osc1state = 0; 
+osc1pitch_hold = 48<<20;
+osc2pitch_hold = 60<<20;
+osccolmod_hold = 10<<20;
+osctimbmod_hold = 10<<20;
+osccoldiv = 0;
 
-flttrig = 0;
-fltstate = 0;
-flt_pitch_hold = 100<<20;
-flt_reso_hold = 100<<20;
-
-
-revtrig = 0;
-revstate = 0;
-rev_amp_hold = 100<<20;
-rev_dec_hold = 100<<20;
-
-deltrig = 0;
-delstate = 0;
-del_time_hold = 100<<20;
-del_fdbk_hold= 100<<20;
+osc1timer = 0;
+osc2timer = 0;
+osccolmodtimer = 0;
+osctimbmodtimer = 0;
 
 
-wahtrig = 0;
-wahstate = 0;
-wah_freq_hold = 100<<20;
-wah_reso_hold = 100<<20;
+/// filter
 
-
-phstrig = 0;
-phsstate = 0;
-phs_amp_hold = 100<<20;
-phs_dec_hold = 100<<20;
-
-flgtrig = 0;
-flgstate = 0;
-flg_depth_hold = 100<<20;
-flg_fdbk_hold= 100<<20;
-flg_spd_hold= 100<<20;
-
-
-mix_Lin_fx_hold= 100<<20;
-mix_Rin_fx_hold= 100<<20;
-mix_Lin_dry_hold= 100<<20;
-mix_Rin_dry_hold= 100<<20;
-mix_drywet_hold= 100<<20;
+flt_pitch_hold = 64<<20;
+flt_reso_hold = 64<<20;
+enva_hold = 10<<20;
+envd_hold = 64<<20;
+envs_hold = 10<<20;
+envr_hold = 10<<20;
+fltpitchtimer = 0;
+fltresotimer = 0;
+envatimer = 0;
+envdtimer = 0;
+envstimer = 0;
+envrtimer = 0;
 
 
 
-
-
-//
-//cc1 = 1;
-//cc1trig = 0;
-//cc1val  = 0;]]></code.init>
+//]]></code.init>
          <code.krate><![CDATA[//// pot pickup function declaration
 //int32_t ppchange (int32_t in);//, int32_t* hold);
 //void swap(int& x, int& y);
@@ -486,99 +496,51 @@ if (!((inlet_down>0) || (inlet_bottom>0)) && bottomtrig) {
 //midiCCout(127, 1, 1);
 
 
+if (state[currentstate] == "osc"){
+	outlet_S1mode = 0;
+	outlet_S2mode = 2;
+	midiCCout(ppchange (inlet_dial1, &osc1pitch_hold, ppwait1), 1, 1, osc1timer);
+	outlet_S1L1 = addItoS(osc1pitch_hold,"o1.ptch",osc1pitch_c);
+	midiCCout(ppchange (inlet_dial2, &osc2pitch_hold, ppwait2), 2, 1, osc2timer);
+	outlet_S1L2 = addItoS(osc2pitch_hold,"o2.ptch",osc2pitch_c);
+	
+	midiCCout(ppchange (inlet_dial3, &osccolmod_hold, ppwait3), 3, 1, osccolmodtimer);
+	outlet_S1L3 = addItoS(osccolmod_hold,"OsCol",osccolmod_c);
+	midiCCout(ppchange (inlet_dial4, &osctimbmod_hold, ppwait4), 4, 1, osctimbmodtimer);
+	outlet_S1L4 = addItoS(osctimbmod_hold,"OsTim",osctimbmod_c);
+
+}
+
+
 if (state[currentstate] == "filter"){
-	outlet_S2mode = 2;
-	checkToggleState(inlet_button1,flttrig, fltstate);
+	outlet_S1mode = 0;
+	outlet_S2mode = 0;
+	outlet_S1L1 = "filter";
+	midiCCout(ppchange (inlet_dial6, &flt_pitch_hold, ppwait6), 6, 1, fltpitchtimer);
+	outlet_S1L2 = addItoS(flt_pitch_hold,"fltfrq",flt_pitch_c);
+	midiCCout(ppchange (inlet_dial5, &flt_reso_hold, ppwait5), 5, 1, fltresotimer);
+	outlet_S1L3 = addItoS(flt_reso_hold,"fltrso",flt_reso_c);
+	outlet_S1L4 = addItoS(inlet_env,"env",fltrnv_c);
+	
 
-	if (fltstate == 1){
-		midiCCout(127<<20, 1, 1);
-		outlet_S1L1 = "filter  ON";
-	} else {
-		midiCCout(0, 1, 1);
-		outlet_S1L1 = "filter  OFF";
-	}
-	midiCCout(ppchange (inlet_dial1, &flt_pitch_hold, ppwait1), 17, 1);
-	outlet_S1L2 = addItoS(flt_pitch_hold,"pitch",flt_pitch_c);
-	midiCCout(ppchange (inlet_dial2, &flt_reso_hold, ppwait2), 33, 1);
-	outlet_S1L3 = addItoS(flt_reso_hold,"reso",flt_reso_c);
+	midiCCout(ppchange (inlet_dial1, &enva_hold, ppwait1), 7, 1, envatimer);
+	outlet_S2L1 = addItoS(enva_hold,"envatt",enva_c);
+	midiCCout(ppchange (inlet_dial2, &envd_hold, ppwait2), 8, 1, envdtimer);
+	outlet_S2L2 = addItoS(envd_hold,"envdec",envd_c);
+//	midiCCout(ppchange (inlet_dial3, &envs_hold, ppwait3), 9, 1, envstimer);
+//	outlet_S2L3 = addItoS(envs_hold,"envsus",envs_c);
+	midiCCout(ppchange (inlet_dial4, &envr_hold, ppwait4), 10, 1, envrtimer);
+	outlet_S2L4 = addItoS(envr_hold,"envrls",envr_c);
+
 
 }
 
 
-if (state[currentstate] == "reverb"){
-	outlet_S2mode = 2;
-	checkToggleState(inlet_button1,revtrig, revstate);
-
-	if (revstate == 1){
-		midiCCout(127<<20, 2, 1);
-		outlet_S1L1 = "reverb  ON";
-	} else {
-		midiCCout(0, 2, 1);
-		outlet_S1L1 = "reverb  OFF";
-	}
-	midiCCout(ppchange (inlet_dial1, &rev_amp_hold, ppwait1), 18, 1);
-	outlet_S1L2 = addItoS(rev_amp_hold,"amp",rev_amp_c);
-	midiCCout(ppchange (inlet_dial2, &rev_dec_hold, ppwait2), 34, 1);
-	outlet_S1L3 = addItoS(rev_dec_hold,"dec",rev_dec_c);
-
-}
-
-if (state[currentstate] == "delay"){
-	outlet_S2mode = 2;
-	checkToggleState(inlet_button1,deltrig, delstate);
-	if (delstate == 1){
-		outlet_S1L1 = "delay   ON";
-		midiCCout(127<<20, 3, 1);
-	} else {
-		outlet_S1L1 = "delay   OFF";
-		midiCCout(0, 3, 1);
-	}
-	midiCCout(ppchange (inlet_dial1, &del_fdbk_hold, ppwait1), 19, 1);
-	outlet_S1L2 = addItoS(del_fdbk_hold,"fdbk",del_fdbk_c);
-	midiCCout(ppchange (inlet_dial2, &del_time_hold, ppwait2), 35, 1);		
-	outlet_S1L3 = addItoS(del_time_hold,"time",del_time_c);
-
-}
-
-
-if (state[currentstate] == "wah"){
-	outlet_S2mode = 2;
-	checkToggleState(inlet_button1,wahtrig, wahstate);
-	if (wahstate == 1){
-		outlet_S1L1 = "wah     ON";
-		midiCCout(127<<20, 4, 1);
-	} else {
-		outlet_S1L1 = "wah     OFF";
-		midiCCout(0, 4, 1);
-	}
-	midiCCout(ppchange (inlet_dial1, &wah_freq_hold, ppwait1), 20, 1);
-	outlet_S1L2 = addItoS(wah_freq_hold,"freq",wah_freq_c);
-	midiCCout(ppchange (inlet_dial2, &wah_reso_hold, ppwait2), 36, 1);		
-	outlet_S1L3 = addItoS(wah_reso_hold,"reso",wah_reso_c);
-
-}
-if (state[currentstate] == "phaser"){
-	outlet_S2mode = 2;
-	checkToggleState(inlet_button1,phstrig, phsstate);
-	if (phsstate == 1){
-		outlet_S1L1 = "phaser  ON";
-		midiCCout(127<<20, 5, 1);
-	} else {
-		outlet_S1L1 = "phaser  OFF";
-		midiCCout(0, 5, 1);
-	}
-	midiCCout(ppchange (inlet_dial1, &phs_amp_hold, ppwait1), 21, 1);
-	outlet_S1L2 = addItoS(phs_amp_hold,"spd",phs_amp_c);
-	midiCCout(ppchange (inlet_dial2, &phs_dec_hold, ppwait2), 37, 1);		
-	outlet_S1L3 = addItoS(phs_dec_hold,"depth",phs_dec_c);
-
-}
 
 if (state[currentstate] == "menu"){
 	outlet_S2mode = 2;
 	outlet_S1L1 = "menu";
 	patchselect = inlet_dial5>>23;
-	disp_d1 = patchselect%menucount;
 	outlet_S1L2 = patch[patchselect%menucount];
 	outlet_S1L3 = "press B4";
 	outlet_S1L4 = "to load";
@@ -591,43 +553,29 @@ if (state[currentstate] == "menu"){
 if (state[currentstate] == "mixer"){
 //	outlet_S2mode = 0;
 //	outlet_S1L1 = "mixer";
-//	midiCCout(ppchange (inlet_dial5, &mix_drywet_hold, ppwait5), 114, 1);
-//	outlet_S1L3 = addItoS(mix_drywet_hold,"dry/wet",mix_drywet_c);
-//	
-	midiCCout(ppchange (inlet_dial1, &mix_Lin_fx_hold, ppwait1), 96, 1);
-	outlet_S1L1 = addItoS(mix_Lin_fx_hold,"L_fx",mix_Lin_fx_c);
-	midiCCout(ppchange (inlet_dial2, &mix_Rin_fx_hold, ppwait2), 97, 1);		
-	outlet_S1L2 = addItoS(mix_Rin_fx_hold,"R_fx",mix_Rin_fx_c);
-//	midiCCout(ppchange (inlet_dial3, &mix_Lin_dry_hold, ppwait3), 112, 1);
-//	outlet_S1L3 = addItoS(mix_Lin_dry_hold,"L_dry",mix_Lin_dry_c);
-//	midiCCout(ppchange (inlet_dial4, &mix_Rin_dry_hold, ppwait4), 113, 1);		
-//	outlet_S1L4 = addItoS(mix_Rin_dry_hold,"R_dry",mix_Rin_dry_c);
-
-
-}
 
 
 
-
-// //works with stomps/flanger
-//if (state[currentstate] == "flanger"){
-//	checkToggleState(inlet_button1,flgtrig, flgstate);
-//	if (flgstate == 1){
-//		outlet_S1L1 = "flanger ON";
-//		midiCCout(127<<20, 6, 1);
-//	} else {
-//		outlet_S1L1 = "flanger OFF";
-//		midiCCout(0, 6, 1);
-//	}
-//	midiCCout(ppchange (inlet_dial1, &flg_depth_hold, ppwait1), 22, 1);
-//	outlet_S1L2 = addItoS(flg_depth_hold,"dpth",flg_depth_c);
-//	midiCCout(ppchange (inlet_dial2, &flg_fdbk_hold, ppwait2), 38, 1);		
-//	outlet_S1L3 = addItoS(flg_fdbk_hold,"fdbk",flg_fdbk_c);
-//	midiCCout(ppchange (inlet_dial3, &flg_spd_hold, ppwait3), 54, 1);		
-//	outlet_S1L4 = addItoS(flg_spd_hold,"spd",flg_spd_c);
-//]]></code.krate>
+}]]></code.krate>
       </object>
    </patchobj>
+   <obj type="sptnk/filter/vowel" uuid="eb646958-f25c-42a3-9ef2-d0435f5a71b9" name="obj_1" x="924" y="714">
+      <params>
+         <frac32.u.map name="Formant" value="15.5"/>
+         <frac32.u.map name="Filter 1:reso" value="23.5"/>
+         <frac32.u.map name="Filter 2:reso" value="25.0"/>
+         <frac32.u.map name="Filter 3:reso" value="46.5"/>
+         <frac32.u.map name="Formant Mix:gain1" value="42.0"/>
+         <frac32.u.map name="Formant Mix:gain2" value="51.5"/>
+         <frac32.u.map name="Formant Mix:gain3" value="53.5"/>
+         <frac32.u.map name="Master gain" value="28.0"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="patch/load i" uuid="b79124f5b7d1e8b39e187677ddab6260ce8c60a3" name="load_1" x="672" y="882">
+      <params/>
+      <attribs/>
+   </obj>
    <nets>
       <net>
          <source obj="dial_1" outlet="out"/>
@@ -646,7 +594,6 @@ if (state[currentstate] == "mixer"){
          <source obj="slowsine_2" outlet="wave"/>
          <dest obj="csaw_1" inlet="color"/>
          <dest obj="csaw_2" inlet="timbre"/>
-         <dest obj="kscope_1" inlet="in"/>
       </net>
       <net>
          <source obj="csaw_2" outlet="wave"/>
@@ -691,32 +638,26 @@ if (state[currentstate] == "mixer"){
       <net>
          <source obj="obj_2" outlet="dial 1"/>
          <dest obj="object_1" inlet="dial1"/>
-         <dest obj="slowsine_1" inlet="pitch"/>
       </net>
       <net>
          <source obj="obj_2" outlet="dial 2"/>
          <dest obj="object_1" inlet="dial2"/>
-         <dest obj="slowsine_2" inlet="pitch"/>
       </net>
       <net>
          <source obj="obj_2" outlet="dial 3"/>
          <dest obj="object_1" inlet="dial3"/>
-         <dest obj="vcf3_1" inlet="pitch"/>
       </net>
       <net>
          <source obj="obj_2" outlet="dial 4"/>
          <dest obj="object_1" inlet="dial4"/>
-         <dest obj="vcf3_1" inlet="reso"/>
       </net>
       <net>
          <source obj="obj_2" outlet="dial 5"/>
          <dest obj="object_1" inlet="dial5"/>
-         <dest obj="LPHQOS_1" inlet="pitch"/>
       </net>
       <net>
          <source obj="obj_2" outlet="dial 6"/>
          <dest obj="object_1" inlet="dial6"/>
-         <dest obj="obj_1" inlet="Formant Mod (+/-)"/>
       </net>
       <net>
          <source obj="obj_2" outlet="toggle 1"/>
@@ -807,12 +748,41 @@ if (state[currentstate] == "mixer"){
          <dest obj="object_1" inlet="bottom"/>
       </net>
       <net>
-         <source obj="obj_3" outlet="R"/>
-         <dest obj="out_2" inlet="wave"/>
+         <source obj="object_1" outlet="loadpatch"/>
+         <dest obj="load_1" inlet="i"/>
+      </net>
+      <net>
+         <source obj="object_1" outlet="loadtrig"/>
+         <dest obj="load_1" inlet="trig"/>
       </net>
       <net>
          <source obj="obj_3" outlet="L"/>
+         <dest obj="obj_4" inlet="inL"/>
+      </net>
+      <net>
+         <source obj="obj_3" outlet="R"/>
+         <dest obj="obj_4" inlet="inR"/>
+      </net>
+      <net>
+         <source obj="obj_4" outlet="outL"/>
          <dest obj="out_1" inlet="wave"/>
+      </net>
+      <net>
+         <source obj="obj_4" outlet="outR"/>
+         <dest obj="out_2" inlet="wave"/>
+      </net>
+      <net>
+         <source obj="follower_1" outlet="amp"/>
+         <dest obj="adsr_1" inlet="gate"/>
+      </net>
+      <net>
+         <source obj="in_1" outlet="left"/>
+         <dest obj="follower_1" inlet="in"/>
+      </net>
+      <net>
+         <source obj="adsr_1" outlet="env"/>
+         <dest obj="vcf3_1" inlet="pitch"/>
+         <dest obj="object_1" inlet="env"/>
       </net>
    </nets>
    <settings>
@@ -820,8 +790,8 @@ if (state[currentstate] == "mixer"){
    </settings>
    <notes><![CDATA[]]></notes>
    <windowPos>
-      <x>3020</x>
-      <y>452</y>
+      <x>3864</x>
+      <y>426</y>
       <width>1702</width>
       <height>839</height>
    </windowPos>

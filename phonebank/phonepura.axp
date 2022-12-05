@@ -3,7 +3,7 @@
       <params>
          <frac32.s.map name="pitch" MidiCC="1" value="-9.0"/>
          <frac32.u.map name="timbre" MidiCC="5" value="32.0"/>
-         <frac32.u.map name="color" MidiCC="9" value="13.5"/>
+         <frac32.u.map name="color" MidiCC="9" value="32.0"/>
       </params>
       <attribs/>
    </obj>
@@ -79,7 +79,7 @@
          <includes/>
          <code.declaration><![CDATA[//menu and screen and pot state
 char* state[5] = {"pitch", "color", "timbre",  "fx", "menu"};
-char* patch[8] = {"effects","dangerine","1976","effectsMic", "sidechain",  "side_bd", "side_cy", "sawdrone"};
+char* patch[14] = {"menu","effects","dangerine","1976","effectsMic", "sidechain",  "side_bd", "side_cy", "sawdrone", "answmachine", "sawdrone2","granclds","dronephone", "tanpura"};
 char* notes[12] = {"Sa   C", "Sa # C","Re   D","Re # D","Ga   E","Ma   F","Ma # F", "Pa   G", "Pa # G",  "Dha  A","Dha #A", "Ni   B"};
 char* octave[11] = {" -1","  0","  1","  2","  3","  4","  5","  6","  7","  8","  9"};
 
@@ -313,7 +313,6 @@ void changeStringNoteDown(int inlet, int &trigstate, int &stringnote){
 ///midiCCthin
 void midiCCout(int v, int cc, int channel){
 	if (((lsend>v+(1<<19))||(v>lsend+(1<<19))) && (timer>60)) {
-	//if ((v>lsend+(1<<19)) && (timer>60)) {
 	   lsend = v;
 	   PatchMidiInHandler(MIDI_DEVICE_INTERNAL ,0,MIDI_CONTROL_CHANGE + (channel-1),cc,__USAT(v>>20,7));
 	   timer = 0;
@@ -389,12 +388,19 @@ str4tim_hold = 64<<20;
 
 //fx menu
 ch_depth_hold = 64<<20;
-ch_spd_hold = 64<<20;
+ch_spd_hold = 1<<20;
 rev_size_hold = 64<<20;
 rev_decay_hold = 64<<20;]]></code.init>
          <code.krate><![CDATA[//// pot pickup function declaration
 //int32_t ppchange (int32_t in);//, int32_t* hold);
 //void swap(int& x, int& y);
+
+if ((inlet_top>0) && (inlet_bottom>0)) {
+	outlet_loadpatch = 0;
+	outlet_loadtrig = inlet_bottom;
+}
+
+
 outlet_S1mode = 0;
 outlet_S2mode = 2;
 outlet_loadtrig = 0;
@@ -518,14 +524,14 @@ if (state[currentstate] == "timbre"){
 
 
 if (state[currentstate] == "color"){
-	midiCCout(ppchange (inlet_dial1, &str1col_hold, ppwait1), 9, 1);
-	outlet_S1L1 = addItoS(str1col_hold,"s1col",str1col_c);
-	midiCCout(ppchange (inlet_dial2, &str2col_hold, ppwait2), 10, 1);
-	outlet_S1L2 = addItoS(str2col_hold,"s2col",str2col_c);
-	midiCCout(ppchange (inlet_dial3, &str3col_hold, ppwait3), 11, 1);
-	outlet_S1L3 = addItoS(str3col_hold,"s3col",str3col_c);
-	midiCCout(ppchange (inlet_dial4, &str4col_hold, ppwait4), 12, 1);
-	outlet_S1L4 = addItoS(str4col_hold,"s4col",str4col_c);
+	//midiCCout(ppchange (inlet_dial1, &str1col_hold, ppwait1), 9, 1);
+	//outlet_S1L1 = addItoS(str1col_hold,"s1col",str1col_c);
+	//midiCCout(ppchange (inlet_dial2, &str2col_hold, ppwait2), 10, 1);
+//	outlet_S1L2 = addItoS(str2col_hold,"s2col",str2col_c);
+//	midiCCout(ppchange (inlet_dial3, &str3col_hold, ppwait3), 11, 1);
+//	outlet_S1L3 = addItoS(str3col_hold,"s3col",str3col_c);
+//	midiCCout(ppchange (inlet_dial4, &str4col_hold, ppwait4), 12, 1);
+//	outlet_S1L4 = addItoS(str4col_hold,"s4col",str4col_c);
 }
 
 if (state[currentstate] == "menu"){
@@ -590,16 +596,16 @@ if (state[currentstate] == "fx"){
    <obj type="stomps/chorus1" uuid="84245e7c-5635-41e4-acca-6dbcb0392264" name="obj_1" x="910" y="308">
       <params>
          <bool32.tgl name="on" MidiCC="20" value="1"/>
-         <frac32.u.map name="depth" MidiCC="21" value="18.5"/>
-         <frac32.s.map name="speed" MidiCC="22" value="-43.0"/>
+         <frac32.u.map name="depth" MidiCC="21" value="7.5"/>
+         <frac32.s.map name="speed" MidiCC="22" value="-64.0"/>
       </params>
       <attribs/>
    </obj>
    <obj type="stomps/reverb1" uuid="fa0db41a-8c5f-4551-979d-d1aaf6f0933e" name="reverb1_1" x="1064" y="322">
       <params>
          <bool32.tgl name="on" MidiCC="30" value="1"/>
-         <frac32.u.map name="*c_1" MidiCC="31" value="41.5"/>
-         <frac32.u.map name="decay" MidiCC="32" value="22.5"/>
+         <frac32.u.map name="*c_1" MidiCC="31" value="32.0"/>
+         <frac32.u.map name="decay" MidiCC="32" value="32.0"/>
       </params>
       <attribs/>
    </obj>
@@ -607,11 +613,19 @@ if (state[currentstate] == "fx"){
       <params/>
       <attribs/>
    </obj>
+   <obj type="disp/i" uuid="5e35fd0c62d81e70017289250cf28edd26e19e4a" name="i_1" x="434" y="406">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="patch/load i" uuid="b79124f5b7d1e8b39e187677ddab6260ce8c60a3" name="load_1" x="490" y="420">
+      <params/>
+      <attribs/>
+   </obj>
    <obj type="osc/brds/plucked" uuid="e78bfbb5-2963-49a0-8863-dead044d748c" name="plucked_5" x="616" y="490">
       <params>
          <frac32.s.map name="pitch" MidiCC="3" value="-6.0"/>
-         <frac32.u.map name="timbre" MidiCC="7" value="54.0"/>
-         <frac32.u.map name="color" MidiCC="11" value="13.0"/>
+         <frac32.u.map name="timbre" MidiCC="7" value="33.5"/>
+         <frac32.u.map name="color" MidiCC="11" value="34.0"/>
       </params>
       <attribs/>
    </obj>
@@ -622,10 +636,6 @@ if (state[currentstate] == "fx"){
          <spinner attributeName="channel" value="1"/>
          <spinner attributeName="cc" value="21"/>
       </attribs>
-   </obj>
-   <obj type="patch/load i" uuid="b79124f5b7d1e8b39e187677ddab6260ce8c60a3" name="load_1" x="476" y="672">
-      <params/>
-      <attribs/>
    </obj>
    <obj type="osc/brds/plucked" uuid="e78bfbb5-2963-49a0-8863-dead044d748c" name="plucked_4" x="616" y="686">
       <params>
@@ -726,6 +736,7 @@ if (state[currentstate] == "fx"){
       <net>
          <source obj="phone_interface_buttons_screen_1" outlet="button 4"/>
          <dest obj="plucked_4" inlet="strike"/>
+         <dest obj="object_1" inlet="button4"/>
       </net>
       <net>
          <source obj="phone_interface_buttons_screen_1" outlet="up"/>
@@ -830,6 +841,7 @@ if (state[currentstate] == "fx"){
       <net>
          <source obj="object_1" outlet="loadpatch"/>
          <dest obj="load_1" inlet="i"/>
+         <dest obj="i_1" inlet="in"/>
       </net>
       <net>
          <source obj="object_1" outlet="loadtrig"/>
@@ -841,9 +853,9 @@ if (state[currentstate] == "fx"){
    </settings>
    <notes><![CDATA[]]></notes>
    <windowPos>
-      <x>3293</x>
-      <y>295</y>
+      <x>3373</x>
+      <y>398</y>
       <width>1203</width>
-      <height>1107</height>
+      <height>1029</height>
    </windowPos>
 </patch-1.0>
