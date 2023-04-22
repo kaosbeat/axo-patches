@@ -54,7 +54,7 @@
          <includes/>
          <code.declaration><![CDATA[//menu and screen and pot state
 char* state[7] = {"filter","reverb","delay","wah", "phaser", "menu", "mixer"};
-char* patch[8] = {"effects","dangerine","1976","effectsMic", "sidechain",  "side_bd", "side_cy", "sawdrone"};
+char* patch[15] = {"menu","effects","dangerine","1976","effectsMic", "sidechain",  "side_bd", "side_cy", "sawdrone", "answmachine", "sawdrone2","granclds","dronephone", "tanpura", "bytebeat"};
 int menucount = *(&patch + 1) - patch;
 int numstates = *(&state + 1) - state - 1;
 int currentstate;
@@ -231,7 +231,9 @@ void midiCCout(int v, int cc, int channel){
 	   lsend = v;
 	   PatchMidiInHandler(MIDI_DEVICE_INTERNAL ,0,MIDI_CONTROL_CHANGE + (channel-1),cc,__USAT(v>>20,7));
 	   timer = 0;
-	} else timer++;
+	} else {
+		timer++;
+	}
 }]]></code.declaration>
          <code.init><![CDATA[//state
 currentstate = 0;
@@ -523,19 +525,19 @@ if (state[currentstate] == "mixer"){
    </obj>
    <obj type="filter/vcf3" uuid="92455c652cd098cbb682a5497baa18abbf2ef865" name="vcf3_1" x="532" y="420">
       <params>
-         <frac32.s.map name="pitch" MidiCC="17" value="7.0"/>
-         <frac32.u.map name="reso" MidiCC="33" value="50.0"/>
+         <frac32.s.map name="pitch" MidiCC="17" value="25.0"/>
+         <frac32.u.map name="reso" MidiCC="33" value="55.5"/>
       </params>
       <attribs/>
    </obj>
    <obj type="audio/inconfig l" uuid="7007d026acb7c3586f60a7f0898718d1ca7e0607" name="inconfig_2" x="126" y="434">
       <params/>
       <attribs>
-         <combo attributeName="gain" selection="24dB"/>
+         <combo attributeName="gain" selection="0dB"/>
          <combo attributeName="boost" selection="0dB"/>
       </attribs>
    </obj>
-   <obj type="stomps/reverb1" uuid="5354d961-a49b-47d3-acba-0d662ba23576" name="obj_6" x="714" y="434">
+   <obj type="stomps/reverb1" uuid="fe3469d0-1716-4e05-913e-769400fcbade" name="obj_6" x="714" y="434">
       <params>
          <bool32.tgl name="on" MidiCC="2" value="0"/>
          <frac32.u.map name="*c_1" MidiCC="18" value="50.0"/>
@@ -543,7 +545,7 @@ if (state[currentstate] == "mixer"){
       </params>
       <attribs/>
    </obj>
-   <obj type="stomps/delay" uuid="33075cfd-4c0a-422f-8469-682cdd6e6ec1" name="obj_4" x="854" y="434">
+   <obj type="stomps/delay" uuid="eefe7469-b200-4f77-8385-6386226de66c" name="obj_4" x="854" y="434">
       <params>
          <bool32.tgl name="on" MidiCC="3" value="0"/>
          <frac32.u.map name="fdbk" MidiCC="19" value="50.0"/>
@@ -559,9 +561,9 @@ if (state[currentstate] == "mixer"){
       </params>
       <attribs/>
    </obj>
-   <obj type="jho/stomp/phaser" uuid="8309d67b-4f2d-4cf1-a10c-5ddf5bc344cd" name="obj_3" x="1120" y="448">
+   <obj type="jho/stomp/phaser" uuid="3a76f736-bff8-4777-8262-8c70ae04e8f0" name="obj_3" x="1120" y="448">
       <params>
-         <frac32.s.map name="speed" MidiCC="21" value="50.0"/>
+         <frac32.s.map name="speed" MidiCC="21" value="28.0"/>
          <frac32.u.map name="waveform" value="54.0"/>
          <frac32.u.map name="depth" MidiCC="37" value="50.0"/>
          <frac32.u.map name="offset" value="32.0"/>
@@ -581,11 +583,15 @@ if (state[currentstate] == "mixer"){
    <obj type="audio/inconfig r" uuid="8468fe7907553f335959a7f69cbc5a1f7b5d4d1d" name="inconfig_1" x="126" y="504">
       <params/>
       <attribs>
-         <combo attributeName="gain" selection="24dB"/>
+         <combo attributeName="gain" selection="0dB"/>
          <combo attributeName="boost" selection="0dB"/>
       </attribs>
    </obj>
-   <obj type="stomps/ab" uuid="5596ce30-e752-414a-8e6b-0b1b2dbb4802" name="obj_2" x="560" y="560">
+   <obj type="audio/out right" uuid="e58a4cbbb087052c5480366e3f5d3a04aa319777" name="out_2" x="1442" y="546">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="stomps/ab" uuid="24842161-da2f-4145-aef2-dc0c19ee2709" name="obj_2" x="560" y="560">
       <params>
          <bool32.tgl name="a/b" MidiCC="1" value="1"/>
       </params>
@@ -767,6 +773,7 @@ if (state[currentstate] == "mixer"){
       <net>
          <source obj="xfade_1" outlet="o"/>
          <dest obj="out_1" inlet="wave"/>
+         <dest obj="out_2" inlet="wave"/>
       </net>
       <net>
          <source obj="mix_2" outlet="out"/>
@@ -778,8 +785,8 @@ if (state[currentstate] == "mixer"){
    </settings>
    <notes><![CDATA[]]></notes>
    <windowPos>
-      <x>2068</x>
-      <y>131</y>
+      <x>2715</x>
+      <y>339</y>
       <width>1765</width>
       <height>868</height>
    </windowPos>

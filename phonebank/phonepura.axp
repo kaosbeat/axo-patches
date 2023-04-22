@@ -395,10 +395,10 @@ rev_decay_hold = 64<<20;]]></code.init>
 //int32_t ppchange (int32_t in);//, int32_t* hold);
 //void swap(int& x, int& y);
 
-if ((inlet_top>0) && (inlet_bottom>0)) {
-	outlet_loadpatch = 0;
-	outlet_loadtrig = inlet_bottom;
-}
+//if ((inlet_top>0) && (inlet_bottom>0)) {
+//	outlet_loadpatch = 0;
+//	outlet_loadtrig = inlet_bottom;
+//}
 
 
 outlet_S1mode = 0;
@@ -410,7 +410,6 @@ outlet_S1L3 = "";
 outlet_S1L4 = "";
 //outlet_fx = 0;
 
-disp_d1 = timer;
 ///buttonpresses MENU up/down
 if ((inlet_top>0) && !toptrig) {
    if (currentstate < numstates) { 
@@ -613,11 +612,7 @@ if (state[currentstate] == "fx"){
       <params/>
       <attribs/>
    </obj>
-   <obj type="disp/i" uuid="5e35fd0c62d81e70017289250cf28edd26e19e4a" name="i_1" x="434" y="406">
-      <params/>
-      <attribs/>
-   </obj>
-   <obj type="patch/load i" uuid="b79124f5b7d1e8b39e187677ddab6260ce8c60a3" name="load_1" x="490" y="420">
+   <obj type="disp/i" uuid="5e35fd0c62d81e70017289250cf28edd26e19e4a" name="i_1" x="406" y="490">
       <params/>
       <attribs/>
    </obj>
@@ -627,6 +622,10 @@ if (state[currentstate] == "fx"){
          <frac32.u.map name="timbre" MidiCC="7" value="33.5"/>
          <frac32.u.map name="color" MidiCC="11" value="34.0"/>
       </params>
+      <attribs/>
+   </obj>
+   <obj type="patch/load i" uuid="b79124f5b7d1e8b39e187677ddab6260ce8c60a3" name="load_1" x="462" y="504">
+      <params/>
       <attribs/>
    </obj>
    <obj type="midi/out/cc thin" uuid="5255b30d60e50223ed41179d8ce935ba9464de75" name="cc_3" x="812" y="588">
@@ -660,6 +659,16 @@ if (state[currentstate] == "fx"){
          <spinner attributeName="channel" value="1"/>
          <spinner attributeName="cc" value="31"/>
       </attribs>
+   </obj>
+   <obj type="midi/in/monitor" uuid="b51863ca-6afa-4d29-acfd-c8c2fe06cb16" name="monitor_1" x="252" y="812">
+      <params>
+         <bool32.tgl name="ControlChange" value="0"/>
+         <bool32.tgl name="Note" value="0"/>
+         <bool32.tgl name="ProgramChange" value="0"/>
+         <bool32.tgl name="Bend" value="0"/>
+         <bool32.tgl name="PolyPressure" value="0"/>
+      </params>
+      <attribs/>
    </obj>
    <obj type="midi/out/cc thin" uuid="5255b30d60e50223ed41179d8ce935ba9464de75" name="cc_6" x="812" y="882">
       <params/>
@@ -853,8 +862,8 @@ if (state[currentstate] == "fx"){
    </settings>
    <notes><![CDATA[]]></notes>
    <windowPos>
-      <x>3373</x>
-      <y>398</y>
+      <x>3231</x>
+      <y>306</y>
       <width>1203</width>
       <height>1029</height>
    </windowPos>

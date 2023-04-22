@@ -27,25 +27,25 @@
    </obj>
    <obj type="ctrl/dial b" uuid="862e7d7f29093cb1ce4aed72244d118ad4d46692" name="pitch" x="532" y="28">
       <params>
-         <frac32.s.map name="value" value="64.0"/>
+         <frac32.s.map name="value" value="-3.0"/>
       </params>
       <attribs/>
    </obj>
    <obj type="ctrl/dial b" uuid="862e7d7f29093cb1ce4aed72244d118ad4d46692" name="loopspeed" x="616" y="28">
       <params>
-         <frac32.s.map name="value" value="37.0"/>
+         <frac32.s.map name="value" value="-17.0"/>
       </params>
       <attribs/>
    </obj>
    <obj type="ctrl/dial p" uuid="cc5d2846c3d50e425f450c4b9851371b54f4d674" name="chunksize" x="700" y="28">
       <params>
-         <frac32.u.map name="value" value="54.0"/>
+         <frac32.u.map name="value" value="21.5"/>
       </params>
       <attribs/>
    </obj>
    <obj type="math/*c" uuid="7d5ef61c3bcd571ee6bbd8437ef3612125dfb225" name="length" x="784" y="28">
       <params>
-         <frac32.u.map name="amp" value="0.0"/>
+         <frac32.u.map name="amp" value="43.5"/>
       </params>
       <attribs/>
    </obj>
@@ -77,7 +77,7 @@
    </obj>
    <obj type="ctrl/toggle" uuid="42b8134fa729d54bfc8d62d6ef3fa99498c1de99" name="rec_btn1" x="126" y="196">
       <params>
-         <bool32.tgl name="b" value="1"/>
+         <bool32.tgl name="b" value="0"/>
       </params>
       <attribs/>
    </obj>
@@ -97,17 +97,13 @@
       <params/>
       <attribs/>
    </obj>
-   <obj type="conv/unipolar2bipolar" uuid="efc8ee28c508740c5edf7995eaaa07a6d6818e5e" name="unipolar2bipolar_2" x="756" y="224">
-      <params/>
-      <attribs/>
-   </obj>
    <obj type="audio/in left" uuid="d40e60b7641fe75af4d7c91b45bb038aacafc52e" name="audio_in" x="84" y="336">
       <params/>
       <attribs/>
    </obj>
    <obj type="rbrt/looper/lrec" uuid="2e5874a9-b38b-40bf-8dda-03863ab6ca59" name="lrec_1" x="182" y="336">
       <params>
-         <frac32.s.map name="attack" value="-64.0"/>
+         <frac32.s.map name="attack" value="28.0"/>
          <bool32.tgl name="hard" value="0"/>
          <frac32.s.map name="release" value="-42.0"/>
          <bool32.tgl name="nofade" value="1"/>
@@ -119,7 +115,7 @@
    </obj>
    <obj type="rbrt/looper/ldrive loop" uuid="50a04ed3-8ca2-4cfb-ab23-e53c0e8cbbf4" name="ldrive_1" x="322" y="336">
       <params>
-         <frac32.s.map name="speed" value="-10.0"/>
+         <frac32.s.map name="speed" value="53.0"/>
       </params>
       <attribs>
          <objref attributeName="table" obj="sample"/>
@@ -127,10 +123,10 @@
    </obj>
    <obj type="rbrt/looper/ldub" uuid="5902f84f-1523-451f-bddb-7f12c8ced857" name="ldub_1" x="462" y="336">
       <params>
-         <frac32.u.map name="feedback" value="64.0"/>
-         <frac32.s.map name="attack" value="-64.0"/>
+         <frac32.u.map name="feedback" value="13.0"/>
+         <frac32.s.map name="attack" value="-5.0"/>
          <bool32.tgl name="hard" value="0"/>
-         <frac32.s.map name="release" value="0.0"/>
+         <frac32.s.map name="release" value="-43.0"/>
          <bool32.tgl name="nofade" value="0"/>
       </params>
       <attribs>
@@ -271,7 +267,7 @@ if(play){
    </patchobj>
    <obj type="mix/mix 1 g" uuid="e6982841c1bf323ee2062a4b6cc2737adafbd668" name="mix_1" x="798" y="336">
       <params>
-         <frac32.u.map name="gain1" value="56.5"/>
+         <frac32.u.map name="gain1" value="64.0"/>
       </params>
       <attribs/>
    </obj>
@@ -980,8 +976,8 @@ if (state[currentstate] == "mixer"){
    </settings>
    <notes><![CDATA[]]></notes>
    <windowPos>
-      <x>3226</x>
-      <y>484</y>
+      <x>2819</x>
+      <y>330</y>
       <width>1382</width>
       <height>906</height>
    </windowPos>
