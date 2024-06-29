@@ -1,9 +1,13 @@
 <patch-1.0 appVersion="1.0.12">
-   <obj type="disp/scope 128 b trig" uuid="11747dcd1dc9afe4919f537c861fb18b80b4e4e" name="scope_3" x="1246" y="14">
+   <obj type="audio/inconfig" uuid="9a80ef3c19f2a8f81da3a3b7c1c44d18126b97d9" name="adcconfig1" x="588" y="42">
       <params/>
-      <attribs/>
+      <attribs>
+         <combo attributeName="gain" selection="30dB"/>
+         <combo attributeName="boost" selection="20dB"/>
+         <combo attributeName="mode" selection="Mono(L)"/>
+      </attribs>
    </obj>
-   <obj type="phone_interface_buttons_screen" uuid="13898c49-e3f8-46d8-a436-2544f65c0fde" name="phone_interface_buttons_screen_1" x="28" y="84">
+   <obj type="phone_interface_buttons_screen" uuid="13898c49-e3f8-46d8-a436-2544f65c0fde" name="phone_interface_buttons_screen_1" x="98" y="84">
       <params/>
       <attribs/>
    </obj>
@@ -52,6 +56,7 @@
             <bool32 name="loadtrig"/>
             <frac32.positive name="chorus"/>
             <frac32.positive name="reverb"/>
+            <int32 name="beatinit"/>
          </outlets>
          <displays>
             <int32.label name="d1"/>
@@ -60,11 +65,12 @@
          <attribs/>
          <includes/>
          <code.declaration><![CDATA[//menu and screen and pot state
-char* state[6] = {"bytebeat","rate","all","env","fx", "menu"};
+char* state[6] = {"bytebeat","rate","env","fx", "tuner", "menu"};
 char* patch[15] = {"menu","effects","dangerine","1976","effectsMic", "sidechain",  "side_bd", "side_cy", "sawdrone", "answmachine", "sawdrone2","granclds","dronephone", "tanpura", "bytebeat"};
 int menucount = *(&patch + 1) - patch;
 int numstates = *(&state + 1) - state - 1;
 int currentstate;
+int prevstate;
 int patchselect;
 bool ppwait1;
 bool ppwait2;
@@ -76,13 +82,15 @@ int32_t lsend;
 int timer;
 
 
+int beatinit;
+
 //main menu params
 int volhold;
 
 //button debouncing
 int toptrig;
 int bottomtrig;
-
+int button1trig;
 
 //bytebeat
 int rsttrig;
@@ -125,6 +133,9 @@ char rev_size_c[10];
 int rev_decay_hold;
 char rev_decay_c[10];
 
+//tuner
+int tuner_hold;
+char tuner_c[10];
 
 
 //functions
@@ -211,6 +222,7 @@ void midiCCout(int v, int cc, int channel){
 }]]></code.declaration>
          <code.init><![CDATA[//state
 currentstate = 0;
+prevstate = 0;
 patchselect = 0;
 ppwait1=true; //enable potpickup wait on change
 ppwait2=true;
@@ -225,36 +237,40 @@ ppwait6=true;
 //ppwait5=false;
 //ppwait6=false;
 timer = 0;
-
+beatinit = 15;
 //buttons
 toptrig = 0;
 bottomtrig = 0;
+button1trig = 0;
 
 //bytebeat
 rsttrig = 0;
 rststate = 0;
-start_pos_hold = 0 <<20;
-x_hold = 1 <<20;
-y_hold = 1 <<20;
-z_hold = 1 <<20;
+start_pos_hold = 7 <<20;
+x_hold = 74 <<20; //0.5
+y_hold = 47 <<20; //0.5
+z_hold = 21 <<20; //32
 
 
 //rate
-rate_hold = 0 <<20;
-div_hold = 0 <<20;
-beat_hold  = 0 <<20;
+rate_hold = 31 <<20; // -44
+div_hold = 31 <<20; //12.5
+beat_hold  = 15 <<20;
 
 /// env menu
 env_tresh_hold  = 0 <<20;
 env_att_hold  = 0 <<20;
 env_dec_hold = 0 <<20;
-env_wet_hold  = 0 <<20;
+env_wet_hold  = 127 <<20;
 
 //fx menu
 ch_depth_hold = 64<<20;
 ch_spd_hold = 1<<20;
 rev_size_hold = 64<<20;
-rev_decay_hold = 64<<20;]]></code.init>
+rev_decay_hold = 64<<20;
+
+//tuner
+tuner_hold= 32<<20;]]></code.init>
          <code.krate><![CDATA[//// pot pickup function declaration
 //int32_t ppchange (int32_t in);//, int32_t* hold);
 //void swap(int& x, int& y);
@@ -265,8 +281,14 @@ outlet_S1L2 = "";
 outlet_S1L3 = "";
 outlet_S1L4 = "";
 
+outlet_beatinit = beatinit;
+
 outlet_chorus = inlet_toggle1<<20;
 outlet_reverb = inlet_toggle2<<20;
+
+
+
+
 ///buttonpresses MENU up/down
 if (((inlet_top>0)) && !toptrig) {
    if (currentstate < numstates) { 
@@ -349,15 +371,19 @@ if (state[currentstate] == "all"){
 
 	midiCCout(ppchange (inlet_dial5, &rate_hold, ppwait5), 15, 1);
 	outlet_S1L3 = addItoS(rate_hold,"rate",rate_c);
+	
 	midiCCout(ppchange (inlet_dial6, &div_hold, ppwait6), 16, 1);
 	outlet_S1L2 = addItoS(div_hold,"div",div_c);
 	
 	midiCCout(ppchange (inlet_dial1, &start_pos_hold, ppwait1), 17, 1);
-	outlet_S2L1 = addItoS(start_pos_hold,"strtpos",start_pos_c);
+	outlet_S2L1 = addItoS(start_pos_hold,"strtp",start_pos_c);
+	
 	midiCCout(ppchange (inlet_dial2, &x_hold, ppwait2), 33, 1);
 	outlet_S2L2 = addItoS(x_hold,"x",x_c);
+	
 	midiCCout(ppchange (inlet_dial3, &y_hold, ppwait3), 34, 1);
 	outlet_S2L3 = addItoS(y_hold,"y",y_c);
+	
 	midiCCout(ppchange (inlet_dial4, &z_hold, ppwait4), 35, 1);
 	outlet_S2L4 = addItoS(z_hold,"z",z_c);
 }
@@ -371,11 +397,11 @@ if (state[currentstate] == "env"){
 	midiCCout(ppchange (inlet_dial1, &env_tresh_hold, ppwait1), 20, 1);
 	outlet_S2L1 = addItoS(env_tresh_hold,"tresh",env_tresh_c);
 	midiCCout(ppchange (inlet_dial2, &env_att_hold, ppwait2), 21, 1);		
-	outlet_S2L2 = addItoS(env_att_hold,"attack",env_att_c);
+	outlet_S2L2 = addItoS(env_att_hold,"attck",env_att_c);
 	midiCCout(ppchange (inlet_dial3, &env_dec_hold, ppwait3), 22, 1);		
 	outlet_S2L3 = addItoS(env_dec_hold,"decay",env_dec_c);
 	midiCCout(ppchange (inlet_dial4, &env_wet_hold, ppwait4), 23, 1);		
-	outlet_S2L4 = addItoS(env_wet_hold,"drywet",env_wet_c);
+	outlet_S2L4 = addItoS(env_wet_hold,"env",env_wet_c);
 
 }
 
@@ -406,6 +432,16 @@ if (state[currentstate] == "fx"){
 	outlet_S2L3 = addItoS(rev_decay_hold,"decay",rev_decay_c);
 }
 
+if (state[currentstate] == "tuner"){
+	outlet_S1mode = 0;
+	outlet_S2mode = 2;
+
+
+	midiCCout(ppchange (inlet_dial5, &tuner_hold, ppwait5), 85, 1);
+	outlet_S1L3 = addItoS(tuner_hold,"tuner",tuner_c);
+
+}
+
 
 
 if (state[currentstate] == "menu"){
@@ -423,13 +459,9 @@ if (state[currentstate] == "menu"){
 }]]></code.krate>
       </object>
    </patchobj>
-   <obj type="audio/inconfig" uuid="9a80ef3c19f2a8f81da3a3b7c1c44d18126b97d9" name="adcconfig1" x="728" y="126">
+   <obj type="audio/in stereo" uuid="99848ad6d90a8e615e83b2e619cfc806f28e7281" name="adc_1" x="588" y="126">
       <params/>
-      <attribs>
-         <combo attributeName="gain" selection="30dB"/>
-         <combo attributeName="boost" selection="20dB"/>
-         <combo attributeName="mode" selection="Mono(L)"/>
-      </attribs>
+      <attribs/>
    </obj>
    <obj type="gain/vca" uuid="a9f2dcd18043e2f47364e45cb8814f63c2a37c0d" name="vca_1" x="1428" y="168">
       <params/>
@@ -437,15 +469,15 @@ if (state[currentstate] == "menu"){
    </obj>
    <obj type="mix/mix 1 g" uuid="e6982841c1bf323ee2062a4b6cc2737adafbd668" name="mix_3" x="1568" y="168">
       <params>
-         <frac32.u.map name="gain1" MidiCC="23" value="0.0"/>
+         <frac32.u.map name="gain1" MidiCC="23" value="63.99999952316284"/>
       </params>
       <attribs/>
    </obj>
    <obj type="sptnk/effect/noise gate" uuid="d49f2e43-3acd-4f41-9d78-40beab399c69" name="obj_5" x="854" y="196">
       <params>
          <frac32.u.map name="Treshold" MidiCC="20" value="0.0"/>
-         <frac32.s.map name="envelope:a" MidiCC="21" value="-28.0"/>
-         <frac32.s.map name="envelope:d" MidiCC="22" value="-40.0"/>
+         <frac32.s.map name="envelope:a" MidiCC="21" value="-64.0"/>
+         <frac32.s.map name="envelope:d" MidiCC="22" value="-64.0"/>
       </params>
       <attribs/>
    </obj>
@@ -455,21 +487,11 @@ if (state[currentstate] == "menu"){
          <combo attributeName="time" selection="10.6ms"/>
       </attribs>
    </obj>
-   <obj type="audio/in stereo" uuid="99848ad6d90a8e615e83b2e619cfc806f28e7281" name="adc_1" x="742" y="210">
-      <params/>
-      <attribs/>
-   </obj>
-   <obj type="ctrl/i radio 16 h" uuid="75b78d9270bc08741651a7b7acae0fb789172fca" name="beat" x="1232" y="252">
-      <params>
-         <int32.hradio name="value" value="0"/>
-      </params>
-      <attribs/>
-   </obj>
    <obj type="stomps/chorus1" uuid="6ca75511-97a0-4cfd-93f7-b5e2e8713f3f" name="obj_1" x="1708" y="252">
       <params>
          <bool32.tgl name="on" MidiCC="60" value="0"/>
-         <frac32.u.map name="depth" MidiCC="40" value="35.5"/>
-         <frac32.s.map name="speed" MidiCC="41" value="-63.0"/>
+         <frac32.u.map name="depth" MidiCC="40" value="63.99999952316284"/>
+         <frac32.s.map name="speed" MidiCC="41" value="63.99999952316284"/>
       </params>
       <attribs/>
    </obj>
@@ -491,10 +513,28 @@ if (state[currentstate] == "menu"){
       <params/>
       <attribs/>
    </obj>
-   <obj type="ctrl/dial b" uuid="862e7d7f29093cb1ce4aed72244d118ad4d46692" name="dial_5" x="1022" y="364">
+   <obj type="ctrl/dial p" uuid="cc5d2846c3d50e425f450c4b9851371b54f4d674" name="dial_7" x="1134" y="280">
       <params>
-         <frac32.s.map name="value" MidiCC="15" value="-64.0"/>
+         <frac32.u.map name="value" MidiCC="85" value="32.0"/>
       </params>
+      <attribs/>
+   </obj>
+   <obj type="math/div 64" uuid="da82c8ea54e956811f1d7264d921628e3301971e" name="div_1" x="1204" y="280">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="ctrl/dial b" uuid="862e7d7f29093cb1ce4aed72244d118ad4d46692" name="dial_5" x="1022" y="336">
+      <params>
+         <frac32.s.map name="value" MidiCC="15" value="22.0"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="disp/dial b" uuid="9ffed04e6a3052d9001eda83bae7024cb6d17037" name="dial_8" x="1302" y="336">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="math/+" uuid="44553fdc8628c67ab535845ed1be304ad6c9553b" name="+_2" x="1218" y="364">
+      <params/>
       <attribs/>
    </obj>
    <obj type="conv/to i" uuid="305966430ee86b5c3b8e18cde0c721657c558a87" name="to_1" x="1372" y="364">
@@ -517,12 +557,8 @@ if (state[currentstate] == "menu"){
    </obj>
    <obj type="ctrl/dial p" uuid="cc5d2846c3d50e425f450c4b9851371b54f4d674" name="c3" x="882" y="392">
       <params>
-         <frac32.u.map name="value" MidiCC="16" value="26.5"/>
+         <frac32.u.map name="value" MidiCC="16" value="15.5"/>
       </params>
-      <attribs/>
-   </obj>
-   <obj type="disp/scope 128 b trig" uuid="11747dcd1dc9afe4919f537c861fb18b80b4e4e" name="scope_2" x="1932" y="392">
-      <params/>
       <attribs/>
    </obj>
    <obj type="math/div 8" uuid="4a6007f5cb2024c50e8449b3bb6bcaef6ac42edb" name="div_2" x="1162" y="420">
@@ -531,14 +567,22 @@ if (state[currentstate] == "menu"){
    </obj>
    <obj type="ctrl/dial p" uuid="cc5d2846c3d50e425f450c4b9851371b54f4d674" name="dial_4" x="1022" y="448">
       <params>
-         <frac32.u.map name="value" MidiCC="17" value="35.0"/>
+         <frac32.u.map name="value" MidiCC="17" value="45.5"/>
       </params>
       <attribs/>
    </obj>
-   <obj type="logic/counter2" uuid="d9536f238ab92e53ac93d5927c3b43ceef998dc1" name="counter2_1" x="364" y="462">
+   <obj type="logic/counter2" uuid="d9536f238ab92e53ac93d5927c3b43ceef998dc1" name="counter2_1" x="196" y="462">
       <params>
-         <int32 name="maximum" value="15"/>
+         <int32 name="maximum" value="16"/>
       </params>
+      <attribs/>
+   </obj>
+   <obj type="math/+" uuid="b94a9b8e9adcb7d18868c0ee808a9b211b65578d" name="+_1" x="336" y="462">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="jaffa/math/modulo" uuid="99fec58b-6e2a-47bf-a853-ca56a554dc36" name="modulo_1" x="448" y="490">
+      <params/>
       <attribs/>
    </obj>
    <obj type="midi/out/cc thin" uuid="5255b30d60e50223ed41179d8ce935ba9464de75" name="cc_4" x="672" y="490">
@@ -549,10 +593,20 @@ if (state[currentstate] == "menu"){
          <spinner attributeName="cc" value="41"/>
       </attribs>
    </obj>
+   <obj type="ctrl/i" uuid="a3786816db6ea5bc6ac4193a5cccdb2c83b83496" name="i_3" x="350" y="532">
+      <params>
+         <int32 name="value" value="16"/>
+      </params>
+      <attribs/>
+   </obj>
    <obj type="ctrl/dial p" uuid="cc5d2846c3d50e425f450c4b9851371b54f4d674" name="dial_1" x="1022" y="532">
       <params>
-         <frac32.u.map name="value" MidiCC="33" value="0.5"/>
+         <frac32.u.map name="value" MidiCC="33" value="37.0"/>
       </params>
+      <attribs/>
+   </obj>
+   <obj type="disp/i" uuid="5e35fd0c62d81e70017289250cf28edd26e19e4a" name="i_1" x="560" y="560">
+      <params/>
       <attribs/>
    </obj>
    <obj type="midi/out/cc thin" uuid="5255b30d60e50223ed41179d8ce935ba9464de75" name="cc_5" x="672" y="588">
@@ -565,12 +619,10 @@ if (state[currentstate] == "menu"){
    </obj>
    <obj type="ctrl/dial p" uuid="cc5d2846c3d50e425f450c4b9851371b54f4d674" name="dial_2" x="1022" y="616">
       <params>
-         <frac32.u.map name="value" MidiCC="34" value="0.5"/>
+         <frac32.u.map name="value" MidiCC="34" value="23.5"/>
       </params>
       <attribs/>
    </obj>
-   <comment type="patch/comment" x="1274" y="630" text="use rate and divider controls"/>
-   <comment type="patch/comment" x="1274" y="644" text="to tune the equation speed"/>
    <obj type="midi/out/cc thin" uuid="5255b30d60e50223ed41179d8ce935ba9464de75" name="cc_6" x="672" y="686">
       <params/>
       <attribs>
@@ -581,7 +633,7 @@ if (state[currentstate] == "menu"){
    </obj>
    <obj type="ctrl/dial p" uuid="cc5d2846c3d50e425f450c4b9851371b54f4d674" name="dial_3" x="1022" y="700">
       <params>
-         <frac32.u.map name="value" MidiCC="35" value="63.99999952316284"/>
+         <frac32.u.map name="value" MidiCC="35" value="10.5"/>
       </params>
       <attribs/>
    </obj>
@@ -602,10 +654,6 @@ if (state[currentstate] == "menu"){
       </attribs>
    </obj>
    <obj type="disp/dial p" uuid="44fd18b562e434b3230441681132dbeabb15cdc5" name="dial_6" x="812" y="882">
-      <params/>
-      <attribs/>
-   </obj>
-   <obj type="disp/kscope 128 p trig" uuid="b1422e51800273c4e8afe943ddfa1441ecb7a77b" name="kscope_1" x="1288" y="896">
       <params/>
       <attribs/>
    </obj>
@@ -633,30 +681,6 @@ if (state[currentstate] == "menu"){
       <net>
          <source obj="phone_interface_buttons_screen_1" outlet="toggle 2"/>
          <dest obj="object_1" inlet="toggle2"/>
-      </net>
-      <net>
-         <source obj="phone_interface_buttons_screen_1" outlet="dial 1"/>
-         <dest obj="object_1" inlet="dial1"/>
-      </net>
-      <net>
-         <source obj="phone_interface_buttons_screen_1" outlet="dial 2"/>
-         <dest obj="object_1" inlet="dial2"/>
-      </net>
-      <net>
-         <source obj="phone_interface_buttons_screen_1" outlet="dial 3"/>
-         <dest obj="object_1" inlet="dial3"/>
-      </net>
-      <net>
-         <source obj="phone_interface_buttons_screen_1" outlet="dial 4"/>
-         <dest obj="object_1" inlet="dial4"/>
-      </net>
-      <net>
-         <source obj="phone_interface_buttons_screen_1" outlet="dial 5"/>
-         <dest obj="object_1" inlet="dial5"/>
-      </net>
-      <net>
-         <source obj="phone_interface_buttons_screen_1" outlet="dial 6"/>
-         <dest obj="object_1" inlet="dial6"/>
       </net>
       <net>
          <source obj="phone_interface_buttons_screen_1" outlet="up"/>
@@ -736,7 +760,6 @@ if (state[currentstate] == "menu"){
       <net>
          <source obj="obj_5" outlet="out"/>
          <dest obj="env_1" inlet="in"/>
-         <dest obj="scope_3" inlet="in"/>
          <dest obj="phone_interface_buttons_screen_1" inlet="scope1"/>
       </net>
       <net>
@@ -754,7 +777,6 @@ if (state[currentstate] == "menu"){
       </net>
       <net>
          <source obj="mix_3" outlet="out"/>
-         <dest obj="scope_2" inlet="in"/>
          <dest obj="obj_1" inlet="in"/>
          <dest obj="phone_interface_buttons_screen_1" inlet="scope2"/>
       </net>
@@ -780,7 +802,7 @@ if (state[currentstate] == "menu"){
       </net>
       <net>
          <source obj="dial_5" outlet="out"/>
-         <dest obj="beatmachine_1" inlet="rate"/>
+         <dest obj="+_2" inlet="in2"/>
       </net>
       <net>
          <source obj="c3" outlet="out"/>
@@ -805,7 +827,6 @@ if (state[currentstate] == "menu"){
       <net>
          <source obj="env_1" outlet="amp"/>
          <dest obj="vca_1" inlet="v"/>
-         <dest obj="kscope_1" inlet="in"/>
       </net>
       <net>
          <source obj="vca_1" outlet="o"/>
@@ -813,7 +834,7 @@ if (state[currentstate] == "menu"){
       </net>
       <net>
          <source obj="counter2_1" outlet="o"/>
-         <dest obj="beatmachine_1" inlet="beat"/>
+         <dest obj="+_1" inlet="in2"/>
          <dest obj="object_1" inlet="beat"/>
       </net>
       <net>
@@ -841,15 +862,69 @@ if (state[currentstate] == "menu"){
          <dest obj="cc_8" inlet="v"/>
          <dest obj="dial_6" inlet="in"/>
       </net>
+      <net>
+         <source obj="object_1" outlet="beatinit"/>
+         <dest obj="+_1" inlet="in1"/>
+      </net>
+      <net>
+         <source obj="+_1" outlet="out"/>
+         <dest obj="modulo_1" inlet="i"/>
+      </net>
+      <net>
+         <source obj="modulo_1" outlet="o"/>
+         <dest obj="beatmachine_1" inlet="beat"/>
+         <dest obj="i_1" inlet="in"/>
+      </net>
+      <net>
+         <source obj="i_3" outlet="out"/>
+         <dest obj="modulo_1" inlet="m"/>
+      </net>
+      <net>
+         <source obj="phone_interface_buttons_screen_1" outlet="dial 1"/>
+         <dest obj="object_1" inlet="dial1"/>
+      </net>
+      <net>
+         <source obj="phone_interface_buttons_screen_1" outlet="dial 2"/>
+         <dest obj="object_1" inlet="dial2"/>
+      </net>
+      <net>
+         <source obj="phone_interface_buttons_screen_1" outlet="dial 3"/>
+         <dest obj="object_1" inlet="dial3"/>
+      </net>
+      <net>
+         <source obj="phone_interface_buttons_screen_1" outlet="dial 4"/>
+         <dest obj="object_1" inlet="dial4"/>
+      </net>
+      <net>
+         <source obj="phone_interface_buttons_screen_1" outlet="dial 5"/>
+         <dest obj="object_1" inlet="dial5"/>
+      </net>
+      <net>
+         <source obj="phone_interface_buttons_screen_1" outlet="dial 6"/>
+         <dest obj="object_1" inlet="dial6"/>
+      </net>
+      <net>
+         <source obj="dial_7" outlet="out"/>
+         <dest obj="div_1" inlet="in"/>
+      </net>
+      <net>
+         <source obj="div_1" outlet="out"/>
+         <dest obj="+_2" inlet="in1"/>
+      </net>
+      <net>
+         <source obj="+_2" outlet="out"/>
+         <dest obj="beatmachine_1" inlet="rate"/>
+         <dest obj="dial_8" inlet="in"/>
+      </net>
    </nets>
    <settings>
       <subpatchmode>no</subpatchmode>
    </settings>
    <notes><![CDATA[]]></notes>
    <windowPos>
-      <x>2646</x>
-      <y>301</y>
-      <width>1717</width>
-      <height>851</height>
+      <x>204</x>
+      <y>157</y>
+      <width>1920</width>
+      <height>1163</height>
    </windowPos>
 </patch-1.0>

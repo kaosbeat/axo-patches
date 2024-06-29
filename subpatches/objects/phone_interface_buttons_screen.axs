@@ -558,9 +558,9 @@
    </settings>
    <notes><![CDATA[]]></notes>
    <windowPos>
-      <x>2700</x>
-      <y>278</y>
-      <width>2024</width>
+      <x>2744</x>
+      <y>63</y>
+      <width>1440</width>
       <height>1122</height>
    </windowPos>
 </patch-1.0>
