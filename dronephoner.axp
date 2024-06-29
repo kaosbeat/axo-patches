@@ -10,13 +10,13 @@
    <comment type="patch/comment" x="1148" y="56" text="OFFSET"/>
    <obj type="lfo/sine" uuid="75f7330c26a13953215dccc3b7b9008545c9daa9" name="sine_4" x="70" y="70">
       <params>
-         <frac32.s.map name="pitch" MidiCC="35" value="-12.0"/>
+         <frac32.s.map name="pitch" MidiCC="35" value="-64.0"/>
       </params>
       <attribs/>
    </obj>
    <obj type="ctrl/dial p" uuid="cc5d2846c3d50e425f450c4b9851371b54f4d674" name="lfo_amount___" x="182" y="70">
       <params>
-         <frac32.u.map name="value" MidiCC="36" value="33.5"/>
+         <frac32.u.map name="value" MidiCC="36" value="0.0"/>
       </params>
       <attribs/>
    </obj>
@@ -26,7 +26,7 @@
    </obj>
    <obj type="ctrl/dial b" uuid="862e7d7f29093cb1ce4aed72244d118ad4d46692" name="dial_15" x="336" y="70">
       <params>
-         <frac32.s.map name="value" MidiCC="17" value="20.0"/>
+         <frac32.s.map name="value" MidiCC="17" value="43.0"/>
       </params>
       <attribs/>
    </obj>
@@ -36,7 +36,7 @@
    </obj>
    <obj type="osc/brds/wavetables" uuid="09124b5a-12d5-47a0-8de6-6a3755e14e74" name="wavetables_1" x="560" y="70">
       <params>
-         <frac32.s.map name="pitch" MidiCC="18" value="-44.0"/>
+         <frac32.s.map name="pitch" MidiCC="18" value="-58.0"/>
          <frac32.u.map name="timbre" value="39.49999952316284"/>
          <frac32.u.map name="color" value="35.5"/>
       </params>
@@ -44,20 +44,21 @@
    </obj>
    <obj type="filter/multimode svf m" uuid="71d5f8b2131b691d591a9a9ee28771309f8938d" name="multimode_2" x="784" y="70">
       <params>
-         <frac32.s.map name="pitch" MidiCC="19" value="11.0"/>
-         <frac32.u.map name="reso" MidiCC="20" value="36.0"/>
+         <frac32.s.map name="pitch" MidiCC="19" value="-12.0"/>
+         <frac32.u.map name="reso" MidiCC="20" value="24.5"/>
       </params>
       <attribs/>
    </obj>
-   <obj type="lfo/sine" uuid="75f7330c26a13953215dccc3b7b9008545c9daa9" name="sine_6" x="910" y="70">
+   <obj type="phi/lfo/slowlfo2" uuid="f378ff44-c9bb-4dbd-81e6-36d6338af913" name="slowlfo2_1" x="910" y="70">
       <params>
-         <frac32.s.map name="pitch" MidiCC="2" value="-45.0"/>
+         <frac32.s.map name="pitch" MidiCC="2" value="1.0"/>
+         <int32 name="div" value="4"/>
       </params>
       <attribs/>
    </obj>
    <obj type="ctrl/dial p" uuid="cc5d2846c3d50e425f450c4b9851371b54f4d674" name="lfo_amount_____" x="1008" y="70">
       <params>
-         <frac32.u.map name="value" MidiCC="3" value="10.5"/>
+         <frac32.u.map name="value" MidiCC="3" value="27.0"/>
       </params>
       <attribs/>
    </obj>
@@ -67,34 +68,12 @@
    </obj>
    <obj type="ctrl/dial b" uuid="862e7d7f29093cb1ce4aed72244d118ad4d46692" name="dial_17" x="1148" y="70">
       <params>
-         <frac32.s.map name="value" MidiCC="4" value="-25.0"/>
+         <frac32.s.map name="value" MidiCC="4" value="19.0"/>
       </params>
       <attribs/>
    </obj>
    <obj type="math/+" uuid="44553fdc8628c67ab535845ed1be304ad6c9553b" name="+_5" x="1218" y="70">
       <params/>
-      <attribs/>
-   </obj>
-   <obj type="mix/mix 3 g" uuid="efc0bdb8ca0ec2184330951eff5203ff487e35a9" name="mix_2" x="1344" y="70">
-      <params>
-         <frac32.u.map name="gain1" MidiCC="1" value="27.5"/>
-         <frac32.u.map name="gain2" MidiCC="5" value="43.0"/>
-         <frac32.u.map name="gain3" MidiCC="9" value="27.0"/>
-      </params>
-      <attribs/>
-   </obj>
-   <obj type="TSG/fx/reverb cheap" uuid="5e311030-c4da-45ab-86b9-9572d3d76671" name="obj_2" x="1470" y="84">
-      <params>
-         <frac32.u.map name="PreDelay" value="19.5"/>
-         <frac32.u.map name="decay" value="33.0"/>
-         <frac32.u.map name="LowDamp" value="44.5"/>
-         <frac32.u.map name="HighDamp" value="7.0"/>
-         <frac32.u.map name="size" value="51.5"/>
-         <frac32.s.map name="mod_:pitch" value="-28.0"/>
-         <frac32.u.map name="mod_:gain" value="30.0"/>
-         <frac32.u.map name="mix" value="61.5"/>
-         <frac32.u.map name="diffusion" value="63.0"/>
-      </params>
       <attribs/>
    </obj>
    <comment type="patch/comment" x="70" y="182" text="COLOR"/>
@@ -103,13 +82,13 @@
    <comment type="patch/comment" x="336" y="196" text="OFFSET"/>
    <obj type="lfo/sine" uuid="75f7330c26a13953215dccc3b7b9008545c9daa9" name="sine_5" x="70" y="210">
       <params>
-         <frac32.s.map name="pitch" MidiCC="39" value="-56.0"/>
+         <frac32.s.map name="pitch" MidiCC="39" value="-64.0"/>
       </params>
       <attribs/>
    </obj>
    <obj type="ctrl/dial p" uuid="cc5d2846c3d50e425f450c4b9851371b54f4d674" name="lfo_amount____" x="168" y="210">
       <params>
-         <frac32.u.map name="value" MidiCC="40" value="7.5"/>
+         <frac32.u.map name="value" MidiCC="40" value="42.0"/>
       </params>
       <attribs/>
    </obj>
@@ -119,7 +98,7 @@
    </obj>
    <obj type="ctrl/dial b" uuid="862e7d7f29093cb1ce4aed72244d118ad4d46692" name="dial_16" x="336" y="210">
       <params>
-         <frac32.s.map name="value" MidiCC="21" value="12.0"/>
+         <frac32.s.map name="value" MidiCC="21" value="-64.0"/>
       </params>
       <attribs/>
    </obj>
@@ -138,28 +117,28 @@
    <comment type="patch/comment" x="336" y="364" text="OFFSET"/>
    <obj type="osc/brds/harmonics" uuid="4107c2f9-7624-421b-800c-9896569adf77" name="harmonics_2" x="560" y="364">
       <params>
-         <frac32.s.map name="pitch" MidiCC="22" value="-37.0"/>
-         <frac32.u.map name="timbre" value="35.0"/>
+         <frac32.s.map name="pitch" MidiCC="22" value="-33.0"/>
+         <frac32.u.map name="timbre" value="17.0"/>
          <frac32.u.map name="color" value="23.0"/>
       </params>
       <attribs/>
    </obj>
    <obj type="filter/multimode svf m" uuid="71d5f8b2131b691d591a9a9ee28771309f8938d" name="multimode_1" x="770" y="364">
       <params>
-         <frac32.s.map name="pitch" MidiCC="23" value="34.0"/>
-         <frac32.u.map name="reso" MidiCC="24" value="24.5"/>
+         <frac32.s.map name="pitch" MidiCC="23" value="-36.0"/>
+         <frac32.u.map name="reso" MidiCC="24" value="0.0"/>
       </params>
       <attribs/>
    </obj>
    <obj type="lfo/sine" uuid="75f7330c26a13953215dccc3b7b9008545c9daa9" name="sine_9" x="896" y="364">
       <params>
-         <frac32.s.map name="pitch" MidiCC="6" value="-2.0"/>
+         <frac32.s.map name="pitch" MidiCC="6" value="49.0"/>
       </params>
       <attribs/>
    </obj>
    <obj type="ctrl/dial p" uuid="cc5d2846c3d50e425f450c4b9851371b54f4d674" name="lfo_amount________" x="994" y="364">
       <params>
-         <frac32.u.map name="value" MidiCC="7" value="5.0"/>
+         <frac32.u.map name="value" MidiCC="7" value="45.0"/>
       </params>
       <attribs/>
    </obj>
@@ -169,7 +148,7 @@
    </obj>
    <obj type="ctrl/dial b" uuid="862e7d7f29093cb1ce4aed72244d118ad4d46692" name="dial_19" x="1148" y="364">
       <params>
-         <frac32.s.map name="value" MidiCC="8" value="10.0"/>
+         <frac32.s.map name="value" MidiCC="8" value="-1.0"/>
       </params>
       <attribs/>
    </obj>
@@ -179,13 +158,13 @@
    </obj>
    <obj type="lfo/sine" uuid="75f7330c26a13953215dccc3b7b9008545c9daa9" name="sine_7" x="70" y="378">
       <params>
-         <frac32.s.map name="pitch" MidiCC="43" value="21.0"/>
+         <frac32.s.map name="pitch" MidiCC="43" value="-64.0"/>
       </params>
       <attribs/>
    </obj>
    <obj type="ctrl/dial p" uuid="cc5d2846c3d50e425f450c4b9851371b54f4d674" name="lfo_amount______" x="168" y="378">
       <params>
-         <frac32.u.map name="value" MidiCC="44" value="12.0"/>
+         <frac32.u.map name="value" MidiCC="44" value="0.0"/>
       </params>
       <attribs/>
    </obj>
@@ -195,7 +174,7 @@
    </obj>
    <obj type="ctrl/dial b" uuid="862e7d7f29093cb1ce4aed72244d118ad4d46692" name="dial_26" x="336" y="378">
       <params>
-         <frac32.s.map name="value" MidiCC="25" value="-31.0"/>
+         <frac32.s.map name="value" MidiCC="25" value="-64.0"/>
       </params>
       <attribs/>
    </obj>
@@ -207,16 +186,15 @@
    <comment type="patch/comment" x="70" y="490" text="LFO RATE"/>
    <comment type="patch/comment" x="168" y="490" text="ATTENUATOR"/>
    <comment type="patch/comment" x="350" y="490" text="OFFSET"/>
-   <comment type="patch/comment" x="1372" y="490" text="VOLUME"/>
    <obj type="lfo/sine" uuid="75f7330c26a13953215dccc3b7b9008545c9daa9" name="sine_8" x="70" y="504">
       <params>
-         <frac32.s.map name="pitch" MidiCC="47" value="-49.0"/>
+         <frac32.s.map name="pitch" MidiCC="47" value="-64.0"/>
       </params>
       <attribs/>
    </obj>
    <obj type="ctrl/dial p" uuid="cc5d2846c3d50e425f450c4b9851371b54f4d674" name="lfo_amount_______" x="168" y="504">
       <params>
-         <frac32.u.map name="value" MidiCC="48" value="14.0"/>
+         <frac32.u.map name="value" MidiCC="48" value="1.5"/>
       </params>
       <attribs/>
    </obj>
@@ -226,7 +204,7 @@
    </obj>
    <obj type="ctrl/dial b" uuid="862e7d7f29093cb1ce4aed72244d118ad4d46692" name="dial_31" x="350" y="504">
       <params>
-         <frac32.s.map name="value" MidiCC="29" value="-1.0"/>
+         <frac32.s.map name="value" MidiCC="29" value="39.0"/>
       </params>
       <attribs/>
    </obj>
@@ -234,21 +212,449 @@
       <params/>
       <attribs/>
    </obj>
-   <obj type="ctrl/dial p" uuid="cc5d2846c3d50e425f450c4b9851371b54f4d674" name="dial_29" x="1372" y="504">
+   <obj type="mix/mix 3 g" uuid="efc0bdb8ca0ec2184330951eff5203ff487e35a9" name="mix_2" x="770" y="532">
+      <params>
+         <frac32.u.map name="gain1" MidiCC="1" value="0.0"/>
+         <frac32.u.map name="gain2" MidiCC="5" value="50.5"/>
+         <frac32.u.map name="gain3" MidiCC="9" value="0.5"/>
+      </params>
+      <attribs/>
+   </obj>
+   <patcher type="patch/patcher" uuid="2017f1ff-1675-4fea-8687-a73bd8fca3ea" name="obj_1" x="896" y="532">
+      <params>
+         <frac32.u.map name="PreDelay" value="32.0"/>
+         <frac32.u.map name="decay" MidiCC="90" value="20.5"/>
+         <frac32.u.map name="LowDamp" MidiCC="91" value="38.5"/>
+         <frac32.u.map name="HighDamp" MidiCC="92" value="17.0"/>
+         <frac32.u.map name="size" MidiCC="93" value="18.5"/>
+         <frac32.s.map name="mod_:pitch" MidiCC="95" value="40.0"/>
+         <frac32.u.map name="mod_:gain" MidiCC="96" value="63.99999952316284"/>
+         <frac32.u.map name="mix" MidiCC="94" value="33.5"/>
+         <frac32.u.map name="diffusion" MidiCC="95" value="52.0"/>
+      </params>
+      <attribs/>
+      <subpatch appVersion="1.0.12">
+         <obj type="patch/inlet a" uuid="b577fe41e0a6bc7b5502ce33cb8a3129e2e28ee5" name="InL" x="350" y="70">
+            <params/>
+            <attribs/>
+         </obj>
+         <obj type="math/&gt;&gt;" uuid="5d748ad90476b3ecc3970cde6622af97cf3cf4ac" name="&gt;&gt;_1" x="448" y="70">
+            <params/>
+            <attribs>
+               <spinner attributeName="shift" value="2"/>
+            </attribs>
+         </obj>
+         <obj type="delay/write sdram" uuid="5ae03f8d7b815edcfc40585d8bbac2ed48460fba" name="PrDly" x="560" y="70">
+            <params/>
+            <attribs>
+               <combo attributeName="size" selection="16384 (341ms)"/>
+            </attribs>
+         </obj>
+         <obj type="TSG/delay/read m interp" uuid="1267df5a-5e05-40dd-bace-29e94169e5bb" name="read_1" x="588" y="168">
+            <params/>
+            <attribs>
+               <objref attributeName="delayname" obj="delayA"/>
+               <combo attributeName="interpol" selection="2pt"/>
+            </attribs>
+         </obj>
+         <obj type="ctrl/dial p" uuid="cc5d2846c3d50e425f450c4b9851371b54f4d674" name="PreDelay" x="14" y="182">
+            <params>
+               <frac32.u.map name="value" onParent="true" value="17.5"/>
+            </params>
+            <attribs/>
+         </obj>
+         <obj type="math/smooth" uuid="6c5d08c282bb08bff24af85b4891447f99bcbc97" name="smooth_1" x="84" y="182">
+            <params>
+               <frac32.u.map name="time" value="52.5"/>
+            </params>
+            <attribs/>
+         </obj>
+         <obj type="delay/read" uuid="9323a43569373145e559ad309eaf65a47b14cb54" name="read_3" x="168" y="182">
+            <params>
+               <frac32.u.map name="time" value="0.0"/>
+            </params>
+            <attribs>
+               <objref attributeName="delayname" obj="PrDly"/>
+            </attribs>
+         </obj>
+         <obj type="filter/allpass" uuid="59cc8e3d8044e145e1eb908baa5a7d3ed2ec5f72" name="allpass_1" x="322" y="182">
+            <params>
+               <frac32.s.map name="g" value="32.0"/>
+            </params>
+            <attribs>
+               <spinner attributeName="delay" value="75"/>
+            </attribs>
+         </obj>
+         <obj type="filter/allpass" uuid="59cc8e3d8044e145e1eb908baa5a7d3ed2ec5f72" name="allpass_2" x="420" y="182">
+            <params>
+               <frac32.s.map name="g" value="32.0"/>
+            </params>
+            <attribs>
+               <spinner attributeName="delay" value="57"/>
+            </attribs>
+         </obj>
+         <obj type="ctrl/dial p" uuid="cc5d2846c3d50e425f450c4b9851371b54f4d674" name="decay" x="700" y="322">
+            <params>
+               <frac32.u.map name="value" onParent="true" value="36.5"/>
+            </params>
+            <attribs/>
+         </obj>
+         <obj type="gain/vca" uuid="a9f2dcd18043e2f47364e45cb8814f63c2a37c0d" name="vca_1" x="784" y="322">
+            <params/>
+            <attribs/>
+         </obj>
+         <obj type="math/+" uuid="faedbea4612d9bd3644d6d3bf31946d848a70e19" name="+_1" x="868" y="322">
+            <params/>
+            <attribs/>
+         </obj>
+         <obj type="dist/soft" uuid="e680d76a805e4866027cdf654c7efd8b2e54622" name="soft_1" x="938" y="322">
+            <params/>
+            <attribs/>
+         </obj>
+         <obj type="ctrl/dial p" uuid="cc5d2846c3d50e425f450c4b9851371b54f4d674" name="LowDamp" x="154" y="336">
+            <params>
+               <frac32.u.map name="value" onParent="true" value="0.0"/>
+            </params>
+            <attribs/>
+         </obj>
+         <obj type="math/&gt;&gt;" uuid="d883beaf50b7aae4803ed9941e8f123e87e1e3aa" name="&gt;&gt;_2" x="238" y="336">
+            <params/>
+            <attribs>
+               <spinner attributeName="shift" value="1"/>
+            </attribs>
+         </obj>
+         <obj type="filter/lp1 m" uuid="18b561d14f9175f5380e6a1d9d55ca41e0e61974" name="lp1_1" x="798" y="392">
+            <params>
+               <frac32.u.map name="freq" value="20.5"/>
+            </params>
+            <attribs/>
+         </obj>
+         <obj type="filter/hp1 m" uuid="db72e08c265817674e56af3855bfca7a58b65e87" name="hp1_1" x="882" y="392">
+            <params>
+               <frac32.u.map name="freq" value="0.0"/>
+            </params>
+            <attribs/>
+         </obj>
+         <obj type="ctrl/dial p" uuid="cc5d2846c3d50e425f450c4b9851371b54f4d674" name="HighDamp" x="154" y="420">
+            <params>
+               <frac32.u.map name="value" onParent="true" value="0.0"/>
+            </params>
+            <attribs/>
+         </obj>
+         <obj type="math/inv" uuid="565521d3699b36d8095aa1c79b9ad0046fb133ce" name="inv_1" x="238" y="420">
+            <params/>
+            <attribs/>
+         </obj>
+         <obj type="math/+c" uuid="13eec32bd8ad57dd0bb18a02566cc0a117d320e3" name="+c_1" x="308" y="420">
+            <params>
+               <frac32.u.map name="c" value="64.0"/>
+            </params>
+            <attribs/>
+         </obj>
+         <obj type="TSG/filter/allpass m" uuid="c913eed1-73f0-4f1a-8c9f-3399a4a9019a" name="allpass_3" x="994" y="504">
+            <params/>
+            <attribs>
+               <combo attributeName="buffsize" selection="8192 (170ms)"/>
+               <combo attributeName="interpol" selection="2pt"/>
+               <combo attributeName="location" selection="ExtRAM"/>
+            </attribs>
+         </obj>
+         <obj type="ctrl/dial p" uuid="cc5d2846c3d50e425f450c4b9851371b54f4d674" name="size" x="70" y="518">
+            <params>
+               <frac32.u.map name="value" onParent="true" value="64.0"/>
+            </params>
+            <attribs/>
+         </obj>
+         <obj type="math/smooth" uuid="6c5d08c282bb08bff24af85b4891447f99bcbc97" name="smooth_2" x="140" y="518">
+            <params>
+               <frac32.u.map name="time" value="52.5"/>
+            </params>
+            <attribs/>
+         </obj>
+         <obj type="TSG/math/map" uuid="e93b4617-4075-4591-b602-3e1fc252e881" name="map_3" x="238" y="518">
+            <params>
+               <frac32.u.map name="a" value="1.0"/>
+               <frac32.u.map name="b" value="15.0"/>
+            </params>
+            <attribs/>
+         </obj>
+         <patchobj type="patch/object" uuid="27089c4f-b896-42e2-bac1-654ac92471c4" name="mod_" x="350" y="518">
+            <params>
+               <frac32.s.map name="pitch" onParent="true" value="-16.0"/>
+               <frac32.u.map name="gain" onParent="true" value="7.5"/>
+            </params>
+            <attribs/>
+            <object id="patch/object" uuid="27089c4f-b896-42e2-bac1-654ac92471c4">
+               <sDescription>octa-sine wave LFO, linear interpolated table, pitch &amp; gain input</sDescription>
+               <author>Johannes Elliesen</author>
+               <license>BSD</license>
+               <helpPatch>lfo.axh</helpPatch>
+               <inlets>
+                  <frac32.bipolar name="pitch" description="pitch"/>
+                  <frac32.bipolar name="gain"/>
+               </inlets>
+               <outlets>
+                  <frac32.bipolar name="o1"/>
+                  <frac32.bipolar name="o2"/>
+                  <frac32.bipolar name="o3"/>
+                  <frac32.bipolar name="o4"/>
+                  <frac32.bipolar name="o5"/>
+                  <frac32.bipolar name="o6"/>
+                  <frac32.bipolar name="o7"/>
+                  <frac32.bipolar name="o8"/>
+               </outlets>
+               <displays/>
+               <params>
+                  <frac32.s.map.lfopitch name="pitch" noLabel="true"/>
+                  <frac32.u.map.gain name="gain"/>
+               </params>
+               <attribs/>
+               <includes/>
+               <code.declaration><![CDATA[uint32_t Phase;]]></code.declaration>
+               <code.init><![CDATA[Phase = 0;]]></code.init>
+               <code.krate><![CDATA[int32_t freq;
+int32_t gain = __SSAT((inlet_gain) + (param_gain>>4), 28);
+MTOFEXTENDED(param_pitch + inlet_pitch,freq);
+Phase += freq>>2;
+int32_t r;
+SINE2TINTERP(Phase,r)
+outlet_o1= ___SMMUL((r>>3),gain<<4);
+SINE2TINTERP(Phase + (1<<29),r)
+outlet_o2= ___SMMUL((r>>3),gain<<4);
+SINE2TINTERP(Phase + (2<<29),r)
+outlet_o3= ___SMMUL((r>>3),gain<<4);
+SINE2TINTERP(Phase + (3<<29),r)
+outlet_o4= ___SMMUL((r>>3),gain<<4);
+outlet_o5 = -outlet_o1;
+outlet_o6 = -outlet_o2;
+outlet_o7 = -outlet_o3;
+outlet_o8 = -outlet_o4;]]></code.krate>
+            </object>
+         </patchobj>
+         <obj type="math/*c" uuid="7d5ef61c3bcd571ee6bbd8437ef3612125dfb225" name="*c_1" x="868" y="518">
+            <params>
+               <frac32.u.map name="amp" value="54.5"/>
+            </params>
+            <attribs/>
+         </obj>
+         <obj type="TSG/math/map" uuid="e93b4617-4075-4591-b602-3e1fc252e881" name="map_2" x="238" y="644">
+            <params>
+               <frac32.u.map name="a" value="0.0"/>
+               <frac32.u.map name="b" value="26.5"/>
+            </params>
+            <attribs/>
+         </obj>
+         <obj type="math/*c" uuid="7d5ef61c3bcd571ee6bbd8437ef3612125dfb225" name="*c_2" x="1022" y="658">
+            <params>
+               <frac32.u.map name="amp" value="39.0"/>
+            </params>
+            <attribs/>
+         </obj>
+         <obj type="delay/write sdram" uuid="5ae03f8d7b815edcfc40585d8bbac2ed48460fba" name="delayA" x="1316" y="700">
+            <params/>
+            <attribs>
+               <combo attributeName="size" selection="4096 (85.33ms)"/>
+            </attribs>
+         </obj>
+         <obj type="TSG/filter/allpass m" uuid="c913eed1-73f0-4f1a-8c9f-3399a4a9019a" name="allpass_4" x="1134" y="714">
+            <params/>
+            <attribs>
+               <combo attributeName="buffsize" selection="8192 (170ms)"/>
+               <combo attributeName="interpol" selection="2pt"/>
+               <combo attributeName="location" selection="ExtRAM"/>
+            </attribs>
+         </obj>
+         <obj type="ctrl/dial p" uuid="cc5d2846c3d50e425f450c4b9851371b54f4d674" name="mix" x="1652" y="756">
+            <params>
+               <frac32.u.map name="value" onParent="true" value="24.5"/>
+            </params>
+            <attribs/>
+         </obj>
+         <obj type="TSG/math/map" uuid="e93b4617-4075-4591-b602-3e1fc252e881" name="map_1" x="238" y="770">
+            <params>
+               <frac32.u.map name="a" value="0.0"/>
+               <frac32.u.map name="b" value="64.0"/>
+            </params>
+            <attribs/>
+         </obj>
+         <obj type="mix/xfade" uuid="375dc91d218e96cdc9cbc7e92adb48f705ef701a" name="xfade_1" x="1750" y="770">
+            <params/>
+            <attribs/>
+         </obj>
+         <obj type="ctrl/dial p" uuid="cc5d2846c3d50e425f450c4b9851371b54f4d674" name="diffusion" x="350" y="826">
+            <params>
+               <frac32.u.map name="value" onParent="true" value="63.0"/>
+            </params>
+            <attribs/>
+         </obj>
+         <obj type="patch/outlet a" uuid="abd8c5fd3b0524a6630f65cad6dc27f6c58e2a3e" name="l" x="1862" y="826">
+            <params/>
+            <attribs/>
+         </obj>
+         <nets>
+            <net>
+               <source obj="allpass_1" outlet="out"/>
+               <dest obj="allpass_2" inlet="in"/>
+            </net>
+            <net>
+               <source obj="diffusion" outlet="out"/>
+               <dest obj="allpass_4" inlet="gain"/>
+               <dest obj="allpass_3" inlet="gain"/>
+            </net>
+            <net>
+               <source obj="allpass_3" outlet="out"/>
+               <dest obj="allpass_4" inlet="in"/>
+            </net>
+            <net>
+               <source obj="xfade_1" outlet="o"/>
+               <dest obj="l" inlet="outlet"/>
+            </net>
+            <net>
+               <source obj="mix" outlet="out"/>
+               <dest obj="xfade_1" inlet="c"/>
+            </net>
+            <net>
+               <source obj="allpass_4" outlet="out"/>
+               <dest obj="xfade_1" inlet="i2"/>
+               <dest obj="delayA" inlet="in"/>
+            </net>
+            <net>
+               <source obj="allpass_2" outlet="out"/>
+               <dest obj="+_1" inlet="in2"/>
+            </net>
+            <net>
+               <source obj="+_1" outlet="out"/>
+               <dest obj="soft_1" inlet="in"/>
+            </net>
+            <net>
+               <source obj="vca_1" outlet="o"/>
+               <dest obj="+_1" inlet="in1"/>
+            </net>
+            <net>
+               <source obj="decay" outlet="out"/>
+               <dest obj="vca_1" inlet="v"/>
+            </net>
+            <net>
+               <source obj="soft_1" outlet="out"/>
+               <dest obj="lp1_1" inlet="in"/>
+            </net>
+            <net>
+               <source obj="read_1" outlet="out"/>
+               <dest obj="vca_1" inlet="a"/>
+            </net>
+            <net>
+               <source obj="size" outlet="out"/>
+               <dest obj="smooth_2" inlet="in"/>
+            </net>
+            <net>
+               <source obj="lp1_1" outlet="out"/>
+               <dest obj="hp1_1" inlet="in"/>
+            </net>
+            <net>
+               <source obj="HighDamp" outlet="out"/>
+               <dest obj="inv_1" inlet="in"/>
+            </net>
+            <net>
+               <source obj="inv_1" outlet="out"/>
+               <dest obj="+c_1" inlet="in"/>
+            </net>
+            <net>
+               <source obj="+c_1" outlet="out"/>
+               <dest obj="lp1_1" inlet="freq"/>
+            </net>
+            <net>
+               <source obj="LowDamp" outlet="out"/>
+               <dest obj="&gt;&gt;_2" inlet="a"/>
+            </net>
+            <net>
+               <source obj="&gt;&gt;_2" outlet="result"/>
+               <dest obj="hp1_1" inlet="freq"/>
+            </net>
+            <net>
+               <source obj="hp1_1" outlet="out"/>
+               <dest obj="allpass_3" inlet="in"/>
+            </net>
+            <net>
+               <source obj="InL" outlet="inlet"/>
+               <dest obj="xfade_1" inlet="i1"/>
+               <dest obj="&gt;&gt;_1" inlet="a"/>
+            </net>
+            <net>
+               <source obj="&gt;&gt;_1" outlet="result"/>
+               <dest obj="PrDly" inlet="in"/>
+            </net>
+            <net>
+               <source obj="read_3" outlet="out"/>
+               <dest obj="allpass_1" inlet="in"/>
+            </net>
+            <net>
+               <source obj="PreDelay" outlet="out"/>
+               <dest obj="smooth_1" inlet="in"/>
+            </net>
+            <net>
+               <source obj="map_3" outlet="o"/>
+               <dest obj="read_1" inlet="time"/>
+            </net>
+            <net>
+               <source obj="map_1" outlet="o"/>
+               <dest obj="*c_1" inlet="in"/>
+               <dest obj="*c_2" inlet="in"/>
+            </net>
+            <net>
+               <source obj="mod_" outlet="o1"/>
+               <dest obj="allpass_3" inlet="timemod"/>
+            </net>
+            <net>
+               <source obj="mod_" outlet="o2"/>
+               <dest obj="allpass_4" inlet="timemod"/>
+            </net>
+            <net>
+               <source obj="*c_1" outlet="out"/>
+               <dest obj="allpass_3" inlet="time"/>
+            </net>
+            <net>
+               <source obj="*c_2" outlet="out"/>
+               <dest obj="allpass_4" inlet="time"/>
+            </net>
+            <net>
+               <source obj="smooth_1" outlet="out"/>
+               <dest obj="read_3" inlet="time"/>
+            </net>
+            <net>
+               <source obj="smooth_2" outlet="out"/>
+               <dest obj="map_3" inlet="c"/>
+               <dest obj="map_2" inlet="c"/>
+               <dest obj="map_1" inlet="c"/>
+            </net>
+         </nets>
+         <settings>
+            <subpatchmode>no</subpatchmode>
+         </settings>
+         <notes><![CDATA[]]></notes>
+         <windowPos>
+            <x>78</x>
+            <y>23</y>
+            <width>1842</width>
+            <height>961</height>
+         </windowPos>
+      </subpatch>
+   </patcher>
+   <comment type="patch/comment" x="1036" y="532" text="VOLUME"/>
+   <obj type="ctrl/dial p" uuid="cc5d2846c3d50e425f450c4b9851371b54f4d674" name="dial_29" x="1036" y="546">
       <params>
          <frac32.u.map name="value" MidiCC="16" value="64.0"/>
       </params>
       <attribs/>
    </obj>
-   <obj type="gain/vca" uuid="a9f2dcd18043e2f47364e45cb8814f63c2a37c0d" name="vca_4" x="1442" y="504">
+   <obj type="gain/vca" uuid="a9f2dcd18043e2f47364e45cb8814f63c2a37c0d" name="vca_4" x="1106" y="546">
       <params/>
       <attribs/>
    </obj>
-   <obj type="audio/out left" uuid="b11a3c09b2fdd575ea8212f2ce7743d5269253b1" name="out_2" x="1498" y="504">
+   <obj type="audio/out left" uuid="b11a3c09b2fdd575ea8212f2ce7743d5269253b1" name="out_2" x="1190" y="546">
       <params/>
       <attribs/>
    </obj>
-   <patcher type="patch/patcher" uuid="32f968ef-29f0-46e1-b0b6-a6251c275494" name="phone_interface_buttons_screen_1" x="42" y="616">
+   <patcher type="patch/patcher" uuid="02ad56f7-d349-4582-9d28-cb917aeec214" name="phone_interface_buttons_screen_1" x="42" y="616">
       <params/>
       <attribs/>
       <subpatch appVersion="1.0.12">
@@ -856,10 +1262,7 @@
             <frac32.positive name="vol"/>
             <int32 name="loadpatch"/>
             <bool32 name="loadtrig"/>
-            <frac32.positive name="chdepth"/>
-            <frac32.positive name="chspeed"/>
-            <frac32.positive name="revsize"/>
-            <frac32.positive name="revdecay"/>
+            <int32.positive name="lfo1div"/>
          </outlets>
          <displays>
             <int32.label name="d1"/>
@@ -869,10 +1272,10 @@
          <attribs/>
          <includes/>
          <code.declaration><![CDATA[//menu and screen and pot state
-char* state[5] = {"pitch", "color", "timbre",  "fx", "menu"};
-char* patch[14] = {"menu","effects","dangerine","1976","effectsMic", "sidechain",  "side_bd", "side_cy", "sawdrone", "answmachine", "sawdrone2","granclds","dronephone", "tanpura"};
-char* notes[12] = {"Sa   C", "Sa # C","Re   D","Re # D","Ga   E","Ma   F","Ma # F", "Pa   G", "Pa # G",  "Dha  A","Dha #A", "Ni   B"};
-char* octave[11] = {" -1","  0","  1","  2","  3","  4","  5","  6","  7","  8","  9"};
+char* state[11] = {"osc1", "o1modt", "o1modc", "o1flt",  "osc2", "o2modt","o2modc", "o2flt", "rev1", "rev2", "mix"};
+char* patch[14] = {"enu","effects","dangerine","1976","effectsMic", "sidechain",  "side_bd", "side_cy", "sawdrone", "answmachine", "sawdrone2","granclds","dronephone", "tanpura"};
+//char* notes[12] = {"Sa   C", "Sa # C","Re   D","Re # D","Ga   E","Ma   F","Ma # F", "Pa   G", "Pa # G",  "Dha  A","Dha #A", "Ni   B"};
+//char* octave[11] = {" -1","  0","  1","  2","  3","  4","  5","  6","  7","  8","  9"};
 
 int menucount = *(&patch + 1) - patch;
 int numstates = *(&state + 1) - state - 1;
@@ -893,67 +1296,145 @@ int timer;
 //int *inp
 //int 
 
-/// PITCH menu
-char string1[12];
-char string1hold[12];
-char string2[12];
-char string2hold[12];
-char string3[12];
-char string3hold[12];
-char string4[12];
-char string4hold[12];
-int noteindex;
-int stringindex;
-int octindex;
-int str1oct_hold;
-int str2oct_hold;
-int str3oct_hold;
-int str4oct_hold;
-int str1;
-int str2;
-int str3;
-int str4;
-int str1hold;
-bool str1wait;
-int str2hold;
-bool str2wait;
-int str3hold;
-bool str3wait;
-int str4hold;
-bool str4wait;
+/// osc1 menu
+int osc1pitch;
+int osc1pitch_hold;
+char osc1pitch_c[10];
+int osc1timbre;
+int osc1timbre_hold;
+char osc1timbre_c[10];
+int osc1color_hold;
+int osc1color;
+char osc1color_c[10];
 
-//menu color
-int str1col_hold;
-char str1col_c[10];
-int str2col_hold;
-char str2col_c[10];
-int str3col_hold;
-char str3col_c[10];
-int str4col_hold;
-char str4col_c[10];
+//menu osc1modt
+int lfo1t;
+int lfo1t_hold;
+char lfo1t_c[10];
+int t1a;
+int t1a_hold;
+char t1a_c[10];
+int t1o;
+int t1o_hold;
+char t1o_c[10];
 
-//menu timbre
-int str1tim_hold;
-char str1tim_c[10];
-int str2tim_hold;
-char str2tim_c[10];
-int str3tim_hold;
-char str3tim_c[10];
-int str4tim_hold;
-char str4tim_c[10];
+//menu osc1modc
+int lfo1c;
+int lfo1c_hold;
+char lfo1c_c[10];
+int c1a;
+int c1a_hold;
+char c1a_c[10];
+int c1o;
+int c1o_hold;
+char c1o_c[10];
 
-//menu fx
-int ch_depth_hold;
-char ch_depth_c[10];
-int ch_spd_hold;
-char ch_spd_c[10];
-int rev_size_hold;
-char rev_size_c[10];
-int rev_decay_hold;
-char rev_decay_c[10];
+//menu osc1flt
+int flt1frq;
+int flt1frq_hold;
+char flt1frq_c[10];
+int flt1Q;
+int flt1Q_hold;
+char flt1Q_c[10];
+int flt1LFO;
+int flt1LFO_hold;
+char flt1LFO_c[10];
+int lfo1div;
+int flt1att;
+int flt1att_hold;
+char flt1att_c[10];
+int flt1off;
+int flt1off_hold;
+char flt1off_c[10];
 
-//main menu params
+
+
+/// osc2 menu
+int osc2pitch;
+int osc2pitch_hold;
+char osc2pitch_c[10];
+int osc2timbre;
+int osc2timbre_hold;
+char osc2timbre_c[10];
+int osc2color_hold;
+int osc2color;
+char osc2color_c[10];
+
+//menu osc2modt
+int lfo2t;
+int lfo2t_hold;
+char lfo2t_c[10];
+int t2a;
+int t2a_hold;
+char t2a_c[10];
+int t2o;
+int t2o_hold;
+char t2o_c[10];
+
+//menu osc2modc
+int lfo2c;
+int lfo2c_hold;
+char lfo2c_c[10];
+int c2a;
+int c2a_hold;
+char c2a_c[10];
+int c2o;
+int c2o_hold;
+char c2o_c[10];
+
+//menu osc2flt
+int flt2frq;
+int flt2frq_hold;
+char flt2frq_c[10];
+int flt2Q;
+int flt2Q_hold;
+char flt2Q_c[10];
+int flt2LFO;
+int flt2LFO_hold;
+char flt2LFO_c[10];
+int lfo2div;
+int flt2att;
+int flt2att_hold;
+char flt2att_c[10];
+int flt2off;
+int flt2off_hold;
+char flt2off_c[10];
+
+//menu rev
+//int PrDly;
+//int PrDly_hold;
+//char PrDly_c[10];
+int Decay;
+int Decay_hold;
+char Decay_c[10];
+int LowDamp;
+int LowDamp_hold;
+char LowDamp_c[10];
+int HighDamp;
+int HighDamp_hold;
+char HighDamp_c[10];
+int Size;
+int Size_hold;
+char Size_c[10];
+int modPitch;
+int modPitch_hold;
+char modPitch_c[10];
+int modGain;
+int modGain_hold;
+char modGain_c[10];
+int mix;
+int mix_hold;
+char mix_c[10];
+int Diffusion;
+int Diffusion_hold;
+char Diffusion_c[10];
+
+//mix menu params
 int volhold;
+int osc1hold;
+int osc2hold;
+int osc3hold;
+int reverbhold;
 
 //button debouncing
 int toptrig;
@@ -967,12 +1448,10 @@ int backwardtrig;
 //functions
 // function definition to swap the values.
 void swap(int& x, int& y) {
-
    int temp;
    temp = x; /* save the value at address x */
    x = y;    /* put y into x */
    y = temp; /* put x into y */
-  
    return;
 }
 
@@ -982,7 +1461,6 @@ int32_t ppchange (int in, int* hold, bool &ppwait){
 	if (ppwait==true){
 		if (abs(in - *hold)>>20 < 2) {
 			ppwait = false;
-			
 		}
 		return *hold; ///goes to out!
 	} else {
@@ -1063,42 +1541,8 @@ void checkCountStateDown(int inlet, int &trigstate, int &state, int count){
 	}
 	
 }
-// calculatestring
-void calcNoteString(int &strnumber, char* stringname){
-	int note = strnumber%12;
-	int oct = ((strnumber-note)/12);
-	strcpy(stringname,notes[strnumber%12]);
-	strcat(stringname,octave[oct]);
-}
 
-//changstringnote
-void changeStringNoteUp(int inlet, int &trigstate, int &stringnote){
-	if (((inlet>0)) && !trigstate) {
-	   if (stringnote <127) { 
-	   	stringnote++;
-	   } else {
-	   	stringnote = 127;
-	   }
-	trigstate = 1;
-	}
-	if (!(inlet>0) && trigstate) {
-   		trigstate = 0;
-	}
-}
 
-void changeStringNoteDown(int inlet, int &trigstate, int &stringnote){
-	if (((inlet>0)) && !trigstate) {
-	   if (stringnote > 0) { 
-	   	stringnote--;
-	   } else {
-	   	stringnote = 0;
-	   }
-	trigstate = 1;
-	}
-	if (!(inlet>0) && trigstate) {
-   		trigstate = 0;
-	}
-}
 
 
 ///midiCCthin
@@ -1137,51 +1581,19 @@ forwardtrig = 0;
 backwardtrig = 0;
 
 //pitch menu
-noteindex = 0;
-stringindex = 0;
-octindex = 6;
-str1=55;
-str2=60;
-str3=60;
-str4=48;
-
-str1oct_hold = 6<<20;
-str2oct_hold = 6<<20;
-str3oct_hold = 6<<20;
-str4oct_hold = 6<<20;
-
-str1hold = str1;
-str2hold = str2;
-str3hold = str3;
-str4hold = str4;
-
-calcNoteString(str1, string1);
-calcNoteString(str2, string2);
-calcNoteString(str3, string3);
-calcNoteString(str4, string4);
-strcpy(string1hold,string1);
-strcpy(string2hold,string2);
-strcpy(string3hold,string3);
-strcpy(string4hold,string4);
-
-// color menu
-str1col_hold = 64<<20;
-str2col_hold = 64<<20;
-str3col_hold = 64<<20;
-str4col_hold = 64<<20;
-
-// timbre menu
-str1tim_hold = 64<<20;
-str2tim_hold = 64<<20;
-str3tim_hold = 64<<20;
-str4tim_hold = 64<<20;
+osc1pitch = 32;
+osc1timbre = 32;
+osc1color = 32;
+osc1pitch_hold = 6<<20;
+osc1timbre_hold = 6<<20;
+osc1color_hold = 6<<20;
 
 
 //fx menu
-ch_depth_hold = 64<<20;
-ch_spd_hold = 1<<20;
-rev_size_hold = 64<<20;
-rev_decay_hold = 64<<20;]]></code.init>
+//ch_depth_hold = 64<<20;
+//ch_spd_hold = 1<<20;
+//rev_size_hold = 64<<20;
+//rev_decay_hold = 64<<20;]]></code.init>
          <code.krate><![CDATA[//// pot pickup function declaration
 //int32_t ppchange (int32_t in);//, int32_t* hold);
 //void swap(int& x, int& y);
@@ -1242,105 +1654,161 @@ if (!(inlet_bottom>0) && bottomtrig) {
    bottomtrig = 0;
 }
 
+// "osc1", "o1mod", "o1flt",  "osc2", "o2mod", "o2flt", "rev", "mix"
 
 
-
-if (state[currentstate] == "pitch"){
-	strcpy(string1,string1hold);
-	strcpy(string2,string2hold);
-	strcpy(string3,string3hold);
-	strcpy(string4,string4hold);
-	
-	
-	
-	
-
-	checkCountStateUp(inlet_forward, forwardtrig, stringindex, 3);
-	checkCountStateDown(inlet_backward, backwardtrig, stringindex, 3);
-
-	if (stringindex == 0){
-		changeStringNoteUp(inlet_up, uptrig, str1);
-		changeStringNoteDown(inlet_down, downtrig, str1);
-		calcNoteString(str1, string1);
-		strcpy(string1hold,string1);
-		strcat(string1,"<");
-		midiCCout(str1<<20,1,1);
-
-	}
-	if (stringindex == 1){
-		changeStringNoteUp(inlet_up, uptrig, str2);
-		changeStringNoteDown(inlet_down, downtrig, str2);
-		calcNoteString(str2, string2);
-		strcpy(string2hold,string2);
-		strcat(string2,"<");
-		midiCCout(str2<<20,2,1);
-
-	}
-	if (stringindex == 2){
-		changeStringNoteUp(inlet_up, uptrig, str3);
-		changeStringNoteDown(inlet_down, downtrig, str3);
-		calcNoteString(str3, string3);
-		strcpy(string3hold,string3);
-		strcat(string3,"<");
-		midiCCout(str3<<20,3,1);
-	}
-	if (stringindex == 3){
-		changeStringNoteUp(inlet_up, uptrig, str4);
-		changeStringNoteDown(inlet_down, downtrig, str4);
-		calcNoteString(str4, string4);
-		strcpy(string4hold,string4);
-		strcat(string4,"<");
-		midiCCout(str4<<20,4,1);
-	}
-	outlet_S1L1 = string1;
-	outlet_S1L2 = string2;
-	outlet_S1L3 = string3;
-	outlet_S1L4 = string4;
-	//disp_d1 = str1;
-	//disp_d2 = str3;
-	}
-
-
-if (state[currentstate] == "timbre"){
-	midiCCout(ppchange (inlet_dial1, &str1tim_hold, ppwait1), 5, 1);
-	outlet_S1L1 = addItoS(str1tim_hold,"s1tim",str1tim_c);
-	midiCCout(ppchange (inlet_dial2, &str2tim_hold, ppwait2), 6, 1);
-	outlet_S1L2 = addItoS(str2tim_hold,"s2tim",str2tim_c);
-	midiCCout(ppchange (inlet_dial3, &str3tim_hold, ppwait3), 7, 1);
-	outlet_S1L3 = addItoS(str3tim_hold,"s3tim",str3tim_c);
-	midiCCout(ppchange (inlet_dial4, &str4tim_hold, ppwait4), 8, 1);
-	outlet_S1L4 = addItoS(str4tim_hold,"s4tim",str4tim_c);
-}
-
-
-if (state[currentstate] == "color"){
-	//midiCCout(ppchange (inlet_dial1, &str1col_hold, ppwait1), 9, 1);
-	//outlet_S1L1 = addItoS(str1col_hold,"s1col",str1col_c);
-	//midiCCout(ppchange (inlet_dial2, &str2col_hold, ppwait2), 10, 1);
-//	outlet_S1L2 = addItoS(str2col_hold,"s2col",str2col_c);
-//	midiCCout(ppchange (inlet_dial3, &str3col_hold, ppwait3), 11, 1);
-//	outlet_S1L3 = addItoS(str3col_hold,"s3col",str3col_c);
-//	midiCCout(ppchange (inlet_dial4, &str4col_hold, ppwait4), 12, 1);
-//	outlet_S1L4 = addItoS(str4col_hold,"s4col",str4col_c);
-}
-
-if (state[currentstate] == "menu"){
+if (state[currentstate] == "osc1"){
 	outlet_S2mode = 2;
-	outlet_S1L1 = "menu";
-	patchselect = inlet_dial5>>23;
-	//disp_d1 = patchselect%menucount;
-	outlet_S1L2 = patch[patchselect%menucount];
-	outlet_S1L3 = "press B4";
-	outlet_S1L4 = "to load";
-	outlet_loadpatch = patchselect%menucount;
-	outlet_loadtrig = inlet_button4;
-	
+	outlet_S1L1 = "osc1";
+	midiCCout(ppchange (inlet_dial1, &osc1pitch_hold, ppwait1), 18, 1);
+	outlet_S1L2 = addItoS(osc1pitch_hold,"o1frq",osc1pitch_c);
+	disp_d1 = osc1pitch;
+	//disp_d2 = osc2pitch;
+	}
 
+
+
+if (state[currentstate] == "o1modt"){
+	outlet_S2mode = 1;
+	outlet_S2L1 = "osc1timbre";
+	midiCCout(ppchange (inlet_dial1, &lfo1t_hold, ppwait1), 35, 1);
+	outlet_S1L1 = addItoS(lfo1t_hold,"lfo",lfo1t_c);
+	midiCCout(ppchange (inlet_dial2, &t1a_hold, ppwait2), 36, 1);
+	outlet_S1L2 = addItoS(t1a_hold,"att",t1a_c);
+	midiCCout(ppchange (inlet_dial3, &t1o_hold, ppwait3), 17, 1);
+	outlet_S1L3 = addItoS(t1o_hold,"offset",t1o_c);
 }
 
-if (state[currentstate] == "fx"){
+if (state[currentstate] == "o1modc"){
+	outlet_S2mode = 1;
+	outlet_S2L1 = "osc1color";
+	midiCCout(ppchange (inlet_dial1, &lfo1c_hold, ppwait1), 39, 1);
+	outlet_S1L1 = addItoS(lfo1c_hold,"lfo",lfo1c_c);
+	midiCCout(ppchange (inlet_dial2, &c1a_hold, ppwait2), 40, 1);
+	outlet_S1L2 = addItoS(c1a_hold,"att",c1a_c);
+	midiCCout(ppchange (inlet_dial3, &c1o_hold, ppwait3), 21, 1);
+	outlet_S1L3 = addItoS(c1o_hold,"offset",c1o_c);
+}
+
+
+if (state[currentstate] == "o1flt"){
 	outlet_S1mode = 0;
 	outlet_S2mode = 0;
+	outlet_S1L1 = "filter1";
+	midiCCout(ppchange (inlet_dial6, &flt1frq_hold, ppwait6), 19, 1);
+	outlet_S1L2 = addItoS(flt1frq_hold,"F1frq",flt1frq_c);
+	midiCCout(ppchange (inlet_dial5, &flt1Q_hold, ppwait5), 20, 1);
+	outlet_S1L3 = addItoS(flt1Q_hold,"reso",flt1Q_c);
+
+	checkCountStateUp(inlet_up, uptrig, lfo1div, 4);
+	checkCountStateDown(inlet_down, downtrig, lfo1div, 4);
+	outlet_lfo1div = lfo1div;
+
+	midiCCout(ppchange (inlet_dial1, &flt1LFO_hold, ppwait1), 2, 1);
+	outlet_S2L1 = addItoS(flt1LFO_hold,"LFO",flt1LFO_c);
+	if(lfo1div==0){
+		outlet_S2L2 = "lfodiv=1";
+	} 
+	if(lfo1div==1){
+		outlet_S2L2 = "lfodiv=2";
+	} 
+	if(lfo1div==2){
+		outlet_S2L2 = "lfodiv=4";
+	} 
+	if(lfo1div==3){
+		outlet_S2L2 = "lfodiv=8";
+	} 
+	if(lfo1div==4){
+		outlet_S2L2 = "lfodiv=16";
+	} 
+	midiCCout(ppchange (inlet_dial2, &flt1att_hold, ppwait2), 3, 1);
+	outlet_S2L3 = addItoS(flt1att_hold,"attn",flt1att_c);
+	midiCCout(ppchange (inlet_dial3, &flt1off_hold, ppwait3), 4, 1);
+	outlet_S2L4 = addItoS(flt1off_hold,"offst",flt1off_c);
+}
+
+
+if (state[currentstate] == "osc2"){
+	outlet_S2mode = 2;
+	outlet_S1L1 = "osc2";
+	midiCCout(ppchange (inlet_dial1, &osc2pitch_hold, ppwait1), 22, 1);
+	outlet_S1L2 = addItoS(osc2pitch_hold,"o2frq",osc2pitch_c);
+	disp_d1 = osc2pitch;
+	//disp_d2 = osc2pitch;
+	}
+
+
+
+if (state[currentstate] == "o2modt"){
+	outlet_S2mode = 1;
+	outlet_S2L1 = "osc2timbre";
+	midiCCout(ppchange (inlet_dial1, &lfo2t_hold, ppwait1), 43, 1);
+	outlet_S1L1 = addItoS(lfo2t_hold,"lfo",lfo2t_c);
+	midiCCout(ppchange (inlet_dial2, &t2a_hold, ppwait2), 44, 1);
+	outlet_S1L2 = addItoS(t2a_hold,"att",t2a_c);
+	midiCCout(ppchange (inlet_dial3, &t2o_hold, ppwait3), 25, 1);
+	outlet_S1L3 = addItoS(t2o_hold,"offset",t2o_c);
+}
+
+if (state[currentstate] == "o2modc"){
+	outlet_S2mode = 1;
+	outlet_S2L1 = "osc2color";
+	midiCCout(ppchange (inlet_dial1, &lfo2c_hold, ppwait1), 47, 1);
+	outlet_S1L1 = addItoS(lfo2c_hold,"lfo",lfo2c_c);
+	midiCCout(ppchange (inlet_dial2, &c2a_hold, ppwait2), 48, 1);
+	outlet_S1L2 = addItoS(c2a_hold,"att",c2a_c);
+	midiCCout(ppchange (inlet_dial3, &c2o_hold, ppwait3), 29, 1);
+	outlet_S1L3 = addItoS(c2o_hold,"offset",c2o_c);
+}
+
+
+if (state[currentstate] == "o2flt"){
+	outlet_S1mode = 0;
+	outlet_S2mode = 0;
+	outlet_S1L1 = "filter1";
+	midiCCout(ppchange (inlet_dial6, &flt2frq_hold, ppwait6), 23, 1);
+	outlet_S1L2 = addItoS(flt2frq_hold,"F1frq",flt2frq_c);
+	midiCCout(ppchange (inlet_dial5, &flt2Q_hold, ppwait5), 24, 1);
+	outlet_S1L3 = addItoS(flt2Q_hold,"reso",flt2Q_c);
+
+	midiCCout(ppchange (inlet_dial1, &flt2LFO_hold, ppwait1), 6, 1);
+	outlet_S2L1 = addItoS(flt2LFO_hold,"LFO",flt2LFO_c);
+	midiCCout(ppchange (inlet_dial2, &flt2att_hold, ppwait2), 7, 1);
+	outlet_S2L3 = addItoS(flt2att_hold,"attn",flt2att_c);
+	midiCCout(ppchange (inlet_dial3, &flt2off_hold, ppwait3), 8, 1);
+	outlet_S2L4 = addItoS(flt2off_hold,"offst",flt2off_c);
+}
+if (state[currentstate] == "rev1"){
+	outlet_S1mode = 0;
+	outlet_S2mode = 0;
+	outlet_S1L1 = "reverb1";
+	midiCCout(ppchange (inlet_dial6, &Decay_hold, ppwait6), 90, 1);
+	outlet_S1L2 = addItoS(Decay_hold,"Decay",Decay_c);
+	midiCCout(ppchange (inlet_dial5, &mix_hold, ppwait5), 94, 1);
+	outlet_S1L3 = addItoS(mix_hold,"Mix",mix_c);
+	midiCCout(ppchange (inlet_dial1, &LowDamp_hold, ppwait1), 91, 1);
+	outlet_S2L1 = addItoS(LowDamp_hold,"LoDmp",LowDamp_c);
+	midiCCout(ppchange (inlet_dial2, &HighDamp_hold, ppwait2), 92, 1);
+	outlet_S2L2 = addItoS(HighDamp_hold,"HiDmp",HighDamp_c);
+	midiCCout(ppchange (inlet_dial3, &Size_hold, ppwait3), 93, 1);
+	outlet_S2L3 = addItoS(Size_hold,"Size",Size_c);
+	midiCCout(ppchange (inlet_dial4, &Diffusion_hold, ppwait4), 95, 1);
+	outlet_S2L4 = addItoS(Diffusion_hold,"Diff",Diffusion_c);
+}
+
+if (state[currentstate] == "rev2"){
+	outlet_S1mode = 0;
+	outlet_S2mode = 2;
+	outlet_S1L1 = "reverb2";
+	midiCCout(ppchange (inlet_dial6, &modPitch_hold, ppwait6), 95, 1);
+	outlet_S1L2 = addItoS(modPitch_hold,"modFrq",modPitch_c);
+	midiCCout(ppchange (inlet_dial5, &modGain_hold, ppwait5), 96, 1);
+	outlet_S1L3 = addItoS(modGain_hold,"modAmp",modGain_c);
+}
+
+if (state[currentstate] == "mix"){
+	outlet_S1mode = 0;
+	outlet_S2mode = 2;
 	if(inlet_toggle1==1){
 		outlet_S1L1 = "chorus  ON";
 		//midiCCout(120, 20, 1);
@@ -1348,10 +1816,7 @@ if (state[currentstate] == "fx"){
 		outlet_S1L1 = "chorus OFF";
 		//midiCCout(0, 20, 1);
 	}
-	outlet_chdepth = ppchange (inlet_dial1, &ch_depth_hold, ppwait1);
-	outlet_S1L2 = addItoS(ch_depth_hold,"depth",ch_depth_c);
-	outlet_chspeed = ppchange (inlet_dial2, &ch_spd_hold, ppwait2);
-	outlet_S1L3 = addItoS(ch_spd_hold,"speed",ch_spd_c);
+
 	if(inlet_toggle2==1){
 		outlet_S2L1 = "reverb  ON";
 		//midiCCout(120, 20, 1);
@@ -1359,54 +1824,17 @@ if (state[currentstate] == "fx"){
 		outlet_S2L1 = "reverb OFF";
 		//midiCCout(0, 20, 1);
 	}
-	outlet_revsize = ppchange (inlet_dial3, &rev_size_hold, ppwait3);
-	outlet_S2L2 = addItoS(rev_size_hold,"size",rev_size_c);
-	outlet_revdecay = ppchange (inlet_dial4, &rev_decay_hold, ppwait4);
-	outlet_S2L3 = addItoS(rev_decay_hold,"decay",rev_decay_c);
 }]]></code.krate>
       </object>
    </patchobj>
-   <comment type="patch/comment" x="560" y="630" text="OSC 3"/>
-   <comment type="patch/comment" x="756" y="630" text="FILTER"/>
-   <comment type="patch/comment" x="882" y="630" text="LFO RATE"/>
-   <comment type="patch/comment" x="980" y="630" text="ATTENUATOR"/>
-   <comment type="patch/comment" x="1134" y="630" text="OFFSET"/>
-   <obj type="osc/tri cheap" uuid="9d5f09ac82b4951ee329feab93af35896b44e8a6" name="tri_1" x="560" y="644">
-      <params>
-         <frac32.s.map name="pitch" MidiCC="26" value="45.0"/>
-      </params>
-      <attribs/>
-   </obj>
-   <obj type="filter/multimode svf m" uuid="71d5f8b2131b691d591a9a9ee28771309f8938d" name="multimode_3" x="756" y="644">
-      <params>
-         <frac32.s.map name="pitch" MidiCC="27" value="-20.0"/>
-         <frac32.u.map name="reso" MidiCC="28" value="11.0"/>
-      </params>
-      <attribs/>
-   </obj>
-   <obj type="lfo/sine" uuid="75f7330c26a13953215dccc3b7b9008545c9daa9" name="sine_10" x="882" y="644">
-      <params>
-         <frac32.s.map name="pitch" MidiCC="10" value="-15.0"/>
-      </params>
-      <attribs/>
-   </obj>
-   <obj type="ctrl/dial p" uuid="cc5d2846c3d50e425f450c4b9851371b54f4d674" name="lfo_amount_________" x="980" y="644">
-      <params>
-         <frac32.u.map name="value" MidiCC="11" value="6.5"/>
-      </params>
-      <attribs/>
-   </obj>
-   <obj type="math/*" uuid="922423f2db9f222aa3e5ba095778288c446da47a" name="*_14" x="1078" y="644">
+   <obj type="audio/inconfig l" uuid="7007d026acb7c3586f60a7f0898718d1ca7e0607" name="inconfig_1" x="476" y="616">
       <params/>
-      <attribs/>
+      <attribs>
+         <combo attributeName="gain" selection="12dB"/>
+         <combo attributeName="boost" selection="0dB"/>
+      </attribs>
    </obj>
-   <obj type="ctrl/dial b" uuid="862e7d7f29093cb1ce4aed72244d118ad4d46692" name="dial_23" x="1134" y="644">
-      <params>
-         <frac32.s.map name="value" MidiCC="12" value="-23.0"/>
-      </params>
-      <attribs/>
-   </obj>
-   <obj type="math/+" uuid="44553fdc8628c67ab535845ed1be304ad6c9553b" name="+_10" x="1204" y="644">
+   <obj type="audio/in left" uuid="d40e60b7641fe75af4d7c91b45bb038aacafc52e" name="in_1" x="476" y="686">
       <params/>
       <attribs/>
    </obj>
@@ -1512,14 +1940,6 @@ if (state[currentstate] == "fx"){
          <dest obj="+_8" inlet="in2"/>
       </net>
       <net>
-         <source obj="tri_1" outlet="wave"/>
-         <dest obj="multimode_3" inlet="in"/>
-      </net>
-      <net>
-         <source obj="sine_6" outlet="wave"/>
-         <dest obj="*_10" inlet="a"/>
-      </net>
-      <net>
          <source obj="wavetables_1" outlet="wave"/>
          <dest obj="multimode_2" inlet="in"/>
       </net>
@@ -1530,10 +1950,6 @@ if (state[currentstate] == "fx"){
       <net>
          <source obj="multimode_1" outlet="bp"/>
          <dest obj="mix_2" inlet="in2"/>
-      </net>
-      <net>
-         <source obj="multimode_3" outlet="bp"/>
-         <dest obj="mix_2" inlet="in3"/>
       </net>
       <net>
          <source obj="lfo_amount________" outlet="out"/>
@@ -1552,41 +1968,12 @@ if (state[currentstate] == "fx"){
          <dest obj="*_13" inlet="a"/>
       </net>
       <net>
-         <source obj="lfo_amount_________" outlet="out"/>
-         <dest obj="*_14" inlet="b"/>
-      </net>
-      <net>
-         <source obj="*_14" outlet="result"/>
-         <dest obj="+_10" inlet="in1"/>
-      </net>
-      <net>
-         <source obj="dial_23" outlet="out"/>
-         <dest obj="+_10" inlet="in2"/>
-      </net>
-      <net>
-         <source obj="sine_10" outlet="wave"/>
-         <dest obj="*_14" inlet="a"/>
-      </net>
-      <net>
          <source obj="+_5" outlet="out"/>
          <dest obj="multimode_2" inlet="pitch"/>
       </net>
       <net>
          <source obj="+_9" outlet="out"/>
          <dest obj="multimode_1" inlet="pitch"/>
-      </net>
-      <net>
-         <source obj="+_10" outlet="out"/>
-         <dest obj="multimode_3" inlet="pitch"/>
-      </net>
-      <net>
-         <source obj="mix_2" outlet="out"/>
-         <dest obj="obj_2" inlet="InL"/>
-         <dest obj="obj_2" inlet="InR"/>
-      </net>
-      <net>
-         <source obj="obj_2" outlet="l"/>
-         <dest obj="vca_4" inlet="a"/>
       </net>
       <net>
          <source obj="phone_interface_buttons_screen_1" outlet="dial 1"/>
@@ -1691,6 +2078,7 @@ if (state[currentstate] == "fx"){
       <net>
          <source obj="vca_4" outlet="o"/>
          <dest obj="out_2" inlet="wave"/>
+         <dest obj="phone_interface_buttons_screen_1" inlet="scope2"/>
       </net>
       <net>
          <source obj="phone_interface_buttons_screen_1" outlet="button 1"/>
@@ -1704,15 +2092,35 @@ if (state[currentstate] == "fx"){
          <source obj="phone_interface_buttons_screen_1" outlet="button 3"/>
          <dest obj="object_1" inlet="button3"/>
       </net>
+      <net>
+         <source obj="slowlfo2_1" outlet="wave"/>
+         <dest obj="*_10" inlet="a"/>
+      </net>
+      <net>
+         <source obj="object_1" outlet="lfo1div"/>
+         <dest obj="slowlfo2_1" inlet="div"/>
+      </net>
+      <net>
+         <source obj="mix_2" outlet="out"/>
+         <dest obj="obj_1" inlet="InL"/>
+      </net>
+      <net>
+         <source obj="obj_1" outlet="l"/>
+         <dest obj="vca_4" inlet="a"/>
+      </net>
+      <net>
+         <source obj="in_1" outlet="wave"/>
+         <dest obj="mix_2" inlet="in3"/>
+      </net>
    </nets>
    <settings>
       <subpatchmode>no</subpatchmode>
    </settings>
    <notes><![CDATA[]]></notes>
    <windowPos>
-      <x>2580</x>
-      <y>81</y>
-      <width>1897</width>
-      <height>1103</height>
+      <x>2022</x>
+      <y>206</y>
+      <width>1717</width>
+      <height>998</height>
    </windowPos>
 </patch-1.0>
