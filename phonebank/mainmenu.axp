@@ -49,7 +49,7 @@
          <attribs/>
          <includes/>
          <code.declaration><![CDATA[//menu and screen and pot state
-char* patch[15] = {"menu","effects","dangerine","1976","effectsMic", "sidechain",  "side_bd", "side_cy", "sawdrone", "answmachine", "sawdrone2","granclds","dronephone", "tanpura", "bytebeat"};
+char* patch[12] = {"menu","effects","dangerine","1976","effectsMic", "sawdrone", "sawdrone2","granclds","dronephone", "tanpura", "bytebeat", "phonedrone"};
 int menucount = *(&patch + 1) - patch;
 int patchselect;
 bool ppwait1;
@@ -202,10 +202,11 @@ outlet_S1L2 = patch[patchselect%menucount];
 outlet_S1L3 = "press B4";
 outlet_S1L4 = "to load";
 outlet_loadpatch = patchselect%menucount;
-outlet_loadtrig = inlet_button4;]]></code.krate>
+outlet_loadtrig = inlet_button4;
+outlet_loadtrig = inlet_button3;]]></code.krate>
       </object>
    </patchobj>
-   <obj type="patch/load i" uuid="b79124f5b7d1e8b39e187677ddab6260ce8c60a3" name="load_1" x="476" y="266">
+   <obj type="patch/load i" uuid="b79124f5b7d1e8b39e187677ddab6260ce8c60a3" name="load_1" x="574" y="252">
       <params/>
       <attribs/>
    </obj>
@@ -326,14 +327,18 @@ outlet_loadtrig = inlet_button4;]]></code.krate>
          <source obj="phone_interface_buttons_screen_1" outlet="button 1"/>
          <dest obj="object_2" inlet="button1"/>
       </net>
+      <net>
+         <source obj="object_2" outlet="loadpatch"/>
+         <dest obj="load_1" inlet="i"/>
+      </net>
    </nets>
    <settings>
       <subpatchmode>no</subpatchmode>
    </settings>
    <notes><![CDATA[]]></notes>
    <windowPos>
-      <x>3340</x>
-      <y>447</y>
+      <x>517</x>
+      <y>28</y>
       <width>795</width>
       <height>896</height>
    </windowPos>

@@ -220,7 +220,7 @@
       </params>
       <attribs/>
    </obj>
-   <patcher type="patch/patcher" uuid="885a35ce-9a96-4865-b1b6-ac5d2baa089c" name="obj_1" x="868" y="532">
+   <patcher type="patch/patcher" uuid="51b11413-0f3e-4fea-99a5-00bc005df515" name="obj_1" x="868" y="532">
       <params>
          <frac32.u.map name="PreDelay" value="32.0"/>
          <frac32.u.map name="decay" MidiCC="90" value="17.5"/>
@@ -654,7 +654,11 @@ outlet_o8 = -outlet_o4;]]></code.krate>
       <params/>
       <attribs/>
    </obj>
-   <patcher type="patch/patcher" uuid="2a28744e-5734-46d4-be98-f3841fc4e67e" name="phone_interface_buttons_screen_1" x="84" y="616">
+   <obj type="audio/out right" uuid="e58a4cbbb087052c5480366e3f5d3a04aa319777" name="out_1" x="1162" y="602">
+      <params/>
+      <attribs/>
+   </obj>
+   <patcher type="patch/patcher" uuid="cedd9e45-21f0-4d5b-9bcb-dd9924172485" name="phone_interface_buttons_screen_1" x="84" y="616">
       <params/>
       <attribs/>
       <subpatch appVersion="1.0.12">
@@ -2174,6 +2178,7 @@ if (state[currentstate] == "mix"){
          <source obj="vca_4" outlet="o"/>
          <dest obj="out_2" inlet="wave"/>
          <dest obj="mux_2" inlet="i0"/>
+         <dest obj="out_1" inlet="wave"/>
       </net>
       <net>
          <source obj="phone_interface_buttons_screen_1" outlet="button 1"/>
