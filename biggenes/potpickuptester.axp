@@ -12,7 +12,7 @@
    </obj>
    <obj type="osc/brds/sinefold" uuid="31f491d0-217b-46d6-9f6b-05dfee4fb6b2" name="sinefold_1" x="448" y="154">
       <params>
-         <frac32.s.map name="pitch" MidiCC="1" value="-8.0"/>
+         <frac32.s.map name="pitch" MidiCC="1" value="6.0"/>
          <frac32.u.map name="timbre" value="0.0"/>
       </params>
       <attribs/>
@@ -101,9 +101,11 @@ osc1pitch_hold = 29<<20;
 //osc2
 osc2pitch_hold = 29<<20;]]></code.init>
          <code.krate><![CDATA[currentstate = inlet_encA;
+//if (currentstate > 1) {currentstate = 1;}
 ///buttonpresses MENU up/down
 if (currentstate != prevstate) {
    ppwait1=true; //enable potpickup wait on change
+   prevstate = currentstate;
 }
 
 disp_d2 = inlet_P1;
@@ -139,12 +141,12 @@ if (state[currentstate] == "osc2"){
       <attribs>
          <combo attributeName="encoder" selection="1"/>
          <spinner attributeName="min" value="0"/>
-         <spinner attributeName="max" value="127"/>
+         <spinner attributeName="max" value="1"/>
       </attribs>
    </obj>
    <obj type="osc/brds/sinefold" uuid="31f491d0-217b-46d6-9f6b-05dfee4fb6b2" name="sinefold_2" x="448" y="336">
       <params>
-         <frac32.s.map name="pitch" MidiCC="2" value="-35.0"/>
+         <frac32.s.map name="pitch" MidiCC="2" value="20.0"/>
          <frac32.u.map name="timbre" value="35.5"/>
       </params>
       <attribs/>
@@ -181,8 +183,8 @@ if (state[currentstate] == "osc2"){
    </settings>
    <notes><![CDATA[]]></notes>
    <windowPos>
-      <x>2158</x>
-      <y>254</y>
+      <x>838</x>
+      <y>145</y>
       <width>902</width>
       <height>725</height>
    </windowPos>
