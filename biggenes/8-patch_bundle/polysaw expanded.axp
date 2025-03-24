@@ -1,0 +1,1955 @@
+<patch-1.0 appVersion="1.0.12">
+   <obj type="jaffa/string/c8" uuid="5c92abbf-ce44-4468-8531-f8924109e5e9" name="c8_1" x="1232" y="14">
+      <params/>
+      <attribs>
+         <table attributeName="1" table="osc detune"/>
+         <table attributeName="2" table="filter 1"/>
+         <table attributeName="3" table="resonance 1"/>
+         <table attributeName="4" table="amp env -&gt; f1"/>
+         <table attributeName="5" table="string damp"/>
+         <table attributeName="6" table="osc mix"/>
+         <table attributeName="7" table="filter 2"/>
+         <table attributeName="8" table="resonance 2"/>
+      </attribs>
+   </obj>
+   <obj type="jaffa/string/c8" uuid="5c92abbf-ce44-4468-8531-f8924109e5e9" name="c8_2" x="1568" y="14">
+      <params/>
+      <attribs>
+         <table attributeName="1" table="amp attack"/>
+         <table attributeName="2" table="amp decay"/>
+         <table attributeName="3" table="mod rise"/>
+         <table attributeName="4" table="mod -&gt; filter1"/>
+         <table attributeName="5" table="mod -&gt; string"/>
+         <table attributeName="6" table="amp sustain"/>
+         <table attributeName="7" table="amp release"/>
+         <table attributeName="8" table="mod fall"/>
+      </attribs>
+   </obj>
+   <obj type="jaffa/string/c8" uuid="5c92abbf-ce44-4468-8531-f8924109e5e9" name="c8_3" x="2030" y="14">
+      <params/>
+      <attribs>
+         <table attributeName="1" table="distort gain"/>
+         <table attributeName="2" table="chorus speed"/>
+         <table attributeName="3" table="delay left"/>
+         <table attributeName="4" table="delay right"/>
+         <table attributeName="5" table="delay fil width"/>
+         <table attributeName="6" table="distort mix"/>
+         <table attributeName="7" table="chorus mix"/>
+         <table attributeName="8" table="delay mix"/>
+      </attribs>
+   </obj>
+   <obj type="rbrt/string/prefix 000" uuid="879f7941-83c3-4d5d-820d-d61e67c7d6cc" name="prefix_1" x="2240" y="28">
+      <params/>
+      <attribs>
+         <table attributeName="prefix" table=": "/>
+         <spinner attributeName="maxLength" value="19"/>
+      </attribs>
+   </obj>
+   <obj type="mux/mux 3" uuid="b371527101f081f3715997908b7ae6f90840faad" name="mux_3" x="2464" y="28">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="tiar/string/concat2" uuid="cc32098b-df43-4664-9692-81f5b66cbe5f" name="concat2_1" x="2548" y="28">
+      <params/>
+      <attribs>
+         <spinner attributeName="size" value="23"/>
+      </attribs>
+   </obj>
+   <obj type="hohum/disp/auto_muxer" uuid="544250aa-1432-46ea-9294-7367d4864a60" name="auto_muxer_1" x="952" y="42">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="ksoloti/gills/pot p 2" uuid="8141e8d8-f90f-4218-a8b7-b9f9776c908b" name="pot_1" x="28" y="56">
+      <params/>
+      <attribs>
+         <combo attributeName="pots" selection="1 | 2"/>
+      </attribs>
+   </obj>
+   <obj type="TSG/ctrl/MultiPot 3" uuid="c49c906e-b059-469e-9dde-c04e635b3259" name="MultiPot_1" x="266" y="56">
+      <params/>
+      <attribs>
+         <combo attributeName="deadbandSize" selection="large"/>
+         <combo attributeName="mode" selection="overwrite"/>
+      </attribs>
+   </obj>
+   <obj type="mux/mux 2" uuid="777491e645978e331fcbab6610f52c1aaa5ade0e" name="mux_13" x="1750" y="56">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="TSG/ctrl/MultiPot 3" uuid="c49c906e-b059-469e-9dde-c04e635b3259" name="MultiPot_6" x="392" y="84">
+      <params/>
+      <attribs>
+         <combo attributeName="deadbandSize" selection="large"/>
+         <combo attributeName="mode" selection="overwrite"/>
+      </attribs>
+   </obj>
+   <obj type="ksoloti/gills/button" uuid="07be7a50-1051-436a-92aa-03e2fb9b1229" name="button_3" x="560" y="84">
+      <params/>
+      <attribs>
+         <combo attributeName="button" selection="4"/>
+      </attribs>
+   </obj>
+   <obj type="TSG/ctrl/MultiPot 3" uuid="c49c906e-b059-469e-9dde-c04e635b3259" name="MultiPot_11" x="686" y="84">
+      <params/>
+      <attribs>
+         <combo attributeName="deadbandSize" selection="medium"/>
+         <combo attributeName="mode" selection="overwrite"/>
+      </attribs>
+   </obj>
+   <obj type="logic/toggle" uuid="f42f0d3aab552c17bc78b9e65f85dc24f977503d" name="toggle_3" x="826" y="84">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="jaffa/string/c2" uuid="204560dc-d001-446b-9f87-dd68f5ebffd2" name="c2_7" x="1400" y="98">
+      <params/>
+      <attribs>
+         <table attributeName="1" table="mod lfo rate"/>
+         <table attributeName="2" table="mod lfo random"/>
+      </attribs>
+   </obj>
+   <obj type="logic/toggle" uuid="f42f0d3aab552c17bc78b9e65f85dc24f977503d" name="toggle_2" x="826" y="126">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="ksoloti/gills/pot p 2" uuid="8141e8d8-f90f-4218-a8b7-b9f9776c908b" name="pot_2" x="28" y="140">
+      <params/>
+      <attribs>
+         <combo attributeName="pots" selection="3 | 4"/>
+      </attribs>
+   </obj>
+   <obj type="drj/mux/mux 12" uuid="538081223bada604a557f992dab7a2eda93df0fe" name="mux_1" x="1386" y="210">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="drj/mux/mux 12" uuid="538081223bada604a557f992dab7a2eda93df0fe" name="mux_2" x="1904" y="210">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="drj/mux/mux 12" uuid="538081223bada604a557f992dab7a2eda93df0fe" name="mux_4" x="2184" y="210">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="ksoloti/gills/pot p 2" uuid="8141e8d8-f90f-4218-a8b7-b9f9776c908b" name="pot_3" x="28" y="224">
+      <params/>
+      <attribs>
+         <combo attributeName="pots" selection="5 | 6"/>
+      </attribs>
+   </obj>
+   <obj type="TSG/ctrl/MultiPot 3" uuid="c49c906e-b059-469e-9dde-c04e635b3259" name="MultiPot_2" x="266" y="224">
+      <params/>
+      <attribs>
+         <combo attributeName="deadbandSize" selection="large"/>
+         <combo attributeName="mode" selection="overwrite"/>
+      </attribs>
+   </obj>
+   <obj type="mux/mux 2" uuid="777491e645978e331fcbab6610f52c1aaa5ade0e" name="mux_14" x="1750" y="224">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="TSG/ctrl/MultiPot 3" uuid="c49c906e-b059-469e-9dde-c04e635b3259" name="MultiPot_7" x="392" y="252">
+      <params/>
+      <attribs>
+         <combo attributeName="deadbandSize" selection="large"/>
+         <combo attributeName="mode" selection="overwrite"/>
+      </attribs>
+   </obj>
+   <obj type="TSG/patch/modsource auto" uuid="4ab1c80f-6017-44dc-aba7-1b9ad3949c81" name="dist_gain" x="686" y="280">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="ksoloti/gills/pot p 2" uuid="8141e8d8-f90f-4218-a8b7-b9f9776c908b" name="pot_4" x="28" y="308">
+      <params/>
+      <attribs>
+         <combo attributeName="pots" selection="7 | 8"/>
+      </attribs>
+   </obj>
+   <obj type="TSG/patch/modsource auto" uuid="4ab1c80f-6017-44dc-aba7-1b9ad3949c81" name="modenv_a" x="686" y="322">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="jaffa/string/c2" uuid="204560dc-d001-446b-9f87-dd68f5ebffd2" name="c2_1" x="1232" y="336">
+      <params/>
+      <attribs>
+         <table attributeName="1" table="amp env -&gt; f2"/>
+         <table attributeName="2" table="string mix"/>
+      </attribs>
+   </obj>
+   <obj type="jaffa/string/c2" uuid="204560dc-d001-446b-9f87-dd68f5ebffd2" name="c2_2" x="1568" y="336">
+      <params/>
+      <attribs>
+         <table attributeName="1" table="mod -&gt; filter2"/>
+         <table attributeName="2" table="mod -&gt; reso"/>
+      </attribs>
+   </obj>
+   <obj type="jaffa/string/c2" uuid="204560dc-d001-446b-9f87-dd68f5ebffd2" name="c2_3" x="2030" y="336">
+      <params/>
+      <attribs>
+         <table attributeName="1" table="delay feedback"/>
+         <table attributeName="2" table="delay fil freq"/>
+      </attribs>
+   </obj>
+   <obj type="TSG/patch/modsource auto" uuid="4ab1c80f-6017-44dc-aba7-1b9ad3949c81" name="modenv_d" x="686" y="364">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="ksoloti/gills/pot p 2" uuid="8141e8d8-f90f-4218-a8b7-b9f9776c908b" name="pot_5" x="28" y="392">
+      <params/>
+      <attribs>
+         <combo attributeName="pots" selection="9 | 10"/>
+      </attribs>
+   </obj>
+   <obj type="TSG/ctrl/MultiPot 3" uuid="c49c906e-b059-469e-9dde-c04e635b3259" name="MultiPot_3" x="266" y="392">
+      <params/>
+      <attribs>
+         <combo attributeName="deadbandSize" selection="large"/>
+         <combo attributeName="mode" selection="overwrite"/>
+      </attribs>
+   </obj>
+   <obj type="TSG/patch/modsource auto" uuid="4ab1c80f-6017-44dc-aba7-1b9ad3949c81" name="chor_time" x="686" y="406">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="TSG/ctrl/MultiPot 3" uuid="c49c906e-b059-469e-9dde-c04e635b3259" name="MultiPot_8" x="392" y="420">
+      <params/>
+      <attribs>
+         <combo attributeName="deadbandSize" selection="large"/>
+         <combo attributeName="mode" selection="overwrite"/>
+      </attribs>
+   </obj>
+   <obj type="TSG/patch/modsource auto" uuid="4ab1c80f-6017-44dc-aba7-1b9ad3949c81" name="chor_amount" x="686" y="448">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="ksoloti/gills/button" uuid="07be7a50-1051-436a-92aa-03e2fb9b1229" name="button_1" x="28" y="504">
+      <params/>
+      <attribs>
+         <combo attributeName="button" selection="3"/>
+      </attribs>
+   </obj>
+   <obj type="logic/counter" uuid="7a141ba82230e54e5f5cd12da5dbe5a74ba854a5" name="counter_1" x="140" y="504">
+      <params>
+         <int32 name="maximum" value="3"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="TSG/patch/modsource auto" uuid="4ab1c80f-6017-44dc-aba7-1b9ad3949c81" name="mod_lfo_rate" x="840" y="504">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="gain/vca" uuid="a9f2dcd18043e2f47364e45cb8814f63c2a37c0d" name="vca_1" x="1456" y="518">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="math/+" uuid="faedbea4612d9bd3644d6d3bf31946d848a70e19" name="+_1" x="1512" y="518">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="mux/mux 2" uuid="539c246f4c360ac476e128cfbfa84348fb7f7e73" name="mux_5" x="1638" y="518">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="filter/hp1 m" uuid="db72e08c265817674e56af3855bfca7a58b65e87" name="hp1_1" x="1722" y="518">
+      <params>
+         <frac32.u.map name="freq" value="4.0"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="filter/lp1 m" uuid="18b561d14f9175f5380e6a1d9d55ca41e0e61974" name="lp1_1" x="1806" y="518">
+      <params>
+         <frac32.u.map name="freq" value="22.0"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="delay/write sdram" uuid="5ae03f8d7b815edcfc40585d8bbac2ed48460fba" name="write_1" x="1890" y="518">
+      <params/>
+      <attribs>
+         <combo attributeName="size" selection="16384 (341ms)"/>
+      </attribs>
+   </obj>
+   <obj type="conv/interp" uuid="d68c1a8709d8b55e3de8715d727ec0a2d8569d9a" name="interp_1" x="2016" y="518">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="delay/read" uuid="c4fafe81010d179e889d407264b57bde81f361f" name="read_1" x="2100" y="518">
+      <params>
+         <frac32.u.map name="time" value="1.0"/>
+      </params>
+      <attribs>
+         <objref attributeName="delayname" obj="write_1"/>
+      </attribs>
+   </obj>
+   <obj type="conv/unipolar2bipolar" uuid="efc8ee28c508740c5edf7995eaaa07a6d6818e5e" name="unipolar2bipolar_1" x="560" y="532">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="sss/math/expCurveK" uuid="bde45a1d-540b-4c33-b7b5-d733d42a1772" name="expCurveK_1" x="1064" y="546">
+      <params>
+         <frac32.s.map name="exp" value="-56.0"/>
+         <int32 name="stack" value="1"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="TSG/ctrl/MultiPot 3" uuid="c49c906e-b059-469e-9dde-c04e635b3259" name="MultiPot_4" x="266" y="560">
+      <params/>
+      <attribs>
+         <combo attributeName="deadbandSize" selection="large"/>
+         <combo attributeName="mode" selection="overwrite"/>
+      </attribs>
+   </obj>
+   <obj type="conv/unipolar2bipolar" uuid="efc8ee28c508740c5edf7995eaaa07a6d6818e5e" name="unipolar2bipolar_2" x="560" y="574">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="jaffa/mix/xfade3" uuid="4c337564-56e7-49f1-abc6-2551a5733f8f" name="xfade3_1" x="2324" y="574">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="audio/out stereo" uuid="a1ca7a567f535acc21055669829101d3ee7f0189" name="out_1" x="2450" y="574">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="audio/outconfig" uuid="eace67e3304afaa1bb695b444e9345f2d8adaf00" name="outconfig_1" x="2562" y="574">
+      <params/>
+      <attribs>
+         <combo attributeName="headphones" selection="0dB"/>
+         <combo attributeName="mode" selection="Stereo"/>
+      </attribs>
+   </obj>
+   <obj type="TSG/ctrl/MultiPot 3" uuid="c49c906e-b059-469e-9dde-c04e635b3259" name="MultiPot_9" x="392" y="588">
+      <params/>
+      <attribs>
+         <combo attributeName="deadbandSize" selection="large"/>
+         <combo attributeName="mode" selection="overwrite"/>
+      </attribs>
+   </obj>
+   <obj type="rbrt/patching/automux f 2" uuid="abab2a4d-71f4-4ede-9e7c-19bcb2d4c74b" name="automux_1" x="728" y="588">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="math/*c" uuid="7d5ef61c3bcd571ee6bbd8437ef3612125dfb225" name="*c_2" x="910" y="588">
+      <params>
+         <frac32.u.map name="amp" value="29.0"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="gain/vca" uuid="a9f2dcd18043e2f47364e45cb8814f63c2a37c0d" name="vca_2" x="1456" y="588">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="math/+" uuid="faedbea4612d9bd3644d6d3bf31946d848a70e19" name="+_2" x="1512" y="588">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="delay/write sdram" uuid="5ae03f8d7b815edcfc40585d8bbac2ed48460fba" name="write_2" x="1890" y="588">
+      <params/>
+      <attribs>
+         <combo attributeName="size" selection="16384 (341ms)"/>
+      </attribs>
+   </obj>
+   <obj type="mux/mux 2" uuid="539c246f4c360ac476e128cfbfa84348fb7f7e73" name="mux_6" x="1638" y="602">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="rbrt/patching/loadbang" uuid="45d1f29d-ac62-4e5b-86f8-2201d2f6c689" name="loadbang_1" x="0" y="616">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="timer/pulselength" uuid="ca68725237d8ba8407773340801660a9fd9b0dba" name="pulselength_2" x="126" y="616">
+      <params>
+         <frac32.s.map name="delay" value="-25.0"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="filter/hp1 m" uuid="db72e08c265817674e56af3855bfca7a58b65e87" name="hp1_2" x="1722" y="616">
+      <params>
+         <frac32.u.map name="freq" value="4.0"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="filter/lp1 m" uuid="18b561d14f9175f5380e6a1d9d55ca41e0e61974" name="lp1_2" x="1806" y="616">
+      <params>
+         <frac32.u.map name="freq" value="22.0"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="conv/interp" uuid="d68c1a8709d8b55e3de8715d727ec0a2d8569d9a" name="interp_2" x="2016" y="630">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="delay/read" uuid="c4fafe81010d179e889d407264b57bde81f361f" name="read_2" x="2100" y="630">
+      <params>
+         <frac32.u.map name="time" value="1.0"/>
+      </params>
+      <attribs>
+         <objref attributeName="delayname" obj="write_2"/>
+      </attribs>
+   </obj>
+   <obj type="math/*c" uuid="7a66f52a9594e7e9eb31328ea725cb3641a80b55" name="*c_1" x="1218" y="658">
+      <params>
+         <frac32.u.map name="amp" value="54.0"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="stomps/chorus1" uuid="23995cf1-9b96-4165-a54c-803c4eff9a55" name="obj_2" x="1344" y="658">
+      <params>
+         <bool32.tgl name="on" value="1"/>
+         <frac32.u.map name="depth" value="0.0">
+            <modulators>
+               <modulation sourceName="chor_amount" modName="" value="64.0"/>
+            </modulators>
+         </frac32.u.map>
+         <frac32.s.map name="speed" value="-64.0">
+            <modulators>
+               <modulation sourceName="chor_time" modName="" value="84.0"/>
+            </modulators>
+         </frac32.s.map>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="math/*c" uuid="7d5ef61c3bcd571ee6bbd8437ef3612125dfb225" name="*c_3" x="910" y="672">
+      <params>
+         <frac32.u.map name="amp" value="28.5"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="logic/toggle" uuid="f42f0d3aab552c17bc78b9e65f85dc24f977503d" name="toggle_1" x="1540" y="672">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="ctrl/dial p" uuid="cc5d2846c3d50e425f450c4b9851371b54f4d674" name="dial_2" x="42" y="714">
+      <params>
+         <frac32.u.map name="value" value="0.0"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="TSG/ctrl/MultiPot 3" uuid="c49c906e-b059-469e-9dde-c04e635b3259" name="MultiPot_5" x="266" y="728">
+      <params/>
+      <attribs>
+         <combo attributeName="deadbandSize" selection="large"/>
+         <combo attributeName="mode" selection="overwrite"/>
+      </attribs>
+   </obj>
+   <patcher type="patch/patcher" uuid="41d537a1-4295-4bde-8a47-47bac7e4b1d2" name="patcher_1" x="1022" y="728">
+      <params>
+         <frac32.u.map name="gain_dist" value="4.0">
+            <modulators>
+               <modulation sourceName="dist_gain" modName="" value="49.0"/>
+            </modulators>
+         </frac32.u.map>
+         <frac32.s.map name="ad_1:a" value="-64.0">
+            <modulators>
+               <modulation sourceName="modenv_a" modName="" value="128.0"/>
+               <modulation sourceName="modenv_d" modName="" value="1.0"/>
+            </modulators>
+         </frac32.s.map>
+         <frac32.s.map name="ad_1:d" value="-64.0">
+            <modulators>
+               <modulation sourceName="modenv_d" modName="" value="128.0"/>
+            </modulators>
+         </frac32.s.map>
+         <frac32.s.map name="sine_1" value="-64.0">
+            <modulators>
+               <modulation sourceName="mod_lfo_rate" modName="" value="63.0"/>
+            </modulators>
+         </frac32.s.map>
+      </params>
+      <attribs>
+         <combo attributeName="poly" selection="3"/>
+         <combo attributeName="midichannel" selection="inherit"/>
+         <combo attributeName="mididevice" selection="omni"/>
+         <combo attributeName="midiport" selection="omni"/>
+      </attribs>
+      <subpatch appVersion="1.0.12">
+         <obj type="midi/in/keyb" uuid="53b04874696932f38aceaa168bd5d9efb743716d" name="keyb_1" x="14" y="28">
+            <params/>
+            <attribs/>
+         </obj>
+         <obj type="osc/supersaw" uuid="ece83feb36cfaee7dc3964b75c485774ea0309cf" name="supersaw_1" x="322" y="84">
+            <params>
+               <frac32.s.map name="pitch" value="0.0"/>
+               <frac32.u.map name="detune" value="0.0"/>
+            </params>
+            <attribs/>
+         </obj>
+         <obj type="mux/mux 2" uuid="539c246f4c360ac476e128cfbfa84348fb7f7e73" name="mux_1" x="700" y="98">
+            <params/>
+            <attribs/>
+         </obj>
+         <obj type="math/gain" uuid="62b1c1a6337c7c8f6aec96408a432477b113cfa0" name="gain_hpf" x="770" y="98">
+            <params>
+               <frac32.u.map name="amp" value="9.5"/>
+            </params>
+            <attribs/>
+         </obj>
+         <obj type="math/*c" uuid="7d5ef61c3bcd571ee6bbd8437ef3612125dfb225" name="*c_1" x="224" y="112">
+            <params>
+               <frac32.u.map name="amp" value="42.0"/>
+            </params>
+            <attribs/>
+         </obj>
+         <obj type="mix/xfade" uuid="375dc91d218e96cdc9cbc7e92adb48f705ef701a" name="xfade_3" x="434" y="112">
+            <params/>
+            <attribs/>
+         </obj>
+         <obj type="math/+" uuid="44553fdc8628c67ab535845ed1be304ad6c9553b" name="+_6" x="924" y="112">
+            <params/>
+            <attribs/>
+         </obj>
+         <obj type="math/+" uuid="44553fdc8628c67ab535845ed1be304ad6c9553b" name="+_2" x="994" y="112">
+            <params/>
+            <attribs/>
+         </obj>
+         <obj type="math/*" uuid="922423f2db9f222aa3e5ba095778288c446da47a" name="*_2" x="868" y="126">
+            <params/>
+            <attribs/>
+         </obj>
+         <obj type="dist/inf" uuid="d12af924890d417179e6fdbcf71cb1ec3ba31f67" name="inf_1" x="616" y="140">
+            <params/>
+            <attribs/>
+         </obj>
+         <obj type="filter/multimode svf m" uuid="71d5f8b2131b691d591a9a9ee28771309f8938d" name="multimode_1" x="1106" y="140">
+            <params>
+               <frac32.s.map name="pitch" value="0.0"/>
+               <frac32.u.map name="reso" value="0.0"/>
+            </params>
+            <attribs/>
+         </obj>
+         <obj type="patch/inlet f" uuid="5c585d2dcd9c05631e345ac09626a22a639d7c13" name="osc_timbre" x="28" y="154">
+            <params/>
+            <attribs/>
+         </obj>
+         <obj type="env/adsr m" uuid="98bd39fb828c392b28126d259cb5175e6f6ea34b" name="adsr_1" x="140" y="154">
+            <params>
+               <frac32.s.map name="a" value="0.0"/>
+               <frac32.s.map name="d" value="0.0"/>
+               <frac32.u.map name="s" value="0.0"/>
+               <frac32.s.map name="r" value="-19.0"/>
+            </params>
+            <attribs/>
+         </obj>
+         <obj type="gain/vca" uuid="a9f2dcd18043e2f47364e45cb8814f63c2a37c0d" name="vca_1" x="2058" y="154">
+            <params/>
+            <attribs/>
+         </obj>
+         <obj type="math/gain" uuid="62b1c1a6337c7c8f6aec96408a432477b113cfa0" name="gain_dist" x="2128" y="154">
+            <params>
+               <frac32.u.map name="amp" onParent="true" value="4.0"/>
+            </params>
+            <attribs/>
+         </obj>
+         <obj type="dist/hardclip" uuid="35b54f7f-9a67-4708-8fd5-00dc1e402e28" name="obj_1" x="2240" y="154">
+            <params>
+               <frac32.u.map name="level" value="3.5"/>
+            </params>
+            <attribs/>
+         </obj>
+         <obj type="mix/xfade" uuid="375dc91d218e96cdc9cbc7e92adb48f705ef701a" name="xfade_2" x="2338" y="154">
+            <params/>
+            <attribs/>
+         </obj>
+         <obj type="mix/xfade" uuid="375dc91d218e96cdc9cbc7e92adb48f705ef701a" name="xfade_1" x="1974" y="168">
+            <params/>
+            <attribs/>
+         </obj>
+         <obj type="patch/inlet f" uuid="5c585d2dcd9c05631e345ac09626a22a639d7c13" name="filter 1_env" x="770" y="182">
+            <params/>
+            <attribs/>
+         </obj>
+         <obj type="patch/inlet b" uuid="3b0d3eacb5bb978cb05d1372aa2714d5a4790844" name="button" x="28" y="196">
+            <params/>
+            <attribs/>
+         </obj>
+         <obj type="math/+" uuid="44553fdc8628c67ab535845ed1be304ad6c9553b" name="+_8" x="980" y="210">
+            <params/>
+            <attribs/>
+         </obj>
+         <obj type="patch/inlet f" uuid="5c585d2dcd9c05631e345ac09626a22a639d7c13" name="mod_f1" x="798" y="224">
+            <params/>
+            <attribs/>
+         </obj>
+         <obj type="math/*" uuid="922423f2db9f222aa3e5ba095778288c446da47a" name="*_4" x="924" y="224">
+            <params/>
+            <attribs/>
+         </obj>
+         <obj type="math/+" uuid="faedbea4612d9bd3644d6d3bf31946d848a70e19" name="+_1" x="1526" y="224">
+            <params/>
+            <attribs/>
+         </obj>
+         <obj type="math/gain" uuid="62b1c1a6337c7c8f6aec96408a432477b113cfa0" name="gain_2" x="1218" y="238">
+            <params>
+               <frac32.u.map name="amp" value="28.0"/>
+            </params>
+            <attribs/>
+         </obj>
+         <obj type="patch/inlet f" uuid="5c585d2dcd9c05631e345ac09626a22a639d7c13" name="osc_mix" x="28" y="252">
+            <params/>
+            <attribs/>
+         </obj>
+         <obj type="osc/square cheap" uuid="58dc60ffca7e6c5029f12ec68787945c669b7a8f" name="square_1" x="308" y="252">
+            <params>
+               <frac32.s.map name="pitch" value="0.0"/>
+            </params>
+            <attribs/>
+         </obj>
+         <obj type="mix/xfade" uuid="375dc91d218e96cdc9cbc7e92adb48f705ef701a" name="xfade_4" x="420" y="252">
+            <params/>
+            <attribs/>
+         </obj>
+         <obj type="filter/multimode svf m" uuid="71d5f8b2131b691d591a9a9ee28771309f8938d" name="multimode_2" x="1372" y="252">
+            <params>
+               <frac32.s.map name="pitch" value="0.0"/>
+               <frac32.u.map name="reso" value="0.0"/>
+            </params>
+            <attribs/>
+         </obj>
+         <obj type="sss/delay/KarplusStrong" uuid="0bca8485-fbc7-496f-ad9c-98c88773b5f4" name="KarplusStrong_1" x="1624" y="252">
+            <params>
+               <frac32.s.map name="pitch" value="0.0"/>
+               <frac32.u.map name="tailtime" value="64.0"/>
+               <frac32.s.map name="damp" value="13.0"/>
+               <frac32.u.map name="strength" value="18.0"/>
+               <frac32.s.map name="influence" value="56.94999980926514"/>
+            </params>
+            <attribs/>
+         </obj>
+         <obj type="math/gain" uuid="62b1c1a6337c7c8f6aec96408a432477b113cfa0" name="gain_reso" x="1778" y="252">
+            <params>
+               <frac32.u.map name="amp" value="11.0"/>
+            </params>
+            <attribs/>
+         </obj>
+         <obj type="math/window" uuid="276ef1bfd2978430dd94074347265b17092b6311" name="window_1" x="2170" y="252">
+            <params/>
+            <attribs/>
+         </obj>
+         <obj type="math/*c" uuid="7d5ef61c3bcd571ee6bbd8437ef3612125dfb225" name="*c_2" x="2254" y="252">
+            <params>
+               <frac32.u.map name="amp" value="19.0"/>
+            </params>
+            <attribs/>
+         </obj>
+         <obj type="math/+c" uuid="13eec32bd8ad57dd0bb18a02566cc0a117d320e3" name="+c_1" x="2352" y="252">
+            <params>
+               <frac32.u.map name="c" value="43.0"/>
+            </params>
+            <attribs/>
+         </obj>
+         <obj type="math/*" uuid="3ac307b9f782049739ed62504081b96d580ea336" name="*_8" x="2422" y="252">
+            <params/>
+            <attribs/>
+         </obj>
+         <obj type="patch/outlet a" uuid="abd8c5fd3b0524a6630f65cad6dc27f6c58e2a3e" name="outlet_1" x="2492" y="266">
+            <params/>
+            <attribs/>
+         </obj>
+         <obj type="patch/inlet f" uuid="5c585d2dcd9c05631e345ac09626a22a639d7c13" name="enva" x="28" y="294">
+            <params/>
+            <attribs/>
+         </obj>
+         <obj type="math/+" uuid="44553fdc8628c67ab535845ed1be304ad6c9553b" name="+_7" x="1050" y="308">
+            <params/>
+            <attribs/>
+         </obj>
+         <obj type="math/+" uuid="44553fdc8628c67ab535845ed1be304ad6c9553b" name="+_3" x="1120" y="308">
+            <params/>
+            <attribs/>
+         </obj>
+         <obj type="oscar/osc/supersquare b" uuid="80ceee0c-46ca-43c4-b33a-71e5b23857cc" name="supersquare_1" x="266" y="322">
+            <params>
+               <frac32.s.map name="pitch" value="0.0"/>
+            </params>
+            <attribs/>
+         </obj>
+         <obj type="math/+" uuid="44553fdc8628c67ab535845ed1be304ad6c9553b" name="+_10" x="798" y="322">
+            <params/>
+            <attribs/>
+         </obj>
+         <obj type="patch/inlet f" uuid="5c585d2dcd9c05631e345ac09626a22a639d7c13" name="filter 2_env_" x="896" y="322">
+            <params/>
+            <attribs/>
+         </obj>
+         <obj type="math/*" uuid="922423f2db9f222aa3e5ba095778288c446da47a" name="*_1" x="994" y="322">
+            <params/>
+            <attribs/>
+         </obj>
+         <obj type="math/+" uuid="44553fdc8628c67ab535845ed1be304ad6c9553b" name="+_9" x="1260" y="322">
+            <params/>
+            <attribs/>
+         </obj>
+         <obj type="patch/inlet f" uuid="5c585d2dcd9c05631e345ac09626a22a639d7c13" name="envd" x="28" y="336">
+            <params/>
+            <attribs/>
+         </obj>
+         <obj type="math/*" uuid="922423f2db9f222aa3e5ba095778288c446da47a" name="*_7" x="742" y="336">
+            <params/>
+            <attribs/>
+         </obj>
+         <obj type="math/*" uuid="922423f2db9f222aa3e5ba095778288c446da47a" name="*_5" x="1204" y="336">
+            <params/>
+            <attribs/>
+         </obj>
+         <obj type="patch/inlet f" uuid="5c585d2dcd9c05631e345ac09626a22a639d7c13" name="envs_" x="28" y="378">
+            <params/>
+            <attribs/>
+         </obj>
+         <obj type="patch/inlet f" uuid="5c585d2dcd9c05631e345ac09626a22a639d7c13" name="mod_f2" x="1064" y="406">
+            <params/>
+            <attribs/>
+         </obj>
+         <obj type="patch/inlet f" uuid="5c585d2dcd9c05631e345ac09626a22a639d7c13" name="envr_" x="28" y="420">
+            <params/>
+            <attribs/>
+         </obj>
+         <obj type="patch/inlet f" uuid="5c585d2dcd9c05631e345ac09626a22a639d7c13" name="mod_reso" x="28" y="462">
+            <params/>
+            <attribs/>
+         </obj>
+         <obj type="patch/inlet f" uuid="5c585d2dcd9c05631e345ac09626a22a639d7c13" name="dist_mix" x="28" y="504">
+            <params/>
+            <attribs/>
+         </obj>
+         <obj type="patch/inlet f" uuid="5c585d2dcd9c05631e345ac09626a22a639d7c13" name="reso1" x="28" y="546">
+            <params/>
+            <attribs/>
+         </obj>
+         <obj type="env/ad" uuid="255cb0cd67470c7498f9c33b820facd26aa629ce" name="ad_1" x="448" y="560">
+            <params>
+               <frac32.s.map name="a" onParent="true" value="0.0"/>
+               <frac32.s.map name="d" onParent="true" value="0.0"/>
+            </params>
+            <attribs/>
+         </obj>
+         <obj type="patch/inlet f" uuid="5c585d2dcd9c05631e345ac09626a22a639d7c13" name="reso2_" x="28" y="588">
+            <params/>
+            <attribs/>
+         </obj>
+         <obj type="patch/outlet f" uuid="d18a9a550bcaaebac94e25983bd0e27dbfd7233c" name="outlet_2" x="1204" y="602">
+            <params/>
+            <attribs/>
+         </obj>
+         <obj type="patch/inlet f" uuid="5c585d2dcd9c05631e345ac09626a22a639d7c13" name="filter 1" x="28" y="630">
+            <params/>
+            <attribs/>
+         </obj>
+         <obj type="mux/mux 2" uuid="3bcb8a666381ed18b8962eda50b1aa679136f618" name="mux_2" x="826" y="630">
+            <params/>
+            <attribs/>
+         </obj>
+         <obj type="patch/inlet f" uuid="5c585d2dcd9c05631e345ac09626a22a639d7c13" name="filter 2" x="28" y="672">
+            <params/>
+            <attribs/>
+         </obj>
+         <obj type="rand/pink oct" uuid="3620b367bdce1ff32d38b1013d599e26a3308e30" name="pink_1" x="154" y="672">
+            <params/>
+            <attribs>
+               <combo attributeName="octaves" selection="3"/>
+            </attribs>
+         </obj>
+         <obj type="math/+" uuid="44553fdc8628c67ab535845ed1be304ad6c9553b" name="+_5" x="1204" y="672">
+            <params/>
+            <attribs/>
+         </obj>
+         <obj type="patch/inlet f" uuid="5c585d2dcd9c05631e345ac09626a22a639d7c13" name="mod_string_mix" x="1036" y="686">
+            <params/>
+            <attribs/>
+         </obj>
+         <obj type="math/*" uuid="922423f2db9f222aa3e5ba095778288c446da47a" name="*_6" x="1148" y="686">
+            <params/>
+            <attribs/>
+         </obj>
+         <obj type="patch/inlet f" uuid="5c585d2dcd9c05631e345ac09626a22a639d7c13" name="reson_damp" x="28" y="714">
+            <params/>
+            <attribs/>
+         </obj>
+         <obj type="conv/bipolar2unipolar" uuid="f6f63d71053d572d3c795f83c7ec11dfbbce82dd" name="bipolar2unipolar_1" x="630" y="714">
+            <params/>
+            <attribs/>
+         </obj>
+         <obj type="math/==" uuid="d80966871d5328696da567bba03c3fa83060f08d" name="==_1" x="238" y="728">
+            <params/>
+            <attribs/>
+         </obj>
+         <obj type="rand/uniform f trig" uuid="223873125a332e3b8a82795a3eef167993adb086" name="uniform_1" x="322" y="728">
+            <params/>
+            <attribs/>
+         </obj>
+         <obj type="math/*" uuid="922423f2db9f222aa3e5ba095778288c446da47a" name="*_3" x="448" y="728">
+            <params/>
+            <attribs/>
+         </obj>
+         <obj type="lfo/sine" uuid="75f7330c26a13953215dccc3b7b9008545c9daa9" name="sine_1" x="518" y="728">
+            <params>
+               <frac32.s.map name="pitch" onParent="true" value="-64.0"/>
+            </params>
+            <attribs/>
+         </obj>
+         <obj type="ctrl/dial p" uuid="cc5d2846c3d50e425f450c4b9851371b54f4d674" name="dial_1" x="154" y="742">
+            <params>
+               <frac32.u.map name="value" value="32.0"/>
+            </params>
+            <attribs/>
+         </obj>
+         <obj type="patch/inlet f" uuid="5c585d2dcd9c05631e345ac09626a22a639d7c13" name="reson_mix" x="28" y="756">
+            <params/>
+            <attribs/>
+         </obj>
+         <obj type="patch/inlet f" uuid="5c585d2dcd9c05631e345ac09626a22a639d7c13" name="lfo_rand" x="70" y="826">
+            <params/>
+            <attribs/>
+         </obj>
+         <obj type="patch/inlet b" uuid="3b0d3eacb5bb978cb05d1372aa2714d5a4790844" name="loop_onoff" x="28" y="882">
+            <params/>
+            <attribs/>
+         </obj>
+         <nets>
+            <net>
+               <source obj="keyb_1" outlet="gate"/>
+               <dest obj="adsr_1" inlet="gate"/>
+               <dest obj="ad_1" inlet="trig"/>
+            </net>
+            <net>
+               <source obj="adsr_1" outlet="env"/>
+               <dest obj="vca_1" inlet="v"/>
+               <dest obj="*_1" inlet="a"/>
+               <dest obj="*_2" inlet="a"/>
+            </net>
+            <net>
+               <source obj="envd" outlet="inlet"/>
+               <dest obj="adsr_1" inlet="d"/>
+            </net>
+            <net>
+               <source obj="enva" outlet="inlet"/>
+               <dest obj="adsr_1" inlet="a"/>
+            </net>
+            <net>
+               <source obj="multimode_1" outlet="hp"/>
+               <dest obj="gain_2" inlet="in"/>
+            </net>
+            <net>
+               <source obj="multimode_1" outlet="lp"/>
+               <dest obj="+_1" inlet="in2"/>
+            </net>
+            <net>
+               <source obj="+_3" outlet="out"/>
+               <dest obj="+_9" inlet="in1"/>
+            </net>
+            <net>
+               <source obj="gain_2" outlet="out"/>
+               <dest obj="multimode_2" inlet="in"/>
+            </net>
+            <net>
+               <source obj="+_6" outlet="out"/>
+               <dest obj="+_2" inlet="in1"/>
+            </net>
+            <net>
+               <source obj="filter 1" outlet="inlet"/>
+               <dest obj="+_6" inlet="in1"/>
+            </net>
+            <net>
+               <source obj="+_7" outlet="out"/>
+               <dest obj="+_3" inlet="in2"/>
+            </net>
+            <net>
+               <source obj="filter 2" outlet="inlet"/>
+               <dest obj="+_7" inlet="in1"/>
+            </net>
+            <net>
+               <source obj="*_1" outlet="result"/>
+               <dest obj="+_7" inlet="in2"/>
+            </net>
+            <net>
+               <source obj="*_2" outlet="result"/>
+               <dest obj="+_6" inlet="in2"/>
+            </net>
+            <net>
+               <source obj="filter 1_env" outlet="inlet"/>
+               <dest obj="*_2" inlet="b"/>
+            </net>
+            <net>
+               <source obj="filter 2_env_" outlet="inlet"/>
+               <dest obj="*_1" inlet="b"/>
+            </net>
+            <net>
+               <source obj="keyb_1" outlet="note"/>
+               <dest obj="+_2" inlet="in2"/>
+               <dest obj="+_3" inlet="in1"/>
+               <dest obj="square_1" inlet="pitch"/>
+               <dest obj="supersquare_1" inlet="pitch"/>
+               <dest obj="supersaw_1" inlet="pitch"/>
+               <dest obj="KarplusStrong_1" inlet="pitch"/>
+            </net>
+            <net>
+               <source obj="+_1" outlet="out"/>
+               <dest obj="xfade_1" inlet="i1"/>
+               <dest obj="KarplusStrong_1" inlet="in"/>
+            </net>
+            <net>
+               <source obj="*_4" outlet="result"/>
+               <dest obj="+_8" inlet="in2"/>
+            </net>
+            <net>
+               <source obj="+_2" outlet="out"/>
+               <dest obj="+_8" inlet="in1"/>
+            </net>
+            <net>
+               <source obj="+_8" outlet="out"/>
+               <dest obj="multimode_1" inlet="pitch"/>
+            </net>
+            <net>
+               <source obj="mod_f1" outlet="inlet"/>
+               <dest obj="*_4" inlet="b"/>
+            </net>
+            <net>
+               <source obj="*_5" outlet="result"/>
+               <dest obj="+_9" inlet="in2"/>
+            </net>
+            <net>
+               <source obj="mod_f2" outlet="inlet"/>
+               <dest obj="*_5" inlet="b"/>
+            </net>
+            <net>
+               <source obj="envr_" outlet="inlet"/>
+               <dest obj="adsr_1" inlet="r"/>
+            </net>
+            <net>
+               <source obj="envs_" outlet="inlet"/>
+               <dest obj="adsr_1" inlet="s"/>
+            </net>
+            <net>
+               <source obj="vca_1" outlet="o"/>
+               <dest obj="gain_dist" inlet="in"/>
+               <dest obj="xfade_2" inlet="i1"/>
+            </net>
+            <net>
+               <source obj="gain_dist" outlet="out"/>
+               <dest obj="obj_1" inlet="in"/>
+            </net>
+            <net>
+               <source obj="xfade_2" outlet="o"/>
+               <dest obj="*_8" inlet="b"/>
+            </net>
+            <net>
+               <source obj="obj_1" outlet="outlet_1"/>
+               <dest obj="xfade_2" inlet="i2"/>
+            </net>
+            <net>
+               <source obj="dist_mix" outlet="inlet"/>
+               <dest obj="xfade_2" inlet="c"/>
+               <dest obj="window_1" inlet="phase"/>
+            </net>
+            <net>
+               <source obj="osc_mix" outlet="inlet"/>
+               <dest obj="xfade_3" inlet="c"/>
+            </net>
+            <net>
+               <source obj="supersaw_1" outlet="wave"/>
+               <dest obj="xfade_3" inlet="i1"/>
+            </net>
+            <net>
+               <source obj="button" outlet="inlet"/>
+               <dest obj="mux_1" inlet="s"/>
+            </net>
+            <net>
+               <source obj="osc_timbre" outlet="inlet"/>
+               <dest obj="xfade_4" inlet="c"/>
+               <dest obj="*c_1" inlet="in"/>
+            </net>
+            <net>
+               <source obj="square_1" outlet="wave"/>
+               <dest obj="xfade_4" inlet="i1"/>
+            </net>
+            <net>
+               <source obj="xfade_4" outlet="o"/>
+               <dest obj="xfade_3" inlet="i2"/>
+            </net>
+            <net>
+               <source obj="supersquare_1" outlet="wave"/>
+               <dest obj="xfade_4" inlet="i2"/>
+            </net>
+            <net>
+               <source obj="*c_1" outlet="out"/>
+               <dest obj="supersaw_1" inlet="detune"/>
+            </net>
+            <net>
+               <source obj="xfade_3" outlet="o"/>
+               <dest obj="mux_1" inlet="i1"/>
+               <dest obj="inf_1" inlet="in"/>
+            </net>
+            <net>
+               <source obj="inf_1" outlet="out"/>
+               <dest obj="mux_1" inlet="i2"/>
+            </net>
+            <net>
+               <source obj="mux_2" outlet="o"/>
+               <dest obj="outlet_2" inlet="outlet"/>
+               <dest obj="*_4" inlet="a"/>
+               <dest obj="*_5" inlet="a"/>
+               <dest obj="*_6" inlet="b"/>
+               <dest obj="*_7" inlet="b"/>
+            </net>
+            <net>
+               <source obj="reso1" outlet="inlet"/>
+               <dest obj="+_10" inlet="in1"/>
+            </net>
+            <net>
+               <source obj="xfade_1" outlet="o"/>
+               <dest obj="vca_1" inlet="a"/>
+            </net>
+            <net>
+               <source obj="+_9" outlet="out"/>
+               <dest obj="multimode_2" inlet="pitch"/>
+            </net>
+            <net>
+               <source obj="reso2_" outlet="inlet"/>
+               <dest obj="multimode_2" inlet="reso"/>
+            </net>
+            <net>
+               <source obj="multimode_2" outlet="lp"/>
+               <dest obj="+_1" inlet="in1"/>
+            </net>
+            <net>
+               <source obj="KarplusStrong_1" outlet="out"/>
+               <dest obj="gain_reso" inlet="in"/>
+            </net>
+            <net>
+               <source obj="+_5" outlet="out"/>
+               <dest obj="xfade_1" inlet="c"/>
+            </net>
+            <net>
+               <source obj="reson_mix" outlet="inlet"/>
+               <dest obj="+_5" inlet="in1"/>
+            </net>
+            <net>
+               <source obj="*_6" outlet="result"/>
+               <dest obj="+_5" inlet="in2"/>
+            </net>
+            <net>
+               <source obj="mod_string_mix" outlet="inlet"/>
+               <dest obj="*_6" inlet="a"/>
+            </net>
+            <net>
+               <source obj="reson_damp" outlet="inlet"/>
+               <dest obj="KarplusStrong_1" inlet="damp"/>
+            </net>
+            <net>
+               <source obj="mux_1" outlet="o"/>
+               <dest obj="gain_hpf" inlet="in"/>
+            </net>
+            <net>
+               <source obj="gain_hpf" outlet="out"/>
+               <dest obj="multimode_1" inlet="in"/>
+            </net>
+            <net>
+               <source obj="gain_reso" outlet="out"/>
+               <dest obj="xfade_1" inlet="i2"/>
+            </net>
+            <net>
+               <source obj="loop_onoff" outlet="inlet"/>
+               <dest obj="mux_2" inlet="s"/>
+            </net>
+            <net>
+               <source obj="sine_1" outlet="wave"/>
+               <dest obj="bipolar2unipolar_1" inlet="i"/>
+            </net>
+            <net>
+               <source obj="*_7" outlet="result"/>
+               <dest obj="+_10" inlet="in2"/>
+            </net>
+            <net>
+               <source obj="+_10" outlet="out"/>
+               <dest obj="multimode_1" inlet="reso"/>
+            </net>
+            <net>
+               <source obj="mod_reso" outlet="inlet"/>
+               <dest obj="*_7" inlet="a"/>
+            </net>
+            <net>
+               <source obj="*_3" outlet="result"/>
+               <dest obj="sine_1" inlet="pitch"/>
+            </net>
+            <net>
+               <source obj="dial_1" outlet="out"/>
+               <dest obj="==_1" inlet="in2"/>
+            </net>
+            <net>
+               <source obj="pink_1" outlet="out"/>
+               <dest obj="==_1" inlet="in1"/>
+            </net>
+            <net>
+               <source obj="uniform_1" outlet="rand"/>
+               <dest obj="*_3" inlet="a"/>
+            </net>
+            <net>
+               <source obj="==_1" outlet="out"/>
+               <dest obj="uniform_1" inlet="trig"/>
+            </net>
+            <net>
+               <source obj="lfo_rand" outlet="inlet"/>
+               <dest obj="*_3" inlet="b"/>
+            </net>
+            <net>
+               <source obj="ad_1" outlet="env"/>
+               <dest obj="mux_2" inlet="i1"/>
+            </net>
+            <net>
+               <source obj="bipolar2unipolar_1" outlet="o"/>
+               <dest obj="mux_2" inlet="i2"/>
+            </net>
+            <net>
+               <source obj="*c_2" outlet="out"/>
+               <dest obj="+c_1" inlet="in"/>
+            </net>
+            <net>
+               <source obj="+c_1" outlet="out"/>
+               <dest obj="*_8" inlet="a"/>
+            </net>
+            <net>
+               <source obj="window_1" outlet="win"/>
+               <dest obj="*c_2" inlet="in"/>
+            </net>
+            <net>
+               <source obj="*_8" outlet="result"/>
+               <dest obj="outlet_1" inlet="outlet"/>
+            </net>
+         </nets>
+         <settings>
+            <subpatchmode>polyphonic</subpatchmode>
+            <MidiChannel>10</MidiChannel>
+            <HasMidiChannelSelector>true</HasMidiChannelSelector>
+            <NModulationSources>0</NModulationSources>
+            <NModulationTargetsPerSource>0</NModulationTargetsPerSource>
+         </settings>
+         <notes><![CDATA[]]></notes>
+         <windowPos>
+            <x>-7</x>
+            <y>-7</y>
+            <width>2208</width>
+            <height>1200</height>
+         </windowPos>
+      </subpatch>
+   </patcher>
+   <obj type="mux/mux 3" uuid="2fca09a96baf24d8c1e4d8ce0adc5f29452021bc" name="mux_11" x="1708" y="742">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="TSG/ctrl/MultiPot 3" uuid="c49c906e-b059-469e-9dde-c04e635b3259" name="MultiPot_10" x="392" y="756">
+      <params/>
+      <attribs>
+         <combo attributeName="deadbandSize" selection="large"/>
+         <combo attributeName="mode" selection="overwrite"/>
+      </attribs>
+   </obj>
+   <obj type="ksoloti/gills/led" uuid="d4980ecb-5e48-42a3-bdcf-2ddfb1f5c712" name="led_2" x="1792" y="756">
+      <params/>
+      <attribs>
+         <combo attributeName="led" selection="4 red"/>
+      </attribs>
+   </obj>
+   <obj type="math/*c" uuid="7d5ef61c3bcd571ee6bbd8437ef3612125dfb225" name="width*C" x="1904" y="756">
+      <params>
+         <frac32.u.map name="amp" value="51.5"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="math/+" uuid="44553fdc8628c67ab535845ed1be304ad6c9553b" name="+_12" x="2030" y="756">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="ctrl/dial p" uuid="cc5d2846c3d50e425f450c4b9851371b54f4d674" name="dial_1" x="42" y="798">
+      <params>
+         <frac32.u.map name="value" value="25.5"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="math/*c" uuid="7d5ef61c3bcd571ee6bbd8437ef3612125dfb225" name="base8c" x="1904" y="840">
+      <params>
+         <frac32.u.map name="amp" value="38.0"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="ctrl/dial p" uuid="cc5d2846c3d50e425f450c4b9851371b54f4d674" name="dial_5" x="42" y="882">
+      <params>
+         <frac32.u.map name="value" value="46.0"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="mux/mux 3" uuid="9340a203d87e774443faa0d744b56e0967b23125" name="mux_green" x="280" y="938">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="mux/mux 3" uuid="9340a203d87e774443faa0d744b56e0967b23125" name="mux_red" x="434" y="952">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="ksoloti/gills/led pwm 2" uuid="4baa217b-6fb8-4fb5-b1ad-f7d7c71c6b6b" name="led_1" x="504" y="952">
+      <params/>
+      <attribs>
+         <combo attributeName="led" selection="3 blue | red"/>
+      </attribs>
+   </obj>
+   <obj type="ctrl/dial p" uuid="cc5d2846c3d50e425f450c4b9851371b54f4d674" name="dial_4" x="42" y="966">
+      <params>
+         <frac32.u.map name="value" value="64.0"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="ksoloti/disp/scope 128 b zoom" uuid="698870c8-15f5-4fdc-adce-0e8de7eda6ef" name="scope_1" x="2954" y="980">
+      <params/>
+      <attribs>
+         <combo attributeName="magnify" selection="x1"/>
+         <combo attributeName="timebase" selection="/2"/>
+      </attribs>
+   </obj>
+   <obj type="jaffa/string/c2" uuid="204560dc-d001-446b-9f87-dd68f5ebffd2" name="c2_6" x="2156" y="1008">
+      <params/>
+      <attribs>
+         <table attributeName="1" table="osc distort: off"/>
+         <table attributeName="2" table="osc distort: on"/>
+      </attribs>
+   </obj>
+   <obj type="mux/mux 2" uuid="777491e645978e331fcbab6610f52c1aaa5ade0e" name="mux_12" x="2296" y="1008">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="jaffa/string/c2" uuid="204560dc-d001-446b-9f87-dd68f5ebffd2" name="c2_5" x="2380" y="1022">
+      <params/>
+      <attribs>
+         <table attributeName="1" table="mod env loop: off"/>
+         <table attributeName="2" table="mod env loop: on"/>
+      </attribs>
+   </obj>
+   <obj type="mux/mux 2" uuid="777491e645978e331fcbab6610f52c1aaa5ade0e" name="mux_9" x="2520" y="1022">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="mux/mux 3" uuid="b371527101f081f3715997908b7ae6f90840faad" name="mux_10" x="2604" y="1022">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="mux/mux 2" uuid="777491e645978e331fcbab6610f52c1aaa5ade0e" name="mux_7" x="2702" y="1022">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="jaffa/string/c2" uuid="204560dc-d001-446b-9f87-dd68f5ebffd2" name="c2_4" x="2380" y="1134">
+      <params/>
+      <attribs>
+         <table attributeName="1" table="ping pong: off"/>
+         <table attributeName="2" table="ping pong: on"/>
+      </attribs>
+   </obj>
+   <obj type="mux/mux 2" uuid="777491e645978e331fcbab6610f52c1aaa5ade0e" name="mux_8" x="2520" y="1134">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="ksoloti/gills/display" uuid="0c083e83-0280-4cf2-b747-8a00859bb904" name="display_1" x="2968" y="1218">
+      <params/>
+      <attribs>
+         <combo attributeName="useScope" selection="on"/>
+         <objref attributeName="scope" obj="scope_1"/>
+         <combo attributeName="narrowFont" selection="on"/>
+      </attribs>
+   </obj>
+   <obj type="logic/change" uuid="42071f8cb4cfe1f35956c0bd5a313a57e049bec4" name="change_1" x="2226" y="1260">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="timer/pulselength" uuid="ca68725237d8ba8407773340801660a9fd9b0dba" name="pulselength_1" x="2310" y="1260">
+      <params>
+         <frac32.s.map name="delay" value="38.0"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="ctrl/i" uuid="a3786816db6ea5bc6ac4193a5cccdb2c83b83496" name="i_1" x="2898" y="1274">
+      <params>
+         <int32 name="value" value="1"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="ksoloti/gills/led pwm" uuid="e6534d2d-0815-4b4a-8351-99987f214822" name="led_3" x="2926" y="1442">
+      <params/>
+      <attribs>
+         <combo attributeName="led" selection="1"/>
+      </attribs>
+   </obj>
+   <nets>
+      <net>
+         <source obj="pot_1" outlet="outA"/>
+         <dest obj="MultiPot_1" inlet="poti"/>
+         <dest obj="auto_muxer_1" inlet="i1"/>
+      </net>
+      <net>
+         <source obj="button_1" outlet="out"/>
+         <dest obj="counter_1" inlet="trig"/>
+      </net>
+      <net>
+         <source obj="counter_1" outlet="o"/>
+         <dest obj="MultiPot_1" inlet="layer"/>
+         <dest obj="MultiPot_2" inlet="layer"/>
+         <dest obj="MultiPot_3" inlet="layer"/>
+         <dest obj="MultiPot_4" inlet="layer"/>
+         <dest obj="MultiPot_5" inlet="layer"/>
+         <dest obj="MultiPot_9" inlet="layer"/>
+         <dest obj="MultiPot_10" inlet="layer"/>
+         <dest obj="MultiPot_8" inlet="layer"/>
+         <dest obj="MultiPot_7" inlet="layer"/>
+         <dest obj="MultiPot_6" inlet="layer"/>
+         <dest obj="mux_red" inlet="s"/>
+         <dest obj="mux_green" inlet="s"/>
+         <dest obj="mux_3" inlet="s"/>
+         <dest obj="mux_10" inlet="s"/>
+         <dest obj="MultiPot_11" inlet="layer"/>
+         <dest obj="mux_11" inlet="s"/>
+      </net>
+      <net>
+         <source obj="pot_1" outlet="outB"/>
+         <dest obj="MultiPot_2" inlet="poti"/>
+         <dest obj="auto_muxer_1" inlet="i2"/>
+      </net>
+      <net>
+         <source obj="pot_2" outlet="outA"/>
+         <dest obj="MultiPot_3" inlet="poti"/>
+         <dest obj="auto_muxer_1" inlet="i3"/>
+      </net>
+      <net>
+         <source obj="pot_2" outlet="outB"/>
+         <dest obj="MultiPot_4" inlet="poti"/>
+         <dest obj="auto_muxer_1" inlet="i4"/>
+      </net>
+      <net>
+         <source obj="pot_3" outlet="outA"/>
+         <dest obj="MultiPot_5" inlet="poti"/>
+         <dest obj="auto_muxer_1" inlet="i5"/>
+      </net>
+      <net>
+         <source obj="pot_3" outlet="outB"/>
+         <dest obj="MultiPot_6" inlet="poti"/>
+         <dest obj="auto_muxer_1" inlet="i6"/>
+      </net>
+      <net>
+         <source obj="pot_4" outlet="outA"/>
+         <dest obj="MultiPot_7" inlet="poti"/>
+         <dest obj="auto_muxer_1" inlet="i7"/>
+      </net>
+      <net>
+         <source obj="pot_4" outlet="outB"/>
+         <dest obj="MultiPot_8" inlet="poti"/>
+         <dest obj="auto_muxer_1" inlet="i8"/>
+      </net>
+      <net>
+         <source obj="pot_5" outlet="outA"/>
+         <dest obj="MultiPot_9" inlet="poti"/>
+         <dest obj="auto_muxer_1" inlet="i9"/>
+      </net>
+      <net>
+         <source obj="pot_5" outlet="outB"/>
+         <dest obj="MultiPot_10" inlet="poti"/>
+         <dest obj="auto_muxer_1" inlet="i10"/>
+      </net>
+      <net>
+         <source obj="obj_2" outlet="R"/>
+         <dest obj="xfade3_1" inlet="b1"/>
+         <dest obj="+_2" inlet="in1"/>
+      </net>
+      <net>
+         <source obj="obj_2" outlet="L"/>
+         <dest obj="xfade3_1" inlet="a1"/>
+         <dest obj="+_1" inlet="in1"/>
+      </net>
+      <net>
+         <source obj="MultiPot_1" outlet="out0"/>
+         <dest obj="patcher_1" inlet="osc_timbre"/>
+      </net>
+      <net>
+         <source obj="auto_muxer_1" outlet="index"/>
+         <dest obj="mux_1" inlet="s"/>
+         <dest obj="mux_2" inlet="s"/>
+         <dest obj="mux_4" inlet="s"/>
+      </net>
+      <net>
+         <source obj="c8_1" outlet="3"/>
+         <dest obj="mux_1" inlet="i2"/>
+      </net>
+      <net>
+         <source obj="MultiPot_8" outlet="out0"/>
+         <dest obj="*c_3" inlet="in"/>
+      </net>
+      <net>
+         <source obj="MultiPot_3" outlet="out0"/>
+         <dest obj="*c_2" inlet="in"/>
+      </net>
+      <net>
+         <source obj="MultiPot_2" outlet="out0"/>
+         <dest obj="patcher_1" inlet="filter 1"/>
+      </net>
+      <net>
+         <source obj="MultiPot_7" outlet="out0"/>
+         <dest obj="patcher_1" inlet="filter 2"/>
+      </net>
+      <net>
+         <source obj="MultiPot_4" outlet="out0"/>
+         <dest obj="patcher_1" inlet="filter 1_env"/>
+      </net>
+      <net>
+         <source obj="MultiPot_9" outlet="out0"/>
+         <dest obj="patcher_1" inlet="filter 2_env_"/>
+      </net>
+      <net>
+         <source obj="auto_muxer_1" outlet="out"/>
+         <dest obj="prefix_1" inlet="index"/>
+      </net>
+      <net>
+         <source obj="c8_1" outlet="1"/>
+         <dest obj="mux_1" inlet="i0"/>
+      </net>
+      <net>
+         <source obj="c8_1" outlet="2"/>
+         <dest obj="mux_1" inlet="i1"/>
+      </net>
+      <net>
+         <source obj="c8_1" outlet="4"/>
+         <dest obj="mux_1" inlet="i3"/>
+      </net>
+      <net>
+         <source obj="c8_1" outlet="5"/>
+         <dest obj="mux_1" inlet="i4"/>
+      </net>
+      <net>
+         <source obj="c8_1" outlet="6"/>
+         <dest obj="mux_1" inlet="i5"/>
+      </net>
+      <net>
+         <source obj="c8_1" outlet="7"/>
+         <dest obj="mux_1" inlet="i6"/>
+      </net>
+      <net>
+         <source obj="c8_1" outlet="8"/>
+         <dest obj="mux_1" inlet="i7"/>
+      </net>
+      <net>
+         <source obj="c2_1" outlet="1"/>
+         <dest obj="mux_1" inlet="i8"/>
+      </net>
+      <net>
+         <source obj="c2_1" outlet="2"/>
+         <dest obj="mux_1" inlet="i9"/>
+      </net>
+      <net>
+         <source obj="prefix_1" outlet="out"/>
+         <dest obj="concat2_1" inlet="str2"/>
+      </net>
+      <net>
+         <source obj="c8_2" outlet="3"/>
+         <dest obj="mux_13" inlet="i1"/>
+      </net>
+      <net>
+         <source obj="c8_2" outlet="1"/>
+         <dest obj="mux_2" inlet="i0"/>
+      </net>
+      <net>
+         <source obj="c8_2" outlet="2"/>
+         <dest obj="mux_2" inlet="i1"/>
+      </net>
+      <net>
+         <source obj="c8_2" outlet="4"/>
+         <dest obj="mux_2" inlet="i3"/>
+      </net>
+      <net>
+         <source obj="c8_2" outlet="5"/>
+         <dest obj="mux_2" inlet="i4"/>
+      </net>
+      <net>
+         <source obj="c8_2" outlet="6"/>
+         <dest obj="mux_2" inlet="i5"/>
+      </net>
+      <net>
+         <source obj="c8_2" outlet="7"/>
+         <dest obj="mux_2" inlet="i6"/>
+      </net>
+      <net>
+         <source obj="c8_2" outlet="8"/>
+         <dest obj="mux_14" inlet="i1"/>
+      </net>
+      <net>
+         <source obj="c2_2" outlet="1"/>
+         <dest obj="mux_2" inlet="i8"/>
+      </net>
+      <net>
+         <source obj="c2_2" outlet="2"/>
+         <dest obj="mux_2" inlet="i9"/>
+      </net>
+      <net>
+         <source obj="mux_green" outlet="o"/>
+         <dest obj="led_1" inlet="inA"/>
+      </net>
+      <net>
+         <source obj="mux_red" outlet="o"/>
+         <dest obj="led_1" inlet="inB"/>
+      </net>
+      <net>
+         <source obj="dial_4" outlet="out"/>
+         <dest obj="mux_green" inlet="i1"/>
+         <dest obj="mux_green" inlet="i2"/>
+         <dest obj="mux_red" inlet="i0"/>
+         <dest obj="MultiPot_6" inlet="set1"/>
+         <dest obj="mux_red" inlet="i1"/>
+      </net>
+      <net>
+         <source obj="mux_3" outlet="o"/>
+         <dest obj="concat2_1" inlet="str1"/>
+      </net>
+      <net>
+         <source obj="mux_1" outlet="o"/>
+         <dest obj="mux_3" inlet="i0"/>
+      </net>
+      <net>
+         <source obj="mux_2" outlet="o"/>
+         <dest obj="mux_3" inlet="i1"/>
+      </net>
+      <net>
+         <source obj="c8_3" outlet="3"/>
+         <dest obj="mux_4" inlet="i2"/>
+      </net>
+      <net>
+         <source obj="c8_3" outlet="1"/>
+         <dest obj="mux_4" inlet="i0"/>
+      </net>
+      <net>
+         <source obj="c8_3" outlet="2"/>
+         <dest obj="mux_4" inlet="i1"/>
+      </net>
+      <net>
+         <source obj="c8_3" outlet="4"/>
+         <dest obj="mux_4" inlet="i3"/>
+      </net>
+      <net>
+         <source obj="c8_3" outlet="5"/>
+         <dest obj="mux_4" inlet="i4"/>
+      </net>
+      <net>
+         <source obj="c8_3" outlet="6"/>
+         <dest obj="mux_4" inlet="i5"/>
+      </net>
+      <net>
+         <source obj="c8_3" outlet="7"/>
+         <dest obj="mux_4" inlet="i6"/>
+      </net>
+      <net>
+         <source obj="c8_3" outlet="8"/>
+         <dest obj="mux_4" inlet="i7"/>
+      </net>
+      <net>
+         <source obj="c2_3" outlet="1"/>
+         <dest obj="mux_4" inlet="i8"/>
+      </net>
+      <net>
+         <source obj="c2_3" outlet="2"/>
+         <dest obj="mux_4" inlet="i9"/>
+      </net>
+      <net>
+         <source obj="mux_4" outlet="o"/>
+         <dest obj="mux_3" inlet="i2"/>
+      </net>
+      <net>
+         <source obj="read_1" outlet="out"/>
+         <dest obj="vca_1" inlet="a"/>
+         <dest obj="xfade3_1" inlet="a2"/>
+      </net>
+      <net>
+         <source obj="read_2" outlet="out"/>
+         <dest obj="vca_2" inlet="a"/>
+         <dest obj="xfade3_1" inlet="b2"/>
+      </net>
+      <net>
+         <source obj="vca_1" outlet="o"/>
+         <dest obj="+_1" inlet="in2"/>
+      </net>
+      <net>
+         <source obj="vca_2" outlet="o"/>
+         <dest obj="+_2" inlet="in2"/>
+      </net>
+      <net>
+         <source obj="expCurveK_1" outlet="out"/>
+         <dest obj="vca_1" inlet="v"/>
+         <dest obj="vca_2" inlet="v"/>
+      </net>
+      <net>
+         <source obj="concat2_1" outlet="out"/>
+         <dest obj="mux_7" inlet="i1"/>
+      </net>
+      <net>
+         <source obj="MultiPot_1" outlet="out2"/>
+         <dest obj="dist_gain" inlet="v"/>
+      </net>
+      <net>
+         <source obj="MultiPot_2" outlet="out2"/>
+         <dest obj="chor_time" inlet="v"/>
+      </net>
+      <net>
+         <source obj="MultiPot_7" outlet="out2"/>
+         <dest obj="chor_amount" inlet="v"/>
+      </net>
+      <net>
+         <source obj="unipolar2bipolar_1" outlet="o"/>
+         <dest obj="patcher_1" inlet="enva"/>
+      </net>
+      <net>
+         <source obj="unipolar2bipolar_2" outlet="o"/>
+         <dest obj="patcher_1" inlet="envd"/>
+      </net>
+      <net>
+         <source obj="MultiPot_1" outlet="out1"/>
+         <dest obj="unipolar2bipolar_1" inlet="i"/>
+      </net>
+      <net>
+         <source obj="MultiPot_2" outlet="out1"/>
+         <dest obj="unipolar2bipolar_2" inlet="i"/>
+      </net>
+      <net>
+         <source obj="mux_6" outlet="o"/>
+         <dest obj="hp1_2" inlet="in"/>
+      </net>
+      <net>
+         <source obj="+_2" outlet="out"/>
+         <dest obj="mux_6" inlet="i1"/>
+         <dest obj="mux_5" inlet="i2"/>
+      </net>
+      <net>
+         <source obj="+_1" outlet="out"/>
+         <dest obj="mux_5" inlet="i1"/>
+         <dest obj="mux_6" inlet="i2"/>
+      </net>
+      <net>
+         <source obj="toggle_1" outlet="o"/>
+         <dest obj="mux_5" inlet="s"/>
+         <dest obj="mux_6" inlet="s"/>
+         <dest obj="mux_8" inlet="s"/>
+         <dest obj="mux_11" inlet="i2"/>
+      </net>
+      <net>
+         <source obj="dial_1" outlet="out"/>
+         <dest obj="MultiPot_7" inlet="set1"/>
+         <dest obj="MultiPot_2" inlet="set1"/>
+         <dest obj="automux_1" inlet="i1"/>
+         <dest obj="MultiPot_3" inlet="set2"/>
+         <dest obj="MultiPot_4" inlet="set2"/>
+         <dest obj="MultiPot_10" inlet="set2"/>
+         <dest obj="MultiPot_7" inlet="set0"/>
+         <dest obj="MultiPot_2" inlet="set0"/>
+      </net>
+      <net>
+         <source obj="dial_2" outlet="out"/>
+         <dest obj="MultiPot_6" inlet="set2"/>
+         <dest obj="MultiPot_7" inlet="set2"/>
+         <dest obj="MultiPot_8" inlet="set2"/>
+         <dest obj="MultiPot_9" inlet="set2"/>
+         <dest obj="mux_green" inlet="i0"/>
+         <dest obj="mux_red" inlet="i2"/>
+         <dest obj="MultiPot_1" inlet="set0"/>
+         <dest obj="MultiPot_6" inlet="set0"/>
+         <dest obj="MultiPot_3" inlet="set1"/>
+         <dest obj="MultiPot_4" inlet="set1"/>
+         <dest obj="MultiPot_5" inlet="set1"/>
+         <dest obj="MultiPot_10" inlet="set1"/>
+         <dest obj="MultiPot_9" inlet="set1"/>
+         <dest obj="MultiPot_3" inlet="set0"/>
+         <dest obj="MultiPot_8" inlet="set0"/>
+         <dest obj="MultiPot_4" inlet="set0"/>
+         <dest obj="MultiPot_9" inlet="set0"/>
+         <dest obj="MultiPot_5" inlet="set0"/>
+         <dest obj="MultiPot_10" inlet="set0"/>
+         <dest obj="MultiPot_1" inlet="set1"/>
+      </net>
+      <net>
+         <source obj="automux_1" outlet="o"/>
+         <dest obj="patcher_1" inlet="envs_"/>
+      </net>
+      <net>
+         <source obj="MultiPot_6" outlet="out1"/>
+         <dest obj="automux_1" inlet="i0"/>
+      </net>
+      <net>
+         <source obj="MultiPot_4" outlet="out1"/>
+         <dest obj="patcher_1" inlet="mod_f1"/>
+      </net>
+      <net>
+         <source obj="MultiPot_9" outlet="out1"/>
+         <dest obj="patcher_1" inlet="mod_f2"/>
+      </net>
+      <net>
+         <source obj="button_3" outlet="out"/>
+         <dest obj="MultiPot_11" inlet="poti"/>
+         <dest obj="change_1" inlet="in"/>
+      </net>
+      <net>
+         <source obj="MultiPot_6" outlet="out2"/>
+         <dest obj="patcher_1" inlet="dist_mix"/>
+      </net>
+      <net>
+         <source obj="MultiPot_5" outlet="out1"/>
+         <dest obj="patcher_1" inlet="mod_string_mix"/>
+      </net>
+      <net>
+         <source obj="dial_5" outlet="out"/>
+         <dest obj="MultiPot_8" inlet="set1"/>
+         <dest obj="MultiPot_5" inlet="set2"/>
+      </net>
+      <net>
+         <source obj="patcher_1" outlet="outlet_2"/>
+         <dest obj="led_3" inlet="in"/>
+      </net>
+      <net>
+         <source obj="MultiPot_10" outlet="out1"/>
+         <dest obj="patcher_1" inlet="mod_reso"/>
+      </net>
+      <net>
+         <source obj="i_1" outlet="out"/>
+         <dest obj="display_1" inlet="mode"/>
+      </net>
+      <net>
+         <source obj="mux_7" outlet="o"/>
+         <dest obj="display_1" inlet="line1"/>
+      </net>
+      <net>
+         <source obj="change_1" outlet="trig"/>
+         <dest obj="pulselength_1" inlet="trig"/>
+      </net>
+      <net>
+         <source obj="pulselength_1" outlet="pulse"/>
+         <dest obj="mux_7" inlet="s"/>
+      </net>
+      <net>
+         <source obj="c2_4" outlet="1"/>
+         <dest obj="mux_8" inlet="i1"/>
+      </net>
+      <net>
+         <source obj="c2_4" outlet="2"/>
+         <dest obj="mux_8" inlet="i2"/>
+      </net>
+      <net>
+         <source obj="mux_8" outlet="o"/>
+         <dest obj="mux_10" inlet="i2"/>
+      </net>
+      <net>
+         <source obj="c2_5" outlet="1"/>
+         <dest obj="mux_9" inlet="i1"/>
+      </net>
+      <net>
+         <source obj="c2_5" outlet="2"/>
+         <dest obj="mux_9" inlet="i2"/>
+      </net>
+      <net>
+         <source obj="mux_9" outlet="o"/>
+         <dest obj="mux_10" inlet="i1"/>
+      </net>
+      <net>
+         <source obj="mux_10" outlet="o"/>
+         <dest obj="mux_7" inlet="i2"/>
+      </net>
+      <net>
+         <source obj="MultiPot_11" outlet="out1"/>
+         <dest obj="toggle_2" inlet="trig"/>
+      </net>
+      <net>
+         <source obj="toggle_2" outlet="o"/>
+         <dest obj="mux_9" inlet="s"/>
+         <dest obj="mux_11" inlet="i1"/>
+         <dest obj="mux_14" inlet="s"/>
+         <dest obj="mux_13" inlet="s"/>
+         <dest obj="patcher_1" inlet="loop_onoff"/>
+      </net>
+      <net>
+         <source obj="MultiPot_11" outlet="out2"/>
+         <dest obj="toggle_1" inlet="trig"/>
+      </net>
+      <net>
+         <source obj="mux_11" outlet="o"/>
+         <dest obj="led_2" inlet="in"/>
+      </net>
+      <net>
+         <source obj="MultiPot_11" outlet="out0"/>
+         <dest obj="toggle_3" inlet="trig"/>
+      </net>
+      <net>
+         <source obj="toggle_3" outlet="o"/>
+         <dest obj="mux_11" inlet="i0"/>
+         <dest obj="mux_12" inlet="s"/>
+         <dest obj="patcher_1" inlet="button"/>
+      </net>
+      <net>
+         <source obj="c2_6" outlet="1"/>
+         <dest obj="mux_12" inlet="i1"/>
+      </net>
+      <net>
+         <source obj="c2_6" outlet="2"/>
+         <dest obj="mux_12" inlet="i2"/>
+      </net>
+      <net>
+         <source obj="mux_12" outlet="o"/>
+         <dest obj="mux_10" inlet="i0"/>
+      </net>
+      <net>
+         <source obj="loadbang_1" outlet="pulse"/>
+         <dest obj="pulselength_2" inlet="trig"/>
+      </net>
+      <net>
+         <source obj="pulselength_2" outlet="pulse"/>
+         <dest obj="MultiPot_4" inlet="load"/>
+         <dest obj="MultiPot_3" inlet="load"/>
+         <dest obj="MultiPot_2" inlet="load"/>
+         <dest obj="MultiPot_1" inlet="load"/>
+         <dest obj="MultiPot_6" inlet="load"/>
+         <dest obj="MultiPot_7" inlet="load"/>
+         <dest obj="MultiPot_8" inlet="load"/>
+         <dest obj="MultiPot_9" inlet="load"/>
+         <dest obj="MultiPot_10" inlet="load"/>
+         <dest obj="MultiPot_5" inlet="load"/>
+      </net>
+      <net>
+         <source obj="*c_1" outlet="out"/>
+         <dest obj="obj_2" inlet="in"/>
+      </net>
+      <net>
+         <source obj="patcher_1" outlet="outlet_1"/>
+         <dest obj="*c_1" inlet="in"/>
+      </net>
+      <net>
+         <source obj="MultiPot_6" outlet="out0"/>
+         <dest obj="patcher_1" inlet="osc_mix"/>
+      </net>
+      <net>
+         <source obj="xfade3_1" outlet="a"/>
+         <dest obj="out_1" inlet="left"/>
+         <dest obj="scope_1" inlet="in"/>
+      </net>
+      <net>
+         <source obj="xfade3_1" outlet="b"/>
+         <dest obj="out_1" inlet="right"/>
+      </net>
+      <net>
+         <source obj="hp1_1" outlet="out"/>
+         <dest obj="lp1_1" inlet="in"/>
+      </net>
+      <net>
+         <source obj="hp1_2" outlet="out"/>
+         <dest obj="lp1_2" inlet="in"/>
+      </net>
+      <net>
+         <source obj="+_12" outlet="out"/>
+         <dest obj="lp1_2" inlet="freq"/>
+         <dest obj="lp1_1" inlet="freq"/>
+      </net>
+      <net>
+         <source obj="base8c" outlet="out"/>
+         <dest obj="+_12" inlet="in2"/>
+         <dest obj="hp1_2" inlet="freq"/>
+         <dest obj="hp1_1" inlet="freq"/>
+      </net>
+      <net>
+         <source obj="width*C" outlet="out"/>
+         <dest obj="+_12" inlet="in1"/>
+      </net>
+      <net>
+         <source obj="MultiPot_3" outlet="out2"/>
+         <dest obj="interp_1" inlet="i"/>
+      </net>
+      <net>
+         <source obj="MultiPot_4" outlet="out2"/>
+         <dest obj="interp_2" inlet="i"/>
+      </net>
+      <net>
+         <source obj="MultiPot_5" outlet="out2"/>
+         <dest obj="width*C" inlet="in"/>
+      </net>
+      <net>
+         <source obj="MultiPot_8" outlet="out2"/>
+         <dest obj="xfade3_1" inlet="c"/>
+      </net>
+      <net>
+         <source obj="MultiPot_10" outlet="out2"/>
+         <dest obj="base8c" inlet="in"/>
+      </net>
+      <net>
+         <source obj="lp1_2" outlet="out"/>
+         <dest obj="write_2" inlet="in"/>
+      </net>
+      <net>
+         <source obj="lp1_1" outlet="out"/>
+         <dest obj="write_1" inlet="in"/>
+      </net>
+      <net>
+         <source obj="mux_5" outlet="o"/>
+         <dest obj="hp1_1" inlet="in"/>
+      </net>
+      <net>
+         <source obj="MultiPot_7" outlet="out1"/>
+         <dest obj="patcher_1" inlet="envr_"/>
+      </net>
+      <net>
+         <source obj="MultiPot_10" outlet="out0"/>
+         <dest obj="patcher_1" inlet="reson_mix"/>
+      </net>
+      <net>
+         <source obj="MultiPot_3" outlet="out1"/>
+         <dest obj="modenv_a" inlet="v"/>
+         <dest obj="mod_lfo_rate" inlet="v"/>
+      </net>
+      <net>
+         <source obj="MultiPot_8" outlet="out1"/>
+         <dest obj="modenv_d" inlet="v"/>
+         <dest obj="patcher_1" inlet="lfo_rand"/>
+      </net>
+      <net>
+         <source obj="MultiPot_5" outlet="out0"/>
+         <dest obj="patcher_1" inlet="reson_damp"/>
+      </net>
+      <net>
+         <source obj="mux_13" outlet="o"/>
+         <dest obj="mux_2" inlet="i2"/>
+      </net>
+      <net>
+         <source obj="mux_14" outlet="o"/>
+         <dest obj="mux_2" inlet="i7"/>
+      </net>
+      <net>
+         <source obj="c2_7" outlet="1"/>
+         <dest obj="mux_13" inlet="i2"/>
+      </net>
+      <net>
+         <source obj="c2_7" outlet="2"/>
+         <dest obj="mux_14" inlet="i2"/>
+      </net>
+      <net>
+         <source obj="*c_2" outlet="out"/>
+         <dest obj="patcher_1" inlet="reso1"/>
+      </net>
+      <net>
+         <source obj="*c_3" outlet="out"/>
+         <dest obj="patcher_1" inlet="reso2_"/>
+      </net>
+      <net>
+         <source obj="MultiPot_9" outlet="out2"/>
+         <dest obj="expCurveK_1" inlet="in"/>
+      </net>
+      <net>
+         <source obj="interp_1" outlet="o"/>
+         <dest obj="read_1" inlet="time"/>
+      </net>
+      <net>
+         <source obj="interp_2" outlet="o"/>
+         <dest obj="read_2" inlet="time"/>
+      </net>
+   </nets>
+   <settings>
+      <subpatchmode>no</subpatchmode>
+      <MidiChannel>1</MidiChannel>
+      <NModulationSources>12</NModulationSources>
+      <NModulationTargetsPerSource>12</NModulationTargetsPerSource>
+   </settings>
+   <notes><![CDATA[]]></notes>
+   <windowPos>
+      <x>-6</x>
+      <y>1</y>
+      <width>2201</width>
+      <height>1185</height>
+   </windowPos>
+</patch-1.0>

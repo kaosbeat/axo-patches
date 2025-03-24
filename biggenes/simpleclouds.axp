@@ -1,0 +1,279 @@
+<patch-1.0 appVersion="1.0.12">
+   <obj type="ksoloti/big genes/led" uuid="5d902cb5-b92e-46dc-9a75-1d4a86deaf1a" name="led_1" x="602" y="0">
+      <params/>
+      <attribs>
+         <combo attributeName="led" selection="1"/>
+      </attribs>
+   </obj>
+   <obj type="logic/flipflop toggle" uuid="195e489e5fc3d275944b0de56c7a91c8641ea22a" name="flipflop_1" x="476" y="28">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="audio/in stereo" uuid="99848ad6d90a8e615e83b2e619cfc806f28e7281" name="in_1" x="714" y="42">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="fx/clds/clds" uuid="FD6EFF1B-3317-4BA5-A952-841327FC2F47" name="clds_1" x="840" y="42">
+      <params>
+         <frac32.u.map name="position" value="20.5"/>
+         <frac32.u.map name="size" value="29.5"/>
+         <frac32.s.map name="pitch" value="13.0"/>
+         <frac32.u.map name="density" value="30.5"/>
+         <frac32.u.map name="texture" value="21.0"/>
+         <frac32.u.map name="mix" value="15.5"/>
+         <frac32.u.map name="spread" value="45.5"/>
+         <frac32.u.map name="feedback" value="12.0"/>
+         <frac32.u.map name="reverb" value="10.5"/>
+         <int32.hradio name="playmode" value="1"/>
+         <bool32.tgl name="mono" value="0"/>
+         <bool32.tgl name="lofi" value="0"/>
+         <bool32.tgl name="silence" value="0"/>
+         <bool32.tgl name="bypass" value="0"/>
+      </params>
+      <attribs>
+         <combo attributeName="large buffer" selection="131072"/>
+         <combo attributeName="small buffer" selection="65536"/>
+      </attribs>
+   </obj>
+   <obj type="audio/out stereo" uuid="a1ca7a567f535acc21055669829101d3ee7f0189" name="out_1" x="1064" y="42">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="audio/inconfig" uuid="9a80ef3c19f2a8f81da3a3b7c1c44d18126b97d9" name="inconfig_1" x="1162" y="42">
+      <params/>
+      <attribs>
+         <combo attributeName="gain" selection="24dB"/>
+         <combo attributeName="boost" selection="0dB"/>
+         <combo attributeName="mode" selection="Stereo"/>
+      </attribs>
+   </obj>
+   <obj type="ksoloti/big genes/pot denoise b" uuid="d6202a7c-4ea3-4685-8d19-b054f02f9a00" name="pot_1" x="406" y="126">
+      <params/>
+      <attribs>
+         <combo attributeName="pot" selection="1"/>
+         <spinner attributeName="threshold" value="24"/>
+      </attribs>
+   </obj>
+   <obj type="ksoloti/big genes/pot denoise b" uuid="d6202a7c-4ea3-4685-8d19-b054f02f9a00" name="pot_5" x="560" y="126">
+      <params/>
+      <attribs>
+         <combo attributeName="pot" selection="5"/>
+         <spinner attributeName="threshold" value="24"/>
+      </attribs>
+   </obj>
+   <obj type="ksoloti/big genes/display" uuid="d21f1023-b829-4934-b142-5eedb601a570" name="display_1" x="1386" y="182">
+      <params/>
+      <attribs>
+         <combo attributeName="useScope" selection="on"/>
+         <objref attributeName="scope" obj="scope_1"/>
+         <combo attributeName="narrowFont" selection="on"/>
+      </attribs>
+   </obj>
+   <obj type="string/c" uuid="4aa90a90c435a742ddfa152d232883fc5b2f1b3" name="c_1" x="1078" y="196">
+      <params/>
+      <attribs>
+         <table attributeName="str" table="position   pitch"/>
+      </attribs>
+   </obj>
+   <obj type="ksoloti/big genes/pot denoise b" uuid="d6202a7c-4ea3-4685-8d19-b054f02f9a00" name="pot_2" x="406" y="210">
+      <params/>
+      <attribs>
+         <combo attributeName="pot" selection="2"/>
+         <spinner attributeName="threshold" value="24"/>
+      </attribs>
+   </obj>
+   <obj type="ksoloti/big genes/pot denoise b" uuid="d6202a7c-4ea3-4685-8d19-b054f02f9a00" name="pot_6" x="560" y="210">
+      <params/>
+      <attribs>
+         <combo attributeName="pot" selection="6"/>
+         <spinner attributeName="threshold" value="24"/>
+      </attribs>
+   </obj>
+   <obj type="string/c" uuid="4aa90a90c435a742ddfa152d232883fc5b2f1b3" name="c_2" x="1078" y="266">
+      <params/>
+      <attribs>
+         <table attributeName="str" table="     size      density"/>
+      </attribs>
+   </obj>
+   <obj type="ksoloti/big genes/pot denoise b" uuid="d6202a7c-4ea3-4685-8d19-b054f02f9a00" name="pot_3" x="406" y="294">
+      <params/>
+      <attribs>
+         <combo attributeName="pot" selection="3"/>
+         <spinner attributeName="threshold" value="24"/>
+      </attribs>
+   </obj>
+   <obj type="ksoloti/big genes/pot denoise p" uuid="25347fab-c33f-4652-bf36-b7f52d08b937" name="pot_7" x="560" y="294">
+      <params/>
+      <attribs>
+         <combo attributeName="pot" selection="7"/>
+         <spinner attributeName="threshold" value="24"/>
+      </attribs>
+   </obj>
+   <obj type="string/c" uuid="4aa90a90c435a742ddfa152d232883fc5b2f1b3" name="c_3" x="1078" y="336">
+      <params/>
+      <attribs>
+         <table attributeName="str" table="texture   spread"/>
+      </attribs>
+   </obj>
+   <obj type="ksoloti/big genes/pot denoise b" uuid="d6202a7c-4ea3-4685-8d19-b054f02f9a00" name="pot_4" x="406" y="378">
+      <params/>
+      <attribs>
+         <combo attributeName="pot" selection="4"/>
+         <spinner attributeName="threshold" value="24"/>
+      </attribs>
+   </obj>
+   <obj type="ksoloti/big genes/pot denoise p" uuid="25347fab-c33f-4652-bf36-b7f52d08b937" name="pot_8" x="560" y="378">
+      <params/>
+      <attribs>
+         <combo attributeName="pot" selection="8"/>
+         <spinner attributeName="threshold" value="24"/>
+      </attribs>
+   </obj>
+   <obj type="string/c" uuid="4aa90a90c435a742ddfa152d232883fc5b2f1b3" name="c_4" x="1078" y="406">
+      <params/>
+      <attribs>
+         <table attributeName="str" table="     mix      feedback"/>
+      </attribs>
+   </obj>
+   <obj type="ksoloti/big genes/encoder" uuid="1d83da76-97a3-4e59-85ce-9b2cdfd047d7" name="encoder_1" x="448" y="560">
+      <params/>
+      <attribs>
+         <combo attributeName="encoder" selection="1"/>
+         <spinner attributeName="min" value="0"/>
+         <spinner attributeName="max" value="127"/>
+      </attribs>
+   </obj>
+   <obj type="conv/to f" uuid="bdd08445689602ce174689ccb6be085f627d9892" name="to_1" x="602" y="560">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="ksoloti/disp/scope 128 b trig zoom" uuid="1e502ace-1033-4a32-ad32-412d01ec7558" name="scope_1" x="1078" y="574">
+      <params/>
+      <attribs>
+         <combo attributeName="magnify" selection="x8"/>
+         <combo attributeName="timebase" selection="/8"/>
+      </attribs>
+   </obj>
+   <obj type="logic/flipflop toggle" uuid="195e489e5fc3d275944b0de56c7a91c8641ea22a" name="flipflop_2" x="616" y="742">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="ksoloti/big genes/encoder" uuid="1d83da76-97a3-4e59-85ce-9b2cdfd047d7" name="encoder_2" x="462" y="756">
+      <params/>
+      <attribs>
+         <combo attributeName="encoder" selection="2"/>
+         <spinner attributeName="min" value="0"/>
+         <spinner attributeName="max" value="127"/>
+      </attribs>
+   </obj>
+   <obj type="conv/to i" uuid="305966430ee86b5c3b8e18cde0c721657c558a87" name="to_2" x="728" y="784">
+      <params/>
+      <attribs/>
+   </obj>
+   <nets>
+      <net>
+         <source obj="pot_1" outlet="out"/>
+         <dest obj="clds_1" inlet="position"/>
+      </net>
+      <net>
+         <source obj="pot_2" outlet="out"/>
+         <dest obj="clds_1" inlet="size"/>
+      </net>
+      <net>
+         <source obj="pot_3" outlet="out"/>
+         <dest obj="clds_1" inlet="pitch"/>
+      </net>
+      <net>
+         <source obj="pot_4" outlet="out"/>
+         <dest obj="clds_1" inlet="density"/>
+      </net>
+      <net>
+         <source obj="pot_5" outlet="out"/>
+         <dest obj="clds_1" inlet="texture"/>
+      </net>
+      <net>
+         <source obj="pot_6" outlet="out"/>
+         <dest obj="clds_1" inlet="mix"/>
+      </net>
+      <net>
+         <source obj="pot_7" outlet="out"/>
+         <dest obj="clds_1" inlet="spread"/>
+      </net>
+      <net>
+         <source obj="pot_8" outlet="out"/>
+         <dest obj="clds_1" inlet="feedback"/>
+      </net>
+      <net>
+         <source obj="in_1" outlet="left"/>
+         <dest obj="clds_1" inlet="l"/>
+      </net>
+      <net>
+         <source obj="in_1" outlet="right"/>
+         <dest obj="clds_1" inlet="r"/>
+      </net>
+      <net>
+         <source obj="clds_1" outlet="l"/>
+         <dest obj="out_1" inlet="left"/>
+         <dest obj="scope_1" inlet="in"/>
+      </net>
+      <net>
+         <source obj="clds_1" outlet="r"/>
+         <dest obj="out_1" inlet="right"/>
+      </net>
+      <net>
+         <source obj="c_1" outlet="out"/>
+         <dest obj="display_1" inlet="line1"/>
+      </net>
+      <net>
+         <source obj="c_2" outlet="out"/>
+         <dest obj="display_1" inlet="line2"/>
+      </net>
+      <net>
+         <source obj="c_3" outlet="out"/>
+         <dest obj="display_1" inlet="line3"/>
+      </net>
+      <net>
+         <source obj="c_4" outlet="out"/>
+         <dest obj="display_1" inlet="line4"/>
+      </net>
+      <net>
+         <source obj="encoder_1" outlet="out"/>
+         <dest obj="to_1" inlet="i"/>
+      </net>
+      <net>
+         <source obj="to_1" outlet="o"/>
+         <dest obj="clds_1" inlet="reverb"/>
+      </net>
+      <net>
+         <source obj="encoder_1" outlet="sw"/>
+         <dest obj="flipflop_1" inlet="trig"/>
+      </net>
+      <net>
+         <source obj="flipflop_1" outlet="o"/>
+         <dest obj="clds_1" inlet="freeze"/>
+         <dest obj="led_1" inlet="in"/>
+      </net>
+      <net>
+         <source obj="encoder_2" outlet="sw"/>
+         <dest obj="flipflop_2" inlet="trig"/>
+      </net>
+      <net>
+         <source obj="flipflop_2" outlet="o"/>
+         <dest obj="to_2" inlet="i"/>
+      </net>
+      <net>
+         <source obj="to_2" outlet="o"/>
+         <dest obj="display_1" inlet="mode"/>
+      </net>
+   </nets>
+   <settings>
+      <subpatchmode>no</subpatchmode>
+   </settings>
+   <notes><![CDATA[]]></notes>
+   <windowPos>
+      <x>0</x>
+      <y>0</y>
+      <width>1920</width>
+      <height>1080</height>
+   </windowPos>
+</patch-1.0>
