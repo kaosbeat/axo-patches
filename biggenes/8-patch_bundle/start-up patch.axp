@@ -1,0 +1,173 @@
+<patch-1.0 appVersion="1.0.12">
+   <obj type="jaffa/string/c2" uuid="204560dc-d001-446b-9f87-dd68f5ebffd2" name="c2_1" x="910" y="56">
+      <params/>
+      <attribs>
+         <table attributeName="1" table="select a patch"/>
+         <table attributeName="2" table="with the encoder"/>
+      </attribs>
+   </obj>
+   <obj type="ksoloti/gills/display" uuid="0c083e83-0280-4cf2-b747-8a00859bb904" name="display_1" x="1764" y="126">
+      <params/>
+      <attribs>
+         <combo attributeName="useScope" selection="off"/>
+         <objref attributeName="scope" obj=""/>
+         <combo attributeName="narrowFont" selection="on"/>
+      </attribs>
+   </obj>
+   <obj type="ctrl/i" uuid="a3786816db6ea5bc6ac4193a5cccdb2c83b83496" name="i_3" x="224" y="154">
+      <params>
+         <int32 name="value" value="30000"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="ksoloti/gills/encoder" uuid="8d8c7129-cce1-491f-98b4-6ecb6355cfee" name="encoder_1" x="294" y="154">
+      <params/>
+      <attribs>
+         <spinner attributeName="min" value="0"/>
+         <spinner attributeName="max" value="65535"/>
+      </attribs>
+   </obj>
+   <obj type="jaffa/math/modulo" uuid="99fec58b-6e2a-47bf-a853-ca56a554dc36" name="modulo_1" x="490" y="154">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="patch/load i" uuid="b79124f5b7d1e8b39e187677ddab6260ce8c60a3" name="load_1" x="728" y="154">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="ctrl/i" uuid="a3786816db6ea5bc6ac4193a5cccdb2c83b83496" name="i_1" x="406" y="168">
+      <params>
+         <int32 name="value" value="8"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="jaffa/string/c8" uuid="5c92abbf-ce44-4468-8531-f8924109e5e9" name="c8_1" x="910" y="168">
+      <params/>
+      <attribs>
+         <table attributeName="1" table="hardc0re k1cks"/>
+         <table attributeName="2" table="granupoly"/>
+         <table attributeName="3" table="polysaw expanded"/>
+         <table attributeName="4" table="jc k1cks"/>
+         <table attributeName="5" table="multi-fx"/>
+         <table attributeName="6" table="loopsynth"/>
+         <table attributeName="7" table="exposaw"/>
+         <table attributeName="8" table="multi-fx m"/>
+      </attribs>
+   </obj>
+   <obj type="mux/mux 8" uuid="5f992dab2d3768081b3da60ba557a2eda93df0fe" name="mux_1" x="1078" y="168">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="math/+1" uuid="13c1a4574bb81783beb8839e81782b9a34e3fc17" name="+1_1" x="1358" y="196">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="string/indexed" uuid="a28740deef67c39ffc65bd0f341a47c9b196f46" name="indexed_1" x="1414" y="196">
+      <params/>
+      <attribs>
+         <table attributeName="prefix" table=""/>
+         <table attributeName="suffix" table=": "/>
+      </attribs>
+   </obj>
+   <obj type="tiar/string/concat2" uuid="cc32098b-df43-4664-9692-81f5b66cbe5f" name="concat2_1" x="1596" y="196">
+      <params/>
+      <attribs>
+         <spinner attributeName="size" value="19"/>
+      </attribs>
+   </obj>
+   <obj type="disp/i" uuid="5e35fd0c62d81e70017289250cf28edd26e19e4a" name="i_2" x="728" y="238">
+      <params/>
+      <attribs/>
+   </obj>
+   <nets>
+      <net>
+         <source obj="encoder_1" outlet="out"/>
+         <dest obj="modulo_1" inlet="i"/>
+      </net>
+      <net>
+         <source obj="modulo_1" outlet="o"/>
+         <dest obj="load_1" inlet="i"/>
+         <dest obj="i_2" inlet="in"/>
+         <dest obj="+1_1" inlet="a"/>
+         <dest obj="mux_1" inlet="s"/>
+      </net>
+      <net>
+         <source obj="i_1" outlet="out"/>
+         <dest obj="modulo_1" inlet="m"/>
+      </net>
+      <net>
+         <source obj="encoder_1" outlet="sw"/>
+         <dest obj="load_1" inlet="trig"/>
+      </net>
+      <net>
+         <source obj="c8_1" outlet="1"/>
+         <dest obj="mux_1" inlet="i0"/>
+      </net>
+      <net>
+         <source obj="c8_1" outlet="2"/>
+         <dest obj="mux_1" inlet="i1"/>
+      </net>
+      <net>
+         <source obj="c8_1" outlet="3"/>
+         <dest obj="mux_1" inlet="i2"/>
+      </net>
+      <net>
+         <source obj="c8_1" outlet="4"/>
+         <dest obj="mux_1" inlet="i3"/>
+      </net>
+      <net>
+         <source obj="c8_1" outlet="5"/>
+         <dest obj="mux_1" inlet="i4"/>
+      </net>
+      <net>
+         <source obj="c8_1" outlet="6"/>
+         <dest obj="mux_1" inlet="i5"/>
+      </net>
+      <net>
+         <source obj="c2_1" outlet="2"/>
+         <dest obj="display_1" inlet="line2"/>
+      </net>
+      <net>
+         <source obj="c2_1" outlet="1"/>
+         <dest obj="display_1" inlet="line1"/>
+      </net>
+      <net>
+         <source obj="indexed_1" outlet="out"/>
+         <dest obj="concat2_1" inlet="str1"/>
+      </net>
+      <net>
+         <source obj="+1_1" outlet="result"/>
+         <dest obj="indexed_1" inlet="index"/>
+      </net>
+      <net>
+         <source obj="i_3" outlet="out"/>
+         <dest obj="encoder_1" inlet="set"/>
+      </net>
+      <net>
+         <source obj="concat2_1" outlet="out"/>
+         <dest obj="display_1" inlet="line4"/>
+      </net>
+      <net>
+         <source obj="mux_1" outlet="o"/>
+         <dest obj="concat2_1" inlet="str2"/>
+      </net>
+      <net>
+         <source obj="c8_1" outlet="7"/>
+         <dest obj="mux_1" inlet="i6"/>
+      </net>
+      <net>
+         <source obj="c8_1" outlet="8"/>
+         <dest obj="mux_1" inlet="i7"/>
+      </net>
+   </nets>
+   <settings>
+      <subpatchmode>no</subpatchmode>
+   </settings>
+   <notes><![CDATA[]]></notes>
+   <windowPos>
+      <x>103</x>
+      <y>147</y>
+      <width>2208</width>
+      <height>1200</height>
+   </windowPos>
+</patch-1.0>

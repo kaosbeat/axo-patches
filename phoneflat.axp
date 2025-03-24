@@ -207,6 +207,37 @@
       </net>
       <net>
          <source obj="in_1" outlet="wave"/>
+         <dest obj="looper_OD_mono_1" inlet="wave"/>
+      </net>
+      <net>
+         <source obj="clock_1" outlet="pos4ppq"/>
+         <dest obj="i_1" inlet="in"/>
+      </net>
+      <net>
+         <source obj="clock_1" outlet="pos24ppq"/>
+         <dest obj="i_2" inlet="in"/>
+         <dest obj="modulo_1" inlet="i"/>
+      </net>
+      <net>
+         <source obj="i_3" outlet="out"/>
+         <dest obj="modulo_1" inlet="m"/>
+      </net>
+      <net>
+         <source obj="==_1" outlet="out"/>
+         <dest obj="bool_4" inlet="in"/>
+         <dest obj="digital_5" inlet="in"/>
+         <dest obj="boolms_1" inlet="trig"/>
+         <dest obj="flipflop_1" inlet="reset"/>
+         <dest obj="and21" inlet="i2"/>
+         <dest obj="flipflop_3" inlet="reset"/>
+      </net>
+      <net>
+         <source obj="modulo_1" outlet="o"/>
+         <dest obj="i_4" inlet="in"/>
+         <dest obj="==_1" inlet="in"/>
+      </net>
+      <net>
+         <source obj="looper_OD_mono_1" outlet="wave"/>
          <dest obj="out_1" inlet="wave"/>
       </net>
       <net>
