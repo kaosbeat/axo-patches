@@ -81,7 +81,7 @@
       </attribs>
    </obj>
    <comment type="patch/comment" x="448" y="140" text="channel selector"/>
-   <obj type="pumkinrevamp" uuid="2683295a-50dc-4a26-b3f4-f1edb9d3672b" name="obj_1" x="1176" y="140">
+   <obj type="pumkinrevamp" uuid="06b83c1d-a447-4e3d-8ce2-d8a8a0a8cb5b" name="pumkinrevamp_1" x="1176" y="140">
       <params/>
       <attribs/>
    </obj>
@@ -105,9 +105,15 @@
          <combo attributeName="mode" selection="pulldown"/>
       </attribs>
    </obj>
-   <obj type="ctrl/dial p" uuid="cc5d2846c3d50e425f450c4b9851371b54f4d674" name="dial_1" x="2170" y="168">
+   <obj type="ctrl/dial p" uuid="cc5d2846c3d50e425f450c4b9851371b54f4d674" name="dial_1" x="2184" y="168">
       <params>
          <frac32.u.map name="value" value="64.0"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="phi/prob/%rand f" uuid="03fd92b7-8321-4175-a198-14ab343fe273" name="%rand_1" x="2282" y="168">
+      <params>
+         <frac32.s.map name="prob" value="0.0"/>
       </params>
       <attribs/>
    </obj>
@@ -175,9 +181,10 @@
       <params/>
       <attribs/>
    </obj>
-   <obj type="phi/prob/%rand f" uuid="03fd92b7-8321-4175-a198-14ab343fe273" name="%rand_1" x="2156" y="266">
+   <obj type="env/ad" uuid="255cb0cd67470c7498f9c33b820facd26aa629ce" name="ad_1" x="1862" y="266">
       <params>
-         <frac32.s.map name="prob" value="0.0"/>
+         <frac32.s.map name="a" value="-8.0"/>
+         <frac32.s.map name="d" value="26.0"/>
       </params>
       <attribs/>
    </obj>
@@ -217,10 +224,6 @@
       </attribs>
    </obj>
    <obj type="disp/bool" uuid="a0ee71d48208b71752cbb8c05e55145106ef3946" name="bool_4" x="462" y="308">
-      <params/>
-      <attribs/>
-   </obj>
-   <obj type="conv/to f" uuid="bdd08445689602ce174689ccb6be085f627d9892" name="to_1" x="1778" y="322">
       <params/>
       <attribs/>
    </obj>
@@ -295,10 +298,6 @@
       </params>
       <attribs/>
    </obj>
-   <obj type="gain/vca" uuid="a9f2dcd18043e2f47364e45cb8814f63c2a37c0d" name="vca_2" x="1820" y="448">
-      <params/>
-      <attribs/>
-   </obj>
    <obj type="audio/out right" uuid="e58a4cbbb087052c5480366e3f5d3a04aa319777" name="out_2" x="2506" y="448">
       <params/>
       <attribs/>
@@ -337,6 +336,10 @@
          <spinner attributeName="channel" value="1"/>
          <spinner attributeName="cc" value="20"/>
       </attribs>
+   </obj>
+   <obj type="gain/vca" uuid="a9f2dcd18043e2f47364e45cb8814f63c2a37c0d" name="vca_2" x="1834" y="476">
+      <params/>
+      <attribs/>
    </obj>
    <obj type="midi/out/cc thin" uuid="5255b30d60e50223ed41179d8ce935ba9464de75" name="cc_5" x="1372" y="490">
       <params/>
@@ -634,67 +637,67 @@
          <dest obj="mux_9" inlet="s"/>
       </net>
       <net>
-         <source obj="obj_1" outlet="C0"/>
+         <source obj="pumkinrevamp_1" outlet="C0"/>
          <dest obj="cc_1" inlet="v"/>
       </net>
       <net>
-         <source obj="obj_1" outlet="C1"/>
+         <source obj="pumkinrevamp_1" outlet="C1"/>
          <dest obj="cc_2" inlet="v"/>
       </net>
       <net>
-         <source obj="obj_1" outlet="C3"/>
+         <source obj="pumkinrevamp_1" outlet="C3"/>
          <dest obj="cc_4" inlet="v"/>
       </net>
       <net>
-         <source obj="obj_1" outlet="C4"/>
+         <source obj="pumkinrevamp_1" outlet="C4"/>
          <dest obj="cc_5" inlet="v"/>
          <dest obj="reverb_1" inlet="time"/>
          <dest obj="harmonics_1" inlet="pitch"/>
          <dest obj="harmonics_2" inlet="pitch"/>
       </net>
       <net>
-         <source obj="obj_1" outlet="C5"/>
+         <source obj="pumkinrevamp_1" outlet="C5"/>
          <dest obj="cc_6" inlet="v"/>
          <dest obj="reverb_1" inlet="diffusion"/>
          <dest obj="reverb_1" inlet="amount"/>
       </net>
       <net>
-         <source obj="obj_1" outlet="C6"/>
+         <source obj="pumkinrevamp_1" outlet="C6"/>
          <dest obj="cc_7" inlet="v"/>
          <dest obj="harmonics_2" inlet="timbre"/>
          <dest obj="harmonics_1" inlet="color"/>
       </net>
       <net>
-         <source obj="obj_1" outlet="D0"/>
+         <source obj="pumkinrevamp_1" outlet="D0"/>
          <dest obj="cc_9" inlet="v"/>
          <dest obj="square_1" inlet="pitch"/>
       </net>
       <net>
-         <source obj="obj_1" outlet="D1"/>
+         <source obj="pumkinrevamp_1" outlet="D1"/>
          <dest obj="cc_10" inlet="v"/>
       </net>
       <net>
-         <source obj="obj_1" outlet="D2"/>
+         <source obj="pumkinrevamp_1" outlet="D2"/>
          <dest obj="cc_11" inlet="v"/>
       </net>
       <net>
-         <source obj="obj_1" outlet="D3"/>
+         <source obj="pumkinrevamp_1" outlet="D3"/>
          <dest obj="cc_12" inlet="v"/>
       </net>
       <net>
-         <source obj="obj_1" outlet="D4"/>
+         <source obj="pumkinrevamp_1" outlet="D4"/>
          <dest obj="cc_13" inlet="v"/>
       </net>
       <net>
-         <source obj="obj_1" outlet="D5"/>
+         <source obj="pumkinrevamp_1" outlet="D5"/>
          <dest obj="cc_14" inlet="v"/>
       </net>
       <net>
-         <source obj="obj_1" outlet="D6"/>
+         <source obj="pumkinrevamp_1" outlet="D6"/>
          <dest obj="cc_15" inlet="v"/>
       </net>
       <net>
-         <source obj="obj_1" outlet="D7"/>
+         <source obj="pumkinrevamp_1" outlet="D7"/>
          <dest obj="cc_16" inlet="v"/>
       </net>
       <net>
@@ -706,11 +709,11 @@
          <dest obj="cc_17" inlet="v"/>
       </net>
       <net>
-         <source obj="obj_1" outlet="C2"/>
+         <source obj="pumkinrevamp_1" outlet="C2"/>
          <dest obj="cc_3" inlet="v"/>
       </net>
       <net>
-         <source obj="obj_1" outlet="C7"/>
+         <source obj="pumkinrevamp_1" outlet="C7"/>
          <dest obj="cc_8" inlet="v"/>
          <dest obj="reverb_1" inlet="lowpass"/>
          <dest obj="harmonics_1" inlet="timbre"/>
@@ -727,13 +730,8 @@
       </net>
       <net>
          <source obj="peuclid_seq_1" outlet="gate"/>
-         <dest obj="to_1" inlet="i"/>
          <dest obj="pulselengthm_1" inlet="trig"/>
-      </net>
-      <net>
-         <source obj="to_1" outlet="o"/>
-         <dest obj="vca_1" inlet="v"/>
-         <dest obj="vca_2" inlet="v"/>
+         <dest obj="ad_1" inlet="trig"/>
       </net>
       <net>
          <source obj="in_1" outlet="wave"/>
@@ -791,7 +789,7 @@
       <net>
          <source obj="harmonics_1" outlet="wave"/>
          <dest obj="vca_1" inlet="a"/>
-         <dest obj="mux_6" inlet="i1"/>
+         <dest obj="mux_6" inlet="i2"/>
       </net>
       <net>
          <source obj="pulselengthm_1" outlet="pulse"/>
@@ -809,12 +807,10 @@
       <net>
          <source obj="harmonics_2" outlet="wave"/>
          <dest obj="vca_2" inlet="a"/>
-         <dest obj="mux_7" inlet="i1"/>
       </net>
       <net>
          <source obj="kick_1" outlet="wave"/>
          <dest obj="mux_7" inlet="i2"/>
-         <dest obj="mux_6" inlet="i2"/>
       </net>
       <net>
          <source obj="%rand_1" outlet="o"/>
@@ -833,15 +829,28 @@
          <source obj="change_1" outlet="trig"/>
          <dest obj="mux_9" inlet="i1"/>
       </net>
+      <net>
+         <source obj="ad_1" outlet="env"/>
+         <dest obj="vca_1" inlet="v"/>
+         <dest obj="vca_2" inlet="v"/>
+      </net>
+      <net>
+         <source obj="vca_1" outlet="o"/>
+         <dest obj="mux_6" inlet="i1"/>
+      </net>
+      <net>
+         <source obj="vca_2" outlet="o"/>
+         <dest obj="mux_7" inlet="i1"/>
+      </net>
    </nets>
    <settings>
       <subpatchmode>no</subpatchmode>
    </settings>
    <notes><![CDATA[]]></notes>
    <windowPos>
-      <x>-471</x>
-      <y>28</y>
-      <width>2391</width>
-      <height>984</height>
+      <x>0</x>
+      <y>32</y>
+      <width>1920</width>
+      <height>1048</height>
    </windowPos>
 </patch-1.0>
