@@ -28,6 +28,8 @@
       <params/>
       <attribs/>
    </obj>
+   <comment type="patch/comment" x="1876" y="70" text="repetition"/>
+   <comment type="patch/comment" x="2296" y="70" text="set new object"/>
    <obj type="disp/bool" uuid="a0ee71d48208b71752cbb8c05e55145106ef3946" name="bool_7" x="882" y="84">
       <params/>
       <attribs/>
@@ -40,11 +42,51 @@
          <spinner attributeName="cc" value="16"/>
       </attribs>
    </obj>
-   <obj type="lfo/square" uuid="de6909eb64db13af5b43f979a4c130024b3a4793" name="square_1" x="1708" y="84">
+   <obj type="lfo/square" uuid="de6909eb64db13af5b43f979a4c130024b3a4793" name="square_1" x="1764" y="84">
       <params>
          <frac32.s.map name="pitch" value="4.0"/>
       </params>
       <attribs/>
+   </obj>
+   <obj type="jls/seq/peuclid_seq" uuid="53d67376-ae6e-4626-bb0c-8ef70e878849" name="peuclid_seq_1" x="1876" y="84">
+      <params/>
+      <attribs>
+         <spinner attributeName="steps" value="16"/>
+         <spinner attributeName="hits" value="5"/>
+      </attribs>
+   </obj>
+   <obj type="timer/pulselengthm" uuid="62560cedc7cebe84778bc1bb4fc6c2122074a4ab" name="pulselengthm_1" x="2002" y="84">
+      <params>
+         <frac32.s.map name="delay" value="-64.0"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="osc/brds/kick" uuid="5687b190-2426-430c-a30c-383b668dcfad" name="kick_1" x="2128" y="84">
+      <params>
+         <frac32.s.map name="pitch" value="-30.0"/>
+         <frac32.u.map name="timbre" value="42.5"/>
+         <frac32.u.map name="color" value="30.5"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="ctrl/dial p" uuid="cc5d2846c3d50e425f450c4b9851371b54f4d674" name="dial_2" x="2296" y="84">
+      <params>
+         <frac32.u.map name="value" value="64.0"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="phi/prob/%rand f" uuid="03fd92b7-8321-4175-a198-14ab343fe273" name="%rand_2" x="2366" y="84">
+      <params>
+         <frac32.s.map name="prob" value="0.0"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="midi/out/note" uuid="a76ae870da278cbbce5501a57ce7bd0e0ea4215c" name="note_2" x="2464" y="84">
+      <params/>
+      <attribs>
+         <combo attributeName="device" selection="usb device port 1"/>
+         <spinner attributeName="channel" value="1"/>
+      </attribs>
    </obj>
    <obj type="midi/out/cc thin" uuid="5255b30d60e50223ed41179d8ce935ba9464de75" name="cc_1" x="1372" y="98">
       <params/>
@@ -71,19 +113,6 @@
    </obj>
    <obj type="disp/bool" uuid="a0ee71d48208b71752cbb8c05e55145106ef3946" name="bool_9" x="98" y="126">
       <params/>
-      <attribs/>
-   </obj>
-   <obj type="jls/seq/peuclid_seq" uuid="53d67376-ae6e-4626-bb0c-8ef70e878849" name="peuclid_seq_1" x="1876" y="126">
-      <params/>
-      <attribs>
-         <spinner attributeName="steps" value="16"/>
-         <spinner attributeName="hits" value="6"/>
-      </attribs>
-   </obj>
-   <obj type="timer/pulselengthm" uuid="62560cedc7cebe84778bc1bb4fc6c2122074a4ab" name="pulselengthm_1" x="2002" y="126">
-      <params>
-         <frac32.s.map name="delay" value="-64.0"/>
-      </params>
       <attribs/>
    </obj>
    <comment type="patch/comment" x="448" y="140" text="channel selector"/>
@@ -137,6 +166,14 @@
          <spinner attributeName="cc" value="9"/>
       </attribs>
    </obj>
+   <obj type="osc/brds/struckdrum" uuid="e9737331-1464-485d-9d5e-d304e04943f7" name="struckdrum_1" x="2114" y="196">
+      <params>
+         <frac32.s.map name="pitch" value="0.0"/>
+         <frac32.u.map name="timbre" value="64.0"/>
+         <frac32.u.map name="color" value="32.0"/>
+      </params>
+      <attribs/>
+   </obj>
    <obj type="gpio/in/digital" uuid="f59f139e8da912742832dc541157f20f30b7ac1b" name="channel 2" x="364" y="210">
       <params/>
       <attribs>
@@ -144,11 +181,12 @@
          <combo attributeName="mode" selection="pulldown"/>
       </attribs>
    </obj>
-   <obj type="logic/counter" uuid="7a141ba82230e54e5f5cd12da5dbe5a74ba854a5" name="counter_1" x="1708" y="210">
-      <params>
-         <int32 name="maximum" value="0"/>
-      </params>
-      <attribs/>
+   <obj type="jls/seq/peuclid_seq" uuid="53d67376-ae6e-4626-bb0c-8ef70e878849" name="peuclid_seq_2" x="1876" y="210">
+      <params/>
+      <attribs>
+         <spinner attributeName="steps" value="16"/>
+         <spinner attributeName="hits" value="9"/>
+      </attribs>
    </obj>
    <obj type="disp/bool" uuid="a0ee71d48208b71752cbb8c05e55145106ef3946" name="bool_6" x="294" y="224">
       <params/>
@@ -167,13 +205,6 @@
    </obj>
    <obj type="logic/inv" uuid="2bd44b865d3b63ff9b80862242bf5be779e3ad5" name="inv_1" x="798" y="238">
       <params/>
-      <attribs/>
-   </obj>
-   <obj type="env/ad" uuid="255cb0cd67470c7498f9c33b820facd26aa629ce" name="ad_1" x="1862" y="266">
-      <params>
-         <frac32.s.map name="a" value="-8.0"/>
-         <frac32.s.map name="d" value="26.0"/>
-      </params>
       <attribs/>
    </obj>
    <obj type="disp/bool" uuid="a0ee71d48208b71752cbb8c05e55145106ef3946" name="bool_5" x="378" y="280">
@@ -208,6 +239,29 @@
       <params/>
       <attribs/>
    </obj>
+   <obj type="audio/out left" uuid="b11a3c09b2fdd575ea8212f2ce7743d5269253b1" name="out_1" x="2562" y="322">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="fx/lmnts/reverb" uuid="8027561C-A0B5-4DF8-A10E-3ED1274F2980" name="reverb_1" x="2408" y="336">
+      <params>
+         <frac32.u.map name="amount" value="42.5"/>
+         <frac32.u.map name="time" value="14.5"/>
+         <frac32.u.map name="diffusion" value="18.0"/>
+         <frac32.u.map name="gain" value="52.5"/>
+         <frac32.u.map name="lowpass" value="45.5"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="mix/mix 4" uuid="e6f9a0cc7aadc1b89516143cf1ccb79b3538d05a" name="mix_1" x="2268" y="350">
+      <params>
+         <frac32.u.map name="gain1" value="24.0"/>
+         <frac32.u.map name="gain2" value="36.5"/>
+         <frac32.u.map name="gain3" value="32.0"/>
+         <frac32.u.map name="gain4" value="32.0"/>
+      </params>
+      <attribs/>
+   </obj>
    <obj type="midi/out/cc thin" uuid="5255b30d60e50223ed41179d8ce935ba9464de75" name="cc_20" x="1022" y="378">
       <params/>
       <attribs>
@@ -240,19 +294,7 @@
          <spinner attributeName="cc" value="11"/>
       </attribs>
    </obj>
-   <obj type="gain/vca" uuid="a9f2dcd18043e2f47364e45cb8814f63c2a37c0d" name="vca_1" x="1820" y="392">
-      <params/>
-      <attribs/>
-   </obj>
-   <obj type="mux/mux 2" uuid="539c246f4c360ac476e128cfbfa84348fb7f7e73" name="mux_6" x="1946" y="392">
-      <params/>
-      <attribs/>
-   </obj>
-   <obj type="mux/mux 2" uuid="539c246f4c360ac476e128cfbfa84348fb7f7e73" name="mux_4" x="2352" y="392">
-      <params/>
-      <attribs/>
-   </obj>
-   <obj type="audio/out left" uuid="b11a3c09b2fdd575ea8212f2ce7743d5269253b1" name="out_1" x="2506" y="392">
+   <obj type="audio/out right" uuid="e58a4cbbb087052c5480366e3f5d3a04aa319777" name="out_2" x="2632" y="392">
       <params/>
       <attribs/>
    </obj>
@@ -262,20 +304,6 @@
          <combo attributeName="pad" selection="PB8"/>
          <combo attributeName="mode" selection="pulldown"/>
       </attribs>
-   </obj>
-   <obj type="fx/lmnts/reverb" uuid="8027561C-A0B5-4DF8-A10E-3ED1274F2980" name="reverb_1" x="2044" y="420">
-      <params>
-         <frac32.u.map name="amount" value="42.5"/>
-         <frac32.u.map name="time" value="14.5"/>
-         <frac32.u.map name="diffusion" value="18.0"/>
-         <frac32.u.map name="gain" value="52.5"/>
-         <frac32.u.map name="lowpass" value="45.5"/>
-      </params>
-      <attribs/>
-   </obj>
-   <obj type="audio/out right" uuid="e58a4cbbb087052c5480366e3f5d3a04aa319777" name="out_2" x="2506" y="448">
-      <params/>
-      <attribs/>
    </obj>
    <obj type="a773/midithru_incl_clock" uuid="82b2821e-bacc-4e10-8bcc-d827d6e1206d" name="midithru_incl_clock_1" x="616" y="462">
       <params/>
@@ -312,10 +340,6 @@
          <spinner attributeName="cc" value="20"/>
       </attribs>
    </obj>
-   <obj type="gain/vca" uuid="a9f2dcd18043e2f47364e45cb8814f63c2a37c0d" name="vca_2" x="1834" y="476">
-      <params/>
-      <attribs/>
-   </obj>
    <obj type="midi/out/cc thin" uuid="5255b30d60e50223ed41179d8ce935ba9464de75" name="cc_5" x="1372" y="490">
       <params/>
       <attribs>
@@ -331,14 +355,6 @@
          <spinner attributeName="channel" value="1"/>
          <spinner attributeName="cc" value="12"/>
       </attribs>
-   </obj>
-   <obj type="mux/mux 2" uuid="539c246f4c360ac476e128cfbfa84348fb7f7e73" name="mux_7" x="1946" y="490">
-      <params/>
-      <attribs/>
-   </obj>
-   <obj type="mux/mux 2" uuid="539c246f4c360ac476e128cfbfa84348fb7f7e73" name="mux_5" x="2352" y="490">
-      <params/>
-      <attribs/>
    </obj>
    <obj type="disp/bool" uuid="a0ee71d48208b71752cbb8c05e55145106ef3946" name="bool_8" x="112" y="546">
       <params/>
@@ -356,14 +372,6 @@
          <frac32.s.map name="pitch" value="-27.0"/>
          <frac32.u.map name="timbre" value="64.0"/>
          <frac32.u.map name="color" value="32.0"/>
-      </params>
-      <attribs/>
-   </obj>
-   <obj type="osc/brds/kick" uuid="5687b190-2426-430c-a30c-383b668dcfad" name="kick_1" x="1834" y="560">
-      <params>
-         <frac32.s.map name="pitch" value="-34.0"/>
-         <frac32.u.map name="timbre" value="38.5"/>
-         <frac32.u.map name="color" value="30.5"/>
       </params>
       <attribs/>
    </obj>
@@ -398,6 +406,15 @@
          <spinner attributeName="channel" value="1"/>
          <spinner attributeName="cc" value="13"/>
       </attribs>
+   </obj>
+   <obj type="mix/mix 4" uuid="e6f9a0cc7aadc1b89516143cf1ccb79b3538d05a" name="mix_2" x="2268" y="602">
+      <params>
+         <frac32.u.map name="gain1" value="36.5"/>
+         <frac32.u.map name="gain2" value="26.5"/>
+         <frac32.u.map name="gain3" value="32.0"/>
+         <frac32.u.map name="gain4" value="32.0"/>
+      </params>
+      <attribs/>
    </obj>
    <obj type="disp/bool" uuid="a0ee71d48208b71752cbb8c05e55145106ef3946" name="bool_11" x="392" y="616">
       <params/>
@@ -467,7 +484,7 @@
          <spinner attributeName="cc" value="15"/>
       </attribs>
    </obj>
-   <comment type="patch/comment" x="1694" y="882" text="channel select 0 ____________________"/>
+   <comment type="patch/comment" x="1694" y="882" text="channel select0 ____ env follower"/>
    <obj type="audio/in left" uuid="d40e60b7641fe75af4d7c91b45bb038aacafc52e" name="in_1" x="1694" y="896">
       <params/>
       <attribs/>
@@ -478,14 +495,6 @@
          <combo attributeName="time" selection="1.3ms"/>
       </attribs>
    </obj>
-   <obj type="midi/out/cc thin" uuid="5255b30d60e50223ed41179d8ce935ba9464de75" name="cc_29" x="1960" y="896">
-      <params/>
-      <attribs>
-         <combo attributeName="device" selection="usb device port 1"/>
-         <spinner attributeName="channel" value="1"/>
-         <spinner attributeName="cc" value="29"/>
-      </attribs>
-   </obj>
    <obj type="logic/change speedlim" uuid="9239a1be592182b71673521e7d7461e6951e8d3b" name="change_1" x="2268" y="896">
       <params>
          <frac32.u.map name="d" value="30.5"/>
@@ -494,10 +503,6 @@
    </obj>
    <comment type="patch/comment" x="2394" y="896" text="repetition"/>
    <comment type="patch/comment" x="2492" y="896" text="set new object"/>
-   <obj type="mux/mux 2" uuid="3bcb8a666381ed18b8962eda50b1aa679136f618" name="mux_2" x="1834" y="910">
-      <params/>
-      <attribs/>
-   </obj>
    <obj type="mux/mux 2" uuid="e1c92bc92f4d191bfadf0efeae4503b458a4e440" name="mux_9" x="2394" y="910">
       <params/>
       <attribs/>
@@ -521,40 +526,6 @@
          <spinner attributeName="channel" value="1"/>
       </attribs>
    </obj>
-   <obj type="env/follower" uuid="356ce1d18ac6b51704833f94dac5dea823fb8223" name="follower_3" x="1764" y="952">
-      <params/>
-      <attribs>
-         <combo attributeName="time" selection="1.3ms"/>
-      </attribs>
-   </obj>
-   <obj type="audio/in left" uuid="d40e60b7641fe75af4d7c91b45bb038aacafc52e" name="in_2" x="1694" y="1008">
-      <params/>
-      <attribs/>
-   </obj>
-   <obj type="env/follower" uuid="356ce1d18ac6b51704833f94dac5dea823fb8223" name="follower_2" x="1764" y="1008">
-      <params/>
-      <attribs>
-         <combo attributeName="time" selection="1.3ms"/>
-      </attribs>
-   </obj>
-   <obj type="mux/mux 2" uuid="3bcb8a666381ed18b8962eda50b1aa679136f618" name="mux_3" x="1834" y="1008">
-      <params/>
-      <attribs/>
-   </obj>
-   <obj type="midi/out/cc thin" uuid="5255b30d60e50223ed41179d8ce935ba9464de75" name="cc_30" x="1960" y="1008">
-      <params/>
-      <attribs>
-         <combo attributeName="device" selection="usb device port 1"/>
-         <spinner attributeName="channel" value="1"/>
-         <spinner attributeName="cc" value="30"/>
-      </attribs>
-   </obj>
-   <obj type="env/follower" uuid="356ce1d18ac6b51704833f94dac5dea823fb8223" name="follower_4" x="1764" y="1064">
-      <params/>
-      <attribs>
-         <combo attributeName="time" selection="1.3ms"/>
-      </attribs>
-   </obj>
    <nets>
       <net>
          <source obj="colour b&amp;w" outlet="out"/>
@@ -566,10 +537,6 @@
          <dest obj="bool_2" inlet="in"/>
          <dest obj="or_1" inlet="i1"/>
          <dest obj="cc_22" inlet="v"/>
-         <dest obj="mux_2" inlet="s"/>
-         <dest obj="mux_3" inlet="s"/>
-         <dest obj="mux_4" inlet="s"/>
-         <dest obj="mux_5" inlet="s"/>
       </net>
       <net>
          <source obj="channel 4" outlet="out"/>
@@ -620,8 +587,6 @@
          <dest obj="bool_11" inlet="in"/>
          <dest obj="cc_25" inlet="v"/>
          <dest obj="peuclid_seq_1" inlet="active"/>
-         <dest obj="mux_6" inlet="s"/>
-         <dest obj="mux_7" inlet="s"/>
          <dest obj="mux_9" inlet="s"/>
       </net>
       <net>
@@ -713,80 +678,27 @@
       </net>
       <net>
          <source obj="square_1" outlet="wave"/>
-         <dest obj="counter_1" inlet="trig"/>
          <dest obj="peuclid_seq_1" inlet="trig"/>
+         <dest obj="peuclid_seq_2" inlet="active"/>
       </net>
       <net>
          <source obj="peuclid_seq_1" outlet="gate"/>
          <dest obj="pulselengthm_1" inlet="trig"/>
-         <dest obj="ad_1" inlet="trig"/>
       </net>
       <net>
          <source obj="in_1" outlet="wave"/>
          <dest obj="follower_1" inlet="in"/>
-         <dest obj="mux_4" inlet="i2"/>
-      </net>
-      <net>
-         <source obj="in_2" outlet="wave"/>
-         <dest obj="follower_2" inlet="in"/>
-         <dest obj="mux_5" inlet="i2"/>
-      </net>
-      <net>
-         <source obj="follower_2" outlet="amp"/>
-         <dest obj="mux_3" inlet="i2"/>
-      </net>
-      <net>
-         <source obj="mux_4" outlet="o"/>
-         <dest obj="out_1" inlet="wave"/>
-      </net>
-      <net>
-         <source obj="mux_5" outlet="o"/>
-         <dest obj="out_2" inlet="wave"/>
       </net>
       <net>
          <source obj="follower_1" outlet="amp"/>
-         <dest obj="mux_2" inlet="i2"/>
          <dest obj="change_1" inlet="in"/>
-      </net>
-      <net>
-         <source obj="reverb_1" outlet="l"/>
-         <dest obj="mux_4" inlet="i1"/>
-         <dest obj="follower_3" inlet="in"/>
-      </net>
-      <net>
-         <source obj="reverb_1" outlet="r"/>
-         <dest obj="follower_4" inlet="in"/>
-         <dest obj="mux_5" inlet="i1"/>
-      </net>
-      <net>
-         <source obj="follower_3" outlet="amp"/>
-         <dest obj="mux_2" inlet="i1"/>
-      </net>
-      <net>
-         <source obj="harmonics_1" outlet="wave"/>
-         <dest obj="vca_1" inlet="a"/>
-         <dest obj="mux_6" inlet="i2"/>
       </net>
       <net>
          <source obj="pulselengthm_1" outlet="pulse"/>
          <dest obj="kick_1" inlet="strike"/>
          <dest obj="mux_9" inlet="i2"/>
-      </net>
-      <net>
-         <source obj="mux_6" outlet="o"/>
-         <dest obj="reverb_1" inlet="l"/>
-      </net>
-      <net>
-         <source obj="mux_7" outlet="o"/>
-         <dest obj="reverb_1" inlet="r"/>
-      </net>
-      <net>
-         <source obj="harmonics_2" outlet="wave"/>
-         <dest obj="vca_2" inlet="a"/>
-      </net>
-      <net>
-         <source obj="kick_1" outlet="wave"/>
-         <dest obj="mux_7" inlet="i2"/>
+         <dest obj="%rand_2" inlet="trig"/>
+         <dest obj="note_2" inlet="trig"/>
       </net>
       <net>
          <source obj="%rand_1" outlet="o"/>
@@ -806,21 +718,52 @@
          <dest obj="mux_9" inlet="i1"/>
       </net>
       <net>
-         <source obj="ad_1" outlet="env"/>
-         <dest obj="vca_1" inlet="v"/>
-         <dest obj="vca_2" inlet="v"/>
+         <source obj="%rand_2" outlet="o"/>
+         <dest obj="note_2" inlet="note"/>
       </net>
       <net>
-         <source obj="vca_1" outlet="o"/>
-         <dest obj="mux_6" inlet="i1"/>
+         <source obj="dial_2" outlet="out"/>
+         <dest obj="note_2" inlet="velo"/>
       </net>
       <net>
-         <source obj="vca_2" outlet="o"/>
-         <dest obj="mux_7" inlet="i1"/>
+         <source obj="peuclid_seq_2" outlet="gate"/>
+         <dest obj="struckdrum_1" inlet="strike"/>
       </net>
       <net>
-         <source obj="follower_4" outlet="amp"/>
-         <dest obj="mux_3" inlet="i1"/>
+         <source obj="kick_1" outlet="wave"/>
+         <dest obj="mix_1" inlet="in1"/>
+         <dest obj="mix_2" inlet="in1"/>
+      </net>
+      <net>
+         <source obj="struckdrum_1" outlet="wave"/>
+         <dest obj="mix_1" inlet="in2"/>
+         <dest obj="mix_2" inlet="in2"/>
+      </net>
+      <net>
+         <source obj="reverb_1" outlet="l"/>
+         <dest obj="out_1" inlet="wave"/>
+      </net>
+      <net>
+         <source obj="reverb_1" outlet="r"/>
+         <dest obj="out_2" inlet="wave"/>
+      </net>
+      <net>
+         <source obj="mix_1" outlet="out"/>
+         <dest obj="reverb_1" inlet="l"/>
+      </net>
+      <net>
+         <source obj="mix_2" outlet="out"/>
+         <dest obj="reverb_1" inlet="r"/>
+      </net>
+      <net>
+         <source obj="harmonics_1" outlet="wave"/>
+         <dest obj="mix_1" inlet="in3"/>
+         <dest obj="mix_2" inlet="in3"/>
+      </net>
+      <net>
+         <source obj="harmonics_2" outlet="wave"/>
+         <dest obj="mix_2" inlet="in4"/>
+         <dest obj="mix_1" inlet="in4"/>
       </net>
    </nets>
    <settings>
