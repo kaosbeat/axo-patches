@@ -386,8 +386,8 @@ void loop(void){
    </settings>
    <notes><![CDATA[]]></notes>
    <windowPos>
-      <x>959</x>
-      <y>220</y>
+      <x>276</x>
+      <y>195</y>
       <width>961</width>
       <height>637</height>
    </windowPos>
