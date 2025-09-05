@@ -1,4 +1,4 @@
-<patch-1.0 appVersion="1.0.11">
+<patch-1.0 appVersion="1.0.12">
    <obj type="gpio/spi/config" uuid="d3e75d8a02e2ccabbbc2af3bc2fcdb8ea65a6133" name="config_1" x="56" y="84">
       <params/>
       <attribs>
@@ -98,7 +98,7 @@ void loop(void){
 		}
 	
 	}
-	chThdSleepMilliseconds(10);
+	chThdSleepMilliseconds(50);
 	txbuf[2] = 0b00000000;
 
 	for(int pin=0; pin<8; pin++){
@@ -150,7 +150,7 @@ void loop(void){
 			PExParameterChange(&parent->PExch[PARAM_INDEX_d7_value],zz,0xFFFD);
 		}	
 	}
-	chThdSleepMilliseconds(10);
+	chThdSleepMilliseconds(50);
 }]]></sText>
          </text>
       </attribs>
@@ -386,7 +386,7 @@ void loop(void){
    </settings>
    <notes><![CDATA[]]></notes>
    <windowPos>
-      <x>1568</x>
+      <x>959</x>
       <y>220</y>
       <width>961</width>
       <height>637</height>

@@ -81,7 +81,7 @@
       </attribs>
    </obj>
    <comment type="patch/comment" x="448" y="140" text="channel selector"/>
-   <obj type="pumkinrevamp" uuid="2683295a-50dc-4a26-b3f4-f1edb9d3672b" name="obj_1" x="1176" y="140">
+   <obj type="pumkinrevamp" uuid="ca6995d5-9451-4a62-b3a0-397423991edc" name="pumkinrevamp_1" x="1176" y="140">
       <params/>
       <attribs/>
    </obj>
@@ -634,67 +634,67 @@
          <dest obj="mux_9" inlet="s"/>
       </net>
       <net>
-         <source obj="obj_1" outlet="C0"/>
+         <source obj="pumkinrevamp_1" outlet="C0"/>
          <dest obj="cc_1" inlet="v"/>
       </net>
       <net>
-         <source obj="obj_1" outlet="C1"/>
+         <source obj="pumkinrevamp_1" outlet="C1"/>
          <dest obj="cc_2" inlet="v"/>
       </net>
       <net>
-         <source obj="obj_1" outlet="C3"/>
+         <source obj="pumkinrevamp_1" outlet="C3"/>
          <dest obj="cc_4" inlet="v"/>
       </net>
       <net>
-         <source obj="obj_1" outlet="C4"/>
+         <source obj="pumkinrevamp_1" outlet="C4"/>
          <dest obj="cc_5" inlet="v"/>
          <dest obj="reverb_1" inlet="time"/>
          <dest obj="harmonics_1" inlet="pitch"/>
          <dest obj="harmonics_2" inlet="pitch"/>
       </net>
       <net>
-         <source obj="obj_1" outlet="C5"/>
+         <source obj="pumkinrevamp_1" outlet="C5"/>
          <dest obj="cc_6" inlet="v"/>
          <dest obj="reverb_1" inlet="diffusion"/>
          <dest obj="reverb_1" inlet="amount"/>
       </net>
       <net>
-         <source obj="obj_1" outlet="C6"/>
+         <source obj="pumkinrevamp_1" outlet="C6"/>
          <dest obj="cc_7" inlet="v"/>
          <dest obj="harmonics_2" inlet="timbre"/>
          <dest obj="harmonics_1" inlet="color"/>
       </net>
       <net>
-         <source obj="obj_1" outlet="D0"/>
+         <source obj="pumkinrevamp_1" outlet="D0"/>
          <dest obj="cc_9" inlet="v"/>
          <dest obj="square_1" inlet="pitch"/>
       </net>
       <net>
-         <source obj="obj_1" outlet="D1"/>
+         <source obj="pumkinrevamp_1" outlet="D1"/>
          <dest obj="cc_10" inlet="v"/>
       </net>
       <net>
-         <source obj="obj_1" outlet="D2"/>
+         <source obj="pumkinrevamp_1" outlet="D2"/>
          <dest obj="cc_11" inlet="v"/>
       </net>
       <net>
-         <source obj="obj_1" outlet="D3"/>
+         <source obj="pumkinrevamp_1" outlet="D3"/>
          <dest obj="cc_12" inlet="v"/>
       </net>
       <net>
-         <source obj="obj_1" outlet="D4"/>
+         <source obj="pumkinrevamp_1" outlet="D4"/>
          <dest obj="cc_13" inlet="v"/>
       </net>
       <net>
-         <source obj="obj_1" outlet="D5"/>
+         <source obj="pumkinrevamp_1" outlet="D5"/>
          <dest obj="cc_14" inlet="v"/>
       </net>
       <net>
-         <source obj="obj_1" outlet="D6"/>
+         <source obj="pumkinrevamp_1" outlet="D6"/>
          <dest obj="cc_15" inlet="v"/>
       </net>
       <net>
-         <source obj="obj_1" outlet="D7"/>
+         <source obj="pumkinrevamp_1" outlet="D7"/>
          <dest obj="cc_16" inlet="v"/>
       </net>
       <net>
@@ -706,11 +706,11 @@
          <dest obj="cc_17" inlet="v"/>
       </net>
       <net>
-         <source obj="obj_1" outlet="C2"/>
+         <source obj="pumkinrevamp_1" outlet="C2"/>
          <dest obj="cc_3" inlet="v"/>
       </net>
       <net>
-         <source obj="obj_1" outlet="C7"/>
+         <source obj="pumkinrevamp_1" outlet="C7"/>
          <dest obj="cc_8" inlet="v"/>
          <dest obj="reverb_1" inlet="lowpass"/>
          <dest obj="harmonics_1" inlet="timbre"/>
@@ -839,9 +839,9 @@
    </settings>
    <notes><![CDATA[]]></notes>
    <windowPos>
-      <x>-471</x>
-      <y>28</y>
-      <width>2391</width>
+      <x>324</x>
+      <y>72</y>
+      <width>1440</width>
       <height>984</height>
    </windowPos>
 </patch-1.0>
