@@ -1,5 +1,25 @@
 <patch-1.0 appVersion="1.1.0">
-   <obj type="fx/flanger" uuid="da860820-d290-4947-972c-880f0def6440" name="obj_1" x="1456" y="98">
+   <obj type="math/&gt;&gt;" uuid="d883beaf50b7aae4803ed9941e8f123e87e1e3aa" name="&gt;&gt;_2" x="1218" y="0">
+      <params/>
+      <attribs>
+         <spinner attributeName="shift" value="1"/>
+      </attribs>
+   </obj>
+   <obj type="disp/kscope 128 p" uuid="664f9317a38a6910ae9bc020e00ca2dd2ee692fa" name="kscope_2" x="1302" y="0">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="math/&gt;&gt;" uuid="d883beaf50b7aae4803ed9941e8f123e87e1e3aa" name="&gt;&gt;_1" x="896" y="14">
+      <params/>
+      <attribs>
+         <spinner attributeName="shift" value="1"/>
+      </attribs>
+   </obj>
+   <obj type="disp/kscope 128 p" uuid="664f9317a38a6910ae9bc020e00ca2dd2ee692fa" name="kscope_1" x="980" y="14">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="fx/flanger" uuid="2440c4d9-80e4-4191-accd-f24ed5d44646" name="obj_1" x="1568" y="98">
       <params>
          <frac32.u.map name="depth" value="20.0"/>
          <frac32.u.map name="fdbk" value="16.5"/>
@@ -7,17 +27,48 @@
       </params>
       <attribs/>
    </obj>
-   <obj type="ksoloti/big genes/cv out b 2" uuid="28629cd3-e124-4434-8179-a9b0c40cfcd0" name="cv_1" x="686" y="140">
+   <obj type="string/c" uuid="4aa90a90c435a742ddfa152d232883fc5b2f1b3" name="c_2" x="196" y="112">
       <params/>
       <attribs>
-         <combo attributeName="offset" selection="E4 (0) = 0V (Axoloti)"/>
+         <table attributeName="str" table="IMU3_Right"/>
       </attribs>
    </obj>
-   <obj type="ksoloti/big genes/gate out" uuid="a9f603ff-485b-4417-98e5-73de698b8a6e" name="gate_1" x="686" y="266">
+   <obj type="ksoloti/big genes/display" uuid="d21f1023-b829-4934-b142-5eedb601a570" name="display_2" x="434" y="112">
+      <params/>
+      <attribs>
+         <combo attributeName="useScope" selection="on"/>
+         <objref attributeName="scope" obj="kscope_2"/>
+         <combo attributeName="narrowFont" selection="off"/>
+      </attribs>
+   </obj>
+   <obj type="ksoloti/big genes/gate out" uuid="a9f603ff-485b-4417-98e5-73de698b8a6e" name="gate_2" x="686" y="182">
       <params/>
       <attribs>
          <combo attributeName="gate" selection="1"/>
       </attribs>
+   </obj>
+   <obj type="ksoloti/big genes/cv out b 2" uuid="28629cd3-e124-4434-8179-a9b0c40cfcd0" name="cv_1" x="1148" y="196">
+      <params/>
+      <attribs>
+         <combo attributeName="offset" selection="E4 (0) = 0V (Axoloti)"/>
+         <combo attributeName="when_stopped" selection="center"/>
+      </attribs>
+   </obj>
+   <obj type="ctrl/i radio 4 h" uuid="f87ae81e3162014f3bdca0f56dbbdf9322e69dfd" name="i_3" x="280" y="210">
+      <params>
+         <int32.hradio name="value" value="1"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="ksoloti/big genes/gate out" uuid="a9f603ff-485b-4417-98e5-73de698b8a6e" name="gate_1" x="686" y="266">
+      <params/>
+      <attribs>
+         <combo attributeName="gate" selection="2"/>
+      </attribs>
+   </obj>
+   <obj type="logic/inv" uuid="2bd44b865d3b63ff9b80862242bf5be779e3ad5" name="inv_1" x="364" y="308">
+      <params/>
+      <attribs/>
    </obj>
    <obj type="midi/in/keyb note" uuid="ac0cd98e6c0373b7be73d25900342a62ebcf5f" name="keyb_2" x="882" y="308">
       <params/>
@@ -49,7 +100,7 @@
    </obj>
    <obj type="fx/chorus" uuid="f592ea90-91b1-4c54-acd6-02bf6913c6c7" name="obj_2" x="1708" y="322">
       <params>
-         <frac32.u.map name="depth" value="56.85000000000001"/>
+         <frac32.u.map name="depth" value="56.84999990463257"/>
          <frac32.s.map name="speed" value="-64.0"/>
       </params>
       <attribs/>
@@ -67,25 +118,56 @@
       </params>
       <attribs/>
    </obj>
-   <obj type="midi/in/cc" uuid="6096d217701cbdf251a9ab6ba029af78c5722a56" name="cc_2" x="672" y="406">
+   <obj type="midi/in/cc" uuid="6096d217701cbdf251a9ab6ba029af78c5722a56" name="cc_2" x="602" y="392">
       <params/>
       <attribs>
          <spinner attributeName="cc" value="50"/>
          <spinner attributeName="default" value="0"/>
       </attribs>
    </obj>
-   <obj type="conv/unipolar2bipolar" uuid="efc8ee28c508740c5edf7995eaaa07a6d6818e5e" name="unipolar2bipolar_1" x="770" y="406">
+   <obj type="conv/unipolar2bipolar" uuid="efc8ee28c508740c5edf7995eaaa07a6d6818e5e" name="unipolar2bipolar_1" x="700" y="392">
       <params/>
       <attribs/>
    </obj>
-   <obj type="midi/in/keyb note" uuid="ac0cd98e6c0373b7be73d25900342a62ebcf5f" name="keyb_1" x="854" y="462">
+   <obj type="math/*" uuid="922423f2db9f222aa3e5ba095778288c446da47a" name="*_3" x="812" y="392">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="string/c" uuid="4aa90a90c435a742ddfa152d232883fc5b2f1b3" name="c_1" x="196" y="406">
+      <params/>
+      <attribs>
+         <table attributeName="str" table="IMU2_Left"/>
+      </attribs>
+   </obj>
+   <obj type="ksoloti/big genes/display" uuid="d21f1023-b829-4934-b142-5eedb601a570" name="display_1" x="434" y="406">
+      <params/>
+      <attribs>
+         <combo attributeName="useScope" selection="on"/>
+         <objref attributeName="scope" obj="kscope_1"/>
+         <combo attributeName="narrowFont" selection="off"/>
+      </attribs>
+   </obj>
+   <obj type="ksoloti/big genes/pot denoise p" uuid="25347fab-c33f-4652-bf36-b7f52d08b937" name="pot_2" x="602" y="490">
+      <params/>
+      <attribs>
+         <combo attributeName="pot" selection="1"/>
+         <spinner attributeName="threshold" value="8"/>
+      </attribs>
+   </obj>
+   <obj type="midi/in/keyb note" uuid="ac0cd98e6c0373b7be73d25900342a62ebcf5f" name="keyb_1" x="910" y="490">
       <params/>
       <attribs>
          <spinner attributeName="note" value="64"/>
       </attribs>
    </obj>
-   <obj type="disp/bool" uuid="a0ee71d48208b71752cbb8c05e55145106ef3946" name="bool_1" x="980" y="476">
+   <obj type="disp/bool" uuid="a0ee71d48208b71752cbb8c05e55145106ef3946" name="bool_1" x="1022" y="490">
       <params/>
+      <attribs/>
+   </obj>
+   <obj type="ctrl/i radio 4 h" uuid="f87ae81e3162014f3bdca0f56dbbdf9322e69dfd" name="i_1" x="280" y="504">
+      <params>
+         <int32.hradio name="value" value="1"/>
+      </params>
       <attribs/>
    </obj>
    <obj type="sptnk/edrum/kick drum" uuid="a719b004-4233-482e-8fe9-830d546a80c0" name="kick_2" x="1134" y="532">
@@ -98,10 +180,25 @@
       </params>
       <attribs/>
    </obj>
-   <obj type="ctrl/button" uuid="ef3d13774349df85aa9bfecf30dbc91ab8488b3f" name="button_1" x="882" y="588">
-      <params>
-         <bool32.mom name="b" value="0"/>
-      </params>
+   <obj type="ksoloti/big genes/button" uuid="d61d570e-303b-4adb-acac-76920264c270" name="button_1" x="126" y="588">
+      <params/>
+      <attribs>
+         <combo attributeName="button" selection="3"/>
+      </attribs>
+   </obj>
+   <obj type="midi/in/cc" uuid="6096d217701cbdf251a9ab6ba029af78c5722a56" name="cc_3" x="602" y="602">
+      <params/>
+      <attribs>
+         <spinner attributeName="cc" value="51"/>
+         <spinner attributeName="default" value="0"/>
+      </attribs>
+   </obj>
+   <obj type="conv/unipolar2bipolar" uuid="efc8ee28c508740c5edf7995eaaa07a6d6818e5e" name="unipolar2bipolar_2" x="700" y="602">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="math/*" uuid="922423f2db9f222aa3e5ba095778288c446da47a" name="*_2" x="812" y="602">
+      <params/>
       <attribs/>
    </obj>
    <obj type="cpwitz/delay/tape-delay" uuid="01cf83e2-ac42-485b-bc77-fb961426f5ef" name="obj_3" x="1764" y="602">
@@ -111,11 +208,11 @@
          <bool32.tgl name="filter on" value="1"/>
          <frac32.u.map name="feedback-buffer" value="54.799999713897705"/>
          <frac32.s.map name="filter" value="47.0"/>
-         <frac32.u.map name="dry/wet" value="64.0"/>
+         <frac32.u.map name="dry/wet" value="63.99999952316284"/>
       </params>
       <attribs/>
    </obj>
-   <obj type="logic/or 2" uuid="3805d3c84d30032a44fbdbe42d9a2988a1790a3e" name="or_1" x="1008" y="630">
+   <obj type="logic/flipflop toggle" uuid="195e489e5fc3d275944b0de56c7a91c8641ea22a" name="flipflop_2" x="252" y="630">
       <params/>
       <attribs/>
    </obj>
@@ -130,20 +227,20 @@
       <params/>
       <attribs/>
    </obj>
-   <obj type="midi/in/cc" uuid="6096d217701cbdf251a9ab6ba029af78c5722a56" name="cc_3" x="672" y="714">
+   <obj type="ksoloti/big genes/pot denoise p" uuid="25347fab-c33f-4652-bf36-b7f52d08b937" name="pot_1" x="602" y="700">
       <params/>
       <attribs>
-         <spinner attributeName="cc" value="51"/>
-         <spinner attributeName="default" value="0"/>
+         <combo attributeName="pot" selection="4"/>
+         <spinner attributeName="threshold" value="8"/>
       </attribs>
    </obj>
-   <obj type="conv/unipolar2bipolar" uuid="efc8ee28c508740c5edf7995eaaa07a6d6818e5e" name="unipolar2bipolar_2" x="770" y="714">
+   <obj type="math/*" uuid="922423f2db9f222aa3e5ba095778288c446da47a" name="*_1" x="322" y="714">
       <params/>
       <attribs/>
    </obj>
    <obj type="ctrl/dial p" uuid="cc5d2846c3d50e425f450c4b9851371b54f4d674" name="dial_1" x="1554" y="728">
       <params>
-         <frac32.u.map name="value" value="63.99999952316284"/>
+         <frac32.u.map name="value" value="60.03124952316284"/>
       </params>
       <attribs/>
    </obj>
@@ -165,24 +262,18 @@
       </net>
       <net>
          <source obj="keyb_1" outlet="gate"/>
-         <dest obj="or_1" inlet="i1"/>
          <dest obj="bool_1" inlet="in"/>
-      </net>
-      <net>
-         <source obj="button_1" outlet="o"/>
-         <dest obj="or_1" inlet="i2"/>
+         <dest obj="gate_1" inlet="in"/>
+         <dest obj="kick_2" inlet="t"/>
       </net>
       <net>
          <source obj="kick_2" outlet="out"/>
          <dest obj="mix_1" inlet="in1"/>
       </net>
       <net>
-         <source obj="or_1" outlet="o"/>
-         <dest obj="kick_2" inlet="t"/>
-      </net>
-      <net>
          <source obj="keyb_2" outlet="gate"/>
          <dest obj="snare_1" inlet="strike"/>
+         <dest obj="gate_2" inlet="in"/>
       </net>
       <net>
          <source obj="reverb_1" outlet="l"/>
@@ -219,16 +310,12 @@
          <dest obj="unipolar2bipolar_1" inlet="i"/>
       </net>
       <net>
-         <source obj="unipolar2bipolar_1" outlet="o"/>
-         <dest obj="snare_1" inlet="pitch"/>
-      </net>
-      <net>
          <source obj="cc_3" outlet="midiCC"/>
          <dest obj="unipolar2bipolar_2" inlet="i"/>
       </net>
       <net>
          <source obj="unipolar2bipolar_2" outlet="o"/>
-         <dest obj="kick_2" inlet="pitch"/>
+         <dest obj="*_2" inlet="a"/>
       </net>
       <net>
          <source obj="obj_1" outlet="out"/>
@@ -239,15 +326,76 @@
          <dest obj="unipolar2bipolar_3" inlet="i"/>
          <dest obj="obj_3" inlet="ratemod"/>
       </net>
+      <net>
+         <source obj="unipolar2bipolar_1" outlet="o"/>
+         <dest obj="*_3" inlet="a"/>
+      </net>
+      <net>
+         <source obj="c_1" outlet="out"/>
+         <dest obj="display_1" inlet="line1"/>
+      </net>
+      <net>
+         <source obj="i_1" outlet="out"/>
+         <dest obj="display_1" inlet="mode"/>
+      </net>
+      <net>
+         <source obj="&gt;&gt;_1" outlet="result"/>
+         <dest obj="kscope_1" inlet="in"/>
+      </net>
+      <net>
+         <source obj="c_2" outlet="out"/>
+         <dest obj="display_2" inlet="line1"/>
+      </net>
+      <net>
+         <source obj="i_3" outlet="out"/>
+         <dest obj="display_2" inlet="mode"/>
+      </net>
+      <net>
+         <source obj="inv_1" outlet="o"/>
+         <dest obj="display_2" inlet="disable"/>
+      </net>
+      <net>
+         <source obj="&gt;&gt;_2" outlet="result"/>
+         <dest obj="kscope_2" inlet="in"/>
+      </net>
+      <net>
+         <source obj="pot_1" outlet="out"/>
+         <dest obj="*_2" inlet="b"/>
+      </net>
+      <net>
+         <source obj="*_2" outlet="result"/>
+         <dest obj="kick_2" inlet="pitch"/>
+         <dest obj="cv_1" inlet="cv2"/>
+         <dest obj="&gt;&gt;_2" inlet="a"/>
+      </net>
+      <net>
+         <source obj="pot_2" outlet="out"/>
+         <dest obj="*_3" inlet="b"/>
+      </net>
+      <net>
+         <source obj="*_3" outlet="result"/>
+         <dest obj="&gt;&gt;_1" inlet="a"/>
+         <dest obj="snare_1" inlet="pitch"/>
+         <dest obj="cv_1" inlet="cv1"/>
+      </net>
+      <net>
+         <source obj="button_1" outlet="out"/>
+         <dest obj="flipflop_2" inlet="trig"/>
+      </net>
+      <net>
+         <source obj="flipflop_2" outlet="o"/>
+         <dest obj="display_1" inlet="disable"/>
+         <dest obj="inv_1" inlet="i"/>
+      </net>
    </nets>
    <settings>
       <subpatchmode>no</subpatchmode>
    </settings>
    <notes><![CDATA[]]></notes>
    <windowPos>
-      <x>0</x>
-      <y>32</y>
-      <width>1920</width>
-      <height>1048</height>
+      <x>240</x>
+      <y>118</y>
+      <width>1440</width>
+      <height>786</height>
    </windowPos>
 </patch-1.0>
