@@ -1,4 +1,4 @@
-<patch-1.0 appVersion="1.0.12">
+<patch-1.0 appVersion="1.1.0">
    <obj type="gpio/in/analog" uuid="1c0c845ed2d7e06ae5f377ba13d9d09f4747ac87" name="analog_2" x="294" y="28">
       <params/>
       <attribs>
@@ -9,13 +9,41 @@
       <params/>
       <attribs/>
    </obj>
+   <obj type="midi/in/cc i" uuid="614eb76edef2b43632fa1fcda25aab54f821daf6" name="cc_1" x="14" y="70">
+      <params/>
+      <attribs>
+         <spinner attributeName="cc" value="5"/>
+         <spinner attributeName="default" value="4"/>
+      </attribs>
+   </obj>
+   <obj type="midi/in/monitor" uuid="b51863ca-6afa-4d29-acfd-c8c2fe06cb16" name="monitor_1" x="126" y="70">
+      <params>
+         <bool32.tgl name="ControlChange" value="1"/>
+         <bool32.tgl name="Note" value="0"/>
+         <bool32.tgl name="ProgramChange" value="0"/>
+         <bool32.tgl name="Bend" value="0"/>
+         <bool32.tgl name="PolyPressure" value="0"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="audio/inconfig l" uuid="7007d026acb7c3586f60a7f0898718d1ca7e0607" name="inconfig_2" x="616" y="70">
+      <params/>
+      <attribs>
+         <combo attributeName="gain" selection="0dB"/>
+         <combo attributeName="boost" selection="0dB"/>
+      </attribs>
+   </obj>
    <obj type="audio/in left" uuid="d40e60b7641fe75af4d7c91b45bb038aacafc52e" name="in_1" x="714" y="70">
       <params/>
       <attribs/>
    </obj>
-   <obj type="audio/out left" uuid="b11a3c09b2fdd575ea8212f2ce7743d5269253b1" name="out_1" x="994" y="70">
+   <comment type="patch/comment" x="42" y="84" text="reset"/>
+   <obj type="audio/outconfig" uuid="eace67e3304afaa1bb695b444e9345f2d8adaf00" name="outconfig_1" x="854" y="84">
       <params/>
-      <attribs/>
+      <attribs>
+         <combo attributeName="headphones" selection="0dB"/>
+         <combo attributeName="mode" selection="Stereo"/>
+      </attribs>
    </obj>
    <obj type="gpio/in/analog" uuid="1c0c845ed2d7e06ae5f377ba13d9d09f4747ac87" name="analog_1" x="294" y="112">
       <params/>
@@ -27,21 +55,11 @@
       <params/>
       <attribs/>
    </obj>
-   <obj type="audio/inconfig l" uuid="7007d026acb7c3586f60a7f0898718d1ca7e0607" name="inconfig_2" x="686" y="126">
+   <obj type="audio/out left" uuid="b11a3c09b2fdd575ea8212f2ce7743d5269253b1" name="out_1" x="1358" y="126">
       <params/>
-      <attribs>
-         <combo attributeName="gain" selection="0dB"/>
-         <combo attributeName="boost" selection="0dB"/>
-      </attribs>
+      <attribs/>
    </obj>
-   <obj type="audio/outconfig" uuid="eace67e3304afaa1bb695b444e9345f2d8adaf00" name="outconfig_1" x="980" y="126">
-      <params/>
-      <attribs>
-         <combo attributeName="headphones" selection="0dB"/>
-         <combo attributeName="mode" selection="Stereo"/>
-      </attribs>
-   </obj>
-   <obj type="table/alloc 32b sdram" uuid="1a4546b7b52747ea765093ac97444601c44721e8" name="t1" x="826" y="196">
+   <obj type="table/alloc 32b sdram" uuid="1a4546b7b52747ea765093ac97444601c44721e8" name="t1" x="840" y="196">
       <params/>
       <attribs>
          <combo attributeName="size" selection="524288"/>
@@ -50,30 +68,20 @@
          </text>
       </attribs>
    </obj>
-   <comment type="patch/comment" x="70" y="210" text="rec, red button"/>
-   <obj type="gpio/in/digital" uuid="f59f139e8da912742832dc541157f20f30b7ac1b" name="digital_1" x="70" y="224">
+   <comment type="patch/comment" x="28" y="210" text="rec, red button"/>
+   <obj type="gpio/in/digital" uuid="f59f139e8da912742832dc541157f20f30b7ac1b" name="digital_1" x="28" y="224">
       <params/>
       <attribs>
          <combo attributeName="pad" selection="PC2"/>
          <combo attributeName="mode" selection="pulldown"/>
       </attribs>
    </obj>
-   <obj type="disp/bool" uuid="a0ee71d48208b71752cbb8c05e55145106ef3946" name="bool_1" x="168" y="224">
-      <params/>
-      <attribs/>
-   </obj>
-   <obj type="disp/i" uuid="5e35fd0c62d81e70017289250cf28edd26e19e4a" name="i_4" x="434" y="224">
+   <obj type="disp/bool" uuid="a0ee71d48208b71752cbb8c05e55145106ef3946" name="bool_1" x="140" y="224">
       <params/>
       <attribs/>
    </obj>
    <obj type="disp/bool" uuid="a0ee71d48208b71752cbb8c05e55145106ef3946" name="bool_4" x="602" y="224">
       <params/>
-      <attribs/>
-   </obj>
-   <obj type="ctrl/i" uuid="a3786816db6ea5bc6ac4193a5cccdb2c83b83496" name="i_3" x="294" y="266">
-      <params>
-         <int32 name="value" value="96"/>
-      </params>
       <attribs/>
    </obj>
    <obj type="jaffa/math/modulo" uuid="99fec58b-6e2a-47bf-a853-ca56a554dc36" name="modulo_1" x="322" y="266">
@@ -86,20 +94,35 @@
          <spinner attributeName="value" value="0"/>
       </attribs>
    </obj>
-   <obj type="rbrt/old/looper_OD_mono" uuid="f2824727-a4d8-49b9-86ef-86ce9e3bd6f5" name="looper_OD_mono_1" x="812" y="266">
+   <obj type="disp/bool" uuid="a0ee71d48208b71752cbb8c05e55145106ef3946" name="bool_5" x="602" y="280">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="rbrt/old/looper_OD_mono" uuid="f2824727-a4d8-49b9-86ef-86ce9e3bd6f5" name="looper_OD_mono_1" x="812" y="280">
       <params/>
       <attribs>
          <objref attributeName="table" obj="t1"/>
       </attribs>
    </obj>
-   <obj type="phi/disp/boolms" uuid="4d2b0662-f881-4953-832a-a286daf5b6a3" name="boolms_1" x="644" y="308">
+   <obj type="gpio/out/digital" uuid="320eed040f6c55bb24c56416596ac2e67d0c82bc" name="digital_5" x="1526" y="280">
+      <params/>
+      <attribs>
+         <combo attributeName="pad" selection="PC3"/>
+         <combo attributeName="mode" selection="Push pull"/>
+      </attribs>
+   </obj>
+   <obj type="logic/or 2" uuid="3805d3c84d30032a44fbdbe42d9a2988a1790a3e" name="or_1" x="1442" y="294">
       <params/>
       <attribs/>
    </obj>
-   <obj type="ctrl/button" uuid="ef3d13774349df85aa9bfecf30dbc91ab8488b3f" name="button_1" x="84" y="336">
+   <obj type="ctrl/i" uuid="a3786816db6ea5bc6ac4193a5cccdb2c83b83496" name="i_3" x="56" y="322">
       <params>
-         <bool32.mom name="b" value="0"/>
+         <int32 name="value" value="96"/>
       </params>
+      <attribs/>
+   </obj>
+   <obj type="math/*" uuid="6a31299e3a491edd8c4df0e809a519a35cc08a3b" name="*_1" x="126" y="336">
+      <params/>
       <attribs/>
    </obj>
    <obj type="midi/in/clock" uuid="f1aa3a79d6de9bd6d38dc64c9d4bb5c9de4f4198" name="clock_1" x="210" y="336">
@@ -110,26 +133,82 @@
       <params/>
       <attribs/>
    </obj>
-   <obj type="gpio/out/digital" uuid="320eed040f6c55bb24c56416596ac2e67d0c82bc" name="digital_5" x="574" y="378">
+   <obj type="lfo/square" uuid="de6909eb64db13af5b43f979a4c130024b3a4793" name="square_1" x="1218" y="350">
+      <params>
+         <frac32.s.map name="pitch" value="-16.0"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="logic/and 2" uuid="c67031682f552aa0a80b23377495c51ea28a8c9c" name="and_1" x="1344" y="350">
+      <params/>
+      <attribs/>
+   </obj>
+   <patchobj type="patch/object" uuid="61b4487a-9b4c-4edb-a323-22803a3e4a60" name="&gt;=_1" x="602" y="364">
+      <params/>
+      <attribs/>
+      <object id="patch/object" uuid="61b4487a-9b4c-4edb-a323-22803a3e4a60">
+         <license>CC0</license>
+         <inlets>
+            <int32 name="change" description="change"/>
+            <int32 name="max"/>
+            <bool32 name="reset"/>
+         </inlets>
+         <outlets>
+            <bool32 name="out" description="out"/>
+         </outlets>
+         <displays>
+            <int32.label name="d1"/>
+            <int32.label name="d2"/>
+         </displays>
+         <params/>
+         <attribs/>
+         <includes/>
+         <code.declaration><![CDATA[int k;
+int c;]]></code.declaration>
+         <code.init><![CDATA[k=0;
+c=0;]]></code.init>
+         <code.krate><![CDATA[if (inlet_reset == true){c=0;}
+
+if (k != inlet_change) {
+	c+=1;
+	k=inlet_change;
+}
+
+if (c == inlet_max) {
+	c = 0;
+}
+
+if (c == 0) {
+	outlet_out=true;
+} else {
+	outlet_out=false;
+}
+
+disp_d1 = c;
+disp_d2 = inlet_max;]]></code.krate>
+      </object>
+   </patchobj>
+   <obj type="disp/i" uuid="5e35fd0c62d81e70017289250cf28edd26e19e4a" name="i_6" x="448" y="378">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="midi/in/cc i" uuid="614eb76edef2b43632fa1fcda25aab54f821daf6" name="cc_2" x="14" y="392">
       <params/>
       <attribs>
-         <combo attributeName="pad" selection="PC3"/>
-         <combo attributeName="mode" selection="Push pull"/>
+         <spinner attributeName="cc" value="0"/>
+         <spinner attributeName="default" value="4"/>
       </attribs>
    </obj>
-   <obj type="logic/flipflop toggle" uuid="195e489e5fc3d275944b0de56c7a91c8641ea22a" name="flipflop_3" x="1106" y="378">
+   <comment type="patch/comment" x="42" y="406" text="length in q"/>
+   <obj type="logic/flipflop toggle" uuid="195e489e5fc3d275944b0de56c7a91c8641ea22a" name="flipflop_3" x="1218" y="448">
       <params/>
       <attribs/>
    </obj>
-   <obj type="disp/bool" uuid="a0ee71d48208b71752cbb8c05e55145106ef3946" name="dispb5__" x="1232" y="378">
+   <obj type="disp/bool" uuid="a0ee71d48208b71752cbb8c05e55145106ef3946" name="dispb5__" x="1554" y="448">
       <params/>
       <attribs/>
    </obj>
-   <obj type="disp/i" uuid="5e35fd0c62d81e70017289250cf28edd26e19e4a" name="i_2" x="336" y="406">
-      <params/>
-      <attribs/>
-   </obj>
-   <obj type="logic/latch" uuid="2a50e4657301542464c6a97931847b5e8e0e6d2b" name="latch_1" x="770" y="448">
+   <obj type="disp/bool" uuid="a0ee71d48208b71752cbb8c05e55145106ef3946" name="bool_3" x="238" y="490">
       <params/>
       <attribs/>
    </obj>
@@ -137,23 +216,12 @@
       <params/>
       <attribs/>
    </obj>
-   <obj type="phi/disp/boolms" uuid="4d2b0662-f881-4953-832a-a286daf5b6a3" name="boolms_2" x="1092" y="490">
-      <params/>
-      <attribs/>
-   </obj>
-   <comment type="patch/comment" x="98" y="504" text="overdub, flip button"/>
-   <obj type="gpio/in/digital" uuid="f59f139e8da912742832dc541157f20f30b7ac1b" name="digital_4" x="98" y="518">
-      <params/>
-      <attribs>
-         <combo attributeName="pad" selection="PB1"/>
-         <combo attributeName="mode" selection="pulldown"/>
-      </attribs>
-   </obj>
-   <obj type="disp/bool" uuid="a0ee71d48208b71752cbb8c05e55145106ef3946" name="bool_3" x="238" y="518">
+   <obj type="phi/disp/boolms" uuid="4d2b0662-f881-4953-832a-a286daf5b6a3" name="boolms_2" x="1106" y="504">
       <params/>
       <attribs/>
    </obj>
    <comment type="patch/comment" x="546" y="518" text="play  white button"/>
+   <comment type="patch/comment" x="14" y="532" text="overdub, flip button"/>
    <obj type="gpio/in/digital" uuid="f59f139e8da912742832dc541157f20f30b7ac1b" name="digital_3" x="546" y="532">
       <params/>
       <attribs>
@@ -165,7 +233,23 @@
       <params/>
       <attribs/>
    </obj>
+   <obj type="gpio/in/digital" uuid="f59f139e8da912742832dc541157f20f30b7ac1b" name="digital_4" x="14" y="546">
+      <params/>
+      <attribs>
+         <combo attributeName="pad" selection="PB1"/>
+         <combo attributeName="mode" selection="pulldown"/>
+      </attribs>
+   </obj>
+   <comment type="patch/comment" x="140" y="546" text="button up overdub is ON, no need to record"/>
    <obj type="disp/bool" uuid="a0ee71d48208b71752cbb8c05e55145106ef3946" name="dispb5_" x="1092" y="560">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="logic/or 2" uuid="3805d3c84d30032a44fbdbe42d9a2988a1790a3e" name="or_2" x="308" y="574">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="disp/bool" uuid="a0ee71d48208b71752cbb8c05e55145106ef3946" name="bool_6" x="406" y="588">
       <params/>
       <attribs/>
    </obj>
@@ -177,7 +261,48 @@
       <params/>
       <attribs/>
    </obj>
-   <obj type="a773/midithru_incl_clock" uuid="82b2821e-bacc-4e10-8bcc-d827d6e1206d" name="midithru_incl_clock_1" x="42" y="616">
+   <obj type="midi/in/cc i" uuid="614eb76edef2b43632fa1fcda25aab54f821daf6" name="cc_3" x="14" y="630">
+      <params/>
+      <attribs>
+         <spinner attributeName="cc" value="4"/>
+         <spinner attributeName="default" value="0"/>
+      </attribs>
+   </obj>
+   <obj type="disp/bool" uuid="a0ee71d48208b71752cbb8c05e55145106ef3946" name="bool_7" x="322" y="644">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="drj/math/== const i" uuid="36ae23539d64bc2fb798a1b4a65cf9dda17a1952" name="==_2" x="154" y="658">
+      <params/>
+      <attribs>
+         <spinner attributeName="value" value="127"/>
+      </attribs>
+   </obj>
+   <obj type="disp/i" uuid="5e35fd0c62d81e70017289250cf28edd26e19e4a" name="i_2" x="644" y="658">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="disp/i" uuid="5e35fd0c62d81e70017289250cf28edd26e19e4a" name="i_4" x="462" y="728">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="matroe/midi looper/clock receive" uuid="cbfd4c82-9cf4-4739-b6d0-a70bd87f757b" name="clock_2" x="14" y="756">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="phi/disp/boolms" uuid="4d2b0662-f881-4953-832a-a286daf5b6a3" name="boolms_1" x="630" y="784">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="disp/i" uuid="5e35fd0c62d81e70017289250cf28edd26e19e4a" name="i_7" x="168" y="798">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="phi/disp/boolms" uuid="4d2b0662-f881-4953-832a-a286daf5b6a3" name="boolms_3" x="630" y="840">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="a773/midithru_incl_clock" uuid="82b2821e-bacc-4e10-8bcc-d827d6e1206d" name="midithru_incl_clock_1" x="224" y="868">
       <params/>
       <attribs>
          <combo attributeName="input" selection="usb host port 1"/>
@@ -185,19 +310,13 @@
          <combo attributeName="led" selection="off"/>
       </attribs>
    </obj>
-   <obj type="a773/midithru_incl_clock" uuid="82b2821e-bacc-4e10-8bcc-d827d6e1206d" name="midithru_incl_clock_2" x="238" y="616">
+   <obj type="a773/midithru_incl_clock" uuid="82b2821e-bacc-4e10-8bcc-d827d6e1206d" name="midithru_incl_clock_2" x="364" y="868">
       <params/>
       <attribs>
          <combo attributeName="input" selection="usb device port 1"/>
          <combo attributeName="output" selection="usb host port 1"/>
          <combo attributeName="led" selection="off"/>
       </attribs>
-   </obj>
-   <obj type="ctrl/button" uuid="ef3d13774349df85aa9bfecf30dbc91ab8488b3f" name="cb12" x="700" y="616">
-      <params>
-         <bool32.mom name="b" value="0"/>
-      </params>
-      <attribs/>
    </obj>
    <nets>
       <net>
@@ -217,6 +336,7 @@
       <net>
          <source obj="digital_4" outlet="out"/>
          <dest obj="bool_3" inlet="in"/>
+         <dest obj="or_2" inlet="i1"/>
       </net>
       <net>
          <source obj="analog_2" outlet="out"/>
@@ -232,30 +352,21 @@
       </net>
       <net>
          <source obj="clock_1" outlet="pos24ppq"/>
-         <dest obj="i_2" inlet="in"/>
          <dest obj="modulo_1" inlet="i"/>
       </net>
       <net>
          <source obj="i_3" outlet="out"/>
-         <dest obj="modulo_1" inlet="m"/>
+         <dest obj="*_1" inlet="a"/>
       </net>
       <net>
          <source obj="==_1" outlet="out"/>
          <dest obj="bool_4" inlet="in"/>
-         <dest obj="digital_5" inlet="in"/>
          <dest obj="boolms_1" inlet="trig"/>
-         <dest obj="flipflop_1" inlet="reset"/>
-         <dest obj="and21" inlet="i2"/>
-         <dest obj="flipflop_3" inlet="reset"/>
       </net>
       <net>
          <source obj="modulo_1" outlet="o"/>
          <dest obj="i_4" inlet="in"/>
          <dest obj="==_1" inlet="in"/>
-      </net>
-      <net>
-         <source obj="looper_OD_mono_1" outlet="wave"/>
-         <dest obj="out_1" inlet="wave"/>
       </net>
       <net>
          <source obj="flipflop_1" outlet="o"/>
@@ -270,8 +381,67 @@
       </net>
       <net>
          <source obj="flipflop_3" outlet="o"/>
-         <dest obj="dispb5__" inlet="in"/>
          <dest obj="looper_OD_mono_1" inlet="rec"/>
+         <dest obj="and_1" inlet="i2"/>
+      </net>
+      <net>
+         <source obj="cc_2" outlet="midiCC"/>
+         <dest obj="*_1" inlet="b"/>
+         <dest obj="&gt;=_1" inlet="max"/>
+      </net>
+      <net>
+         <source obj="*_1" outlet="result"/>
+         <dest obj="modulo_1" inlet="m"/>
+         <dest obj="i_6" inlet="in"/>
+      </net>
+      <net>
+         <source obj="square_1" outlet="wave"/>
+         <dest obj="and_1" inlet="i1"/>
+      </net>
+      <net>
+         <source obj="or_1" outlet="o"/>
+         <dest obj="digital_5" inlet="in"/>
+         <dest obj="dispb5__" inlet="in"/>
+      </net>
+      <net>
+         <source obj="and_1" outlet="o"/>
+         <dest obj="or_1" inlet="i2"/>
+      </net>
+      <net>
+         <source obj="&gt;=_1" outlet="out"/>
+         <dest obj="bool_5" inlet="in"/>
+         <dest obj="boolms_3" inlet="trig"/>
+         <dest obj="flipflop_3" inlet="reset"/>
+         <dest obj="and21" inlet="i2"/>
+         <dest obj="flipflop_1" inlet="reset"/>
+         <dest obj="or_1" inlet="i1"/>
+      </net>
+      <net>
+         <source obj="clock_2" outlet="step"/>
+         <dest obj="i_7" inlet="in"/>
+         <dest obj="&gt;=_1" inlet="change"/>
+      </net>
+      <net>
+         <source obj="looper_OD_mono_1" outlet="wave"/>
+         <dest obj="out_1" inlet="wave"/>
+      </net>
+      <net>
+         <source obj="cc_1" outlet="trig"/>
+         <dest obj="&gt;=_1" inlet="reset"/>
+      </net>
+      <net>
+         <source obj="cc_3" outlet="midiCC"/>
+         <dest obj="==_2" inlet="in"/>
+      </net>
+      <net>
+         <source obj="or_2" outlet="o"/>
+         <dest obj="looper_OD_mono_1" inlet="dub"/>
+         <dest obj="bool_6" inlet="in"/>
+      </net>
+      <net>
+         <source obj="==_2" outlet="out"/>
+         <dest obj="bool_7" inlet="in"/>
+         <dest obj="or_2" inlet="i2"/>
       </net>
    </nets>
    <settings>
@@ -279,9 +449,9 @@
    </settings>
    <notes><![CDATA[]]></notes>
    <windowPos>
-      <x>0</x>
+      <x>671</x>
       <y>32</y>
-      <width>1920</width>
+      <width>1249</width>
       <height>1048</height>
    </windowPos>
 </patch-1.0>
